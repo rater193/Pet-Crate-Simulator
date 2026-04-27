@@ -1,0 +1,75 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Sandbox
+
+<style>
+    .background {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        border: 5px solid rgba(0,0,0,1);
+        background-color: rgba(0,0,0,0.5);
+        border-radius: 32px;
+    }
+
+    .icon {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        display: flex;
+        justify-content: center; /* Horizontal centering */
+        align-items: center; /* Vertical centering */
+        font-size: 24px;
+        color: white;
+    }
+
+    .text {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        display: flex;
+        justify-content: center; /* Horizontal centering */
+        align-items: center; /* Vertical centering */
+        font-size: 24px;
+        color: white;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+</style>
+
+<root>
+    <div class="background">
+        <Image class="icon" Texture=@InputTexture />
+     </div>
+</root>
+
+@code
+{
+    public static InteractionFrameworkUI SINGLETON;
+
+    private Texture InputTexture;
+    [Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
+
+    protected override void OnStart()
+    {
+        SINGLETON = this;
+        InputTexture = Input.GetGlyph("use", InputGlyphSize.Medium, true);
+        GameObject.Enabled = false;
+    }
+
+    protected override void OnUpdate()
+    {
+        WorldRotation = new Rotation(Scene.Camera.WorldRotation.x, Scene.Camera.WorldRotation.y, Scene.Camera.WorldRotation.z, Scene.Camera.WorldRotation.w).RotateAroundAxis(Vector3.Up, 180f);
+    }
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( MyStringValue );
+}

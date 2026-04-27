@@ -1,0 +1,16 @@
+{
+  "AlbedoImage": "3rdparty/bk-prod.fr/pure meadows 2/materials/groundslabs/groundslabs_a.png",
+  "RoughnessImage": "materials/default/default_rough.tga",
+  "NormalImage": "3rdparty/bk-prod.fr/pure meadows 2/materials/groundslabs/groundslabs_grass_n.png",
+  "HeightImage": "materials/default/default_ao.tga",
+  "AOImage": "materials/default/default_ao.tga",
+  "UVScale": 10,
+  "Metalness": 0,
+  "NormalStrength": 1,
+  "HeightBlendStrength": 1,
+  "DisplacementScale": 0,
+  "NoTiling": false,
+  "Surface": null,
+  "__references": [],
+  "__version": 0
+}

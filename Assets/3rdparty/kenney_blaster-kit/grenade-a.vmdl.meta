@@ -1,0 +1,21 @@
+{
+  "publish": {
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "Kenney VMDL - Grenade A",
+      "Type": "model",
+      "Org": "topgamestudio",
+      "Ident": "grenadea",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "Mounts": null,
+      "IsStandaloneOnly": false,
+      "Metadata": {
+        "SingleAssetSource": "3rdparty/kenney_blaster-kit/grenade-a.vmdl"
+      }
+    }
+  }
+}

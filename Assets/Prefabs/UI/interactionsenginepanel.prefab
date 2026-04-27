@@ -1,0 +1,86 @@
+{
+  "RootObject": {
+    "__guid": "8b129ed5-d3fe-4749-a174-2ad339903c1d",
+    "__version": 2,
+    "Flags": 0,
+    "Name": "interactionsenginepanel",
+    "Position": "0,0,0",
+    "Rotation": "6.90884576E-07,9.72554176E-07,-6.71922695E-13,1",
+    "Scale": "1.00000036,1.00000036,1.00000036",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkFlags": 0,
+    "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
+    "OwnerTransfer": 1,
+    "Components": [
+      {
+        "__type": "Sandbox.WorldPanel",
+        "__guid": "c94226c1-1d8f-468f-a921-9ec2590c1caa",
+        "__enabled": true,
+        "Flags": 0,
+        "HorizontalAlign": "Center",
+        "InteractionRange": 1000,
+        "LookAtCamera": false,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "PanelSize": "512,512",
+        "RenderOptions": {
+          "GameLayer": false,
+          "OverlayLayer": true,
+          "BloomLayer": false,
+          "AfterUILayer": false
+        },
+        "RenderScale": 1,
+        "VerticalAlign": "Center"
+      },
+      {
+        "__type": "Sandbox.InteractionFrameworkUI",
+        "__guid": "228861de-e12e-42ce-a6c0-831365e1956d",
+        "__enabled": true,
+        "Flags": 0,
+        "MyStringValue": "Hello World!",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null
+      }
+    ],
+    "Children": [],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": false,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": "",
+        "DeferGeneration": false,
+        "CustomBounds": false
+      }
+    },
+    "__variables": []
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [],
+  "__version": 2
+}

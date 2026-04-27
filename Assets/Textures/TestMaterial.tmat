@@ -1,0 +1,16 @@
+{
+  "AlbedoImage": "textures/grass_albedo.png",
+  "RoughnessImage": "materials/dev/primary_white_color.tga",
+  "NormalImage": "textures/grass_heightmap_normal.png",
+  "HeightImage": "textures/grass_heightmap.png",
+  "AOImage": "materials/default/default_ao.tga",
+  "UVScale": 0.67,
+  "Metalness": 0,
+  "NormalStrength": 1.298421,
+  "HeightBlendStrength": 0.8294737,
+  "DisplacementScale": 1,
+  "NoTiling": true,
+  "Surface": "surfaces/grass.surface",
+  "__references": [],
+  "__version": 0
+}

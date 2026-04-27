@@ -1,0 +1,21 @@
+{
+  "publish": {
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "Pet Pets Animal Bee",
+      "Type": "model",
+      "Org": "topgamestudio",
+      "Ident": "petpetsanimalbee",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "Mounts": null,
+      "IsStandaloneOnly": false,
+      "Metadata": {
+        "SingleAssetSource": "3rdparty/kenny.nl/animal-bee.vmdl"
+      }
+    }
+  }
+}

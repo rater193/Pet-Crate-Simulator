@@ -1,0 +1,72 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Sandbox
+
+
+<style>
+    .Title {
+        position: absolute;
+        left: 0px;
+        top: 32px;
+        width: 100%;
+        height: 32px;
+        display: flex;
+        justify-content: center; /* Horizontal centering */
+        align-items: center; /* Vertical centering */
+        font-size: 24px;
+        color: white;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+
+    .healthbar {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 32px;
+        background-color: rgba(255,0.5,0.5,0.5);
+        border: 5px solid rgba(0,0,0,0.5);
+        border-radius: 100%;
+    }
+
+    .healthbar-foreground {
+        position: absolute;
+        left: -1px;
+        top: -1px;
+        width: 50%;
+        bottom: -1px;
+        background-color: rgba(0,255,0,1);
+        border-radius: 100%;
+    }
+
+    .healthbar-text {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        display: flex;
+        justify-content: center; /* Horizontal centering */
+        align-items: center; /* Vertical centering */
+        font-size: 24px;
+        color: white;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+</style>
+
+<root>
+    <div class="healthbar">
+        <div class="healthbar-foreground"></div>
+        <div class="healthbar-text">5/10</div>
+    </div>
+    <div class="Title">Test Cube</div>
+</root>
+
+@code
+{
+    protected override void OnUpdate()
+    {
+        WorldRotation = new Rotation(Scene.Camera.WorldRotation.x, Scene.Camera.WorldRotation.y, Scene.Camera.WorldRotation.z, Scene.Camera.WorldRotation.w).RotateAroundAxis(Vector3.Up, 180f);
+    }
+}

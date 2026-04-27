@@ -1,0 +1,16 @@
+{
+  "AlbedoImage": "textures/dirt_albedo.png",
+  "RoughnessImage": "materials/dev/primary_white_color.tga",
+  "NormalImage": "textures/chatgpt_image_apr_18_2026_12_21_50_am_nrm.png",
+  "HeightImage": "textures/chatgpt_image_apr_18_2026_12_21_50_am_disp.png",
+  "AOImage": "materials/default/default_ao.tga",
+  "UVScale": 1,
+  "Metalness": 0,
+  "NormalStrength": 1,
+  "HeightBlendStrength": 1,
+  "DisplacementScale": 0.1,
+  "NoTiling": true,
+  "Surface": "surfaces/dirt.surface",
+  "__references": [],
+  "__version": 0
+}

@@ -1,0 +1,16 @@
+{
+  "AlbedoImage": "3rdparty/bk-prod.fr/pure meadows 2/materials/grass1/grass01_a.png",
+  "RoughnessImage": "materials/dev/white_color.tga",
+  "NormalImage": "3rdparty/bk-prod.fr/pure meadows 2/materials/grass1/grass01_n.png",
+  "HeightImage": "materials/default/default_ao.tga",
+  "AOImage": "materials/default/default_ao.tga",
+  "UVScale": 10,
+  "Metalness": 0,
+  "NormalStrength": 3.6431577,
+  "HeightBlendStrength": 4.815526,
+  "DisplacementScale": 0,
+  "NoTiling": false,
+  "Surface": null,
+  "__references": [],
+  "__version": 0
+}

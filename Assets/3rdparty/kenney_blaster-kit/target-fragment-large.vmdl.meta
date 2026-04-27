@@ -1,0 +1,21 @@
+{
+  "publish": {
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "Kenney VMDLTarget Fragment Large",
+      "Type": "model",
+      "Org": "topgamestudio",
+      "Ident": "targetfragmentlarge",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "Mounts": null,
+      "IsStandaloneOnly": false,
+      "Metadata": {
+        "SingleAssetSource": "3rdparty/kenney_blaster-kit/target-fragment-large.vmdl"
+      }
+    }
+  }
+}

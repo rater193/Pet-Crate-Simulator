@@ -1,0 +1,44 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Sandbox
+
+
+<style>
+    .hover-box {
+        height: 128px;
+        background-color: #4b5563;
+        border-radius: 16px;
+        transition: width 0.20s ease, height 0.20s ease, background-color 0.20s ease, transform 0.20s ease;
+    }
+
+
+    .Crosshair {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 8px;
+        height: 8px;
+        transform: translate(-50%, -50%);
+        background-color: black;
+    }
+</style>
+
+<root>
+    <div class="hover-box" style="width: @(width)px;">@MyStringValue</div>
+
+    <div class="Crosshair"></div>
+</root>
+
+
+@code
+{
+
+    [Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
+    [Property] public int width { get; set; } = 128;
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( MyStringValue, width );
+}

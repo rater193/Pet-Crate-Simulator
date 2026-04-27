@@ -1,0 +1,21 @@
+{
+  "publish": {
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "Kenny Dungeons-Template Floor B",
+      "Type": "model",
+      "Org": "topgamestudio",
+      "Ident": "kennydungeonstemplatefloorbig",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "Mounts": null,
+      "IsStandaloneOnly": false,
+      "Metadata": {
+        "SingleAssetSource": "3rdparty/kenney_modulardungeon/template-floor-big.vmdl"
+      }
+    }
+  }
+}
