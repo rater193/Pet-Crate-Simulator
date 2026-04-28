@@ -6,7 +6,7 @@
   "AOImage": "materials/default/default_ao.tga",
   "UVScale": 10,
   "Metalness": 0,
-  "NormalStrength": 1,
+  "NormalStrength": 6.9778943,
   "HeightBlendStrength": 1,
   "DisplacementScale": 0,
   "NoTiling": false,

@@ -104,7 +104,7 @@
 					{
 						_class = "RenderMeshFile"
 						name = "LOD0"
-						filename = "3rdparty/bk-prod.fr/pure meadows 2/models/maple1/maple1.fbx"
+						filename = "3rdparty/bk-prod.fr/pure meadows 2/models/maple3/maple3.fbx"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
 						import_scale = 0.3937
@@ -117,14 +117,14 @@
 							exclude_by_default = true
 							exception_list = 
 							[
-								"Maple1_LOD0",
+								"Maple3_LOD0",
 							]
 						}
 					},
 					{
 						_class = "RenderMeshFile"
 						name = "LOD1"
-						filename = "3rdparty/bk-prod.fr/pure meadows 2/models/maple1/maple1.fbx"
+						filename = "3rdparty/bk-prod.fr/pure meadows 2/models/maple3/maple3.fbx"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
 						import_scale = 0.3937
@@ -137,14 +137,14 @@
 							exclude_by_default = true
 							exception_list = 
 							[
-								"Maple1_LOD1",
+								"Maple3_LOD1",
 							]
 						}
 					},
 					{
 						_class = "RenderMeshFile"
 						name = "LOD2"
-						filename = "3rdparty/bk-prod.fr/pure meadows 2/models/maple1/maple1.fbx"
+						filename = "3rdparty/bk-prod.fr/pure meadows 2/models/maple3/maple3.fbx"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
 						import_scale = 0.3937
@@ -157,14 +157,14 @@
 							exclude_by_default = true
 							exception_list = 
 							[
-								"Maple1_LOD2",
+								"Maple3_LOD2",
 							]
 						}
 					},
 					{
 						_class = "RenderMeshFile"
 						name = "LOD3"
-						filename = "3rdparty/bk-prod.fr/pure meadows 2/models/maple1/maple1.fbx"
+						filename = "3rdparty/bk-prod.fr/pure meadows 2/models/maple3/maple3.fbx"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
 						import_scale = 0.3937
@@ -177,7 +177,7 @@
 							exclude_by_default = true
 							exception_list = 
 							[
-								"Maple1_LOD3",
+								"Maple3_LOD3",
 							]
 						}
 					},
