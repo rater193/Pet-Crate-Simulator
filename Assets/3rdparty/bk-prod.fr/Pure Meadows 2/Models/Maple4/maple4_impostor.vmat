@@ -17,7 +17,7 @@ Layer0
 	//---- Color ----
 	g_flModelTintAmount "1.000"
 	g_vColorTint "[1.000000 1.000000 1.000000 1.000000]"
-	TextureColor "3rdparty/bk-prod.fr/pure meadows 2/models/maple4/maple4_impostor_a.tga"
+	TextureColor "3rdparty/bk-prod.fr/pure meadows 2/models/maple4/maple4_impostor_color.tga"
 
 	//---- Fade ----
 	g_flFadeExponent "1.000"
