@@ -1,0 +1,77 @@
+{
+  "Entries": [
+    {
+      "Prefab": {
+        "_type": "gameobject",
+        "prefab": "prefabs/clutter/mapletrees/maple1.prefab"
+      },
+      "Model": null,
+      "Weight": 1,
+      "HasAsset": true,
+      "AssetName": "maple1"
+    },
+    {
+      "Prefab": {
+        "_type": "gameobject",
+        "prefab": "prefabs/clutter/mapletrees/maple6.prefab"
+      },
+      "Model": null,
+      "Weight": 1,
+      "HasAsset": true,
+      "AssetName": "maple6"
+    },
+    {
+      "Prefab": {
+        "_type": "gameobject",
+        "prefab": "prefabs/clutter/mapletrees/maple5.prefab"
+      },
+      "Model": null,
+      "Weight": 1,
+      "HasAsset": true,
+      "AssetName": "maple5"
+    },
+    {
+      "Prefab": {
+        "_type": "gameobject",
+        "prefab": "prefabs/clutter/mapletrees/maple4.prefab"
+      },
+      "Model": null,
+      "Weight": 1,
+      "HasAsset": true,
+      "AssetName": "maple4"
+    },
+    {
+      "Prefab": {
+        "_type": "gameobject",
+        "prefab": "prefabs/clutter/mapletrees/maple3.prefab"
+      },
+      "Model": null,
+      "Weight": 1,
+      "HasAsset": true,
+      "AssetName": "maple3"
+    },
+    {
+      "Prefab": {
+        "_type": "gameobject",
+        "prefab": "prefabs/clutter/mapletrees/maple2.prefab"
+      },
+      "Model": null,
+      "Weight": 1,
+      "HasAsset": true,
+      "AssetName": "maple2"
+    }
+  ],
+  "IsEmpty": false,
+  "TileSizeEnum": "Size512",
+  "TileRadius": 4,
+  "Scatterer": {
+    "Type": "SimpleScatterer",
+    "Scale": "0.800000012 1.20000005",
+    "Density": 0.05,
+    "PlaceOnGround": true,
+    "HeightOffset": 0,
+    "AlignToNormal": false
+  },
+  "__references": [],
+  "__version": 0
+}
