@@ -11,7 +11,7 @@
 				[
 					{
 						_class = "LODGroup"
-						switch_threshold = 50.0
+						switch_threshold = 75.0
 						auto_simplify_mode = 0
 						auto_reduction = 0.5
 						auto_max_error = 0.0
@@ -27,7 +27,7 @@
 					},
 					{
 						_class = "LODGroup"
-						switch_threshold = 75.0
+						switch_threshold = 100.0
 						auto_simplify_mode = 0
 						auto_reduction = 0.5
 						auto_max_error = 0.0
@@ -43,7 +43,7 @@
 					},
 					{
 						_class = "LODGroup"
-						switch_threshold = 125.0
+						switch_threshold = 200.0
 						auto_simplify_mode = 0
 						auto_reduction = 0.5
 						auto_max_error = 0.0
@@ -59,7 +59,7 @@
 					},
 					{
 						_class = "LODGroup"
-						switch_threshold = 250.0
+						switch_threshold = 400.0
 						auto_simplify_mode = 0
 						auto_reduction = 0.5
 						auto_max_error = 0.0
