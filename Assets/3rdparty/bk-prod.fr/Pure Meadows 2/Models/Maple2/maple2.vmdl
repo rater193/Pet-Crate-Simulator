@@ -93,7 +93,7 @@
 							},
 							{
 								from = "maple2_imp.vmat"
-								to = "3rdparty/bk-prod.fr/pure meadows 2/materials/maple/mapleleaves.vmat"
+								to = "3rdparty/bk-prod.fr/pure meadows 2/models/maple2/maple2_impostor.vmat"
 							},
 						]
 						use_global_default = false

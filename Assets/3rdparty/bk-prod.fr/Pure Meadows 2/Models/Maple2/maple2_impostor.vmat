@@ -17,7 +17,7 @@ Layer0
 	//---- Color ----
 	g_flModelTintAmount "1.000"
 	g_vColorTint "[1.000000 1.000000 1.000000 1.000000]"
-	TextureColor "3rdparty/bk-prod.fr/pure meadows 2/models/maple1/maple1_impostor_a.tga"
+	TextureColor "3rdparty/bk-prod.fr/pure meadows 2/models/maple2/maple2_impostor_a.tga"
 
 	//---- Fade ----
 	g_flFadeExponent "1.000"
@@ -29,7 +29,7 @@ Layer0
 	g_flMetalness "0.000"
 
 	//---- Normal ----
-	TextureNormal "3rdparty/bk-prod.fr/pure meadows 2/models/maple1/maple1_impostor_n.tga"
+	TextureNormal "3rdparty/bk-prod.fr/pure meadows 2/models/maple2/maple2_impostor_n.tga"
 
 	//---- Roughness ----
 	g_flRoughnessScaleFactor "1.000"
@@ -48,5 +48,5 @@ Layer0
 	//---- Translucent ----
 	g_flAlphaTestReference "0.500"
 	g_flAntiAliasedEdgeStrength "0.250"
-	TextureTranslucency "3rdparty/bk-prod.fr/pure meadows 2/models/maple1/maple1_impostor_opacity.tga"
+	TextureTranslucency "3rdparty/bk-prod.fr/pure meadows 2/models/maple2/maple2_impostor_opacity.tga"
 }
