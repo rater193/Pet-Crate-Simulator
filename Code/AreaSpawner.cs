@@ -24,11 +24,15 @@ public sealed class AreaSpawner : Component
 			for ( int y = 0; y < area.y/ GridSize; y++ )
 			{
 				GameObject newObj = spawnlist[r.Next( spawnlist.Count)].Clone();
-				Rotation newRotation = new Rotation(0, 0, Rotation.Random.z, 0);
+				Vector3 originalScale = newObj.WorldScale;
 				newObj.Parent = GameObject;
 				newObj.LocalPosition = new Vector3( -25f + (x*2* GridSize / area.x*25), -25f + (y*2 * GridSize / area.y * 25), 0 );
-				//newObj.WorldRotation = newObj.WorldRotation * newRotation;
-				newObj.WorldScale = Vector3.One;
+				newObj.WorldPosition += new Vector3( (float)Game.Random.NextDouble()*25f, (float)Game.Random.NextDouble() * 25f, 0 );
+				newObj.WorldRotation = Rotation.FromYaw( (float)Game.Random.NextDouble()*360f );
+				float value = (float)Game.Random.NextDouble() * 100f;
+				value = value * 0.001f;
+				value += 1f;
+				newObj.WorldScale = originalScale * value;
 				newObj.NetworkSpawn();
 			}
 		}

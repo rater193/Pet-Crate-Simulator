@@ -1,0 +1,9 @@
+{
+  "Texture": null,
+  "Size": "1024,1024",
+  "Format": "RGBA8888",
+  "Multisample": "MultisampleNone",
+  "ClearColor": "1,1,1,1",
+  "__references": [],
+  "__version": 0
+}

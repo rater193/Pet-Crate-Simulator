@@ -7,7 +7,7 @@
   "UVScale": 10,
   "Metalness": 0,
   "NormalStrength": 1,
-  "HeightBlendStrength": 1,
+  "HeightBlendStrength": 10,
   "DisplacementScale": 0,
   "NoTiling": false,
   "Surface": null,

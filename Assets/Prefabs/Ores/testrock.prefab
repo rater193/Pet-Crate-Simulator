@@ -1,0 +1,69 @@
+{
+  "RootObject": {
+    "__guid": "3e9169ab-8391-4423-a8a0-f387685e2a5e",
+    "__version": 2,
+    "Flags": 0,
+    "Name": "testrock",
+    "Position": "0,0,0",
+    "Rotation": "0,0,-0.80965358,0.586908102",
+    "Scale": "1.29999995,1.29999995,1.39999998",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkFlags": 0,
+    "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
+    "OwnerTransfer": 1,
+    "Components": [],
+    "Children": [
+      {
+        "__guid": "8ab29462-e6ac-45a0-97d2-05942fb4db6b",
+        "__version": 2,
+        "__Prefab": "prefabs/ores/sm_ore12-2.prefab",
+        "__PrefabInstancePatch": {
+          "AddedObjects": [],
+          "RemovedObjects": [],
+          "PropertyOverrides": [
+            {
+              "Target": {
+                "Type": "GameObject",
+                "IdValue": "9461fb20-13ed-40f9-a955-0f17bd79af5a"
+              },
+              "Property": "Name",
+              "Value": "sm_ore12-2 (13)"
+            },
+            {
+              "Target": {
+                "Type": "GameObject",
+                "IdValue": "9461fb20-13ed-40f9-a955-0f17bd79af5a"
+              },
+              "Property": "Scale",
+              "Value": "1,1,1"
+            },
+            {
+              "Target": {
+                "Type": "GameObject",
+                "IdValue": "9461fb20-13ed-40f9-a955-0f17bd79af5a"
+              },
+              "Property": "NetworkMode",
+              "Value": 1
+            }
+          ],
+          "MovedObjects": []
+        },
+        "__PrefabIdToInstanceId": {
+          "9461fb20-13ed-40f9-a955-0f17bd79af5a": "8ab29462-e6ac-45a0-97d2-05942fb4db6b",
+          "6e89e630-180a-45e5-9669-a4c18f36f183": "70e8fe12-af1a-4e2b-b906-de7d81b5f427",
+          "91da8b9d-18e6-4253-a54c-cd128bdf6d08": "2ce255dd-ceba-429c-910f-ee5f726d898c"
+        }
+      }
+    ]
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [],
+  "__version": 2
+}
