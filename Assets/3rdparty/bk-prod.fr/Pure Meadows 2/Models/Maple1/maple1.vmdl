@@ -84,8 +84,24 @@
 						remaps = 
 						[
 							{
+								from = "MapleTrunk"
+								to = "3rdparty/bk-prod.fr/pure meadows 2/materials/maple/mapletrunk.vmat"
+							},
+							{
+								from = "MapleTrunk.vmat"
+								to = "3rdparty/bk-prod.fr/pure meadows 2/materials/maple/mapletrunk.vmat"
+							},
+							{
 								from = "mapletrunk.vmat"
 								to = "3rdparty/bk-prod.fr/pure meadows 2/materials/maple/mapletrunk.vmat"
+							},
+							{
+								from = "MapleLeaves"
+								to = "3rdparty/bk-prod.fr/pure meadows 2/materials/maple/mapleleaves.vmat"
+							},
+							{
+								from = "MapleLeaves.vmat"
+								to = "3rdparty/bk-prod.fr/pure meadows 2/materials/maple/mapleleaves.vmat"
 							},
 							{
 								from = "mapleleaves.vmat"
