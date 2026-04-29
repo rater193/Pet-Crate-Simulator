@@ -84818,6 +84818,11 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
+      "Sandbox.SelectionSetsSystem": {
+        "Data": {
+          "SelectionSets": []
+        }
+      },
       "Sandbox.Clutter.ClutterGridSystem": {
         "Storage": {
           "$blob": "9b8e46ca-1895-48ad-8ee0-ae8bf2a13e80"
@@ -84825,11 +84830,6 @@
       },
       "Sandbox.MovieMaker.MovieRecorderSystem": {
         "DisableClientRecording": false
-      },
-      "Sandbox.SelectionSetsSystem": {
-        "Data": {
-          "SelectionSets": []
-        }
       }
     }
   },
