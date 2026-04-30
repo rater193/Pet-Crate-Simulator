@@ -1,18 +1,17 @@
 using Sandbox;
-
 public sealed class InteractGivePlayerCoin : Interactable
 {
 
 	[Rpc.Broadcast]
 	public override void OnInteract( PlayerController interactingPlayer )
 	{
-		if( interactingPlayer.IsProxy)
+		if(interactingPlayer.Network.IsOwner)
 		{
-			Log.Info( "IS PROXY" );
+			PlayerData.LOCALDATA.PlayerMoney += 5;
 		}
 		else
 		{
-			Log.Info( "NOT PROXY" );
+
 		}
 	}
 }

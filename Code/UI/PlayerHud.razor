@@ -30,7 +30,7 @@
         height: 64px;
     }
 
-    .StatBox-Money {
+    .StatBox-Money-Container {
         position: relative;
         left: 16px;
         top: 4px;
@@ -38,6 +38,17 @@
         border-radius: 100%;
         height: 56px;
         background-color: #000000dd;
+    }
+
+    .StatBox-Money-Bock {
+        position: relative;
+        left: 8px;
+        padding-left: 15px; /* Adds space between the border and text */
+        justify-content: center;
+        align-items: center; /* Centers vertically */
+        text-align: left; /* Keeps the text aligned to the left */
+        max-width: 600px; /* Optional: prevents the block from being too wide */
+        font-size: 48px;
     }
 
     .Crosshair {
@@ -55,19 +66,26 @@
     <div class="Crosshair"></div>
     <div class="StatBox">
         <img class="Icon-Cash" src="ui/sandcoin_small.vtex" />
-        <div class="StatBox-Money"> </div>
+        <div class="StatBox-Money-Container"><div class="StatBox-Money-Bock">@RenderedMoneyValue</div></div>
     </div>
 </root>
 
 
 @code
 {
-
+    PlayerData playerData;
+    [Property] public int RenderedMoneyValue = -1;
     [Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
     [Property] public int width { get; set; } = 128;
+    public static PlayerHud SINGLETON;
+
+    protected override void OnStart()
+    {
+        SINGLETON = this;
+    }
 
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine( MyStringValue, width );
+    protected override int BuildHash() => System.HashCode.Combine(MyStringValue, width, RenderedMoneyValue);
 }
