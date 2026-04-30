@@ -3,7 +3,7 @@
     "__guid": "84acda77-336d-5f38-aa56-2aa507147d48",
     "__version": 2,
     "Flags": 0,
-    "Name": "WildGarlicBLeaves",
+    "Name": "wildgarlicbleaves",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "87bd06d2-8d3a-5261-bd37-8600d765286d",
+        "__guid": "38b92ab1-e0dc-56ae-9606-e534ca9d17f9",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

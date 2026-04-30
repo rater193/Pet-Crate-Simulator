@@ -3,7 +3,7 @@
     "__guid": "6412dc00-5fc7-5e6b-9721-e690bcb99c01",
     "__version": 2,
     "Flags": 0,
-    "Name": "SWFPlankShortB",
+    "Name": "swfplankshortb",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "01d201b6-6a94-5891-9b20-416dffaf050e",
+        "__guid": "7878d895-3756-54db-ae93-96041be65298",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

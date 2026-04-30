@@ -3,7 +3,7 @@
     "__guid": "2d25eca1-c181-5720-a74c-09b4ad16615a",
     "__version": 2,
     "Flags": 0,
-    "Name": "WildGarlicCSmall",
+    "Name": "wildgarliccsmall",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "84298fed-d0cf-5137-b433-86ddea80739d",
+        "__guid": "6f3d796c-51eb-533d-a7cc-297e8640ca4c",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

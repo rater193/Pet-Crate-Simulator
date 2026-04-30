@@ -3,7 +3,7 @@
     "__guid": "a9e99a47-5b07-53b3-bc79-13d08d19a159",
     "__version": 2,
     "Flags": 0,
-    "Name": "WaterLilyFlowerBPinkStem",
+    "Name": "waterlilyflowerbpinkstem",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "ee83fb9d-f25b-5ad2-aea8-65b6c6fa8cba",
+        "__guid": "fb88df30-4023-53f6-9d4b-af0dea04f81c",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

@@ -3,7 +3,7 @@
     "__guid": "33edd48f-c49e-5af3-bc26-12c7fb16c93c",
     "__version": 2,
     "Flags": 0,
-    "Name": "WildGarlicsClusterA",
+    "Name": "wildgarlicsclustera",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "a49c7166-993b-5735-b0ae-51f6551890bb",
+        "__guid": "8df8637e-0d16-5f47-8b1c-d80925b821c8",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

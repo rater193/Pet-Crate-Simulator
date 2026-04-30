@@ -3,7 +3,7 @@
     "__guid": "1d8ba211-9112-5449-9500-eb98605b7592",
     "__version": 2,
     "Flags": 0,
-    "Name": "RockPilesBigA",
+    "Name": "rockpilesbiga",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "33eb37df-77a0-5fae-99f0-7d81d6f51e98",
+        "__guid": "d09eab6d-de73-57ab-83c8-5f0e2d98895e",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

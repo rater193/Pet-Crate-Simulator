@@ -3,7 +3,7 @@
     "__guid": "ea58ba40-9adb-53a5-89ce-dc2d0a1771b3",
     "__version": 2,
     "Flags": 0,
-    "Name": "SWFModATiling",
+    "Name": "swfmodatiling",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "713a4026-4eb9-5870-9611-d628642dbb50",
+        "__guid": "63bff927-6495-5677-b8ec-e16047dda2e0",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

@@ -3,7 +3,7 @@
     "__guid": "253233c1-847a-52e0-a2be-a39e2523996a",
     "__version": 2,
     "Flags": 0,
-    "Name": "PlantSaplingE",
+    "Name": "plantsaplinge",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "39500130-588b-501e-b522-1ac90e8331af",
+        "__guid": "75ee280c-0df1-57d8-8134-e44476d92d3c",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

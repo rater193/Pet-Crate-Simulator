@@ -3,7 +3,7 @@
     "__guid": "2c234130-3797-5471-8380-ace6c589a578",
     "__version": 2,
     "Flags": 0,
-    "Name": "IvybranchAStraightSparse",
+    "Name": "ivybranchastraightsparse",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "1e017897-109e-5922-aa5a-dd37aa069a35",
+        "__guid": "e17e3fc5-d055-5b1a-b127-843f8408950d",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

@@ -3,7 +3,7 @@
     "__guid": "d9ec4d56-de80-5e52-9ef4-5a9697390540",
     "__version": 2,
     "Flags": 0,
-    "Name": "NettlesClusterA",
+    "Name": "nettlesclustera",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "cd55e79c-77bc-5935-a67c-452cf0a645b4",
+        "__guid": "57ec8d56-66aa-5152-bd5d-fe3fd62a7d54",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

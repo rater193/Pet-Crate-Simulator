@@ -3,7 +3,7 @@
     "__guid": "c6f2d928-3e01-5324-b6a9-cf7fa118401e",
     "__version": 2,
     "Flags": 0,
-    "Name": "OakSaplingTrunk",
+    "Name": "oaksaplingtrunk",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "5811106e-cc3b-531d-a578-71633e37b66f",
+        "__guid": "f6e140e4-0a82-53f5-b5d9-0c7c2439d133",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

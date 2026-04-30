@@ -3,7 +3,7 @@
     "__guid": "18ae7afd-481a-59e8-8db7-04c336ebdbaf",
     "__version": 2,
     "Flags": 0,
-    "Name": "FlyAgaricBMatureVariantD",
+    "Name": "flyagaricbmaturevariantd",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "c2bbe51b-a4ea-5099-accc-39cfe3aff551",
+        "__guid": "139d3b8d-98ea-59f6-981e-b5281db25d88",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

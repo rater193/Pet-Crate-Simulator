@@ -3,7 +3,7 @@
     "__guid": "eb79fd61-8648-5576-93c6-1b0acba39841",
     "__version": 2,
     "Flags": 0,
-    "Name": "TreeLogOakB",
+    "Name": "treelogoakb",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "4d037ea3-906e-596c-bc99-262c68d0ac49",
+        "__guid": "b3499b03-8cea-50df-b0e9-705f093c78a1",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

@@ -3,7 +3,7 @@
     "__guid": "867bc9e0-5c80-5a79-97bf-07dbf54802cf",
     "__version": 2,
     "Flags": 0,
-    "Name": "FernCClusterSparse",
+    "Name": "ferncclustersparse",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "1264b06d-168e-5d55-b1e8-0a2a9130dd59",
+        "__guid": "0aa41103-ad5e-55a0-8255-b32d2ca5ffcd",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

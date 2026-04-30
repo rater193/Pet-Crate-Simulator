@@ -3,7 +3,7 @@
     "__guid": "8d757f26-0c76-5024-b232-f11fa475beed",
     "__version": 2,
     "Flags": 0,
-    "Name": "RockBigC",
+    "Name": "rockbigc",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "648e6550-9b0d-5989-a6c2-09897d15b237",
+        "__guid": "858649aa-3df1-5b71-9b2f-7696c124caef",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

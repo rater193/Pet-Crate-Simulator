@@ -3,7 +3,7 @@
     "__guid": "0fb7c8a7-4341-54d0-85c6-0be54cbe84fc",
     "__version": 2,
     "Flags": 0,
-    "Name": "RuinedWallA",
+    "Name": "ruinedwalla",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "664c815b-3674-5bad-b48d-02e1c70a006d",
+        "__guid": "f1377801-f00c-52a9-b81d-083fa2229954",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

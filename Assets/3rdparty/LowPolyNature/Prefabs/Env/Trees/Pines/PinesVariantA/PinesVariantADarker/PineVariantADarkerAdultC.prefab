@@ -3,7 +3,7 @@
     "__guid": "7c9014a2-1f63-5cda-8ed8-38a508f4a436",
     "__version": 2,
     "Flags": 0,
-    "Name": "PineVariantADarkerAdultC",
+    "Name": "pinevariantadarkeradultc",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "f02d2640-80eb-5880-a62f-b576a5285d7a",
+        "__guid": "d7f37f82-fdec-5355-bd6d-9e67915c52ef",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

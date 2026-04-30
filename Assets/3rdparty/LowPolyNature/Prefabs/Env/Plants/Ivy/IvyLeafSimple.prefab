@@ -3,7 +3,7 @@
     "__guid": "97a21e62-bc39-5a65-959e-b970ac9053ca",
     "__version": 2,
     "Flags": 0,
-    "Name": "IvyLeafSimple",
+    "Name": "ivyleafsimple",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "9b2051bd-733b-5d85-8385-b477f1c7ccd6",
+        "__guid": "5637e533-d311-5faf-b9f6-d98a31437572",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

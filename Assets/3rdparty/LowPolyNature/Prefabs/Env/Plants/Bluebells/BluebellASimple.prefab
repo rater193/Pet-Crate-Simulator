@@ -3,7 +3,7 @@
     "__guid": "6c3cc8e9-105b-5797-a3d3-d6c9aeb8bdd8",
     "__version": 2,
     "Flags": 0,
-    "Name": "BluebellASimple",
+    "Name": "bluebellasimple",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "f8baeafc-8519-5e39-9d7b-3a8b85c955d4",
+        "__guid": "564fdeed-5547-59fa-bd29-c9bce6b3dae5",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

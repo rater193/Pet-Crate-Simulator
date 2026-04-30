@@ -3,7 +3,7 @@
     "__guid": "3d847fce-fdc6-5eaa-a78b-86fbd071fbb4",
     "__version": 2,
     "Flags": 0,
-    "Name": "SWFSimpleTilingShortB",
+    "Name": "swfsimpletilingshortb",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "92e2245e-3968-5540-a1ed-b28adde7ecdc",
+        "__guid": "d860693c-a0a1-5614-a18a-e43451e20f85",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

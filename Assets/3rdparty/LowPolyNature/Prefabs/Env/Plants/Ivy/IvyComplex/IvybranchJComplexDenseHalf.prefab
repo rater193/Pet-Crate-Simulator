@@ -3,7 +3,7 @@
     "__guid": "68a89553-866c-5ba2-bca0-48181219f1cb",
     "__version": 2,
     "Flags": 0,
-    "Name": "IvybranchJComplexDenseHalf",
+    "Name": "ivybranchjcomplexdensehalf",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "7cc6f4a0-974d-560a-8b54-cffc3f147a5f",
+        "__guid": "6e232529-a4db-5e67-ae66-ad5052e542ff",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

@@ -3,7 +3,7 @@
     "__guid": "69340c24-6490-5db7-8810-b5793bbe9df7",
     "__version": 2,
     "Flags": 0,
-    "Name": "ShaggyInkCapsClusterB",
+    "Name": "shaggyinkcapsclusterb",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "9e035848-52f1-5db5-924c-df55ed0a7266",
+        "__guid": "9b67000b-9101-55c4-88dc-6ff289e3dba5",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

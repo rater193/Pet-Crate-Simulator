@@ -3,7 +3,7 @@
     "__guid": "de1a1fc2-1a9a-5701-97d4-1517f4640279",
     "__version": 2,
     "Flags": 0,
-    "Name": "DaisyClosedA",
+    "Name": "daisycloseda",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "7f8092a2-e102-5255-9972-e28f14c5224c",
+        "__guid": "42def2a0-f078-569b-a54e-e8455848bd62",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

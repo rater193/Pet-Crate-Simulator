@@ -3,7 +3,7 @@
     "__guid": "91088e46-18d4-5d03-b72c-5ac5b4600587",
     "__version": 2,
     "Flags": 0,
-    "Name": "ShrubDTallVariantB",
+    "Name": "shrubdtallvariantb",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "c59b0a51-edf5-54a0-a824-3ec5657aa9de",
+        "__guid": "fdf600f0-3600-5ab3-aea2-9da0e9b551b5",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

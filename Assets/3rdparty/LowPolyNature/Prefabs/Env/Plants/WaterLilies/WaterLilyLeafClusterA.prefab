@@ -3,7 +3,7 @@
     "__guid": "08091951-18a1-5de6-a033-a8963abd33d9",
     "__version": 2,
     "Flags": 0,
-    "Name": "WaterLilyLeafClusterA",
+    "Name": "waterlilyleafclustera",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "387eb68d-5e8f-522f-96a9-745ec77162d7",
+        "__guid": "88fe2ae7-1ca8-587a-ab6e-7bfb084025c2",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

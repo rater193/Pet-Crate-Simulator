@@ -3,7 +3,7 @@
     "__guid": "0f49748c-cae4-5974-94cd-a8ad595b4799",
     "__version": 2,
     "Flags": 0,
-    "Name": "FernDClusterVariantA",
+    "Name": "ferndclustervarianta",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "321f7015-9421-5612-9bb0-42c00a523f44",
+        "__guid": "e631c52f-f15d-5c79-8b29-add1a1ca5e7c",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

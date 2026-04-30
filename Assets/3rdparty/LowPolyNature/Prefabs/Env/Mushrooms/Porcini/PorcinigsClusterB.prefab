@@ -3,7 +3,7 @@
     "__guid": "7077a31a-97b3-51ea-aa67-0a235c4b2506",
     "__version": 2,
     "Flags": 0,
-    "Name": "PorcinigsClusterB",
+    "Name": "porcinigsclusterb",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "5ab7f705-4c83-55e0-a925-90b806c22137",
+        "__guid": "579c023b-dd93-5712-86f2-f24ec853dade",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

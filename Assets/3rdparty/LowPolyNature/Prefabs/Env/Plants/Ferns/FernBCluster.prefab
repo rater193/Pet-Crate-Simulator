@@ -3,7 +3,7 @@
     "__guid": "10e7745b-f94c-5797-aa98-502652234183",
     "__version": 2,
     "Flags": 0,
-    "Name": "FernBCluster",
+    "Name": "fernbcluster",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "a228035a-1ca1-5d36-a723-f35004e9a505",
+        "__guid": "d1c696c3-1f55-546b-b5b6-9e9f12b4d322",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

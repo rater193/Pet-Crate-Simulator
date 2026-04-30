@@ -3,7 +3,7 @@
     "__guid": "1d31b278-7618-5b06-81cf-80b715743022",
     "__version": 2,
     "Flags": 0,
-    "Name": "IvybranchAStraightDense",
+    "Name": "ivybranchastraightdense",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "3445fb8e-14cd-5f87-8811-027d54e9867d",
+        "__guid": "5fa23aac-cc6b-5ff6-996c-e9decbc9cbac",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

@@ -3,7 +3,7 @@
     "__guid": "daa33ff5-97b0-54cd-b19d-a94c58edf6a7",
     "__version": 2,
     "Flags": 0,
-    "Name": "GenericTreeEAutumn",
+    "Name": "generictreeeautumn",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "51690061-d829-50f9-9fd6-529873da8c3b",
+        "__guid": "aecf8dfd-491a-55af-854c-230be0ca47b1",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

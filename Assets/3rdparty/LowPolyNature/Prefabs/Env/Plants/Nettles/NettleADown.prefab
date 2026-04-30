@@ -3,7 +3,7 @@
     "__guid": "f4bc5352-c7df-524e-9809-087316909ee2",
     "__version": 2,
     "Flags": 0,
-    "Name": "NettleADown",
+    "Name": "nettleadown",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "fc63dfba-2eba-5d49-94e3-0e8348c28b8e",
+        "__guid": "b61425f2-681b-5db6-8579-909cecad51c6",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

@@ -3,7 +3,7 @@
     "__guid": "0fc21224-20fe-5e55-918d-655ebb7e0d65",
     "__version": 2,
     "Flags": 0,
-    "Name": "ShrubBVaraintB",
+    "Name": "shrubbvaraintb",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "348117e4-90c5-5834-a629-68db74bc56c7",
+        "__guid": "242d2bfc-0b1e-54aa-80c4-d00913cc619a",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

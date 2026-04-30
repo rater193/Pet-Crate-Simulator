@@ -3,7 +3,7 @@
     "__guid": "b8f3da9e-320a-55f0-a206-8addf5b115c8",
     "__version": 2,
     "Flags": 0,
-    "Name": "ShrubETall",
+    "Name": "shrubetall",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "9de4584b-e5c6-5438-a444-a10149253292",
+        "__guid": "d1048818-c310-5eff-b608-3d076e317918",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

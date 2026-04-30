@@ -3,7 +3,7 @@
     "__guid": "c2c44f38-e740-54ce-b103-759495b7deb6",
     "__version": 2,
     "Flags": 0,
-    "Name": "RockPilesPebblesBDense",
+    "Name": "rockpilespebblesbdense",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "c7fa0d46-9c3f-5c58-8bc7-55d4a17380f5",
+        "__guid": "23ec4a7a-0504-5516-b772-f20a1c574814",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

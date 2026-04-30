@@ -3,7 +3,7 @@
     "__guid": "d3e94720-2de0-507f-a863-9734029ced8b",
     "__version": 2,
     "Flags": 0,
-    "Name": "GenericTreeDAutumn",
+    "Name": "generictreedautumn",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "4ef99b06-be27-502b-a7ee-2413d013a7f9",
+        "__guid": "e26163b6-22a6-5c94-9049-9510de5f3f9c",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

@@ -3,7 +3,7 @@
     "__guid": "1364bc71-de9e-5e64-b758-3f76ca87e03e",
     "__version": 2,
     "Flags": 0,
-    "Name": "DandelionCMoreLeaves",
+    "Name": "dandelioncmoreleaves",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "c7240ea1-2510-59e6-b738-84441f80478f",
+        "__guid": "49f23af6-4048-5e1d-863e-485cffab2e00",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

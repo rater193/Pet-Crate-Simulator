@@ -3,7 +3,7 @@
     "__guid": "6c004cbc-e0bd-56cd-8159-b7d29d56b4ce",
     "__version": 2,
     "Flags": 0,
-    "Name": "Ground4mFlatDarkGrassB",
+    "Name": "ground4mflatdarkgrassb",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "ab2768e0-2c9a-5a43-aa07-25d1d7aa7120",
+        "__guid": "f0c0f0a0-11d6-54ec-b393-38e7ba0f89be",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

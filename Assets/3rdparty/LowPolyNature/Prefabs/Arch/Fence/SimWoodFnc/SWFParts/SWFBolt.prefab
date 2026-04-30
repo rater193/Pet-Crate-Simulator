@@ -3,7 +3,7 @@
     "__guid": "48a32f56-45a2-51db-bc70-fa3869cd7ce1",
     "__version": 2,
     "Flags": 0,
-    "Name": "SWFBolt",
+    "Name": "swfbolt",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "9a978928-40fb-5cd0-8bd3-4a11dd802cd1",
+        "__guid": "0fd6ec9d-b4ea-5d63-9eac-92a6fc674b7e",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

@@ -3,7 +3,7 @@
     "__guid": "d8aad020-069f-5971-a719-bcf81a323b18",
     "__version": 2,
     "Flags": 0,
-    "Name": "ShrubC",
+    "Name": "shrubc",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "c73e9d98-dc78-591e-a041-9d1b924263e9",
+        "__guid": "13ecdf2c-0f81-5a45-842b-bfb49b0c580a",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

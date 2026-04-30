@@ -3,7 +3,7 @@
     "__guid": "a9ddab87-5b93-5d1e-811c-4ffdb59b1846",
     "__version": 2,
     "Flags": 0,
-    "Name": "TreeStumpBirchB",
+    "Name": "treestumpbirchb",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "b50ed853-e962-5df1-8eda-0235a6a59ad4",
+        "__guid": "666c1236-fbd6-5ada-b998-ad3cddd34b91",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

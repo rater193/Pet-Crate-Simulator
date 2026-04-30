@@ -3,7 +3,7 @@
     "__guid": "97846db8-0bc7-5991-a47b-942bd97f72f9",
     "__version": 2,
     "Flags": 0,
-    "Name": "PlankDamaged",
+    "Name": "plankdamaged",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "7abe490f-cf2f-5ef0-a99e-a21693ee3bb4",
+        "__guid": "e49be013-9aea-5320-8001-456cf24bdfc5",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

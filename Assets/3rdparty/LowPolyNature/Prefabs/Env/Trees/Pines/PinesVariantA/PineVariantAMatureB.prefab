@@ -3,7 +3,7 @@
     "__guid": "a9b90d1f-b368-56f7-b979-9d4cf471bd5d",
     "__version": 2,
     "Flags": 0,
-    "Name": "PineVariantAMatureB",
+    "Name": "pinevariantamatureb",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "6c18f8c3-4cc1-5afc-a9f2-65c9fdb842f8",
+        "__guid": "6fa98ec1-d845-5333-9f87-4e577a5f765f",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

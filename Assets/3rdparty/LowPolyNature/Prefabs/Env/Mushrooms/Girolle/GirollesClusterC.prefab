@@ -3,7 +3,7 @@
     "__guid": "c494e08c-e316-527c-940b-fe67b8e362d2",
     "__version": 2,
     "Flags": 0,
-    "Name": "GirollesClusterC",
+    "Name": "girollesclusterc",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "ff2f3b46-5313-5d0f-9e93-9e485d9204ba",
+        "__guid": "3d340858-6859-55da-bace-0d728f339243",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

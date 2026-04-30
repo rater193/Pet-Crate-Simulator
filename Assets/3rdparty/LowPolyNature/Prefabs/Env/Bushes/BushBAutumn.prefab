@@ -3,7 +3,7 @@
     "__guid": "9936df72-ff40-5bc5-b172-4180eeb3a28c",
     "__version": 2,
     "Flags": 0,
-    "Name": "BushBAutumn",
+    "Name": "bushbautumn",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "740e7ffd-b9e7-5716-a222-c6cbec6a5b46",
+        "__guid": "c81ee269-94ed-589c-8470-fbdd7bfb6dbe",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

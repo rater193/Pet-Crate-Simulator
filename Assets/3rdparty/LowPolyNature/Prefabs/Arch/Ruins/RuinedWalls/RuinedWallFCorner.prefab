@@ -3,7 +3,7 @@
     "__guid": "8c7d0387-207b-5718-b966-1e11e561ce4d",
     "__version": 2,
     "Flags": 0,
-    "Name": "RuinedWallFCorner",
+    "Name": "ruinedwallfcorner",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "93c8c56b-c1f4-50b4-9f4b-b56cba353c5b",
+        "__guid": "adad983e-565d-5061-8033-367c1b10043a",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

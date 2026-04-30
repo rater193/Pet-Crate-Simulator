@@ -3,7 +3,7 @@
     "__guid": "cb75ae84-1d5c-556d-9ed3-5e3dfdff4a9c",
     "__version": 2,
     "Flags": 0,
-    "Name": "TreeLogPileNormalD",
+    "Name": "treelogpilenormald",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "bc107214-73db-50dc-b0b6-e70cbf85f4f2",
+        "__guid": "e5ecfcc1-99f1-5b1c-8bb6-d1fe736c1aa7",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

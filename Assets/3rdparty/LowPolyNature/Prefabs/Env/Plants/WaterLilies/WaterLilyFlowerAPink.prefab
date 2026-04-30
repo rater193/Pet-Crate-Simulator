@@ -3,7 +3,7 @@
     "__guid": "ff271367-2fa0-5280-a522-2c67d420289a",
     "__version": 2,
     "Flags": 0,
-    "Name": "WaterLilyFlowerAPink",
+    "Name": "waterlilyflowerapink",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "f18f2115-3583-541c-b29a-b9e399faebe1",
+        "__guid": "d0fc5c60-6e56-57ed-b327-63d4326b590f",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

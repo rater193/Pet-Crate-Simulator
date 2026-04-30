@@ -3,7 +3,7 @@
     "__guid": "aca819f7-6304-5ab6-933f-a37855e96f6d",
     "__version": 2,
     "Flags": 0,
-    "Name": "WillowTreeAdultB",
+    "Name": "willowtreeadultb",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "99017611-5bc1-5355-86c3-d2722cc0afe2",
+        "__guid": "c2443e70-002b-53a5-8553-79f66d8ec5b9",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

@@ -3,7 +3,7 @@
     "__guid": "f8eb4dc6-74f7-5565-bf3c-7dc205ffbb8b",
     "__version": 2,
     "Flags": 0,
-    "Name": "RockSandstoneD",
+    "Name": "rocksandstoned",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "d961b40a-7f8c-5ab2-bde8-23c9ce013428",
+        "__guid": "1895fb15-9ebd-5e0d-baf6-eed387ef9a21",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

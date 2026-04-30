@@ -3,7 +3,7 @@
     "__guid": "dab9603f-b35a-501e-95da-29deab551cdf",
     "__version": 2,
     "Flags": 0,
-    "Name": "SWFPlankLongDJagged",
+    "Name": "swfplanklongdjagged",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "83273e37-ca06-55b2-8499-01a68555931b",
+        "__guid": "2474de1b-c06a-5b77-9b3c-2c76e89b26b5",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

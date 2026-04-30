@@ -3,7 +3,7 @@
     "__guid": "896f6482-8a1d-525b-a287-452fe8faa6f7",
     "__version": 2,
     "Flags": 0,
-    "Name": "DandelionCSingularWhite",
+    "Name": "dandelioncsingularwhite",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "983113f8-679e-56da-9947-9ebaed44f9c1",
+        "__guid": "0cd69097-70f2-514f-8d6a-3ad64982983d",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

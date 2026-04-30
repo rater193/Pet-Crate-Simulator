@@ -3,7 +3,7 @@
     "__guid": "1e16f5aa-2db1-5a7d-8704-fa089e50da02",
     "__version": 2,
     "Flags": 0,
-    "Name": "WillowTreeAutumnYoungCWeathered",
+    "Name": "willowtreeautumnyoungcweathered",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "baee1328-1c3c-5586-8171-2ae8d99a6384",
+        "__guid": "2a251ee0-892f-55b6-bb3f-64bc4d3aa04b",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

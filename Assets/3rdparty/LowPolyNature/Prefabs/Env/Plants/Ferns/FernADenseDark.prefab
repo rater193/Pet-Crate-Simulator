@@ -3,7 +3,7 @@
     "__guid": "a0a2970e-996b-57b3-9591-a470e55e58d6",
     "__version": 2,
     "Flags": 0,
-    "Name": "FernADenseDark",
+    "Name": "fernadensedark",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "08ed1229-1bb0-585d-bcac-9c775a5af522",
+        "__guid": "616e6970-68ff-5f2a-8ea0-a01acb7222df",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

@@ -3,7 +3,7 @@
     "__guid": "e6edc0d4-e0e8-5a8b-96db-872eff22db52",
     "__version": 2,
     "Flags": 0,
-    "Name": "OakAdultDAutumn",
+    "Name": "oakadultdautumn",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "1f836c45-0bbb-5c9c-8ddb-d0c2b3930351",
+        "__guid": "711abb12-38d5-5081-9752-a2c193007667",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

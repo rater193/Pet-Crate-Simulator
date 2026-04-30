@@ -3,7 +3,7 @@
     "__guid": "2003f7fd-eceb-5f29-9b02-ac898207aaad",
     "__version": 2,
     "Flags": 0,
-    "Name": "TreeRootC",
+    "Name": "treerootc",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "afd4c3ce-a666-5c7b-91f9-775a637bf777",
+        "__guid": "a8c4e2d7-2d26-5012-ab88-d03ac1b03421",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

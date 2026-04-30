@@ -3,7 +3,7 @@
     "__guid": "26d30785-231f-5fc0-8b1d-68153b870f95",
     "__version": 2,
     "Flags": 0,
-    "Name": "NettleLeafC",
+    "Name": "nettleleafc",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "cf33fbd4-5da6-5b74-9809-a342ac289742",
+        "__guid": "6db8bd7b-53c8-5972-8bc2-c12f07260cf3",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

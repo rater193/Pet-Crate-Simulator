@@ -3,7 +3,7 @@
     "__guid": "73524dd9-2935-5a97-bc84-58bbdf658f96",
     "__version": 2,
     "Flags": 0,
-    "Name": "TreeLogPileDarkD",
+    "Name": "treelogpiledarkd",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "e0041744-ac10-5515-81f4-4188b67b85d5",
+        "__guid": "205d4910-1b5c-59fa-9872-cea9ae1df070",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

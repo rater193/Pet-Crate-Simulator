@@ -3,7 +3,7 @@
     "__guid": "3e7735bf-92de-5039-aec3-6adcd8213267",
     "__version": 2,
     "Flags": 0,
-    "Name": "FoxgloveAVariantB",
+    "Name": "foxgloveavariantb",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "0a4fcfdd-1d20-593b-a5a6-a02ecaf7e91d",
+        "__guid": "160d8563-0892-513c-893c-0be22efed801",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

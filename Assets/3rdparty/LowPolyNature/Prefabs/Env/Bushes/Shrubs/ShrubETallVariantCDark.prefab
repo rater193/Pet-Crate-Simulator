@@ -3,7 +3,7 @@
     "__guid": "fba44925-231f-5882-abb5-e3c0a5053177",
     "__version": 2,
     "Flags": 0,
-    "Name": "ShrubETallVariantCDark",
+    "Name": "shrubetallvariantcdark",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "4e3e160f-f377-51bc-b0ad-161387e05186",
+        "__guid": "25bbbb79-e82e-58d0-9273-f36309fad208",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

@@ -3,7 +3,7 @@
     "__guid": "afd1153e-4fd5-59bd-98e6-82625d7786f4",
     "__version": 2,
     "Flags": 0,
-    "Name": "BirchTreeAutumnYoungDSimple",
+    "Name": "birchtreeautumnyoungdsimple",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "ee04f2f2-3e38-5108-973e-24c7cca6c2b1",
+        "__guid": "8d8cc4c8-9b2d-59a1-968b-a5b77e538b16",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

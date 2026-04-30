@@ -3,7 +3,7 @@
     "__guid": "f74a7db2-e070-5d2d-9cd4-add44bf0e9a6",
     "__version": 2,
     "Flags": 0,
-    "Name": "TreeStumpDarkC",
+    "Name": "treestumpdarkc",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "6cef4488-5acf-5f4b-92cf-460e33fddc70",
+        "__guid": "a0925822-a214-5433-bd48-c687ef61772c",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

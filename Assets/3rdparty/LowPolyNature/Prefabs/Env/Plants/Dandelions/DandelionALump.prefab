@@ -3,7 +3,7 @@
     "__guid": "0b16edad-ded6-5ca6-896d-16ced71fb158",
     "__version": 2,
     "Flags": 0,
-    "Name": "DandelionALump",
+    "Name": "dandelionalump",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "b48b49b4-fe11-5345-8031-361e727b2f2c",
+        "__guid": "ae63f2c0-1758-54de-8c63-b67c6300b50e",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

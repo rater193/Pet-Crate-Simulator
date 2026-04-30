@@ -3,7 +3,7 @@
     "__guid": "892a4699-c312-5ce0-be4e-7cfaf6da7ece",
     "__version": 2,
     "Flags": 0,
-    "Name": "DaisyBigC",
+    "Name": "daisybigc",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "ec40c898-6a3c-5c9c-acdf-bf6890f535b1",
+        "__guid": "16bc5cb2-4b5a-5da0-bb4b-6bb44c55b1bb",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

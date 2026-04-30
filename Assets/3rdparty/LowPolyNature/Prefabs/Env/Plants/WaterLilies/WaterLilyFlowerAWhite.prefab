@@ -3,7 +3,7 @@
     "__guid": "8aa0d4b8-ca20-5d06-bb24-9c4e50e968b1",
     "__version": 2,
     "Flags": 0,
-    "Name": "WaterLilyFlowerAWhite",
+    "Name": "waterlilyflowerawhite",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "84cb1c58-b981-55f2-a82c-71206fdb61a8",
+        "__guid": "d07cd1ea-388a-527f-a196-bd7f23d0751f",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

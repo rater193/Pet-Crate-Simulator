@@ -3,7 +3,7 @@
     "__guid": "0e651dd6-dc1d-5e60-ae38-274400ffc8c2",
     "__version": 2,
     "Flags": 0,
-    "Name": "Bush9",
+    "Name": "bush9",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "c71c3f89-1b0d-5217-ade7-354b46719579",
+        "__guid": "e1bef62a-0b95-576e-982b-dbb705c99c1e",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

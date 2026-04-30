@@ -3,7 +3,7 @@
     "__guid": "99de29f4-cb60-5390-b8f0-4032615d0aac",
     "__version": 2,
     "Flags": 0,
-    "Name": "FirewoodPileBBig",
+    "Name": "firewoodpilebbig",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "bf8b1c70-7544-536d-94b8-70469c6a1a60",
+        "__guid": "f1e5ef6a-ae35-5e7e-b6da-111be6ccc334",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

@@ -3,7 +3,7 @@
     "__guid": "25f5291e-ee88-5328-ab66-16ef5d3a0dd1",
     "__version": 2,
     "Flags": 0,
-    "Name": "IvybranchDDense",
+    "Name": "ivybranchddense",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "702e71f9-5c73-5c23-83f0-6f9cc1fb4435",
+        "__guid": "6770938e-9110-5e7b-9885-c5e2214905fd",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

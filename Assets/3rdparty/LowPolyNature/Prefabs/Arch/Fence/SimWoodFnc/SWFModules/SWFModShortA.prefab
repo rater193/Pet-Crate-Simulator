@@ -3,7 +3,7 @@
     "__guid": "d0aa5cd8-1d31-5bf4-b235-742ffa825c35",
     "__version": 2,
     "Flags": 0,
-    "Name": "SWFModShortA",
+    "Name": "swfmodshorta",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "2ece91e3-f002-51f2-b734-55174a838e6c",
+        "__guid": "c6c904a5-b560-53bf-8b5e-2b480d79b2fe",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

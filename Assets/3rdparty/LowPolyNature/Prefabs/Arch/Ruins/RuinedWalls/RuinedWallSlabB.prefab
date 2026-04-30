@@ -3,7 +3,7 @@
     "__guid": "e9f3006f-3eb4-524a-9c5b-b883bf946fdb",
     "__version": 2,
     "Flags": 0,
-    "Name": "RuinedWallSlabB",
+    "Name": "ruinedwallslabb",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "3dc22cdb-7ac3-54f9-b551-5e5dac7b2416",
+        "__guid": "c616328d-8162-5f91-a243-a932379a4b4a",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

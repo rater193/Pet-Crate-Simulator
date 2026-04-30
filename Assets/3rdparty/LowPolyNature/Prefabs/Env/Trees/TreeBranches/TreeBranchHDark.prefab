@@ -3,7 +3,7 @@
     "__guid": "6a83d038-7b6a-5cae-a4ff-5e56074cf388",
     "__version": 2,
     "Flags": 0,
-    "Name": "TreeBranchHDark",
+    "Name": "treebranchhdark",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "186fe8ea-0e9a-5d22-bec2-a3f63ea8c21c",
+        "__guid": "5bf8faac-1e36-5de1-be70-88e2db4b6fa2",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

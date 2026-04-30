@@ -3,7 +3,7 @@
     "__guid": "b169c8c3-d43a-5a02-9658-65142e954968",
     "__version": 2,
     "Flags": 0,
-    "Name": "CampfireBBigEmissive",
+    "Name": "campfirebbigemissive",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "86eda243-c450-5ff6-898f-3c53d7c2d53c",
+        "__guid": "a57d933d-572e-5fb4-96e1-12644468e81c",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

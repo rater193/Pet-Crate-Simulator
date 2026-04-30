@@ -3,7 +3,7 @@
     "__guid": "2f6d70d0-bb0f-553a-8674-133c72f7be37",
     "__version": 2,
     "Flags": 0,
-    "Name": "DaisyClusterMixedC",
+    "Name": "daisyclustermixedc",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "13e95a53-ebe2-5b11-a860-d3607082f60c",
+        "__guid": "cd4e069a-0219-5b56-b206-975f87d9cf8a",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

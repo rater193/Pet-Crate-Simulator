@@ -3,7 +3,7 @@
     "__guid": "712976fb-0faa-5b14-b4e8-ee4eff042be8",
     "__version": 2,
     "Flags": 0,
-    "Name": "RockSmallBFlat",
+    "Name": "rocksmallbflat",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "65b72bc7-050c-5e8b-bafc-d84c079bf7b1",
+        "__guid": "755af39e-354c-5ddf-8e51-75466cc9b2dc",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

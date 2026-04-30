@@ -3,7 +3,7 @@
     "__guid": "a6aa4b3a-1643-5307-ab13-862eb3f283d2",
     "__version": 2,
     "Flags": 0,
-    "Name": "NettleGMixedVariantC",
+    "Name": "nettlegmixedvariantc",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "c9c58d04-6bdc-5b2a-9f3f-58d798ab3b4c",
+        "__guid": "36354786-dda2-55e6-8b06-c3e93ebca01e",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

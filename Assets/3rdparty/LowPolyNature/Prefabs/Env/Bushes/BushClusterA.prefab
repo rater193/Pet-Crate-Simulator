@@ -3,7 +3,7 @@
     "__guid": "246641cb-063f-5825-a659-838a39b7c5b5",
     "__version": 2,
     "Flags": 0,
-    "Name": "BushClusterA",
+    "Name": "bushclustera",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "9a7fcf27-4632-5dfb-b90d-4a30911cc2e1",
+        "__guid": "8d3de5f7-322f-5464-8606-5c609bd169d3",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

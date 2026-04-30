@@ -3,7 +3,7 @@
     "__guid": "b26d852a-30d7-54e7-a64a-a4edbb5d6f79",
     "__version": 2,
     "Flags": 0,
-    "Name": "IvybranchBDenseHalf",
+    "Name": "ivybranchbdensehalf",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "cebd4ff8-d37c-57e7-a838-1b908bdc4f89",
+        "__guid": "33105aa2-f15e-50f3-b466-4a6438b77d56",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

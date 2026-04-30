@@ -3,7 +3,7 @@
     "__guid": "1ebe3c9a-ca5c-526c-af6a-651112398344",
     "__version": 2,
     "Flags": 0,
-    "Name": "FirewoodPileA",
+    "Name": "firewoodpilea",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "f96b60f4-17b8-5cd5-ac97-c1bc596f780d",
+        "__guid": "dc7337b2-36be-51ce-9d48-06bec99561e2",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

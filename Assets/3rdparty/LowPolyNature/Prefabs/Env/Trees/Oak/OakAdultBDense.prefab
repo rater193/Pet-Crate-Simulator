@@ -3,7 +3,7 @@
     "__guid": "16ed855e-888e-51de-8eae-9ed6d5820668",
     "__version": 2,
     "Flags": 0,
-    "Name": "OakAdultBDense",
+    "Name": "oakadultbdense",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "4f05ac89-1207-5c12-8f8a-5ec52c909796",
+        "__guid": "e09f1fce-f66d-53a7-bb27-2a149cf06b18",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

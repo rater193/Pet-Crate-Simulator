@@ -3,7 +3,7 @@
     "__guid": "7ad97664-b52f-58c1-b28a-5e3ecfe3f63a",
     "__version": 2,
     "Flags": 0,
-    "Name": "FlyAgaricsClusterA",
+    "Name": "flyagaricsclustera",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "896371a9-1af0-5dd4-adf2-30035e402e87",
+        "__guid": "60c238b9-e1df-53be-a0f2-64b2fa4f67dc",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

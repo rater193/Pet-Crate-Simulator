@@ -3,7 +3,7 @@
     "__guid": "21499e08-c809-5295-aba4-9bf5d43174c2",
     "__version": 2,
     "Flags": 0,
-    "Name": "OakMatureTrunk",
+    "Name": "oakmaturetrunk",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "1a1fb7eb-43b8-5af0-ac4c-878e83da4f93",
+        "__guid": "c3d71997-488b-5d02-9232-332d60cb0cbc",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

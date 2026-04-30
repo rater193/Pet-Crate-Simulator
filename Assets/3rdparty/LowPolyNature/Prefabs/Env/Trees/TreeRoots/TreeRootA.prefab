@@ -3,7 +3,7 @@
     "__guid": "3867b65a-affd-5849-8794-6e3af73a7dc1",
     "__version": 2,
     "Flags": 0,
-    "Name": "TreeRootA",
+    "Name": "treeroota",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "9d1345de-bdd5-58bf-966c-1d8c3e5a54d1",
+        "__guid": "1a1ba88b-8a23-5b58-8ffb-61278eb517e8",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

@@ -3,7 +3,7 @@
     "__guid": "bd4217c2-11b5-50ad-a5a3-f84eb864558b",
     "__version": 2,
     "Flags": 0,
-    "Name": "SWFPoleC",
+    "Name": "swfpolec",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "c1f24fdc-9f27-52f7-ab1d-f1bbb6a045bf",
+        "__guid": "ec574100-18ba-5fc1-88d4-c924d7660f4e",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

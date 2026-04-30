@@ -3,7 +3,7 @@
     "__guid": "deb8808b-ef8d-5cf5-a9f5-38697d471878",
     "__version": 2,
     "Flags": 0,
-    "Name": "RockPilesPebblesF",
+    "Name": "rockpilespebblesf",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "03387511-94e8-5a73-ad51-cee55214fb41",
+        "__guid": "ec93acad-36c4-5fad-b86c-0dd66e383fee",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

@@ -3,7 +3,7 @@
     "__guid": "47c18de3-514b-511c-aedb-df6e62d1d51d",
     "__version": 2,
     "Flags": 0,
-    "Name": "Ground4mFlatGroundB",
+    "Name": "ground4mflatgroundb",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "a3fabac0-2706-55ac-9cb3-f76a4039e149",
+        "__guid": "37fd1862-4551-516c-8a28-563bff847f14",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

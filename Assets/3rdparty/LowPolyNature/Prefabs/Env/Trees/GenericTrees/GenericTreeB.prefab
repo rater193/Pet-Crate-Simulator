@@ -3,7 +3,7 @@
     "__guid": "a0b1e91b-af3f-522b-868e-d2bf43de6845",
     "__version": 2,
     "Flags": 0,
-    "Name": "GenericTreeB",
+    "Name": "generictreeb",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "9e6e8c99-52c1-5209-8a7d-3ff9ea5c8879",
+        "__guid": "76958808-6ff7-5173-8b29-313a2ecb5987",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

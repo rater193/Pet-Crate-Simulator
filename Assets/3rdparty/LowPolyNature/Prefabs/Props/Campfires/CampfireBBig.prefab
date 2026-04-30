@@ -3,7 +3,7 @@
     "__guid": "68d5e9b0-3d7d-59a5-b4a3-c03a65d53e00",
     "__version": 2,
     "Flags": 0,
-    "Name": "CampfireBBig",
+    "Name": "campfirebbig",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "d664e27b-0d61-5ec3-8e2a-6c50d0b92203",
+        "__guid": "e1996256-67f1-571f-8c14-b9a3a32019ad",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

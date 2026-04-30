@@ -3,7 +3,7 @@
     "__guid": "451be8d4-57c1-5a5b-898a-4ceb0b51036c",
     "__version": 2,
     "Flags": 0,
-    "Name": "IvybranchGComplexDense",
+    "Name": "ivybranchgcomplexdense",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "66ec8b8a-e81d-5078-88c4-f9114b0cc0db",
+        "__guid": "7daa54bf-72a1-5c44-8c39-e06de9450b28",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

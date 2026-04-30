@@ -3,7 +3,7 @@
     "__guid": "bcc97b14-f4e7-583f-b826-613b5781dca7",
     "__version": 2,
     "Flags": 0,
-    "Name": "OakAdultASparseAutumn",
+    "Name": "oakadultasparseautumn",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "58deea19-c0bb-5eff-b81e-4a6564d71aec",
+        "__guid": "dfcce7b1-4a52-5d3c-aa48-272c8846ce01",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

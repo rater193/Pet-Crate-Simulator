@@ -3,7 +3,7 @@
     "__guid": "8bde36ee-566d-58d8-aae7-0de51541ba82",
     "__version": 2,
     "Flags": 0,
-    "Name": "WaterLilyLClusterWhiteA",
+    "Name": "waterlilylclusterwhitea",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "c77000c0-a0e6-5b02-bc51-4ff75371218f",
+        "__guid": "8dc028f0-7a2c-5431-8935-de743d8b0dc4",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

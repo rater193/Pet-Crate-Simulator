@@ -3,7 +3,7 @@
     "__guid": "b44238bd-2931-5879-8b61-1790523d6f51",
     "__version": 2,
     "Flags": 0,
-    "Name": "NettleCUpVariantA",
+    "Name": "nettlecupvarianta",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "9f8532d7-1bc4-5e03-9214-42c4a49989dd",
+        "__guid": "cd09231f-7475-5fd2-8928-69a688a2835e",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

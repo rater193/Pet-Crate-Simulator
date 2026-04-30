@@ -3,7 +3,7 @@
     "__guid": "c289c4c7-04d5-5d28-8714-962d0fd20ab3",
     "__version": 2,
     "Flags": 0,
-    "Name": "TreeBranchCOak",
+    "Name": "treebranchcoak",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "457d2213-08fa-5433-921a-9cc85c799842",
+        "__guid": "85afccc0-9222-5088-812f-6f94321b1a73",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

@@ -3,7 +3,7 @@
     "__guid": "2331825d-f9b6-59c2-ae9f-b58dcbe67dc1",
     "__version": 2,
     "Flags": 0,
-    "Name": "PlankMed",
+    "Name": "plankmed",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "05b272aa-d4cb-579f-95c8-2e448e53e70b",
+        "__guid": "d71c4d16-ab31-5635-ad91-f11fa037c0ac",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

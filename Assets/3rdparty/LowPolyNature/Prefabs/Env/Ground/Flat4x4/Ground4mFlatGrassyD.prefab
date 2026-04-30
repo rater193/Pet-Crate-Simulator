@@ -3,7 +3,7 @@
     "__guid": "0b4205bf-4934-5798-8449-4b0772c73840",
     "__version": 2,
     "Flags": 0,
-    "Name": "Ground4mFlatGrassyD",
+    "Name": "ground4mflatgrassyd",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "5b59b842-76af-5a5d-b310-e982991345d3",
+        "__guid": "5cd8f4b0-554c-51b8-8485-1167ece60dd7",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

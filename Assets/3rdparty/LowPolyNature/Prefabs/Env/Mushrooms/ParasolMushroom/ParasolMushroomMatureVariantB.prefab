@@ -3,7 +3,7 @@
     "__guid": "625eed6b-6b94-5292-a85b-d9ad0857f130",
     "__version": 2,
     "Flags": 0,
-    "Name": "ParasolMushroomMatureVariantB",
+    "Name": "parasolmushroommaturevariantb",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "1307c7db-f08a-554b-9db6-8e406ec7d7c9",
+        "__guid": "f1910859-c684-5795-b064-eb67df48f134",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

@@ -3,7 +3,7 @@
     "__guid": "10c76fb8-9356-5c06-8c8c-748f158efd41",
     "__version": 2,
     "Flags": 0,
-    "Name": "WaterLilyFlowerBWhiteStem",
+    "Name": "waterlilyflowerbwhitestem",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "d35f2e42-ccdc-5f12-bd30-d59887cd50aa",
+        "__guid": "5dcf4c44-76da-571a-bda3-9cb0fb630d9e",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

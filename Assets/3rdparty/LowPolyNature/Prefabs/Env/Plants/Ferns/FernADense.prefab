@@ -3,7 +3,7 @@
     "__guid": "1ab3809b-85e8-5406-889c-f8b47622a0f4",
     "__version": 2,
     "Flags": 0,
-    "Name": "FernADense",
+    "Name": "fernadense",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "cd505f83-ae26-5998-9882-1a2eaefb69b3",
+        "__guid": "63e6f761-5371-5e88-851c-72fe51b5cff7",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

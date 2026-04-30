@@ -3,7 +3,7 @@
     "__guid": "5744747f-15bc-5a25-91ce-c54084ef066b",
     "__version": 2,
     "Flags": 0,
-    "Name": "FirewoodLog",
+    "Name": "firewoodlog",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "debf1f0c-756d-5f5a-80db-3d20e0bd7a27",
+        "__guid": "e5ebb2bb-0547-5394-af3f-597c81de66fb",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

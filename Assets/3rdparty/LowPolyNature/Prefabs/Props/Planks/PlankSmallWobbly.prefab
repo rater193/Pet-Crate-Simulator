@@ -3,7 +3,7 @@
     "__guid": "f0726566-ee74-5ceb-a819-366316e012bd",
     "__version": 2,
     "Flags": 0,
-    "Name": "PlankSmallWobbly",
+    "Name": "planksmallwobbly",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "eeb18d22-fca8-5901-9223-4fd9aa4eded2",
+        "__guid": "e114d285-a241-58ed-8cb8-cde11bf8fb7c",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

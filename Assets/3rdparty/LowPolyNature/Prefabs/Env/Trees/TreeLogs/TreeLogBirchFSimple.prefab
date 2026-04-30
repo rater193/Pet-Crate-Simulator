@@ -3,7 +3,7 @@
     "__guid": "c2781a45-0fae-5c5c-99b1-deb051a1e570",
     "__version": 2,
     "Flags": 0,
-    "Name": "TreeLogBirchFSimple",
+    "Name": "treelogbirchfsimple",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "0a783cda-9bbd-513f-b379-96ed06395056",
+        "__guid": "c78656e5-2ef6-50db-848f-7ded02c71718",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

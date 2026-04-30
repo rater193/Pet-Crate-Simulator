@@ -3,7 +3,7 @@
     "__guid": "208dca68-ea6d-5c9e-a080-730b17736aac",
     "__version": 2,
     "Flags": 0,
-    "Name": "DeathCapAYoungVariantB",
+    "Name": "deathcapayoungvariantb",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "54ac9c67-42a6-5ab7-ab4b-67c3579d2922",
+        "__guid": "d963aee8-de52-5f03-8762-48ab6964c11a",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

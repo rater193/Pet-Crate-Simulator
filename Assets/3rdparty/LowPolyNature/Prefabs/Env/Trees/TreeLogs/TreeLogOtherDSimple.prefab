@@ -3,7 +3,7 @@
     "__guid": "490b32a0-a084-5e31-b6c1-de4e118dc546",
     "__version": 2,
     "Flags": 0,
-    "Name": "TreeLogOtherDSimple",
+    "Name": "treelogotherdsimple",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "676fafd5-906b-5983-9faf-47e15cd09857",
+        "__guid": "c58a314a-0e30-5c2a-b2b0-4d49be0a0ef9",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

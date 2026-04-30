@@ -3,7 +3,7 @@
     "__guid": "468f976d-598b-504d-9b2c-7a02c776d23f",
     "__version": 2,
     "Flags": 0,
-    "Name": "TreeRootDarkB",
+    "Name": "treerootdarkb",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "874fb868-5552-5a88-aa2d-2cfeedf3d884",
+        "__guid": "a8d9ad7a-b8a2-5e34-ba37-49662e0ee93d",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

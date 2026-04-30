@@ -3,7 +3,7 @@
     "__guid": "4bf12efc-4a34-5967-9907-e1d55891068a",
     "__version": 2,
     "Flags": 0,
-    "Name": "ReedClusterB",
+    "Name": "reedclusterb",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "00bd2d9f-0df3-5487-9f60-c83beb7db22f",
+        "__guid": "dcfa1eea-1c15-5765-aa97-16769851e08f",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

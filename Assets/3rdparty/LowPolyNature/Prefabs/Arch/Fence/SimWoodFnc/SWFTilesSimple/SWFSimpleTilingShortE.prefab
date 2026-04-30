@@ -3,7 +3,7 @@
     "__guid": "e2780b9f-6ba1-5555-8ee3-bada1d688e66",
     "__version": 2,
     "Flags": 0,
-    "Name": "SWFSimpleTilingShortE",
+    "Name": "swfsimpletilingshorte",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "40ea1d4c-4d3e-589e-a1e6-77b29022354c",
+        "__guid": "16c5eb9f-9bcd-53b6-8db2-359694cc7343",
         "__version": 2,
         "Flags": 0,
         "Name": "Rotated Box Collider",
@@ -90,7 +90,7 @@
         "Children": []
       },
       {
-        "__guid": "79a3b6d2-c695-5220-98e9-de2f2f598342",
+        "__guid": "37906422-28f3-5a2d-87e4-dacb7021fe58",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

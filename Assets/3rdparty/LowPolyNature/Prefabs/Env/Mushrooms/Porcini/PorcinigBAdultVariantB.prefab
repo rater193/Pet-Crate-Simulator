@@ -3,7 +3,7 @@
     "__guid": "df65363a-4626-5a90-90ec-f120d3a6407e",
     "__version": 2,
     "Flags": 0,
-    "Name": "PorcinigBAdultVariantB",
+    "Name": "porcinigbadultvariantb",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "b5110a63-88f3-5a1b-afa4-afbf3eb2bfd0",
+        "__guid": "c4a08e89-498f-5d7b-a8b3-4ecc70f30c11",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

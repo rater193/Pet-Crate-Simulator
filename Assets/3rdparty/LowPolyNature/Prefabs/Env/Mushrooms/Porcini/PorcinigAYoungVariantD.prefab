@@ -3,7 +3,7 @@
     "__guid": "fcd4a8a0-2958-589a-a84b-10303697f41e",
     "__version": 2,
     "Flags": 0,
-    "Name": "PorcinigAYoungVariantD",
+    "Name": "porcinigayoungvariantd",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "3941d9df-6f33-5b16-a537-e9451b22fb8a",
+        "__guid": "892a14e5-35df-5708-85c0-5c8b508ad638",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

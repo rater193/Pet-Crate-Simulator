@@ -3,7 +3,7 @@
     "__guid": "747d9fde-043b-5828-9fb1-5f7838b45c8f",
     "__version": 2,
     "Flags": 0,
-    "Name": "PineVariantADarkerGrowingA",
+    "Name": "pinevariantadarkergrowinga",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "e690e1f8-a17a-5cd3-bafd-187c377a32e3",
+        "__guid": "1e534151-7193-5df4-8d32-3c133c946e61",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

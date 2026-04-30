@@ -3,7 +3,7 @@
     "__guid": "77163c45-422b-560d-9a6a-d449c3daf3f8",
     "__version": 2,
     "Flags": 0,
-    "Name": "ShrubAVariantB",
+    "Name": "shrubavariantb",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "dcce36c9-5bf4-5735-bace-af95fb27da8e",
+        "__guid": "9a080cb8-f18b-5d25-a4ea-92c15f2685ac",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

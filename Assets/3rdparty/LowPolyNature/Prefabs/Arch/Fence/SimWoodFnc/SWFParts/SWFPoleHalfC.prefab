@@ -3,7 +3,7 @@
     "__guid": "600af54e-3196-5d82-9f2f-a906aa83b595",
     "__version": 2,
     "Flags": 0,
-    "Name": "SWFPoleHalfC",
+    "Name": "swfpolehalfc",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "6a7de3e5-fc96-5a0d-9b29-1a70c6c6576c",
+        "__guid": "d16ebe2c-6675-5a9a-b97f-5278a9736aa3",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

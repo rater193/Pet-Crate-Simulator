@@ -3,7 +3,7 @@
     "__guid": "502880fc-50bf-5a88-b759-0273244c3492",
     "__version": 2,
     "Flags": 0,
-    "Name": "WillowTreeAdultA",
+    "Name": "willowtreeadulta",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "0c3144d3-9f9e-5d45-a9d7-b14858263fe9",
+        "__guid": "49d24aa8-56ac-59f9-94df-27bf7fb84248",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

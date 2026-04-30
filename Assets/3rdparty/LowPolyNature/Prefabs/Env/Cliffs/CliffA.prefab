@@ -3,7 +3,7 @@
     "__guid": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a",
     "__version": 2,
     "Flags": 0,
-    "Name": "CliffA",
+    "Name": "cliffa",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "0bd2c1ff-9c2f-584a-a011-88b15704d396",
+        "__guid": "0b6074d4-1f8e-5876-8030-2c0d4ea6f1e1",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

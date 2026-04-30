@@ -3,7 +3,7 @@
     "__guid": "3efac895-c1e3-5e49-9940-2a44b3af0b62",
     "__version": 2,
     "Flags": 0,
-    "Name": "TreeBranchISimple",
+    "Name": "treebranchisimple",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "23fb8573-f81e-52bd-b448-59a63c3a9671",
+        "__guid": "1588f612-7a8b-5027-a975-a24734bfaa66",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

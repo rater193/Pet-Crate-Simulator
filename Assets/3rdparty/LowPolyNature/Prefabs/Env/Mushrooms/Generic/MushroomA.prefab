@@ -3,7 +3,7 @@
     "__guid": "a07fc32e-aa30-58e2-9159-2c5b8b75d098",
     "__version": 2,
     "Flags": 0,
-    "Name": "MushroomA",
+    "Name": "mushrooma",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "8f8053cd-76a3-5097-bf63-6bf872331bd7",
+        "__guid": "f5a63421-b324-5852-93fb-8984e9723b99",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

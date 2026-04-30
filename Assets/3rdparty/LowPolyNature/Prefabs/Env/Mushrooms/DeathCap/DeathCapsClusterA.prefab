@@ -3,7 +3,7 @@
     "__guid": "61defc93-bf20-5f2f-8b45-01e74d0652d5",
     "__version": 2,
     "Flags": 0,
-    "Name": "DeathCapsClusterA",
+    "Name": "deathcapsclustera",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "a6d2a11a-d2a7-5df2-9606-c316ef1cbf7c",
+        "__guid": "907db3c1-cb39-54e7-bfb4-197d8e9d05c6",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

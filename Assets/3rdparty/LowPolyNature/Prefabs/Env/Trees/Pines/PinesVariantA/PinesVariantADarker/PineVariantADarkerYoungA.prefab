@@ -3,7 +3,7 @@
     "__guid": "3a6156df-c3f9-5bc5-8835-7a4084346c93",
     "__version": 2,
     "Flags": 0,
-    "Name": "PineVariantADarkerYoungA",
+    "Name": "pinevariantadarkeryounga",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "a3cf95a8-ca03-527c-92c1-b1053e81e243",
+        "__guid": "f48c5edb-4d7f-5616-a425-2b234bbc4771",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

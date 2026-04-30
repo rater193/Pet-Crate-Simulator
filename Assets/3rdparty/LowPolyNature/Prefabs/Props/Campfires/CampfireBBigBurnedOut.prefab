@@ -3,7 +3,7 @@
     "__guid": "7ee2b7a3-7860-5159-ba22-74c2c97819c1",
     "__version": 2,
     "Flags": 0,
-    "Name": "CampfireBBigBurnedOut",
+    "Name": "campfirebbigburnedout",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "44f973ef-f01f-5963-a3de-e216a56654a0",
+        "__guid": "1975f651-e367-5021-9e2a-c31d8e9fbb82",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

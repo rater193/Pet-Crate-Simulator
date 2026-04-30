@@ -3,7 +3,7 @@
     "__guid": "ae793f40-bf04-57ea-b988-8a7750c5b477",
     "__version": 2,
     "Flags": 0,
-    "Name": "PlankStackA",
+    "Name": "plankstacka",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "9176d006-ad3a-5696-8ea4-4152808d6707",
+        "__guid": "9982de2f-7b3e-58d6-a7df-0494661dd123",
         "__version": 2,
         "Flags": 0,
         "Name": "Rotated Box Collider",
@@ -90,7 +90,7 @@
         "Children": []
       },
       {
-        "__guid": "f5d0ee51-41d2-5cae-b6f0-9bb106213d68",
+        "__guid": "62d0f5a7-f890-5c7b-83cb-d0e3de2d75c1",
         "__version": 2,
         "Flags": 0,
         "Name": "Rotated Box Collider 2",
@@ -135,7 +135,7 @@
         "Children": []
       },
       {
-        "__guid": "da01cd03-a3e8-5ddd-b8ee-ca08ac566fb5",
+        "__guid": "d5113d46-c226-578d-8359-a21cb2dc0197",
         "__version": 2,
         "Flags": 0,
         "Name": "Rotated Box Collider 3",
@@ -180,7 +180,7 @@
         "Children": []
       },
       {
-        "__guid": "c2cda4c7-131f-5581-afa7-0481f91ce03e",
+        "__guid": "8885c311-a57b-56d5-9bbc-a96dfb8d9773",
         "__version": 2,
         "Flags": 0,
         "Name": "Rotated Box Collider 4",
@@ -225,7 +225,7 @@
         "Children": []
       },
       {
-        "__guid": "650418d1-6ec7-5662-9faa-5bdc1f554833",
+        "__guid": "8e17de3f-a765-53e7-8307-1a031c740a4f",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

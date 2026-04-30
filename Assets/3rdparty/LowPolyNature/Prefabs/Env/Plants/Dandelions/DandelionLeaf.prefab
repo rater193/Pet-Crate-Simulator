@@ -3,7 +3,7 @@
     "__guid": "bfd22640-beec-5079-b785-8807f08f59f7",
     "__version": 2,
     "Flags": 0,
-    "Name": "DandelionLeaf",
+    "Name": "dandelionleaf",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "65157553-986e-5d2c-8db6-0c47beb2c946",
+        "__guid": "ebe4a28e-27b2-5c45-8bae-0361a05996fa",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

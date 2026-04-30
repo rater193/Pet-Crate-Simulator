@@ -3,7 +3,7 @@
     "__guid": "3ef36485-b116-5d79-871d-52d4bc1a351f",
     "__version": 2,
     "Flags": 0,
-    "Name": "TreeBranchJBig",
+    "Name": "treebranchjbig",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "b8796d19-3155-5fed-a4b2-ebfc64ec826f",
+        "__guid": "e1a12dcd-dd70-57ba-a499-a6419335cdf1",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

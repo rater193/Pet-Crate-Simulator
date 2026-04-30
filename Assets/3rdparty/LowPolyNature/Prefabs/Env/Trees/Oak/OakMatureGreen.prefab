@@ -3,7 +3,7 @@
     "__guid": "25e9d082-b2b2-5e66-87d8-643ec72882f5",
     "__version": 2,
     "Flags": 0,
-    "Name": "OakMatureGreen",
+    "Name": "oakmaturegreen",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "e3f55fa2-993f-5433-b68b-e0c1c63ba2d5",
+        "__guid": "d8dac88e-a6ee-5ea5-b64c-9200f846ac78",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

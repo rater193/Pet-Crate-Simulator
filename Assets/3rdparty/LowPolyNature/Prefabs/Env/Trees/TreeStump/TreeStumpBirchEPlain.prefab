@@ -3,7 +3,7 @@
     "__guid": "fd7a293f-592c-599c-8f87-b4c6cd310ef9",
     "__version": 2,
     "Flags": 0,
-    "Name": "TreeStumpBirchEPlain",
+    "Name": "treestumpbircheplain",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "f494b301-606c-5d07-aaa1-fd724f2131e9",
+        "__guid": "f03352f6-6d09-5785-8f11-b0d5469e01ad",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

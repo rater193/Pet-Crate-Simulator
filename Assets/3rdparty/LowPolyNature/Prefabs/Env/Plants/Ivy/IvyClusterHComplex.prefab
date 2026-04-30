@@ -3,7 +3,7 @@
     "__guid": "1764897a-6b1c-5e19-9f1e-2ce673965c04",
     "__version": 2,
     "Flags": 0,
-    "Name": "IvyClusterHComplex",
+    "Name": "ivyclusterhcomplex",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "56d04051-7193-5dbe-9b63-800d036bde9f",
+        "__guid": "ce014ce3-a701-5f4a-b86b-2fc1e1d7d9f0",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

@@ -3,7 +3,7 @@
     "__guid": "d6d66961-7ab8-5e52-a90b-fe13ee9abc47",
     "__version": 2,
     "Flags": 0,
-    "Name": "CampfireASmall",
+    "Name": "campfireasmall",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "6630b3f7-659e-526d-ac12-161bb48e95f2",
+        "__guid": "963a03aa-e279-5d3e-8e5d-b7d793e2fcbe",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

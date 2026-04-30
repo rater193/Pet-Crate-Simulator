@@ -3,7 +3,7 @@
     "__guid": "1673c038-6f87-57c1-989e-4eb5c6716774",
     "__version": 2,
     "Flags": 0,
-    "Name": "WaterLilyClusterStemsC",
+    "Name": "waterlilyclusterstemsc",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "6febe322-dfb8-5bcf-a09e-feda7eaec78a",
+        "__guid": "60b7a782-8894-5370-81b5-e62cb69f32a0",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

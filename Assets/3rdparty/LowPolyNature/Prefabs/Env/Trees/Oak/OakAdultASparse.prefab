@@ -3,7 +3,7 @@
     "__guid": "43c7c1c6-63c5-56cf-b10b-e79a2fe330e0",
     "__version": 2,
     "Flags": 0,
-    "Name": "OakAdultASparse",
+    "Name": "oakadultasparse",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "42da1132-fb41-5631-8cd2-169dee3f925b",
+        "__guid": "70899191-e658-584d-84f9-d3ec6dccd66a",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

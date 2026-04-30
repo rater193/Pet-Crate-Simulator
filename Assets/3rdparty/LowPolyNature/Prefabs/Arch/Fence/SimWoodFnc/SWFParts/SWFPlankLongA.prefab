@@ -3,7 +3,7 @@
     "__guid": "be3750b8-0e10-5131-83a0-fc597002c5f4",
     "__version": 2,
     "Flags": 0,
-    "Name": "SWFPlankLongA",
+    "Name": "swfplanklonga",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "d7b4ab16-add5-56cf-9c91-6dd95c4ebc0e",
+        "__guid": "0d31760a-966f-52f4-8831-ebc01453442f",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

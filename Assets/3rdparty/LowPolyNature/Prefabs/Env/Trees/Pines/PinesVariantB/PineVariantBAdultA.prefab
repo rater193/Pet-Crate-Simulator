@@ -3,7 +3,7 @@
     "__guid": "a13a018f-0d24-56a8-9f31-0cbc7442a46a",
     "__version": 2,
     "Flags": 0,
-    "Name": "PineVariantBAdultA",
+    "Name": "pinevariantbadulta",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "0903cf3b-4384-5fdb-a409-1d804e033540",
+        "__guid": "1dc7ed1c-2c69-50c9-9d23-a4d1fe0e6973",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

@@ -3,7 +3,7 @@
     "__guid": "dd261532-2fd5-54a5-8722-96f4d1722711",
     "__version": 2,
     "Flags": 0,
-    "Name": "TreeLogPineC",
+    "Name": "treelogpinec",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "6486d2be-2559-572f-9604-7869abf940ac",
+        "__guid": "d4e7f853-a16c-506c-8a38-78d4bb734037",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

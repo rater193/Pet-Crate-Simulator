@@ -3,7 +3,7 @@
     "__guid": "b8c7ec2f-48f3-561e-a8d7-e177b24177c6",
     "__version": 2,
     "Flags": 0,
-    "Name": "BirchTreeAdultA",
+    "Name": "birchtreeadulta",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "cb8eb522-c595-54e3-b0c6-2e44ebe9abf6",
+        "__guid": "fbb2d800-0afc-5c06-966a-3ce1fd5b472d",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

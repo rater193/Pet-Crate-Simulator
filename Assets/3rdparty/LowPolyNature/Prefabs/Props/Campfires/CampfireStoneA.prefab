@@ -3,7 +3,7 @@
     "__guid": "d47c60a6-497f-532a-9c8e-2549f30ed38b",
     "__version": 2,
     "Flags": 0,
-    "Name": "CampfireStoneA",
+    "Name": "campfirestonea",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "711434b5-4da2-59d8-9dd2-094460a5c986",
+        "__guid": "699bf27e-f91c-56e9-ae64-7518eb37301f",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

@@ -3,7 +3,7 @@
     "__guid": "0497e83c-16a1-5c2c-ab13-fdf32c334023",
     "__version": 2,
     "Flags": 0,
-    "Name": "ParasolMushroomsClusterA",
+    "Name": "parasolmushroomsclustera",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "543972f6-cf0b-51a5-9a61-dfb0b77b331f",
+        "__guid": "09d1ab1f-bf37-53e3-aa92-3fea47e12e29",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

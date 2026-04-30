@@ -3,7 +3,7 @@
     "__guid": "04cea83c-f412-5c60-b4f8-12a1fe7414ea",
     "__version": 2,
     "Flags": 0,
-    "Name": "DandelionsClusterC",
+    "Name": "dandelionsclusterc",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "f8bf9d8d-b2e0-56a0-b7fe-03335a3b56b6",
+        "__guid": "19148acd-97bf-5a84-8873-148095f762ca",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

@@ -3,7 +3,7 @@
     "__guid": "20460fc2-8492-51a1-b601-951174f4c3bf",
     "__version": 2,
     "Flags": 0,
-    "Name": "DaisyBigA",
+    "Name": "daisybiga",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "be4e0224-736a-5c15-81a2-2f93b75afe2e",
+        "__guid": "362f4eec-e0d1-54d9-9cff-5c98e0433065",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

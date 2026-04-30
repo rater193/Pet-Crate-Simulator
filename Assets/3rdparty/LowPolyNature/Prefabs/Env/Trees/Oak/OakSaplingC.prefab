@@ -3,7 +3,7 @@
     "__guid": "be6422b5-c5f8-561f-8fd1-c347a0dc2f5b",
     "__version": 2,
     "Flags": 0,
-    "Name": "OakSaplingC",
+    "Name": "oaksaplingc",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "56cda696-a893-5417-92b8-d60a0bf3cea6",
+        "__guid": "f9aa3ef1-2e2f-532e-9271-1236f0c0bc98",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

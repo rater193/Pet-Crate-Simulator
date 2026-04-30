@@ -3,7 +3,7 @@
     "__guid": "38bc2c43-604e-54e6-b858-1306a844002e",
     "__version": 2,
     "Flags": 0,
-    "Name": "NettleFDenseUpVariantC",
+    "Name": "nettlefdenseupvariantc",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "cbe19fa9-5c20-52f6-8f35-03f27568e70d",
+        "__guid": "0f6c9dfc-ea45-533d-88f3-3b9d8cf475a2",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

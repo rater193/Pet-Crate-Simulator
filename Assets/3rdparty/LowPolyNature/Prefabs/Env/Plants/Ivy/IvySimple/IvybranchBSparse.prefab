@@ -3,7 +3,7 @@
     "__guid": "1563e25b-1519-5f00-aac2-aa11e6ad4203",
     "__version": 2,
     "Flags": 0,
-    "Name": "IvybranchBSparse",
+    "Name": "ivybranchbsparse",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "8fe3cfb9-8e24-517c-90f7-d2e0a9dba44c",
+        "__guid": "ab1ae3c9-8531-52ac-afd0-661b38b60075",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

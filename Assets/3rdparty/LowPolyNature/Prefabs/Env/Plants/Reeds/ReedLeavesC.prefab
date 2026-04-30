@@ -3,7 +3,7 @@
     "__guid": "5003a6ec-32ad-5866-9a98-9842c2a350f6",
     "__version": 2,
     "Flags": 0,
-    "Name": "ReedLeavesC",
+    "Name": "reedleavesc",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "3702b2c4-25c9-5794-a6ac-881797adf50f",
+        "__guid": "0cd5e6e8-a11a-5bff-bae9-5db7bb7c5da0",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

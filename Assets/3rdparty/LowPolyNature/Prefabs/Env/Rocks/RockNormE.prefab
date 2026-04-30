@@ -3,7 +3,7 @@
     "__guid": "cd707e53-c14b-518d-bcf3-ecc5c0a2480f",
     "__version": 2,
     "Flags": 0,
-    "Name": "RockNormE",
+    "Name": "rocknorme",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "f1751b7b-c983-5c5c-b994-f2c59bc80f2e",
+        "__guid": "fd6e9617-0b84-5a36-ad89-e70c02fa34f0",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

@@ -3,7 +3,7 @@
     "__guid": "2e887179-832c-578d-9214-7f34f2126b5d",
     "__version": 2,
     "Flags": 0,
-    "Name": "TreeBranchAOak",
+    "Name": "treebranchaoak",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "3fa1d7b0-50f6-5679-bea0-d3bf45cd1d6f",
+        "__guid": "81f08a01-30c2-578b-b77c-bfa483262351",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

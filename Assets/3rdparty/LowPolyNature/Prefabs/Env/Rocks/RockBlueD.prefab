@@ -3,7 +3,7 @@
     "__guid": "0112cd1a-1942-5add-bef9-e18345d56b9d",
     "__version": 2,
     "Flags": 0,
-    "Name": "RockBlueD",
+    "Name": "rockblued",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "a219b68c-7a98-5823-b1b9-097dcf3b5b6d",
+        "__guid": "4de9673c-1e35-57e0-9f9c-d21fd85ef63a",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

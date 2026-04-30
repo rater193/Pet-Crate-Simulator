@@ -3,7 +3,7 @@
     "__guid": "81cfea3f-194d-5b30-ac9f-d2f3696c6366",
     "__version": 2,
     "Flags": 0,
-    "Name": "NettleEDenseDownVariantB",
+    "Name": "nettleedensedownvariantb",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "7bac7498-4875-538b-b8ea-fd5e0ebadef3",
+        "__guid": "54ffdd8d-9b73-59a1-b51f-7502911ba214",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

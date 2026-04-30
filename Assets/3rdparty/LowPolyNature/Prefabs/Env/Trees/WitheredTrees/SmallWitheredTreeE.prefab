@@ -3,7 +3,7 @@
     "__guid": "844e2065-62db-5fc2-bcf3-c1a51c649090",
     "__version": 2,
     "Flags": 0,
-    "Name": "SmallWitheredTreeE",
+    "Name": "smallwitheredtreee",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "b8fb82a5-0b4b-5523-ba9e-d40f310e3ab3",
+        "__guid": "9ffbf9c9-c3d4-5f37-8f8f-7538fc83bd2a",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

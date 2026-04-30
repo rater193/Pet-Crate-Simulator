@@ -3,7 +3,7 @@
     "__guid": "0d58f371-7caf-5d3c-a359-6101449c9d39",
     "__version": 2,
     "Flags": 0,
-    "Name": "BluebellALeaves",
+    "Name": "bluebellaleaves",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "a725d671-8614-518f-89a6-ba6afa22a1b1",
+        "__guid": "9c6d7ea6-a1c6-5495-93e8-4814e0ed0ecc",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

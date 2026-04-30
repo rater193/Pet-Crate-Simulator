@@ -3,7 +3,7 @@
     "__guid": "aabe7440-8433-5b7a-9b58-468a632b6d01",
     "__version": 2,
     "Flags": 0,
-    "Name": "WaterLilyLeafA",
+    "Name": "waterlilyleafa",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "e4392760-dc12-5a1f-a554-577a16603fa5",
+        "__guid": "305468aa-08b4-5598-bf13-8f13ceae6f4d",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

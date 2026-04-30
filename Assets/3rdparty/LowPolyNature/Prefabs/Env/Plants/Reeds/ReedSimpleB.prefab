@@ -3,7 +3,7 @@
     "__guid": "f8220bbd-c095-58c2-984d-aee898726621",
     "__version": 2,
     "Flags": 0,
-    "Name": "ReedSimpleB",
+    "Name": "reedsimpleb",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "9b7e48f9-7059-5eb9-b6da-b0e98710aec7",
+        "__guid": "9ea2e571-2cf4-59ad-a50a-a9065295f357",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

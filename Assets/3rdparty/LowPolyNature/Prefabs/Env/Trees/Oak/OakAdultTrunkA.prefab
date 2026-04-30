@@ -3,7 +3,7 @@
     "__guid": "ef2e9225-8104-5768-955c-8429e4bf57e1",
     "__version": 2,
     "Flags": 0,
-    "Name": "OakAdultTrunkA",
+    "Name": "oakadulttrunka",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "278dde94-5cda-5278-9711-d2abe48565f2",
+        "__guid": "b021ab53-2175-56ee-977b-8e6cf418e66c",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

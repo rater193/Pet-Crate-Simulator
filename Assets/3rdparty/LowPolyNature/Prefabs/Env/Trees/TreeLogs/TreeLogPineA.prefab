@@ -3,7 +3,7 @@
     "__guid": "f6bbc9e4-4bb6-52e5-a523-37c4d51ec16a",
     "__version": 2,
     "Flags": 0,
-    "Name": "TreeLogPineA",
+    "Name": "treelogpinea",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "08614330-3932-5286-8be0-28f216a676b5",
+        "__guid": "c42a9a40-36b8-552f-a840-05c243fa2226",
         "__version": 2,
         "Flags": 0,
         "Name": "Rotated Box Collider",
@@ -90,7 +90,7 @@
         "Children": []
       },
       {
-        "__guid": "ef582423-ad8d-5fdf-a124-0f581a0d7e43",
+        "__guid": "9a06d91f-d49a-5768-9b9e-1d809f918d11",
         "__version": 2,
         "Flags": 0,
         "Name": "Rotated Box Collider 2",
@@ -135,7 +135,7 @@
         "Children": []
       },
       {
-        "__guid": "f3f6e02d-a644-5a45-9be1-0d0aef5279d4",
+        "__guid": "ab9fbd30-02fa-5692-a085-b6b367d18098",
         "__version": 2,
         "Flags": 0,
         "Name": "Rotated Box Collider 3",
@@ -180,7 +180,7 @@
         "Children": []
       },
       {
-        "__guid": "d4d130c2-85e1-5789-9caa-02a8e99e67dd",
+        "__guid": "1d38c4d5-6840-582a-b377-423f50e62f79",
         "__version": 2,
         "Flags": 0,
         "Name": "Rotated Box Collider 4",
@@ -225,7 +225,7 @@
         "Children": []
       },
       {
-        "__guid": "f2ed31cd-b158-5c24-8d41-38a45b8ff84f",
+        "__guid": "579f5b0d-e208-5f0f-8666-171cd2c8a68e",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

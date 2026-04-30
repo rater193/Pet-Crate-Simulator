@@ -3,7 +3,7 @@
     "__guid": "2353af3b-b1cb-55ce-9561-53c2be1cb02c",
     "__version": 2,
     "Flags": 0,
-    "Name": "TreeBranchGBirch",
+    "Name": "treebranchgbirch",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "7a781f88-3952-5eae-9733-253900f30fa8",
+        "__guid": "587c5e22-7516-5f52-bc7c-dffccd2fd31f",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

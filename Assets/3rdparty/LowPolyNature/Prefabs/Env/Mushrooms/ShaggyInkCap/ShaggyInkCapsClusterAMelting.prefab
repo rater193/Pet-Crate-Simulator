@@ -3,7 +3,7 @@
     "__guid": "89c59c3b-e9ca-5b4f-a33e-fe1a153ade84",
     "__version": 2,
     "Flags": 0,
-    "Name": "ShaggyInkCapsClusterAMelting",
+    "Name": "shaggyinkcapsclusteramelting",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "851072b2-f133-5ee8-a9e8-8ef73d2fe29b",
+        "__guid": "2ae62245-493d-594b-bf4a-b54ccbe04a3d",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

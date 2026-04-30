@@ -3,7 +3,7 @@
     "__guid": "0c1f31fb-ba0e-5aa5-a196-e7f32421b2de",
     "__version": 2,
     "Flags": 0,
-    "Name": "IvybranchFComplexStraightDense",
+    "Name": "ivybranchfcomplexstraightdense",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "21a28619-21bd-51ad-976a-f1707a70abe3",
+        "__guid": "e526e4a1-a640-5129-a12c-4b082147910c",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

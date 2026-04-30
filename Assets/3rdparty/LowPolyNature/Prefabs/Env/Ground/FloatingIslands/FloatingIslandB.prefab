@@ -44,14 +44,13 @@
       },
       {
         "__type": "Sandbox.ModelCollider",
-        "__guid": "31c83424-ce20-4248-909f-77fd076861bf",
+        "__guid": "5647dd05-8cde-5d87-a337-a0b25af0e721",
         "__enabled": true,
         "Flags": 0,
         "ColliderFlags": 0,
         "Elasticity": null,
         "Friction": null,
         "IsTrigger": false,
-        "Model": "3rdparty/lowpolynature/models/env/ground/floatingislands/floatingislandb.vmdl",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -65,76 +64,11 @@
         "RollingResistance": null,
         "Static": false,
         "Surface": null,
-        "SurfaceVelocity": "0,0,0"
+        "SurfaceVelocity": "0,0,0",
+        "Model": "3rdparty/lowpolynature/models/env/ground/floatingislands/floatingislandb.vmdl"
       }
     ],
-    "Children": [
-      {
-        "__guid": "9b9425de-5b3c-5c8f-8185-e13bed877184",
-        "__version": 2,
-        "Flags": 0,
-        "Name": "Colliders",
-        "Position": "0,0,0",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
-        "Tags": "",
-        "Enabled": true,
-        "NetworkMode": 2,
-        "NetworkFlags": 0,
-        "NetworkOrphaned": 0,
-        "NetworkTransmit": true,
-        "OwnerTransfer": 1,
-        "Components": [
-          {
-            "__type": "Sandbox.ModelCollider",
-            "__guid": "ddbfb025-dfcd-56e2-8d44-33ac64880c40",
-            "__enabled": true,
-            "Flags": 0,
-            "ColliderFlags": 0,
-            "Elasticity": null,
-            "Friction": null,
-            "IsTrigger": false,
-            "Model": "3rdparty/lowpolynature/models/env/ground/floatingislands/floatingislandb.vmdl",
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "OnObjectTriggerEnter": null,
-            "OnObjectTriggerExit": null,
-            "OnTriggerEnter": null,
-            "OnTriggerExit": null,
-            "RollingResistance": null,
-            "Static": false,
-            "Surface": null,
-            "SurfaceVelocity": "0,0,0"
-          }
-        ],
-        "Children": []
-      }
-    ],
-    "__properties": {
-      "NetworkInterpolation": true,
-      "TimeScale": 1,
-      "WantsSystemScene": true,
-      "Metadata": {},
-      "NavMesh": {
-        "Enabled": false,
-        "IncludeStaticBodies": true,
-        "IncludeKeyframedBodies": true,
-        "EditorAutoUpdate": false,
-        "AgentHeight": 64,
-        "AgentRadius": 16,
-        "AgentStepSize": 18,
-        "AgentMaxSlope": 40,
-        "ExcludedBodies": "",
-        "IncludedBodies": "",
-        "DeferGeneration": false,
-        "CustomBounds": false
-      }
-    },
-    "__variables": []
+    "Children": []
   },
   "ResourceVersion": 2,
   "ShowInMenu": false,

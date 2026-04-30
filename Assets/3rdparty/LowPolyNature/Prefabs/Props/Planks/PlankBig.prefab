@@ -3,7 +3,7 @@
     "__guid": "39b975dc-dd56-537e-bb17-fa8971151d63",
     "__version": 2,
     "Flags": 0,
-    "Name": "PlankBig",
+    "Name": "plankbig",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "1c6540b0-4646-58b2-90c0-068cad49447a",
+        "__guid": "81fdce27-248c-5c43-8c37-ebb8749a2a57",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

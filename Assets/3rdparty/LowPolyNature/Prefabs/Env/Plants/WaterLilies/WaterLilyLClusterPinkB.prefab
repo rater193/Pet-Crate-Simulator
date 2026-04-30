@@ -3,7 +3,7 @@
     "__guid": "99d4b2c6-af8b-520a-a716-e7487b93c131",
     "__version": 2,
     "Flags": 0,
-    "Name": "WaterLilyLClusterPinkB",
+    "Name": "waterlilylclusterpinkb",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "4910a536-7126-5dd8-a38f-e6f33ea059c9",
+        "__guid": "198d2716-85ac-5b96-b016-816e76603760",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

@@ -3,7 +3,7 @@
     "__guid": "fd38a4b0-4f80-54d8-90ef-b7ca0a18da24",
     "__version": 2,
     "Flags": 0,
-    "Name": "SWFModA",
+    "Name": "swfmoda",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "77f485d9-6563-57ec-b95e-dc2733f8bcd1",
+        "__guid": "10948c1e-fd2b-5e16-8464-743a2c03f7d2",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

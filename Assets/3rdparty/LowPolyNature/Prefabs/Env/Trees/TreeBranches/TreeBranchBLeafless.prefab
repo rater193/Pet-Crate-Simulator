@@ -3,7 +3,7 @@
     "__guid": "92b736fc-6114-55d9-b485-55a97b25c1df",
     "__version": 2,
     "Flags": 0,
-    "Name": "TreeBranchBLeafless",
+    "Name": "treebranchbleafless",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "11928b52-352e-5a95-a95b-e4b0ec5ca7bd",
+        "__guid": "7f51feef-f366-52e0-a119-077369ef8eaa",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

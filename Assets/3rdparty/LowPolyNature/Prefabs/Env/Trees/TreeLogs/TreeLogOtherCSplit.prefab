@@ -3,7 +3,7 @@
     "__guid": "a8a37605-ec09-52f1-ae06-176d830239ae",
     "__version": 2,
     "Flags": 0,
-    "Name": "TreeLogOtherCSplit",
+    "Name": "treelogothercsplit",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "e9eccb16-a552-59f3-b3da-89c7b72c960a",
+        "__guid": "c2cb2fd1-b6bf-562e-b7b9-c3b6984d0c4c",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

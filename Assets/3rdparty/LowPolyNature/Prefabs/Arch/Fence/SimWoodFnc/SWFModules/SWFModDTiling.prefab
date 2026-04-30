@@ -3,7 +3,7 @@
     "__guid": "068638c8-b984-53ac-a5d2-1a1e26b12bb7",
     "__version": 2,
     "Flags": 0,
-    "Name": "SWFModDTiling",
+    "Name": "swfmoddtiling",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "db9f3505-0df5-563b-858e-73486f91709f",
+        "__guid": "08f69cbc-32cd-55b8-9ecb-4ec516ddd965",
         "__version": 2,
         "Flags": 0,
         "Name": "Rotated Box Collider",
@@ -90,7 +90,7 @@
         "Children": []
       },
       {
-        "__guid": "ec4680f6-917b-5587-bf79-c65031d2e85b",
+        "__guid": "c19546cb-8872-5b4a-bde8-84cee2c7f9bb",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

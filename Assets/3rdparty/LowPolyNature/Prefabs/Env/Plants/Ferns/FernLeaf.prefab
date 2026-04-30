@@ -3,7 +3,7 @@
     "__guid": "2aa1981e-860c-5f5c-a3ce-acdf097c1496",
     "__version": 2,
     "Flags": 0,
-    "Name": "FernLeaf",
+    "Name": "fernleaf",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "4d5e1442-00ab-5244-8a0d-32542877b32f",
+        "__guid": "74434a2c-4287-5d97-a0d4-b199103e7150",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

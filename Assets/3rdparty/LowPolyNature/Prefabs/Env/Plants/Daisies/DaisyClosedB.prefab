@@ -3,7 +3,7 @@
     "__guid": "85024d78-b3d1-5e35-8125-c11222910f96",
     "__version": 2,
     "Flags": 0,
-    "Name": "DaisyClosedB",
+    "Name": "daisyclosedb",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "6971b14a-f8b8-5164-8c6a-24b13486c9b8",
+        "__guid": "37de847e-3588-5603-9ee4-c2bdfa268b9f",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

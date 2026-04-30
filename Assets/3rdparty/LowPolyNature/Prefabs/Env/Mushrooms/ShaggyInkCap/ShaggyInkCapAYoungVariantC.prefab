@@ -3,7 +3,7 @@
     "__guid": "ddef0912-5408-5f10-a310-9048787d9734",
     "__version": 2,
     "Flags": 0,
-    "Name": "ShaggyInkCapAYoungVariantC",
+    "Name": "shaggyinkcapayoungvariantc",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "448d6b3a-d77f-5e4b-a799-34917bf160b6",
+        "__guid": "9adeac0a-0324-5027-9d5e-ac4e589ffdf0",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

@@ -3,7 +3,7 @@
     "__guid": "b66416a6-7827-5799-9053-5c25f2993eb7",
     "__version": 2,
     "Flags": 0,
-    "Name": "BluebellsClusterA",
+    "Name": "bluebellsclustera",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "4261cbd1-e375-5b34-80a1-bfea4e4a3b69",
+        "__guid": "9bbf1e2d-d63e-57db-9367-41c8ce16bcf7",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

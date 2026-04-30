@@ -3,7 +3,7 @@
     "__guid": "a80813b6-acca-571b-9709-a1ddde42c465",
     "__version": 2,
     "Flags": 0,
-    "Name": "GirolleAVariantB",
+    "Name": "girolleavariantb",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "09f7e83f-43f4-5da4-9f51-d5bf4bcb89bf",
+        "__guid": "c1782b99-d827-56ba-9216-b72a9aa2fc7c",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

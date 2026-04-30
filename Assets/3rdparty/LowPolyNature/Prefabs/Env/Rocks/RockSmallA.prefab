@@ -3,7 +3,7 @@
     "__guid": "1a53efaf-d8f9-5c5f-87d4-c6d302d8424d",
     "__version": 2,
     "Flags": 0,
-    "Name": "RockSmallA",
+    "Name": "rocksmalla",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "955d8460-5eef-58f9-bc01-7083cf6c19ad",
+        "__guid": "2adb8471-4460-5248-a9cc-6f05f3db099e",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",

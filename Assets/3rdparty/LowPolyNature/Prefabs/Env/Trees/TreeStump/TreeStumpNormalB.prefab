@@ -3,7 +3,7 @@
     "__guid": "8fd322db-9dce-5fe9-a7bc-ffdcc40a7eb2",
     "__version": 2,
     "Flags": 0,
-    "Name": "TreeStumpNormalB",
+    "Name": "treestumpnormalb",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "__guid": "e715b33e-040b-50ed-87f9-7bcae3ff26ca",
+        "__guid": "ced036fc-8582-5204-9ed9-47be5a68ff37",
         "__version": 2,
         "Flags": 0,
         "Name": "Colliders",
