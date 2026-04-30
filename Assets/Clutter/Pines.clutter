@@ -1,0 +1,16 @@
+{
+  "Entries": [],
+  "IsEmpty": true,
+  "TileSizeEnum": "Size512",
+  "TileRadius": 4,
+  "Scatterer": {
+    "Type": "SimpleScatterer",
+    "Scale": "0.800000012 1.20000005",
+    "Density": 0.05,
+    "PlaceOnGround": true,
+    "HeightOffset": 0,
+    "AlignToNormal": false
+  },
+  "__references": [],
+  "__version": 0
+}

@@ -50,7 +50,7 @@
         "Flags": 0,
         "Name": "Colliders",
         "Position": "0,0,0",
-        "Rotation": "0,0,0,1",
+        "Rotation": "0,0,0.707106769,0.707106769",
         "Scale": "1,1,1",
         "Tags": "",
         "Enabled": true,
@@ -65,6 +65,7 @@
             "__guid": "059513bc-58f7-54d5-ae13-e6ad251efd56",
             "__enabled": true,
             "Flags": 0,
+            "Center": "11.4308529,-0.303672999,593.195435",
             "ColliderFlags": 0,
             "Elasticity": null,
             "Friction": null,
@@ -80,16 +81,36 @@
             "OnTriggerEnter": null,
             "OnTriggerExit": null,
             "RollingResistance": null,
+            "Scale": "1263.74841,756.677612,1186.62549",
             "Static": false,
             "Surface": null,
-            "SurfaceVelocity": "0,0,0",
-            "Center": "11.430853,-0.303673,593.195428",
-            "Scale": "1263.748417,756.67762,1186.625461"
+            "SurfaceVelocity": "0,0,0"
           }
         ],
         "Children": []
       }
-    ]
+    ],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": false,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": "",
+        "DeferGeneration": false,
+        "CustomBounds": false
+      }
+    },
+    "__variables": []
   },
   "ResourceVersion": 2,
   "ShowInMenu": false,
