@@ -214,13 +214,15 @@
         "OnComponentEnabled": null,
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
-        "OnComponentUpdate": null
+        "OnComponentUpdate": null,
+        "PlayerMoney": 0
       },
       {
         "__type": "Inventory",
         "__guid": "79060115-ac9b-49ba-94f5-2df9940b1119",
         "__enabled": true,
         "Flags": 0,
+        "InventorySize": 10,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
