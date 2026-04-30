@@ -1,0 +1,23 @@
+{
+  "publish": {
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "Ground 4Mflatgrassye",
+      "Type": "model",
+      "Org": "local",
+      "Ident": "ground4mflatgrassye",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": [
+        "chase.cylinder#57472"
+      ],
+      "Mounts": null,
+      "IsStandaloneOnly": false,
+      "Metadata": {
+        "SingleAssetSource": "3rdparty/lowpolynature/models/env/ground/flat_4x4/ground4mflatgrassye.vmdl"
+      }
+    }
+  }
+}

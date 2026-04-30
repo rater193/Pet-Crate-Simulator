@@ -1,0 +1,23 @@
+{
+  "publish": {
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "Door 10 1 Door",
+      "Type": "model",
+      "Org": "local",
+      "Ident": "door101door",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": [
+        "chase.cylinder#57472"
+      ],
+      "Mounts": null,
+      "IsStandaloneOnly": false,
+      "Metadata": {
+        "SingleAssetSource": "3rdparty/bk-prod.fr/pure meadows 2/models/warp_house_7b/door_10_1_door.vmdl"
+      }
+    }
+  }
+}

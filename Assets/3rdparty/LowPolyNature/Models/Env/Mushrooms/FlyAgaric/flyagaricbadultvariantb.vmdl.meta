@@ -1,0 +1,23 @@
+{
+  "publish": {
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "Flyagaricbadultvariantb",
+      "Type": "model",
+      "Org": "local",
+      "Ident": "flyagaricbadultvariantb",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": [
+        "chase.cylinder#57472"
+      ],
+      "Mounts": null,
+      "IsStandaloneOnly": false,
+      "Metadata": {
+        "SingleAssetSource": "3rdparty/lowpolynature/models/env/mushrooms/flyagaric/flyagaricbadultvariantb.vmdl"
+      }
+    }
+  }
+}
