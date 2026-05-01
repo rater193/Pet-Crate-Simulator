@@ -36,28 +36,33 @@
 </style>
 
 <root>
-    <div class="title">@health / @maxHealth - @HealthPercent%</div>
-
+    @if(ShouldShowHealthBar ) {
     <div class="healthbarBackground">
+        <div class="title">@health / @maxHealth - @HealthPercent%</div>
         <div class="healthbarForeground" style="width: @(WidthPercent)%;"></div>
     </div>
+    }
 </root>
 
 @code
 {
     [Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
+    [Property, Sync] public int health { get; set; } = 100;
+    [Property, Sync] public int maxHealth { get; set; } = 100;
 
-    [Property] public int health { get; set; } = 100;
-    [Property] public int maxHealth { get; set; } = 100;
-
-
-    private float HealthPercent {
+    public bool ShouldShowHealthBar
+    {
         get
         {
-            if (maxHealth <= 0)
-                return 0f;
+            return health < maxHealth ? true : false;
+        }
+    }
 
-            return ((float)health / (float)maxHealth * 100f).Clamp(0f, 100f);
+
+    private int HealthPercent {
+        get
+        {
+            return (int)((float)health / (float)maxHealth * 100f).Clamp(0f, 100f);
         }
     }
 
@@ -68,7 +73,7 @@
             if (maxHealth <= 0)
                 return 0f;
 
-            return 8f + (92f * (WidthPercent/100f));
+            return 8f+(92f*((float)health / (float)maxHealth));
         }
     }
 
@@ -80,6 +85,6 @@
 
     protected override int BuildHash()
     {
-        return System.HashCode.Combine(MyStringValue, health, maxHealth, WidthPercent, HealthPercent);
+        return System.HashCode.Combine(MyStringValue, health, maxHealth, WidthPercent, HealthPercent, ShouldShowHealthBar);
     }
 }

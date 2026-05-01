@@ -1,23 +1,23 @@
 {
   "RootObject": {
-    "__guid": "b200091f-7ce3-4319-88ad-99d11bea651a",
+    "__guid": "d8b651f1-f8c7-49aa-9a1c-1e94f9e47552",
     "__version": 2,
     "Flags": 0,
     "Name": "coinstack1",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
-    "Scale": "2.78566623,2.78566623,2.78566623",
-    "Tags": "playerclip",
+    "Scale": "1,1,1",
+    "Tags": "",
     "Enabled": true,
-    "NetworkMode": 2,
+    "NetworkMode": 1,
     "NetworkFlags": 0,
-    "NetworkOrphaned": 0,
+    "NetworkOrphaned": 1,
     "NetworkTransmit": true,
     "OwnerTransfer": 1,
     "Components": [
       {
         "__type": "Sandbox.ModelRenderer",
-        "__guid": "05d6b6f1-fc86-4754-b1e0-7a16b84af445",
+        "__guid": "a00f949b-a0bb-470b-82dc-0d37769d346e",
         "__enabled": false,
         "Flags": 0,
         "BodyGroups": 18446744073709551615,
@@ -26,7 +26,7 @@
         "MaterialGroup": null,
         "MaterialOverride": null,
         "Materials": null,
-        "Model": null,
+        "Model": "models/dev/box.vmdl",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -40,14 +40,14 @@
           "AfterUILayer": false
         },
         "RenderType": "On",
-        "Tint": "1,1,1,0.09"
+        "Tint": "1,1,1,1"
       },
       {
         "__type": "Sandbox.BoxCollider",
-        "__guid": "daf6dcbd-f81b-4ed8-8c06-4a748221f58b",
+        "__guid": "3b718242-e6eb-40de-a0ea-0326d6757800",
         "__enabled": true,
         "Flags": 0,
-        "Center": "0,0,1.4397049",
+        "Center": "0,0,0",
         "ColliderFlags": 0,
         "Elasticity": null,
         "Friction": null,
@@ -63,29 +63,20 @@
         "OnTriggerEnter": null,
         "OnTriggerExit": null,
         "RollingResistance": null,
-        "Scale": "25,25,2.87940979",
+        "Scale": "50,50,50",
         "Static": false,
         "Surface": null,
         "SurfaceVelocity": "0,0,0"
       },
       {
-        "__type": "Destructable",
-        "__guid": "d0ef3929-0741-4a57-b920-e5b8dc033197",
+        "__type": "InteractGivePlayerCoin",
+        "__guid": "855ee6f4-2dd5-4347-9500-993cc87e6624",
         "__enabled": true,
         "Flags": 0,
-        "hp": 5,
-        "OnComponentDestroy": null,
-        "OnComponentDisabled": null,
-        "OnComponentEnabled": null,
-        "OnComponentFixedUpdate": null,
-        "OnComponentStart": null,
-        "OnComponentUpdate": null
-      },
-      {
-        "__type": "Interactable",
-        "__guid": "e394d1b2-587e-46c5-91c2-8a0280752e1b",
-        "__enabled": true,
-        "Flags": 0,
+        "health": 2,
+        "maxHealth": 2,
+        "moneyPerHit": 1,
+        "moneyWhenDestroyed": 1,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -97,13 +88,13 @@
     ],
     "Children": [
       {
-        "__guid": "44d97033-5058-41f5-9677-8e9536b3dcc4",
+        "__guid": "8f09f93a-6fa3-43c3-bb81-8fa6249ec9c7",
         "__version": 2,
         "Flags": 0,
         "Name": "smodel_coin",
-        "Position": "0.000262925198,0.00017528348,1.43636036",
+        "Position": "0,0,0",
         "Rotation": "0,-0.707106769,0,0.707106769",
-        "Scale": "1,1,1",
+        "Scale": "2.78566623,2.78566623,2.78566623",
         "Tags": "",
         "Enabled": true,
         "NetworkMode": 2,
@@ -114,7 +105,7 @@
         "Components": [
           {
             "__type": "Sandbox.ModelRenderer",
-            "__guid": "f6475287-668e-42f9-9955-ccda08eebcbe",
+            "__guid": "9c0285fa-976a-4782-8074-0243d26e5efb",
             "__enabled": true,
             "Flags": 0,
             "BodyGroups": 18446744073709551615,
@@ -138,61 +129,6 @@
             },
             "RenderType": "On",
             "Tint": "1,1,1,1"
-          }
-        ],
-        "Children": []
-      },
-      {
-        "__guid": "d6394c8b-6e2e-46e7-ab92-bcf2ca7e4e55",
-        "__version": 2,
-        "Flags": 0,
-        "Name": "StatsUI",
-        "Position": "0,0,0",
-        "Rotation": "0,0,0,1",
-        "Scale": "5,5,5",
-        "Tags": "",
-        "Enabled": true,
-        "NetworkMode": 2,
-        "NetworkFlags": 0,
-        "NetworkOrphaned": 0,
-        "NetworkTransmit": true,
-        "OwnerTransfer": 1,
-        "Components": [
-          {
-            "__type": "Sandbox.WorldPanel",
-            "__guid": "f0d91008-da26-48e8-83e4-e691b5f69d9b",
-            "__enabled": true,
-            "Flags": 0,
-            "HorizontalAlign": "Center",
-            "InteractionRange": 1000,
-            "LookAtCamera": false,
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "PanelSize": "512,256",
-            "RenderOptions": {
-              "GameLayer": false,
-              "OverlayLayer": true,
-              "BloomLayer": false,
-              "AfterUILayer": false
-            },
-            "RenderScale": 1,
-            "VerticalAlign": "Center"
-          },
-          {
-            "__type": "Sandbox.DestructableNameplate",
-            "__guid": "7767ad6f-9ee7-4b7e-b920-13e3bdbbdca3",
-            "__enabled": true,
-            "Flags": 0,
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null
           }
         ],
         "Children": []

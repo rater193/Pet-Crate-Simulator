@@ -8,9 +8,6 @@ public sealed class Destructable : Component
 
 	protected override void OnStart()
 	{
-		nameplate = GetComponentInChildren<DestructableNameplate>();
-		nameplate.GameObject.Enabled = false;
-
 		maxhp = hp;
 	}
 

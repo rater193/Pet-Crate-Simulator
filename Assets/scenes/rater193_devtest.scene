@@ -334,7 +334,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 01",
-              "Position": "-11267.4521,-8379.65332,2068.24487",
+              "Position": "-11267.4521,-8379.65332,2054.39844",
               "Rotation": "0,0,0.0440809019,0.999027967",
               "Scale": "1,1,1",
               "Tags": "",
@@ -351,8 +351,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-987.940308,-691.558228,-321.080597",
-                    "Maxs": "987.940308,691.558228,321.080597"
+                    "Mins": "-1012.74158,-708.919067,-329.141022",
+                    "Maxs": "1012.74158,708.919067,329.141022"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -416,7 +416,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2133.95117,1493.76587",
+                      "Size": "2187.52197,1531.26526",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -431,7 +431,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 02",
-              "Position": "-7600.78516,-8379.65332,2102.71899",
+              "Position": "-7600.78516,-8379.65332,2146.49878",
               "Rotation": "0,0,-0.0859013647,0.996303618",
               "Scale": "1,1,1",
               "Tags": "",
@@ -448,8 +448,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-1035.35632,-724.74939,-336.490784",
-                    "Maxs": "1035.35632,724.74939,336.490784"
+                    "Mins": "-965.182007,-675.62738,-313.684143",
+                    "Maxs": "965.182007,675.62738,313.684143"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -513,7 +513,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2236.36963,1565.45874",
+                      "Size": "2084.79321,1459.35522",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -528,7 +528,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 03",
-              "Position": "-3934.11841,-8379.65332,2079.87354",
+              "Position": "-3934.11841,-8379.65332,2067.19556",
               "Rotation": "0,0,-0.0415650122,0.999135792",
               "Scale": "1,1,1",
               "Tags": "",
@@ -545,8 +545,8 @@
                   "__enabled": true,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-2742.84424,-1898.89221,-764.831604",
-                    "Maxs": "2742.84424,1898.89221,764.831604"
+                    "Mins": "-1310.31506,-912.65448,-398.456146",
+                    "Maxs": "1310.31506,912.65448,398.456146"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -555,7 +555,7 @@
                   "OnComponentFixedUpdate": null,
                   "OnComponentStart": null,
                   "OnComponentUpdate": null,
-                  "Strength": 1.035787
+                  "Strength": 0.33138627
                 }
               ],
               "Children": [
@@ -584,7 +584,7 @@
                       "Additive": false,
                       "AlphaCutoff": 0.5,
                       "Billboard": "Always",
-                      "Color": "1,1,1,0.58",
+                      "Color": "1,1,1,0.18556",
                       "DepthFeather": 320,
                       "FlipHorizontal": false,
                       "FlipVertical": false,
@@ -610,7 +610,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "5924.54395,4101.60742",
+                      "Size": "2830.28076,1971.33374",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -625,7 +625,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 04",
-              "Position": "-267.451996,-8379.65332,2066.11621",
+              "Position": "-267.451996,-8379.65332,2173.19653",
               "Rotation": "0,0,0.00285339006,0.999995947",
               "Scale": "1,1,1",
               "Tags": "",
@@ -642,8 +642,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-1031.27417,-721.891968,-335.164124",
-                    "Maxs": "1031.27417,721.891968,335.164124"
+                    "Mins": "-968.152039,-677.706421,-314.649414",
+                    "Maxs": "968.152039,677.706421,314.649414"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -707,7 +707,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2227.55225,1559.28674",
+                      "Size": "2091.2085,1463.84595",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -722,7 +722,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 05",
-              "Position": "3399.21509,-8379.65332,2240.81567",
+              "Position": "3399.21509,-8379.65332,2175.10791",
               "Rotation": "0,0,0.0472661518,0.998882353",
               "Scale": "1,1,1",
               "Tags": "",
@@ -739,8 +739,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-982.989563,-688.092712,-319.471619",
-                    "Maxs": "982.989563,688.092712,319.471619"
+                    "Mins": "-1016.34357,-711.440491,-330.311676",
+                    "Maxs": "1016.34357,711.440491,330.311676"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -804,7 +804,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2123.25757,1486.28027",
+                      "Size": "2195.30225,1536.71155",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -819,7 +819,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 06",
-              "Position": "7065.88086,-8379.65332,2289.41797",
+              "Position": "7065.88086,-8379.65332,2273.36792",
               "Rotation": "0,0,-0.0827241391,0.996572495",
               "Scale": "1,1,1",
               "Tags": "",
@@ -836,8 +836,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-948.095154,-663.666626,-308.13092",
-                    "Maxs": "948.095154,663.666626,308.13092"
+                    "Mins": "-1051.66919,-736.168457,-341.792511",
+                    "Maxs": "1051.66919,736.168457,341.792511"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -901,7 +901,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2047.88562,1433.52002",
+                      "Size": "2271.60547,1590.1239",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -916,7 +916,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 07",
-              "Position": "10732.5479,-8379.65332,2252.74243",
+              "Position": "10732.5479,-8379.65332,2217.0752",
               "Rotation": "0,0,-0.0383789763,0.999263227",
               "Scale": "1,1,1",
               "Tags": "",
@@ -933,8 +933,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-1042.95789,-730.070557,-338.961304",
-                    "Maxs": "1042.95789,730.070557,338.961304"
+                    "Mins": "-957.482605,-670.237793,-311.181824",
+                    "Maxs": "957.482605,670.237793,311.181824"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -998,7 +998,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2252.78906,1576.95251",
+                      "Size": "2068.1626,1447.71375",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -1013,7 +1013,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 08",
-              "Position": "-11267.4521,-5712.98584,2131.51172",
+              "Position": "-11267.4521,-5712.98584,2088.78809",
               "Rotation": "0,0,0.00604193518,0.999981761",
               "Scale": "1,1,1",
               "Tags": "",
@@ -1030,8 +1030,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-1053.35974,-737.351807,-342.341919",
-                    "Maxs": "1053.35974,737.351807,342.341919"
+                    "Mins": "-946.474915,-662.53241,-307.60434",
+                    "Maxs": "946.474915,662.53241,307.60434"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -1095,7 +1095,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2275.25708,1592.67993",
+                      "Size": "2044.38586,1431.07007",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -1110,7 +1110,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 09",
-              "Position": "-7600.78516,-5712.98584,2055.97388",
+              "Position": "-7600.78516,-5712.98584,2098.53735",
               "Rotation": "0,0,0.0504509173,0.998726547",
               "Scale": "1,1,1",
               "Tags": "",
@@ -1127,8 +1127,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-1021.75592,-715.229126,-332.070679",
-                    "Maxs": "1021.75592,715.229126,332.070679"
+                    "Mins": "-977.603088,-684.322144,-317.721008",
+                    "Maxs": "977.603088,684.322144,317.721008"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -1192,7 +1192,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2206.99292,1544.89502",
+                      "Size": "2111.6228,1478.13586",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -1207,7 +1207,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 10",
-              "Position": "-3934.11841,-5712.98584,2059.21899",
+              "Position": "-3934.11841,-5712.98584,1934.30884",
               "Rotation": "0,0,-0.0795460641,0.996831179",
               "Scale": "1,1,1",
               "Tags": "",
@@ -1221,11 +1221,11 @@
                 {
                   "__type": "Sandbox.VolumetricFogVolume",
                   "__guid": "ebae4344-b8a0-4677-b0c1-06d391014466",
-                  "__enabled": false,
+                  "__enabled": true,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-973.026245,-681.118408,-316.233551",
-                    "Maxs": "973.026245,681.118408,316.233551"
+                    "Mins": "-1068.20251,-747.218689,-344.027802",
+                    "Maxs": "1068.20251,747.218689,344.027802"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -1234,7 +1234,7 @@
                   "OnComponentFixedUpdate": null,
                   "OnComponentStart": null,
                   "OnComponentUpdate": null,
-                  "Strength": 0
+                  "Strength": 0.09868274
                 }
               ],
               "Children": [
@@ -1247,7 +1247,7 @@
                   "Rotation": "0,0,0,1",
                   "Scale": "1,1,1",
                   "Tags": "",
-                  "Enabled": false,
+                  "Enabled": true,
                   "NetworkMode": 0,
                   "NetworkFlags": 0,
                   "NetworkOrphaned": 0,
@@ -1263,7 +1263,7 @@
                       "Additive": false,
                       "AlphaCutoff": 0.5,
                       "Billboard": "Always",
-                      "Color": "1,1,1,0",
+                      "Color": "1,1,1,0.05523",
                       "DepthFeather": 320,
                       "FlipHorizontal": false,
                       "FlipVertical": false,
@@ -1289,7 +1289,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2101.73682,1471.21582",
+                      "Size": "2307.31763,1613.99243",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -1304,7 +1304,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 11",
-              "Position": "-267.451996,-5712.98584,1984.66882",
+              "Position": "-267.451996,-5712.98584,2034.39465",
               "Rotation": "0,0,-0.0351925604,0.999380529",
               "Scale": "1,1,1",
               "Tags": "",
@@ -1321,8 +1321,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-945.529907,-661.870972,-307.297241",
-                    "Maxs": "945.529907,661.870972,307.297241"
+                    "Mins": "-1054.36865,-738.058044,-342.6698",
+                    "Maxs": "1054.36865,738.058044,342.6698"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -1386,7 +1386,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2042.34473,1429.64136",
+                      "Size": "2277.43628,1594.20544",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -1401,7 +1401,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 12",
-              "Position": "3399.21509,-5712.98584,2091.00342",
+              "Position": "3399.21509,-5712.98584,2064.87695",
               "Rotation": "0,0,0.00923041813,0.999957383",
               "Scale": "1,1,1",
               "Tags": "",
@@ -1418,8 +1418,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-960.91333,-672.639282,-312.296814",
-                    "Maxs": "960.91333,672.639282,312.296814"
+                    "Mins": "-1039.57642,-727.703491,-337.862335",
+                    "Maxs": "1039.57642,727.703491,337.862335"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -1483,7 +1483,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2075.57275,1452.90088",
+                      "Size": "2245.48511,1571.8396",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -1498,7 +1498,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 13",
-              "Position": "7065.88086,-5712.98584,2112.11401",
+              "Position": "7065.88086,-5712.98584,2221.21069",
               "Rotation": "0,0,0.0536351837,0.998560607",
               "Scale": "1,1,1",
               "Tags": "",
@@ -1515,8 +1515,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-1007.06555,-704.945862,-327.296295",
-                    "Maxs": "1007.06555,704.945862,327.296295"
+                    "Mins": "-993.629028,-695.540344,-322.929443",
+                    "Maxs": "993.629028,695.540344,322.929443"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -1580,7 +1580,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2175.26172,1522.68311",
+                      "Size": "2146.23877,1502.36719",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -1595,7 +1595,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 14",
-              "Position": "10732.5479,-5712.98584,2179.12671",
+              "Position": "10732.5479,-5712.98584,2270.05371",
               "Rotation": "0,0,-0.076367192,0.99707979",
               "Scale": "1,1,1",
               "Tags": "",
@@ -1612,8 +1612,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-1050.16406,-735.083496,-341.115234",
-                    "Maxs": "1050.16406,735.083496,341.115234"
+                    "Mins": "-952.69696,-666.887878,-309.626526",
+                    "Maxs": "952.69696,666.887878,309.626526"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -1622,7 +1622,7 @@
                   "OnComponentFixedUpdate": null,
                   "OnComponentStart": null,
                   "OnComponentUpdate": null,
-                  "Strength": 0.016490921
+                  "Strength": 0
                 }
               ],
               "Children": [
@@ -1651,7 +1651,7 @@
                       "Additive": false,
                       "AlphaCutoff": 0.5,
                       "Billboard": "Always",
-                      "Color": "1,1,1,0.00877",
+                      "Color": "1,1,1,0",
                       "DepthFeather": 320,
                       "FlipHorizontal": false,
                       "FlipVertical": false,
@@ -1677,7 +1677,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2268.35449,1587.7804",
+                      "Size": "2057.82544,1440.47791",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -1692,7 +1692,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 15",
-              "Position": "-11267.4521,-3046.31958,2232.74023",
+              "Position": "-11267.4521,-3046.31958,2215.06494",
               "Rotation": "0,0,-0.0320057757,0.999487698",
               "Scale": "1,1,1",
               "Tags": "",
@@ -1709,8 +1709,8 @@
                   "__enabled": true,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-2077.29395,-1441.2738,-598.128357",
-                    "Maxs": "2077.29395,1441.2738,598.128357"
+                    "Mins": "-1050.37866,-733.997803,-333.769867",
+                    "Maxs": "1050.37866,733.997803,333.769867"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -1719,7 +1719,7 @@
                   "OnComponentFixedUpdate": null,
                   "OnComponentStart": null,
                   "OnComponentUpdate": null,
-                  "Strength": 0.6286459
+                  "Strength": 0.17262536
                 }
               ],
               "Children": [
@@ -1748,7 +1748,7 @@
                       "Additive": false,
                       "AlphaCutoff": 0.5,
                       "Billboard": "Always",
-                      "Color": "1,1,1,0.30403",
+                      "Color": "1,1,1,0.08349",
                       "DepthFeather": 320,
                       "FlipHorizontal": false,
                       "FlipVertical": false,
@@ -1774,7 +1774,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "4486.95508,3113.15161",
+                      "Size": "2268.81812,1585.4353",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -1789,7 +1789,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 16",
-              "Position": "-7600.78516,-3046.31958,2154.81299",
+              "Position": "-7600.78516,-3046.31958,2239.44604",
               "Rotation": "0,0,0.0124188159,0.999922872",
               "Scale": "1,1,1",
               "Tags": "",
@@ -1806,8 +1806,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-1013.87061,-709.709412,-329.507935",
-                    "Maxs": "1013.87061,709.709412,329.507935"
+                    "Mins": "-985.454224,-689.817932,-320.272614",
+                    "Maxs": "985.454224,689.817932,320.272614"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -1871,7 +1871,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2189.96069,1532.97241",
+                      "Size": "2128.5813,1490.00684",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -1886,7 +1886,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 17",
-              "Position": "-3934.11841,-3046.31958,2222.15674",
+              "Position": "-3934.11841,-3046.31958,2095.72949",
               "Rotation": "0,0,0.0568188988,0.998384476",
               "Scale": "1,1,1",
               "Tags": "",
@@ -1903,8 +1903,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-966.090515,-676.263367,-313.979401",
-                    "Maxs": "966.090515,676.263367,313.979401"
+                    "Mins": "-1033.3551,-723.348572,-335.840424",
+                    "Maxs": "1033.3551,723.348572,335.840424"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -1968,7 +1968,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2086.75562,1460.72888",
+                      "Size": "2232.04712,1562.43298",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -1983,7 +1983,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 18",
-              "Position": "-267.451996,-3046.31958,2121.67896",
+              "Position": "-267.451996,-3046.31958,2093.43213",
               "Rotation": "0,0,-0.0731875449,0.997318208",
               "Scale": "1,1,1",
               "Tags": "",
@@ -2000,8 +2000,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-1017.66455,-712.365173,-330.740967",
-                    "Maxs": "1017.66455,712.365173,330.740967"
+                    "Mins": "-983.000427,-688.100281,-319.475128",
+                    "Maxs": "983.000427,688.100281,319.475128"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -2065,7 +2065,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2198.15552,1538.70886",
+                      "Size": "2123.28101,1486.29663",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -2080,7 +2080,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 19",
-              "Position": "3399.21509,-3046.31958,2219.68701",
+              "Position": "3399.21509,-3046.31958,2127.93359",
               "Rotation": "0,0,-0.0288186744,0.999584675",
               "Scale": "1,1,1",
               "Tags": "",
@@ -2097,8 +2097,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-1052.12878,-736.490173,-341.941864",
-                    "Maxs": "1052.12878,736.490173,341.941864"
+                    "Mins": "-948.098877,-663.66925,-308.132141",
+                    "Maxs": "948.098877,663.66925,308.132141"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -2162,7 +2162,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2272.59814,1590.81885",
+                      "Size": "2047.89368,1433.52563",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -2177,7 +2177,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 20",
-              "Position": "7065.88086,-3046.31958,2147.09912",
+              "Position": "7065.88086,-3046.31958,2120.66968",
               "Rotation": "0,0,0.0156070804,0.999878228",
               "Scale": "1,1,1",
               "Tags": "",
@@ -2194,8 +2194,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-1045.55676,-731.889771,-339.805969",
-                    "Maxs": "1045.55676,731.889771,339.805969"
+                    "Mins": "-954.054749,-667.838318,-310.06781",
+                    "Maxs": "954.054749,667.838318,310.06781"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -2259,7 +2259,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2258.40259,1580.88196",
+                      "Size": "2060.7583,1442.53088",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -2274,7 +2274,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 21",
-              "Position": "10732.5479,-3046.31958,2125.72949",
+              "Position": "10732.5479,-3046.31958,2252.13745",
               "Rotation": "0,0,0.0600020252,0.998198271",
               "Scale": "1,1,1",
               "Tags": "",
@@ -2288,11 +2288,205 @@
                 {
                   "__type": "Sandbox.VolumetricFogVolume",
                   "__guid": "928a54d2-5b76-4131-aa92-2ffb9c47b286",
+                  "__enabled": true,
+                  "Flags": 0,
+                  "Bounds": {
+                    "Mins": "-1982.50952,-1375.42761,-570.34082",
+                    "Maxs": "1982.50952,1375.42761,570.34082"
+                  },
+                  "FalloffExponent": 1.15,
+                  "OnComponentDestroy": null,
+                  "OnComponentDisabled": null,
+                  "OnComponentEnabled": null,
+                  "OnComponentFixedUpdate": null,
+                  "OnComponentStart": null,
+                  "OnComponentUpdate": null,
+                  "Strength": 0.5776015
+                }
+              ],
+              "Children": [
+                {
+                  "__guid": "d079d457-fa7f-4b3d-90a2-53b0b6a2d06e",
+                  "__version": 2,
+                  "Flags": 0,
+                  "Name": "Cloud Visible Layer",
+                  "Position": "0,0,0",
+                  "Rotation": "0,0,0,1",
+                  "Scale": "1,1,1",
+                  "Tags": "",
+                  "Enabled": true,
+                  "NetworkMode": 0,
+                  "NetworkFlags": 0,
+                  "NetworkOrphaned": 0,
+                  "NetworkTransmit": true,
+                  "OwnerTransfer": 1,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.SpriteRenderer",
+                      "__guid": "0af2e8bc-c630-4cd4-a9c8-e66d2c823f6b",
+                      "__enabled": true,
+                      "Flags": 0,
+                      "__version": 2,
+                      "Additive": false,
+                      "AlphaCutoff": 0.5,
+                      "Billboard": "Always",
+                      "Color": "1,1,1,0.307",
+                      "DepthFeather": 320,
+                      "FlipHorizontal": false,
+                      "FlipVertical": false,
+                      "FogStrength": 0,
+                      "IsSorted": true,
+                      "Lighting": false,
+                      "OnAnimationEnd": null,
+                      "OnAnimationStart": null,
+                      "OnBroadcastMessage": null,
+                      "OnComponentDestroy": null,
+                      "OnComponentDisabled": null,
+                      "OnComponentEnabled": null,
+                      "OnComponentFixedUpdate": null,
+                      "OnComponentStart": null,
+                      "OnComponentUpdate": null,
+                      "Opaque": false,
+                      "OverlayColor": "1,1,1,0",
+                      "PlaybackSpeed": 1,
+                      "RenderOptions": {
+                        "GameLayer": true,
+                        "OverlayLayer": false,
+                        "BloomLayer": false,
+                        "AfterUILayer": false
+                      },
+                      "Shadows": false,
+                      "Size": "4282.2207,2970.92383",
+                      "Sprite": null,
+                      "StartingAnimationName": "Default",
+                      "TextureFilter": "Bilinear"
+                    }
+                  ],
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "__guid": "237aaeaa-5e80-4534-ac3b-e0aca39eade9",
+              "__version": 2,
+              "Flags": 0,
+              "Name": "Cloud Puff 22",
+              "Position": "-11267.4521,-379.653015,2075.71826",
+              "Rotation": "0,0,-0.0700071454,0.997546494",
+              "Scale": "1,1,1",
+              "Tags": "",
+              "Enabled": true,
+              "NetworkMode": 0,
+              "NetworkFlags": 0,
+              "NetworkOrphaned": 0,
+              "NetworkTransmit": true,
+              "OwnerTransfer": 1,
+              "Components": [
+                {
+                  "__type": "Sandbox.VolumetricFogVolume",
+                  "__guid": "3ed92b18-e1e4-4db4-8ab5-c0fb19528674",
+                  "__enabled": true,
+                  "Flags": 0,
+                  "Bounds": {
+                    "Mins": "-2707.41064,-1874.36108,-754.950989",
+                    "Maxs": "2707.41064,1874.36108,754.950989"
+                  },
+                  "FalloffExponent": 1.15,
+                  "OnComponentDestroy": null,
+                  "OnComponentDisabled": null,
+                  "OnComponentEnabled": null,
+                  "OnComponentFixedUpdate": null,
+                  "OnComponentStart": null,
+                  "OnComponentUpdate": null,
+                  "Strength": 1.1586008
+                }
+              ],
+              "Children": [
+                {
+                  "__guid": "88b82956-a3e6-41d5-8c3f-6fbcd3a43549",
+                  "__version": 2,
+                  "Flags": 0,
+                  "Name": "Cloud Visible Layer",
+                  "Position": "0,0,0",
+                  "Rotation": "0,0,0,1",
+                  "Scale": "1,1,1",
+                  "Tags": "",
+                  "Enabled": true,
+                  "NetworkMode": 0,
+                  "NetworkFlags": 0,
+                  "NetworkOrphaned": 0,
+                  "NetworkTransmit": true,
+                  "OwnerTransfer": 1,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.SpriteRenderer",
+                      "__guid": "dc2acd05-5578-4024-8667-6fa3efae280e",
+                      "__enabled": true,
+                      "Flags": 0,
+                      "__version": 2,
+                      "Additive": false,
+                      "AlphaCutoff": 0.5,
+                      "Billboard": "Always",
+                      "Color": "1,1,1,0.56011",
+                      "DepthFeather": 320,
+                      "FlipHorizontal": false,
+                      "FlipVertical": false,
+                      "FogStrength": 0,
+                      "IsSorted": true,
+                      "Lighting": false,
+                      "OnAnimationEnd": null,
+                      "OnAnimationStart": null,
+                      "OnBroadcastMessage": null,
+                      "OnComponentDestroy": null,
+                      "OnComponentDisabled": null,
+                      "OnComponentEnabled": null,
+                      "OnComponentFixedUpdate": null,
+                      "OnComponentStart": null,
+                      "OnComponentUpdate": null,
+                      "Opaque": false,
+                      "OverlayColor": "1,1,1,0",
+                      "PlaybackSpeed": 1,
+                      "RenderOptions": {
+                        "GameLayer": true,
+                        "OverlayLayer": false,
+                        "BloomLayer": false,
+                        "AfterUILayer": false
+                      },
+                      "Shadows": false,
+                      "Size": "5848.00732,4048.62012",
+                      "Sprite": null,
+                      "StartingAnimationName": "Default",
+                      "TextureFilter": "Bilinear"
+                    }
+                  ],
+                  "Children": []
+                }
+              ]
+            },
+            {
+              "__guid": "9630a8df-200b-49d8-83d5-7c3bdafc31b6",
+              "__version": 2,
+              "Flags": 0,
+              "Name": "Cloud Puff 23",
+              "Position": "-7600.78516,-379.653015,2097.12622",
+              "Rotation": "0,0,-0.025631275,0.999671459",
+              "Scale": "1,1,1",
+              "Tags": "",
+              "Enabled": true,
+              "NetworkMode": 0,
+              "NetworkFlags": 0,
+              "NetworkOrphaned": 0,
+              "NetworkTransmit": true,
+              "OwnerTransfer": 1,
+              "Components": [
+                {
+                  "__type": "Sandbox.VolumetricFogVolume",
+                  "__guid": "cd4e3b2d-d4fc-4e0d-a128-75cc249aefeb",
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-1003.12207,-702.185486,-326.014679",
-                    "Maxs": "1003.12207,702.185486,326.014679"
+                    "Mins": "-1053.92273,-737.745911,-342.524902",
+                    "Maxs": "1053.92273,737.745911,342.524902"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -2306,7 +2500,7 @@
               ],
               "Children": [
                 {
-                  "__guid": "d079d457-fa7f-4b3d-90a2-53b0b6a2d06e",
+                  "__guid": "0711ac90-22c4-4130-a0cc-cf404e12abcc",
                   "__version": 2,
                   "Flags": 0,
                   "Name": "Cloud Visible Layer",
@@ -2323,7 +2517,7 @@
                   "Components": [
                     {
                       "__type": "Sandbox.SpriteRenderer",
-                      "__guid": "0af2e8bc-c630-4cd4-a9c8-e66d2c823f6b",
+                      "__guid": "10e189a6-639d-447b-b3b4-aa340b5ebcc7",
                       "__enabled": true,
                       "Flags": 0,
                       "__version": 2,
@@ -2356,201 +2550,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2166.74365,1516.7207",
-                      "Sprite": null,
-                      "StartingAnimationName": "Default",
-                      "TextureFilter": "Bilinear"
-                    }
-                  ],
-                  "Children": []
-                }
-              ]
-            },
-            {
-              "__guid": "237aaeaa-5e80-4534-ac3b-e0aca39eade9",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "Cloud Puff 22",
-              "Position": "-11267.4521,-379.653015,2180.02783",
-              "Rotation": "0,0,-0.0700071454,0.997546494",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 0,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.VolumetricFogVolume",
-                  "__guid": "3ed92b18-e1e4-4db4-8ab5-c0fb19528674",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "Bounds": {
-                    "Mins": "-1326.79053,-924.146362,-403.564911",
-                    "Maxs": "1326.79053,924.146362,403.564911"
-                  },
-                  "FalloffExponent": 1.15,
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "Strength": 0.369622
-                }
-              ],
-              "Children": [
-                {
-                  "__guid": "88b82956-a3e6-41d5-8c3f-6fbcd3a43549",
-                  "__version": 2,
-                  "Flags": 0,
-                  "Name": "Cloud Visible Layer",
-                  "Position": "0,0,0",
-                  "Rotation": "0,0,0,1",
-                  "Scale": "1,1,1",
-                  "Tags": "",
-                  "Enabled": true,
-                  "NetworkMode": 0,
-                  "NetworkFlags": 0,
-                  "NetworkOrphaned": 0,
-                  "NetworkTransmit": true,
-                  "OwnerTransfer": 1,
-                  "Components": [
-                    {
-                      "__type": "Sandbox.SpriteRenderer",
-                      "__guid": "dc2acd05-5578-4024-8667-6fa3efae280e",
-                      "__enabled": true,
-                      "Flags": 0,
-                      "__version": 2,
-                      "Additive": false,
-                      "AlphaCutoff": 0.5,
-                      "Billboard": "Always",
-                      "Color": "1,1,1,0.17869",
-                      "DepthFeather": 320,
-                      "FlipHorizontal": false,
-                      "FlipVertical": false,
-                      "FogStrength": 0,
-                      "IsSorted": true,
-                      "Lighting": false,
-                      "OnAnimationEnd": null,
-                      "OnAnimationStart": null,
-                      "OnBroadcastMessage": null,
-                      "OnComponentDestroy": null,
-                      "OnComponentDisabled": null,
-                      "OnComponentEnabled": null,
-                      "OnComponentFixedUpdate": null,
-                      "OnComponentStart": null,
-                      "OnComponentUpdate": null,
-                      "Opaque": false,
-                      "OverlayColor": "1,1,1,0",
-                      "PlaybackSpeed": 1,
-                      "RenderOptions": {
-                        "GameLayer": true,
-                        "OverlayLayer": false,
-                        "BloomLayer": false,
-                        "AfterUILayer": false
-                      },
-                      "Shadows": false,
-                      "Size": "2865.86768,1996.15625",
-                      "Sprite": null,
-                      "StartingAnimationName": "Default",
-                      "TextureFilter": "Bilinear"
-                    }
-                  ],
-                  "Children": []
-                }
-              ]
-            },
-            {
-              "__guid": "9630a8df-200b-49d8-83d5-7c3bdafc31b6",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "Cloud Puff 23",
-              "Position": "-7600.78516,-379.653015,2120.17871",
-              "Rotation": "0,0,-0.025631275,0.999671459",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 0,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.VolumetricFogVolume",
-                  "__guid": "cd4e3b2d-d4fc-4e0d-a128-75cc249aefeb",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "Bounds": {
-                    "Mins": "-2117.51196,-1467.61719,-600.344421",
-                    "Maxs": "2117.51196,1467.61719,600.344421"
-                  },
-                  "FalloffExponent": 1.15,
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "Strength": 0.9051214
-                }
-              ],
-              "Children": [
-                {
-                  "__guid": "0711ac90-22c4-4130-a0cc-cf404e12abcc",
-                  "__version": 2,
-                  "Flags": 0,
-                  "Name": "Cloud Visible Layer",
-                  "Position": "0,0,0",
-                  "Rotation": "0,0,0,1",
-                  "Scale": "1,1,1",
-                  "Tags": "",
-                  "Enabled": true,
-                  "NetworkMode": 0,
-                  "NetworkFlags": 0,
-                  "NetworkOrphaned": 0,
-                  "NetworkTransmit": true,
-                  "OwnerTransfer": 1,
-                  "Components": [
-                    {
-                      "__type": "Sandbox.SpriteRenderer",
-                      "__guid": "10e189a6-639d-447b-b3b4-aa340b5ebcc7",
-                      "__enabled": true,
-                      "Flags": 0,
-                      "__version": 2,
-                      "Additive": false,
-                      "AlphaCutoff": 0.5,
-                      "Billboard": "Always",
-                      "Color": "1,1,1,0.40128",
-                      "DepthFeather": 320,
-                      "FlipHorizontal": false,
-                      "FlipVertical": false,
-                      "FogStrength": 0,
-                      "IsSorted": true,
-                      "Lighting": false,
-                      "OnAnimationEnd": null,
-                      "OnAnimationStart": null,
-                      "OnBroadcastMessage": null,
-                      "OnComponentDestroy": null,
-                      "OnComponentDisabled": null,
-                      "OnComponentEnabled": null,
-                      "OnComponentFixedUpdate": null,
-                      "OnComponentStart": null,
-                      "OnComponentUpdate": null,
-                      "Opaque": false,
-                      "OverlayColor": "1,1,1,0",
-                      "PlaybackSpeed": 1,
-                      "RenderOptions": {
-                        "GameLayer": true,
-                        "OverlayLayer": false,
-                        "BloomLayer": false,
-                        "AfterUILayer": false
-                      },
-                      "Shadows": false,
-                      "Size": "4573.82617,3170.05322",
+                      "Size": "2276.47314,1593.53125",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -2565,7 +2565,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 24",
-              "Position": "-3934.11841,-379.653015,2118.84204",
+              "Position": "-3934.11841,-379.653015,2123.8252",
               "Rotation": "0,0,0.0187951922,0.999823332",
               "Scale": "1,1,1",
               "Tags": "",
@@ -2582,8 +2582,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-976.54541,-683.581787,-317.377258",
-                    "Maxs": "976.54541,683.581787,317.377258"
+                    "Mins": "-1024.08643,-716.860535,-332.828094",
+                    "Maxs": "1024.08643,716.860535,332.828094"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -2647,7 +2647,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2109.33813,1476.53674",
+                      "Size": "2212.02686,1548.41882",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -2662,7 +2662,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 25",
-              "Position": "-267.451996,-379.653015,2066.43701",
+              "Position": "-267.451996,-379.653015,2138.57544",
               "Rotation": "0,0,0.0631845519,0.998001873",
               "Scale": "1,1,1",
               "Tags": "",
@@ -2676,11 +2676,11 @@
                 {
                   "__type": "Sandbox.VolumetricFogVolume",
                   "__guid": "8c15f7f4-0d02-4fa8-925a-8f2d87153181",
-                  "__enabled": false,
+                  "__enabled": true,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-1025.33459,-717.734192,-333.233734",
-                    "Maxs": "1025.33459,717.734192,333.233734"
+                    "Mins": "-1337.39001,-931.64679,-407.494141",
+                    "Maxs": "1337.39001,931.64679,407.494141"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -2689,7 +2689,7 @@
                   "OnComponentFixedUpdate": null,
                   "OnComponentStart": null,
                   "OnComponentUpdate": null,
-                  "Strength": 0
+                  "Strength": 0.35814437
                 }
               ],
               "Children": [
@@ -2702,7 +2702,7 @@
                   "Rotation": "0,0,0,1",
                   "Scale": "1,1,1",
                   "Tags": "",
-                  "Enabled": false,
+                  "Enabled": true,
                   "NetworkMode": 0,
                   "NetworkFlags": 0,
                   "NetworkOrphaned": 0,
@@ -2718,7 +2718,7 @@
                       "Additive": false,
                       "AlphaCutoff": 0.5,
                       "Billboard": "Always",
-                      "Color": "1,1,1,0",
+                      "Color": "1,1,1,0.1813",
                       "DepthFeather": 320,
                       "FlipHorizontal": false,
                       "FlipVertical": false,
@@ -2744,7 +2744,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2214.7229,1550.30591",
+                      "Size": "2888.76245,2012.35718",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -2759,7 +2759,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 26",
-              "Position": "3399.21509,-379.653015,2182.66309",
+              "Position": "3399.21509,-379.653015,2146.80713",
               "Rotation": "0,0,-0.0668260381,0.997764647",
               "Scale": "1,1,1",
               "Tags": "",
@@ -2776,8 +2776,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-1054.18079,-737.926514,-342.608734",
-                    "Maxs": "1054.18079,737.926514,342.608734"
+                    "Mins": "-945.94397,-662.160767,-307.431793",
+                    "Maxs": "945.94397,662.160767,307.431793"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -2841,7 +2841,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2277.03052,1593.92139",
+                      "Size": "2043.23901,1430.26733",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -2856,7 +2856,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 27",
-              "Position": "7065.88086,-379.653015,2203.01929",
+              "Position": "7065.88086,-379.653015,2152.13916",
               "Rotation": "0,0,-0.0224436149,0.999748111",
               "Scale": "1,1,1",
               "Tags": "",
@@ -2873,8 +2873,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-1040.375,-728.262512,-338.121887",
-                    "Maxs": "1040.375,728.262512,338.121887"
+                    "Mins": "-959.153076,-671.407166,-311.724731",
+                    "Maxs": "959.153076,671.407166,311.724731"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -2938,7 +2938,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2247.21021,1573.04712",
+                      "Size": "2071.77075,1450.2395",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -2953,7 +2953,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 28",
-              "Position": "10732.5479,-379.653015,2158.99731",
+              "Position": "10732.5479,-379.653015,2243.73511",
               "Rotation": "0,0,0.0219831057,0.999758363",
               "Scale": "1,1,1",
               "Tags": "",
@@ -2970,8 +2970,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-994.786133,-696.350281,-323.305511",
-                    "Maxs": "994.786133,696.350281,323.305511"
+                    "Mins": "-1004.51758,-703.162292,-326.468201",
+                    "Maxs": "1004.51758,703.162292,326.468201"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -3035,7 +3035,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2148.73804,1504.1167",
+                      "Size": "2169.75806,1518.83057",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -3050,7 +3050,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 29",
-              "Position": "-11267.4521,2287.01392,2185.89209",
+              "Position": "-11267.4521,2287.01392,2177.5708",
               "Rotation": "0,0,0.0663664415,0.997795343",
               "Scale": "1,1,1",
               "Tags": "",
@@ -3064,11 +3064,11 @@
                 {
                   "__type": "Sandbox.VolumetricFogVolume",
                   "__guid": "bb020cfe-9388-404b-a3f9-b2498188203e",
-                  "__enabled": false,
+                  "__enabled": true,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-953.301208,-667.310852,-309.822876",
-                    "Maxs": "953.301208,667.310852,309.822876"
+                    "Mins": "-2202.18042,-1527.07812,-629.01947",
+                    "Maxs": "2202.18042,1527.07812,629.01947"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -3077,7 +3077,7 @@
                   "OnComponentFixedUpdate": null,
                   "OnComponentStart": null,
                   "OnComponentUpdate": null,
-                  "Strength": 0
+                  "Strength": 0.6900376
                 }
               ],
               "Children": [
@@ -3090,7 +3090,7 @@
                   "Rotation": "0,0,0,1",
                   "Scale": "1,1,1",
                   "Tags": "",
-                  "Enabled": false,
+                  "Enabled": true,
                   "NetworkMode": 0,
                   "NetworkFlags": 0,
                   "NetworkOrphaned": 0,
@@ -3106,7 +3106,7 @@
                       "Additive": false,
                       "AlphaCutoff": 0.5,
                       "Billboard": "Always",
-                      "Color": "1,1,1,0",
+                      "Color": "1,1,1,0.33345",
                       "DepthFeather": 320,
                       "FlipHorizontal": false,
                       "FlipVertical": false,
@@ -3132,7 +3132,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2059.13062,1441.39148",
+                      "Size": "4756.70996,3298.48877",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -3147,7 +3147,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 30",
-              "Position": "-7600.78516,2287.01392,2247.46606",
+              "Position": "-7600.78516,2287.01392,2163.13574",
               "Rotation": "0,0,-0.0636442527,0.997972667",
               "Scale": "1,1,1",
               "Tags": "",
@@ -3161,11 +3161,11 @@
                 {
                   "__type": "Sandbox.VolumetricFogVolume",
                   "__guid": "7130bb92-f8c2-44d7-9f5c-1647a504acc4",
-                  "__enabled": false,
+                  "__enabled": true,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-1035.66382,-724.949463,-336.499603",
-                    "Maxs": "1035.66382,724.949463,336.499603"
+                    "Mins": "-2376.49048,-1645.91333,-666.580017",
+                    "Maxs": "2376.49048,1645.91333,666.580017"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -3174,7 +3174,7 @@
                   "OnComponentFixedUpdate": null,
                   "OnComponentStart": null,
                   "OnComponentUpdate": null,
-                  "Strength": 0.02057954
+                  "Strength": 1.0701602
                 }
               ],
               "Children": [
@@ -3187,7 +3187,7 @@
                   "Rotation": "0,0,0,1",
                   "Scale": "1,1,1",
                   "Tags": "",
-                  "Enabled": false,
+                  "Enabled": true,
                   "NetworkMode": 0,
                   "NetworkFlags": 0,
                   "NetworkOrphaned": 0,
@@ -3203,7 +3203,7 @@
                       "Additive": false,
                       "AlphaCutoff": 0.5,
                       "Billboard": "Always",
-                      "Color": "1,1,1,0.00912",
+                      "Color": "1,1,1,0.47427",
                       "DepthFeather": 320,
                       "FlipHorizontal": false,
                       "FlipVertical": false,
@@ -3229,7 +3229,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2237.03394,1565.89087",
+                      "Size": "5133.21973,3555.17285",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -3244,7 +3244,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 31",
-              "Position": "-3934.11841,2287.01392,2277.37231",
+              "Position": "-3934.11841,2287.01392,2164.43311",
               "Rotation": "0,0,-0.0192557275,0.99981457",
               "Scale": "1,1,1",
               "Tags": "",
@@ -3261,8 +3261,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-1054.9823,-738.48761,-342.869263",
-                    "Maxs": "1054.9823,738.48761,342.869263"
+                    "Mins": "-945.004333,-661.503052,-307.126404",
+                    "Maxs": "945.004333,661.503052,307.126404"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -3326,7 +3326,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2278.76196,1595.1333",
+                      "Size": "2041.20947,1428.84668",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -3341,7 +3341,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 32",
-              "Position": "-267.451996,2287.01392,2214.66235",
+              "Position": "-267.451996,2287.01392,2093.6792",
               "Rotation": "0,0,0.0251707975,0.999683142",
               "Scale": "1,1,1",
               "Tags": "",
@@ -3358,8 +3358,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-1032.23291,-722.562988,-335.475677",
-                    "Maxs": "1032.23291,722.562988,335.475677"
+                    "Mins": "-967.406189,-677.181763,-314.391693",
+                    "Maxs": "967.406189,677.181763,314.391693"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -3368,7 +3368,7 @@
                   "OnComponentFixedUpdate": null,
                   "OnComponentStart": null,
                   "OnComponentUpdate": null,
-                  "Strength": 0
+                  "Strength": 0.0076185064
                 }
               ],
               "Children": [
@@ -3397,7 +3397,7 @@
                       "Additive": false,
                       "AlphaCutoff": 0.5,
                       "Billboard": "Always",
-                      "Color": "1,1,1,0",
+                      "Color": "1,1,1,0.00386",
                       "DepthFeather": 320,
                       "FlipHorizontal": false,
                       "FlipVertical": false,
@@ -3423,7 +3423,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2229.62329,1560.73608",
+                      "Size": "2089.59741,1462.71265",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -3438,7 +3438,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 33",
-              "Position": "3399.21509,2287.01392,2130.48999",
+              "Position": "3399.21509,2287.01392,2028.15869",
               "Rotation": "0,0,0.0695476606,0.997578621",
               "Scale": "1,1,1",
               "Tags": "",
@@ -3455,8 +3455,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-984.109985,-688.877014,-319.835754",
-                    "Maxs": "984.109985,688.877014,319.835754"
+                    "Mins": "-1015.21875,-710.653137,-329.946075",
+                    "Maxs": "1015.21875,710.653137,329.946075"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -3520,7 +3520,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2125.67773,1487.97437",
+                      "Size": "2192.87256,1535.01086",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -3535,7 +3535,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 34",
-              "Position": "7065.88086,2287.01392,2098.82983",
+              "Position": "7065.88086,2287.01392,1985.45728",
               "Rotation": "0,0,-0.0604618154,0.998170495",
               "Scale": "1,1,1",
               "Tags": "",
@@ -3552,8 +3552,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-948.495239,-663.946716,-308.260956",
-                    "Maxs": "948.495239,663.946716,308.260956"
+                    "Mins": "-1051.25513,-735.878601,-341.657898",
+                    "Maxs": "1051.25513,735.878601,341.657898"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -3617,7 +3617,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2048.74976,1434.125",
+                      "Size": "2270.71118,1589.4978",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -3632,7 +3632,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 35",
-              "Position": "10732.5479,2287.01392,2084.16113",
+              "Position": "10732.5479,2287.01392,2123.28247",
               "Rotation": "0,0,-0.0160676502,0.999870896",
               "Scale": "1,1,1",
               "Tags": "",
@@ -3649,8 +3649,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-953.425476,-667.397827,-309.863281",
-                    "Maxs": "953.425476,667.397827,309.863281"
+                    "Mins": "-1046.94263,-732.859802,-340.256348",
+                    "Maxs": "1046.94263,732.859802,340.256348"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -3714,7 +3714,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2059.39917,1441.57935",
+                      "Size": "2261.39624,1582.97729",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -3729,7 +3729,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 36",
-              "Position": "-11267.4521,4953.68018,1965.17041",
+              "Position": "-11267.4521,4953.68018,2102.11914",
               "Rotation": "0,0,0.0283582397,0.999597847",
               "Scale": "1,1,1",
               "Tags": "",
@@ -3746,8 +3746,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-995.019531,-696.513672,-323.381348",
-                    "Maxs": "995.019531,696.513672,323.381348"
+                    "Mins": "-1005.67615,-703.973328,-326.844757",
+                    "Maxs": "1005.67615,703.973328,326.844757"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -3811,7 +3811,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2149.24219,1504.4696",
+                      "Size": "2172.2605,1520.5824",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -3826,7 +3826,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 37",
-              "Position": "-7600.78516,4953.68018,2128.02783",
+              "Position": "-7600.78516,4953.68018,2161.81787",
               "Rotation": "0,0,0.0727281421,0.997351825",
               "Scale": "1,1,1",
               "Tags": "",
@@ -3840,11 +3840,11 @@
                 {
                   "__type": "Sandbox.VolumetricFogVolume",
                   "__guid": "2c7dcfb4-f68d-4a48-99b1-9329510ddb60",
-                  "__enabled": true,
+                  "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-2699.06885,-1868.61658,-752.807312",
-                    "Maxs": "2699.06885,1868.61658,752.807312"
+                    "Mins": "-959.942505,-671.959778,-311.981323",
+                    "Maxs": "959.942505,671.959778,311.981323"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -3853,7 +3853,7 @@
                   "OnComponentFixedUpdate": null,
                   "OnComponentStart": null,
                   "OnComponentUpdate": null,
-                  "Strength": 1.2620683
+                  "Strength": 0
                 }
               ],
               "Children": [
@@ -3866,7 +3866,7 @@
                   "Rotation": "0,0,0,1",
                   "Scale": "1,1,1",
                   "Tags": "",
-                  "Enabled": true,
+                  "Enabled": false,
                   "NetworkMode": 0,
                   "NetworkFlags": 0,
                   "NetworkOrphaned": 0,
@@ -3882,7 +3882,7 @@
                       "Additive": false,
                       "AlphaCutoff": 0.5,
                       "Billboard": "Always",
-                      "Color": "1,1,1,0.55912",
+                      "Color": "1,1,1,0",
                       "DepthFeather": 320,
                       "FlipHorizontal": false,
                       "FlipVertical": false,
@@ -3908,7 +3908,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "5829.98877,4036.21191",
+                      "Size": "2073.47583,1451.43323",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -3923,7 +3923,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 38",
-              "Position": "-3934.11841,4953.68018,2290.38892",
+              "Position": "-3934.11841,4953.68018,2186.08301",
               "Rotation": "0,0,-0.0572787672,0.99835825",
               "Scale": "1,1,1",
               "Tags": "",
@@ -3940,8 +3940,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-1054.14001,-737.89801,-342.59549",
-                    "Maxs": "1054.14001,737.89801,342.59549"
+                    "Mins": "-945.741089,-662.018799,-307.365875",
+                    "Maxs": "945.741089,662.018799,307.365875"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -4005,7 +4005,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2276.94263,1593.85974",
+                      "Size": "2042.80078,1429.96069",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -4020,7 +4020,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 39",
-              "Position": "-267.451996,4953.68018,2302.58276",
+              "Position": "-267.451996,4953.68018,2100.51416",
               "Rotation": "0,0,-0.012879407,0.99991703",
               "Scale": "1,1,1",
               "Tags": "",
@@ -4037,8 +4037,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-1025.12634,-717.58844,-333.166046",
-                    "Maxs": "1025.12634,717.58844,333.166046"
+                    "Mins": "-974.253174,-681.977234,-316.632294",
+                    "Maxs": "974.253174,681.977234,316.632294"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -4102,7 +4102,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2214.27295,1549.99109",
+                      "Size": "2104.38696,1473.07092",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -4117,7 +4117,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 40",
-              "Position": "3399.21509,4953.68018,2293.42773",
+              "Position": "3399.21509,4953.68018,2192.94507",
               "Rotation": "0,0,0.0315453857,0.999502301",
               "Scale": "1,1,1",
               "Tags": "",
@@ -4134,8 +4134,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-976.332825,-683.432983,-317.308167",
-                    "Maxs": "976.332825,683.432983,317.308167"
+                    "Mins": "-1023.03351,-716.123474,-332.485901",
+                    "Maxs": "1023.03351,716.123474,332.485901"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -4199,7 +4199,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2108.87891,1476.21533",
+                      "Size": "2209.75244,1546.82678",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -4214,7 +4214,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 41",
-              "Position": "7065.88086,4953.68018,2263.97217",
+              "Position": "7065.88086,4953.68018,2152.02197",
               "Rotation": "0,0,0.0759079084,0.997114837",
               "Scale": "1,1,1",
               "Tags": "",
@@ -4228,11 +4228,11 @@
                 {
                   "__type": "Sandbox.VolumetricFogVolume",
                   "__guid": "89f262f3-8f9f-4e39-8ef6-aebea0a44b0d",
-                  "__enabled": true,
+                  "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-2460.0437,-1703.10718,-685.973755",
-                    "Maxs": "2460.0437,1703.10718,685.973755"
+                    "Mins": "-1053.68152,-737.577026,-342.446472",
+                    "Maxs": "1053.68152,737.577026,342.446472"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -4241,7 +4241,7 @@
                   "OnComponentFixedUpdate": null,
                   "OnComponentStart": null,
                   "OnComponentUpdate": null,
-                  "Strength": 0.9842017
+                  "Strength": 0
                 }
               ],
               "Children": [
@@ -4254,7 +4254,7 @@
                   "Rotation": "0,0,0,1",
                   "Scale": "1,1,1",
                   "Tags": "",
-                  "Enabled": true,
+                  "Enabled": false,
                   "NetworkMode": 0,
                   "NetworkFlags": 0,
                   "NetworkOrphaned": 0,
@@ -4270,7 +4270,7 @@
                       "Additive": false,
                       "AlphaCutoff": 0.5,
                       "Billboard": "Always",
-                      "Color": "1,1,1,0.58",
+                      "Color": "1,1,1,0",
                       "DepthFeather": 320,
                       "FlipHorizontal": false,
                       "FlipVertical": false,
@@ -4296,7 +4296,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "5313.69482,3678.71167",
+                      "Size": "2275.95215,1593.16638",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -4311,7 +4311,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 42",
-              "Position": "10732.5479,4953.68018,2196.06812",
+              "Position": "10732.5479,4953.68018,2209.98755",
               "Rotation": "0,0,-0.0540951341,0.998535812",
               "Scale": "1,1,1",
               "Tags": "",
@@ -4328,8 +4328,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-1047.0592,-732.941406,-340.29422",
-                    "Maxs": "1047.0592,732.941406,340.29422"
+                    "Mins": "-953.306824,-667.314758,-309.824707",
+                    "Maxs": "953.306824,667.314758,309.824707"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -4393,7 +4393,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2261.64795,1583.15344",
+                      "Size": "2059.14282,1441.3999",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -4408,7 +4408,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 43",
-              "Position": "-11267.4521,7620.34717,2090.97632",
+              "Position": "-11267.4521,7620.34717,2114.71069",
               "Rotation": "0,0,-0.00969102513,0.999953032",
               "Scale": "1,1,1",
               "Tags": "",
@@ -4425,8 +4425,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-1051.17346,-735.821411,-341.631378",
-                    "Maxs": "1051.17346,735.821411,341.631378"
+                    "Mins": "-948.574524,-664.002197,-308.286713",
+                    "Maxs": "948.574524,664.002197,308.286713"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -4490,7 +4490,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2270.53467,1589.37427",
+                      "Size": "2048.92114,1434.24475",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -4505,7 +4505,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 44",
-              "Position": "-7600.78516,7620.34717,2080.08374",
+              "Position": "-7600.78516,7620.34717,2119.80566",
               "Rotation": "0,0,0.0347322077,0.999396682",
               "Scale": "1,1,1",
               "Tags": "",
@@ -4522,8 +4522,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-1015.00354,-710.502502,-329.87616",
-                    "Maxs": "1015.00354,710.502502,329.87616"
+                    "Mins": "-984.323547,-689.026489,-319.905151",
+                    "Maxs": "984.323547,689.026489,319.905151"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -4587,7 +4587,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2192.40771,1534.68542",
+                      "Size": "2126.13892,1488.29724",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -4602,7 +4602,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 45",
-              "Position": "-3934.11841,7620.34717,2162.47778",
+              "Position": "-3934.11841,7620.34717,2030.75659",
               "Rotation": "0,0,0.0790869072,0.996867716",
               "Scale": "1,1,1",
               "Tags": "",
@@ -4619,8 +4619,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-967.023315,-676.916321,-314.282562",
-                    "Maxs": "967.023315,676.916321,314.282562"
+                    "Mins": "-1032.41394,-722.689758,-335.534546",
+                    "Maxs": "1032.41394,722.689758,335.534546"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -4684,7 +4684,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2088.77051,1462.13928",
+                      "Size": "2230.01416,1561.00989",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -4699,7 +4699,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 46",
-              "Position": "-267.451996,7620.34717,2141.27563",
+              "Position": "-267.451996,7620.34717,2038.90247",
               "Rotation": "0,0,-0.0509109534,0.998703182",
               "Scale": "1,1,1",
               "Tags": "",
@@ -4716,8 +4716,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-945.002014,-661.501404,-307.125671",
-                    "Maxs": "945.002014,661.501404,307.125671"
+                    "Mins": "-1054.98755,-738.491272,-342.870941",
+                    "Maxs": "1054.98755,738.491272,342.870941"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -4781,7 +4781,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2041.20447,1428.84314",
+                      "Size": "2278.77319,1595.14124",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -4796,7 +4796,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 47",
-              "Position": "3399.21509,7620.34717,2196.02686",
+              "Position": "3399.21509,7620.34717,2120.08618",
               "Rotation": "0,0,-0.00650255335,0.99997884",
               "Scale": "1,1,1",
               "Tags": "",
@@ -4813,8 +4813,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-966.276001,-676.393188,-314.039703",
-                    "Maxs": "966.276001,676.393188,314.039703"
+                    "Mins": "-1034.27405,-723.991882,-336.139069",
+                    "Maxs": "1034.27405,723.991882,336.139069"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -4878,7 +4878,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2087.15625,1461.0094",
+                      "Size": "2234.03198,1563.82251",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -4893,7 +4893,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 48",
-              "Position": "7065.88086,7620.34717,2158.8291",
+              "Position": "7065.88086,7620.34717,2251.65991",
               "Rotation": "0,0,0.0379186906,0.99928081",
               "Scale": "1,1,1",
               "Tags": "",
@@ -4907,11 +4907,11 @@
                 {
                   "__type": "Sandbox.VolumetricFogVolume",
                   "__guid": "b375a772-75df-4f63-a200-af98cf590782",
-                  "__enabled": true,
+                  "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-2636.65283,-1825.375,-735.220459",
-                    "Maxs": "2636.65283,1825.375,735.220459"
+                    "Mins": "-986.579468,-690.605652,-320.638336",
+                    "Maxs": "986.579468,690.605652,320.638336"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -4920,7 +4920,7 @@
                   "OnComponentFixedUpdate": null,
                   "OnComponentStart": null,
                   "OnComponentUpdate": null,
-                  "Strength": 0.96750176
+                  "Strength": 0
                 }
               ],
               "Children": [
@@ -4933,7 +4933,7 @@
                   "Rotation": "0,0,0,1",
                   "Scale": "1,1,1",
                   "Tags": "",
-                  "Enabled": true,
+                  "Enabled": false,
                   "NetworkMode": 0,
                   "NetworkFlags": 0,
                   "NetworkOrphaned": 0,
@@ -4949,7 +4949,7 @@
                       "Additive": false,
                       "AlphaCutoff": 0.5,
                       "Billboard": "Always",
-                      "Color": "1,1,1,0.56988",
+                      "Color": "1,1,1,0",
                       "DepthFeather": 320,
                       "FlipHorizontal": false,
                       "FlipVertical": false,
@@ -4975,7 +4975,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "5695.17041,3942.81006",
+                      "Size": "2131.01172,1491.70825",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -4990,7 +4990,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Cloud Puff 49",
-              "Position": "10732.5479,7620.34717,2176.96045",
+              "Position": "10732.5479,7620.34717,2255.71118",
               "Rotation": "0,0,0.0822650865,0.996610463",
               "Scale": "1,1,1",
               "Tags": "",
@@ -5007,8 +5007,8 @@
                   "__enabled": false,
                   "Flags": 0,
                   "Bounds": {
-                    "Mins": "-1050.82153,-735.575073,-341.516998",
-                    "Maxs": "1050.82153,735.575073,341.516998"
+                    "Mins": "-949.450439,-664.615295,-308.571381",
+                    "Maxs": "949.450439,664.615295,308.571381"
                   },
                   "FalloffExponent": 1.15,
                   "OnComponentDestroy": null,
@@ -5072,7 +5072,7 @@
                         "AfterUILayer": false
                       },
                       "Shadows": false,
-                      "Size": "2269.77466,1588.84216",
+                      "Size": "2050.81299,1435.56909",
                       "Sprite": null,
                       "StartingAnimationName": "Default",
                       "TextureFilter": "Bilinear"
@@ -5306,7 +5306,7 @@
         {
           "__type": "Sandbox.ModelRenderer",
           "__guid": "315d0cb3-9250-4714-88d3-094b164a9895",
-          "__enabled": false,
+          "__enabled": true,
           "Flags": 0,
           "BodyGroups": 18446744073709551615,
           "CreateAttachments": false,
@@ -5402,150 +5402,6 @@
         }
       ],
       "Children": []
-    },
-    {
-      "__guid": "61169f69-6ccb-42ac-881e-1c27994df23f",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "coingiver",
-      "Position": "968.780884,59.5864868,24.9996967",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 1,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 1,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "bcc8792f-66c8-4a6d-a127-b587fbff1299",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "models/dev/box.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "8359d2bc-b795-4789-8726-be9e482239ca",
-          "__enabled": true,
-          "Flags": 0,
-          "Center": "0,0,0",
-          "ColliderFlags": 0,
-          "Elasticity": null,
-          "Friction": null,
-          "IsTrigger": false,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OnObjectTriggerEnter": null,
-          "OnObjectTriggerExit": null,
-          "OnTriggerEnter": null,
-          "OnTriggerExit": null,
-          "RollingResistance": null,
-          "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null,
-          "SurfaceVelocity": "0,0,0"
-        },
-        {
-          "__type": "InteractGivePlayerCoin",
-          "__guid": "ded29367-0934-413a-8d80-cb43f8b32dac",
-          "__enabled": true,
-          "Flags": 0,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "text": null
-        }
-      ],
-      "Children": [
-        {
-          "__guid": "ff272e4c-17ac-4775-845b-88a51cf2cc18",
-          "__version": 2,
-          "Flags": 0,
-          "Name": "HealthBar",
-          "Position": "0,0,19.6503582",
-          "Rotation": "0,0,0,1",
-          "Scale": "2,2,2",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "Sandbox.WorldPanel",
-              "__guid": "d52b9840-7c1f-405e-95a5-a6d5995b4720",
-              "__enabled": true,
-              "Flags": 0,
-              "HorizontalAlign": "Center",
-              "InteractionRange": 1000,
-              "LookAtCamera": false,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "PanelSize": "1920,512",
-              "RenderOptions": {
-                "GameLayer": false,
-                "OverlayLayer": true,
-                "BloomLayer": false,
-                "AfterUILayer": false
-              },
-              "RenderScale": 1,
-              "VerticalAlign": "Center"
-            },
-            {
-              "__type": "Sandbox.WorldSpaceHealthbar",
-              "__guid": "423374fb-d460-472d-a5f0-9f87c489dd4b",
-              "__enabled": true,
-              "Flags": 0,
-              "health": 100,
-              "maxHealth": 100,
-              "MyStringValue": "Hello World!",
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": []
-        }
-      ]
     },
     {
       "__guid": "d59a8050-4a7d-4f68-902d-b976ea86ef02",
