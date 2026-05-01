@@ -1,0 +1,23 @@
+{
+  "publish": {
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "Birchtreedarkeryoungcsimple",
+      "Type": "model",
+      "Org": "local",
+      "Ident": "birchtreedarkeryoungcsimple",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": [
+        "chase.cylinder#57472"
+      ],
+      "Mounts": null,
+      "IsStandaloneOnly": false,
+      "Metadata": {
+        "SingleAssetSource": "3rdparty/lowpolynature/models/env/trees/birch/birchdarker/birchtreedarkeryoungcsimple.vmdl"
+      }
+    }
+  }
+}

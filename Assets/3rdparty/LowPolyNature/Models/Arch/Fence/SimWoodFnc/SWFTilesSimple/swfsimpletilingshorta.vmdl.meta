@@ -1,0 +1,23 @@
+{
+  "publish": {
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "Swfsimpletilingshorta",
+      "Type": "model",
+      "Org": "local",
+      "Ident": "swfsimpletilingshorta",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": [
+        "chase.cylinder#57472"
+      ],
+      "Mounts": null,
+      "IsStandaloneOnly": false,
+      "Metadata": {
+        "SingleAssetSource": "3rdparty/lowpolynature/models/arch/fence/simwoodfnc/swftilessimple/swfsimpletilingshorta.vmdl"
+      }
+    }
+  }
+}

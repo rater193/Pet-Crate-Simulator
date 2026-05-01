@@ -1,0 +1,23 @@
+{
+  "publish": {
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "Floor Middle 30X 30 1",
+      "Type": "model",
+      "Org": "local",
+      "Ident": "floormiddle30x301",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": [
+        "chase.cylinder#57472"
+      ],
+      "Mounts": null,
+      "IsStandaloneOnly": false,
+      "Metadata": {
+        "SingleAssetSource": "3rdparty/bk-prod.fr/pure meadows 2/models/floors/floor_middle_30x30_1.vmdl"
+      }
+    }
+  }
+}

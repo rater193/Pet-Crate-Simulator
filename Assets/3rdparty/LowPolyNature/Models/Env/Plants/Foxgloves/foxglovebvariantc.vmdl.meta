@@ -1,0 +1,23 @@
+{
+  "publish": {
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "Foxglovebvariantc",
+      "Type": "model",
+      "Org": "local",
+      "Ident": "foxglovebvariantc",
+      "Schema": 0,
+      "IncludeSourceFiles": false,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": [
+        "chase.cylinder#57472"
+      ],
+      "Mounts": null,
+      "IsStandaloneOnly": false,
+      "Metadata": {
+        "SingleAssetSource": "3rdparty/lowpolynature/models/env/plants/foxgloves/foxglovebvariantc.vmdl"
+      }
+    }
+  }
+}

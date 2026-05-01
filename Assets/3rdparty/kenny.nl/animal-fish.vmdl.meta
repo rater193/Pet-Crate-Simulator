@@ -10,7 +10,9 @@
       "IncludeSourceFiles": false,
       "Resources": null,
       "PackageReferences": null,
-      "EditorReferences": null,
+      "EditorReferences": [
+        "chase.cylinder#57472"
+      ],
       "Mounts": null,
       "IsStandaloneOnly": false,
       "Metadata": {
