@@ -1,0 +1,85 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Sandbox
+
+<style>
+    .title {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-32px);
+        font-size: 64px;
+        color: white;
+    }
+
+    .healthbarBackground {
+        background-color: red;
+        position: absolute;
+        left: 32px;
+        right: 32px;
+        top: 50%;
+        height: 64px;
+        transform: translateY(-50%);
+        border-radius: 100%;
+    }
+
+    .healthbarForeground {
+        border-radius: 100%;
+        background-color: green;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        height: 100%;
+        transition: width 0.15s ease;
+    }
+</style>
+
+<root>
+    <div class="title">@health / @maxHealth - @HealthPercent%</div>
+
+    <div class="healthbarBackground">
+        <div class="healthbarForeground" style="width: @(WidthPercent)%;"></div>
+    </div>
+</root>
+
+@code
+{
+    [Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
+
+    [Property] public int health { get; set; } = 100;
+    [Property] public int maxHealth { get; set; } = 100;
+
+
+    private float HealthPercent {
+        get
+        {
+            if (maxHealth <= 0)
+                return 0f;
+
+            return ((float)health / (float)maxHealth * 100f).Clamp(0f, 100f);
+        }
+    }
+
+    private float WidthPercent
+    {
+        get
+        {
+            if (maxHealth <= 0)
+                return 0f;
+
+            return 8f + (92f * (WidthPercent/100f));
+        }
+    }
+
+
+    protected override void OnUpdate()
+    {
+        GameObject.WorldRotation = Scene.Camera.WorldRotation * Rotation.FromYaw(180f);
+    }
+
+    protected override int BuildHash()
+    {
+        return System.HashCode.Combine(MyStringValue, health, maxHealth, WidthPercent, HealthPercent);
+    }
+}
