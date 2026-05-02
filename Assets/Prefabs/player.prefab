@@ -218,6 +218,21 @@
         "PlayerMoney": 0
       },
       {
+        "__type": "PetFramework",
+        "__guid": "af1ef162-256e-4535-863e-d6b85291c0c7",
+        "__enabled": true,
+        "Flags": 0,
+        "EquippedPetLocalPosition": "32,-42,24",
+        "EquippedPetLocalRotation": "0,0,0,1",
+        "NetworkSpawnEquippedPet": true,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null
+      },
+      {
         "__type": "Inventory",
         "__guid": "79060115-ac9b-49ba-94f5-2df9940b1119",
         "__enabled": true,

@@ -11,7 +11,8 @@ public sealed class PlayerData : Component
 		if ( amount <= 0 )
 			return;
 
-		PlayerMoney += amount;
+		var petFramework = GetComponent<PetFramework>();
+		PlayerMoney += petFramework?.ApplyCoinMultiplier( amount ) ?? amount;
 	}
 
 	protected override void OnUpdate()
