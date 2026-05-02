@@ -9,6 +9,10 @@ public sealed class InteractGivePlayerCoin : Interactable
 	[Property] public int moneyPerHit = 1;
 	[Property] public int moneyWhenDestroyed = 5;
 
+	private float hitTimeScale = 0f;
+	private Vector3 startPos;
+	private Vector3 dirOffset;
+
 
 	private WorldSpaceHealthbar healthbar;
 
@@ -16,6 +20,27 @@ public sealed class InteractGivePlayerCoin : Interactable
 	protected override void OnStart()
 	{
 
+	}
+
+	protected override void OnUpdate()
+	{
+		if(!IsProxy)
+		{
+
+
+			if ( hitTimeScale > 0)
+			{
+				hitTimeScale -= Time.Delta * 5f;
+				if( hitTimeScale < 0) { hitTimeScale = 0; }
+
+				GameObject.WorldPosition = startPos + (dirOffset * hitTimeScale * 10f);
+
+			}
+			else
+			{
+				startPos = GameObject.WorldPosition;
+			}
+		}
 	}
 
 	[Rpc.Host]
@@ -72,6 +97,12 @@ public sealed class InteractGivePlayerCoin : Interactable
 	[Rpc.Broadcast]
 	public override void OnInteract( PlayerController interactingPlayer )
 	{
+
+		if(!IsProxy)
+		{
+			hitTimeScale = 1f;
+			dirOffset = new Vector3( (float)Game.Random.NextDouble() - 0.5f, (float)Game.Random.NextDouble() - 0.5f, (float)Game.Random.NextDouble() - 0.5f ).Normal;
+		}
 		health -= 1;
 		UpdateHealthbar( interactingPlayer );
 	}
