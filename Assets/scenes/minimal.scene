@@ -96348,6 +96348,7 @@
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null,
+              "RenderedMoneyValue": -1,
               "width": 128
             }
           ],
@@ -96430,7 +96431,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "SpawnArea",
-      "Position": "1030.62122,1952.66711,0",
+      "Position": "1030.62122,1952.66711,15",
       "Rotation": "0,0,0,1",
       "Scale": "25,25,1",
       "Tags": "",
@@ -96503,7 +96504,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "Polygon",
-      "Position": "1018.75,1075,10.46",
+      "Position": "1018.75,1075,12",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "world",
@@ -96767,7 +96768,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Polygon",
-              "Position": "1031.25,1937.5,10.4634552",
+              "Position": "1031.25,1937.5,12",
               "Rotation": "0,0,0,1",
               "Scale": "1,1,1",
               "Tags": "world",
@@ -96943,7 +96944,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Spawn8",
-              "Position": "1491.94177,-304.757294,10.9824219",
+              "Position": "1491.94177,-304.757294,12.9820004",
               "Rotation": "0,0,-0.382683873,-0.923878968",
               "Scale": "1,1,1",
               "Tags": "",
@@ -97069,7 +97070,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Spawn7",
-              "Position": "1647.99939,126.00061,10.9824219",
+              "Position": "1647.99939,126.00061,12.9820004",
               "Rotation": "0,0,-0.707107008,-0.707105935",
               "Scale": "1,1,1",
               "Tags": "",
@@ -97195,7 +97196,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Spawn6",
-              "Position": "1453.75745,540.941772,10.9824219",
+              "Position": "1453.75745,540.941772,12.9820004",
               "Rotation": "0,0,-0.923879445,-0.38268286",
               "Scale": "1,1,1",
               "Tags": "",
@@ -97321,7 +97322,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Spawn5",
-              "Position": "1022.99957,696.999512,10.9824219",
+              "Position": "1022.99957,696.999512,12.9820004",
               "Rotation": "0,0,-0.999999583,5.66244125E-07",
               "Scale": "1,1,1",
               "Tags": "",
@@ -97447,7 +97448,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Spawn4",
-              "Position": "608.058228,502.757233,10.9824219",
+              "Position": "608.058228,502.757233,12.9820004",
               "Rotation": "0,0,-0.923878908,0.382683933",
               "Scale": "1,1,1",
               "Tags": "",
@@ -97573,7 +97574,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Spawn3",
-              "Position": "452.000244,71.9998474,10.9824219",
+              "Position": "452.000244,71.9998474,12.9820004",
               "Rotation": "0,0,-0.707106411,0.707106888",
               "Scale": "1,1,1",
               "Tags": "",
@@ -97699,7 +97700,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Spawn2",
-              "Position": "646.242249,-342.94162,10.9824219",
+              "Position": "646.242249,-342.94162,12.9820004",
               "Rotation": "0,0,-0.382683098,0.923879504",
               "Scale": "1,1,1",
               "Tags": "",
@@ -97825,7 +97826,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Spawn1",
-              "Position": "1076.99976,-499,10.9824219",
+              "Position": "1076.99976,-499,12.9820004",
               "Rotation": "0,0,0,1",
               "Scale": "1,1,1",
               "Tags": "",
@@ -98077,7 +98078,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Polygon",
-              "Position": "1050,99,10.4828644",
+              "Position": "1050,99,12",
               "Rotation": "0,0,0,1",
               "Scale": "1,1,1",
               "Tags": "world",
@@ -107179,49 +107180,6 @@
       ]
     },
     {
-      "__guid": "27abe76e-f899-4f08-a79d-b6ed8caff3aa",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "World",
-      "Position": "1000.53802,2631.56812,209.421005",
-      "Rotation": "0,0,-0.707106829,0.707106769",
-      "Scale": "2.34599996,2.34599996,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.WorldPanel",
-          "__guid": "9c1725bc-0c9e-4f2f-a190-3515c1c43ec0",
-          "__enabled": true,
-          "Flags": 0,
-          "HorizontalAlign": "Center",
-          "InteractionRange": 1000,
-          "LookAtCamera": false,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "PanelSize": "15360,3412",
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderScale": 1,
-          "VerticalAlign": "Center"
-        }
-      ],
-      "Children": []
-    },
-    {
       "__guid": "08ac5965-a5d5-4f08-951c-ede68ed621ef",
       "__version": 2,
       "Flags": 0,
@@ -109222,6 +109180,240 @@
         }
       ],
       "Children": []
+    },
+    {
+      "__guid": "0a305c95-c799-49ca-8bcb-3e3e894da73a",
+      "__version": 2,
+      "__Prefab": "prefabs/doors/interactabledoor.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+            },
+            "Property": "Position",
+            "Value": "999.818848,2652.77832,264.080292"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+            },
+            "Property": "Rotation",
+            "Value": "-3.26061837E-07,-3.26061837E-07,-0.707106769,0.707106769"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
+            },
+            "Property": "unlockCost",
+            "Value": 150
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea": "0a305c95-c799-49ca-8bcb-3e3e894da73a",
+        "8794d74c-0a9d-425d-aaa1-c7af2116072f": "514f776d-d743-4147-b49f-4e11b92792d5",
+        "1caa46ee-a44d-49f0-a94a-17bba6813f84": "f256312e-b8f9-40c9-b432-1f405e63925f",
+        "dd040270-426b-43e5-9634-873675a1c099": "ed986591-a9eb-4973-9898-02e3ffc60edf",
+        "508be9a2-6db0-4739-bfa0-e78db46e8de3": "80143ee2-811f-4764-a9be-898628fffa28",
+        "e5e7ef4e-37d9-4209-ad87-3b9e42cca247": "bb296a6e-683a-4da5-8465-b39f40662d46"
+      }
+    },
+    {
+      "__guid": "c2dc99b8-0334-4dcd-a381-7ac08c0628b1",
+      "__version": 2,
+      "__Prefab": "prefabs/doors/interactabledoor.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+            },
+            "Property": "Name",
+            "Value": "interactabledoor (2)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+            },
+            "Property": "Position",
+            "Value": "2117.33179,3534.53052,264.078918"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+            },
+            "Property": "Rotation",
+            "Value": "3.98962413E-07,2.31217726E-07,1,-4.37114807E-08"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
+            },
+            "Property": "unlockCost",
+            "Value": 650
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea": "c2dc99b8-0334-4dcd-a381-7ac08c0628b1",
+        "8794d74c-0a9d-425d-aaa1-c7af2116072f": "d549c4aa-ed51-4227-ae57-7ba606787e90",
+        "1caa46ee-a44d-49f0-a94a-17bba6813f84": "1f2674b2-bed3-4184-a974-48c30504fd3b",
+        "dd040270-426b-43e5-9634-873675a1c099": "9bc6bc78-437a-4183-a5ca-3533149c8d47",
+        "508be9a2-6db0-4739-bfa0-e78db46e8de3": "d79b372f-e391-4c6f-9e56-c3a79daa8f1a",
+        "e5e7ef4e-37d9-4209-ad87-3b9e42cca247": "b6516221-52c1-4e93-8ec5-d39e2914afb6"
+      }
+    },
+    {
+      "__guid": "48977aa5-beb5-47fb-9950-1c37c7fb6be9",
+      "__version": 2,
+      "__Prefab": "prefabs/doors/interactabledoor.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+            },
+            "Property": "Name",
+            "Value": "interactabledoor (3)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+            },
+            "Property": "Position",
+            "Value": "1179.16199,4373.55078,264.078918"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+            },
+            "Property": "Rotation",
+            "Value": "-1.18613414E-07,-4.45604655E-07,-0.707106769,0.707106769"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
+            },
+            "Property": "unlockCost",
+            "Value": 8000
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea": "48977aa5-beb5-47fb-9950-1c37c7fb6be9",
+        "8794d74c-0a9d-425d-aaa1-c7af2116072f": "eb1582d7-2040-4ced-b5c5-76b1929e2d6c",
+        "1caa46ee-a44d-49f0-a94a-17bba6813f84": "33477372-f4eb-4bc3-9011-12a0483e8b66",
+        "dd040270-426b-43e5-9634-873675a1c099": "55d5c03a-f335-4dbc-9f73-dece76e88486",
+        "508be9a2-6db0-4739-bfa0-e78db46e8de3": "3bd14750-254d-4465-a885-a6d23d0e9ca3",
+        "e5e7ef4e-37d9-4209-ad87-3b9e42cca247": "b9408bd7-c9e2-46ff-afbf-dd4e7c3d0cb6"
+      }
+    },
+    {
+      "__guid": "e38c7693-3b06-4d27-b79c-f8e0ce4fb1c7",
+      "__version": 2,
+      "__Prefab": "prefabs/doors/interactabledoor.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+            },
+            "Property": "Name",
+            "Value": "interactabledoor (1)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+            },
+            "Property": "Position",
+            "Value": "56.0779495,3479.02417,264.076965"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+            },
+            "Property": "Rotation",
+            "Value": "-4.60528128E-07,-2.33772042E-08,-0.0506964475,0.998714089"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
+            },
+            "Property": "unlockCost",
+            "Value": 1800
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea": "e38c7693-3b06-4d27-b79c-f8e0ce4fb1c7",
+        "8794d74c-0a9d-425d-aaa1-c7af2116072f": "18192dba-72ae-497d-b443-c84819dd31d3",
+        "1caa46ee-a44d-49f0-a94a-17bba6813f84": "ac918806-667e-4966-a099-522862ac05ff",
+        "dd040270-426b-43e5-9634-873675a1c099": "00a7f2d3-428e-4e1d-a82e-7bab2b52b57c",
+        "508be9a2-6db0-4739-bfa0-e78db46e8de3": "3e9aea84-ad65-4485-8f85-61fe6a123dc6",
+        "e5e7ef4e-37d9-4209-ad87-3b9e42cca247": "a10a4db8-0b84-4271-9cac-d3b9588bf1ec"
+      }
+    },
+    {
+      "__guid": "dcdd4d2c-f27b-4887-8952-31ff8df99cde",
+      "__version": 2,
+      "__Prefab": "prefabs/doors/areacomingsoon.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "f390930c-eac9-4577-919d-c99bf37f847f"
+            },
+            "Property": "Position",
+            "Value": "-1332.91736,-3254.07812,40.1669693"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "f390930c-eac9-4577-919d-c99bf37f847f"
+            },
+            "Property": "Rotation",
+            "Value": "-0.00124805211,0.000413473928,-0.75895977,0.6511361"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "f390930c-eac9-4577-919d-c99bf37f847f": "dcdd4d2c-f27b-4887-8952-31ff8df99cde",
+        "391e0b5e-2588-4932-97c6-abf6c84049bb": "66cde5c7-c951-4475-89c9-878c82e788e2",
+        "e1a5702e-b275-4bf3-9f5f-006636991a03": "602bad5c-89cd-4f25-907d-3c37d1f0fc8c",
+        "f5b72fc5-2013-43f2-9bb2-9e4eae566887": "73454ea0-7158-4d1c-9aaf-4495e0dc327a"
+      }
     }
   ],
   "SceneProperties": {
@@ -109248,6 +109440,11 @@
     "GameObjectSystems": {
       "Sandbox.MovieMaker.MovieRecorderSystem": {
         "DisableClientRecording": false
+      },
+      "Sandbox.Clutter.ClutterGridSystem": {
+        "Storage": {
+          "$blob": "11871867-eaf7-4fcc-82bf-1090a335cd00"
+        }
       },
       "Sandbox.SelectionSetsSystem": {
         "Data": {
