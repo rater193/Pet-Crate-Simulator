@@ -1,46 +1,46 @@
 using Sandbox;
+
+using System;
+using System.Collections.Generic;
+
 public sealed class InteractGivePlayerCoin : Interactable
 {
-
-
 	[Property, Sync] public int health { get; set; } = 10;
 	[Property, Sync] public int maxHealth { get; set; } = 10;
 
 	[Property] public int moneyPerHit = 1;
 	[Property] public int moneyWhenDestroyed = 5;
 
-	private float hitTimeScale = 0f;
-	private Vector3 startPos;
-	private Vector3 dirOffset;
-
+	[Property] public float HitMoveDistance { get; set; } = 10f;
+	[Property] public float HitFeedbackDuration { get; set; } = 0.22f;
+	[Property] public Color HitFlashColor { get; set; } = new( 1f, 0.08f, 0.05f, 1f );
 
 	private WorldSpaceHealthbar healthbar;
+	private readonly List<ModelVisual> modelVisuals = new();
+
+	private float hitFeedbackRemaining;
+	private Vector3 hitFeedbackDirection = Vector3.Up;
+	private bool hitFeedbackActive;
 
 
 	protected override void OnStart()
 	{
-
+		CacheModelVisuals();
 	}
 
 	protected override void OnUpdate()
 	{
-		if(!IsProxy)
-		{
+		UpdateHitFeedback();
+	}
 
+	protected override void OnDisabled()
+	{
+		RestoreHitFeedback();
+	}
 
-			if ( hitTimeScale > 0)
-			{
-				hitTimeScale -= Time.Delta * 5f;
-				if( hitTimeScale < 0) { hitTimeScale = 0; }
-
-				GameObject.WorldPosition = startPos + (dirOffset * hitTimeScale * 10f);
-
-			}
-			else
-			{
-				startPos = GameObject.WorldPosition;
-			}
-		}
+	protected override void OnDestroy()
+	{
+		RestoreHitFeedback();
 	}
 
 	[Rpc.Host]
@@ -56,7 +56,7 @@ public sealed class InteractGivePlayerCoin : Interactable
 		clone.NetworkSpawn();
 	}
 
-	void UpdateHealthbar( PlayerController interactingPlayer=null )
+	void UpdateHealthbar()
 	{
 		if ( healthbar == null )
 		{
@@ -74,22 +74,6 @@ public sealed class InteractGivePlayerCoin : Interactable
 		healthbar.health = health;
 		healthbar.maxHealth = maxHealth;
 
-		if ( healthbar.health <= 0 )
-		{
-			if ( interactingPlayer != null )
-			{
-				interactingPlayer.GetComponent<PlayerData>().PlayerMoney += moneyWhenDestroyed;
-			}
-			GameObject.Destroy();
-		}
-		else
-		{
-
-			if ( interactingPlayer != null )
-			{
-				interactingPlayer.GetComponent<PlayerData>().PlayerMoney += moneyPerHit;
-			}
-		}
 
 	}
 
@@ -97,13 +81,128 @@ public sealed class InteractGivePlayerCoin : Interactable
 	[Rpc.Broadcast]
 	public override void OnInteract( PlayerController interactingPlayer )
 	{
+		BeginHitFeedback();
 
-		if(!IsProxy)
-		{
-			hitTimeScale = 1f;
-			dirOffset = new Vector3( (float)Game.Random.NextDouble() - 0.5f, (float)Game.Random.NextDouble() - 0.5f, (float)Game.Random.NextDouble() - 0.5f ).Normal;
-		}
+		if ( IsProxy )
+			return;
+
 		health -= 1;
-		UpdateHealthbar( interactingPlayer );
+
+		var playerData = interactingPlayer?.GetComponent<PlayerData>();
+		if ( health <= 0 )
+		{
+			playerData?.AddMoney( moneyWhenDestroyed );
+			GameObject.Destroy();
+		}
+		else
+		{
+			playerData?.AddMoney( moneyPerHit );
+		}
+
+		UpdateHealthbar();
+	}
+
+	private void BeginHitFeedback()
+	{
+		if ( modelVisuals.Count == 0 )
+		{
+			CacheModelVisuals();
+		}
+
+		hitFeedbackRemaining = MathF.Max( 0.01f, HitFeedbackDuration );
+		hitFeedbackDirection = new Vector3(
+			(float)Game.Random.NextDouble() - 0.5f,
+			(float)Game.Random.NextDouble() - 0.5f,
+			(float)Game.Random.NextDouble() * 0.35f + 0.25f
+		).Normal;
+
+		hitFeedbackActive = true;
+		ApplyHitFeedback( 0f );
+	}
+
+	private void UpdateHitFeedback()
+	{
+		if ( !hitFeedbackActive )
+			return;
+
+		var duration = MathF.Max( 0.01f, HitFeedbackDuration );
+		var progress = 1f - (hitFeedbackRemaining / duration).Clamp( 0f, 1f );
+
+		ApplyHitFeedback( progress );
+
+		hitFeedbackRemaining -= Time.Delta;
+		if ( hitFeedbackRemaining > 0f )
+			return;
+
+		RestoreHitFeedback();
+	}
+
+	private void ApplyHitFeedback( float progress )
+	{
+		var remaining = 1f - progress.Clamp( 0f, 1f );
+		var spring = remaining * remaining * MathF.Cos( progress * MathF.PI * 3f );
+		var flashAmount = remaining * remaining;
+		var offset = hitFeedbackDirection * HitMoveDistance * spring;
+
+		foreach ( var visual in modelVisuals )
+		{
+			if ( !visual.Renderer.IsValid() )
+				continue;
+
+			if ( visual.GameObject.IsValid() && visual.GameObject != GameObject )
+			{
+				visual.GameObject.LocalPosition = visual.LocalPosition + offset;
+			}
+
+			visual.Renderer.Tint = Color.Lerp( visual.Tint, HitFlashColor, flashAmount, true );
+		}
+	}
+
+	private void RestoreHitFeedback()
+	{
+		hitFeedbackActive = false;
+		hitFeedbackRemaining = 0f;
+
+		foreach ( var visual in modelVisuals )
+		{
+			if ( !visual.Renderer.IsValid() )
+				continue;
+
+			if ( visual.GameObject.IsValid() && visual.GameObject != GameObject )
+			{
+				visual.GameObject.LocalPosition = visual.LocalPosition;
+			}
+
+			visual.Renderer.Tint = visual.Tint;
+		}
+	}
+
+	private void CacheModelVisuals()
+	{
+		modelVisuals.Clear();
+
+		foreach ( var renderer in GameObject.Components.GetAll<ModelRenderer>( FindMode.EverythingInSelfAndDescendants ) )
+		{
+			if ( !renderer.IsValid() )
+				continue;
+
+			modelVisuals.Add( new ModelVisual( renderer ) );
+		}
+	}
+
+	private sealed class ModelVisual
+	{
+		public ModelRenderer Renderer { get; }
+		public GameObject GameObject { get; }
+		public Vector3 LocalPosition { get; }
+		public Color Tint { get; }
+
+		public ModelVisual( ModelRenderer renderer )
+		{
+			Renderer = renderer;
+			GameObject = renderer.GameObject;
+			LocalPosition = renderer.GameObject.LocalPosition;
+			Tint = renderer.Tint;
+		}
 	}
 }
