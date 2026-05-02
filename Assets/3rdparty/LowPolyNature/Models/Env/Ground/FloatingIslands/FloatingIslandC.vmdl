@@ -36,45 +36,45 @@
 						remaps = 
 						[
 							{
-								from = "Base Material.vmat"
+								from = "base material.vmat"
 								to = "3rdparty/lowpolynature/materials/base_material.vmat"
 							},
 							{
-								from = "Base Shiny.vmat"
+								from = "base shiny.vmat"
 								to = "3rdparty/lowpolynature/materials/base_shiny.vmat"
 							},
 							{
-								from = "Glass Not Transparent.vmat"
+								from = "glass not transparent.vmat"
 								to = "3rdparty/lowpolynature/materials/glass_not_transparent.vmat"
 							},
 							{
-								from = "Glass Transparent.vmat"
+								from = "glass transparent.vmat"
 								to = "3rdparty/lowpolynature/materials/glass_transparent.vmat"
 							},
 							{
-								from = "Glow.vmat"
+								from = "glow.vmat"
 								to = "3rdparty/lowpolynature/materials/glow.vmat"
 							},
 							{
-								from = "Metal.vmat"
+								from = "metal.vmat"
 								to = "3rdparty/lowpolynature/materials/metal.vmat"
 							},
 							{
-								from = "Base - Flat.vmat"
+								from = "base - flat.vmat"
 								to = "3rdparty/lowpolynature/materials/base_-_flat.vmat"
 							},
 							{
-								from = "Base - Toned Down.vmat"
+								from = "base - toned down.vmat"
 								to = "3rdparty/lowpolynature/materials/base_-_toned_down.vmat"
 							},
 							{
-								from = "Base - Vibrant.vmat"
+								from = "base - vibrant.vmat"
 								to = "3rdparty/lowpolynature/materials/base_-_vibrant.vmat"
 							},
 							{
-								from = "Ground.vmat"
+								from = "ground.vmat"
 								to = "3rdparty/lowpolynature/materials/ground.vmat"
-							}
+							},
 						]
 						use_global_default = false
 						global_default_material = "materials/default.vmat"
@@ -96,9 +96,15 @@
 						align_origin_y_type = "None"
 						align_origin_z_type = "None"
 						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
 					},
 				]
-			},			{
+			},
+			{
 				_class = "PhysicsShapeList"
 				children = 
 				[
@@ -110,7 +116,7 @@
 						collision_tags = "solid"
 						recenter_on_parent_bone = false
 						offset_origin = [ 0.0, 0.0, 0.0 ]
-						offset_angles = [ 0.0, 0.0, 0.0 ]
+						offset_angles = [ -90.0, 0.0, 0.0 ]
 						align_origin_x_type = "None"
 						align_origin_y_type = "None"
 						align_origin_z_type = "None"
@@ -128,7 +134,6 @@
 					},
 				]
 			},
-
 		]
 		model_archetype = ""
 		primary_associated_entity = ""
