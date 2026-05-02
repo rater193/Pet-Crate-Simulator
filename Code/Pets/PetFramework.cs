@@ -1,19 +1,45 @@
 using Sandbox;
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 public sealed class PetFramework : Component
 {
 	public static PetFramework LOCAL;
 
-	[Property] public Vector3 EquippedPetLocalPosition { get; set; } = new( 32f, -42f, 24f );
+	[Property] public int MaxEquippedPets { get; set; } = 3;
+	[Property] public float PetCircleRadius { get; set; } = 48f;
+	[Property] public float PetCircleHeight { get; set; } = 24f;
+	[Property] public float PetCircleAngleOffset { get; set; } = 0f;
 	[Property] public Rotation EquippedPetLocalRotation { get; set; } = Rotation.Identity;
 	[Property] public bool NetworkSpawnEquippedPet { get; set; } = true;
 
-	public GameObject EquippedPet { get; private set; }
-	public PetComponent EquippedPetComponent { get; private set; }
+	private readonly List<GameObject> equippedPets = new();
+	private readonly List<PetComponent> equippedPetComponents = new();
 
-	public float CoinMultiplier => GetEquippedPetComponent()?.CoinMultiplier ?? 1f;
+	public IReadOnlyList<GameObject> EquippedPets => equippedPets;
+	public GameObject EquippedPet => equippedPets.FirstOrDefault();
+	public PetComponent EquippedPetComponent => equippedPetComponents.FirstOrDefault( pet => pet.IsValid() );
+
+	public float CoinMultiplier
+	{
+		get
+		{
+			RefreshEquippedPetComponents();
+
+			var multiplier = 1f;
+			foreach ( var petComponent in equippedPetComponents )
+			{
+				if ( petComponent.IsValid() )
+				{
+					multiplier *= petComponent.CoinMultiplier;
+				}
+			}
+
+			return multiplier;
+		}
+	}
 
 	protected override void OnStart()
 	{
@@ -47,20 +73,27 @@ public sealed class PetFramework : Component
 		if ( IsProxy || !prefab.IsValid() )
 			return;
 
-		Unequip();
+		if ( equippedPets.Count >= MaxEquippedPets )
+		{
+			Log.Warning( $"Cannot equip pet '{prefab.Name}'. Max equipped pets is {MaxEquippedPets}." );
+			return;
+		}
 
 		var pet = prefab.Clone();
 		pet.Parent = GameObject;
-		pet.LocalPosition = EquippedPetLocalPosition;
 		pet.LocalRotation = EquippedPetLocalRotation;
 
-		EquippedPet = pet;
-		EquippedPetComponent = pet.GetComponent<PetComponent>() ?? pet.GetComponentInChildren<PetComponent>();
+		equippedPets.Add( pet );
 
-		if ( EquippedPetComponent == null )
+		var petComponent = pet.GetComponent<PetComponent>() ?? pet.GetComponentInChildren<PetComponent>();
+		equippedPetComponents.Add( petComponent );
+
+		if ( petComponent == null )
 		{
 			Log.Warning( $"Equipped pet prefab '{prefab.Name}' does not have a PetComponent." );
 		}
+
+		ArrangeEquippedPets();
 
 		if ( NetworkSpawnEquippedPet )
 		{
@@ -70,13 +103,32 @@ public sealed class PetFramework : Component
 
 	public void Unequip()
 	{
-		if ( EquippedPet.IsValid() )
+		if ( equippedPets.Count == 0 )
+			return;
+
+		var pet = equippedPets[^1];
+		if ( pet.IsValid() )
 		{
-			EquippedPet.Destroy();
+			pet.Destroy();
 		}
 
-		EquippedPet = null;
-		EquippedPetComponent = null;
+		equippedPets.RemoveAt( equippedPets.Count - 1 );
+		equippedPetComponents.RemoveAt( equippedPetComponents.Count - 1 );
+		ArrangeEquippedPets();
+	}
+
+	public void UnequipAll()
+	{
+		foreach ( var pet in equippedPets )
+		{
+			if ( pet.IsValid() )
+			{
+				pet.Destroy();
+			}
+		}
+
+		equippedPets.Clear();
+		equippedPetComponents.Clear();
 	}
 
 	public int ApplyCoinMultiplier( int baseCoins )
@@ -87,17 +139,43 @@ public sealed class PetFramework : Component
 		return Math.Max( 0, (int)MathF.Round( baseCoins * CoinMultiplier ) );
 	}
 
-	private PetComponent GetEquippedPetComponent()
+	private void ArrangeEquippedPets()
 	{
-		if ( EquippedPetComponent.IsValid() )
-			return EquippedPetComponent;
+		var count = equippedPets.Count;
+		if ( count == 0 )
+			return;
 
-		if ( EquippedPet.IsValid() )
+		var angleStep = MathF.PI * 2f / count;
+		var angleOffset = PetCircleAngleOffset * (MathF.PI / 180f);
+
+		for ( var i = 0; i < count; i++ )
 		{
-			EquippedPetComponent = EquippedPet.GetComponent<PetComponent>() ?? EquippedPet.GetComponentInChildren<PetComponent>();
-		}
+			var pet = equippedPets[i];
+			if ( !pet.IsValid() )
+				continue;
 
-		EquippedPetComponent ??= GameObject.GetComponentInChildren<PetComponent>();
-		return EquippedPetComponent;
+			var angle = angleOffset + (angleStep * i);
+			pet.LocalPosition = new Vector3( MathF.Cos( angle ) * PetCircleRadius, MathF.Sin( angle ) * PetCircleRadius, PetCircleHeight );
+			pet.LocalRotation = EquippedPetLocalRotation;
+		}
+	}
+
+	private void RefreshEquippedPetComponents()
+	{
+		for ( var i = equippedPets.Count - 1; i >= 0; i-- )
+		{
+			var pet = equippedPets[i];
+			if ( !pet.IsValid() )
+			{
+				equippedPets.RemoveAt( i );
+				equippedPetComponents.RemoveAt( i );
+				continue;
+			}
+
+			if ( !equippedPetComponents[i].IsValid() )
+			{
+				equippedPetComponents[i] = pet.GetComponent<PetComponent>() ?? pet.GetComponentInChildren<PetComponent>();
+			}
+		}
 	}
 }

@@ -222,15 +222,18 @@
         "__guid": "af1ef162-256e-4535-863e-d6b85291c0c7",
         "__enabled": true,
         "Flags": 0,
-        "EquippedPetLocalPosition": "32,-42,24",
         "EquippedPetLocalRotation": "0,0,0,1",
+        "MaxEquippedPets": 30,
         "NetworkSpawnEquippedPet": true,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
-        "OnComponentUpdate": null
+        "OnComponentUpdate": null,
+        "PetCircleAngleOffset": 0,
+        "PetCircleHeight": 24,
+        "PetCircleRadius": 48
       },
       {
         "__type": "Inventory",

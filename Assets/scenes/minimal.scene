@@ -13648,6 +13648,24 @@
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
+          "prefabsToSpawn": [
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/pets/pet-bee.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/pets/pet-bunny.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/pets/pet-dog.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/pets/pet-deer.prefab"
+            }
+          ],
           "text": null
         },
         {
@@ -13702,13 +13720,13 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
-      "Sandbox.MovieMaker.MovieRecorderSystem": {
-        "DisableClientRecording": false
-      },
       "Sandbox.Clutter.ClutterGridSystem": {
         "Storage": {
           "$blob": "8e6b104a-118e-46b7-8fb4-c1a24377c54b"
         }
+      },
+      "Sandbox.MovieMaker.MovieRecorderSystem": {
+        "DisableClientRecording": false
       },
       "Sandbox.SelectionSetsSystem": {
         "Data": {

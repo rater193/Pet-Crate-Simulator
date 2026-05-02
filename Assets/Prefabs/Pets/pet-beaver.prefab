@@ -1,9 +1,9 @@
 {
     "RootObject":  {
-                       "__guid":  "8f9289b0-233e-4d38-928c-9954d85c6cee",
+                       "__guid":  "8a574a15-4f05-4d66-903d-e278db3cf11b",
                        "__version":  2,
                        "Flags":  0,
-                       "Name":  "pet-bever",
+                       "Name":  "pet-beaver",
                        "Position":  "0,0,0",
                        "Rotation":  "0,0,0,1",
                        "Scale":  "1,1,1",
@@ -17,7 +17,7 @@
                        "Components":  [
                                           {
                                               "__type": "PetComponent",
-                                              "__guid":  "f6331c14-c97b-4189-ad59-70d6782669c4",
+                                              "__guid":  "4df3e6e3-f8dc-4adb-b856-71cb8a2ad7cd",
                                               "__enabled":  true,
                                               "Flags":  0,
                                               "CoinMultiplier":  2,
@@ -31,7 +31,7 @@
                                       ],
                        "Children":  [
                                         {
-                                            "__guid":  "77ac860a-4754-4fc9-9a66-53c5221fd2f4",
+                                            "__guid":  "fd860284-8c5e-4a91-83a5-2057cd994ede",
                                             "__version":  2,
                                             "Flags":  0,
                                             "Name":  "AnimalModel",
@@ -48,7 +48,7 @@
                                             "Components":  [
                                                                {
                                                                    "__type": "Sandbox.ModelRenderer",
-                                                                   "__guid":  "513d0431-9ecc-4f2a-8810-0208d9158b6b",
+                                                                   "__guid":  "855137e7-f7fa-4ae8-849f-e28b3355014f",
                                                                    "__enabled":  true,
                                                                    "Flags":  0,
                                                                    "BodyGroups":  18446744073709551615,

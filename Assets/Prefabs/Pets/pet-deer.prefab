@@ -1,9 +1,9 @@
 {
     "RootObject":  {
-                       "__guid":  "8f9289b0-233e-4d38-928c-9954d85c6cee",
+                       "__guid":  "8916dab7-7674-4968-a8d7-6599e9194605",
                        "__version":  2,
                        "Flags":  0,
-                       "Name":  "pet-bever",
+                       "Name":  "pet-deer",
                        "Position":  "0,0,0",
                        "Rotation":  "0,0,0,1",
                        "Scale":  "1,1,1",
@@ -17,7 +17,7 @@
                        "Components":  [
                                           {
                                               "__type": "PetComponent",
-                                              "__guid":  "f6331c14-c97b-4189-ad59-70d6782669c4",
+                                              "__guid":  "435b3cb1-6ef8-4c05-b26d-d2bb3db33429",
                                               "__enabled":  true,
                                               "Flags":  0,
                                               "CoinMultiplier":  2,
@@ -31,7 +31,7 @@
                                       ],
                        "Children":  [
                                         {
-                                            "__guid":  "77ac860a-4754-4fc9-9a66-53c5221fd2f4",
+                                            "__guid":  "180d0273-747a-476e-9144-4799a37b339e",
                                             "__version":  2,
                                             "Flags":  0,
                                             "Name":  "AnimalModel",
@@ -48,7 +48,7 @@
                                             "Components":  [
                                                                {
                                                                    "__type": "Sandbox.ModelRenderer",
-                                                                   "__guid":  "513d0431-9ecc-4f2a-8810-0208d9158b6b",
+                                                                   "__guid":  "7a7ee4a2-8459-4bf4-9634-e028ba9a0065",
                                                                    "__enabled":  true,
                                                                    "Flags":  0,
                                                                    "BodyGroups":  18446744073709551615,
@@ -57,7 +57,7 @@
                                                                    "MaterialGroup":  null,
                                                                    "MaterialOverride":  null,
                                                                    "Materials":  null,
-                                                                   "Model":  "3rdparty/kenny.nl/animal-beaver.vmdl",
+                                                                   "Model":  "3rdparty/kenny.nl/animal-deer.vmdl",
                                                                    "OnComponentDestroy":  null,
                                                                    "OnComponentDisabled":  null,
                                                                    "OnComponentEnabled":  null,

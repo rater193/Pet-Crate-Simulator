@@ -1,9 +1,9 @@
 {
     "RootObject":  {
-                       "__guid":  "8f9289b0-233e-4d38-928c-9954d85c6cee",
+                       "__guid":  "25842c7b-a4ea-4947-b9cd-a2a8ca1b80cd",
                        "__version":  2,
                        "Flags":  0,
-                       "Name":  "pet-bever",
+                       "Name":  "pet-crab",
                        "Position":  "0,0,0",
                        "Rotation":  "0,0,0,1",
                        "Scale":  "1,1,1",
@@ -17,7 +17,7 @@
                        "Components":  [
                                           {
                                               "__type": "PetComponent",
-                                              "__guid":  "f6331c14-c97b-4189-ad59-70d6782669c4",
+                                              "__guid":  "a4cdee62-85dd-493d-b82d-19dd49c48441",
                                               "__enabled":  true,
                                               "Flags":  0,
                                               "CoinMultiplier":  2,
@@ -31,7 +31,7 @@
                                       ],
                        "Children":  [
                                         {
-                                            "__guid":  "77ac860a-4754-4fc9-9a66-53c5221fd2f4",
+                                            "__guid":  "a928e883-8a66-40ff-8d21-6c34165bf6ad",
                                             "__version":  2,
                                             "Flags":  0,
                                             "Name":  "AnimalModel",
@@ -48,7 +48,7 @@
                                             "Components":  [
                                                                {
                                                                    "__type": "Sandbox.ModelRenderer",
-                                                                   "__guid":  "513d0431-9ecc-4f2a-8810-0208d9158b6b",
+                                                                   "__guid":  "41fcc009-b1d4-4242-bf65-6a7ebce12f89",
                                                                    "__enabled":  true,
                                                                    "Flags":  0,
                                                                    "BodyGroups":  18446744073709551615,
@@ -57,7 +57,7 @@
                                                                    "MaterialGroup":  null,
                                                                    "MaterialOverride":  null,
                                                                    "Materials":  null,
-                                                                   "Model":  "3rdparty/kenny.nl/animal-beaver.vmdl",
+                                                                   "Model":  "3rdparty/kenny.nl/animal-crab.vmdl",
                                                                    "OnComponentDestroy":  null,
                                                                    "OnComponentDisabled":  null,
                                                                    "OnComponentEnabled":  null,
