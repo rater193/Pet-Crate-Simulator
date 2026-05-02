@@ -20,6 +20,7 @@
                                               "__guid":  "b35734ca-d617-4348-8a81-1f258bed9198",
                                               "__enabled":  true,
                                               "Flags":  0,
+                                              "DisplayName":  "Pig",
                                               "CoinMultiplier":  2,
                                               "Damage":  1,
                                               "AttackInterval":  1,

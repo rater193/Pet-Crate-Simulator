@@ -20,6 +20,7 @@
                                               "__guid":  "8087a18d-dab1-4f4f-94b1-1adc19a98220",
                                               "__enabled":  true,
                                               "Flags":  0,
+                                              "DisplayName":  "Dog",
                                               "CoinMultiplier":  2,
                                               "Damage":  1,
                                               "AttackInterval":  1,

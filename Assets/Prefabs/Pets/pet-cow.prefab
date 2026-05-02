@@ -20,6 +20,7 @@
                                               "__guid":  "426ed2b4-1a7b-4e4b-b638-02747669fe52",
                                               "__enabled":  true,
                                               "Flags":  0,
+                                              "DisplayName":  "Cow",
                                               "CoinMultiplier":  2,
                                               "Damage":  1,
                                               "AttackInterval":  1,

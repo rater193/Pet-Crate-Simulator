@@ -20,6 +20,7 @@
                                               "__guid":  "0281c8da-e2c7-43ac-adc2-18d11bf5bbe3",
                                               "__enabled":  true,
                                               "Flags":  0,
+                                              "DisplayName":  "Fish",
                                               "CoinMultiplier":  2,
                                               "Damage":  1,
                                               "AttackInterval":  1,

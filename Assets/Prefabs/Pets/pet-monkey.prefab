@@ -20,6 +20,7 @@
                                               "__guid":  "edd8e51f-6e0d-46bc-8f65-8f70fe433b87",
                                               "__enabled":  true,
                                               "Flags":  0,
+                                              "DisplayName":  "Monkey",
                                               "CoinMultiplier":  2,
                                               "Damage":  1,
                                               "AttackInterval":  1,

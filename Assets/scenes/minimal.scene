@@ -680,58 +680,6 @@
           }
         },
         {
-          "__guid": "48977aa5-beb5-47fb-9950-1c37c7fb6be9",
-          "__version": 2,
-          "__Prefab": "prefabs/doors/interactabledoor.prefab",
-          "__PrefabInstancePatch": {
-            "AddedObjects": [],
-            "RemovedObjects": [],
-            "PropertyOverrides": [
-              {
-                "Target": {
-                  "Type": "GameObject",
-                  "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
-                },
-                "Property": "Name",
-                "Value": "interactabledoor (3)"
-              },
-              {
-                "Target": {
-                  "Type": "GameObject",
-                  "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
-                },
-                "Property": "Position",
-                "Value": "-811.567566,5995.81885,575.62085"
-              },
-              {
-                "Target": {
-                  "Type": "GameObject",
-                  "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
-                },
-                "Property": "Rotation",
-                "Value": "2.3121774E-07,-3.98962413E-07,9.2247187E-14,1"
-              },
-              {
-                "Target": {
-                  "Type": "Component",
-                  "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
-                },
-                "Property": "unlockCost",
-                "Value": 8000
-              }
-            ],
-            "MovedObjects": []
-          },
-          "__PrefabIdToInstanceId": {
-            "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea": "48977aa5-beb5-47fb-9950-1c37c7fb6be9",
-            "8794d74c-0a9d-425d-aaa1-c7af2116072f": "eb1582d7-2040-4ced-b5c5-76b1929e2d6c",
-            "1caa46ee-a44d-49f0-a94a-17bba6813f84": "33477372-f4eb-4bc3-9011-12a0483e8b66",
-            "dd040270-426b-43e5-9634-873675a1c099": "55d5c03a-f335-4dbc-9f73-dece76e88486",
-            "508be9a2-6db0-4739-bfa0-e78db46e8de3": "3bd14750-254d-4465-a885-a6d23d0e9ca3",
-            "e5e7ef4e-37d9-4209-ad87-3b9e42cca247": "b9408bd7-c9e2-46ff-afbf-dd4e7c3d0cb6"
-          }
-        },
-        {
           "__guid": "dcc32553-9b20-4b31-946a-96f28542f47f",
           "__version": 2,
           "__Prefab": "prefabs/doors/interactabledoor.prefab",
@@ -3001,6 +2949,58 @@
               }
             },
             {
+              "__guid": "1faefbb5-a0c5-4b12-a554-f68938313964",
+              "__version": 2,
+              "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantaadultd.prefab",
+              "__PrefabInstancePatch": {
+                "AddedObjects": [],
+                "RemovedObjects": [],
+                "PropertyOverrides": [
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "2c18af43-bf39-5363-8872-d8d276b7b2c0"
+                    },
+                    "Property": "Position",
+                    "Value": "-639.753967,2915.67554,10.0011511"
+                  }
+                ],
+                "MovedObjects": []
+              },
+              "__PrefabIdToInstanceId": {
+                "2c18af43-bf39-5363-8872-d8d276b7b2c0": "1faefbb5-a0c5-4b12-a554-f68938313964",
+                "d6920492-7575-5f29-9aec-33a88eef7d22": "1dffeb12-317d-4bd1-aa3c-e3e28c3d33b2",
+                "1c6e90da-d262-5b05-8c79-68b5f4a1b6ae": "1954b039-fe1e-4602-bf7a-f6c82e16c808",
+                "4590b00e-937c-56f4-bc9e-c4972e1cc172": "91777cd4-fa90-42f8-893a-e9c07d6525c2"
+              }
+            },
+            {
+              "__guid": "e223e306-74fe-4fe0-a7c1-19d3e76df402",
+              "__version": 2,
+              "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantaadultd.prefab",
+              "__PrefabInstancePatch": {
+                "AddedObjects": [],
+                "RemovedObjects": [],
+                "PropertyOverrides": [
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "2c18af43-bf39-5363-8872-d8d276b7b2c0"
+                    },
+                    "Property": "Position",
+                    "Value": "820.482666,3938.33228,9.99795628"
+                  }
+                ],
+                "MovedObjects": []
+              },
+              "__PrefabIdToInstanceId": {
+                "2c18af43-bf39-5363-8872-d8d276b7b2c0": "e223e306-74fe-4fe0-a7c1-19d3e76df402",
+                "d6920492-7575-5f29-9aec-33a88eef7d22": "512eec54-49b1-433d-bf1f-2fae6efb65ba",
+                "1c6e90da-d262-5b05-8c79-68b5f4a1b6ae": "0b15f299-8bad-45c7-a570-f5cdbf69600b",
+                "4590b00e-937c-56f4-bc9e-c4972e1cc172": "b3db50c1-21bb-47df-b4e5-9947b781dc37"
+              }
+            },
+            {
               "__guid": "db0037f1-ff9f-4ab2-8c01-26bb8937b0dc",
               "__version": 2,
               "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantamaturea.prefab",
@@ -4680,6 +4680,74 @@
                 "45e4b6e0-e804-55b2-b0a5-edcacb0b342f": "05816526-b0d7-4c6f-9c9d-b1ebf03d71f3",
                 "80629398-9b45-5855-ba92-fe6e6d4c96f8": "3d913942-939f-4fb7-9b08-fe6e5896ab3e",
                 "e6f797c9-45ab-50cc-a160-4acfa7b62eeb": "564ed1ba-5e36-4924-881a-e6b9b4a23510"
+              }
+            },
+            {
+              "__guid": "76d4c0a4-302d-4e7a-8ebd-47d7fe156d1d",
+              "__version": 2,
+              "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantaadulta.prefab",
+              "__PrefabInstancePatch": {
+                "AddedObjects": [],
+                "RemovedObjects": [],
+                "PropertyOverrides": [
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                    },
+                    "Property": "Name",
+                    "Value": "pinevariantaadulta (5)"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                    },
+                    "Property": "Position",
+                    "Value": "-2092.05713,-595.329407,9.99879456"
+                  }
+                ],
+                "MovedObjects": []
+              },
+              "__PrefabIdToInstanceId": {
+                "5a672f30-e609-5089-8bba-c11efa871077": "76d4c0a4-302d-4e7a-8ebd-47d7fe156d1d",
+                "45e4b6e0-e804-55b2-b0a5-edcacb0b342f": "9a266d26-bc8d-4e47-a283-4987f24d1ac1",
+                "80629398-9b45-5855-ba92-fe6e6d4c96f8": "d82a4ba2-aae7-4ff7-b441-c968c13eb30f",
+                "e6f797c9-45ab-50cc-a160-4acfa7b62eeb": "16896659-80ba-4359-908e-4db0f42511dc"
+              }
+            },
+            {
+              "__guid": "8404ee99-a354-4e4e-9eb2-da5570c8dcc9",
+              "__version": 2,
+              "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantaadulta.prefab",
+              "__PrefabInstancePatch": {
+                "AddedObjects": [],
+                "RemovedObjects": [],
+                "PropertyOverrides": [
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                    },
+                    "Property": "Name",
+                    "Value": "pinevariantaadulta (5)"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                    },
+                    "Property": "Position",
+                    "Value": "-1961.81165,-923.521851,9.99879456"
+                  }
+                ],
+                "MovedObjects": []
+              },
+              "__PrefabIdToInstanceId": {
+                "5a672f30-e609-5089-8bba-c11efa871077": "8404ee99-a354-4e4e-9eb2-da5570c8dcc9",
+                "45e4b6e0-e804-55b2-b0a5-edcacb0b342f": "41ed1562-1238-49f1-9600-ac8d119d5f1c",
+                "80629398-9b45-5855-ba92-fe6e6d4c96f8": "f124b363-452c-4d92-bac9-44989fa85d76",
+                "e6f797c9-45ab-50cc-a160-4acfa7b62eeb": "e8d3248c-37ae-4d9e-be04-744dc3ebd870"
               }
             },
             {

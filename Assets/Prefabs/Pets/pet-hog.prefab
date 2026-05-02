@@ -20,6 +20,7 @@
                                               "__guid":  "1f39bff9-fb8e-4829-b0a5-fd338948e61b",
                                               "__enabled":  true,
                                               "Flags":  0,
+                                              "DisplayName":  "Hog",
                                               "CoinMultiplier":  2,
                                               "Damage":  1,
                                               "AttackInterval":  1,
