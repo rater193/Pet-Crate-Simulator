@@ -1,0 +1,75 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System.Threading.Tasks;
+@inherits PanelComponent
+@namespace Sandbox
+
+<style>
+    .LockBackground {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        transition: width 1s ease-in-out, background-color 2s;
+    }
+
+    .LockForeground {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 256px;
+        height: 256px;
+        background-image: url("ui/lock.vtex");
+    }
+
+    .title {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%) translateY(-128px);
+        width: 256px;
+        height: 256px;
+        background-image: url("ui/comingsoontext.vtex");
+    }
+</style>
+
+<root>
+    <div class="LockBackground" style="background-color: @(backgroundColor);">
+        <div class="LockForeground"></div>
+        <div class="title"></div>
+    </div>
+</root>
+
+@code
+{
+
+    public float transparency = 0;
+    public string backgroundColor = "rgba(255,0,0,0.8)";
+    [Property, TextArea] public string WallText { get; set; } = "Hello World!";
+
+    protected override void OnStart()
+    {
+        // Start the task without awaiting it so it runs in the background
+        _ = LoopTask();
+    }
+    async Task LoopTask()
+    {
+        // wait for this amount of seconds
+        while (true)
+        {
+            await Task.DelaySeconds(1);
+            backgroundColor = "rgba(255,0,0,0.8)";
+            await Task.DelaySeconds(1);
+            backgroundColor = "rgba(100,0,0,0.2)";
+        }
+        // Print it
+
+    }
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+    protected override int BuildHash() => System.HashCode.Combine(WallText, transparency, backgroundColor);
+}

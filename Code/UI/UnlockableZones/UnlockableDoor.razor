@@ -1,0 +1,99 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System.Threading.Tasks;
+@inherits PanelComponent
+@namespace Sandbox
+
+<style>
+    .LockBackground {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        transition: width 1s ease-in-out, background-color 2s;
+    }
+
+    .LockForeground {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 256px;
+        height: 256px;
+        background-image: url("ui/lock.vtex");
+    }
+
+    .title {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-30%);
+        width: 1024px;
+        height: 256px;
+        font-size: 64px;
+        align-content:center;
+        justify-content:center;
+        padding: 256px;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* Creates 4 sharp corner shadows */
+    }
+</style>
+
+<root>
+    <div class="LockBackground" style="background-color: @(backgroundColor);">
+        <div class="LockForeground"></div>
+        <div class="title" style="color: @(UnlockColorRepresentitive);">@unlockValue</div>
+    </div>
+</root>
+
+@code
+{
+
+    public string backgroundColor = "rgba(255,0,0,0.8)";
+    [Property] public int unlockValue = 500;
+    private string UnlockColorRepresentitive
+    {
+        get
+        {
+            if (PlayerData.LOCALDATA.PlayerMoney >= unlockValue)
+            {
+                return "green";
+            }
+            return "red";
+        }
+    }
+
+    protected override void OnStart()
+    {
+        // Start the task without awaiting it so it runs in the background
+        _ = LoopTask();
+        Log.Info("tesT");
+    }
+    protected override void OnUpdate()
+    {
+    }
+
+    protected override void OnPreRender()
+    {
+        
+    }
+
+    async Task LoopTask()
+    {
+        // wait for this amount of seconds
+        while (true)
+        {
+            await Task.DelaySeconds(1);
+            backgroundColor = "rgba(255,0,0,0.8)";
+            await Task.DelaySeconds(1);
+            backgroundColor = "rgba(100,0,0,0.2)";
+        }
+        // Print it
+
+    }
+
+    /// <summary>
+    /// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+    /// </summary>
+    protected override int BuildHash() => System.HashCode.Combine(unlockValue, backgroundColor, UnlockColorRepresentitive);
+}
