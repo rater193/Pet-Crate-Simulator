@@ -272,7 +272,7 @@ public sealed class PetFramework : Component
 
 			slot.BobTime += Time.Delta * PetBobSpeed * MathF.Max( 0.05f, slot.Component?.MoveSpeedMultiplier ?? 1f );
 			ApplyVisualMotion( slot, isMoving, attackProgress );
-			FaceMovementDirection( slot, previousPosition );
+			FacePetDirection( slot, previousPosition, attackProgress );
 
 			if ( slot.AttackTimeRemaining > 0f )
 			{
@@ -407,6 +407,23 @@ public sealed class PetFramework : Component
 
 			visual.GameObject.LocalPosition = visual.LocalPosition + localLunge + new Vector3( 0f, 0f, bobHeight );
 		}
+	}
+
+	private void FacePetDirection( PetSlot slot, Vector3 previousPosition, float attackProgress )
+	{
+		if ( attackProgress > 0f )
+		{
+			var attackDirection = slot.AttackTargetPosition - slot.Pet.WorldPosition;
+			attackDirection.z = 0f;
+
+			if ( attackDirection.LengthSquared > 0.01f )
+			{
+				slot.Pet.WorldRotation = Rotation.LookAt( attackDirection.Normal, Vector3.Up );
+				return;
+			}
+		}
+
+		FaceMovementDirection( slot, previousPosition );
 	}
 
 	private void FaceMovementDirection( PetSlot slot, Vector3 previousPosition )
