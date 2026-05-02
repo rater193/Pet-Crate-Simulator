@@ -1,15 +1,64 @@
 using Sandbox;
 using System;
+using System.Threading.Tasks;
 
 public sealed class AreaSpawner : Component
 {
 	[Property] public List<GameObject> spawnlist;
 	[Property] private float GridSize = 1f;
 
+	[Property] private int SpawnPrefabCount = 10;
+	[Property] private float respawnItemInterval = 5f;
+
 	protected override void OnStart()
 	{
 		if ( IsProxy ) return;
-		PopulateArea();
+		//PopulateArea();
+
+		for( int i = 0; i < SpawnPrefabCount; i++  )
+		{
+			SpawnNewObject();
+		}
+
+		_ = RespawnItemTick();
+	}
+
+	async Task RespawnItemTick()
+	{
+		while ( true )
+		{
+			await Task.DelaySeconds( respawnItemInterval );
+			if( GameObject.Children.Count < SpawnPrefabCount )
+			{
+				SpawnNewObject();
+			}
+			while ( GameObject.Children.Count >= SpawnPrefabCount )
+			{
+				await Task.DelaySeconds( 1 );
+			}
+		}
+	}
+
+	protected void SpawnNewObject()
+	{
+
+		if(!IsProxy)
+		{
+			Random r = new Random();
+			Vector2 area = new Vector2( (float)Math.Floor( WorldScale.x ), (float)Math.Floor( WorldScale.y ) );
+
+			GameObject newObj = spawnlist[r.Next( spawnlist.Count )].Clone();
+			Vector3 originalScale = newObj.WorldScale;
+			newObj.Parent = GameObject;
+			newObj.LocalPosition = new Vector3( (float)r.NextDouble() * 50 - 25, (float)r.NextDouble() * 50 - 25, 0 );
+			//newObj.WorldPosition += new Vector3( (float)Game.Random.NextDouble() * 25f, (float)Game.Random.NextDouble() * 25f, 0 );
+			newObj.WorldRotation = Rotation.FromYaw( (float)Game.Random.NextDouble() * 360f );
+			float value = (float)Game.Random.NextDouble() * 100f;
+			value = value * 0.001f;
+			value += 1f;
+			newObj.WorldScale = originalScale * value;
+			newObj.NetworkSpawn();
+		}
 	}
 
 	private void PopulateArea()

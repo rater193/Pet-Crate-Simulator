@@ -21,7 +21,7 @@ public sealed class PlayerInteractionsController : Component
 			var camera = Scene.Camera;
 			var startPos = camera.WorldPosition;
 			var direction = camera.WorldRotation.Forward;
-			var endPos = startPos + (direction * 1000f); // 1000f is distance
+			var endPos = startPos + (direction * 400f); // 1000f is distance
 
 			var tr = Scene.Trace.Ray( startPos, endPos )
 				.UseHitboxes( true )
