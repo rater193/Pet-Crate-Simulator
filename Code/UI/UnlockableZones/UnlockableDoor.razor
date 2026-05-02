@@ -35,6 +35,7 @@
         align-content:center;
         justify-content:center;
         padding: 256px;
+        transition: width 1s ease-in-out, color 2s;
         text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* Creates 4 sharp corner shadows */
     }
 </style>
@@ -75,7 +76,7 @@
 
     protected override void OnPreRender()
     {
-        
+
     }
 
     async Task LoopTask()
@@ -84,9 +85,23 @@
         while (true)
         {
             await Task.DelaySeconds(1);
-            backgroundColor = "rgba(255,0,0,0.8)";
+            if (PlayerData.LOCALDATA.PlayerMoney >= unlockValue)
+            {
+                backgroundColor = "rgba(0,255,0,0.8)";
+            }
+            else
+            {
+                backgroundColor = "rgba(255,0,0,0.8)";
+            }
             await Task.DelaySeconds(1);
-            backgroundColor = "rgba(100,0,0,0.2)";
+            if (PlayerData.LOCALDATA.PlayerMoney >= unlockValue)
+            {
+                backgroundColor = "rgba(0,100,0,0.2)";
+            }
+            else
+            {
+                backgroundColor = "rgba(100,0,0,0.2)";
+            }
         }
         // Print it
 

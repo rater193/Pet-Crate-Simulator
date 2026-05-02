@@ -5301,7 +5301,7 @@
       "NetworkFlags": 0,
       "NetworkOrphaned": 1,
       "NetworkTransmit": true,
-      "OwnerTransfer": 1,
+      "OwnerTransfer": 0,
       "Components": [
         {
           "__type": "Sandbox.ModelRenderer",
@@ -5365,7 +5365,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "AreaComingSoon",
-      "Position": "-645.509644,763.261597,244.095306",
+      "Position": "-731.389526,-87.4960327,244.095322",
       "Rotation": "0,0,-0.0502808988,0.998735189",
       "Scale": "12,12,12",
       "Tags": "",
@@ -5412,62 +5412,32 @@
           "OnComponentStart": null,
           "OnComponentUpdate": null,
           "WallText": "Hello World!"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "e3c603bb-157d-49c6-b3b1-9fbce763d6f2",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "AreaComingSoon (1)",
-      "Position": "1251.87866,1047.07446,244.095673",
-      "Rotation": "0,0,-0.707106769,0.707106769",
-      "Scale": "12,12,12",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.WorldPanel",
-          "__guid": "c9a8d70b-f56e-43fc-a10e-b25c57d7875c",
-          "__enabled": true,
-          "Flags": 0,
-          "HorizontalAlign": "Center",
-          "InteractionRange": 1000,
-          "LookAtCamera": false,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "PanelSize": "3840,853",
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": true,
-            "AfterUILayer": false
-          },
-          "RenderScale": 1,
-          "VerticalAlign": "Center"
         },
         {
-          "__type": "Sandbox.UnlockableDoor",
-          "__guid": "9d5029f6-244e-448e-b032-814a3fefd992",
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "bcace9d4-feae-4bbf-9bd9-b7080c4fac2f",
           "__enabled": true,
           "Flags": 0,
+          "Center": "0,0,0",
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
-          "unlockValue": 50
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Scale": "1,192,42.6500015",
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
         }
       ],
       "Children": []
@@ -6315,6 +6285,121 @@
         }
       ],
       "Children": []
+    },
+    {
+      "__guid": "8e8fc0b7-8541-410e-9bdc-4d853b90dcb6",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "InteractableDoor",
+      "Position": "1251.87866,1047.07446,244.095673",
+      "Rotation": "0,0,-0.707106769,0.707106769",
+      "Scale": "12,12,12",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 1,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 0,
+      "Components": [
+        {
+          "__type": "InteractLockedDoor",
+          "__guid": "6ae61154-22d3-4368-a5e6-36b72e008112",
+          "__enabled": true,
+          "Flags": 0,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "text": null
+        },
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "473b6346-939c-41c5-931a-a5c80cec2b77",
+          "__enabled": true,
+          "Flags": 0,
+          "Center": "0,0,0",
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Scale": "1,192,42.6500015",
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "e3c603bb-157d-49c6-b3b1-9fbce763d6f2",
+          "__version": 2,
+          "Flags": 0,
+          "Name": "UnlockableDoor",
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "c9a8d70b-f56e-43fc-a10e-b25c57d7875c",
+              "__enabled": true,
+              "Flags": 0,
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "PanelSize": "3840,853",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderScale": 1,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "Sandbox.UnlockableDoor",
+              "__guid": "9d5029f6-244e-448e-b032-814a3fefd992",
+              "__enabled": true,
+              "Flags": 0,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "unlockValue": 50
+            }
+          ],
+          "Children": []
+        }
+      ]
     }
   ],
   "SceneProperties": {
