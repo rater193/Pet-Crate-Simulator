@@ -10,30 +10,42 @@ public sealed class PetFramework : Component
 
 	[Property] public int MaxEquippedPets { get; set; } = 3;
 	[Property] public float PetCircleRadius { get; set; } = 48f;
-	[Property] public float PetCircleHeight { get; set; } = 24f;
+	[Property] public float PetCircleHeight { get; set; } = 0f;
 	[Property] public float PetCircleAngleOffset { get; set; } = 0f;
+	[Property] public float PetMoveSpeed { get; set; } = 240f;
+	[Property] public float PetBobHeight { get; set; } = 6f;
+	[Property] public float PetBobSpeed { get; set; } = 12f;
+	[Property] public float PetAttackDuration { get; set; } = 0.28f;
+	[Property] public float PetAttackRange { get; set; } = 36f;
+	[Property] public float PetAttackLungeDistance { get; set; } = 22f;
+	[Property] public float PetDefaultAttackInterval { get; set; } = 1f;
+	[Property] public float PetSwarmRadius { get; set; } = 64f;
+	[Property] public float PetSwarmAngleOffset { get; set; } = 0f;
+	[Property] public float PetAttackStartDelayStep { get; set; } = 0.12f;
+	[Property] public float GroundTraceHeight { get; set; } = 96f;
 	[Property] public Rotation EquippedPetLocalRotation { get; set; } = Rotation.Identity;
 	[Property] public bool NetworkSpawnEquippedPet { get; set; } = true;
 
-	private readonly List<GameObject> equippedPets = new();
-	private readonly List<PetComponent> equippedPetComponents = new();
+	private readonly List<PetSlot> equippedPets = new();
+	private GameObject activeAttackTarget;
+	private PlayerController activeAttackOwner;
 
-	public IReadOnlyList<GameObject> EquippedPets => equippedPets;
-	public GameObject EquippedPet => equippedPets.FirstOrDefault();
-	public PetComponent EquippedPetComponent => equippedPetComponents.FirstOrDefault( pet => pet.IsValid() );
+	public IReadOnlyList<GameObject> EquippedPets => equippedPets.Select( slot => slot.Pet ).ToList();
+	public GameObject EquippedPet => equippedPets.FirstOrDefault()?.Pet;
+	public PetComponent EquippedPetComponent => equippedPets.FirstOrDefault( slot => slot.Component.IsValid() )?.Component;
 
 	public float CoinMultiplier
 	{
 		get
 		{
-			RefreshEquippedPetComponents();
+			RefreshEquippedPets();
 
 			var multiplier = 1f;
-			foreach ( var petComponent in equippedPetComponents )
+			foreach ( var slot in equippedPets )
 			{
-				if ( petComponent.IsValid() )
+				if ( slot.Component.IsValid() )
 				{
-					multiplier *= petComponent.CoinMultiplier;
+					multiplier *= slot.Component.CoinMultiplier;
 				}
 			}
 
@@ -49,8 +61,26 @@ public sealed class PetFramework : Component
 		}
 	}
 
+	protected override void OnUpdate()
+	{
+		RefreshEquippedPets();
+
+		if ( IsProxy )
+		{
+			UpdateEquippedPetVisuals();
+			return;
+		}
+
+		UpdateEquippedPets();
+	}
+
 	protected override void OnDestroy()
 	{
+		if ( !IsProxy )
+		{
+			UnequipAll();
+		}
+
 		if ( LOCAL == this )
 		{
 			LOCAL = null;
@@ -80,13 +110,13 @@ public sealed class PetFramework : Component
 		}
 
 		var pet = prefab.Clone();
-		pet.Parent = GameObject;
-		pet.LocalRotation = EquippedPetLocalRotation;
-
-		equippedPets.Add( pet );
+		pet.Parent = null;
+		pet.WorldPosition = SnapToGround( GameObject.WorldPosition );
+		pet.WorldRotation = EquippedPetLocalRotation;
 
 		var petComponent = pet.GetComponent<PetComponent>() ?? pet.GetComponentInChildren<PetComponent>();
-		equippedPetComponents.Add( petComponent );
+		var slot = new PetSlot( pet, petComponent );
+		equippedPets.Add( slot );
 
 		if ( petComponent == null )
 		{
@@ -99,6 +129,8 @@ public sealed class PetFramework : Component
 		{
 			pet.NetworkSpawn();
 		}
+
+		RegisterEquippedPet( pet );
 	}
 
 	public void Unequip()
@@ -106,29 +138,63 @@ public sealed class PetFramework : Component
 		if ( equippedPets.Count == 0 )
 			return;
 
-		var pet = equippedPets[^1];
-		if ( pet.IsValid() )
+		var slot = equippedPets[^1];
+		if ( slot.Pet.IsValid() )
 		{
-			pet.Destroy();
+			slot.Pet.Destroy();
 		}
 
 		equippedPets.RemoveAt( equippedPets.Count - 1 );
-		equippedPetComponents.RemoveAt( equippedPetComponents.Count - 1 );
 		ArrangeEquippedPets();
 	}
 
 	public void UnequipAll()
 	{
-		foreach ( var pet in equippedPets )
+		foreach ( var slot in equippedPets )
 		{
-			if ( pet.IsValid() )
+			if ( slot.Pet.IsValid() )
 			{
-				pet.Destroy();
+				slot.Pet.Destroy();
 			}
 		}
 
 		equippedPets.Clear();
-		equippedPetComponents.Clear();
+	}
+
+	public void AttackTarget( GameObject target )
+	{
+		if ( !target.IsValid() )
+			return;
+
+		SetAttackTarget( target, GetComponent<PlayerController>() );
+	}
+
+	[Rpc.Broadcast]
+	private void RegisterEquippedPet( GameObject pet )
+	{
+		if ( !pet.IsValid() )
+			return;
+
+		GetOrCreateSlot( pet );
+	}
+
+	[Rpc.Broadcast]
+	private void SetAttackTarget( GameObject target, PlayerController owner )
+	{
+		if ( !target.IsValid() )
+			return;
+
+		activeAttackTarget = target;
+		activeAttackOwner = owner;
+		RefreshEquippedPets();
+
+		for ( var i = 0; i < equippedPets.Count; i++ )
+		{
+			var slot = equippedPets[i];
+			slot.AttackTargetPosition = target.WorldPosition;
+			slot.AttackTimeRemaining = PetAttackDuration;
+			slot.AttackCooldown = MathF.Min( slot.AttackCooldown, i * PetAttackStartDelayStep );
+		}
 	}
 
 	public int ApplyCoinMultiplier( int baseCoins )
@@ -150,32 +216,339 @@ public sealed class PetFramework : Component
 
 		for ( var i = 0; i < count; i++ )
 		{
-			var pet = equippedPets[i];
-			if ( !pet.IsValid() )
+			var slot = equippedPets[i];
+			if ( !slot.Pet.IsValid() )
 				continue;
 
 			var angle = angleOffset + (angleStep * i);
-			pet.LocalPosition = new Vector3( MathF.Cos( angle ) * PetCircleRadius, MathF.Sin( angle ) * PetCircleRadius, PetCircleHeight );
-			pet.LocalRotation = EquippedPetLocalRotation;
+			var targetPosition = GetOrbitWorldPosition( angle );
+			slot.Pet.WorldPosition = targetPosition;
+			slot.Pet.WorldRotation = EquippedPetLocalRotation;
+			slot.RestWorldPosition = targetPosition;
+			slot.LastWorldPosition = targetPosition;
 		}
 	}
 
-	private void RefreshEquippedPetComponents()
+	private void UpdateEquippedPets()
 	{
+		var count = equippedPets.Count;
+		if ( count == 0 )
+			return;
+
+		if ( !IsAttackTargetValid() )
+		{
+			activeAttackTarget = null;
+			activeAttackOwner = null;
+		}
+
+		var angleStep = MathF.PI * 2f / count;
+		var angleOffset = PetCircleAngleOffset * (MathF.PI / 180f);
+		var swarmAngleOffset = PetSwarmAngleOffset * (MathF.PI / 180f);
+
+		for ( var i = 0; i < count; i++ )
+		{
+			var slot = equippedPets[i];
+			slot.AttackCooldown = MathF.Max( 0f, slot.AttackCooldown - Time.Delta );
+
+			var orbitAngle = angleOffset + (angleStep * i);
+			var restPosition = GetOrbitWorldPosition( orbitAngle );
+			var targetPosition = restPosition;
+
+			slot.RestWorldPosition = restPosition;
+			if ( activeAttackTarget.IsValid() )
+			{
+				var swarmAngle = swarmAngleOffset + (angleStep * i);
+				slot.AttackTargetPosition = activeAttackTarget.WorldPosition;
+				targetPosition = GetSwarmWorldPosition( activeAttackTarget.WorldPosition, swarmAngle );
+			}
+
+			var previousPosition = slot.Pet.WorldPosition;
+			var moveSpeed = PetMoveSpeed * MathF.Max( 0.05f, slot.Component?.MoveSpeedMultiplier ?? 1f );
+			slot.Pet.WorldPosition = MoveTowards( previousPosition, targetPosition, moveSpeed * Time.Delta );
+
+			var movedDistance = (slot.Pet.WorldPosition - previousPosition).Length;
+			var isMoving = movedDistance > 0.1f;
+			var attackProgress = GetAttackProgress( slot );
+
+			slot.BobTime += Time.Delta * PetBobSpeed * MathF.Max( 0.05f, slot.Component?.MoveSpeedMultiplier ?? 1f );
+			ApplyVisualMotion( slot, isMoving, attackProgress );
+			FaceMovementDirection( slot, previousPosition );
+
+			if ( slot.AttackTimeRemaining > 0f )
+			{
+				slot.AttackTimeRemaining -= Time.Delta;
+			}
+
+			TryPetAttack( slot );
+
+			slot.LastWorldPosition = slot.Pet.WorldPosition;
+		}
+	}
+
+	private void UpdateEquippedPetVisuals()
+	{
+		foreach ( var slot in equippedPets )
+		{
+			var movedDistance = (slot.Pet.WorldPosition - slot.LastWorldPosition).Length;
+			var isMoving = movedDistance > 0.1f;
+			var attackProgress = GetAttackProgress( slot );
+
+			slot.BobTime += Time.Delta * PetBobSpeed * MathF.Max( 0.05f, slot.Component?.MoveSpeedMultiplier ?? 1f );
+			ApplyVisualMotion( slot, isMoving, attackProgress );
+
+			if ( slot.AttackTimeRemaining > 0f )
+			{
+				slot.AttackTimeRemaining -= Time.Delta;
+			}
+
+			slot.LastWorldPosition = slot.Pet.WorldPosition;
+		}
+	}
+
+	private Vector3 GetOrbitWorldPosition( float angle )
+	{
+		var localOffset = new Vector3( MathF.Cos( angle ) * PetCircleRadius, MathF.Sin( angle ) * PetCircleRadius, 0f );
+		var worldOffset = (GameObject.WorldRotation.Forward * localOffset.x) + (GameObject.WorldRotation.Right * localOffset.y);
+		var position = GameObject.WorldPosition + worldOffset;
+		position.z = GameObject.WorldPosition.z + PetCircleHeight;
+
+		return SnapToGround( position );
+	}
+
+	private Vector3 GetSwarmWorldPosition( Vector3 targetPosition, float angle )
+	{
+		var position = targetPosition + new Vector3( MathF.Cos( angle ) * PetSwarmRadius, MathF.Sin( angle ) * PetSwarmRadius, 0f );
+		return SnapToGround( position );
+	}
+
+	private bool IsAttackTargetValid()
+	{
+		if ( !activeAttackTarget.IsValid() )
+			return false;
+
+		var destructable = activeAttackTarget.GetComponent<InteractGivePlayerCoin>() ?? activeAttackTarget.GetComponentInChildren<InteractGivePlayerCoin>();
+		return destructable.IsValid() && destructable.CanReceivePetDamage;
+	}
+
+	private void TryPetAttack( PetSlot slot )
+	{
+		if ( slot.AttackCooldown > 0f || !IsAttackTargetValid() )
+			return;
+
+		var component = slot.Component;
+		var damage = Math.Max( 0, component?.Damage ?? 1 );
+		if ( damage <= 0 )
+			return;
+
+		var toTarget = activeAttackTarget.WorldPosition - slot.Pet.WorldPosition;
+		toTarget.z = 0f;
+
+		var attackReach = PetAttackRange * MathF.Max( 0.05f, component?.AttackRangeMultiplier ?? 1f );
+		if ( toTarget.LengthSquared > attackReach * attackReach )
+			return;
+
+		var destructable = activeAttackTarget.GetComponent<InteractGivePlayerCoin>() ?? activeAttackTarget.GetComponentInChildren<InteractGivePlayerCoin>();
+		if ( !destructable.IsValid() )
+			return;
+
+		destructable.ApplyPetDamage( activeAttackOwner ?? GetComponent<PlayerController>(), damage );
+		PlayPetAttack( slot.Pet, activeAttackTarget.WorldPosition );
+
+		var attackInterval = component?.AttackInterval ?? PetDefaultAttackInterval;
+		slot.AttackCooldown = MathF.Max( 0.05f, attackInterval );
+	}
+
+	[Rpc.Broadcast]
+	private void PlayPetAttack( GameObject pet, Vector3 targetPosition )
+	{
+		var slot = GetOrCreateSlot( pet );
+		if ( slot == null )
+			return;
+
+		slot.AttackTargetPosition = targetPosition;
+		slot.AttackTimeRemaining = PetAttackDuration;
+	}
+
+	private float GetAttackProgress( PetSlot slot )
+	{
+		if ( slot.AttackTimeRemaining <= 0f || PetAttackDuration <= 0f )
+			return 0f;
+
+		return 1f - (slot.AttackTimeRemaining / PetAttackDuration).Clamp( 0f, 1f );
+	}
+
+	private void ApplyVisualMotion( PetSlot slot, bool isMoving, float attackProgress )
+	{
+		var bobHeight = 0f;
+		if ( isMoving )
+		{
+			var bobMultiplier = MathF.Max( 0f, slot.Component?.BobHeightMultiplier ?? 1f );
+			bobHeight = MathF.Abs( MathF.Sin( slot.BobTime ) ) * PetBobHeight * bobMultiplier;
+		}
+
+		var lungeAmount = 0f;
+		if ( attackProgress > 0f )
+		{
+			var attackWave = MathF.Sin( attackProgress * MathF.PI );
+			var lungeMultiplier = MathF.Max( 0f, slot.Component?.AttackLungeMultiplier ?? 1f );
+			lungeAmount = attackWave * PetAttackLungeDistance * lungeMultiplier;
+			bobHeight += attackWave * PetBobHeight * 0.75f;
+		}
+
+		var lungeDirection = slot.AttackTargetPosition - slot.Pet.WorldPosition;
+		lungeDirection.z = 0f;
+		lungeDirection = lungeDirection.LengthSquared > 0.01f ? lungeDirection.Normal : Vector3.Zero;
+		var localLunge = WorldDirectionToLocal( lungeDirection * lungeAmount, slot.Pet.WorldRotation );
+
+		foreach ( var visual in slot.Visuals )
+		{
+			if ( !visual.GameObject.IsValid() )
+				continue;
+
+			visual.GameObject.LocalPosition = visual.LocalPosition + localLunge + new Vector3( 0f, 0f, bobHeight );
+		}
+	}
+
+	private void FaceMovementDirection( PetSlot slot, Vector3 previousPosition )
+	{
+		var delta = slot.Pet.WorldPosition - previousPosition;
+		delta.z = 0f;
+		if ( delta.LengthSquared < 0.01f )
+			return;
+
+		slot.Pet.WorldRotation = Rotation.LookAt( delta.Normal, Vector3.Up );
+	}
+
+	private Vector3 SnapToGround( Vector3 position )
+	{
+		if ( Scene == null || GroundTraceHeight <= 0f )
+			return position;
+
+		var start = position + (Vector3.Up * GroundTraceHeight);
+		var end = position + (Vector3.Down * GroundTraceHeight);
+		var trace = Scene.Trace.Ray( start, end )
+			.IgnoreGameObject( GameObject )
+			.Run();
+
+		if ( trace.Hit )
+		{
+			position.z = trace.EndPosition.z + PetCircleHeight;
+		}
+
+		return position;
+	}
+
+	private static Vector3 WorldDirectionToLocal( Vector3 direction, Rotation rotation )
+	{
+		return new Vector3(
+			Vector3.Dot( direction, rotation.Forward ),
+			Vector3.Dot( direction, rotation.Right ),
+			direction.z
+		);
+	}
+
+	private static Vector3 MoveTowards( Vector3 current, Vector3 target, float maxDistance )
+	{
+		var delta = target - current;
+		var distance = delta.Length;
+		if ( distance <= maxDistance || distance <= 0.001f )
+			return target;
+
+		return current + (delta / distance * maxDistance);
+	}
+
+	private void RefreshEquippedPets()
+	{
+		DiscoverEquippedPets();
+
 		for ( var i = equippedPets.Count - 1; i >= 0; i-- )
 		{
-			var pet = equippedPets[i];
-			if ( !pet.IsValid() )
+			var slot = equippedPets[i];
+			if ( !slot.Pet.IsValid() )
 			{
 				equippedPets.RemoveAt( i );
-				equippedPetComponents.RemoveAt( i );
 				continue;
 			}
 
-			if ( !equippedPetComponents[i].IsValid() )
+			if ( !slot.Component.IsValid() )
 			{
-				equippedPetComponents[i] = pet.GetComponent<PetComponent>() ?? pet.GetComponentInChildren<PetComponent>();
+				slot.Component = slot.Pet.GetComponent<PetComponent>() ?? slot.Pet.GetComponentInChildren<PetComponent>();
 			}
+
+			if ( slot.Visuals.Count == 0 )
+			{
+				slot.CacheVisuals();
+			}
+		}
+	}
+
+	private void DiscoverEquippedPets()
+	{
+		foreach ( var petComponent in GameObject.Components.GetAll<PetComponent>( FindMode.EverythingInChildren ) )
+		{
+			GetOrCreateSlot( petComponent.GameObject );
+		}
+	}
+
+	private PetSlot GetOrCreateSlot( GameObject pet )
+	{
+		if ( !pet.IsValid() )
+			return null;
+
+		var slot = equippedPets.FirstOrDefault( existingSlot => existingSlot.Pet == pet );
+		if ( slot != null )
+			return slot;
+
+		var petComponent = pet.GetComponent<PetComponent>() ?? pet.GetComponentInChildren<PetComponent>();
+		slot = new PetSlot( pet, petComponent );
+		equippedPets.Add( slot );
+		return slot;
+	}
+
+	private sealed class PetSlot
+	{
+		public GameObject Pet { get; }
+		public PetComponent Component { get; set; }
+		public List<PetVisual> Visuals { get; } = new();
+		public Vector3 RestWorldPosition { get; set; }
+		public Vector3 AttackTargetPosition { get; set; }
+		public Vector3 LastWorldPosition { get; set; }
+		public float AttackTimeRemaining { get; set; }
+		public float AttackCooldown { get; set; }
+		public float BobTime { get; set; }
+
+		public PetSlot( GameObject pet, PetComponent component )
+		{
+			Pet = pet;
+			Component = component;
+			AttackTargetPosition = pet.WorldPosition;
+			LastWorldPosition = pet.WorldPosition;
+			CacheVisuals();
+		}
+
+		public void CacheVisuals()
+		{
+			Visuals.Clear();
+
+			foreach ( var renderer in Pet.Components.GetAll<ModelRenderer>( FindMode.EverythingInSelfAndDescendants ) )
+			{
+				if ( renderer.GameObject.IsValid() )
+				{
+					Visuals.Add( new PetVisual( renderer.GameObject ) );
+				}
+			}
+		}
+	}
+
+	private sealed class PetVisual
+	{
+		public GameObject GameObject { get; }
+		public Vector3 LocalPosition { get; }
+
+		public PetVisual( GameObject gameObject )
+		{
+			GameObject = gameObject;
+			LocalPosition = gameObject.LocalPosition;
 		}
 	}
 }

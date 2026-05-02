@@ -223,6 +223,7 @@
         "__enabled": true,
         "Flags": 0,
         "EquippedPetLocalRotation": "0,0,0,1",
+        "GroundTraceHeight": 96,
         "MaxEquippedPets": 30,
         "NetworkSpawnEquippedPet": true,
         "OnComponentDestroy": null,
@@ -232,8 +233,18 @@
         "OnComponentStart": null,
         "OnComponentUpdate": null,
         "PetCircleAngleOffset": 0,
-        "PetCircleHeight": 24,
-        "PetCircleRadius": 48
+        "PetAttackDuration": 0.28,
+        "PetAttackLungeDistance": 22,
+        "PetAttackRange": 72,
+        "PetAttackStartDelayStep": 0.12,
+        "PetBobHeight": 6,
+        "PetBobSpeed": 12,
+        "PetCircleHeight": 0,
+        "PetCircleRadius": 48,
+        "PetDefaultAttackInterval": 1,
+        "PetSwarmAngleOffset": 0,
+        "PetSwarmRadius": 64,
+        "PetMoveSpeed": 240
       },
       {
         "__type": "Inventory",

@@ -22,6 +22,8 @@ public sealed class InteractGivePlayerCoin : Interactable
 	private Vector3 hitFeedbackDirection = Vector3.Up;
 	private bool hitFeedbackActive;
 
+	public bool CanReceivePetDamage => health > 0;
+
 
 	protected override void OnStart()
 	{
@@ -86,7 +88,31 @@ public sealed class InteractGivePlayerCoin : Interactable
 		if ( IsProxy )
 			return;
 
-		health -= 1;
+		interactingPlayer?.GetComponent<PetFramework>()?.AttackTarget( GameObject );
+
+		ApplyDamage( 1, interactingPlayer );
+	}
+
+	[Rpc.Broadcast]
+	public void ApplyPetDamage( PlayerController interactingPlayer, int damage )
+	{
+		if ( damage <= 0 || health <= 0 )
+			return;
+
+		BeginHitFeedback();
+
+		if ( IsProxy )
+			return;
+
+		ApplyDamage( damage, interactingPlayer );
+	}
+
+	private void ApplyDamage( int damage, PlayerController interactingPlayer )
+	{
+		if ( damage <= 0 || health <= 0 )
+			return;
+
+		health -= damage;
 
 		var playerData = interactingPlayer?.GetComponent<PlayerData>();
 		if ( health <= 0 )
