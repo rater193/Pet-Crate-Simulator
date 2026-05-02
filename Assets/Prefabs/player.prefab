@@ -244,7 +244,8 @@
         "PetDefaultAttackInterval": 1,
         "PetSwarmAngleOffset": 0,
         "PetSwarmRadius": 64,
-        "PetMoveSpeed": 240
+        "PetMoveSpeed": 240,
+        "PetTurnSpeed": 12
       },
       {
         "__type": "Inventory",

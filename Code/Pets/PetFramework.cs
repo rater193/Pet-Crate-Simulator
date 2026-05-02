@@ -13,6 +13,7 @@ public sealed class PetFramework : Component
 	[Property] public float PetCircleHeight { get; set; } = 0f;
 	[Property] public float PetCircleAngleOffset { get; set; } = 0f;
 	[Property] public float PetMoveSpeed { get; set; } = 240f;
+	[Property] public float PetTurnSpeed { get; set; } = 12f;
 	[Property] public float PetBobHeight { get; set; } = 6f;
 	[Property] public float PetBobSpeed { get; set; } = 12f;
 	[Property] public float PetAttackDuration { get; set; } = 0.28f;
@@ -418,7 +419,7 @@ public sealed class PetFramework : Component
 
 			if ( attackDirection.LengthSquared > 0.01f )
 			{
-				slot.Pet.WorldRotation = Rotation.LookAt( attackDirection.Normal, Vector3.Up );
+				TurnPetTowards( slot, Rotation.LookAt( attackDirection.Normal, Vector3.Up ) );
 				return;
 			}
 		}
@@ -433,7 +434,19 @@ public sealed class PetFramework : Component
 		if ( delta.LengthSquared < 0.01f )
 			return;
 
-		slot.Pet.WorldRotation = Rotation.LookAt( delta.Normal, Vector3.Up );
+		TurnPetTowards( slot, Rotation.LookAt( delta.Normal, Vector3.Up ) );
+	}
+
+	private void TurnPetTowards( PetSlot slot, Rotation targetRotation )
+	{
+		if ( PetTurnSpeed <= 0f )
+		{
+			slot.Pet.WorldRotation = targetRotation;
+			return;
+		}
+
+		var turnAmount = 1f - MathF.Exp( -PetTurnSpeed * Time.Delta );
+		slot.Pet.WorldRotation = slot.Pet.WorldRotation.SlerpTo( targetRotation, turnAmount.Clamp( 0f, 1f ) );
 	}
 
 	private Vector3 SnapToGround( Vector3 position )
