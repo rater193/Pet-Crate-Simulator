@@ -45,11 +45,11 @@ public sealed class PetFramework : Component
 			{
 				if ( slot.Component.IsValid() )
 				{
-					multiplier *= slot.Component.CoinMultiplier;
+					multiplier += slot.Component.CoinMultiplier - 1f;
 				}
 			}
 
-			return multiplier;
+			return MathF.Max( 0f, multiplier );
 		}
 	}
 
