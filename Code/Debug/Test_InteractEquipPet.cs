@@ -7,6 +7,7 @@ public sealed class Test_InteractEquipPet : Interactable
 	public override void OnInteract( PlayerController interactingPlayer )
 	{
 		if ( interactingPlayer.IsProxy ) return;
+		GameObject.Destroy();
 		PetFramework.EquipPet(prefabsToSpawn[Game.Random.Next( prefabsToSpawn.Count )]);
 	}
 }

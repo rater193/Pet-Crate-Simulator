@@ -476,7 +476,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "SpawnArea (1)",
-          "Position": "1030.62122,3540.94238,15",
+          "Position": "1105.09363,3417.97217,15.0002565",
           "Rotation": "0,0,0,1",
           "Scale": "25,25,1",
           "Tags": "",
@@ -490,7 +490,7 @@
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "95d98541-2871-453a-8c82-bebb61e72497",
-              "__enabled": false,
+              "__enabled": true,
               "Flags": 0,
               "BodyGroups": 18446744073709551615,
               "CreateAttachments": false,
@@ -539,6 +539,160 @@
                 {
                   "_type": "gameobject",
                   "prefab": "prefabs/coinstack3.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/coinstack4.prefab"
+                }
+              ],
+              "SpawnPrefabCount": 20
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "7306522e-308f-481f-9f0c-4b06a1e71831",
+          "__version": 2,
+          "Flags": 0,
+          "Name": "SpawnArea (1)",
+          "Position": "-1331.96252,3396.49756,15.0041151",
+          "Rotation": "0,0,0,1",
+          "Scale": "25,25,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 1,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 1,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "8ca131e8-6f7f-4640-a2b4-769908667662",
+              "__enabled": true,
+              "Flags": 0,
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "LodOverride": null,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Materials": null,
+              "Model": "models/dev/box.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,0,0,0.11"
+            },
+            {
+              "__type": "AreaSpawner",
+              "__guid": "38d922bf-00dd-44ed-a36a-22e391143a10",
+              "__enabled": true,
+              "Flags": 0,
+              "GridSize": 2,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "respawnItemInterval": 5,
+              "spawnlist": [
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/coinstack4.prefab"
+                }
+              ],
+              "SpawnPrefabCount": 20
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "bf4eba13-ba4c-432c-b0b0-3d05763b47a8",
+          "__version": 2,
+          "Flags": 0,
+          "Name": "SpawnArea (1)",
+          "Position": "3444.75806,3321.06665,15.0041151",
+          "Rotation": "0,0,0,1",
+          "Scale": "25,25,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 1,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 1,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "55488ab6-7aa8-4d63-9ab0-ab1ad8b963db",
+              "__enabled": true,
+              "Flags": 0,
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "LodOverride": null,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Materials": null,
+              "Model": "models/dev/box.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,0,0,0.11"
+            },
+            {
+              "__type": "AreaSpawner",
+              "__guid": "82a74c24-2738-4312-93c8-a0d8ff46c89f",
+              "__enabled": true,
+              "Flags": 0,
+              "GridSize": 2,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "respawnItemInterval": 5,
+              "spawnlist": [
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/coinstack1.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/coinstack2.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/coinstack3.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/coinstack4.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/coinstack4.prefab"
                 },
                 {
                   "_type": "gameobject",
@@ -14347,107 +14501,4504 @@
       ]
     },
     {
-      "__guid": "cee3f30b-a9f5-4d36-b6e0-57be77720d9b",
+      "__guid": "f59a59cb-7712-46e4-ad75-b82dccff1749",
       "__version": 2,
-      "Flags": 0,
-      "Name": "Cube",
-      "Position": "1956.05676,601.545654,38.9730072",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "1d03537d-72ab-4920-8db1-ef739d9a6f3b",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "models/dev/box.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Test_InteractEquipPet",
-          "__guid": "a507683c-ea84-4174-ab39-81d700b03be6",
-          "__enabled": true,
-          "Flags": 0,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "prefabsToSpawn": [
-            {
-              "_type": "gameobject",
-              "prefab": "prefabs/pets/pet-bee.prefab"
+      "__Prefab": "prefabs/crateprefabs/big_crate.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "711b685e-8457-4da3-b75c-2693169da52f"
             },
-            {
-              "_type": "gameobject",
-              "prefab": "prefabs/pets/pet-bunny.prefab"
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
             },
-            {
-              "_type": "gameobject",
-              "prefab": "prefabs/pets/pet-dog.prefab"
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
             },
-            {
-              "_type": "gameobject",
-              "prefab": "prefabs/pets/pet-deer.prefab"
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "711b685e-8457-4da3-b75c-2693169da52f",
+              "__enabled": true,
+              "Flags": 0,
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "LodOverride": null,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Materials": null,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
             }
-          ],
-          "text": null
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "36590944-c746-4f4f-b4b4-ea92bdbd4b94",
-          "__enabled": true,
-          "Flags": 0,
-          "Center": "0,0,0",
-          "ColliderFlags": 0,
-          "Elasticity": null,
-          "Friction": null,
-          "IsTrigger": false,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OnObjectTriggerEnter": null,
-          "OnObjectTriggerExit": null,
-          "OnTriggerEnter": null,
-          "OnTriggerExit": null,
-          "RollingResistance": null,
-          "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null,
-          "SurfaceVelocity": "0,0,0"
-        }
-      ],
-      "Children": []
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "5c98d0f4-49d5-4ae5-bc97-adea999147d7"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "711b685e-8457-4da3-b75c-2693169da52f"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "5c98d0f4-49d5-4ae5-bc97-adea999147d7",
+              "__enabled": true,
+              "Flags": 0,
+              "ColliderFlags": 0,
+              "Elasticity": null,
+              "Friction": null,
+              "IsTrigger": false,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "RollingResistance": null,
+              "Static": false,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "a70b1914-1f03-4a0c-8d6c-1f679b09a876"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "5c98d0f4-49d5-4ae5-bc97-adea999147d7"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Test_InteractEquipPet",
+              "__guid": "a70b1914-1f03-4a0c-8d6c-1f679b09a876",
+              "__enabled": true,
+              "Flags": 0,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "prefabsToSpawn": [
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-beaver.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bee.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bunny.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cat.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-caterpillar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-chick.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cow.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-crab.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-deer.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-dog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-elephant.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fish.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fox.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-giraffe.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-hog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-koala.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-lion.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-monkey.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-panda.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-parrot.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-penguin.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-pig.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-polar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-tiger.prefab"
+                }
+              ],
+              "text": null
+            }
+          }
+        ],
+        "RemovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "dbc07a2e-a088-4836-b0d8-6c300271c69f"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "bbaff2bb-ccde-46ad-b944-273b67f44096"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "f9aac98a-fd7d-4122-8df7-3346bfab8ee0"
+            }
+          }
+        ],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Name",
+            "Value": "big_crate (1)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Position",
+            "Value": "1921.59961,1239.67639,9.53900051"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Rotation",
+            "Value": "0.000664899766,0.000693897891,-0.99946028,0.0328347385"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            },
+            "Property": "__enabled",
+            "Value": false
+          }
+        ],
+        "MovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "NewParent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "NewContainerProperty": "Components",
+            "IsNewContainerArray": true,
+            "NewPreviousElement": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            }
+          }
+        ]
+      },
+      "__PrefabIdToInstanceId": {
+        "3b7535ac-09f9-432a-8df2-caf4d6eaca04": "f59a59cb-7712-46e4-ad75-b82dccff1749",
+        "e252d121-e891-4c34-a733-e56202ab8a3e": "01d6e88a-4402-4b5a-aa3a-1f022c186492",
+        "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53": "ac22e44f-4adf-4785-9e6b-3eff0d630d52",
+        "dbc07a2e-a088-4836-b0d8-6c300271c69f": "ca021a81-220f-42a9-980d-e025fd14d741",
+        "bbaff2bb-ccde-46ad-b944-273b67f44096": "289be3dc-c4f0-4128-aee5-94d7e4dd57b7",
+        "f9aac98a-fd7d-4122-8df7-3346bfab8ee0": "b1e8ddcc-aa02-417d-8d58-535d02fda21a"
+      }
+    },
+    {
+      "__guid": "4a1dfb26-cb21-416e-a107-b5611d5e58f2",
+      "__version": 2,
+      "__Prefab": "prefabs/crateprefabs/big_crate.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "07d5eb67-af97-4f88-b95a-8d7252c43235"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "07d5eb67-af97-4f88-b95a-8d7252c43235",
+              "__enabled": true,
+              "Flags": 0,
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "LodOverride": null,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Materials": null,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "59bbcd5e-22f2-46ec-9efc-be26acf58027"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "07d5eb67-af97-4f88-b95a-8d7252c43235"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "59bbcd5e-22f2-46ec-9efc-be26acf58027",
+              "__enabled": true,
+              "Flags": 0,
+              "ColliderFlags": 0,
+              "Elasticity": null,
+              "Friction": null,
+              "IsTrigger": false,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "RollingResistance": null,
+              "Static": false,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "0b65d8f0-445a-47ea-8905-684641867a99"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "59bbcd5e-22f2-46ec-9efc-be26acf58027"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Test_InteractEquipPet",
+              "__guid": "0b65d8f0-445a-47ea-8905-684641867a99",
+              "__enabled": true,
+              "Flags": 0,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "prefabsToSpawn": [
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-beaver.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bee.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bunny.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cat.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-caterpillar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-chick.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cow.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-crab.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-deer.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-dog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-elephant.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fish.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fox.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-giraffe.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-hog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-koala.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-lion.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-monkey.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-panda.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-parrot.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-penguin.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-pig.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-polar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-tiger.prefab"
+                }
+              ],
+              "text": null
+            }
+          }
+        ],
+        "RemovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "dbc07a2e-a088-4836-b0d8-6c300271c69f"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "bbaff2bb-ccde-46ad-b944-273b67f44096"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "f9aac98a-fd7d-4122-8df7-3346bfab8ee0"
+            }
+          }
+        ],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Name",
+            "Value": "big_crate (2)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Position",
+            "Value": "1916.55359,1148.55396,9.40215397"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Rotation",
+            "Value": "0.000664899766,0.000693897891,-0.99946028,0.0328347385"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            },
+            "Property": "__enabled",
+            "Value": false
+          }
+        ],
+        "MovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "NewParent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "NewContainerProperty": "Components",
+            "IsNewContainerArray": true,
+            "NewPreviousElement": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            }
+          }
+        ]
+      },
+      "__PrefabIdToInstanceId": {
+        "3b7535ac-09f9-432a-8df2-caf4d6eaca04": "4a1dfb26-cb21-416e-a107-b5611d5e58f2",
+        "e252d121-e891-4c34-a733-e56202ab8a3e": "ffbf9595-3db9-4422-a92c-8b5532fea131",
+        "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53": "67ad1688-61de-48fa-ab55-e84ca0750d25",
+        "dbc07a2e-a088-4836-b0d8-6c300271c69f": "51e8b3ad-01cb-4ea9-9a11-cc3f37a8b796",
+        "bbaff2bb-ccde-46ad-b944-273b67f44096": "e983f71c-85dc-466f-9752-5e59a4b2ce88",
+        "f9aac98a-fd7d-4122-8df7-3346bfab8ee0": "e776a911-c149-4d37-84cd-2d85ba14b40b"
+      }
+    },
+    {
+      "__guid": "3c5df82a-e024-4341-8931-2656d1919c0b",
+      "__version": 2,
+      "__Prefab": "prefabs/crateprefabs/big_crate.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "d2805b2c-359c-45ce-84f7-0d4f86347e7f"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "d2805b2c-359c-45ce-84f7-0d4f86347e7f",
+              "__enabled": true,
+              "Flags": 0,
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "LodOverride": null,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Materials": null,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "8a17ac14-2f9a-4334-b427-56b6b42acc33"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "d2805b2c-359c-45ce-84f7-0d4f86347e7f"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "8a17ac14-2f9a-4334-b427-56b6b42acc33",
+              "__enabled": true,
+              "Flags": 0,
+              "ColliderFlags": 0,
+              "Elasticity": null,
+              "Friction": null,
+              "IsTrigger": false,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "RollingResistance": null,
+              "Static": false,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "b2792bd5-034a-4ff6-b0e0-69d3e4a3dce3"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "8a17ac14-2f9a-4334-b427-56b6b42acc33"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Test_InteractEquipPet",
+              "__guid": "b2792bd5-034a-4ff6-b0e0-69d3e4a3dce3",
+              "__enabled": true,
+              "Flags": 0,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "prefabsToSpawn": [
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-beaver.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bee.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bunny.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cat.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-caterpillar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-chick.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cow.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-crab.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-deer.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-dog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-elephant.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fish.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fox.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-giraffe.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-hog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-koala.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-lion.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-monkey.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-panda.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-parrot.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-penguin.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-pig.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-polar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-tiger.prefab"
+                }
+              ],
+              "text": null
+            }
+          }
+        ],
+        "RemovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "dbc07a2e-a088-4836-b0d8-6c300271c69f"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "bbaff2bb-ccde-46ad-b944-273b67f44096"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "f9aac98a-fd7d-4122-8df7-3346bfab8ee0"
+            }
+          }
+        ],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Name",
+            "Value": "big_crate (3)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Position",
+            "Value": "1963.46533,1082.72888,9.36823845"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Rotation",
+            "Value": "0.000664899766,0.000693897891,-0.99946028,0.0328347385"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            },
+            "Property": "__enabled",
+            "Value": false
+          }
+        ],
+        "MovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "NewParent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "NewContainerProperty": "Components",
+            "IsNewContainerArray": true,
+            "NewPreviousElement": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            }
+          }
+        ]
+      },
+      "__PrefabIdToInstanceId": {
+        "3b7535ac-09f9-432a-8df2-caf4d6eaca04": "3c5df82a-e024-4341-8931-2656d1919c0b",
+        "e252d121-e891-4c34-a733-e56202ab8a3e": "408ec275-c7a0-4877-89a1-48f4791ada37",
+        "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53": "e69bbe76-507d-4a7a-8958-84de1e60576b",
+        "dbc07a2e-a088-4836-b0d8-6c300271c69f": "ef9a0180-dc1e-4d50-a82b-1344fef98b45",
+        "bbaff2bb-ccde-46ad-b944-273b67f44096": "a8588e72-4446-4672-8645-be2593268007",
+        "f9aac98a-fd7d-4122-8df7-3346bfab8ee0": "e5bda539-b364-438d-ad42-f03d55e2d7d3"
+      }
+    },
+    {
+      "__guid": "d2e80fcc-93ad-4472-b4e8-99e5d68bbae6",
+      "__version": 2,
+      "__Prefab": "prefabs/crateprefabs/big_crate.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "1ec9dd4c-9629-42e7-a3be-d83614cb427f"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "1ec9dd4c-9629-42e7-a3be-d83614cb427f",
+              "__enabled": true,
+              "Flags": 0,
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "LodOverride": null,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Materials": null,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "1c20c677-0a5b-48d1-b623-50c15b0f9743"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "1ec9dd4c-9629-42e7-a3be-d83614cb427f"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "1c20c677-0a5b-48d1-b623-50c15b0f9743",
+              "__enabled": true,
+              "Flags": 0,
+              "ColliderFlags": 0,
+              "Elasticity": null,
+              "Friction": null,
+              "IsTrigger": false,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "RollingResistance": null,
+              "Static": false,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "bc54338c-8856-458f-8a4f-f559ac83e277"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "1c20c677-0a5b-48d1-b623-50c15b0f9743"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Test_InteractEquipPet",
+              "__guid": "bc54338c-8856-458f-8a4f-f559ac83e277",
+              "__enabled": true,
+              "Flags": 0,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "prefabsToSpawn": [
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-beaver.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bee.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bunny.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cat.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-caterpillar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-chick.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cow.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-crab.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-deer.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-dog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-elephant.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fish.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fox.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-giraffe.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-hog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-koala.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-lion.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-monkey.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-panda.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-parrot.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-penguin.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-pig.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-polar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-tiger.prefab"
+                }
+              ],
+              "text": null
+            }
+          }
+        ],
+        "RemovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "dbc07a2e-a088-4836-b0d8-6c300271c69f"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "bbaff2bb-ccde-46ad-b944-273b67f44096"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "f9aac98a-fd7d-4122-8df7-3346bfab8ee0"
+            }
+          }
+        ],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Name",
+            "Value": "big_crate (6)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Position",
+            "Value": "1906.33179,1040.37793,9.23431396"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Rotation",
+            "Value": "0.000664899766,0.000693897891,-0.99946028,0.0328347385"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            },
+            "Property": "__enabled",
+            "Value": false
+          }
+        ],
+        "MovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "NewParent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "NewContainerProperty": "Components",
+            "IsNewContainerArray": true,
+            "NewPreviousElement": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            }
+          }
+        ]
+      },
+      "__PrefabIdToInstanceId": {
+        "3b7535ac-09f9-432a-8df2-caf4d6eaca04": "d2e80fcc-93ad-4472-b4e8-99e5d68bbae6",
+        "e252d121-e891-4c34-a733-e56202ab8a3e": "93362f38-4eff-49c5-ba45-3a6d2de1989b",
+        "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53": "d1a9141e-fb5a-4a00-9d76-2654a6f7d7b2",
+        "dbc07a2e-a088-4836-b0d8-6c300271c69f": "6d3f0c46-8b0c-4c5e-a8c9-dd93be23d49c",
+        "bbaff2bb-ccde-46ad-b944-273b67f44096": "e87e2802-c5cf-4fb6-a15d-03442a3dfbb1",
+        "f9aac98a-fd7d-4122-8df7-3346bfab8ee0": "e06b1316-da5f-4ffe-a834-37c43672bcb5"
+      }
+    },
+    {
+      "__guid": "650843a0-569b-4b7b-a570-58fbc8451e71",
+      "__version": 2,
+      "__Prefab": "prefabs/crateprefabs/big_crate.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "941de16e-ef00-43fb-885f-b9c399583a63"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "941de16e-ef00-43fb-885f-b9c399583a63",
+              "__enabled": true,
+              "Flags": 0,
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "LodOverride": null,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Materials": null,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "21b0b889-9cfd-49bc-807e-51869fc41200"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "941de16e-ef00-43fb-885f-b9c399583a63"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "21b0b889-9cfd-49bc-807e-51869fc41200",
+              "__enabled": true,
+              "Flags": 0,
+              "ColliderFlags": 0,
+              "Elasticity": null,
+              "Friction": null,
+              "IsTrigger": false,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "RollingResistance": null,
+              "Static": false,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "93587ef6-10b6-493e-acdd-f9bd5c71c48b"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "21b0b889-9cfd-49bc-807e-51869fc41200"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Test_InteractEquipPet",
+              "__guid": "93587ef6-10b6-493e-acdd-f9bd5c71c48b",
+              "__enabled": true,
+              "Flags": 0,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "prefabsToSpawn": [
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-beaver.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bee.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bunny.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cat.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-caterpillar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-chick.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cow.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-crab.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-deer.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-dog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-elephant.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fish.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fox.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-giraffe.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-hog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-koala.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-lion.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-monkey.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-panda.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-parrot.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-penguin.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-pig.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-polar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-tiger.prefab"
+                }
+              ],
+              "text": null
+            }
+          }
+        ],
+        "RemovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "dbc07a2e-a088-4836-b0d8-6c300271c69f"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "bbaff2bb-ccde-46ad-b944-273b67f44096"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "f9aac98a-fd7d-4122-8df7-3346bfab8ee0"
+            }
+          }
+        ],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Name",
+            "Value": "big_crate (7)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Position",
+            "Value": "2012.33374,1033.31055,9.3602581"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Rotation",
+            "Value": "0.000664899766,0.000693897891,-0.99946028,0.0328347385"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            },
+            "Property": "__enabled",
+            "Value": false
+          }
+        ],
+        "MovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "NewParent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "NewContainerProperty": "Components",
+            "IsNewContainerArray": true,
+            "NewPreviousElement": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            }
+          }
+        ]
+      },
+      "__PrefabIdToInstanceId": {
+        "3b7535ac-09f9-432a-8df2-caf4d6eaca04": "650843a0-569b-4b7b-a570-58fbc8451e71",
+        "e252d121-e891-4c34-a733-e56202ab8a3e": "0e2138b9-7907-45dc-91c0-422a26030bc1",
+        "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53": "f6166a61-dd23-463a-9d7a-67370f9b3941",
+        "dbc07a2e-a088-4836-b0d8-6c300271c69f": "e2ff1b3d-5631-45c4-bf10-d1f40f3ed2c3",
+        "bbaff2bb-ccde-46ad-b944-273b67f44096": "f772090d-0062-4a6f-8897-7a440b9c6aad",
+        "f9aac98a-fd7d-4122-8df7-3346bfab8ee0": "a8020e70-2d54-4df5-a75a-cc89196f7bd3"
+      }
+    },
+    {
+      "__guid": "0b67a415-d6ae-4d02-aaf3-e575b1a82c2c",
+      "__version": 2,
+      "__Prefab": "prefabs/crateprefabs/big_crate.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "5efcdd39-d9a3-4412-aca0-fe79f6724d9c"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "5efcdd39-d9a3-4412-aca0-fe79f6724d9c",
+              "__enabled": true,
+              "Flags": 0,
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "LodOverride": null,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Materials": null,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "bc8236d2-6c70-459f-83c4-06b90483e908"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "5efcdd39-d9a3-4412-aca0-fe79f6724d9c"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "bc8236d2-6c70-459f-83c4-06b90483e908",
+              "__enabled": true,
+              "Flags": 0,
+              "ColliderFlags": 0,
+              "Elasticity": null,
+              "Friction": null,
+              "IsTrigger": false,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "RollingResistance": null,
+              "Static": false,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "2c9d4745-ce5e-4efe-a67f-3cb899b9b195"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "bc8236d2-6c70-459f-83c4-06b90483e908"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Test_InteractEquipPet",
+              "__guid": "2c9d4745-ce5e-4efe-a67f-3cb899b9b195",
+              "__enabled": true,
+              "Flags": 0,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "prefabsToSpawn": [
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-beaver.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bee.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bunny.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cat.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-caterpillar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-chick.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cow.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-crab.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-deer.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-dog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-elephant.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fish.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fox.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-giraffe.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-hog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-koala.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-lion.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-monkey.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-panda.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-parrot.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-penguin.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-pig.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-polar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-tiger.prefab"
+                }
+              ],
+              "text": null
+            }
+          }
+        ],
+        "RemovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "dbc07a2e-a088-4836-b0d8-6c300271c69f"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "bbaff2bb-ccde-46ad-b944-273b67f44096"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "f9aac98a-fd7d-4122-8df7-3346bfab8ee0"
+            }
+          }
+        ],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Name",
+            "Value": "big_crate (8)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Position",
+            "Value": "2099.65894,1080.24097,9.53948498"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Rotation",
+            "Value": "0.000664899766,0.000693897891,-0.99946028,0.0328347385"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            },
+            "Property": "__enabled",
+            "Value": false
+          }
+        ],
+        "MovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "NewParent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "NewContainerProperty": "Components",
+            "IsNewContainerArray": true,
+            "NewPreviousElement": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            }
+          }
+        ]
+      },
+      "__PrefabIdToInstanceId": {
+        "3b7535ac-09f9-432a-8df2-caf4d6eaca04": "0b67a415-d6ae-4d02-aaf3-e575b1a82c2c",
+        "e252d121-e891-4c34-a733-e56202ab8a3e": "ad80310a-4d3b-4e24-93b7-76f077f7d621",
+        "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53": "979a759b-2137-4bb9-be1b-fdeeeedae055",
+        "dbc07a2e-a088-4836-b0d8-6c300271c69f": "95ecd72f-d139-4273-bebd-71e3cf4416f1",
+        "bbaff2bb-ccde-46ad-b944-273b67f44096": "8ba21ae7-d804-4546-a0ed-8d11fb93da1d",
+        "f9aac98a-fd7d-4122-8df7-3346bfab8ee0": "c7f73cd9-d1e0-4381-a530-b6b47fa3c521"
+      }
+    },
+    {
+      "__guid": "5f375009-d5c2-4e69-92a7-35bea950c5ee",
+      "__version": 2,
+      "__Prefab": "prefabs/crateprefabs/big_crate.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "15d2e346-8132-4a0d-a307-108349312177"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "15d2e346-8132-4a0d-a307-108349312177",
+              "__enabled": true,
+              "Flags": 0,
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "LodOverride": null,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Materials": null,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "326e2a96-bf4c-4c31-98a4-39eccf3fcc09"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "15d2e346-8132-4a0d-a307-108349312177"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "326e2a96-bf4c-4c31-98a4-39eccf3fcc09",
+              "__enabled": true,
+              "Flags": 0,
+              "ColliderFlags": 0,
+              "Elasticity": null,
+              "Friction": null,
+              "IsTrigger": false,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "RollingResistance": null,
+              "Static": false,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "37c8bf0a-1a4f-4ad0-b96c-2992a8979502"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "326e2a96-bf4c-4c31-98a4-39eccf3fcc09"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Test_InteractEquipPet",
+              "__guid": "37c8bf0a-1a4f-4ad0-b96c-2992a8979502",
+              "__enabled": true,
+              "Flags": 0,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "prefabsToSpawn": [
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-beaver.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bee.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bunny.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cat.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-caterpillar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-chick.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cow.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-crab.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-deer.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-dog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-elephant.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fish.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fox.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-giraffe.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-hog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-koala.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-lion.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-monkey.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-panda.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-parrot.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-penguin.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-pig.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-polar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-tiger.prefab"
+                }
+              ],
+              "text": null
+            }
+          }
+        ],
+        "RemovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "dbc07a2e-a088-4836-b0d8-6c300271c69f"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "bbaff2bb-ccde-46ad-b944-273b67f44096"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "f9aac98a-fd7d-4122-8df7-3346bfab8ee0"
+            }
+          }
+        ],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Name",
+            "Value": "big_crate (9)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Position",
+            "Value": "1927.94653,959.386902,9.14618111"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Rotation",
+            "Value": "0.000664899766,0.000693897891,-0.99946028,0.0328347385"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            },
+            "Property": "__enabled",
+            "Value": false
+          }
+        ],
+        "MovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "NewParent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "NewContainerProperty": "Components",
+            "IsNewContainerArray": true,
+            "NewPreviousElement": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            }
+          }
+        ]
+      },
+      "__PrefabIdToInstanceId": {
+        "3b7535ac-09f9-432a-8df2-caf4d6eaca04": "5f375009-d5c2-4e69-92a7-35bea950c5ee",
+        "e252d121-e891-4c34-a733-e56202ab8a3e": "56976f0b-6dd3-4c35-bf83-afc2699967ea",
+        "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53": "81eefc51-982c-48fe-a1a0-f789147bca91",
+        "dbc07a2e-a088-4836-b0d8-6c300271c69f": "4cd276f3-5345-4604-aa08-6742a4920487",
+        "bbaff2bb-ccde-46ad-b944-273b67f44096": "8103ba64-9d07-4a99-8444-90965a2ffcb8",
+        "f9aac98a-fd7d-4122-8df7-3346bfab8ee0": "a628d81e-3da7-4bd8-bcfc-16a2bc1ad080"
+      }
+    },
+    {
+      "__guid": "8971f81e-6ff9-4548-8c62-e2818b0c56b1",
+      "__version": 2,
+      "__Prefab": "prefabs/crateprefabs/big_crate.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "a45acb27-cc27-4205-a7e1-a91afbd0ec3a"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "a45acb27-cc27-4205-a7e1-a91afbd0ec3a",
+              "__enabled": true,
+              "Flags": 0,
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "LodOverride": null,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Materials": null,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "76c62547-314a-4478-ab79-0d52863583ef"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "a45acb27-cc27-4205-a7e1-a91afbd0ec3a"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "76c62547-314a-4478-ab79-0d52863583ef",
+              "__enabled": true,
+              "Flags": 0,
+              "ColliderFlags": 0,
+              "Elasticity": null,
+              "Friction": null,
+              "IsTrigger": false,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "RollingResistance": null,
+              "Static": false,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "b549e406-8ac7-40c9-ba73-0d95f9dffc73"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "76c62547-314a-4478-ab79-0d52863583ef"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Test_InteractEquipPet",
+              "__guid": "b549e406-8ac7-40c9-ba73-0d95f9dffc73",
+              "__enabled": true,
+              "Flags": 0,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "prefabsToSpawn": [
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-beaver.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bee.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bunny.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cat.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-caterpillar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-chick.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cow.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-crab.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-deer.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-dog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-elephant.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fish.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fox.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-giraffe.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-hog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-koala.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-lion.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-monkey.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-panda.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-parrot.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-penguin.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-pig.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-polar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-tiger.prefab"
+                }
+              ],
+              "text": null
+            }
+          }
+        ],
+        "RemovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "dbc07a2e-a088-4836-b0d8-6c300271c69f"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "bbaff2bb-ccde-46ad-b944-273b67f44096"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "f9aac98a-fd7d-4122-8df7-3346bfab8ee0"
+            }
+          }
+        ],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Name",
+            "Value": "big_crate (10)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Position",
+            "Value": "2093.85352,993.218506,9.40752792"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Rotation",
+            "Value": "0.000664899766,0.000693897891,-0.99946028,0.0328347385"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            },
+            "Property": "__enabled",
+            "Value": false
+          }
+        ],
+        "MovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "NewParent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "NewContainerProperty": "Components",
+            "IsNewContainerArray": true,
+            "NewPreviousElement": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            }
+          }
+        ]
+      },
+      "__PrefabIdToInstanceId": {
+        "3b7535ac-09f9-432a-8df2-caf4d6eaca04": "8971f81e-6ff9-4548-8c62-e2818b0c56b1",
+        "e252d121-e891-4c34-a733-e56202ab8a3e": "6fdada5a-9796-44a1-952a-216f675131fe",
+        "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53": "96eb2346-3d55-4ab6-bbff-c136840c924f",
+        "dbc07a2e-a088-4836-b0d8-6c300271c69f": "632dab4c-5d29-4056-a3cd-aa8ea95453f9",
+        "bbaff2bb-ccde-46ad-b944-273b67f44096": "1beee496-ef14-4d17-b827-f65db96f62f3",
+        "f9aac98a-fd7d-4122-8df7-3346bfab8ee0": "be8e4051-9f1b-454c-9d0f-51ddbb664aec"
+      }
+    },
+    {
+      "__guid": "571d0e43-5372-4a71-a29d-54de440bf583",
+      "__version": 2,
+      "__Prefab": "prefabs/crateprefabs/big_crate.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "833c671a-4dc2-4506-b75c-c70686f16c88"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "833c671a-4dc2-4506-b75c-c70686f16c88",
+              "__enabled": true,
+              "Flags": 0,
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "LodOverride": null,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Materials": null,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "95ba628b-e305-41b2-8305-db3d6c12e021"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "833c671a-4dc2-4506-b75c-c70686f16c88"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "95ba628b-e305-41b2-8305-db3d6c12e021",
+              "__enabled": true,
+              "Flags": 0,
+              "ColliderFlags": 0,
+              "Elasticity": null,
+              "Friction": null,
+              "IsTrigger": false,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "RollingResistance": null,
+              "Static": false,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "dc47a8a4-4067-4c0f-ab60-a62dc35f72e0"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "95ba628b-e305-41b2-8305-db3d6c12e021"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Test_InteractEquipPet",
+              "__guid": "dc47a8a4-4067-4c0f-ab60-a62dc35f72e0",
+              "__enabled": true,
+              "Flags": 0,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "prefabsToSpawn": [
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-beaver.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bee.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bunny.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cat.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-caterpillar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-chick.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cow.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-crab.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-deer.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-dog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-elephant.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fish.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fox.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-giraffe.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-hog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-koala.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-lion.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-monkey.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-panda.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-parrot.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-penguin.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-pig.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-polar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-tiger.prefab"
+                }
+              ],
+              "text": null
+            }
+          }
+        ],
+        "RemovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "dbc07a2e-a088-4836-b0d8-6c300271c69f"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "bbaff2bb-ccde-46ad-b944-273b67f44096"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "f9aac98a-fd7d-4122-8df7-3346bfab8ee0"
+            }
+          }
+        ],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Name",
+            "Value": "big_crate (11)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Position",
+            "Value": "2030.92065,960.209839,9.27952766"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Rotation",
+            "Value": "0.000664899766,0.000693897891,-0.99946028,0.0328347385"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            },
+            "Property": "__enabled",
+            "Value": false
+          }
+        ],
+        "MovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "NewParent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "NewContainerProperty": "Components",
+            "IsNewContainerArray": true,
+            "NewPreviousElement": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            }
+          }
+        ]
+      },
+      "__PrefabIdToInstanceId": {
+        "3b7535ac-09f9-432a-8df2-caf4d6eaca04": "571d0e43-5372-4a71-a29d-54de440bf583",
+        "e252d121-e891-4c34-a733-e56202ab8a3e": "7a208abe-0194-4db8-8c92-6acfec5beeb1",
+        "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53": "87647b40-6d49-4e5e-83d3-96c685464278",
+        "dbc07a2e-a088-4836-b0d8-6c300271c69f": "649a02b1-5077-409a-be1e-4d0837850015",
+        "bbaff2bb-ccde-46ad-b944-273b67f44096": "087ffb0e-2258-455e-be1c-aba13cb44c5d",
+        "f9aac98a-fd7d-4122-8df7-3346bfab8ee0": "66bdad78-5238-40ca-ac31-6b8e9c295b52"
+      }
+    },
+    {
+      "__guid": "e1f2b2a7-426d-4a9f-8ff7-fa5d11e5f67f",
+      "__version": 2,
+      "__Prefab": "prefabs/crateprefabs/big_crate.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "d4d4b152-242b-473a-bb00-01644c3b4aad"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "d4d4b152-242b-473a-bb00-01644c3b4aad",
+              "__enabled": true,
+              "Flags": 0,
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "LodOverride": null,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Materials": null,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "57017594-74cd-4015-8511-86fbdd373a1c"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "d4d4b152-242b-473a-bb00-01644c3b4aad"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "57017594-74cd-4015-8511-86fbdd373a1c",
+              "__enabled": true,
+              "Flags": 0,
+              "ColliderFlags": 0,
+              "Elasticity": null,
+              "Friction": null,
+              "IsTrigger": false,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "RollingResistance": null,
+              "Static": false,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "bed47bdb-31e8-4bb2-ba29-b16b9274e4e5"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "57017594-74cd-4015-8511-86fbdd373a1c"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Test_InteractEquipPet",
+              "__guid": "bed47bdb-31e8-4bb2-ba29-b16b9274e4e5",
+              "__enabled": true,
+              "Flags": 0,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "prefabsToSpawn": [
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-beaver.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bee.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bunny.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cat.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-caterpillar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-chick.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cow.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-crab.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-deer.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-dog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-elephant.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fish.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fox.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-giraffe.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-hog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-koala.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-lion.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-monkey.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-panda.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-parrot.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-penguin.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-pig.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-polar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-tiger.prefab"
+                }
+              ],
+              "text": null
+            }
+          }
+        ],
+        "RemovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "dbc07a2e-a088-4836-b0d8-6c300271c69f"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "bbaff2bb-ccde-46ad-b944-273b67f44096"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "f9aac98a-fd7d-4122-8df7-3346bfab8ee0"
+            }
+          }
+        ],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Name",
+            "Value": "big_crate (12)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Position",
+            "Value": "1897.90674,793.162292,8.86982536"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Rotation",
+            "Value": "0.000664899766,0.000693897891,-0.99946028,0.0328347385"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            },
+            "Property": "__enabled",
+            "Value": false
+          }
+        ],
+        "MovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "NewParent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "NewContainerProperty": "Components",
+            "IsNewContainerArray": true,
+            "NewPreviousElement": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            }
+          }
+        ]
+      },
+      "__PrefabIdToInstanceId": {
+        "3b7535ac-09f9-432a-8df2-caf4d6eaca04": "e1f2b2a7-426d-4a9f-8ff7-fa5d11e5f67f",
+        "e252d121-e891-4c34-a733-e56202ab8a3e": "92050a23-bd71-4798-acbd-e72932b314eb",
+        "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53": "ce8ba5ec-3974-4255-ae0d-7a242da74007",
+        "dbc07a2e-a088-4836-b0d8-6c300271c69f": "2a2069ce-5d52-42a9-8244-3c7b29ad9713",
+        "bbaff2bb-ccde-46ad-b944-273b67f44096": "1f18f42d-6628-4f66-a458-e85dde1fad04",
+        "f9aac98a-fd7d-4122-8df7-3346bfab8ee0": "a5da8423-e9d6-4c3b-96ea-e282bfd191d0"
+      }
+    },
+    {
+      "__guid": "0a4ce636-306b-4263-a8f2-7907cb6b34db",
+      "__version": 2,
+      "__Prefab": "prefabs/crateprefabs/big_crate.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "53f653ee-68ad-48a1-91b8-68e5645794ed"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "53f653ee-68ad-48a1-91b8-68e5645794ed",
+              "__enabled": true,
+              "Flags": 0,
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "LodOverride": null,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Materials": null,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "524311c0-6358-4bfd-bf0c-ef74f1a4c3d5"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "53f653ee-68ad-48a1-91b8-68e5645794ed"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "524311c0-6358-4bfd-bf0c-ef74f1a4c3d5",
+              "__enabled": true,
+              "Flags": 0,
+              "ColliderFlags": 0,
+              "Elasticity": null,
+              "Friction": null,
+              "IsTrigger": false,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "RollingResistance": null,
+              "Static": false,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "283579aa-1a94-4516-86de-67b847c1fb63"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "524311c0-6358-4bfd-bf0c-ef74f1a4c3d5"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Test_InteractEquipPet",
+              "__guid": "283579aa-1a94-4516-86de-67b847c1fb63",
+              "__enabled": true,
+              "Flags": 0,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "prefabsToSpawn": [
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-beaver.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bee.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bunny.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cat.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-caterpillar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-chick.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cow.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-crab.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-deer.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-dog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-elephant.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fish.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fox.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-giraffe.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-hog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-koala.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-lion.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-monkey.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-panda.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-parrot.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-penguin.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-pig.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-polar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-tiger.prefab"
+                }
+              ],
+              "text": null
+            }
+          }
+        ],
+        "RemovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "dbc07a2e-a088-4836-b0d8-6c300271c69f"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "bbaff2bb-ccde-46ad-b944-273b67f44096"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "f9aac98a-fd7d-4122-8df7-3346bfab8ee0"
+            }
+          }
+        ],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Name",
+            "Value": "big_crate (13)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Position",
+            "Value": "1851.77783,854.511597,8.89839172"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Rotation",
+            "Value": "0.000664899766,0.000693897891,-0.99946028,0.0328347385"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            },
+            "Property": "__enabled",
+            "Value": false
+          }
+        ],
+        "MovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "NewParent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "NewContainerProperty": "Components",
+            "IsNewContainerArray": true,
+            "NewPreviousElement": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            }
+          }
+        ]
+      },
+      "__PrefabIdToInstanceId": {
+        "3b7535ac-09f9-432a-8df2-caf4d6eaca04": "0a4ce636-306b-4263-a8f2-7907cb6b34db",
+        "e252d121-e891-4c34-a733-e56202ab8a3e": "8d737a4a-a92e-4bb4-858d-69c4a2a5d501",
+        "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53": "df8a123e-dbc7-4a89-a09a-1e825df68b02",
+        "dbc07a2e-a088-4836-b0d8-6c300271c69f": "50fe524a-7f16-4342-a812-1b83883f074c",
+        "bbaff2bb-ccde-46ad-b944-273b67f44096": "792a7097-ee5a-4107-9c41-49a81ba9f132",
+        "f9aac98a-fd7d-4122-8df7-3346bfab8ee0": "8e079c5b-53e0-4b36-bee7-eca33753226e"
+      }
+    },
+    {
+      "__guid": "cd8b4627-1e95-4e64-8611-406bf30094bf",
+      "__version": 2,
+      "__Prefab": "prefabs/crateprefabs/big_crate.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "da524823-40aa-4b2a-aaf6-5aef6c573ff9"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "da524823-40aa-4b2a-aaf6-5aef6c573ff9",
+              "__enabled": true,
+              "Flags": 0,
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "LodOverride": null,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Materials": null,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "7d2805ad-f001-4697-af15-6b89ba923034"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "da524823-40aa-4b2a-aaf6-5aef6c573ff9"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "7d2805ad-f001-4697-af15-6b89ba923034",
+              "__enabled": true,
+              "Flags": 0,
+              "ColliderFlags": 0,
+              "Elasticity": null,
+              "Friction": null,
+              "IsTrigger": false,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "RollingResistance": null,
+              "Static": false,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "d8b47e75-e75e-4522-a094-1b43c2380d1e"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "7d2805ad-f001-4697-af15-6b89ba923034"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Test_InteractEquipPet",
+              "__guid": "d8b47e75-e75e-4522-a094-1b43c2380d1e",
+              "__enabled": true,
+              "Flags": 0,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "prefabsToSpawn": [
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-beaver.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bee.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bunny.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cat.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-caterpillar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-chick.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cow.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-crab.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-deer.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-dog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-elephant.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fish.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fox.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-giraffe.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-hog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-koala.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-lion.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-monkey.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-panda.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-parrot.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-penguin.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-pig.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-polar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-tiger.prefab"
+                }
+              ],
+              "text": null
+            }
+          }
+        ],
+        "RemovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "dbc07a2e-a088-4836-b0d8-6c300271c69f"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "bbaff2bb-ccde-46ad-b944-273b67f44096"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "f9aac98a-fd7d-4122-8df7-3346bfab8ee0"
+            }
+          }
+        ],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Name",
+            "Value": "big_crate (14)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Position",
+            "Value": "1859.52051,1004.05194,9.12227917"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Rotation",
+            "Value": "0.000664899766,0.000693897891,-0.99946028,0.0328347385"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            },
+            "Property": "__enabled",
+            "Value": false
+          }
+        ],
+        "MovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "NewParent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "NewContainerProperty": "Components",
+            "IsNewContainerArray": true,
+            "NewPreviousElement": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            }
+          }
+        ]
+      },
+      "__PrefabIdToInstanceId": {
+        "3b7535ac-09f9-432a-8df2-caf4d6eaca04": "cd8b4627-1e95-4e64-8611-406bf30094bf",
+        "e252d121-e891-4c34-a733-e56202ab8a3e": "f52d22ea-3796-4442-93df-d682358a70fc",
+        "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53": "335500ea-57fe-438c-88a0-014b4b6357b2",
+        "dbc07a2e-a088-4836-b0d8-6c300271c69f": "b1bdd02c-3640-4336-9975-7724936674f8",
+        "bbaff2bb-ccde-46ad-b944-273b67f44096": "f5bec6af-4221-421f-a2be-237a4c551f41",
+        "f9aac98a-fd7d-4122-8df7-3346bfab8ee0": "b301d1d4-819b-48d3-ad8b-97a93cbce3b9"
+      }
+    },
+    {
+      "__guid": "3a4b4711-d739-494b-b424-fb6791f4b490",
+      "__version": 2,
+      "__Prefab": "prefabs/crateprefabs/big_crate.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "7207558c-225c-4db1-8e09-784c3c5c28e4"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "7207558c-225c-4db1-8e09-784c3c5c28e4",
+              "__enabled": true,
+              "Flags": 0,
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "LodOverride": null,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Materials": null,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "4d9a43fc-471c-44fb-9c52-24ecfb5ab15d"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "7207558c-225c-4db1-8e09-784c3c5c28e4"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "4d9a43fc-471c-44fb-9c52-24ecfb5ab15d",
+              "__enabled": true,
+              "Flags": 0,
+              "ColliderFlags": 0,
+              "Elasticity": null,
+              "Friction": null,
+              "IsTrigger": false,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "RollingResistance": null,
+              "Static": false,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "5c9d0a08-253c-48e1-b409-d30198e68065"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "4d9a43fc-471c-44fb-9c52-24ecfb5ab15d"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Test_InteractEquipPet",
+              "__guid": "5c9d0a08-253c-48e1-b409-d30198e68065",
+              "__enabled": true,
+              "Flags": 0,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "prefabsToSpawn": [
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-beaver.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bee.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bunny.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cat.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-caterpillar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-chick.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cow.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-crab.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-deer.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-dog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-elephant.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fish.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fox.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-giraffe.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-hog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-koala.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-lion.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-monkey.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-panda.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-parrot.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-penguin.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-pig.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-polar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-tiger.prefab"
+                }
+              ],
+              "text": null
+            }
+          }
+        ],
+        "RemovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "dbc07a2e-a088-4836-b0d8-6c300271c69f"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "bbaff2bb-ccde-46ad-b944-273b67f44096"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "f9aac98a-fd7d-4122-8df7-3346bfab8ee0"
+            }
+          }
+        ],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Name",
+            "Value": "big_crate (15)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Position",
+            "Value": "1824.6355,1063.36218,9.16235924"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Rotation",
+            "Value": "0.000664899766,0.000693897891,-0.99946028,0.0328347385"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            },
+            "Property": "__enabled",
+            "Value": false
+          }
+        ],
+        "MovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "NewParent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "NewContainerProperty": "Components",
+            "IsNewContainerArray": true,
+            "NewPreviousElement": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            }
+          }
+        ]
+      },
+      "__PrefabIdToInstanceId": {
+        "3b7535ac-09f9-432a-8df2-caf4d6eaca04": "3a4b4711-d739-494b-b424-fb6791f4b490",
+        "e252d121-e891-4c34-a733-e56202ab8a3e": "c3d834ab-6b41-4b86-9e32-7ac2b3e400a5",
+        "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53": "30783a8f-042a-42ea-bd58-9cdb86f2e0a9",
+        "dbc07a2e-a088-4836-b0d8-6c300271c69f": "bfcc4bad-266e-4c54-870a-c31e670fdb97",
+        "bbaff2bb-ccde-46ad-b944-273b67f44096": "c78f745a-7ccb-460e-8feb-50de7b495fed",
+        "f9aac98a-fd7d-4122-8df7-3346bfab8ee0": "a7499512-8c14-4a70-94e9-827647f5c0e6"
+      }
+    },
+    {
+      "__guid": "5cfbe7d5-aa53-4e35-84c2-03a9b961ea5f",
+      "__version": 2,
+      "__Prefab": "prefabs/crateprefabs/big_crate.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "f28e710b-3001-4696-8d0d-ba14a086b1b0"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "f28e710b-3001-4696-8d0d-ba14a086b1b0",
+              "__enabled": true,
+              "Flags": 0,
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "LodOverride": null,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Materials": null,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "280e561b-45ac-4afa-abcb-cfb4999fd21b"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "f28e710b-3001-4696-8d0d-ba14a086b1b0"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "280e561b-45ac-4afa-abcb-cfb4999fd21b",
+              "__enabled": true,
+              "Flags": 0,
+              "ColliderFlags": 0,
+              "Elasticity": null,
+              "Friction": null,
+              "IsTrigger": false,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "RollingResistance": null,
+              "Static": false,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "3999c7b6-f812-413e-a197-9d4a115a67e7"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "280e561b-45ac-4afa-abcb-cfb4999fd21b"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Test_InteractEquipPet",
+              "__guid": "3999c7b6-f812-413e-a197-9d4a115a67e7",
+              "__enabled": true,
+              "Flags": 0,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "prefabsToSpawn": [
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-beaver.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bee.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bunny.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cat.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-caterpillar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-chick.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cow.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-crab.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-deer.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-dog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-elephant.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fish.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fox.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-giraffe.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-hog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-koala.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-lion.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-monkey.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-panda.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-parrot.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-penguin.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-pig.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-polar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-tiger.prefab"
+                }
+              ],
+              "text": null
+            }
+          }
+        ],
+        "RemovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "dbc07a2e-a088-4836-b0d8-6c300271c69f"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "bbaff2bb-ccde-46ad-b944-273b67f44096"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "f9aac98a-fd7d-4122-8df7-3346bfab8ee0"
+            }
+          }
+        ],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Name",
+            "Value": "big_crate (4)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Position",
+            "Value": "2047.98706,1127.95911,9.54136467"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Rotation",
+            "Value": "0.000664899766,0.000693897891,-0.99946028,0.0328347385"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            },
+            "Property": "__enabled",
+            "Value": false
+          }
+        ],
+        "MovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "NewParent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "NewContainerProperty": "Components",
+            "IsNewContainerArray": true,
+            "NewPreviousElement": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            }
+          }
+        ]
+      },
+      "__PrefabIdToInstanceId": {
+        "3b7535ac-09f9-432a-8df2-caf4d6eaca04": "5cfbe7d5-aa53-4e35-84c2-03a9b961ea5f",
+        "e252d121-e891-4c34-a733-e56202ab8a3e": "75b0332f-0ee0-4b60-be01-534bb8989e35",
+        "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53": "5346cdda-2c69-4fd3-afec-d06da6534fc3",
+        "dbc07a2e-a088-4836-b0d8-6c300271c69f": "023d1acf-1dbe-4d6a-a1cf-accbb99759ca",
+        "bbaff2bb-ccde-46ad-b944-273b67f44096": "589ea028-536e-4fbf-b42a-414b448cf4f9",
+        "f9aac98a-fd7d-4122-8df7-3346bfab8ee0": "0d61377c-6ae5-4e1d-b65c-7261a7c10b3d"
+      }
+    },
+    {
+      "__guid": "2e4686a6-9f5e-435f-8ca7-5ba7016b607a",
+      "__version": 2,
+      "__Prefab": "prefabs/crateprefabs/big_crate.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "b7546446-a77c-43ba-98da-3c02b07ee973"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "b7546446-a77c-43ba-98da-3c02b07ee973",
+              "__enabled": true,
+              "Flags": 0,
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "LodOverride": null,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Materials": null,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "926494f9-622b-4e7f-91fb-f794d902831a"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "b7546446-a77c-43ba-98da-3c02b07ee973"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "926494f9-622b-4e7f-91fb-f794d902831a",
+              "__enabled": true,
+              "Flags": 0,
+              "ColliderFlags": 0,
+              "Elasticity": null,
+              "Friction": null,
+              "IsTrigger": false,
+              "Model": "models/containers/bigcrate/big_crate.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "RollingResistance": null,
+              "Static": false,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "55b289e2-0d39-48f8-968a-16c89c2a55e3"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "926494f9-622b-4e7f-91fb-f794d902831a"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Test_InteractEquipPet",
+              "__guid": "55b289e2-0d39-48f8-968a-16c89c2a55e3",
+              "__enabled": true,
+              "Flags": 0,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "prefabsToSpawn": [
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-beaver.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bee.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bunny.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cat.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-caterpillar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-chick.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cow.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-crab.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-deer.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-dog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-elephant.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fish.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-fox.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-giraffe.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-hog.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-koala.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-lion.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-monkey.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-panda.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-parrot.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-penguin.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-pig.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-polar.prefab"
+                },
+                {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-tiger.prefab"
+                }
+              ],
+              "text": null
+            }
+          }
+        ],
+        "RemovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "dbc07a2e-a088-4836-b0d8-6c300271c69f"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "bbaff2bb-ccde-46ad-b944-273b67f44096"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "f9aac98a-fd7d-4122-8df7-3346bfab8ee0"
+            }
+          }
+        ],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Name",
+            "Value": "big_crate (5)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Position",
+            "Value": "2002.89429,1191.01917,9.57369423"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "Property": "Rotation",
+            "Value": "0.000664899766,0.000693897891,-0.99946028,0.0328347385"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            },
+            "Property": "__enabled",
+            "Value": false
+          }
+        ],
+        "MovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53"
+            },
+            "NewParent": {
+              "Type": "GameObject",
+              "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
+            },
+            "NewContainerProperty": "Components",
+            "IsNewContainerArray": true,
+            "NewPreviousElement": {
+              "Type": "Component",
+              "IdValue": "e252d121-e891-4c34-a733-e56202ab8a3e"
+            }
+          }
+        ]
+      },
+      "__PrefabIdToInstanceId": {
+        "3b7535ac-09f9-432a-8df2-caf4d6eaca04": "2e4686a6-9f5e-435f-8ca7-5ba7016b607a",
+        "e252d121-e891-4c34-a733-e56202ab8a3e": "c266bc3b-ea42-4153-be36-be283bc47dfa",
+        "c9ef27f1-1f3e-4ad2-8f32-a2de1f3c0f53": "01ec0d71-d243-4e05-a31f-4f3c3bc16956",
+        "dbc07a2e-a088-4836-b0d8-6c300271c69f": "01843970-96fb-4873-b4f2-68f781ddea75",
+        "bbaff2bb-ccde-46ad-b944-273b67f44096": "940d9a6d-6854-4abc-8114-e705395eec6f",
+        "f9aac98a-fd7d-4122-8df7-3346bfab8ee0": "07000a18-881f-49a1-a103-c12b3f5ce48b"
+      }
     }
   ],
   "SceneProperties": {
@@ -14479,11 +19030,6 @@
         "Data": {
           "SelectionSets": []
         }
-      },
-      "Sandbox.Clutter.ClutterGridSystem": {
-        "Storage": {
-          "$blob": "8e6b104a-118e-46b7-8fb4-c1a24377c54b"
-        }
       }
     }
   },
@@ -14491,6 +19037,7 @@
   "Title": "minimal",
   "Description": null,
   "__references": [
+    "fish.gt_big_crate#89786",
     "kenneynl.towerdefensespawnround#81458",
     "seal.triton_and_naiad_fountain#33506"
   ],
