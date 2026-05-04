@@ -116,6 +116,16 @@
 		padding: 10px;
 		align-items: center;
 		pointer-events: all;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.pet-equipped-card:hover {
+		border-color: #ef5b5b;
+	}
+
+	.pet-equipped-card:hover .pet-action-overlay {
+		opacity: 1;
 	}
 
 	.pet-avatar {
@@ -244,11 +254,57 @@
 		padding: 10px;
 		flex-direction: column;
 		pointer-events: all;
+		position: relative;
+		overflow: hidden;
+		transition: border-color 0.08s ease, box-shadow 0.08s ease;
 	}
 
 	.pet-card.equipped {
 		background-color: #54c943;
 		border-color: #ffe16a;
+	}
+
+	.pet-card:hover {
+		border-color: #4beb68;
+		box-shadow: 0px 7px 18px rgba(13, 116, 42, 0.34);
+	}
+
+	.pet-card.equipped:hover {
+		border-color: #ef5b5b;
+		box-shadow: 0px 7px 18px rgba(142, 18, 18, 0.34);
+	}
+
+	.pet-card:hover .pet-action-overlay {
+		opacity: 1;
+	}
+
+	.pet-action-overlay {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		border-radius: 10px;
+		align-items: center;
+		justify-content: center;
+		font-size: 30px;
+		font-weight: 900;
+		text-transform: uppercase;
+		text-stroke: 2px rgba(255, 255, 255, 0.58);
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity 0.08s ease;
+		z-index: 10;
+	}
+
+	.pet-action-overlay.equip {
+		background-color: rgba(62, 225, 92, 0.5);
+		color: #075f25;
+	}
+
+	.pet-action-overlay.unequip {
+		background-color: rgba(240, 72, 72, 0.5);
+		color: #7b1010;
 	}
 
 	.pet-card-status {
@@ -356,6 +412,7 @@
 								</div>
 								<div class="pet-equipped-name">@pet.DisplayName</div>
 								<div class="pet-equipped-action">Unequip</div>
+								<div class="pet-action-overlay unequip">Unequip</div>
 							</div>
 						}
 					}
@@ -394,6 +451,7 @@
 										<span>Coins x@(pet.CoinMultiplierText)</span>
 										<span>Damage @(pet.Damage)</span>
 									</div>
+									<div class="@GetPetActionOverlayClass( pet )">@GetHoverActionText( pet )</div>
 								</div>
 							}
 						</div>
@@ -471,6 +529,16 @@
 	private string GetStatusText( PetViewModel pet )
 	{
 		return pet.IsEquipped ? "Equipped" : "Click to equip";
+	}
+
+	private string GetHoverActionText( PetViewModel pet )
+	{
+		return pet.IsEquipped ? "Unequip" : "Equip";
+	}
+
+	private string GetPetActionOverlayClass( PetViewModel pet )
+	{
+		return pet.IsEquipped ? "pet-action-overlay unequip" : "pet-action-overlay equip";
 	}
 
 	private float GetScrollRatio()
