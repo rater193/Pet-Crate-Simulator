@@ -34,7 +34,7 @@ public sealed class PlayerInteractionsController : Component
 				{
 					var interactable = tr.Collider.GetComponent<Interactable>();
 					tar.Enabled = true;
-					tar.WorldPosition = tr.Collider.WorldPosition;// * tr.Collider.GetComponent<Interactable>().LocalInteractionPromptOffset;
+					tar.WorldPosition = tr.Collider.WorldPosition + interactable.InteractableShortcutOffset;// * tr.Collider.GetComponent<Interactable>().LocalInteractionPromptOffset;
 					if(Input.Pressed("Use"))
 					{
 						interactable.OnInteract( GetComponent<PlayerController>() );

@@ -4,6 +4,10 @@ public sealed class Inventory : Component
 {
 	[Property] public int InventorySize { get; set; } = 10;
 	[Property] public List<InventoryPetSlot> Slots { get; set; } = new();
+	[Property] public List<int> EquippedSlotIndexes { get; set; } = new();
+
+	private bool isLoadingJson;
+	private bool isRestoringEquippedPets;
 
 	public int Count => Slots.Count( slot => slot.IsValid() && slot.HasPet );
 
@@ -28,6 +32,12 @@ public sealed class Inventory : Component
 		}
 
 		petFramework.Equip( petPrefab );
+		if ( !EquippedSlotIndexes.Contains( slotNumber ) )
+		{
+			EquippedSlotIndexes.Add( slotNumber );
+		}
+
+		QueueOwnerSave();
 		return true;
 	}
 
@@ -47,12 +57,15 @@ public sealed class Inventory : Component
 
 		var slot = Slots[slotNumber];
 		Slots.RemoveAt( slotNumber );
+		RemoveEquippedSlotIndex( slotNumber );
 
 		if ( slot.IsValid() && slot.GameObject.IsValid() && slot.GameObject.Parent == GameObject )
 		{
 			slot.GameObject.Destroy();
 		}
 
+		RestoreEquippedPets();
+		QueueOwnerSave();
 		return true;
 	}
 
@@ -68,6 +81,7 @@ public sealed class Inventory : Component
 		}
 
 		Slots.Add( slot );
+		QueueOwnerSave();
 		return true;
 	}
 
@@ -109,10 +123,46 @@ public sealed class Inventory : Component
 		var slot = CreateRuntimeSlot();
 		slot.DisplayName = string.IsNullOrWhiteSpace( displayName ) ? petPrefab.Name : displayName;
 		slot.PetPrefab = petPrefab;
-		slot.PetPrefabPath = petPrefab.PrefabInstanceSource ?? string.Empty;
+		slot.PetPrefabPath = GetPetPrefabPath( petPrefab );
 
 		Slots.Add( slot );
+		QueueOwnerSave();
 		return true;
+	}
+
+	public List<int> GetEquippedSlotIndexes()
+	{
+		return EquippedSlotIndexes
+			.Where( index => GetPet( index ).IsValid() )
+			.Distinct()
+			.ToList();
+	}
+
+	public void LoadEquippedSlotIndexes( IEnumerable<int> slotIndexes, bool equipPets = true )
+	{
+		var wasRestoringEquippedPets = isRestoringEquippedPets;
+		isRestoringEquippedPets = true;
+		EquippedSlotIndexes.Clear();
+
+		try
+		{
+			foreach ( var slotIndex in slotIndexes )
+			{
+				if ( GetPet( slotIndex ).IsValid() && !EquippedSlotIndexes.Contains( slotIndex ) )
+				{
+					EquippedSlotIndexes.Add( slotIndex );
+				}
+			}
+		}
+		finally
+		{
+			isRestoringEquippedPets = wasRestoringEquippedPets;
+		}
+
+		if ( equipPets )
+		{
+			RestoreEquippedPets();
+		}
 	}
 
 	public string ToJson()
@@ -136,6 +186,7 @@ public sealed class Inventory : Component
 		data.Set( "InventorySize", InventorySize );
 		data.Set( "Count", Count );
 		data.Set( "Slots", slotData );
+		data.Set( "EquippedSlotIndexes", GetEquippedSlotIndexes() );
 
 		return data;
 	}
@@ -150,31 +201,82 @@ public sealed class Inventory : Component
 		if ( data == null )
 			return;
 
-		ClearRuntimeSlots();
-		Slots.Clear();
+		isLoadingJson = true;
 
-		InventorySize = data.Get( "InventorySize", InventorySize );
-
-		var slotData = data.Get<List<object>>( "Slots", new() );
-		foreach ( var slotObject in slotData )
+		try
 		{
-			if ( Slots.Count >= InventorySize )
-				break;
+			ClearRuntimeSlots();
+			Slots.Clear();
+			EquippedSlotIndexes.Clear();
 
-			if ( slotObject is not JSONObject slotJson )
-				continue;
+			InventorySize = data.Get( "InventorySize", InventorySize );
 
-			var slot = CreateRuntimeSlot();
-			slot.LoadJson( slotJson );
-
-			if ( slot.HasPet )
+			var slotData = data.Get<List<object>>( "Slots", new() );
+			foreach ( var slotObject in slotData )
 			{
-				Slots.Add( slot );
+				if ( Slots.Count >= InventorySize )
+					break;
+
+				if ( slotObject is not JSONObject slotJson )
+					continue;
+
+				var slot = CreateRuntimeSlot();
+				slot.LoadJson( slotJson );
+
+				if ( slot.HasPet )
+				{
+					Slots.Add( slot );
+				}
+				else if ( slot.GameObject.IsValid() )
+				{
+					Log.Warning( $"Skipped pet inventory slot '{slot.DisplayName}' because '{slot.PetPrefabPath}' could not be loaded." );
+					slot.GameObject.Destroy();
+				}
 			}
-			else if ( slot.GameObject.IsValid() )
+
+			LoadEquippedSlotIndexes( ReadIntList( data, "EquippedSlotIndexes" ), false );
+		}
+		finally
+		{
+			isLoadingJson = false;
+		}
+	}
+
+	public void RestoreEquippedPets()
+	{
+		if ( isRestoringEquippedPets )
+			return;
+
+		isRestoringEquippedPets = true;
+
+		try
+		{
+			var petFramework = GetComponent<PetFramework>();
+			if ( !petFramework.IsValid() )
 			{
-				slot.GameObject.Destroy();
+				Log.Warning( "Tried to restore equipped pets, but no PetFramework was found on the player." );
+				return;
 			}
+
+			petFramework.UnequipAll();
+
+			foreach ( var slotIndex in GetEquippedSlotIndexes() )
+			{
+				var slot = GetPet( slotIndex );
+				var petPrefab = slot?.GetPetPrefab();
+
+				if ( !petPrefab.IsValid() )
+				{
+					Log.Warning( $"Could not restore equipped pet slot {slotIndex}; the pet prefab is missing." );
+					continue;
+				}
+
+				petFramework.Equip( petPrefab );
+			}
+		}
+		finally
+		{
+			isRestoringEquippedPets = false;
 		}
 	}
 
@@ -193,5 +295,64 @@ public sealed class Inventory : Component
 				slot.GameObject.Destroy();
 			}
 		}
+	}
+
+	private void RemoveEquippedSlotIndex( int removedSlotNumber )
+	{
+		for ( var i = EquippedSlotIndexes.Count - 1; i >= 0; i-- )
+		{
+			var equippedIndex = EquippedSlotIndexes[i];
+			if ( equippedIndex == removedSlotNumber )
+			{
+				EquippedSlotIndexes.RemoveAt( i );
+			}
+			else if ( equippedIndex > removedSlotNumber )
+			{
+				EquippedSlotIndexes[i] = equippedIndex - 1;
+			}
+		}
+	}
+
+	private void QueueOwnerSave()
+	{
+		if ( isLoadingJson || isRestoringEquippedPets )
+			return;
+
+		GetComponent<PlayerData>()?.QueueSave();
+	}
+
+	private static string GetPetPrefabPath( GameObject petPrefab )
+	{
+		if ( !string.IsNullOrWhiteSpace( petPrefab.PrefabInstanceSource ) )
+			return petPrefab.PrefabInstanceSource;
+
+		if ( string.IsNullOrWhiteSpace( petPrefab.Name ) )
+			return string.Empty;
+
+		return $"Prefabs/Pets/{petPrefab.Name}.prefab";
+	}
+
+	private static List<int> ReadIntList( JSONObject data, string key )
+	{
+		var result = new List<int>();
+		var values = data.Get<List<object>>( key, new() );
+
+		foreach ( var value in values )
+		{
+			if ( value is int intValue )
+			{
+				result.Add( intValue );
+			}
+			else if ( value is long longValue )
+			{
+				result.Add( (int)longValue );
+			}
+			else if ( value is double doubleValue )
+			{
+				result.Add( (int)doubleValue );
+			}
+		}
+
+		return result;
 	}
 }

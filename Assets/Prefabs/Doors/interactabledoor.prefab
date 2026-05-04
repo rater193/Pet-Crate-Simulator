@@ -3,7 +3,7 @@
     "__guid": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea",
     "__version": 2,
     "Flags": 0,
-    "Name": "InteractableDoor",
+    "Name": "interactabledoor",
     "Position": "0,0,0",
     "Rotation": "0,0,-0.707106769,0.707106769",
     "Scale": "12,12,12",
@@ -20,13 +20,13 @@
         "__guid": "8794d74c-0a9d-425d-aaa1-c7af2116072f",
         "__enabled": true,
         "Flags": 0,
+        "InteractableShortcutOffset": "0,0,-200",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
-        "text": null,
         "unlockCost": 25
       },
       {
@@ -113,7 +113,28 @@
         ],
         "Children": []
       }
-    ]
+    ],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": false,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": "",
+        "DeferGeneration": false,
+        "CustomBounds": false
+      }
+    },
+    "__variables": []
   },
   "ResourceVersion": 2,
   "ShowInMenu": false,

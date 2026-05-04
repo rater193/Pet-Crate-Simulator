@@ -215,7 +215,11 @@
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
+        "AutoLoadOnStart": true,
+        "AutoSaveDelay": 2,
+        "AutoSaveEnabled": true,
         "PlayerMoney": 0,
+        "SaveFilePath": "playerdata/save.json",
         "inventory": {
           "_type": "component",
           "component_id": "79060115-ac9b-49ba-94f5-2df9940b1119",
@@ -265,6 +269,7 @@
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
+        "EquippedSlotIndexes": [],
         "Slots": []
       }
     ],

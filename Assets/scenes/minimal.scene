@@ -335,7 +335,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Screen",
-          "Position": "-197.705872,4403.6543,110.836395",
+          "Position": "0,0,0",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "Tags": "",
@@ -14610,6 +14610,7 @@
               "__guid": "a70b1914-1f03-4a0c-8d6c-1f679b09a876",
               "__enabled": true,
               "Flags": 0,
+              "InteractableShortcutOffset": "0,0,0",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -14909,6 +14910,7 @@
               "__guid": "0b65d8f0-445a-47ea-8905-684641867a99",
               "__enabled": true,
               "Flags": 0,
+              "InteractableShortcutOffset": "0,0,0",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -15208,6 +15210,7 @@
               "__guid": "b2792bd5-034a-4ff6-b0e0-69d3e4a3dce3",
               "__enabled": true,
               "Flags": 0,
+              "InteractableShortcutOffset": "0,0,0",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -15507,6 +15510,7 @@
               "__guid": "bc54338c-8856-458f-8a4f-f559ac83e277",
               "__enabled": true,
               "Flags": 0,
+              "InteractableShortcutOffset": "0,0,0",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -15806,6 +15810,7 @@
               "__guid": "93587ef6-10b6-493e-acdd-f9bd5c71c48b",
               "__enabled": true,
               "Flags": 0,
+              "InteractableShortcutOffset": "0,0,0",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -16105,6 +16110,7 @@
               "__guid": "2c9d4745-ce5e-4efe-a67f-3cb899b9b195",
               "__enabled": true,
               "Flags": 0,
+              "InteractableShortcutOffset": "0,0,0",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -16404,6 +16410,7 @@
               "__guid": "37c8bf0a-1a4f-4ad0-b96c-2992a8979502",
               "__enabled": true,
               "Flags": 0,
+              "InteractableShortcutOffset": "0,0,0",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -16703,6 +16710,7 @@
               "__guid": "b549e406-8ac7-40c9-ba73-0d95f9dffc73",
               "__enabled": true,
               "Flags": 0,
+              "InteractableShortcutOffset": "0,0,0",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -17002,6 +17010,7 @@
               "__guid": "dc47a8a4-4067-4c0f-ab60-a62dc35f72e0",
               "__enabled": true,
               "Flags": 0,
+              "InteractableShortcutOffset": "0,0,0",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -17301,6 +17310,7 @@
               "__guid": "bed47bdb-31e8-4bb2-ba29-b16b9274e4e5",
               "__enabled": true,
               "Flags": 0,
+              "InteractableShortcutOffset": "0,0,0",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -17600,6 +17610,7 @@
               "__guid": "283579aa-1a94-4516-86de-67b847c1fb63",
               "__enabled": true,
               "Flags": 0,
+              "InteractableShortcutOffset": "0,0,0",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -17899,6 +17910,7 @@
               "__guid": "d8b47e75-e75e-4522-a094-1b43c2380d1e",
               "__enabled": true,
               "Flags": 0,
+              "InteractableShortcutOffset": "0,0,0",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -18198,6 +18210,7 @@
               "__guid": "5c9d0a08-253c-48e1-b409-d30198e68065",
               "__enabled": true,
               "Flags": 0,
+              "InteractableShortcutOffset": "0,0,0",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -18497,6 +18510,7 @@
               "__guid": "3999c7b6-f812-413e-a197-9d4a115a67e7",
               "__enabled": true,
               "Flags": 0,
+              "InteractableShortcutOffset": "0,0,0",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -18796,6 +18810,7 @@
               "__guid": "55b289e2-0d39-48f8-968a-16c89c2a55e3",
               "__enabled": true,
               "Flags": 0,
+              "InteractableShortcutOffset": "0,0,0",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -19033,6 +19048,7 @@
           "__guid": "211f0c7b-e0ce-43a8-95ba-2f8fee3040e7",
           "__enabled": true,
           "Flags": 0,
+          "InteractableShortcutOffset": "0,0,0",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -19092,18 +19108,18 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
-      "Sandbox.SelectionSetsSystem": {
-        "Data": {
-          "SelectionSets": []
-        }
+      "Sandbox.MovieMaker.MovieRecorderSystem": {
+        "DisableClientRecording": false
       },
       "Sandbox.Clutter.ClutterGridSystem": {
         "Storage": {
           "$blob": "6296e7e1-9d9b-49a7-adec-3677fc154400"
         }
       },
-      "Sandbox.MovieMaker.MovieRecorderSystem": {
-        "DisableClientRecording": false
+      "Sandbox.SelectionSetsSystem": {
+        "Data": {
+          "SelectionSets": []
+        }
       }
     }
   },
