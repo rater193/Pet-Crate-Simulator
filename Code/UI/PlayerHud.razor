@@ -60,6 +60,46 @@
         transform: translate(-50%, -50%);
         background-color: black;
     }
+
+    .InventoryPrompt {
+        position: absolute;
+        left: 0px;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 48px;
+        min-width: 190px;
+        background-color: #dff1ff;
+        border: 4px solid #72cfff;
+        border-left-width: 0px;
+        border-radius: 0px 24px 24px 0px;
+        box-shadow: 0px 6px 16px rgba(0, 34, 78, 0.28);
+        align-items: center;
+        padding: 4px 14px 4px 6px;
+        pointer-events: none;
+    }
+
+    .InventoryPrompt-Key {
+        width: 72px;
+        height: 36px;
+        background-color: rgba(255, 255, 255, 0.92);
+        border: 3px solid #ffffff;
+        border-radius: 10px;
+        align-items: center;
+        justify-content: center;
+        margin-right: 8px;
+    }
+
+    .InventoryPrompt-Glyph {
+        width: 64px;
+        height: 28px;
+    }
+
+    .InventoryPrompt-Text {
+        color: #397da6;
+        font-size: 28px;
+        font-weight: 900;
+        text-shadow: 1px 2px 0px rgba(255, 255, 255, 0.8);
+    }
 </style>
 
 <root>
@@ -68,6 +108,15 @@
         <img class="Icon-Cash" src="ui/sandcoin_small.vtex" />
         <div class="StatBox-Money-Container"><div class="StatBox-Money-Bock">@RenderedMoneyValue</div></div>
     </div>
+    @if ( !isPetInventoryOpen )
+    {
+        <div class="InventoryPrompt">
+            <div class="InventoryPrompt-Key">
+                <Image class="InventoryPrompt-Glyph" Texture=@InventoryInputTexture />
+            </div>
+            <div class="InventoryPrompt-Text">Inventory</div>
+        </div>
+    }
     <PetInventoryPanel IsOpen=@isPetInventoryOpen CloseRequested=@ClosePetInventory />
 </root>
 
@@ -79,10 +128,12 @@
     [Property] public int width { get; set; } = 128;
     public static PlayerHud SINGLETON;
     private bool isPetInventoryOpen;
+    private Texture InventoryInputTexture;
 
     protected override void OnStart()
     {
         SINGLETON = this;
+        InventoryInputTexture = Input.GetGlyph( "score", InputGlyphSize.Medium, true );
     }
 
     protected override void OnUpdate()
@@ -103,5 +154,5 @@
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-    protected override int BuildHash() => System.HashCode.Combine(MyStringValue, width, RenderedMoneyValue, isPetInventoryOpen);
+    protected override int BuildHash() => System.HashCode.Combine(MyStringValue, width, RenderedMoneyValue, isPetInventoryOpen, InventoryInputTexture);
 }
