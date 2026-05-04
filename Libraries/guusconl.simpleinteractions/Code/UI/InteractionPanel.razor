@@ -21,7 +21,7 @@
 		</div>
 
 		<div class="Right"> 
-			<div class="InteractionTitle"> @InteractionString </div>
+        <div class="InteractionTitle"> @hoverText </div>
 		</div>
 
 </root>
@@ -34,12 +34,13 @@
 	private bool IsInteracting = false;
 	public bool IsHoldInteraction = false;
 	public float ProgressionHold = 0;
+    private string hoverText = "Hello World";
 
 
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine( InputTexture, InteractionString, IsHoldInteraction, ProgressionHold);
+    protected override int BuildHash() => System.HashCode.Combine(InputTexture, InteractionString, IsHoldInteraction, ProgressionHold, hoverText);
 
 	protected override void OnUpdate()
 	{

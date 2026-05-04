@@ -6,10 +6,11 @@
 <style>
     .background {
         position: absolute;
-        left: 0px;
-        right: 0px;
+        left: 50%;
         top: 0px;
-        bottom: 0px;
+        width: 256px;
+        height: 256px;
+        transform: translateX(-128px);
         border: 5px solid rgba(0,0,0,1);
         background-color: rgba(0,0,0,0.5);
         border-radius: 32px;
@@ -31,13 +32,14 @@
     .text {
         position: absolute;
         left: 0px;
-        top: 0px;
+        top: 256px;
         right: 0px;
-        bottom: 0px;
+        height: 256px;
         display: flex;
         justify-content: center; /* Horizontal centering */
-        align-items: center; /* Vertical centering */
-        font-size: 24px;
+        /*align-items: initial; /* Vertical centering */
+        font-size: 64px;
+        font-weight: bold;
         color: white;
         text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     }
@@ -46,7 +48,8 @@
 <root>
     <div class="background">
         <Image class="icon" Texture=@InputTexture />
-     </div>
+    </div>
+    <div class="text">@MyStringValue</div>
 </root>
 
 @code

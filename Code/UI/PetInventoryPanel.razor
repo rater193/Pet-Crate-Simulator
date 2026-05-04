@@ -136,6 +136,11 @@
 		margin-right: 10px;
 	}
 
+	.pet-avatar-preview {
+		width: 54px;
+		height: 54px;
+	}
+
 	.pet-equipped-name {
 		color: #253c5b;
 		font-size: 19px;
@@ -268,6 +273,11 @@
 		text-shadow: 1px 3px 0px rgba(0, 0, 0, 0.22);
 	}
 
+	.pet-card-preview {
+		width: 72px;
+		height: 72px;
+	}
+
 	.pet-card-name {
 		color: white;
 		font-size: 20px;
@@ -334,7 +344,16 @@
 						@foreach ( var pet in EquippedPets )
 						{
 							<div class="pet-equipped-card" onclick=@(() => TogglePet( pet.SlotIndex ))>
-								<div class="pet-avatar">@pet.IconText</div>
+								<div class="pet-avatar">
+									@if ( pet.PreviewTexture != null )
+									{
+										<Image class="pet-avatar-preview" Texture=@pet.PreviewTexture />
+									}
+									else
+									{
+										@pet.IconText
+									}
+								</div>
 								<div class="pet-equipped-name">@pet.DisplayName</div>
 								<div class="pet-equipped-action">Unequip</div>
 							</div>
@@ -360,7 +379,16 @@
 							{
 								<div class="@GetPetCardClass( pet )" onclick=@(() => TogglePet( pet.SlotIndex ))>
 									<div class="pet-card-status">@GetStatusText( pet )</div>
-									<div class="pet-card-icon">@pet.IconText</div>
+									<div class="pet-card-icon">
+										@if ( pet.PreviewTexture != null )
+										{
+											<Image class="pet-card-preview" Texture=@pet.PreviewTexture />
+										}
+										else
+										{
+											@pet.IconText
+										}
+									</div>
 									<div class="pet-card-name">@pet.DisplayName</div>
 									<div class="pet-card-stats">
 										<span>Coins x@(pet.CoinMultiplierText)</span>
@@ -488,6 +516,7 @@
 			var petPrefab = slot.GetPetPrefab();
 			var petComponent = petPrefab?.GetComponent<PetComponent>() ?? petPrefab?.GetComponentInChildren<PetComponent>();
 			var displayName = !string.IsNullOrWhiteSpace( slot.DisplayName ) ? slot.DisplayName : petComponent?.DisplayName;
+			var previewTexture = PetPreviewRenderer.Instance?.GetPreviewTexture( slot.PetPrefabPath, petPrefab );
 
 			pets.Add( new PetViewModel
 			{
@@ -495,7 +524,8 @@
 				DisplayName = string.IsNullOrWhiteSpace( displayName ) ? "Pet" : displayName,
 				IsEquipped = inventory.IsPetEquipped( i ),
 				CoinMultiplier = MathF.Max( 0f, petComponent?.CoinMultiplier ?? 1f ),
-				Damage = Math.Max( 0, petComponent?.Damage ?? 1 )
+				Damage = Math.Max( 0, petComponent?.Damage ?? 1 ),
+				PreviewTexture = previewTexture
 			} );
 		}
 
@@ -519,7 +549,7 @@
 			}
 		}
 
-		return HashCode.Combine( IsOpen, inventory?.Count ?? 0, EquippedCount, MaxEquipped, slotHash, lastScrollRatio, lastThumbHeight );
+		return HashCode.Combine( IsOpen, inventory?.Count ?? 0, EquippedCount, MaxEquipped, slotHash, lastScrollRatio, lastThumbHeight, PetPreviewRenderer.PreviewVersion );
 	}
 
 	private sealed class PetViewModel
@@ -529,6 +559,7 @@
 		public bool IsEquipped { get; set; }
 		public float CoinMultiplier { get; set; }
 		public int Damage { get; set; }
+		public Texture PreviewTexture { get; set; }
 		public string IconText => string.IsNullOrWhiteSpace( DisplayName ) ? "?" : DisplayName[..1].ToUpperInvariant();
 		public string CoinMultiplierText => CoinMultiplier.ToString( "0.##" );
 	}

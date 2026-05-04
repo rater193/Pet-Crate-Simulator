@@ -2,6 +2,8 @@ using Sandbox;
 
 public sealed class Test_VerifyJsonObject : Interactable
 {
+
+	[Property] List<GameObject> petList;
 	public override void OnInteract( PlayerController interactingPlayer )
 	{
 		/*
@@ -36,7 +38,7 @@ public sealed class Test_VerifyJsonObject : Interactable
 			*/
 
 			
-			if ( inv.AddPetPrefab( GameObject.GetPrefab( "prefabs/pets/pet-crab.prefab" ) ))
+			if ( inv.AddPetPrefab( petList[Game.Random.Next( petList.Count )] ) )
 			{
 				inv.EquipPet( inv.Count-1 );
 				Log.Info( inv.ToJson() );

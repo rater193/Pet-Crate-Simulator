@@ -16,7 +16,27 @@
       "NetworkOrphaned": 0,
       "NetworkTransmit": true,
       "OwnerTransfer": 1,
-      "Components": [],
+      "Components": [
+        {
+          "__type": "PetPreviewRenderer",
+          "__guid": "3f1ec9b6-40c6-4f73-9f87-4efbbf044d77",
+          "__enabled": true,
+          "Flags": 0,
+          "ActiveRenderFrames": 3,
+          "BackgroundColor": "0,0,0,0",
+          "MaxPreviewsGeneratedPerFrame": 2,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "PetRotation": "0,0,0.300705791,0.953716934",
+          "PreviewOrigin": "0,0,-20000",
+          "PreviewSize": 256,
+          "PreviewSlotSpacing": 320
+        }
+      ],
       "Children": [
         {
           "__guid": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
@@ -448,6 +468,44 @@
                 }
               ],
               "StartServer": true
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "dcee247a-2b49-4bef-a77c-823ac4205193",
+          "__version": 2,
+          "Flags": 0,
+          "Name": "PetPreviewRenderer",
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "PetPreviewRenderer",
+              "__guid": "451a2dbf-a07a-4955-bb54-4e9f806c1218",
+              "__enabled": true,
+              "Flags": 0,
+              "ActiveRenderFrames": 3,
+              "BackgroundColor": "0,0,0,0",
+              "MaxPreviewsGeneratedPerFrame": 2,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "PetRotation": "0,0,0.953716934,-0.300705791",
+              "PreviewOrigin": "0,0,-40000",
+              "PreviewSize": 256,
+              "PreviewSlotSpacing": 320
             }
           ],
           "Children": []
@@ -10488,7 +10546,7 @@
                       "IdValue": "5ab1e78a-4b7b-5bfa-b12a-6c058d688c90"
                     },
                     "Property": "Position",
-                    "Value": "1862.16553,180.013596,246.096573"
+                    "Value": "1862.16553,180.013626,11.9816322"
                   },
                   {
                     "Target": {
@@ -11176,7 +11234,7 @@
                       "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
                     },
                     "Property": "Position",
-                    "Value": "1837.37231,-227.9263,159.423096"
+                    "Value": "1837.37231,-227.9263,2.99211478"
                   }
                 ],
                 "MovedObjects": []
@@ -13893,6 +13951,14 @@
                   "Type": "Component",
                   "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
                 },
+                "Property": "text",
+                "Value": null
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
+                },
                 "Property": "unlockCost",
                 "Value": 150
               }
@@ -13939,6 +14005,14 @@
                 },
                 "Property": "Rotation",
                 "Value": "3.98962413E-07,2.31217726E-07,1,-4.37114807E-08"
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
+                },
+                "Property": "text",
+                "Value": null
               },
               {
                 "Target": {
@@ -13997,6 +14071,14 @@
                   "Type": "Component",
                   "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
                 },
+                "Property": "text",
+                "Value": null
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
+                },
                 "Property": "unlockCost",
                 "Value": 8000
               }
@@ -14043,6 +14125,14 @@
                 },
                 "Property": "Rotation",
                 "Value": "-2.12248509E-07,-4.09369392E-07,-0.537299275,0.843391716"
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
+                },
+                "Property": "text",
+                "Value": null
               },
               {
                 "Target": {
@@ -14101,6 +14191,14 @@
                   "Type": "Component",
                   "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
                 },
+                "Property": "text",
+                "Value": null
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
+                },
                 "Property": "unlockCost",
                 "Value": 150000
               }
@@ -14147,6 +14245,14 @@
                 },
                 "Property": "Rotation",
                 "Value": "-4.58750833E-07,-4.66942822E-08,-2.14210414E-14,1"
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
+                },
+                "Property": "text",
+                "Value": null
               },
               {
                 "Target": {
@@ -14714,7 +14820,8 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ]
+              ],
+              "text": null
             }
           }
         ],
@@ -15014,7 +15121,8 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ]
+              ],
+              "text": null
             }
           }
         ],
@@ -15314,7 +15422,8 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ]
+              ],
+              "text": null
             }
           }
         ],
@@ -15614,7 +15723,8 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ]
+              ],
+              "text": null
             }
           }
         ],
@@ -15914,7 +16024,8 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ]
+              ],
+              "text": null
             }
           }
         ],
@@ -16214,7 +16325,8 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ]
+              ],
+              "text": null
             }
           }
         ],
@@ -16514,7 +16626,8 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ]
+              ],
+              "text": null
             }
           }
         ],
@@ -16814,7 +16927,8 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ]
+              ],
+              "text": null
             }
           }
         ],
@@ -17114,7 +17228,8 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ]
+              ],
+              "text": null
             }
           }
         ],
@@ -17414,7 +17529,8 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ]
+              ],
+              "text": null
             }
           }
         ],
@@ -17714,7 +17830,8 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ]
+              ],
+              "text": null
             }
           }
         ],
@@ -18014,7 +18131,8 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ]
+              ],
+              "text": null
             }
           }
         ],
@@ -18314,7 +18432,8 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ]
+              ],
+              "text": null
             }
           }
         ],
@@ -18614,7 +18733,8 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ]
+              ],
+              "text": null
             }
           }
         ],
@@ -18914,7 +19034,8 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ]
+              ],
+              "text": null
             }
           }
         ],
@@ -19054,7 +19175,9 @@
           "OnComponentEnabled": null,
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
-          "OnComponentUpdate": null
+          "OnComponentUpdate": null,
+          "petList": null,
+          "text": null
         },
         {
           "__type": "Sandbox.BoxCollider",
@@ -19139,7 +19262,22 @@
           "OnComponentEnabled": null,
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
-          "OnComponentUpdate": null
+          "OnComponentUpdate": null,
+          "petList": [
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/pets/pet-bee.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/pets/pet-caterpillar.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/pets/pet-parrot.prefab"
+            }
+          ],
+          "text": null
         },
         {
           "__type": "Sandbox.BoxCollider",
