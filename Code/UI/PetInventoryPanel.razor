@@ -140,10 +140,71 @@
 		flex-direction: column;
 	}
 
+	.pet-library-scroll-area {
+		flex-grow: 1;
+		flex-direction: row;
+		min-height: 0px;
+	}
+
 	.pet-grid {
+		flex-grow: 1;
+		height: 100%;
 		flex-wrap: wrap;
 		gap: 14px;
-		overflow: scroll;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		padding-right: 14px;
+	}
+
+	.pet-scrollbar {
+		width: 64px;
+		height: 100%;
+		align-items: center;
+		justify-content: center;
+		margin-left: 10px;
+		position: relative;
+	}
+
+	.pet-scrollbar-track {
+		width: 14px;
+		top: 28px;
+		bottom: 28px;
+		position: absolute;
+		background-color: #d8eeff;
+		border: 4px solid #c2e0fb;
+		border-radius: 999px;
+		box-shadow: inset 0px 0px 8px rgba(66, 145, 203, 0.2);
+	}
+
+	.pet-scrollbar-cap {
+		position: absolute;
+		left: 50%;
+		width: 34px;
+		height: 34px;
+		border-radius: 999px;
+		background-color: #dff1ff;
+		border: 5px solid #c2e0fb;
+		transform: translateX(-50%);
+	}
+
+	.pet-scrollbar-cap.top {
+		top: 12px;
+	}
+
+	.pet-scrollbar-cap.bottom {
+		bottom: 12px;
+	}
+
+	.pet-scrollbar-thumb {
+		position: absolute;
+		left: 50%;
+		width: 42px;
+		min-height: 42px;
+		border-radius: 999px;
+		background-color: #dff1ff;
+		border: 5px solid #70cdfc;
+		transform: translateX(-50%);
+		box-shadow: 0px 4px 10px rgba(24, 100, 155, 0.22);
 	}
 
 	.pet-card {
@@ -271,17 +332,29 @@
 				}
 				else
 				{
-					<div class="pet-grid">
-						@foreach ( var pet in AllPets )
-						{
-							<div class="@GetPetCardClass( pet )" onclick=@(() => TogglePet( pet.SlotIndex ))>
-								<div class="pet-card-status">@GetStatusText( pet )</div>
-								<div class="pet-card-icon">@pet.IconText</div>
-								<div class="pet-card-name">@pet.DisplayName</div>
-								<div class="pet-card-stats">
-									<span>Coins x@pet.CoinMultiplierText</span>
-									<span>Damage @pet.Damage</span>
+					<div class="pet-library-scroll-area">
+						<div class="pet-grid" @ref=PetGridPanel>
+							@foreach ( var pet in AllPets )
+							{
+								<div class="@GetPetCardClass( pet )" onclick=@(() => TogglePet( pet.SlotIndex ))>
+									<div class="pet-card-status">@GetStatusText( pet )</div>
+									<div class="pet-card-icon">@pet.IconText</div>
+									<div class="pet-card-name">@pet.DisplayName</div>
+									<div class="pet-card-stats">
+										<span>Coins x@pet.CoinMultiplierText</span>
+										<span>Damage @pet.Damage</span>
+									</div>
 								</div>
+							}
+						</div>
+						@if ( ShouldShowScrollbar )
+						{
+							<div class="pet-scrollbar">
+								<div class="pet-scrollbar-track">
+									<div class="pet-scrollbar-thumb" style="@ScrollbarThumbStyle"></div>
+								</div>
+								<div class="pet-scrollbar-cap top"></div>
+								<div class="pet-scrollbar-cap bottom"></div>
 							</div>
 						}
 					</div>
@@ -296,12 +369,38 @@
 	public bool IsOpen { get; set; }
 	public Action CloseRequested { get; set; }
 
+	private const float ScrollTrackPadding = 28f;
+	private const float MinScrollbarThumbHeight = 42f;
+
+	private Panel PetGridPanel { get; set; }
+	private float lastScrollRatio;
+	private float lastThumbHeight;
+
 	private PlayerData LocalPlayerData => PlayerData.LOCALDATA;
 	private Inventory Inventory => LocalPlayerData?.inventory;
 	private int MaxEquipped => LocalPlayerData?.GetComponent<PetFramework>()?.MaxEquippedPets ?? 0;
 	private int EquippedCount => Inventory?.GetEquippedSlotIndexes().Count ?? 0;
 	private List<PetViewModel> AllPets => BuildPetList();
 	private List<PetViewModel> EquippedPets => AllPets.Where( pet => pet.IsEquipped ).ToList();
+	private bool ShouldShowScrollbar => PetGridPanel?.HasScrollY ?? AllPets.Count > 12;
+	private string ScrollbarThumbStyle => $"top: {GetScrollbarThumbTop()}%; height: {GetScrollbarThumbHeight()}%;";
+
+	public override void Tick()
+	{
+		base.Tick();
+
+		if ( !IsOpen || PetGridPanel == null )
+			return;
+
+		var scrollRatio = GetScrollRatio();
+		var thumbHeight = GetScrollbarThumbHeight();
+		if ( MathF.Abs( scrollRatio - lastScrollRatio ) <= 0.005f && MathF.Abs( thumbHeight - lastThumbHeight ) <= 0.5f )
+			return;
+
+		lastScrollRatio = scrollRatio;
+		lastThumbHeight = thumbHeight;
+		StateHasChanged();
+	}
 
 	private void Close()
 	{
@@ -322,6 +421,33 @@
 	private string GetStatusText( PetViewModel pet )
 	{
 		return pet.IsEquipped ? "Equipped" : "Click to equip";
+	}
+
+	private float GetScrollRatio()
+	{
+		if ( PetGridPanel == null || PetGridPanel.ScrollSize.y <= 0f )
+			return 0f;
+
+		return (PetGridPanel.ScrollOffset.y / PetGridPanel.ScrollSize.y).Clamp( 0f, 1f );
+	}
+
+	private float GetScrollbarThumbHeight()
+	{
+		if ( PetGridPanel == null || PetGridPanel.Box.Rect.Height <= 0f )
+			return 32f;
+
+		var contentHeight = PetGridPanel.Box.Rect.Height + PetGridPanel.ScrollSize.y;
+		if ( contentHeight <= 0f )
+			return 100f;
+
+		return MathF.Max( 12f, PetGridPanel.Box.Rect.Height / contentHeight * 100f );
+	}
+
+	private float GetScrollbarThumbTop()
+	{
+		var thumbHeight = GetScrollbarThumbHeight();
+		var trackRange = MathF.Max( 0f, 100f - thumbHeight );
+		return GetScrollRatio() * trackRange;
 	}
 
 	private List<PetViewModel> BuildPetList()
@@ -371,7 +497,7 @@
 			}
 		}
 
-		return HashCode.Combine( IsOpen, inventory?.Count ?? 0, EquippedCount, MaxEquipped, slotHash );
+		return HashCode.Combine( IsOpen, inventory?.Count ?? 0, EquippedCount, MaxEquipped, slotHash, lastScrollRatio, lastThumbHeight );
 	}
 
 	private sealed class PetViewModel

@@ -24,7 +24,10 @@ public sealed class Test_VerifyJsonObject : Interactable
 
 		if( !interactingPlayer.IsProxy )
 		{
+			
 			Inventory inv = interactingPlayer.GetComponent<PlayerData>().inventory;
+			inv.InventorySize = 100;
+
 			if ( inv.AddPetPrefab( GameObject.GetPrefab( "prefabs/pets/pet-crab.prefab" ) ))
 			{
 				inv.EquipPet( inv.Count-1 );
