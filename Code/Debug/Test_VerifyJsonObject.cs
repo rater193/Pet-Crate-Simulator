@@ -27,12 +27,21 @@ public sealed class Test_VerifyJsonObject : Interactable
 			
 			Inventory inv = interactingPlayer.GetComponent<PlayerData>().inventory;
 			inv.InventorySize = 100;
+			
+			/*
+			while( inv.Count > 0)
+			{
+				inv.RemovePet( 0 );
+			}
+			*/
 
+			
 			if ( inv.AddPetPrefab( GameObject.GetPrefab( "prefabs/pets/pet-crab.prefab" ) ))
 			{
 				inv.EquipPet( inv.Count-1 );
 				Log.Info( inv.ToJson() );
 			}
+			
 		}
 	}
 
