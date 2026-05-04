@@ -19176,8 +19176,8 @@
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
-          "petList": null,
-          "text": null
+          "petList": [],
+          "text": "remove pets"
         },
         {
           "__type": "Sandbox.BoxCollider",
