@@ -70,6 +70,16 @@
         WorldRotation = new Rotation(Scene.Camera.WorldRotation.x, Scene.Camera.WorldRotation.y, Scene.Camera.WorldRotation.z, Scene.Camera.WorldRotation.w).RotateAroundAxis(Vector3.Up, 180f);
     }
 
+    public void SetPromptText( string promptText )
+    {
+        promptText ??= string.Empty;
+        if ( MyStringValue == promptText )
+            return;
+
+        MyStringValue = promptText;
+        StateHasChanged();
+    }
+
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>

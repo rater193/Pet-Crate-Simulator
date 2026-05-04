@@ -13951,14 +13951,6 @@
                   "Type": "Component",
                   "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
                 },
-                "Property": "text",
-                "Value": null
-              },
-              {
-                "Target": {
-                  "Type": "Component",
-                  "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
-                },
                 "Property": "unlockCost",
                 "Value": 150
               }
@@ -14005,14 +13997,6 @@
                 },
                 "Property": "Rotation",
                 "Value": "3.98962413E-07,2.31217726E-07,1,-4.37114807E-08"
-              },
-              {
-                "Target": {
-                  "Type": "Component",
-                  "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
-                },
-                "Property": "text",
-                "Value": null
               },
               {
                 "Target": {
@@ -14071,14 +14055,6 @@
                   "Type": "Component",
                   "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
                 },
-                "Property": "text",
-                "Value": null
-              },
-              {
-                "Target": {
-                  "Type": "Component",
-                  "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
-                },
                 "Property": "unlockCost",
                 "Value": 8000
               }
@@ -14125,14 +14101,6 @@
                 },
                 "Property": "Rotation",
                 "Value": "-2.12248509E-07,-4.09369392E-07,-0.537299275,0.843391716"
-              },
-              {
-                "Target": {
-                  "Type": "Component",
-                  "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
-                },
-                "Property": "text",
-                "Value": null
               },
               {
                 "Target": {
@@ -14191,14 +14159,6 @@
                   "Type": "Component",
                   "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
                 },
-                "Property": "text",
-                "Value": null
-              },
-              {
-                "Target": {
-                  "Type": "Component",
-                  "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
-                },
                 "Property": "unlockCost",
                 "Value": 150000
               }
@@ -14245,14 +14205,6 @@
                 },
                 "Property": "Rotation",
                 "Value": "-4.58750833E-07,-4.66942822E-08,-2.14210414E-14,1"
-              },
-              {
-                "Target": {
-                  "Type": "Component",
-                  "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
-                },
-                "Property": "text",
-                "Value": null
               },
               {
                 "Target": {
@@ -19122,93 +19074,6 @@
       }
     },
     {
-      "__guid": "b6951591-3f32-40c7-babe-ae273d562cb7",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "Cube",
-      "Position": "2028.60693,255.53421,34.4344368",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "0063d015-cab8-41b0-89c2-0753ca14a460",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "models/dev/box.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Test_VerifyJsonObject",
-          "__guid": "211f0c7b-e0ce-43a8-95ba-2f8fee3040e7",
-          "__enabled": true,
-          "Flags": 0,
-          "InteractableShortcutOffset": "0,0,0",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "petList": [],
-          "text": "remove pets"
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "0c463aaa-a082-4945-9853-2a184c5c4294",
-          "__enabled": true,
-          "Flags": 0,
-          "Center": "0,0,0",
-          "ColliderFlags": 0,
-          "Elasticity": null,
-          "Friction": null,
-          "IsTrigger": false,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OnObjectTriggerEnter": null,
-          "OnObjectTriggerExit": null,
-          "OnTriggerEnter": null,
-          "OnTriggerExit": null,
-          "RollingResistance": null,
-          "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null,
-          "SurfaceVelocity": "0,0,0"
-        }
-      ],
-      "Children": []
-    },
-    {
       "__guid": "6746c076-2358-4dd4-912f-13a791b87ec1",
       "__version": 2,
       "Flags": 0,
@@ -19252,34 +19117,6 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__type": "Test_VerifyJsonObject",
-          "__guid": "839bac9d-0af2-4d5a-86f8-8fcee0cc4c61",
-          "__enabled": true,
-          "Flags": 0,
-          "InteractableShortcutOffset": "0,0,0",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "petList": [
-            {
-              "_type": "gameobject",
-              "prefab": "prefabs/pets/pet-bee.prefab"
-            },
-            {
-              "_type": "gameobject",
-              "prefab": "prefabs/pets/pet-caterpillar.prefab"
-            },
-            {
-              "_type": "gameobject",
-              "prefab": "prefabs/pets/pet-parrot.prefab"
-            }
-          ],
-          "text": null
-        },
-        {
           "__type": "Sandbox.BoxCollider",
           "__guid": "a7344a6a-3f4d-47b0-993e-8d5269187edc",
           "__enabled": true,
@@ -19304,6 +19141,128 @@
           "Static": false,
           "Surface": null,
           "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "InteractionTestAddRandomPet",
+          "__guid": "e9a532f5-821a-4638-9de8-073df31217fa",
+          "__enabled": true,
+          "Flags": 0,
+          "InteractableShortcutOffset": "0,0,0",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "petList": [
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/pets/pet-crab.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/pets/pet-fish.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/pets/pet-giraffe.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/pets/pet-penguin.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/pets/pet-pig.prefab"
+            }
+          ],
+          "text": null
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "bd5479f8-fc23-4d55-a738-b3e2493416d6",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "UseThisToLetPlayerButARandomPet (1)",
+      "Position": "2081.09766,322.987457,34.4340973",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "effdab7b-9ffa-4f01-a49b-11a7a0712ec1",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/dev/box.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "78ddeb14-6c44-419d-a965-6cbbcc5b2609",
+          "__enabled": true,
+          "Flags": 0,
+          "Center": "0,0,0",
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "InteractionTestRemovePets",
+          "__guid": "0cd0da66-42dd-40ea-a9ee-f872dc474a23",
+          "__enabled": true,
+          "Flags": 0,
+          "InteractableShortcutOffset": "0,0,0",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "text": null
         }
       ],
       "Children": []

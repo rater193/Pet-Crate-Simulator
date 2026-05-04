@@ -5,6 +5,8 @@ using static Sandbox.PhysicsContact;
 public sealed class PlayerInteractionsController : Component
 {
 	GameObject interactionObject;
+	InteractionFrameworkUI interactionUi;
+
 	protected override void OnUpdate()
 	{
 		if ( IsProxy ) return;
@@ -12,6 +14,7 @@ public sealed class PlayerInteractionsController : Component
 		if( interactionObject == null)
 		{
 			interactionObject = GameObject.GetPrefab( "Prefabs/UI/interactionsenginepanel.prefab" ).Clone();
+			interactionUi = interactionObject.GetComponent<InteractionFrameworkUI>();
 		}
 
 		var tar = interactionObject;
@@ -35,6 +38,9 @@ public sealed class PlayerInteractionsController : Component
 					var interactable = tr.Collider.GetComponent<Interactable>();
 					tar.Enabled = true;
 					tar.WorldPosition = tr.Collider.WorldPosition + interactable.InteractableShortcutOffset;// * tr.Collider.GetComponent<Interactable>().LocalInteractionPromptOffset;
+					interactionUi ??= tar.GetComponent<InteractionFrameworkUI>();
+					interactionUi?.SetPromptText( interactable.text );
+
 					if(Input.Pressed("Use"))
 					{
 						interactable.OnInteract( GetComponent<PlayerController>() );

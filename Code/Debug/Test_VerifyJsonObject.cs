@@ -4,9 +4,14 @@ public sealed class Test_VerifyJsonObject : Interactable
 {
 
 	[Property] List<GameObject> petList;
+
+	protected override void OnStart()
+	{
+		this.text = "Verify JSON structure";
+	}
+
 	public override void OnInteract( PlayerController interactingPlayer )
 	{
-		/*
 		var data = new JSONObject()
 			.Set( "name", "Dog" )
 			.Set( "coins", 25 )
@@ -22,29 +27,7 @@ public sealed class Test_VerifyJsonObject : Interactable
 		bool hasPet = loaded.Exists( "pet" );
 		loaded.Remove( "coins" );
 		Log.Info( loaded.ToJson() );
-		*/
-
-		if( !interactingPlayer.IsProxy )
-		{
-			
-			Inventory inv = interactingPlayer.GetComponent<PlayerData>().inventory;
-			inv.InventorySize = 100;
-			
-			/*
-			while( inv.Count > 0)
-			{
-				inv.RemovePet( 0 );
-			}
-			*/
-
-			
-			if ( inv.AddPetPrefab( petList[Game.Random.Next( petList.Count )] ) )
-			{
-				inv.EquipPet( inv.Count-1 );
-				Log.Info( inv.ToJson() );
-			}
-			
-		}
+		
 	}
 
 	protected override void OnUpdate()

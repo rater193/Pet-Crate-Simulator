@@ -27,6 +27,7 @@
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
+        "text": "Unlock Door",
         "unlockCost": 25
       },
       {
