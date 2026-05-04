@@ -90,6 +90,23 @@
 		margin-bottom: 12px;
 	}
 
+	.pet-section-title-row {
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 12px;
+	}
+
+	.pet-section-title-row .pet-section-title {
+		margin-bottom: 0px;
+	}
+
+	.pet-inventory-count {
+		color: #55708f;
+		font-size: 18px;
+		font-weight: 800;
+	}
+
 	.pet-equipped-list {
 		height: 118px;
 		min-height: 118px;
@@ -422,7 +439,7 @@
 									}
 								</div>
 								<div class="pet-equipped-name">@pet.DisplayName</div>
-								<div class="pet-equipped-action">Unequip</div>
+								<div class="pet-equipped-action"></div>
 								<div class="pet-action-overlay unequip">Unequip</div>
 							</div>
 						}
@@ -431,7 +448,10 @@
 			</div>
 
 			<div class="pet-inventory-body">
-				<div class="pet-section-title">Your Pets</div>
+				<div class="pet-section-title-row">
+					<div class="pet-section-title">Your Pets</div>
+					<div class="pet-inventory-count">@InventoryPetCount / @InventoryCapacity Pets</div>
+				</div>
 				@if ( AllPets.Count == 0 )
 				{
 					<div class="pet-empty-library">
@@ -499,6 +519,8 @@
 	private Inventory Inventory => LocalPlayerData?.inventory;
 	private int MaxEquipped => LocalPlayerData?.GetComponent<PetFramework>()?.MaxEquippedPets ?? 0;
 	private int EquippedCount => Inventory?.GetEquippedSlotIndexes().Count ?? 0;
+	private int InventoryPetCount => Inventory?.Count ?? 0;
+	private int InventoryCapacity => Inventory?.InventorySize ?? 0;
 	private List<PetViewModel> AllPets => BuildPetList();
 	private List<PetViewModel> EquippedPets => AllPets.Where( pet => pet.IsEquipped ).ToList();
 	private bool ShouldShowScrollbar => PetGridPanel?.HasScrollY ?? AllPets.Count > 12;
@@ -540,9 +562,9 @@
 	private string GetStatusText( PetViewModel pet )
 	{
 		if ( !pet.IsEquipped && IsMaxPetsEquipped )
-			return "Max equipped";
+			return "";
 
-		return pet.IsEquipped ? "Equipped" : "Click to equip";
+		return pet.IsEquipped ? "" : "";
 	}
 
 	private string GetHoverActionText( PetViewModel pet )
