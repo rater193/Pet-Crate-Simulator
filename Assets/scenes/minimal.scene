@@ -14713,8 +14713,7 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ],
-              "text": null
+              ]
             }
           }
         ],
@@ -15013,8 +15012,7 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ],
-              "text": null
+              ]
             }
           }
         ],
@@ -15313,8 +15311,7 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ],
-              "text": null
+              ]
             }
           }
         ],
@@ -15613,8 +15610,7 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ],
-              "text": null
+              ]
             }
           }
         ],
@@ -15913,8 +15909,7 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ],
-              "text": null
+              ]
             }
           }
         ],
@@ -16213,8 +16208,7 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ],
-              "text": null
+              ]
             }
           }
         ],
@@ -16513,8 +16507,7 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ],
-              "text": null
+              ]
             }
           }
         ],
@@ -16813,8 +16806,7 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ],
-              "text": null
+              ]
             }
           }
         ],
@@ -17113,8 +17105,7 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ],
-              "text": null
+              ]
             }
           }
         ],
@@ -17413,8 +17404,7 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ],
-              "text": null
+              ]
             }
           }
         ],
@@ -17713,8 +17703,7 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ],
-              "text": null
+              ]
             }
           }
         ],
@@ -18013,8 +18002,7 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ],
-              "text": null
+              ]
             }
           }
         ],
@@ -18313,8 +18301,7 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ],
-              "text": null
+              ]
             }
           }
         ],
@@ -18613,8 +18600,7 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ],
-              "text": null
+              ]
             }
           }
         ],
@@ -18913,8 +18899,7 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-tiger.prefab"
                 }
-              ],
-              "text": null
+              ]
             }
           }
         ],
@@ -18999,6 +18984,90 @@
         "bbaff2bb-ccde-46ad-b944-273b67f44096": "940d9a6d-6854-4abc-8114-e705395eec6f",
         "f9aac98a-fd7d-4122-8df7-3346bfab8ee0": "07000a18-881f-49a1-a103-c12b3f5ce48b"
       }
+    },
+    {
+      "__guid": "b6951591-3f32-40c7-babe-ae273d562cb7",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "Cube",
+      "Position": "2028.60693,255.53421,34.4344368",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "0063d015-cab8-41b0-89c2-0753ca14a460",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/dev/box.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Test_VerifyJsonObject",
+          "__guid": "211f0c7b-e0ce-43a8-95ba-2f8fee3040e7",
+          "__enabled": true,
+          "Flags": 0,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        },
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "0c463aaa-a082-4945-9853-2a184c5c4294",
+          "__enabled": true,
+          "Flags": 0,
+          "Center": "0,0,0",
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
     }
   ],
   "SceneProperties": {
@@ -19023,13 +19092,18 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
-      "Sandbox.MovieMaker.MovieRecorderSystem": {
-        "DisableClientRecording": false
-      },
       "Sandbox.SelectionSetsSystem": {
         "Data": {
           "SelectionSets": []
         }
+      },
+      "Sandbox.Clutter.ClutterGridSystem": {
+        "Storage": {
+          "$blob": "6296e7e1-9d9b-49a7-adec-3677fc154400"
+        }
+      },
+      "Sandbox.MovieMaker.MovieRecorderSystem": {
+        "DisableClientRecording": false
       }
     }
   },
