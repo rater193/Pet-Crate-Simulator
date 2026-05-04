@@ -68,24 +68,40 @@
         <img class="Icon-Cash" src="ui/sandcoin_small.vtex" />
         <div class="StatBox-Money-Container"><div class="StatBox-Money-Bock">@RenderedMoneyValue</div></div>
     </div>
+    <PetInventoryPanel IsOpen=@isPetInventoryOpen CloseRequested=@ClosePetInventory />
 </root>
 
 
 @code
 {
-    PlayerData playerData;
     [Property] public int RenderedMoneyValue = -1;
     [Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
     [Property] public int width { get; set; } = 128;
     public static PlayerHud SINGLETON;
+    private bool isPetInventoryOpen;
 
     protected override void OnStart()
     {
         SINGLETON = this;
     }
 
+    protected override void OnUpdate()
+    {
+        if ( Input.Pressed( "Score" ) )
+        {
+            isPetInventoryOpen = !isPetInventoryOpen;
+            StateHasChanged();
+        }
+    }
+
+    private void ClosePetInventory()
+    {
+        isPetInventoryOpen = false;
+        StateHasChanged();
+    }
+
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-    protected override int BuildHash() => System.HashCode.Combine(MyStringValue, width, RenderedMoneyValue);
+    protected override int BuildHash() => System.HashCode.Combine(MyStringValue, width, RenderedMoneyValue, isPetInventoryOpen);
 }

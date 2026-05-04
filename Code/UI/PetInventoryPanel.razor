@@ -1,0 +1,387 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System;
+@using System.Collections.Generic;
+@using System.Linq;
+@inherits Panel
+@namespace Sandbox
+
+@if ( !IsOpen )
+	return;
+
+<style>
+	.pet-inventory-shell {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		align-items: center;
+		justify-content: center;
+		pointer-events: all;
+		background-color: rgba(8, 14, 30, 0.35);
+		font-family: Poppins;
+	}
+
+	.pet-inventory-window {
+		width: 1180px;
+		height: 720px;
+		background-color: #eef7ff;
+		border: 4px solid #7bd3ff;
+		border-radius: 28px;
+		box-shadow: 0px 18px 48px rgba(0, 35, 70, 0.45);
+		padding: 72px 28px 26px 28px;
+		flex-direction: column;
+		position: relative;
+	}
+
+	.pet-inventory-header {
+		position: absolute;
+		top: -36px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 450px;
+		height: 76px;
+		background-color: #2375df;
+		border: 4px solid #83d6ff;
+		border-radius: 24px;
+		align-items: center;
+		justify-content: center;
+		box-shadow: 0px 8px 20px rgba(9, 52, 116, 0.35);
+	}
+
+	.pet-inventory-title {
+		color: white;
+		font-size: 36px;
+		font-weight: 900;
+		text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.25);
+	}
+
+	.pet-inventory-close {
+		position: absolute;
+		right: -86px;
+		top: 12px;
+		width: 64px;
+		height: 64px;
+		border-radius: 18px;
+		background-color: #2375df;
+		border: 4px solid #83d6ff;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font-size: 42px;
+		font-weight: 900;
+		pointer-events: all;
+	}
+
+	.pet-inventory-equipped {
+		height: 158px;
+		flex-direction: column;
+		border-bottom: 2px solid rgba(68, 94, 130, 0.18);
+		padding-bottom: 18px;
+		margin-bottom: 18px;
+	}
+
+	.pet-section-title {
+		color: #334766;
+		font-size: 22px;
+		font-weight: 800;
+		margin-bottom: 12px;
+	}
+
+	.pet-equipped-list {
+		height: 104px;
+		flex-direction: row;
+		gap: 14px;
+	}
+
+	.pet-equipped-card {
+		width: 164px;
+		height: 100%;
+		background-color: #d9edff;
+		border: 3px solid #60c7ff;
+		border-radius: 14px;
+		padding: 10px;
+		align-items: center;
+		pointer-events: all;
+	}
+
+	.pet-avatar {
+		width: 58px;
+		height: 58px;
+		border-radius: 14px;
+		background-color: #2aa8f4;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font-size: 28px;
+		font-weight: 900;
+		margin-right: 10px;
+	}
+
+	.pet-equipped-name {
+		color: #253c5b;
+		font-size: 19px;
+		font-weight: 900;
+		flex-grow: 1;
+	}
+
+	.pet-equipped-action {
+		position: absolute;
+		right: 12px;
+		bottom: 8px;
+		color: #e84253;
+		font-size: 14px;
+		font-weight: 800;
+	}
+
+	.pet-inventory-body {
+		flex-grow: 1;
+		flex-direction: column;
+	}
+
+	.pet-grid {
+		flex-wrap: wrap;
+		gap: 14px;
+		overflow: scroll;
+	}
+
+	.pet-card {
+		width: 150px;
+		height: 176px;
+		border-radius: 14px;
+		background-color: #37adf4;
+		border: 4px solid rgba(255, 255, 255, 0.65);
+		box-shadow: 0px 6px 13px rgba(21, 52, 86, 0.22);
+		padding: 10px;
+		flex-direction: column;
+		pointer-events: all;
+	}
+
+	.pet-card.equipped {
+		background-color: #54c943;
+		border-color: #ffe16a;
+	}
+
+	.pet-card-status {
+		color: white;
+		font-size: 14px;
+		font-weight: 900;
+		text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.25);
+		align-self: flex-end;
+	}
+
+	.pet-card-icon {
+		width: 74px;
+		height: 74px;
+		border-radius: 20px;
+		background-color: rgba(255, 255, 255, 0.32);
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font-size: 42px;
+		font-weight: 900;
+		margin: 10px auto 8px auto;
+		text-shadow: 1px 3px 0px rgba(0, 0, 0, 0.22);
+	}
+
+	.pet-card-name {
+		color: white;
+		font-size: 20px;
+		font-weight: 900;
+		text-align: center;
+		text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.25);
+	}
+
+	.pet-card-stats {
+		margin-top: 6px;
+		flex-direction: column;
+		color: rgba(255, 255, 255, 0.9);
+		font-size: 13px;
+		font-weight: 700;
+		text-align: center;
+	}
+
+	.pet-empty-state {
+		height: 100%;
+		align-items: center;
+		justify-content: center;
+		color: #68809e;
+		font-size: 20px;
+		font-weight: 700;
+	}
+
+	.pet-empty-library {
+		flex-grow: 1;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		color: #68809e;
+	}
+
+	.pet-empty-title {
+		font-size: 30px;
+		font-weight: 900;
+	}
+
+	.pet-empty-copy {
+		font-size: 18px;
+		font-weight: 700;
+		margin-top: 6px;
+	}
+</style>
+
+<root>
+	<div class="pet-inventory-shell">
+		<div class="pet-inventory-window">
+			<div class="pet-inventory-header">
+				<div class="pet-inventory-title">Pets Inventory</div>
+				<div class="pet-inventory-close" onclick=@Close>X</div>
+			</div>
+
+			<div class="pet-inventory-equipped">
+				<div class="pet-section-title">@EquippedCount / @MaxEquipped Equipped</div>
+				<div class="pet-equipped-list">
+					@if ( EquippedPets.Count == 0 )
+					{
+						<div class="pet-empty-state">No pets equipped</div>
+					}
+					else
+					{
+						@foreach ( var pet in EquippedPets )
+						{
+							<div class="pet-equipped-card" onclick=@(() => TogglePet( pet.SlotIndex ))>
+								<div class="pet-avatar">@pet.IconText</div>
+								<div class="pet-equipped-name">@pet.DisplayName</div>
+								<div class="pet-equipped-action">Unequip</div>
+							</div>
+						}
+					}
+				</div>
+			</div>
+
+			<div class="pet-inventory-body">
+				<div class="pet-section-title">Your Pets</div>
+				@if ( AllPets.Count == 0 )
+				{
+					<div class="pet-empty-library">
+						<div class="pet-empty-title">No pets yet</div>
+						<div class="pet-empty-copy">Pets you collect will appear here.</div>
+					</div>
+				}
+				else
+				{
+					<div class="pet-grid">
+						@foreach ( var pet in AllPets )
+						{
+							<div class="@GetPetCardClass( pet )" onclick=@(() => TogglePet( pet.SlotIndex ))>
+								<div class="pet-card-status">@GetStatusText( pet )</div>
+								<div class="pet-card-icon">@pet.IconText</div>
+								<div class="pet-card-name">@pet.DisplayName</div>
+								<div class="pet-card-stats">
+									<span>Coins x@pet.CoinMultiplierText</span>
+									<span>Damage @pet.Damage</span>
+								</div>
+							</div>
+						}
+					</div>
+				}
+			</div>
+		</div>
+	</div>
+</root>
+
+@code
+{
+	public bool IsOpen { get; set; }
+	public Action CloseRequested { get; set; }
+
+	private PlayerData LocalPlayerData => PlayerData.LOCALDATA;
+	private Inventory Inventory => LocalPlayerData?.inventory;
+	private int MaxEquipped => LocalPlayerData?.GetComponent<PetFramework>()?.MaxEquippedPets ?? 0;
+	private int EquippedCount => Inventory?.GetEquippedSlotIndexes().Count ?? 0;
+	private List<PetViewModel> AllPets => BuildPetList();
+	private List<PetViewModel> EquippedPets => AllPets.Where( pet => pet.IsEquipped ).ToList();
+
+	private void Close()
+	{
+		CloseRequested?.Invoke();
+	}
+
+	private void TogglePet( int slotIndex )
+	{
+		Inventory?.TogglePetEquipped( slotIndex );
+		StateHasChanged();
+	}
+
+	private string GetPetCardClass( PetViewModel pet )
+	{
+		return pet.IsEquipped ? "pet-card equipped" : "pet-card";
+	}
+
+	private string GetStatusText( PetViewModel pet )
+	{
+		return pet.IsEquipped ? "Equipped" : "Click to equip";
+	}
+
+	private List<PetViewModel> BuildPetList()
+	{
+		var pets = new List<PetViewModel>();
+		var inventory = Inventory;
+		if ( inventory == null )
+			return pets;
+
+		for ( var i = 0; i < inventory.Slots.Count; i++ )
+		{
+			var slot = inventory.GetPet( i );
+			if ( !slot.IsValid() )
+				continue;
+
+			var petPrefab = slot.GetPetPrefab();
+			var petComponent = petPrefab?.GetComponent<PetComponent>() ?? petPrefab?.GetComponentInChildren<PetComponent>();
+			var displayName = !string.IsNullOrWhiteSpace( slot.DisplayName ) ? slot.DisplayName : petComponent?.DisplayName;
+
+			pets.Add( new PetViewModel
+			{
+				SlotIndex = i,
+				DisplayName = string.IsNullOrWhiteSpace( displayName ) ? "Pet" : displayName,
+				IsEquipped = inventory.IsPetEquipped( i ),
+				CoinMultiplier = MathF.Max( 0f, petComponent?.CoinMultiplier ?? 1f ),
+				Damage = Math.Max( 0, petComponent?.Damage ?? 1 )
+			} );
+		}
+
+		return pets;
+	}
+
+	protected override int BuildHash()
+	{
+		var inventory = Inventory;
+		var slotHash = 0;
+		if ( inventory != null )
+		{
+			foreach ( var slot in inventory.Slots )
+			{
+				slotHash = HashCode.Combine( slotHash, slot?.DisplayName, slot?.PetPrefabPath );
+			}
+
+			foreach ( var equippedSlotIndex in inventory.GetEquippedSlotIndexes() )
+			{
+				slotHash = HashCode.Combine( slotHash, equippedSlotIndex );
+			}
+		}
+
+		return HashCode.Combine( IsOpen, inventory?.Count ?? 0, EquippedCount, MaxEquipped, slotHash );
+	}
+
+	private sealed class PetViewModel
+	{
+		public int SlotIndex { get; set; }
+		public string DisplayName { get; set; }
+		public bool IsEquipped { get; set; }
+		public float CoinMultiplier { get; set; }
+		public int Damage { get; set; }
+		public string IconText => string.IsNullOrWhiteSpace( DisplayName ) ? "?" : DisplayName[..1].ToUpperInvariant();
+		public string CoinMultiplierText => CoinMultiplier.ToString( "0.##" );
+	}
+}

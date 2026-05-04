@@ -1,0 +1,14 @@
+
+Layer0
+{
+	shader "shaders/complex.shader_c"
+
+	TextureColor "models/pets/petdog1/meshy_ai_i_attached_a_sample_s_0504181931_texture.png"
+	TextureAmbientOcclusion "materials/default/default_ao.tga"
+	TextureNormal "models/pets/petdog1/meshy_ai_i_attached_a_sample_s_0504181931_texture_normal.png"
+	TextureRoughness "models/pets/petdog1/meshy_ai_i_attached_a_sample_s_0504181931_texture_roughness.png"
+	F_METALNESS_TEXTURE 1
+	F_SPECULAR 1
+	TextureMetalness "models/pets/petdog1/meshy_ai_i_attached_a_sample_s_0504181931_texture_metallic.png"
+
+}

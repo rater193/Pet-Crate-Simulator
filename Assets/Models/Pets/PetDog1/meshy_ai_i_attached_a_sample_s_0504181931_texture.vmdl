@@ -13,7 +13,7 @@
 						_class = "DefaultMaterialGroup"
 						remaps = [  ]
 						use_global_default = true
-						global_default_material = "models/pets/meshy_ai_i_attached_a_sample_s_0504181931_texture.vmat"
+						global_default_material = "models/pets/petdog1/meshy_ai_i_attached_a_sample_s_0504181931_texture.vmat"
 					},
 				]
 			},
@@ -23,7 +23,7 @@
 				[
 					{
 						_class = "RenderMeshFile"
-						filename = "models/pets/meshy_ai_i_attached_a_sample_s_0504181931_texture.fbx"
+						filename = "models/pets/petdog1/meshy_ai_i_attached_a_sample_s_0504181931_texture.fbx"
 						import_translation = [ 0.0, 0.0, 75.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
 						import_scale = 0.3937

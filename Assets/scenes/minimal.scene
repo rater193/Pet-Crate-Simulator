@@ -19084,52 +19084,6 @@
         }
       ],
       "Children": []
-    },
-    {
-      "__guid": "00f01a80-a105-48db-a9ac-8a2b5cad7e58",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "meshy_ai_i_attached_a_sample_s_0504181931_texture",
-      "Position": "2197.0061,418.144653,9.21519756",
-      "Rotation": "2.80770764E-05,0.000668074645,-0.996820569,0.0796760395",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "4815b8e0-58b2-42a6-a6d2-1ffc9279781c",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "models/pets/meshy_ai_i_attached_a_sample_s_0504181931_texture.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
     }
   ],
   "SceneProperties": {
@@ -19154,13 +19108,13 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
-      "Sandbox.MovieMaker.MovieRecorderSystem": {
-        "DisableClientRecording": false
-      },
       "Sandbox.Clutter.ClutterGridSystem": {
         "Storage": {
           "$blob": "6296e7e1-9d9b-49a7-adec-3677fc154400"
         }
+      },
+      "Sandbox.MovieMaker.MovieRecorderSystem": {
+        "DisableClientRecording": false
       },
       "Sandbox.SelectionSetsSystem": {
         "Data": {

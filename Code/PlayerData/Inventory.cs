@@ -17,6 +17,9 @@ public sealed class Inventory : Component
 		if ( !slot.IsValid() )
 			return false;
 
+		if ( IsPetEquipped( slotNumber ) )
+			return true;
+
 		var petPrefab = slot.GetPetPrefab();
 		if ( !petPrefab.IsValid() )
 		{
@@ -31,6 +34,12 @@ public sealed class Inventory : Component
 			return false;
 		}
 
+		if ( GetEquippedSlotIndexes().Count >= petFramework.MaxEquippedPets )
+		{
+			Log.Warning( $"Cannot equip pet '{slot.DisplayName}'. Max equipped pets is {petFramework.MaxEquippedPets}." );
+			return false;
+		}
+
 		petFramework.Equip( petPrefab );
 		if ( !EquippedSlotIndexes.Contains( slotNumber ) )
 		{
@@ -39,6 +48,29 @@ public sealed class Inventory : Component
 
 		QueueOwnerSave();
 		return true;
+	}
+
+	public bool UnequipPet( int slotNumber )
+	{
+		if ( !IsPetEquipped( slotNumber ) )
+			return false;
+
+		EquippedSlotIndexes.RemoveAll( index => index == slotNumber );
+		RestoreEquippedPets();
+		QueueOwnerSave();
+		return true;
+	}
+
+	public bool TogglePetEquipped( int slotNumber )
+	{
+		return IsPetEquipped( slotNumber )
+			? UnequipPet( slotNumber )
+			: EquipPet( slotNumber );
+	}
+
+	public bool IsPetEquipped( int slotNumber )
+	{
+		return GetPet( slotNumber ).IsValid() && EquippedSlotIndexes.Contains( slotNumber );
 	}
 
 	public InventoryPetSlot GetPet( int slotNumber )
