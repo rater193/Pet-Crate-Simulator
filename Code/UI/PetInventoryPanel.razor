@@ -515,7 +515,7 @@
 
 			var petPrefab = slot.GetPetPrefab();
 			var petComponent = petPrefab?.GetComponent<PetComponent>() ?? petPrefab?.GetComponentInChildren<PetComponent>();
-			var displayName = !string.IsNullOrWhiteSpace( slot.DisplayName ) ? slot.DisplayName : petComponent?.DisplayName;
+			var displayName = !string.IsNullOrWhiteSpace( petComponent?.DisplayName ) ? petComponent.DisplayName : slot.DisplayName;
 			var previewTexture = PetPreviewRenderer.Instance?.GetPreviewTexture( slot.PetPrefabPath, petPrefab );
 
 			pets.Add( new PetViewModel
@@ -540,7 +540,9 @@
 		{
 			foreach ( var slot in inventory.Slots )
 			{
-				slotHash = HashCode.Combine( slotHash, slot?.DisplayName, slot?.PetPrefabPath );
+				var petPrefab = slot?.GetPetPrefab();
+				var petComponent = petPrefab?.GetComponent<PetComponent>() ?? petPrefab?.GetComponentInChildren<PetComponent>();
+				slotHash = HashCode.Combine( slotHash, slot?.DisplayName, slot?.PetPrefabPath, petComponent?.DisplayName );
 			}
 
 			foreach ( var equippedSlotIndex in inventory.GetEquippedSlotIndexes() )

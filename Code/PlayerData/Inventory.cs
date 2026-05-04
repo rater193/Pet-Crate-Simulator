@@ -153,7 +153,12 @@ public sealed class Inventory : Component
 		}
 
 		var slot = CreateRuntimeSlot();
-		slot.DisplayName = string.IsNullOrWhiteSpace( displayName ) ? petPrefab.Name : displayName;
+		var petComponent = petPrefab.GetComponent<PetComponent>() ?? petPrefab.GetComponentInChildren<PetComponent>();
+		slot.DisplayName = !string.IsNullOrWhiteSpace( displayName )
+			? displayName
+			: !string.IsNullOrWhiteSpace( petComponent?.DisplayName )
+				? petComponent.DisplayName
+				: petPrefab.Name;
 		slot.PetPrefab = petPrefab;
 		slot.PetPrefabPath = GetPetPrefabPath( petPrefab );
 
