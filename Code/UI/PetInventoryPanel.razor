@@ -297,12 +297,23 @@
 		z-index: 10;
 	}
 
+	.pet-action-overlay.max-equipped {
+		font-size: 22px;
+		text-align: center;
+		padding: 12px;
+	}
+
 	.pet-action-overlay.equip {
 		background-color: rgba(62, 225, 92, 0.5);
 		color: #075f25;
 	}
 
 	.pet-action-overlay.unequip {
+		background-color: rgba(240, 72, 72, 0.5);
+		color: #7b1010;
+	}
+
+	.pet-action-overlay.max-equipped {
 		background-color: rgba(240, 72, 72, 0.5);
 		color: #7b1010;
 	}
@@ -528,18 +539,29 @@
 
 	private string GetStatusText( PetViewModel pet )
 	{
+		if ( !pet.IsEquipped && IsMaxPetsEquipped )
+			return "Max equipped";
+
 		return pet.IsEquipped ? "Equipped" : "Click to equip";
 	}
 
 	private string GetHoverActionText( PetViewModel pet )
 	{
+		if ( !pet.IsEquipped && IsMaxPetsEquipped )
+			return "Max pets equipped";
+
 		return pet.IsEquipped ? "Unequip" : "Equip";
 	}
 
 	private string GetPetActionOverlayClass( PetViewModel pet )
 	{
+		if ( !pet.IsEquipped && IsMaxPetsEquipped )
+			return "pet-action-overlay max-equipped";
+
 		return pet.IsEquipped ? "pet-action-overlay unequip" : "pet-action-overlay equip";
 	}
+
+	private bool IsMaxPetsEquipped => MaxEquipped > 0 && EquippedCount >= MaxEquipped;
 
 	private float GetScrollRatio()
 	{
