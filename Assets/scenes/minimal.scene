@@ -548,7 +548,7 @@
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "95d98541-2871-453a-8c82-bebb61e72497",
-              "__enabled": true,
+              "__enabled": false,
               "Flags": 0,
               "BodyGroups": 18446744073709551615,
               "CreateAttachments": false,
@@ -627,7 +627,7 @@
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "8ca131e8-6f7f-4640-a2b4-769908667662",
-              "__enabled": true,
+              "__enabled": false,
               "Flags": 0,
               "BodyGroups": 18446744073709551615,
               "CreateAttachments": false,
@@ -694,7 +694,7 @@
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "55488ab6-7aa8-4d63-9ab0-ab1ad8b963db",
-              "__enabled": true,
+              "__enabled": false,
               "Flags": 0,
               "BodyGroups": 18446744073709551615,
               "CreateAttachments": false,
@@ -19290,6 +19290,11 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
+      "Sandbox.SelectionSetsSystem": {
+        "Data": {
+          "SelectionSets": []
+        }
+      },
       "Sandbox.Clutter.ClutterGridSystem": {
         "Storage": {
           "$blob": "6296e7e1-9d9b-49a7-adec-3677fc154400"
@@ -19297,11 +19302,6 @@
       },
       "Sandbox.MovieMaker.MovieRecorderSystem": {
         "DisableClientRecording": false
-      },
-      "Sandbox.SelectionSetsSystem": {
-        "Data": {
-          "SelectionSets": []
-        }
       }
     }
   },
