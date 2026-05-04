@@ -215,7 +215,13 @@
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
-        "PlayerMoney": 0
+        "PlayerMoney": 0,
+        "inventory": {
+          "_type": "component",
+          "component_id": "79060115-ac9b-49ba-94f5-2df9940b1119",
+          "go": "bf5991b1-c918-4c87-b350-6abb59c1b982",
+          "component_type": "Inventory"
+        }
       },
       {
         "__type": "PetFramework",
@@ -258,7 +264,8 @@
         "OnComponentEnabled": null,
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
-        "OnComponentUpdate": null
+        "OnComponentUpdate": null,
+        "Slots": []
       }
     ],
     "Children": [

@@ -1,10 +1,10 @@
-using rater193.core;
 using Sandbox;
 
 public sealed class Test_VerifyJsonObject : Interactable
 {
 	public override void OnInteract( PlayerController interactingPlayer )
 	{
+		/*
 		var data = new JSONObject()
 			.Set( "name", "Dog" )
 			.Set( "coins", 25 )
@@ -20,6 +20,17 @@ public sealed class Test_VerifyJsonObject : Interactable
 		bool hasPet = loaded.Exists( "pet" );
 		loaded.Remove( "coins" );
 		Log.Info( loaded.ToJson() );
+		*/
+
+		if( !interactingPlayer.IsProxy )
+		{
+			Inventory inv = interactingPlayer.GetComponent<PlayerData>().inventory;
+			if ( inv.AddPetPrefab( GameObject.GetPrefab( "prefabs/pets/pet-crab.prefab" ) ))
+			{
+				inv.EquipPet( inv.Count-1 );
+				Log.Info( inv.ToJson() );
+			}
+		}
 	}
 
 	protected override void OnUpdate()
