@@ -16,15 +16,25 @@ public sealed class InteractBuyCrate : Interactable
 	[Property] public float CelebrationWiggleDegrees { get; set; } = 8f;
 	[Property] public float CollectDuration { get; set; } = 0.45f;
 	[Property] public float CollectHopHeight { get; set; } = 24f;
+	[Property] public string CrateModelName { get; set; } = "Model";
+	[Property] public float CrateOpenDuration { get; set; } = 0.45f;
+	[Property] public float CrateOpenShakeDistance { get; set; } = 3f;
+	[Property] public float CrateOpenLift { get; set; } = 10f;
+	[Property] public float CrateOpenWobbleDegrees { get; set; } = 5f;
+	[Property] public float CrateOpenSquashStretch { get; set; } = 0.08f;
 	[Property] public Vector3 RevealStartLocalOffset { get; set; } = Vector3.Zero;
 	[Property] public Rotation RevealedPetRotation { get; set; } = Rotation.Identity;
 	[Property] public List<PetCrateReward> Pets { get; set; } = new();
 	[Property] public List<PetRarityParticle> RarityParticles { get; set; } = new();
 
+	private GameObject crateModel;
 	private GameObject revealedPet;
 	private PlayerData pendingPlayerData;
 	private Inventory pendingInventory;
 	private PetCrateReward pendingReward;
+	private Vector3 crateModelBaseLocalPosition;
+	private Rotation crateModelBaseLocalRotation;
+	private Vector3 crateModelBaseLocalScale;
 	private Vector3 revealStartPosition;
 	private Vector3 revealEndPosition;
 	private Rotation revealBaseRotation;
@@ -36,6 +46,16 @@ public sealed class InteractBuyCrate : Interactable
 	protected override void OnUpdate()
 	{
 		UpdateReveal();
+	}
+
+	protected override void OnDisabled()
+	{
+		RestoreCrateModel();
+	}
+
+	protected override void OnDestroy()
+	{
+		RestoreCrateModel();
 	}
 
 	public override void OnInteract( PlayerController interactingPlayer )
@@ -96,6 +116,8 @@ public sealed class InteractBuyCrate : Interactable
 		revealedPet.Enabled = true;
 		revealedPetBaseScale = revealedPet.LocalScale;
 
+		CacheCrateModel();
+		ApplyCrateModelAnimation( 0f, 0f );
 		SpawnRarityParticle( reward.Rarity, revealStartPosition );
 	}
 
@@ -120,11 +142,15 @@ public sealed class InteractBuyCrate : Interactable
 		var duration = MathF.Max( 0.01f, RevealDuration );
 		var progress = Math.Clamp( revealElapsed / duration, 0f, 1f );
 		var easedProgress = progress * progress * (3f - (2f * progress));
+		var openProgress = Math.Clamp( revealElapsed / MathF.Max( 0.01f, CrateOpenDuration ), 0f, 1f );
+		var openExcitement = MathF.Sin( openProgress * MathF.PI );
 
 		if ( revealedPet.IsValid() )
 		{
 			revealedPet.WorldPosition = revealStartPosition + ((revealEndPosition - revealStartPosition) * easedProgress);
 		}
+
+		ApplyCrateModelAnimation( EaseOutBack( openProgress ), openExcitement );
 
 		if ( progress < 1f )
 			return;
@@ -156,6 +182,7 @@ public sealed class InteractBuyCrate : Interactable
 		var landingWave = MathF.Pow( MathF.Abs( MathF.Cos( progress * MathF.PI * hopCount ) ), 10f );
 		var decay = 1f - (progress * 0.25f);
 		var squashStretch = MathF.Max( 0f, CelebrationSquashStretch );
+		ApplyCrateModelAnimation( 1f, (hopWave + landingWave) * (1f - (progress * 0.35f)) );
 
 		if ( revealedPet.IsValid() )
 		{
@@ -199,6 +226,7 @@ public sealed class InteractBuyCrate : Interactable
 		var progress = Math.Clamp( revealElapsed / duration, 0f, 1f );
 		var hopWave = MathF.Sin( progress * MathF.PI );
 		var scale = MathF.Max( 0f, 1f - EaseInBack( progress ) );
+		ApplyCrateModelAnimation( 1f - EaseOutCubic( progress ), hopWave * 0.5f );
 
 		if ( revealedPet.IsValid() )
 		{
@@ -257,6 +285,7 @@ public sealed class InteractBuyCrate : Interactable
 		pendingReward = null;
 		isRevealing = false;
 		revealPhase = RevealPhase.Rising;
+		RestoreCrateModel();
 	}
 
 	private PetCrateReward RollReward()
@@ -296,6 +325,60 @@ public sealed class InteractBuyCrate : Interactable
 		particle.Enabled = true;
 	}
 
+	private void CacheCrateModel()
+	{
+		crateModel = FindCrateModel();
+		if ( !crateModel.IsValid() )
+			return;
+
+		crateModelBaseLocalPosition = crateModel.LocalPosition;
+		crateModelBaseLocalRotation = crateModel.LocalRotation;
+		crateModelBaseLocalScale = crateModel.LocalScale;
+	}
+
+	private GameObject FindCrateModel()
+	{
+		if ( string.IsNullOrWhiteSpace( CrateModelName ) )
+			return GameObject.Children.FirstOrDefault();
+
+		return GameObject.GetAllObjects( true )
+			.FirstOrDefault( child => child != GameObject && child.Name.Equals( CrateModelName, StringComparison.OrdinalIgnoreCase ) );
+	}
+
+	private void ApplyCrateModelAnimation( float openProgress, float excitement )
+	{
+		if ( !crateModel.IsValid() )
+			return;
+
+		openProgress = Math.Clamp( openProgress, 0f, 1f );
+		excitement = Math.Clamp( excitement, 0f, 1f );
+
+		var wobble = MathF.Sin( Time.Now * 34f ) * CrateOpenWobbleDegrees * excitement;
+		var shakeX = MathF.Sin( Time.Now * 52f ) * CrateOpenShakeDistance * excitement;
+		var shakeY = MathF.Cos( Time.Now * 47f ) * CrateOpenShakeDistance * 0.65f * excitement;
+		var squash = MathF.Max( 0f, CrateOpenSquashStretch ) * excitement;
+
+		crateModel.LocalPosition = crateModelBaseLocalPosition + new Vector3( shakeX, shakeY, CrateOpenLift * openProgress );
+		crateModel.LocalRotation = crateModelBaseLocalRotation
+			* Rotation.FromYaw( wobble )
+			* Rotation.FromRoll( wobble * 0.35f );
+		crateModel.LocalScale = new Vector3(
+			crateModelBaseLocalScale.x * (1f + (squash * 0.6f)),
+			crateModelBaseLocalScale.y * (1f + (squash * 0.6f)),
+			crateModelBaseLocalScale.z * MathF.Max( 0.1f, 1f - squash )
+		);
+	}
+
+	private void RestoreCrateModel()
+	{
+		if ( !crateModel.IsValid() )
+			return;
+
+		crateModel.LocalPosition = crateModelBaseLocalPosition;
+		crateModel.LocalRotation = crateModelBaseLocalRotation;
+		crateModel.LocalScale = crateModelBaseLocalScale;
+	}
+
 	private static float EaseOutBack( float value )
 	{
 		value = Math.Clamp( value, 0f, 1f );
@@ -309,6 +392,13 @@ public sealed class InteractBuyCrate : Interactable
 		value = Math.Clamp( value, 0f, 1f );
 		const float overshoot = 1.70158f;
 		return ((overshoot + 1f) * value * value * value) - (overshoot * value * value);
+	}
+
+	private static float EaseOutCubic( float value )
+	{
+		value = Math.Clamp( value, 0f, 1f );
+		var shifted = 1f - value;
+		return 1f - (shifted * shifted * shifted);
 	}
 
 	private enum RevealPhase
