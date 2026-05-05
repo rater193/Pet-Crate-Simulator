@@ -25,6 +25,7 @@ public sealed class InteractBuyCrate : Interactable
 	private PetCrateReward pendingReward;
 	private Vector3 revealStartPosition;
 	private Vector3 revealEndPosition;
+	private Rotation revealBaseRotation;
 	private Vector3 revealedPetBaseScale;
 	private float revealElapsed;
 	private bool isRevealing;
@@ -84,11 +85,12 @@ public sealed class InteractBuyCrate : Interactable
 
 		revealStartPosition = GameObject.WorldPosition + (GameObject.WorldRotation * RevealStartLocalOffset);
 		revealEndPosition = revealStartPosition + (Vector3.Up * MathF.Max( 0f, RevealHeight ));
+		revealBaseRotation = GameObject.WorldRotation * RevealedPetRotation;
 
 		revealedPet = reward.PetPrefab.Clone();
 		revealedPet.Parent = GameObject;
 		revealedPet.WorldPosition = revealStartPosition;
-		revealedPet.WorldRotation = RevealedPetRotation;
+		revealedPet.WorldRotation = revealBaseRotation;
 		revealedPet.Enabled = true;
 		revealedPetBaseScale = revealedPet.LocalScale;
 
@@ -130,7 +132,7 @@ public sealed class InteractBuyCrate : Interactable
 		if ( revealedPet.IsValid() )
 		{
 			revealedPet.WorldPosition = revealEndPosition;
-			revealedPet.WorldRotation = RevealedPetRotation;
+			revealedPet.WorldRotation = revealBaseRotation;
 			revealedPet.LocalScale = revealedPetBaseScale;
 		}
 	}
@@ -150,7 +152,7 @@ public sealed class InteractBuyCrate : Interactable
 		if ( revealedPet.IsValid() )
 		{
 			revealedPet.WorldPosition = revealEndPosition + (Vector3.Up * MathF.Max( 0f, CelebrationHopHeight ) * hopWave * decay);
-			revealedPet.WorldRotation = RevealedPetRotation
+			revealedPet.WorldRotation = revealBaseRotation
 				* Rotation.FromYaw( CelebrationSpinDegrees * easedProgress )
 				* Rotation.FromRoll( MathF.Sin( progress * MathF.PI * hopCount * 2f ) * CelebrationWiggleDegrees * (1f - progress) );
 
