@@ -19182,6 +19182,124 @@
       "Children": []
     },
     {
+      "__guid": "94a42094-5ad4-40d5-b1b9-a170dc595f45",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "PetCrateShopObject",
+      "Position": "1463.71606,-1001.91797,34.4343376",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "cfb75da1-ee67-41a0-9929-2bfdbac851e7",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/dev/box.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "c9f5f2b8-bfc2-4957-b881-f016155e0060",
+          "__enabled": true,
+          "Flags": 0,
+          "Center": "0,0,0",
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "InteractBuyCrate",
+          "__guid": "d30ccac1-3d70-407f-be39-719171cce6ae",
+          "__enabled": true,
+          "Flags": 0,
+          "Cost": 25,
+          "InteractableShortcutOffset": "0,0,0",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Pets": [
+            {
+              "Rarity": "Common",
+              "SpawnWeight": 100,
+              "PetPrefab": {
+                "_type": "gameobject",
+                "prefab": "prefabs/pets/pet-bee.prefab"
+              }
+            },
+            {
+              "Rarity": "Common",
+              "SpawnWeight": 100,
+              "PetPrefab": {
+                "_type": "gameobject",
+                "prefab": "prefabs/pets/pet-cat.prefab"
+              }
+            },
+            {
+              "Rarity": "Uncommon",
+              "SpawnWeight": 25,
+              "PetPrefab": {
+                "_type": "gameobject",
+                "prefab": "prefabs/pets/pet-penguin.prefab"
+              }
+            }
+          ],
+          "RarityParticles": [],
+          "RevealDuration": 1.25,
+          "RevealedPetRotation": "0,0,0,1",
+          "RevealHeight": 96,
+          "RevealStartLocalOffset": "0,0,0",
+          "text": "test"
+        }
+      ],
+      "Children": []
+    },
+    {
       "__guid": "bd5479f8-fc23-4d55-a738-b3e2493416d6",
       "__version": 2,
       "Flags": 0,
@@ -19290,6 +19408,9 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
+      "Sandbox.MovieMaker.MovieRecorderSystem": {
+        "DisableClientRecording": false
+      },
       "Sandbox.SelectionSetsSystem": {
         "Data": {
           "SelectionSets": []
@@ -19299,9 +19420,6 @@
         "Storage": {
           "$blob": "6296e7e1-9d9b-49a7-adec-3677fc154400"
         }
-      },
-      "Sandbox.MovieMaker.MovieRecorderSystem": {
-        "DisableClientRecording": false
       }
     }
   },
