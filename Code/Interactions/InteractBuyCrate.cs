@@ -8,6 +8,12 @@ public sealed class InteractBuyCrate : Interactable
 	[Property] public int Cost { get; set; } = 25;
 	[Property] public float RevealHeight { get; set; } = 96f;
 	[Property] public float RevealDuration { get; set; } = 1.25f;
+	[Property] public float CelebrationDuration { get; set; } = 1.15f;
+	[Property] public int CelebrationHopCount { get; set; } = 3;
+	[Property] public float CelebrationHopHeight { get; set; } = 34f;
+	[Property] public float CelebrationSpinDegrees { get; set; } = 360f;
+	[Property] public float CelebrationSquashStretch { get; set; } = 0.18f;
+	[Property] public float CelebrationWiggleDegrees { get; set; } = 8f;
 	[Property] public Vector3 RevealStartLocalOffset { get; set; } = Vector3.Zero;
 	[Property] public Rotation RevealedPetRotation { get; set; } = Rotation.Identity;
 	[Property] public List<PetCrateReward> Pets { get; set; } = new();
@@ -19,8 +25,10 @@ public sealed class InteractBuyCrate : Interactable
 	private PetCrateReward pendingReward;
 	private Vector3 revealStartPosition;
 	private Vector3 revealEndPosition;
+	private Vector3 revealedPetBaseScale;
 	private float revealElapsed;
 	private bool isRevealing;
+	private RevealPhase revealPhase;
 
 	protected override void OnUpdate()
 	{
@@ -72,6 +80,7 @@ public sealed class InteractBuyCrate : Interactable
 		pendingReward = reward;
 		revealElapsed = 0f;
 		isRevealing = true;
+		revealPhase = RevealPhase.Rising;
 
 		revealStartPosition = GameObject.WorldPosition + (GameObject.WorldRotation * RevealStartLocalOffset);
 		revealEndPosition = revealStartPosition + (Vector3.Up * MathF.Max( 0f, RevealHeight ));
@@ -81,6 +90,7 @@ public sealed class InteractBuyCrate : Interactable
 		revealedPet.WorldPosition = revealStartPosition;
 		revealedPet.WorldRotation = RevealedPetRotation;
 		revealedPet.Enabled = true;
+		revealedPetBaseScale = revealedPet.LocalScale;
 
 		SpawnRarityParticle( reward.Rarity, revealStartPosition );
 	}
@@ -90,6 +100,12 @@ public sealed class InteractBuyCrate : Interactable
 		if ( !isRevealing )
 			return;
 
+		if ( revealPhase == RevealPhase.Celebrating )
+		{
+			UpdateCelebration();
+			return;
+		}
+
 		revealElapsed += Time.Delta;
 		var duration = MathF.Max( 0.01f, RevealDuration );
 		var progress = Math.Clamp( revealElapsed / duration, 0f, 1f );
@@ -98,6 +114,53 @@ public sealed class InteractBuyCrate : Interactable
 		if ( revealedPet.IsValid() )
 		{
 			revealedPet.WorldPosition = revealStartPosition + ((revealEndPosition - revealStartPosition) * easedProgress);
+		}
+
+		if ( progress < 1f )
+			return;
+
+		BeginCelebration();
+	}
+
+	private void BeginCelebration()
+	{
+		revealPhase = RevealPhase.Celebrating;
+		revealElapsed = 0f;
+
+		if ( revealedPet.IsValid() )
+		{
+			revealedPet.WorldPosition = revealEndPosition;
+			revealedPet.WorldRotation = RevealedPetRotation;
+			revealedPet.LocalScale = revealedPetBaseScale;
+		}
+	}
+
+	private void UpdateCelebration()
+	{
+		revealElapsed += Time.Delta;
+		var duration = MathF.Max( 0.01f, CelebrationDuration );
+		var progress = Math.Clamp( revealElapsed / duration, 0f, 1f );
+		var easedProgress = EaseOutBack( progress );
+		var hopCount = Math.Max( 1, CelebrationHopCount );
+		var hopWave = MathF.Abs( MathF.Sin( progress * MathF.PI * hopCount ) );
+		var landingWave = MathF.Pow( MathF.Abs( MathF.Cos( progress * MathF.PI * hopCount ) ), 10f );
+		var decay = 1f - (progress * 0.25f);
+		var squashStretch = MathF.Max( 0f, CelebrationSquashStretch );
+
+		if ( revealedPet.IsValid() )
+		{
+			revealedPet.WorldPosition = revealEndPosition + (Vector3.Up * MathF.Max( 0f, CelebrationHopHeight ) * hopWave * decay);
+			revealedPet.WorldRotation = RevealedPetRotation
+				* Rotation.FromYaw( CelebrationSpinDegrees * easedProgress )
+				* Rotation.FromRoll( MathF.Sin( progress * MathF.PI * hopCount * 2f ) * CelebrationWiggleDegrees * (1f - progress) );
+
+			var stretch = hopWave * squashStretch;
+			var squash = landingWave * squashStretch * (1f - progress);
+			revealedPet.LocalScale = new Vector3(
+				revealedPetBaseScale.x * MathF.Max( 0.1f, 1f - (stretch * 0.35f) + (squash * 0.45f) ),
+				revealedPetBaseScale.y * MathF.Max( 0.1f, 1f - (stretch * 0.35f) + (squash * 0.45f) ),
+				revealedPetBaseScale.z * MathF.Max( 0.1f, 1f + stretch - squash )
+			);
 		}
 
 		if ( progress < 1f )
@@ -149,6 +212,7 @@ public sealed class InteractBuyCrate : Interactable
 		pendingInventory = null;
 		pendingReward = null;
 		isRevealing = false;
+		revealPhase = RevealPhase.Rising;
 	}
 
 	private PetCrateReward RollReward()
@@ -186,6 +250,20 @@ public sealed class InteractBuyCrate : Interactable
 		particle.Parent = revealedPet.IsValid() ? revealedPet : GameObject;
 		particle.WorldPosition = position;
 		particle.Enabled = true;
+	}
+
+	private static float EaseOutBack( float value )
+	{
+		value = Math.Clamp( value, 0f, 1f );
+		const float overshoot = 1.70158f;
+		var shifted = value - 1f;
+		return 1f + ((overshoot + 1f) * shifted * shifted * shifted) + (overshoot * shifted * shifted);
+	}
+
+	private enum RevealPhase
+	{
+		Rising,
+		Celebrating
 	}
 
 	public enum PetRarity
