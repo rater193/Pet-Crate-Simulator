@@ -143,9 +143,10 @@ public sealed class PetPreviewRenderer : Component
 		var camera = cameraObject.AddComponent<CameraComponent>();
 		camera.IsMainCamera = false;
 		camera.ClearFlags = ClearFlags.Color | ClearFlags.Depth | ClearFlags.Stencil;
+		camera.FieldOfView = 25;
 		camera.BackgroundColor = BackgroundColor;
 		camera.EnablePostProcessing = false;
-		camera.Orthographic = true;
+		camera.Orthographic = false;
 		camera.OrthographicHeight = height * 1.45f;
 		camera.ZNear = 1f;
 		camera.ZFar = height * 12f;

@@ -503,7 +503,7 @@
               "OnComponentStart": null,
               "OnComponentUpdate": null,
               "PetRotation": "0,0,0.953716934,-0.300705791",
-              "PreviewOrigin": "0,0,-40000",
+              "PreviewOrigin": "0,0,-80000",
               "PreviewSize": 256,
               "PreviewSlotSpacing": 320
             }

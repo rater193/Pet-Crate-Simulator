@@ -49,8 +49,10 @@
 
 @code
 {
+    private static string AlphaOn = "1";    
+    private static string AlphaOff = "1";
 
-    public string backgroundColor = "rgba(255,0,0,0.8)";
+    public string backgroundColor = "rgba(255,0,0," + AlphaOn + ")";
     [Property] public int unlockValue = 500;
     private string UnlockColorRepresentitive
     {
@@ -58,9 +60,9 @@
         {
             if (PlayerData.LOCALDATA.PlayerMoney >= unlockValue)
             {
-                return "green";
+                return "rgba(175,255,175," + AlphaOn + ")";
             }
-            return "red";
+            return "rgba(255,175,175," + AlphaOn + ")";
         }
     }
 
@@ -87,20 +89,20 @@
             await Task.DelaySeconds(1);
             if (PlayerData.LOCALDATA.PlayerMoney >= unlockValue)
             {
-                backgroundColor = "rgba(0,255,0,0.8)";
+                backgroundColor = "rgba(0,255,0," + AlphaOn + ")";
             }
             else
             {
-                backgroundColor = "rgba(255,0,0,0.8)";
+                backgroundColor = "rgba(255,0,0," + AlphaOn + ")";
             }
             await Task.DelaySeconds(1);
             if (PlayerData.LOCALDATA.PlayerMoney >= unlockValue)
             {
-                backgroundColor = "rgba(0,100,0,0.2)";
+                backgroundColor = "rgba(0,100,0," + AlphaOff + ")";
             }
             else
             {
-                backgroundColor = "rgba(100,0,0,0.2)";
+                backgroundColor = "rgba(100,0,0," + AlphaOff + ")";
             }
         }
         // Print it
