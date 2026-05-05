@@ -14,6 +14,8 @@ public sealed class InteractBuyCrate : Interactable
 	[Property] public float CelebrationSpinDegrees { get; set; } = 360f;
 	[Property] public float CelebrationSquashStretch { get; set; } = 0.18f;
 	[Property] public float CelebrationWiggleDegrees { get; set; } = 8f;
+	[Property] public float CollectDuration { get; set; } = 0.45f;
+	[Property] public float CollectHopHeight { get; set; } = 24f;
 	[Property] public Vector3 RevealStartLocalOffset { get; set; } = Vector3.Zero;
 	[Property] public Rotation RevealedPetRotation { get; set; } = Rotation.Identity;
 	[Property] public List<PetCrateReward> Pets { get; set; } = new();
@@ -108,6 +110,12 @@ public sealed class InteractBuyCrate : Interactable
 			return;
 		}
 
+		if ( revealPhase == RevealPhase.Collecting )
+		{
+			UpdateCollect();
+			return;
+		}
+
 		revealElapsed += Time.Delta;
 		var duration = MathF.Max( 0.01f, RevealDuration );
 		var progress = Math.Clamp( revealElapsed / duration, 0f, 1f );
@@ -163,6 +171,40 @@ public sealed class InteractBuyCrate : Interactable
 				revealedPetBaseScale.y * MathF.Max( 0.1f, 1f - (stretch * 0.35f) + (squash * 0.45f) ),
 				revealedPetBaseScale.z * MathF.Max( 0.1f, 1f + stretch - squash )
 			);
+		}
+
+		if ( progress < 1f )
+			return;
+
+		BeginCollect();
+	}
+
+	private void BeginCollect()
+	{
+		revealPhase = RevealPhase.Collecting;
+		revealElapsed = 0f;
+
+		if ( revealedPet.IsValid() )
+		{
+			revealedPet.WorldPosition = revealEndPosition;
+			revealedPet.WorldRotation = revealBaseRotation;
+			revealedPet.LocalScale = revealedPetBaseScale;
+		}
+	}
+
+	private void UpdateCollect()
+	{
+		revealElapsed += Time.Delta;
+		var duration = MathF.Max( 0.01f, CollectDuration );
+		var progress = Math.Clamp( revealElapsed / duration, 0f, 1f );
+		var hopWave = MathF.Sin( progress * MathF.PI );
+		var scale = MathF.Max( 0f, 1f - EaseInBack( progress ) );
+
+		if ( revealedPet.IsValid() )
+		{
+			revealedPet.WorldPosition = revealEndPosition + (Vector3.Up * MathF.Max( 0f, CollectHopHeight ) * hopWave);
+			revealedPet.WorldRotation = revealBaseRotation * Rotation.FromYaw( CelebrationSpinDegrees + (180f * progress) );
+			revealedPet.LocalScale = revealedPetBaseScale * scale;
 		}
 
 		if ( progress < 1f )
@@ -262,10 +304,18 @@ public sealed class InteractBuyCrate : Interactable
 		return 1f + ((overshoot + 1f) * shifted * shifted * shifted) + (overshoot * shifted * shifted);
 	}
 
+	private static float EaseInBack( float value )
+	{
+		value = Math.Clamp( value, 0f, 1f );
+		const float overshoot = 1.70158f;
+		return ((overshoot + 1f) * value * value * value) - (overshoot * value * value);
+	}
+
 	private enum RevealPhase
 	{
 		Rising,
-		Celebrating
+		Celebrating,
+		Collecting
 	}
 
 	public enum PetRarity
