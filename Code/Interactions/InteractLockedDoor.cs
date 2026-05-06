@@ -3,16 +3,21 @@ using Sandbox;
 public sealed class InteractLockedDoor : Interactable
 {
 	[Property] public int unlockCost { get; set; } = 25;
+	[Property] public LockedDoorSaveState SaveState { get; set; }
 
 	private bool hasUnlocked = false;
+	private BoxCollider doorCollider;
+	private UnlockableDoor door;
+
+	protected override void OnStart()
+	{
+		EnsureSaveState();
+		ApplyLockState();
+	}
 
 	protected override void OnFixedUpdate()
 	{
-		var collider = GameObject.Components.Get<BoxCollider>( FindMode.EverythingInSelf );
-		var door = GameObject.Components.Get<UnlockableDoor>( FindMode.EverythingInChildren );
-		door.unlockValue = unlockCost;
-		collider.Enabled = !hasUnlocked;
-		door.Enabled = !hasUnlocked;
+		ApplyLockState();
 	}
 
 	[Rpc.Broadcast]
@@ -23,13 +28,47 @@ public sealed class InteractLockedDoor : Interactable
 		if ( !interactingPlayer.IsProxy && hasUnlocked == false )
 		{
 			PlayerData playerData = interactingPlayer.GetComponent<PlayerData>();
-			if ( playerData.PlayerMoney > unlockCost)
+			if ( playerData != null && playerData.PlayerMoney >= unlockCost )
 			{
 				playerData.PlayerMoney -= unlockCost;
-				GetComponentInChildren<UnlockableDoor>().Enabled = false;
-				GetComponent<BoxCollider>().Enabled = false;
-				hasUnlocked = true;
+				SetUnlocked( true );
+				playerData.QueueSave();
 			}
+		}
+	}
+
+	public void SetUnlocked( bool unlocked )
+	{
+		EnsureSaveState().SetUnlocked( unlocked );
+	}
+
+	public void SetPersistedUnlocked( bool unlocked )
+	{
+		hasUnlocked = unlocked;
+		ApplyLockState();
+	}
+
+	public LockedDoorSaveState EnsureSaveState()
+	{
+		SaveState ??= GetComponent<LockedDoorSaveState>() ?? GameObject.GetOrAddComponent<LockedDoorSaveState>();
+		SaveState.Door ??= this;
+		return SaveState;
+	}
+
+	private void ApplyLockState()
+	{
+		doorCollider ??= GameObject.Components.Get<BoxCollider>( FindMode.EverythingInSelf );
+		door ??= GameObject.Components.Get<UnlockableDoor>( FindMode.EverythingInChildren );
+
+		if ( door != null )
+		{
+			door.unlockValue = unlockCost;
+			door.Enabled = !hasUnlocked;
+		}
+
+		if ( doorCollider != null )
+		{
+			doorCollider.Enabled = !hasUnlocked;
 		}
 	}
 }

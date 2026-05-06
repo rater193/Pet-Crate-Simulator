@@ -13953,6 +13953,27 @@
                 },
                 "Property": "unlockCost",
                 "Value": 150
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Door",
+                "Value": {
+                  "_type": "component",
+                  "component_id": "8794d74c-0a9d-425d-aaa1-c7af2116072f",
+                  "go": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea",
+                  "component_type": "InteractLockedDoor"
+                }
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Key",
+                "Value": "Area1Door1"
               }
             ],
             "MovedObjects": []
@@ -13963,7 +13984,8 @@
             "1caa46ee-a44d-49f0-a94a-17bba6813f84": "f232b7d2-9c91-4305-9818-b05bbd6f809e",
             "dd040270-426b-43e5-9634-873675a1c099": "afed5dd9-c8e3-4769-a250-789ddd1c993d",
             "508be9a2-6db0-4739-bfa0-e78db46e8de3": "14ca9194-2a6f-4ec5-8844-13fe82fa0808",
-            "e5e7ef4e-37d9-4209-ad87-3b9e42cca247": "57397ee0-0f4b-41ac-8bb6-87c99c56f34b"
+            "e5e7ef4e-37d9-4209-ad87-3b9e42cca247": "57397ee0-0f4b-41ac-8bb6-87c99c56f34b",
+            "72d88a1c-f2d2-448c-82e2-2b28635ca0bb": "105f670f-0e3a-4eae-ae68-83286705ecf1"
           }
         },
         {
@@ -14004,7 +14026,28 @@
                   "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
                 },
                 "Property": "unlockCost",
-                "Value": 650
+                "Value": 800
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Door",
+                "Value": {
+                  "_type": "component",
+                  "component_id": "8794d74c-0a9d-425d-aaa1-c7af2116072f",
+                  "go": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea",
+                  "component_type": "InteractLockedDoor"
+                }
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Key",
+                "Value": "Area1Door2"
               }
             ],
             "MovedObjects": []
@@ -14015,7 +14058,8 @@
             "1caa46ee-a44d-49f0-a94a-17bba6813f84": "e7669c30-ed5a-4457-b0a0-c00e228561ba",
             "dd040270-426b-43e5-9634-873675a1c099": "99a8ab66-dc69-4c81-abd5-bdb66b29e942",
             "508be9a2-6db0-4739-bfa0-e78db46e8de3": "9116a811-439d-40a5-82b6-9e9fbfa5dca6",
-            "e5e7ef4e-37d9-4209-ad87-3b9e42cca247": "6dcad330-b8f6-4754-b4e6-ba0ad4c293a6"
+            "e5e7ef4e-37d9-4209-ad87-3b9e42cca247": "6dcad330-b8f6-4754-b4e6-ba0ad4c293a6",
+            "72d88a1c-f2d2-448c-82e2-2b28635ca0bb": "5289ed88-37bb-478c-a5c2-af95c7bba0da"
           }
         },
         {
@@ -14056,7 +14100,28 @@
                   "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
                 },
                 "Property": "unlockCost",
-                "Value": 8000
+                "Value": 12000
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Door",
+                "Value": {
+                  "_type": "component",
+                  "component_id": "8794d74c-0a9d-425d-aaa1-c7af2116072f",
+                  "go": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea",
+                  "component_type": "InteractLockedDoor"
+                }
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Key",
+                "Value": "Area1Door4"
               }
             ],
             "MovedObjects": []
@@ -14067,7 +14132,8 @@
             "1caa46ee-a44d-49f0-a94a-17bba6813f84": "2abd6ee0-7f8f-4044-aa4b-963281504a08",
             "dd040270-426b-43e5-9634-873675a1c099": "6ac87f49-261e-4eca-8be4-2237289336a2",
             "508be9a2-6db0-4739-bfa0-e78db46e8de3": "a6309fb2-8448-47fe-a4fc-3013880bc119",
-            "e5e7ef4e-37d9-4209-ad87-3b9e42cca247": "aedb945d-65e0-4fff-852f-1b553caff0f7"
+            "e5e7ef4e-37d9-4209-ad87-3b9e42cca247": "aedb945d-65e0-4fff-852f-1b553caff0f7",
+            "72d88a1c-f2d2-448c-82e2-2b28635ca0bb": "1a89b281-f877-4c4b-a76c-78d9f30e85d5"
           }
         },
         {
@@ -14108,7 +14174,28 @@
                   "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
                 },
                 "Property": "unlockCost",
-                "Value": 30000
+                "Value": 75000
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Door",
+                "Value": {
+                  "_type": "component",
+                  "component_id": "8794d74c-0a9d-425d-aaa1-c7af2116072f",
+                  "go": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea",
+                  "component_type": "InteractLockedDoor"
+                }
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Key",
+                "Value": "Area1Door6"
               }
             ],
             "MovedObjects": []
@@ -14119,7 +14206,8 @@
             "1caa46ee-a44d-49f0-a94a-17bba6813f84": "df066258-84f7-4de8-afaf-bfb58bb5b2ff",
             "dd040270-426b-43e5-9634-873675a1c099": "9bd41995-0b1a-4f78-ac3a-39d97665d1a4",
             "508be9a2-6db0-4739-bfa0-e78db46e8de3": "51422c9a-8ef6-4ba0-9f91-074d7071623f",
-            "e5e7ef4e-37d9-4209-ad87-3b9e42cca247": "6516ca34-f794-44af-82dc-e2ca370f0181"
+            "e5e7ef4e-37d9-4209-ad87-3b9e42cca247": "6516ca34-f794-44af-82dc-e2ca370f0181",
+            "72d88a1c-f2d2-448c-82e2-2b28635ca0bb": "1965a280-0bb4-43bf-9801-878e73f4dc28"
           }
         },
         {
@@ -14160,7 +14248,28 @@
                   "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
                 },
                 "Property": "unlockCost",
-                "Value": 150000
+                "Value": 450000
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Door",
+                "Value": {
+                  "_type": "component",
+                  "component_id": "8794d74c-0a9d-425d-aaa1-c7af2116072f",
+                  "go": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea",
+                  "component_type": "InteractLockedDoor"
+                }
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Key",
+                "Value": "Area1Door5"
               }
             ],
             "MovedObjects": []
@@ -14171,7 +14280,8 @@
             "1caa46ee-a44d-49f0-a94a-17bba6813f84": "1ddf82b8-57cc-479d-979c-feaec38c56a5",
             "dd040270-426b-43e5-9634-873675a1c099": "291a9faa-3fb2-4807-8bb4-16bc0fb6e162",
             "508be9a2-6db0-4739-bfa0-e78db46e8de3": "ec268612-3d1b-4dd1-a642-664553db378c",
-            "e5e7ef4e-37d9-4209-ad87-3b9e42cca247": "a33b0c8c-cbaf-4508-9d85-6d8fc656cb2a"
+            "e5e7ef4e-37d9-4209-ad87-3b9e42cca247": "a33b0c8c-cbaf-4508-9d85-6d8fc656cb2a",
+            "72d88a1c-f2d2-448c-82e2-2b28635ca0bb": "fd275967-be6f-4941-808e-a43c4ebdfb74"
           }
         },
         {
@@ -14212,7 +14322,28 @@
                   "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
                 },
                 "Property": "unlockCost",
-                "Value": 1800
+                "Value": 2500
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Door",
+                "Value": {
+                  "_type": "component",
+                  "component_id": "8794d74c-0a9d-425d-aaa1-c7af2116072f",
+                  "go": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea",
+                  "component_type": "InteractLockedDoor"
+                }
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Key",
+                "Value": "Area1Door3"
               },
               {
                 "Target": {
@@ -14231,7 +14362,8 @@
             "1caa46ee-a44d-49f0-a94a-17bba6813f84": "8a94036d-35fc-4bfa-867f-5fa964f94c27",
             "dd040270-426b-43e5-9634-873675a1c099": "2feaf52d-00ad-4560-8664-5592baa9caf4",
             "508be9a2-6db0-4739-bfa0-e78db46e8de3": "78e98264-dfbf-41b2-bdc0-42441d3c62a8",
-            "e5e7ef4e-37d9-4209-ad87-3b9e42cca247": "abe072f5-fb91-46c5-a457-8952aa062a9d"
+            "e5e7ef4e-37d9-4209-ad87-3b9e42cca247": "abe072f5-fb91-46c5-a457-8952aa062a9d",
+            "72d88a1c-f2d2-448c-82e2-2b28635ca0bb": "73c29933-9c34-4046-91bb-73832fcb3f61"
           }
         },
         {
@@ -14812,7 +14944,7 @@
               "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
             },
             "Property": "Position",
-            "Value": "1921.59961,1239.67639,9.53900051"
+            "Value": "5542.95996,1239.67639,927.100403"
           },
           {
             "Target": {
@@ -15113,7 +15245,7 @@
               "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
             },
             "Property": "Position",
-            "Value": "1916.55359,1148.55396,9.40215397"
+            "Value": "5537.91406,1148.55396,926.963562"
           },
           {
             "Target": {
@@ -15414,7 +15546,7 @@
               "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
             },
             "Property": "Position",
-            "Value": "1963.46533,1082.72888,9.36823845"
+            "Value": "5584.82617,1082.72888,926.929626"
           },
           {
             "Target": {
@@ -15715,7 +15847,7 @@
               "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
             },
             "Property": "Position",
-            "Value": "1906.33179,1040.37793,9.23431396"
+            "Value": "5527.69238,1040.37793,926.795715"
           },
           {
             "Target": {
@@ -16016,7 +16148,7 @@
               "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
             },
             "Property": "Position",
-            "Value": "2012.33374,1033.31055,9.3602581"
+            "Value": "5633.69434,1033.31055,926.921631"
           },
           {
             "Target": {
@@ -16317,7 +16449,7 @@
               "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
             },
             "Property": "Position",
-            "Value": "2099.65894,1080.24097,9.53948498"
+            "Value": "5721.01953,1080.24097,927.100891"
           },
           {
             "Target": {
@@ -16618,7 +16750,7 @@
               "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
             },
             "Property": "Position",
-            "Value": "1927.94653,959.386902,9.14618111"
+            "Value": "5549.30713,959.386902,926.707581"
           },
           {
             "Target": {
@@ -16919,7 +17051,7 @@
               "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
             },
             "Property": "Position",
-            "Value": "2093.85352,993.218506,9.40752792"
+            "Value": "5715.21387,993.218506,926.968933"
           },
           {
             "Target": {
@@ -17220,7 +17352,7 @@
               "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
             },
             "Property": "Position",
-            "Value": "2030.92065,960.209839,9.27952766"
+            "Value": "5652.28125,960.209839,926.840942"
           },
           {
             "Target": {
@@ -17521,7 +17653,7 @@
               "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
             },
             "Property": "Position",
-            "Value": "1897.90674,793.162292,8.86982536"
+            "Value": "5519.26758,793.162292,926.431213"
           },
           {
             "Target": {
@@ -17822,7 +17954,7 @@
               "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
             },
             "Property": "Position",
-            "Value": "1851.77783,854.511597,8.89839172"
+            "Value": "5473.13867,854.511597,926.459778"
           },
           {
             "Target": {
@@ -18123,7 +18255,7 @@
               "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
             },
             "Property": "Position",
-            "Value": "1859.52051,1004.05194,9.12227917"
+            "Value": "5480.88086,1004.05194,926.683655"
           },
           {
             "Target": {
@@ -18424,7 +18556,7 @@
               "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
             },
             "Property": "Position",
-            "Value": "1824.6355,1063.36218,9.16235924"
+            "Value": "5445.99609,1063.36218,926.723755"
           },
           {
             "Target": {
@@ -18725,7 +18857,7 @@
               "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
             },
             "Property": "Position",
-            "Value": "2047.98706,1127.95911,9.54136467"
+            "Value": "5669.34766,1127.95911,927.102783"
           },
           {
             "Target": {
@@ -19026,7 +19158,7 @@
               "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
             },
             "Property": "Position",
-            "Value": "2002.89429,1191.01917,9.57369423"
+            "Value": "5624.25488,1191.01917,927.135071"
           },
           {
             "Target": {
@@ -19078,7 +19210,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "UseThisToLetPlayerButARandomPet",
-      "Position": "2081.09766,-104.980988,34.4340973",
+      "Position": "5702.45801,-104.980988,951.995483",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -19642,7 +19774,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "UseThisToLetPlayerButARandomPet (1)",
-      "Position": "2081.09766,322.987457,34.4340973",
+      "Position": "5702.45801,322.987457,951.995483",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",

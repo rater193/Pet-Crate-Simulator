@@ -66,11 +66,15 @@ public sealed class PlayerData : Component
 	{
 		inventory ??= GetComponent<Inventory>() ?? GameObject.GetOrAddComponent<Inventory>();
 
-		return new JSONObject()
+		var data = new JSONObject()
 			.Set( "Version", SaveVersion )
 			.Set( "PlayerMoney", PlayerMoney )
 			.Set( "PetInventory", inventory?.ToJsonObject() )
 			.Set( "EquippedPetSlots", inventory?.GetEquippedSlotIndexes() ?? new List<int>() );
+
+		SaveExtensions( data );
+
+		return data;
 	}
 
 	public string ToJson()
@@ -110,6 +114,8 @@ public sealed class PlayerData : Component
 
 			inventory.LoadEquippedSlotIndexes( equippedPetSlots, false );
 			inventory.RestoreEquippedPets();
+
+			LoadExtensions( data );
 
 			saveQueued = false;
 			saveDelayRemaining = 0f;
@@ -181,6 +187,40 @@ public sealed class PlayerData : Component
 			return;
 
 		Save();
+	}
+
+	private void SaveExtensions( JSONObject data )
+	{
+		EnsureDoorSaveStates();
+
+		foreach ( var extension in Scene.GetAll<PlayerDataSaveExtension>() )
+		{
+			if ( extension == null || !extension.Enabled )
+				continue;
+
+			extension.OnSave( data );
+		}
+	}
+
+	private void LoadExtensions( JSONObject data )
+	{
+		EnsureDoorSaveStates();
+
+		foreach ( var extension in Scene.GetAll<PlayerDataSaveExtension>() )
+		{
+			if ( extension == null || !extension.Enabled )
+				continue;
+
+			extension.OnLoad( data );
+		}
+	}
+
+	private void EnsureDoorSaveStates()
+	{
+		foreach ( var door in Scene.GetAll<InteractLockedDoor>() )
+		{
+			door?.EnsureSaveState();
+		}
 	}
 
 	private static List<int> ReadIntList( JSONObject data, string key )

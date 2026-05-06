@@ -31,6 +31,21 @@
         "unlockCost": 25
       },
       {
+        "__type": "LockedDoorSaveState",
+        "__guid": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb",
+        "__enabled": true,
+        "DefaultUnlocked": false,
+        "Door": null,
+        "Flags": 0,
+        "Key": "",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null
+      },
+      {
         "__type": "Sandbox.BoxCollider",
         "__guid": "1caa46ee-a44d-49f0-a94a-17bba6813f84",
         "__enabled": true,
