@@ -1,5 +1,5 @@
 {
-  "Title": "Hatch Simulator",
+  "Title": "Pet Crate Simulator",
   "Type": "game",
   "Org": "topgamestudio",
   "Ident": "hatch_simulator",
@@ -23,6 +23,11 @@
     "PerMapRanking": false,
     "LeaderboardType": "None",
     "CsProjName": "",
-    "StartupScene": "scenes/minimal.scene"
+    "StartupScene": "scenes/minimal.scene",
+    "ControlModes": {
+      "Keyboard": false,
+      "VR": false,
+      "Gamepad": false
+    }
   }
 }

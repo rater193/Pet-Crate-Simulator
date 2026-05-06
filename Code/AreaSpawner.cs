@@ -12,7 +12,9 @@ public sealed class AreaSpawner : Component
 
 	protected override void OnStart()
 	{
-		if ( IsProxy ) return;
+		_ = RespawnItemTick();
+
+		if ( !IsProxy ) return;
 		//PopulateArea();
 
 		for( int i = 0; i < SpawnPrefabCount; i++  )
@@ -20,13 +22,13 @@ public sealed class AreaSpawner : Component
 			SpawnNewObject();
 		}
 
-		_ = RespawnItemTick();
 	}
 
 	async Task RespawnItemTick()
 	{
 		while ( true )
 		{
+			while ( IsProxy ) { await Task.DelaySeconds( 1 ); }
 			await Task.DelaySeconds( respawnItemInterval );
 			if( GameObject.Children.Count < SpawnPrefabCount )
 			{
