@@ -642,6 +642,314 @@
             }
           ],
           "Children": []
+        },
+        {
+          "__guid": "b5752fdf-c3c1-48b9-9988-4a4936278354",
+          "__version": 2,
+          "Flags": 0,
+          "Name": "Music",
+          "Position": "1030.06689,608.637146,252.007324",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.SoundBoxComponent",
+              "__guid": "e4aaa670-0093-4401-8012-ac1a1bc9264a",
+              "__enabled": true,
+              "Flags": 0,
+              "Distance": 512,
+              "DistanceAttenuation": true,
+              "DistanceAttenuationOverride": true,
+              "Falloff": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "in": -1.7484555E-07,
+                  "out": 1.7484555E-07,
+                  "mode": "Mirrored"
+                },
+                {
+                  "x": 0.7140625,
+                  "y": 1,
+                  "in": 0,
+                  "out": 0,
+                  "mode": "Mirrored"
+                },
+                {
+                  "x": 1,
+                  "y": 0,
+                  "in": 0,
+                  "out": 0,
+                  "mode": "Mirrored"
+                }
+              ],
+              "Force2d": false,
+              "MaxRepeatTime": 0,
+              "MinRepeatTime": 0,
+              "Occlusion": false,
+              "OcclusionOverride": false,
+              "OcclusionRadius": 32,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Pitch": 1,
+              "PlayOnStart": true,
+              "ReflectionOverride": false,
+              "Reflections": false,
+              "Repeat": true,
+              "Scale": "2546.75513,3000,2500",
+              "SoundEvent": "sounds/banjo loop.sound",
+              "SoundOverride": true,
+              "StopOnNew": false,
+              "TargetMixer": {
+                "Name": "music",
+                "Id": "5c275bf6-b4bc-4b77-9ad2-3bcaec3c4d77"
+              },
+              "Volume": 0.13875598
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "fd9d0e8a-0d1e-4f67-a19a-331b2f991cff",
+          "__version": 2,
+          "Flags": 0,
+          "Name": "MusicZone1",
+          "Position": "1030.06689,4165.47168,252.007324",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.SoundBoxComponent",
+              "__guid": "8375aab8-5bba-4174-8fc3-2298d9ba5419",
+              "__enabled": true,
+              "Flags": 0,
+              "Distance": 512,
+              "DistanceAttenuation": true,
+              "DistanceAttenuationOverride": true,
+              "Falloff": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "in": -1.7484555E-07,
+                  "out": 1.7484555E-07,
+                  "mode": "Mirrored"
+                },
+                {
+                  "x": 0.7140625,
+                  "y": 1,
+                  "in": 0,
+                  "out": 0,
+                  "mode": "Mirrored"
+                },
+                {
+                  "x": 1,
+                  "y": 0,
+                  "in": 0,
+                  "out": 0,
+                  "mode": "Mirrored"
+                }
+              ],
+              "Force2d": false,
+              "MaxRepeatTime": 0,
+              "MinRepeatTime": 0,
+              "Occlusion": false,
+              "OcclusionOverride": false,
+              "OcclusionRadius": 32,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Pitch": 1,
+              "PlayOnStart": true,
+              "ReflectionOverride": false,
+              "Reflections": false,
+              "Repeat": true,
+              "Scale": "2546.75513,3000,2500",
+              "SoundEvent": "sounds/casual menu guitar loop.sound",
+              "SoundOverride": true,
+              "StopOnNew": false,
+              "TargetMixer": {
+                "Name": "music",
+                "Id": "5c275bf6-b4bc-4b77-9ad2-3bcaec3c4d77"
+              },
+              "Volume": 0.13875598
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "980f1ff2-2c59-4a11-8ddb-0e47f8f15055",
+          "__version": 2,
+          "Flags": 0,
+          "Name": "MusicZone1",
+          "Position": "-2054.38477,4165.47168,252.007324",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.SoundBoxComponent",
+              "__guid": "4195d0e3-e04f-44b3-9815-7dc9005ce90a",
+              "__enabled": true,
+              "Flags": 0,
+              "Distance": 512,
+              "DistanceAttenuation": true,
+              "DistanceAttenuationOverride": true,
+              "Falloff": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "in": -1.7484555E-07,
+                  "out": 1.7484555E-07,
+                  "mode": "Mirrored"
+                },
+                {
+                  "x": 0.7140625,
+                  "y": 1,
+                  "in": 0,
+                  "out": 0,
+                  "mode": "Mirrored"
+                },
+                {
+                  "x": 1,
+                  "y": 0,
+                  "in": 0,
+                  "out": 0,
+                  "mode": "Mirrored"
+                }
+              ],
+              "Force2d": false,
+              "MaxRepeatTime": 0,
+              "MinRepeatTime": 0,
+              "Occlusion": false,
+              "OcclusionOverride": false,
+              "OcclusionRadius": 32,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Pitch": 1,
+              "PlayOnStart": true,
+              "ReflectionOverride": false,
+              "Reflections": false,
+              "Repeat": true,
+              "Scale": "2546.75513,3000,2500",
+              "SoundEvent": "sounds/casual menu guitar loop.sound",
+              "SoundOverride": true,
+              "StopOnNew": false,
+              "TargetMixer": {
+                "Name": "music",
+                "Id": "5c275bf6-b4bc-4b77-9ad2-3bcaec3c4d77"
+              },
+              "Volume": 0.13875598
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "e30dc31e-ee05-4736-8a71-61a29104dd53",
+          "__version": 2,
+          "Flags": 0,
+          "Name": "MusicZone1",
+          "Position": "3887.72754,4165.47168,252.007324",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.SoundBoxComponent",
+              "__guid": "5b00df59-99c7-4b1f-a66d-e561aaceb1fe",
+              "__enabled": true,
+              "Flags": 0,
+              "Distance": 512,
+              "DistanceAttenuation": true,
+              "DistanceAttenuationOverride": true,
+              "Falloff": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "in": -1.7484555E-07,
+                  "out": 1.7484555E-07,
+                  "mode": "Mirrored"
+                },
+                {
+                  "x": 0.7140625,
+                  "y": 1,
+                  "in": 0,
+                  "out": 0,
+                  "mode": "Mirrored"
+                },
+                {
+                  "x": 1,
+                  "y": 0,
+                  "in": 0,
+                  "out": 0,
+                  "mode": "Mirrored"
+                }
+              ],
+              "Force2d": false,
+              "MaxRepeatTime": 0,
+              "MinRepeatTime": 0,
+              "Occlusion": false,
+              "OcclusionOverride": false,
+              "OcclusionRadius": 32,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Pitch": 1,
+              "PlayOnStart": true,
+              "ReflectionOverride": false,
+              "Reflections": false,
+              "Repeat": true,
+              "Scale": "2546.75513,3000,2500",
+              "SoundEvent": "sounds/casual menu guitar loop.sound",
+              "SoundOverride": true,
+              "StopOnNew": false,
+              "TargetMixer": {
+                "Name": "music",
+                "Id": "5c275bf6-b4bc-4b77-9ad2-3bcaec3c4d77"
+              },
+              "Volume": 0.13875598
+            }
+          ],
+          "Children": []
         }
       ]
     },
@@ -667,7 +975,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "SpawnArea (1)",
-          "Position": "1105.09363,3417.97217,15.0002565",
+          "Position": "1076.18616,3433.27295,15.0002565",
           "Rotation": "0,0,0,1",
           "Scale": "25,25,1",
           "Tags": "",
@@ -681,7 +989,7 @@
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "95d98541-2871-453a-8c82-bebb61e72497",
-              "__enabled": false,
+              "__enabled": true,
               "Flags": 0,
               "BodyGroups": 18446744073709551615,
               "CreateAttachments": false,
@@ -2682,132 +2990,6 @@
                     {
                       "__type": "Sandbox.Rigidbody",
                       "__guid": "749ae0a8-26b8-4980-bcc4-461eea4200f1",
-                      "__enabled": true,
-                      "Flags": 0,
-                      "AngularDamping": 0,
-                      "EnableImpactDamage": true,
-                      "EnhancedCcd": false,
-                      "Gravity": true,
-                      "GravityScale": 1,
-                      "ImpactDamage": 0,
-                      "LinearDamping": 0,
-                      "Locking": {
-                        "X": false,
-                        "Y": false,
-                        "Z": false,
-                        "Pitch": false,
-                        "Yaw": false,
-                        "Roll": false
-                      },
-                      "MassCenterOverride": "0,0,0",
-                      "MassOverride": 0,
-                      "MinImpactDamageSpeed": 500,
-                      "MotionEnabled": true,
-                      "OnComponentDestroy": null,
-                      "OnComponentDisabled": null,
-                      "OnComponentEnabled": null,
-                      "OnComponentFixedUpdate": null,
-                      "OnComponentStart": null,
-                      "OnComponentUpdate": null,
-                      "OverrideMassCenter": false,
-                      "RigidbodyFlags": 0,
-                      "StartAsleep": false
-                    }
-                  ],
-                  "Children": []
-                },
-                {
-                  "__guid": "7cd81991-2ad6-4dc8-b6ad-8ab65dd8214c",
-                  "__version": 2,
-                  "Flags": 0,
-                  "Name": "statue",
-                  "Position": "1065.99976,79.9999847,11.5202818",
-                  "Rotation": "0,0,0,1",
-                  "Scale": "2,2,2",
-                  "Tags": "",
-                  "Enabled": true,
-                  "NetworkMode": 2,
-                  "NetworkFlags": 0,
-                  "NetworkOrphaned": 0,
-                  "NetworkTransmit": true,
-                  "OwnerTransfer": 1,
-                  "Components": [
-                    {
-                      "__type": "Sandbox.Prop",
-                      "__guid": "bef7cf9d-39ad-40b2-820a-9c038f6a724c",
-                      "__enabled": true,
-                      "Flags": 0,
-                      "BodyGroups": 18446744073709551615,
-                      "Health": 0,
-                      "IsStatic": false,
-                      "MaterialGroup": null,
-                      "Model": "models/frog/statue.vmdl",
-                      "OnComponentDestroy": null,
-                      "OnComponentDisabled": null,
-                      "OnComponentEnabled": null,
-                      "OnComponentFixedUpdate": null,
-                      "OnComponentStart": null,
-                      "OnComponentUpdate": null,
-                      "OnPropBreak": null,
-                      "OnPropTakeDamage": null,
-                      "StartAsleep": false,
-                      "Tint": "1,1,1,1"
-                    },
-                    {
-                      "__type": "Sandbox.ModelRenderer",
-                      "__guid": "afa19a6b-6d39-4fee-95b1-6f66c3f939ac",
-                      "__enabled": true,
-                      "Flags": 0,
-                      "BodyGroups": 18446744073709551615,
-                      "CreateAttachments": false,
-                      "LodOverride": null,
-                      "MaterialGroup": null,
-                      "MaterialOverride": null,
-                      "Materials": null,
-                      "Model": "models/frog/statue.vmdl",
-                      "OnComponentDestroy": null,
-                      "OnComponentDisabled": null,
-                      "OnComponentEnabled": null,
-                      "OnComponentFixedUpdate": null,
-                      "OnComponentStart": null,
-                      "OnComponentUpdate": null,
-                      "RenderOptions": {
-                        "GameLayer": true,
-                        "OverlayLayer": false,
-                        "BloomLayer": false,
-                        "AfterUILayer": false
-                      },
-                      "RenderType": "On",
-                      "Tint": "1,1,1,1"
-                    },
-                    {
-                      "__type": "Sandbox.ModelCollider",
-                      "__guid": "5b8928dd-5fa5-478f-8475-55bb19758669",
-                      "__enabled": true,
-                      "Flags": 0,
-                      "ColliderFlags": 0,
-                      "Elasticity": null,
-                      "Friction": null,
-                      "IsTrigger": false,
-                      "Model": "models/frog/statue.vmdl",
-                      "OnComponentDestroy": null,
-                      "OnComponentDisabled": null,
-                      "OnComponentEnabled": null,
-                      "OnComponentFixedUpdate": null,
-                      "OnComponentStart": null,
-                      "OnComponentUpdate": null,
-                      "OnObjectTriggerEnter": null,
-                      "OnObjectTriggerExit": null,
-                      "OnTriggerEnter": null,
-                      "OnTriggerExit": null,
-                      "RollingResistance": null,
-                      "Static": false,
-                      "Surface": null,
-                      "SurfaceVelocity": "0,0,0"
-                    },
-                    {
-                      "__type": "Sandbox.Rigidbody",
-                      "__guid": "f8b3198c-198f-49be-9f98-ac0c1efb4520",
                       "__enabled": true,
                       "Flags": 0,
                       "AngularDamping": 0,
@@ -19458,7 +19640,7 @@
       "Rotation": "0,0,-0.121135861,0.992635906",
       "Scale": "1,1,1",
       "Tags": "",
-      "Enabled": false,
+      "Enabled": true,
       "NetworkMode": 2,
       "NetworkFlags": 0,
       "NetworkOrphaned": 0,
@@ -19899,6 +20081,77 @@
         }
       ],
       "Children": []
+    },
+    {
+      "__guid": "1650b327-59e3-4428-9f0e-0c4311ce184e",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "concrete_cat_statue_2k",
+      "Position": "1050.60352,116.600708,12.4999495",
+      "Rotation": "0,0,0.79120481,0.611551285",
+      "Scale": "15,15,15",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "0eae4980-8a15-4f7d-81ac-4cccf7a63753",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/polyhaven/concrete-cat-statue/concrete_cat_statue_2k.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "b5193289-4207-4c87-a5fd-d981a9c4782f",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/polyhaven/concrete-cat-statue/concrete_cat_statue_2k.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
     }
   ],
   "SceneProperties": {
@@ -19923,9 +20176,6 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
-      "Sandbox.MovieMaker.MovieRecorderSystem": {
-        "DisableClientRecording": false
-      },
       "Sandbox.SelectionSetsSystem": {
         "Data": {
           "SelectionSets": []
@@ -19935,6 +20185,9 @@
         "Storage": {
           "$blob": "6296e7e1-9d9b-49a7-adec-3677fc154400"
         }
+      },
+      "Sandbox.MovieMaker.MovieRecorderSystem": {
+        "DisableClientRecording": false
       }
     }
   },
@@ -19944,7 +20197,7 @@
   "__references": [
     "fish.gt_big_crate#89786",
     "kenneynl.towerdefensespawnround#81458",
-    "seal.triton_and_naiad_fountain#33506"
+    "titanovsky.concrete_cat_statue_2k#53797"
   ],
   "__version": 3
 }
