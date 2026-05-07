@@ -104872,7 +104872,7 @@
                       "IdValue": "e2ae4429-4667-52be-ab34-3588f586ee50"
                     },
                     "Property": "Position",
-                    "Value": "-2526.87036,1428.4292,928.000305"
+                    "Value": "-2516.30688,1226.31897,896.000671"
                   },
                   {
                     "Target": {
@@ -105550,6 +105550,124 @@
             "8fe998b4-5bb0-53b3-87b8-5703b2b8b8d9": "47221ca6-5d14-49f8-a45b-048b4ca53384",
             "aa38a904-2e24-55e0-8259-7735372a5b12": "454869cb-2dc6-442d-a8ec-982df344cfb5",
             "792fdb4a-df35-57ae-abed-974f35bf9bd8": "eabd8664-dd03-469c-a612-d70ed36a9b58"
+          }
+        },
+        {
+          "__guid": "4f4be9f6-616e-40fe-8730-0b61f954c087",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantamaturea.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Name",
+                "Value": "pinevariantamaturea (2)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Position",
+                "Value": "-2905.40332,4393.20898,0.420648336"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "89ee0e75-1747-55e2-8310-2400518a4ec3": "4f4be9f6-616e-40fe-8730-0b61f954c087",
+            "8fe998b4-5bb0-53b3-87b8-5703b2b8b8d9": "7552c2f7-0470-4987-a311-8cb3f05f550b",
+            "aa38a904-2e24-55e0-8259-7735372a5b12": "1c2a8b19-ef27-441b-b867-5b2747ee71c4",
+            "792fdb4a-df35-57ae-abed-974f35bf9bd8": "b9f81725-9152-4b02-9c2c-60b74a0b28dd"
+          }
+        },
+        {
+          "__guid": "3bac57ef-9114-4a66-bba0-f332a4c7f08c",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantamaturea.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Name",
+                "Value": "pinevariantamaturea (2)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Position",
+                "Value": "-1740.67627,2782.17505,-4.61347008"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Rotation",
+                "Value": "-1.93191845E-05,0.000511409016,-0.382683396,0.923879385"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "89ee0e75-1747-55e2-8310-2400518a4ec3": "3bac57ef-9114-4a66-bba0-f332a4c7f08c",
+            "8fe998b4-5bb0-53b3-87b8-5703b2b8b8d9": "6789e6e8-c791-4aea-99b9-9b48707ff993",
+            "aa38a904-2e24-55e0-8259-7735372a5b12": "38d4d3a0-b4c7-484c-8429-8a4d936d30f5",
+            "792fdb4a-df35-57ae-abed-974f35bf9bd8": "e0a1a423-b4ef-4819-b078-89c83e85cc30"
+          }
+        },
+        {
+          "__guid": "1397d721-8614-4baf-9d00-16d5335351bf",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantamaturea.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Name",
+                "Value": "pinevariantamaturea (2)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Position",
+                "Value": "-1740.67603,2782.17163,-1.67546296"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Rotation",
+                "Value": "-1.93191845E-05,0.000511409016,-0.382683396,0.923879385"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "89ee0e75-1747-55e2-8310-2400518a4ec3": "1397d721-8614-4baf-9d00-16d5335351bf",
+            "8fe998b4-5bb0-53b3-87b8-5703b2b8b8d9": "c424bb5c-693b-413f-bd53-28256347ef24",
+            "aa38a904-2e24-55e0-8259-7735372a5b12": "3ca8a41b-b58a-4ac5-977a-4247b167e19c",
+            "792fdb4a-df35-57ae-abed-974f35bf9bd8": "7cdb4005-f81b-493e-8c8d-49847e11e90a"
           }
         },
         {
@@ -106385,6 +106503,312 @@
           }
         },
         {
+          "__guid": "ccd4ccf3-549c-45a2-9284-e8a7d7d5ed38",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantagrowinga.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "25c93914-0bcc-5ad4-896e-a0c86ef04819"
+                },
+                "Property": "Name",
+                "Value": "pinevariantagrowinga (4)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "25c93914-0bcc-5ad4-896e-a0c86ef04819"
+                },
+                "Property": "Position",
+                "Value": "-2097.80347,2709.62476,31.9990273"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "25c93914-0bcc-5ad4-896e-a0c86ef04819": "ccd4ccf3-549c-45a2-9284-e8a7d7d5ed38",
+            "457ee790-d051-5c49-ad5f-59cb31ba0aae": "f120dcf6-95ed-4e9d-accb-a14126746f76",
+            "dc44a069-a388-5c18-a225-04bbb2de1c76": "b4749fb0-ba15-4039-a6dd-e5df41e0a431",
+            "350b5931-3a52-5ab7-bc5c-45b1fc1e9c54": "53003376-d272-47ab-bcf2-6566cfa91258"
+          }
+        },
+        {
+          "__guid": "305bdeb4-36b5-4693-9247-13fb5d609deb",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantagrowinga.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "25c93914-0bcc-5ad4-896e-a0c86ef04819"
+                },
+                "Property": "Name",
+                "Value": "pinevariantagrowinga (4)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "25c93914-0bcc-5ad4-896e-a0c86ef04819"
+                },
+                "Property": "Position",
+                "Value": "-1265.80347,3093.62476,31.9990273"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "25c93914-0bcc-5ad4-896e-a0c86ef04819": "305bdeb4-36b5-4693-9247-13fb5d609deb",
+            "457ee790-d051-5c49-ad5f-59cb31ba0aae": "ad2d7b4b-ce19-483d-b3b2-e0e510ebed27",
+            "dc44a069-a388-5c18-a225-04bbb2de1c76": "6762d306-24a6-4544-ac28-0e170f38f321",
+            "350b5931-3a52-5ab7-bc5c-45b1fc1e9c54": "7579641e-6bc9-4c03-883a-4abcb7f1f1ae"
+          }
+        },
+        {
+          "__guid": "7de749de-9ca5-451b-8c20-58653220a284",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantagrowinga.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "25c93914-0bcc-5ad4-896e-a0c86ef04819"
+                },
+                "Property": "Name",
+                "Value": "pinevariantagrowinga (4)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "25c93914-0bcc-5ad4-896e-a0c86ef04819"
+                },
+                "Property": "Position",
+                "Value": "-1393.80347,3861.62476,31.9990234"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "25c93914-0bcc-5ad4-896e-a0c86ef04819": "7de749de-9ca5-451b-8c20-58653220a284",
+            "457ee790-d051-5c49-ad5f-59cb31ba0aae": "284feb5a-60a5-46e5-b3e4-db7f14a2f63f",
+            "dc44a069-a388-5c18-a225-04bbb2de1c76": "3d44f9ae-d0fc-479a-989c-0805b1b524ff",
+            "350b5931-3a52-5ab7-bc5c-45b1fc1e9c54": "ec7e5a59-a44f-4570-b560-726a1c69200e"
+          }
+        },
+        {
+          "__guid": "f73b05e3-3bd6-4e4b-9e05-0df51f704065",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantagrowinga.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "25c93914-0bcc-5ad4-896e-a0c86ef04819"
+                },
+                "Property": "Name",
+                "Value": "pinevariantagrowinga (4)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "25c93914-0bcc-5ad4-896e-a0c86ef04819"
+                },
+                "Property": "Position",
+                "Value": "-1393.80347,3861.62476,31.9990234"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "25c93914-0bcc-5ad4-896e-a0c86ef04819": "f73b05e3-3bd6-4e4b-9e05-0df51f704065",
+            "457ee790-d051-5c49-ad5f-59cb31ba0aae": "73b58732-67b5-47b1-b0d3-5c7973c2c3ea",
+            "dc44a069-a388-5c18-a225-04bbb2de1c76": "0f346e85-e87c-4580-833f-0ac4cb39ac33",
+            "350b5931-3a52-5ab7-bc5c-45b1fc1e9c54": "a62ea889-1c96-45b7-9585-7446cded512c"
+          }
+        },
+        {
+          "__guid": "b7a27ab2-3f31-4a35-ab6a-2ea65ce5d93c",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantagrowinga.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "25c93914-0bcc-5ad4-896e-a0c86ef04819"
+                },
+                "Property": "Name",
+                "Value": "pinevariantagrowinga (4)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "25c93914-0bcc-5ad4-896e-a0c86ef04819"
+                },
+                "Property": "Position",
+                "Value": "-1713.80347,4181.625,31.9990273"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "25c93914-0bcc-5ad4-896e-a0c86ef04819": "b7a27ab2-3f31-4a35-ab6a-2ea65ce5d93c",
+            "457ee790-d051-5c49-ad5f-59cb31ba0aae": "dad2f3c7-4c20-4530-99ef-da794b8fd0da",
+            "dc44a069-a388-5c18-a225-04bbb2de1c76": "c4118f84-7156-449e-bebc-948b89157c1e",
+            "350b5931-3a52-5ab7-bc5c-45b1fc1e9c54": "59a3f701-7b55-4ebe-808b-0b04f6dc223f"
+          }
+        },
+        {
+          "__guid": "247ea654-d40a-4c8f-a76b-1e9592ea216f",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantagrowinga.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "25c93914-0bcc-5ad4-896e-a0c86ef04819"
+                },
+                "Property": "Name",
+                "Value": "pinevariantagrowinga (4)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "25c93914-0bcc-5ad4-896e-a0c86ef04819"
+                },
+                "Property": "Position",
+                "Value": "-3249.80347,4021.62476,31.9990273"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "25c93914-0bcc-5ad4-896e-a0c86ef04819": "247ea654-d40a-4c8f-a76b-1e9592ea216f",
+            "457ee790-d051-5c49-ad5f-59cb31ba0aae": "227fbcb2-a19f-40a9-853c-f2bbdff59e51",
+            "dc44a069-a388-5c18-a225-04bbb2de1c76": "b087e37f-de62-4bbd-af8c-ca20ef7c0f05",
+            "350b5931-3a52-5ab7-bc5c-45b1fc1e9c54": "9f6c29a6-ac97-4d81-a4cd-0e9922b23d9a"
+          }
+        },
+        {
+          "__guid": "6516dcad-8dc2-4329-8031-f2d1812a10af",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantagrowinga.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "25c93914-0bcc-5ad4-896e-a0c86ef04819"
+                },
+                "Property": "Name",
+                "Value": "pinevariantagrowinga (4)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "25c93914-0bcc-5ad4-896e-a0c86ef04819"
+                },
+                "Property": "Position",
+                "Value": "-2673.80347,4117.625,31.9990273"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "25c93914-0bcc-5ad4-896e-a0c86ef04819": "6516dcad-8dc2-4329-8031-f2d1812a10af",
+            "457ee790-d051-5c49-ad5f-59cb31ba0aae": "f5752465-9bea-4fd4-b49d-fafbd681bce4",
+            "dc44a069-a388-5c18-a225-04bbb2de1c76": "bcdf7345-6813-4bd2-a8ad-5c7fef8a01da",
+            "350b5931-3a52-5ab7-bc5c-45b1fc1e9c54": "7c59f619-4aad-40b8-83be-86149545f07d"
+          }
+        },
+        {
+          "__guid": "0af823e7-d909-493b-a5b6-041b0dfae844",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantagrowinga.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "25c93914-0bcc-5ad4-896e-a0c86ef04819"
+                },
+                "Property": "Name",
+                "Value": "pinevariantagrowinga (4)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "25c93914-0bcc-5ad4-896e-a0c86ef04819"
+                },
+                "Property": "Position",
+                "Value": "-2033.80347,4149.625,31.9990273"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "25c93914-0bcc-5ad4-896e-a0c86ef04819": "0af823e7-d909-493b-a5b6-041b0dfae844",
+            "457ee790-d051-5c49-ad5f-59cb31ba0aae": "882a09d7-4472-4cda-a96e-b096a3d81b14",
+            "dc44a069-a388-5c18-a225-04bbb2de1c76": "d4dd5ddc-99ea-4358-890c-970bee3f1d95",
+            "350b5931-3a52-5ab7-bc5c-45b1fc1e9c54": "e7ad1dba-d3f2-4637-91b0-b3cf69068e65"
+          }
+        },
+        {
+          "__guid": "e6d6349a-2e0f-4525-9243-eebc81019d92",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantagrowinga.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "25c93914-0bcc-5ad4-896e-a0c86ef04819"
+                },
+                "Property": "Name",
+                "Value": "pinevariantagrowinga (4)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "25c93914-0bcc-5ad4-896e-a0c86ef04819"
+                },
+                "Property": "Position",
+                "Value": "-2513.80347,2677.62476,31.9990273"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "25c93914-0bcc-5ad4-896e-a0c86ef04819": "e6d6349a-2e0f-4525-9243-eebc81019d92",
+            "457ee790-d051-5c49-ad5f-59cb31ba0aae": "a9000f50-3692-477f-884c-7fcd9d1bf3e7",
+            "dc44a069-a388-5c18-a225-04bbb2de1c76": "6ccda820-286d-45f4-b39b-efc63450f217",
+            "350b5931-3a52-5ab7-bc5c-45b1fc1e9c54": "c6cb1cff-993e-4835-867e-a27124af603c"
+          }
+        },
+        {
           "__guid": "3699eca9-ce3a-4b2c-b8c9-0c2468072e9b",
           "__version": 2,
           "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantagrowinga.prefab",
@@ -107164,6 +107588,210 @@
             "45e4b6e0-e804-55b2-b0a5-edcacb0b342f": "750bb5aa-0d86-4092-80cb-f10ba9353f39",
             "80629398-9b45-5855-ba92-fe6e6d4c96f8": "8d1ba22f-69fe-459d-8894-a36636bbf5f2",
             "e6f797c9-45ab-50cc-a160-4acfa7b62eeb": "41de14e0-c6df-46d0-b135-0dcec6c2cbc0"
+          }
+        },
+        {
+          "__guid": "60f7c24d-da0b-4bc3-97c4-1994f4a5d023",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantaadulta.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Name",
+                "Value": "pinevariantaadulta (19)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Position",
+                "Value": "-2097.80347,4437.625,-0.000972986221"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "5a672f30-e609-5089-8bba-c11efa871077": "60f7c24d-da0b-4bc3-97c4-1994f4a5d023",
+            "45e4b6e0-e804-55b2-b0a5-edcacb0b342f": "dab1b7d4-2f7b-4458-927b-13b7c85a8ef0",
+            "80629398-9b45-5855-ba92-fe6e6d4c96f8": "f7d81ad5-c5f4-41b9-b578-cf8fd30fedd2",
+            "e6f797c9-45ab-50cc-a160-4acfa7b62eeb": "1cfd9634-534c-4c1b-bcf1-d9f6fd974bfc"
+          }
+        },
+        {
+          "__guid": "a47a50a8-8a07-4870-a9a1-6528be465e94",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantaadulta.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Name",
+                "Value": "pinevariantaadulta (19)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Position",
+                "Value": "-2417.80347,4309.625,-0.000972986221"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "5a672f30-e609-5089-8bba-c11efa871077": "a47a50a8-8a07-4870-a9a1-6528be465e94",
+            "45e4b6e0-e804-55b2-b0a5-edcacb0b342f": "cb53d674-0262-4f68-9dae-5f588512c7ca",
+            "80629398-9b45-5855-ba92-fe6e6d4c96f8": "0d52ab90-f30b-4a2c-8d01-38e712f3ac6c",
+            "e6f797c9-45ab-50cc-a160-4acfa7b62eeb": "7df7a165-bb74-43dc-a209-f2f522fcf1ad"
+          }
+        },
+        {
+          "__guid": "0c577c3b-1f2b-4289-beec-aa19481e3574",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantaadulta.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Name",
+                "Value": "pinevariantaadulta (19)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Position",
+                "Value": "-3409.80347,3797.62476,-0.000972986221"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "5a672f30-e609-5089-8bba-c11efa871077": "0c577c3b-1f2b-4289-beec-aa19481e3574",
+            "45e4b6e0-e804-55b2-b0a5-edcacb0b342f": "475e4976-b67a-45af-bda8-17ca3c94de9b",
+            "80629398-9b45-5855-ba92-fe6e6d4c96f8": "ea84127d-8e05-4fb3-b4cc-527dc89fd4e8",
+            "e6f797c9-45ab-50cc-a160-4acfa7b62eeb": "120e8d81-1122-455e-a19b-95d9a693890e"
+          }
+        },
+        {
+          "__guid": "b7bbdc66-e7ed-4e1e-b29c-83c67f9ad946",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantaadulta.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Name",
+                "Value": "pinevariantaadulta (19)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Position",
+                "Value": "-1553.80347,4053.62476,-0.000967010856"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "5a672f30-e609-5089-8bba-c11efa871077": "b7bbdc66-e7ed-4e1e-b29c-83c67f9ad946",
+            "45e4b6e0-e804-55b2-b0a5-edcacb0b342f": "92f11ee2-8114-4742-a676-4f4f3dfdc8c3",
+            "80629398-9b45-5855-ba92-fe6e6d4c96f8": "c60815e5-1f84-435d-9264-059a83ebaf68",
+            "e6f797c9-45ab-50cc-a160-4acfa7b62eeb": "3f99427c-8cb5-47aa-b0cd-d40337333c12"
+          }
+        },
+        {
+          "__guid": "ebf986d7-da48-4f7f-b4eb-8168d9e78ffb",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantaadulta.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Name",
+                "Value": "pinevariantaadulta (19)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Position",
+                "Value": "-2353.80347,2677.62476,-0.000972986221"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "5a672f30-e609-5089-8bba-c11efa871077": "ebf986d7-da48-4f7f-b4eb-8168d9e78ffb",
+            "45e4b6e0-e804-55b2-b0a5-edcacb0b342f": "586aa235-194c-4034-8b2a-39e499bc64ca",
+            "80629398-9b45-5855-ba92-fe6e6d4c96f8": "a74aa36c-4a3b-4d48-bf33-bccee6539a29",
+            "e6f797c9-45ab-50cc-a160-4acfa7b62eeb": "902b24c9-7bf8-42c7-9514-8666109c70ac"
+          }
+        },
+        {
+          "__guid": "6f3a8fb2-c9c6-4266-baaf-5667c5f41cb4",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantaadulta.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Name",
+                "Value": "pinevariantaadulta (19)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Position",
+                "Value": "-1489.80347,2997.62476,-0.000972986221"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "5a672f30-e609-5089-8bba-c11efa871077": "6f3a8fb2-c9c6-4266-baaf-5667c5f41cb4",
+            "45e4b6e0-e804-55b2-b0a5-edcacb0b342f": "a39358c2-12f1-4506-a3fa-6386fa582afb",
+            "80629398-9b45-5855-ba92-fe6e6d4c96f8": "0e67e5af-a6ec-4cc4-9350-db5eaec072cd",
+            "e6f797c9-45ab-50cc-a160-4acfa7b62eeb": "08b37eb6-1fa8-412b-91a5-46a489e2fed9"
           }
         },
         {
@@ -110311,9 +110939,9 @@
       "__version": 2,
       "Flags": 0,
       "Name": "bush1",
-      "Position": "3603.2854,4344.64307,13.5825739",
+      "Position": "3700.28418,4315.81201,13.5392208",
       "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "1,1,1",
+      "Scale": "1.56986058,1.56986058,1.56986058",
       "Tags": "",
       "Enabled": true,
       "NetworkMode": 2,
@@ -110325,6 +110953,52 @@
         {
           "__type": "Sandbox.ModelRenderer",
           "__guid": "c1935e91-4d96-43ad-b494-259b605d07ce",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/bushes/bush1.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "a04b35af-4b5b-4d21-b9e9-71d15390dd2b",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "bush1 (7)",
+      "Position": "-1484.07263,4241.55322,5.7432332",
+      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
+      "Scale": "1.56986058,1.56986058,1.56986058",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "28b042d4-2e0e-450e-b4f6-2c2e276a8388",
           "__enabled": true,
           "Flags": 0,
           "BodyGroups": 18446744073709551615,
@@ -110399,11 +111073,11 @@
       "Children": []
     },
     {
-      "__guid": "434d9224-e1fc-45df-a48e-372b512c1f18",
+      "__guid": "bbdb71bc-6512-482c-8521-c17cbb64c645",
       "__version": 2,
       "Flags": 0,
-      "Name": "bush1 (2)",
-      "Position": "2937.95215,4130.69238,5.37177324",
+      "Name": "bush1 (8)",
+      "Position": "-811.384155,4231.63574,5.69602108",
       "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
       "Scale": "1,1,1",
       "Tags": "",
@@ -110416,7 +111090,237 @@
       "Components": [
         {
           "__type": "Sandbox.ModelRenderer",
-          "__guid": "bdefad30-eb3f-4bd6-a050-668c304b311d",
+          "__guid": "21fdbf50-26a4-457f-b159-66df700113de",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/bushes/bush1.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "7c148516-631a-441e-a57c-c3b08d07015c",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "bush1 (13)",
+      "Position": "64.7591553,3876.1958,17.3454018",
+      "Rotation": "0.000395645882,0.000539051485,-0.783250451,0.62170589",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "034b512a-6a68-4a3e-8f5f-148df6a543c9",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/bushes/bush1.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "e6bf8985-0657-465e-b1e8-6c63d6418175",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "bush1 (9)",
+      "Position": "-1928.67896,4130.89551,5.61779785",
+      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "7f260a5f-737b-469d-b3c5-31eeea36b22c",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/bushes/bush1.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "5d52faf2-ad83-431f-ac4a-45aff84613c9",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "bush1 (10)",
+      "Position": "-2212.32056,3993.50732,5.44851494",
+      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "5f50d3ab-2a2c-4062-b91d-b8adfa3d0880",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/bushes/bush1.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "cc1ed7b4-5b17-4f42-978a-d87dac99f20e",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "bush1 (11)",
+      "Position": "-1184.08008,2906.68506,3.94420624",
+      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "1f498bcd-63d0-4f48-a664-fcb9922c2ed6",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/bushes/bush1.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "bef062a6-852a-4ed0-b3b8-99479aa38910",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "bush1 (12)",
+      "Position": "-615.745605,3149.47705,4.23997259",
+      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "f662820e-5c02-4fc6-abe4-d76bd047fb60",
           "__enabled": true,
           "Flags": 0,
           "BodyGroups": 18446744073709551615,
@@ -111365,6 +112269,696 @@
       "Children": []
     },
     {
+      "__guid": "8a5938a9-077e-4a59-aef0-5de8c5626fdb",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "fernadensedark (19)",
+      "Position": "-1997.89795,4288.70703,5.83218861",
+      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "54c84194-874b-4e1d-81c0-1a5483f77671",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/plants/ferns/fernadensedark.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "4c65a8e2-d7fa-4811-bf0f-86616f78dbd1",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "fernadensedark (20)",
+      "Position": "-1868.91614,4260.92725,5.78845692",
+      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "ea7db920-1a21-4bd7-a794-e3be409d79c2",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/plants/ferns/fernadensedark.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "b2c39047-39f1-4741-be8f-4235e95f0b47",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "fernadensedark (21)",
+      "Position": "-2057.66064,4158.6748,5.66133785",
+      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "2fa75e11-c817-4db5-8208-36f5cd7aad69",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/plants/ferns/fernadensedark.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "2bc7a6b1-25d4-4b22-b99c-25942d18e4fe",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "fernadensedark (22)",
+      "Position": "-1771.91724,4232.09668,5.7451272",
+      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "fec5ed53-12ff-40fb-9507-fbbaf0512c39",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/plants/ferns/fernadensedark.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "59ac9277-c7e0-4bb2-b0ef-819939cdfaac",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "fernadensedark (23)",
+      "Position": "-1776.12024,4360.02783,5.91630316",
+      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "3f422b47-2989-41ea-9f58-d7c4a1318898",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/plants/ferns/fernadensedark.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "630cfe9f-72c3-41c2-afe3-f546cee84287",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "fernadensedark (24)",
+      "Position": "-1230.31213,4313.92432,5.82713795",
+      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "d6325d5e-95a5-4113-a73c-18ce9571ab10",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/plants/ferns/fernadensedark.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "3057f382-cddd-4891-a26e-356c3934129d",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "fernadensedark (25)",
+      "Position": "-1133.31274,4285.09375,5.78371334",
+      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "dac0cd92-f532-4ddf-ad49-274cb53185e6",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/plants/ferns/fernadensedark.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "d8d18d6a-551a-4ae3-bfb3-60a764b27d01",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "fernadensedark (26)",
+      "Position": "-1066.19543,4191.24707,5.65491009",
+      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "2c57a38b-d0a3-41a1-9027-af4a988b804a",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/plants/ferns/fernadensedark.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "8aaba83d-8bd4-48e4-af8e-8ab6739bfca7",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "fernadensedark (32)",
+      "Position": "257.281982,3863.44775,20.8531494",
+      "Rotation": "0.0912265554,0.0942775235,-0.689391017,0.712410867",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "e1310e28-472b-402e-8edb-4baf05f81853",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/plants/ferns/fernadensedark.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "211562db-4daf-4083-b74c-8496efdf627c",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "fernadensedark (33)",
+      "Position": "349.939087,3943.89941,49.9776001",
+      "Rotation": "0.0287887268,0.154003143,-0.678550839,0.717650771",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "31dad990-2127-420f-9a6f-0699d5a52df7",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/plants/ferns/fernadensedark.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "c74bf67f-e55f-4388-9fb2-614da1710007",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "fernadensedark (27)",
+      "Position": "-676.559204,3051.42773,4.11201143",
+      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "1ac23912-d2ab-4b91-80ae-1d1990893505",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/plants/ferns/fernadensedark.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "58e3ffac-7dba-4570-b132-e8ea49f2b869",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "fernadensedark (28)",
+      "Position": "-835.422241,3014.19092,4.07026958",
+      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "dbc2d02d-d3e4-4ec4-9de1-493ea67b7090",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/plants/ferns/fernadensedark.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "d30cbcb4-343e-4aa2-8394-ab9c92c5ec8f",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "fernadensedark (29)",
+      "Position": "-896.235352,2916.1416,3.94230843",
+      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "8bbae543-e072-44f0-ae45-374b35766b0e",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/plants/ferns/fernadensedark.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "4ed56201-8152-422a-97c4-dee2884f1b11",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "fernadensedark (30)",
+      "Position": "-1439.94165,2898.2793,3.94590664",
+      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "84fe0995-e5ea-40a1-9353-6847418cf8d3",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/plants/ferns/fernadensedark.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "567e3df1-15e6-4ece-ac8f-30ea6a757f00",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "fernadensedark (31)",
+      "Position": "-1533.78845,2831.16162,3.86092901",
+      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "8707844b-2015-41d6-b8a3-22def6205de9",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/plants/ferns/fernadensedark.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
       "__guid": "a011ea72-0aa3-4a2c-be0b-e05933528ab1",
       "__version": 2,
       "Flags": 0,
@@ -111484,1478 +113078,6 @@
           "MaterialOverride": null,
           "Materials": null,
           "Model": "3rdparty/lowpolynature/models/env/plants/ferns/fernadensedark.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "8b4d420a-d418-4331-9e59-07f607287145",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "foxgloveavariantb",
-      "Position": "2815.86426,2974.06055,3.83231068",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "b054bc93-321c-48f4-b58d-b0518958a34e",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/plants/foxgloves/foxgloveavariantb.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "5db65bb1-677e-48c3-9b2f-7fcb90d114aa",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "foxgloveavariantb (1)",
-      "Position": "2956.40405,2594.47095,3.31794453",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "fe38ae3b-44bf-4596-8f85-3f80d14d0065",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/plants/foxgloves/foxgloveavariantb.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "59d6613d-3cf0-43eb-a6c6-d3bc53135319",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "foxgloveavariantb (2)",
-      "Position": "2954.30249,2658.43628,3.40353227",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "2371808d-81cf-41d7-b957-a0ab6d4f9340",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/plants/foxgloves/foxgloveavariantb.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "5d5884cd-6371-4838-a980-cf53fc25db6c",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "foxgloveavariantb (3)",
-      "Position": "2923.37061,2625.40283,3.36096883",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "9caf5a20-e235-454d-9dcd-67abadc4472f",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/plants/foxgloves/foxgloveavariantb.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "e1e48fb6-21aa-4e62-8c64-4b4278e070d1",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "foxgloveavariantb (4)",
-      "Position": "3180.2832,2601.82617,3.31646919",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "e80ab054-e7c2-43c4-9667-41e9a4852a58",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/plants/foxgloves/foxgloveavariantb.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "e9c48d4f-672c-4aee-b8bf-1c5158b6b322",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "foxgloveavariantb (5)",
-      "Position": "3472.33081,2483.35205,3.14339995",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "8b5f4cae-9c4a-4e86-b3ef-cce2a8bcb4d6",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/plants/foxgloves/foxgloveavariantb.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "5c92400b-4d85-4e15-becb-b23af0a0d85d",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "foxgloveavariantb (6)",
-      "Position": "3470.229,2547.31714,3.22886348",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "96af6c8b-beee-47c9-9da9-58dbec54bd79",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/plants/foxgloves/foxgloveavariantb.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "2b0281bf-c886-4d29-a358-f371eb630023",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "foxgloveavariantb (7)",
-      "Position": "3509.43848,4277.53613,5.53912735",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "6fdd3a8a-7bae-497e-bee2-26f4f52e9e79",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/plants/foxgloves/foxgloveavariantb.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "d2fb781f-5a12-4c85-bebc-1b6a231e9736",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "foxgloveavariantb (8)",
-      "Position": "3479.55713,4212.51953,5.45381165",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "645e5a58-ec41-4f46-9f78-7e7c7d3780d8",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/plants/foxgloves/foxgloveavariantb.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "39628ab8-373c-4b7d-a174-f95948854896",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "foxgloveavariantb (9)",
-      "Position": "3541.4209,4278.58643,5.53892803",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "14405ab4-0c21-4edc-8d5e-208a56c7328d",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/plants/foxgloves/foxgloveavariantb.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "b6728608-7bf9-46aa-8bbd-b5c692ae2b90",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "foxgloveavariantb (10)",
-      "Position": "4186.32959,4139.6875,5.32085609",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "6b4b45c6-497b-439a-81eb-2b695c3b6499",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/plants/foxgloves/foxgloveavariantb.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "43fda6e0-9fb2-4152-be8b-003ddea2d2fe",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "foxgloveavariantb (11)",
-      "Position": "4185.27881,4171.6709,5.36365128",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "724207b5-7f03-4211-b44b-64578a38ea8c",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/plants/foxgloves/foxgloveavariantb.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "76b2e627-7411-4824-a1ad-d2fd0e79033b",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "foxgloveavariantb (12)",
-      "Position": "4154.34668,4138.63721,5.32112932",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "6ad9f93d-852d-457a-b4ee-0a957d295977",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/plants/foxgloves/foxgloveavariantb.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "126207cf-0587-445f-aa5b-c54e064d9b9d",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "parasolmushroomsclusterb",
-      "Position": "3828.21533,4320.01514,13.5060196",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "4.36720324,4.36720324,4.36720324",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "f821d73a-d037-41cc-a08d-4b9c1730eace",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/mushrooms/parasolmushroom/parasolmushroomsclusterb.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "632cceef-d686-4ba3-b48c-7819cd8288ad",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "parasolmushroomsclusterb (4)",
-      "Position": "2748.15723,4060.41138,13.2136164",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "4.36720324,4.36720324,4.36720324",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "80435361-de3b-403e-8d8e-cecdfc5b6a89",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/mushrooms/parasolmushroom/parasolmushroomsclusterb.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "ed212457-a585-4b15-8639-a6d4295bb79b",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "parasolmushroomsclusterb (1)",
-      "Position": "4149.09326,4298.53955,13.4610682",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "4.36720324,4.36720324,4.36720324",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "6dea2ae2-f416-41a5-b091-2ce80e01b7c9",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/mushrooms/parasolmushroom/parasolmushroomsclusterb.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "c8054470-b7f9-4090-939b-16e5cf1e32dd",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "parasolmushroomsclusterb (2)",
-      "Position": "4382.4292,4018.05029,13.0745306",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "4.36720324,4.36720324,4.36720324",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "8f2ed972-c26c-4c4e-869d-f8c71ba3a92c",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/mushrooms/parasolmushroom/parasolmushroomsclusterb.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "414a2b44-8f2e-4ccb-9386-a14840df8ad0",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "parasolmushroomsclusterb (3)",
-      "Position": "3249.50244,2444.00342,11.0282059",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "4.36720324,4.36720324,4.36720324",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "e5fb299c-d163-4792-ac19-494838eee9f6",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/mushrooms/parasolmushroom/parasolmushroomsclusterb.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "77dbb891-d1f4-40d5-8b6c-0a57ecc43461",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "flyagaricbadultvariantd",
-      "Position": "3217.39087,4396.01025,5.71230173",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "3.10229325,3.10229325,3.10229325",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "69b06440-e804-4233-aa36-a8e4e8a2c9dc",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/mushrooms/flyagaric/flyagaricbadultvariantd.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "ec7c986c-7811-4050-8977-b34482bcc3f3",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "flyagaricbadultvariantd (1)",
-      "Position": "3761.09741,4413.87305,5.70872355",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "3.10229325,3.10229325,3.10229325",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "6ec0f13a-9466-4141-b9a0-fb7e24d64fea",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/mushrooms/flyagaric/flyagaricbadultvariantd.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "0caf9973-fcd0-43f6-9752-a34ce1379ca8",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "flyagaricbadultvariantd (2)",
-      "Position": "3730.16553,4380.83984,5.66614056",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "3.10229325,3.10229325,3.10229325",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "ef20bc4c-d655-4879-8dd6-257bc367536c",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/mushrooms/flyagaric/flyagaricbadultvariantd.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "c16db104-f275-4eb6-82d5-cad65d01651f",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "flyagaricbadultvariantd (3)",
-      "Position": "3921.01123,4419.12646,5.70775318",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "3.10229325,3.10229325,3.10229325",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "550466c7-d3f3-4474-ac44-0bbd471aa577",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/mushrooms/flyagaric/flyagaricbadultvariantd.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "a45d1333-7dd0-4334-84c8-f298cc700acc",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "flyagaricbadultvariantd (8)",
-      "Position": "2492.29492,4052.01636,5.28928185",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "3.10229325,3.10229325,3.10229325",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "e3f0d8a8-2606-4922-84cb-e07390735e29",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/mushrooms/flyagaric/flyagaricbadultvariantd.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "21af2c5a-7c48-4e87-990a-5be303b5f164",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "flyagaricbadultvariantd (4)",
-      "Position": "4347.29395,4112.9585,5.2770977",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "3.10229325,3.10229325,3.10229325",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "c31e5f23-4786-4789-914d-a5e31312ff59",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/mushrooms/flyagaric/flyagaricbadultvariantd.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "85bb7b45-856f-4da7-b76d-203ba2f1c554",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "flyagaricbadultvariantd (5)",
-      "Position": "3314.51855,2414.13281,3.05886889",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "3.10229325,3.10229325,3.10229325",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "81889b2b-c0e4-477d-9666-808579fbabc8",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/mushrooms/flyagaric/flyagaricbadultvariantd.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "b37af8fc-7139-4d79-9c8f-39ad61aa1307",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "flyagaricbadultvariantd (6)",
-      "Position": "3156.70654,2344.91357,2.97431636",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "3.10229325,3.10229325,3.10229325",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "f3327bd0-087a-49d7-a02a-1e4de4635c0b",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/mushrooms/flyagaric/flyagaricbadultvariantd.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "bc02b0bd-8541-4654-8e43-09f28c6183ba",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "flyagaricbadultvariantd (7)",
-      "Position": "2529.07056,2932.62134,3.79134154",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "3.10229325,3.10229325,3.10229325",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "0384b551-4303-4011-8cc0-6aebc84bc2dc",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/mushrooms/flyagaric/flyagaricbadultvariantd.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "e4447dae-6fa7-44e9-9d9e-20df22fee1ea",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "flyagaricsclustera",
-      "Position": "2531.17139,2868.64453,11.5720253",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "2.61009073,2.61009073,2.61009073",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "92b992eb-651c-4d45-b952-47aa8b5b9195",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/mushrooms/flyagaric/flyagaricsclustera.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "d111ec3b-beaa-4aa9-8e2e-f3294f80db4b",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "porcinigsclusterc",
-      "Position": "3733.31787,4284.87939,13.8239326",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "2.7512238,2.7512238,2.7512238",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "74bc2c21-d232-4a68-a304-fa6dd7385699",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/mushrooms/porcini/porcinigsclusterc.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "824b342c-c38f-4172-82eb-17929ad8d3a4",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "porcinigsclusterc (3)",
-      "Position": "2526.37988,3989.09082,13.4895782",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "2.7512238,2.7512238,2.7512238",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "68b838fe-3285-413b-8753-13ec7d8ae1bc",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/mushrooms/porcini/porcinigsclusterc.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "4c930fc2-564f-4808-85b9-33d5993f68a4",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "porcinigsclusterc (1)",
-      "Position": "4024.3147,4198.38818,13.6936569",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "2.7512238,2.7512238,2.7512238",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "9bd87566-d1be-4cc6-80fc-026c283ddf58",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/mushrooms/porcini/porcinigsclusterc.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "ae4705d0-0cf8-4c2c-bbfa-ef875e9153a2",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "porcinigsclusterc (2)",
-      "Position": "2856.25293,2719.24951,3.48974705",
-      "Rotation": "0.00046262145,0.000482797623,-0.695400715,0.71862185",
-      "Scale": "2.7512238,2.7512238,2.7512238",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "99cf03ba-73bf-432d-91cc-d9d95975a559",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "3rdparty/lowpolynature/models/env/mushrooms/porcini/porcinigsclusterc.vmdl",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -113192,6 +113314,384 @@
         {
           "__type": "Sandbox.Rigidbody",
           "__guid": "1c5b7cb1-bb90-4237-ac04-9679ea1ae382",
+          "__enabled": true,
+          "Flags": 0,
+          "AngularDamping": 0,
+          "EnableImpactDamage": true,
+          "EnhancedCcd": false,
+          "Gravity": true,
+          "GravityScale": 1,
+          "ImpactDamage": 0,
+          "LinearDamping": 0,
+          "Locking": {
+            "X": false,
+            "Y": false,
+            "Z": false,
+            "Pitch": false,
+            "Yaw": false,
+            "Roll": false
+          },
+          "MassCenterOverride": "0,0,0",
+          "MassOverride": 0,
+          "MinImpactDamageSpeed": 500,
+          "MotionEnabled": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OverrideMassCenter": false,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "4daf047c-aaca-40e1-acb5-827babef2830",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "darkdirtlowhilla (6)",
+      "Position": "-1871.10083,4465.55225,17.3496971",
+      "Rotation": "0.000242647759,0.000623084372,-0.91747117,0.397801608",
+      "Scale": "0.188259631,0.212974772,0.142010704",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "398ea314-2b40-4384-9a95-99ff6785d9a1",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "MaterialGroup": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "StartAsleep": false,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "0c16f60f-09ba-4274-9095-5a57be2f23bb",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "f0fea5dc-8d65-4e43-b6a2-1fd870ad22e5",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "86da2e13-f6b4-484c-b3ba-4e1902bc3188",
+          "__enabled": true,
+          "Flags": 0,
+          "AngularDamping": 0,
+          "EnableImpactDamage": true,
+          "EnhancedCcd": false,
+          "Gravity": true,
+          "GravityScale": 1,
+          "ImpactDamage": 0,
+          "LinearDamping": 0,
+          "Locking": {
+            "X": false,
+            "Y": false,
+            "Z": false,
+            "Pitch": false,
+            "Yaw": false,
+            "Roll": false
+          },
+          "MassCenterOverride": "0,0,0",
+          "MassOverride": 0,
+          "MinImpactDamageSpeed": 500,
+          "MotionEnabled": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OverrideMassCenter": false,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "8f224191-8693-48e0-8f5f-91792362af66",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "darkdirtlowhilla (7)",
+      "Position": "-705.597168,2860.41162,12.3234129",
+      "Rotation": "-1.42669596E-05,0.000668512075,-0.999864876,0.0164194107",
+      "Scale": "0.188259631,0.212974772,0.142010704",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "691814ad-e604-425d-a6d9-ffd9312bf1c0",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "MaterialGroup": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "StartAsleep": false,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "d51b94f0-908b-4ab1-b298-fce879334ba0",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "fdc29d4a-a664-42a6-ae2a-7903bdc0e1a3",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "abeb881d-6314-460a-b916-808c4d0431e5",
+          "__enabled": true,
+          "Flags": 0,
+          "AngularDamping": 0,
+          "EnableImpactDamage": true,
+          "EnhancedCcd": false,
+          "Gravity": true,
+          "GravityScale": 1,
+          "ImpactDamage": 0,
+          "LinearDamping": 0,
+          "Locking": {
+            "X": false,
+            "Y": false,
+            "Z": false,
+            "Pitch": false,
+            "Yaw": false,
+            "Roll": false
+          },
+          "MassCenterOverride": "0,0,0",
+          "MassOverride": 0,
+          "MinImpactDamageSpeed": 500,
+          "MotionEnabled": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OverrideMassCenter": false,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "f0b6ca44-aa57-45d7-baed-8013f1c09282",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "darkdirtlowhilla (8)",
+      "Position": "-705.596863,2860.4082,15.2614212",
+      "Rotation": "-1.42669596E-05,0.000668512075,-0.999864876,0.0164194107",
+      "Scale": "0.188259631,0.212974772,0.142010704",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "5a9b45cd-c8af-4a8c-9ede-642695b6ff69",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "MaterialGroup": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "StartAsleep": false,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "2346f557-9bc7-4e04-9e25-677f570f30c8",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "ec515979-196a-4a5d-858c-a3c9348b500e",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "34eb1aed-6924-4a78-97a7-649d04860737",
           "__enabled": true,
           "Flags": 0,
           "AngularDamping": 0,
@@ -114005,18 +114505,13 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
-      "Sandbox.MovieMaker.MovieRecorderSystem": {
-        "DisableClientRecording": false
-      },
       "Sandbox.SelectionSetsSystem": {
         "Data": {
           "SelectionSets": []
         }
       },
-      "Sandbox.Clutter.ClutterGridSystem": {
-        "Storage": {
-          "$blob": "11871867-eaf7-4fcc-82bf-1090a335cd00"
-        }
+      "Sandbox.MovieMaker.MovieRecorderSystem": {
+        "DisableClientRecording": false
       }
     }
   },
