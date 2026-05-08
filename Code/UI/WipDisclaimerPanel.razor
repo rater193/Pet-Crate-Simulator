@@ -52,6 +52,15 @@
 		transform: rotate(16deg) translateX(@ShimmerXpx);
 	}
 
+	.wip-drift-rect {
+		position: absolute;
+		width: 270px;
+		height: 42px;
+		background-color: rgba(255, 255, 255, 0.105);
+		border-radius: 8px;
+		z-index: 1;
+	}
+
 	.wip-accent {
 		position: absolute;
 		left: 0px;
@@ -133,6 +142,11 @@
 		<div class="wip-board">
 			<div class="wip-accent"></div>
 			<div class="wip-shimmer"></div>
+			<div class="wip-drift-rect" style="@DriftRectOneStyle"></div>
+			<div class="wip-drift-rect" style="@DriftRectTwoStyle"></div>
+			<div class="wip-drift-rect" style="@DriftRectThreeStyle"></div>
+			<div class="wip-drift-rect" style="@DriftRectFourStyle"></div>
+			<div class="wip-drift-rect" style="@DriftRectFiveStyle"></div>
 			<div class="wip-label">@LabelText</div>
 			<div class="wip-title">@TitleText</div>
 			<div class="wip-body">
@@ -167,6 +181,11 @@
 	private string FeedbackScalef => $"{1f + MathF.Sin( TimeValue * 2.2f ) * 0.01f:0.###}";
 	private string ShimmerXpx => $"{(MathF.Sin( TimeValue * 0.65f ) * 0.5f + 0.5f) * 2100f}px";
 	private string AccentOpacity => $"{0.68f + MathF.Sin( TimeValue * 2.1f ) * 0.14f:0.###}";
+	private string DriftRectOneStyle => BuildDriftRectStyle( 86f, 165f, -12f, 0.72f, 0.0f, 30f, 14f, 7f );
+	private string DriftRectTwoStyle => BuildDriftRectStyle( 1246f, 156f, 11f, 0.58f, 1.6f, 24f, 18f, 6f );
+	private string DriftRectThreeStyle => BuildDriftRectStyle( 154f, 704f, 9f, 0.5f, 3.1f, 34f, 12f, 5f );
+	private string DriftRectFourStyle => BuildDriftRectStyle( 1162f, 650f, -10f, 0.46f, 4.4f, 28f, 18f, 6.5f );
+	private string DriftRectFiveStyle => BuildDriftRectStyle( 676f, 792f, 5f, 0.38f, 5.7f, 20f, 10f, 4f );
 
 	protected override void OnUpdate()
 	{
@@ -182,5 +201,15 @@
 	{
 		var hash = HashCode.Combine( LabelText, TitleText, BodyLineOne, BodyLineTwo, BodyLineThree, FeedbackLineOne, FeedbackLineTwo, DiscordHandle );
 		return HashCode.Combine( hash, animationFrame );
+	}
+
+	private string BuildDriftRectStyle( float left, float top, float rotation, float opacity, float phase, float xAmount, float yAmount, float rotationAmount )
+	{
+		var x = MathF.Sin( TimeValue * 0.9f + phase ) * xAmount;
+		var y = MathF.Cos( TimeValue * 0.75f + phase ) * yAmount;
+		var tilt = rotation + MathF.Sin( TimeValue * 0.65f + phase ) * rotationAmount;
+		var pulse = opacity + MathF.Sin( TimeValue * 1.1f + phase ) * 0.045f;
+
+		return $"left: {left + x:0.##}px; top: {top + y:0.##}px; opacity: {pulse:0.###}; transform: rotate({tilt:0.##}deg);";
 	}
 }
