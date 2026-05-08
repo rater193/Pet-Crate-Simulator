@@ -1,0 +1,172 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System.Linq;
+@inherits PanelComponent
+@namespace Sandbox
+@attribute [Description( "A multiplayer chat system with fading messages, scrollable history, and fully configurable appearance." )]
+
+@{
+	var now = Time.Now;
+	var totalLifetime = MessageLifetime + FadeDuration;
+	var visible = IsOpen
+		? SimpleTextChatSystem.History.TakeLast( HistorySize ).Reverse()
+		: SimpleTextChatSystem.History.Where( e => now - e.Timestamp < totalLifetime ).TakeLast( HistorySize ).Reverse();
+	var nameCss = $"color: rgba({(int)(NameColor.r*255)},{(int)(NameColor.g*255)},{(int)(NameColor.b*255)},{NameColor.a.ToString("F2")});";
+	var textCss = $"color: rgba({(int)(TextColor.r*255)},{(int)(TextColor.g*255)},{(int)(TextColor.b*255)},{TextColor.a.ToString("F2")});";
+	var inputCss = $"font-size: {FontSize}px; color: rgba({(int)(InputTextColor.r*255)},{(int)(InputTextColor.g*255)},{(int)(InputTextColor.b*255)},{InputTextColor.a.ToString("F2")});";
+	var logBgCss = $"background-color: rgba({(int)(LogBoxColor.r*255)},{(int)(LogBoxColor.g*255)},{(int)(LogBoxColor.b*255)},{LogBoxColor.a.ToString("F2")});";
+	var inputBgCss = $"background-color: rgba({(int)(InputBoxColor.r*255)},{(int)(InputBoxColor.g*255)},{(int)(InputBoxColor.b*255)},{InputBoxColor.a.ToString("F2")});";
+}
+
+<root>
+	<div class="chat-wrap @(IsOpen ? "open" : "")" style="width: @(BoxWidth)px;">
+		<div class="chat-history" style="height: @(LogHeight)px; @(IsOpen ? logBgCss : "background-color: rgba(0,0,0,0);")">
+			@foreach ( var entry in visible )
+			{
+				var age = now - entry.Timestamp;
+				var t = age < MessageLifetime ? 0f : age > totalLifetime ? 1f : (age - MessageLifetime) / FadeDuration;
+				var opacity = IsOpen ? 1f : 1f - t;
+				<div class="chat-entry" style="opacity: @opacity.ToString("F2"); font-size: @(FontSize)px; line-height: @(LineHeight)px;">
+					<span class="chat-name" style="@nameCss">@entry.PlayerName:</span>
+					<span class="chat-text" style="@textCss">@entry.Message</span>
+				</div>
+			}
+		</div>
+		<div class="chat-input-row @(IsOpen ? "" : "hidden")" style="@(IsOpen ? inputBgCss : "background-color: rgba(0,0,0,0);")">
+			<TextEntry @ref="InputBox" class="chat-input" style="@inputCss" placeholder="Say something..." />
+		</div>
+	</div>
+</root>
+
+@code
+{
+	/// <summary>
+	/// Font size of chat messages in pixels.
+	/// </summary>
+	[Property] public float FontSize { get; set; } = 24f;
+
+	/// <summary>
+	/// Height of each line of chat text in pixels. Also controls spacing between messages.
+	/// </summary>
+	[Property] public float LineHeight { get; set; } = 28f;
+
+	/// <summary>
+	/// Color of the player name displayed before each message.
+	/// </summary>
+	[Property] public Color NameColor { get; set; } = Color.Parse( "#2E6FE9" ) ?? Color.White;
+
+	/// <summary>
+	/// Color of the chat message body text.
+	/// </summary>
+	[Property] public Color TextColor { get; set; } = Color.White;
+
+	/// <summary>
+	/// Color of the text you type in the input box.
+	/// </summary>
+	[Property] public Color InputTextColor { get; set; } = Color.White;
+
+	/// <summary>
+	/// Background color of the chat log box (only visible when chat is open).
+	/// </summary>
+	[Property] public Color LogBoxColor { get; set; } = new Color( 0f, 0f, 0f, 0.45f );
+
+	/// <summary>
+	/// Background color of the text input box.
+	/// </summary>
+	[Property] public Color InputBoxColor { get; set; } = new Color( 0f, 0f, 0f, 0.7f );
+
+	/// <summary>
+	/// Height of the chat log box in pixels. Controls how many lines are visible at once.
+	/// </summary>
+	[Property] public float LogHeight { get; set; } = 240f;
+
+	/// <summary>
+	/// Width of the chat log and input boxes in pixels.
+	/// </summary>
+	[Property] public float BoxWidth { get; set; } = 480f;
+
+	/// <summary>
+	/// Maximum number of chat messages kept in memory. Oldest are removed when exceeded.
+	/// </summary>
+	[Property] public int HistorySize { get; set; } = 100;
+
+	/// <summary>
+	/// How long in seconds a chat message stays fully visible before it starts fading out.
+	/// </summary>
+	[Property] public float MessageLifetime { get; set; } = 10f;
+
+	/// <summary>
+	/// How long in seconds the fade-out transition takes after MessageLifetime expires.
+	/// </summary>
+	[Property] public float FadeDuration { get; set; } = 2f;
+
+	bool IsOpen;
+	bool NeedsFocus;
+	bool WasInputFocused;
+	TextEntry InputBox;
+
+	protected override void OnStart()
+	{
+		SimpleTextChatSystem.History.Clear();
+	}
+
+	protected override void OnUpdate()
+	{
+		if ( IsOpen )
+		{
+			Mouse.Visibility = MouseVisibility.Visible;
+
+			if ( NeedsFocus && InputBox != null )
+			{
+				InputBox.Focus();
+				NeedsFocus = false;
+			}
+
+			if ( Input.EscapePressed )
+			{
+				Input.EscapePressed = false;
+				WasInputFocused = false;
+				Close();
+				return;
+			}
+
+			var isInputFocused = InputBox?.HasFocus ?? false;
+
+			if ( WasInputFocused && !isInputFocused && InputBox != null )
+			{
+				var text = InputBox.Text;
+				InputBox.Text = "";
+				if ( !string.IsNullOrWhiteSpace( text ) )
+					SimpleTextChatSystem.Send( text );
+				Close();
+				return;
+			}
+
+			WasInputFocused = isInputFocused;
+		}
+		else if ( Input.Pressed( "chat" ) )
+		{
+			IsOpen = true;
+			NeedsFocus = true;
+			WasInputFocused = false;
+			SimpleTextChatSystem.IsOpen = true;
+		}
+	}
+
+	void Close()
+	{
+		IsOpen = false;
+		NeedsFocus = false;
+		Mouse.Visibility = MouseVisibility.Hidden;
+		SimpleTextChatSystem.IsOpen = false;
+	}
+
+	protected override int BuildHash()
+	{
+		var now = Time.Now;
+		var total = MessageLifetime + FadeDuration;
+		var hasFading = SimpleTextChatSystem.History.Any( e => { var age = now - e.Timestamp; return age >= MessageLifetime && age < total; } );
+		var h1 = System.HashCode.Combine( IsOpen, SimpleTextChatSystem.History.Count, hasFading ? (int)(now * 15) : 0, FontSize, LineHeight, LogHeight, BoxWidth, NameColor.r );
+		return System.HashCode.Combine( h1, TextColor.r, InputTextColor.r, LogBoxColor.a, InputBoxColor.a, HistorySize );
+	}
+}

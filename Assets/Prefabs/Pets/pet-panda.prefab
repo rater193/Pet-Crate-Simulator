@@ -1,124 +1,116 @@
 {
-    "RootObject":  {
-                       "__guid":  "5d4ea7a3-43e2-4769-84b3-38fffecc523f",
-                       "__version":  2,
-                       "Flags":  0,
-                       "Name":  "pet-panda",
-                       "Position":  "0,0,0",
-                       "Rotation":  "0,0,0,1",
-                       "Scale":  "1,1,1",
-                       "Tags":  "",
-                       "Enabled":  true,
-                       "NetworkMode":  2,
-                       "NetworkFlags":  0,
-                       "NetworkOrphaned":  0,
-                       "NetworkTransmit":  true,
-                       "OwnerTransfer":  1,
-                       "Components":  [
-                                          {
-                                              "__type": "PetComponent",
-                                              "__guid":  "756f0db2-379b-4fbc-b38a-e71e6d3c0e7c",
-                                              "__enabled":  true,
-                                              "Flags":  0,
-                                              "DisplayName":  "Panda",
-                                              "CoinMultiplier":  2,
-                                              "Damage":  1,
-                                              "AttackInterval":  1,
-                                              "AttackRangeMultiplier":  1,
-                                              "MoveSpeedMultiplier":  1,
-                                              "BobHeightMultiplier":  1,
-                                              "AttackLungeMultiplier":  1,
-                                              "OnComponentDestroy":  null,
-                                              "OnComponentDisabled":  null,
-                                              "OnComponentEnabled":  null,
-                                              "OnComponentFixedUpdate":  null,
-                                              "OnComponentStart":  null,
-                                              "OnComponentUpdate":  null
-                                          }
-                                      ],
-                       "Children":  [
-                                        {
-                                            "__guid":  "18bafbc5-025d-4c0d-92f3-91740b936194",
-                                            "__version":  2,
-                                            "Flags":  0,
-                                            "Name":  "AnimalModel",
-                                            "Position":  "0,0,0",
-                                            "Rotation":  "0,0,0,1",
-                                            "Scale":  "0.5,0.5,0.5",
-                                            "Tags":  "",
-                                            "Enabled":  true,
-                                            "NetworkMode":  2,
-                                            "NetworkFlags":  0,
-                                            "NetworkOrphaned":  0,
-                                            "NetworkTransmit":  true,
-                                            "OwnerTransfer":  1,
-                                            "Components":  [
-                                                               {
-                                                                   "__type": "Sandbox.ModelRenderer",
-                                                                   "__guid":  "f1e697e9-7f96-4cc6-b1bf-8d566f7d2431",
-                                                                   "__enabled":  true,
-                                                                   "Flags":  0,
-                                                                   "BodyGroups":  18446744073709551615,
-                                                                   "CreateAttachments":  false,
-                                                                   "LodOverride":  null,
-                                                                   "MaterialGroup":  null,
-                                                                   "MaterialOverride":  null,
-                                                                   "Materials":  null,
-                                                                   "Model":  "3rdparty/kenny.nl/animal-panda.vmdl",
-                                                                   "OnComponentDestroy":  null,
-                                                                   "OnComponentDisabled":  null,
-                                                                   "OnComponentEnabled":  null,
-                                                                   "OnComponentFixedUpdate":  null,
-                                                                   "OnComponentStart":  null,
-                                                                   "OnComponentUpdate":  null,
-                                                                   "RenderOptions":  {
-                                                                                         "GameLayer":  true,
-                                                                                         "OverlayLayer":  false,
-                                                                                         "BloomLayer":  false,
-                                                                                         "AfterUILayer":  false
-                                                                                     },
-                                                                   "RenderType":  "On",
-                                                                   "Tint":  "1,1,1,1"
-                                                               }
-                                                           ],
-                                            "Children":  [
-
-                                                         ]
-                                        }
-                                    ],
-                       "__properties":  {
-                                            "NetworkInterpolation":  true,
-                                            "TimeScale":  1,
-                                            "WantsSystemScene":  true,
-                                            "Metadata":  {
-
-                                                         },
-                                            "NavMesh":  {
-                                                            "Enabled":  false,
-                                                            "IncludeStaticBodies":  true,
-                                                            "IncludeKeyframedBodies":  true,
-                                                            "EditorAutoUpdate":  false,
-                                                            "AgentHeight":  64,
-                                                            "AgentRadius":  16,
-                                                            "AgentStepSize":  18,
-                                                            "AgentMaxSlope":  40,
-                                                            "ExcludedBodies":  "",
-                                                            "IncludedBodies":  "",
-                                                            "DeferGeneration":  false,
-                                                            "CustomBounds":  false
-                                                        }
-                                        },
-                       "__variables":  [
-
-                                       ]
-                   },
-    "ResourceVersion":  2,
-    "ShowInMenu":  false,
-    "MenuPath":  null,
-    "MenuIcon":  null,
-    "DontBreakAsTemplate":  false,
-    "__references":  [
-
-                     ],
-    "__version":  2
+  "RootObject": {
+    "__guid": "5d4ea7a3-43e2-4769-84b3-38fffecc523f",
+    "__version": 2,
+    "Flags": 0,
+    "Name": "pet-panda",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkFlags": 0,
+    "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
+    "OwnerTransfer": 1,
+    "Components": [
+      {
+        "__type": "PetComponent",
+        "__guid": "756f0db2-379b-4fbc-b38a-e71e6d3c0e7c",
+        "__enabled": true,
+        "Flags": 0,
+        "AttackInterval": 1,
+        "AttackLungeMultiplier": 1,
+        "AttackRangeMultiplier": 1,
+        "BobHeightMultiplier": 1,
+        "CoinMultiplier": 1.1,
+        "Damage": 1,
+        "DisplayName": "Panda",
+        "MoveSpeedMultiplier": 1,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "18bafbc5-025d-4c0d-92f3-91740b936194",
+        "__version": 2,
+        "Flags": 0,
+        "Name": "AnimalModel",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "0.5,0.5,0.5",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkFlags": 0,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "f1e697e9-7f96-4cc6-b1bf-8d566f7d2431",
+            "__enabled": true,
+            "Flags": 0,
+            "BodyGroups": 18446744073709551615,
+            "CreateAttachments": false,
+            "LodOverride": null,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Materials": null,
+            "Model": "3rdparty/kenny.nl/animal-panda.vmdl",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ],
+        "Children": []
+      }
+    ],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": false,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": "",
+        "DeferGeneration": false,
+        "CustomBounds": false
+      }
+    },
+    "__variables": []
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [],
+  "__version": 2
 }

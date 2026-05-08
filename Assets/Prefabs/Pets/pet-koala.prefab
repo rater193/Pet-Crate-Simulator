@@ -1,124 +1,116 @@
 {
-    "RootObject":  {
-                       "__guid":  "2b3f41b0-36ef-4422-b29e-07082fc3dd2b",
-                       "__version":  2,
-                       "Flags":  0,
-                       "Name":  "pet-koala",
-                       "Position":  "0,0,0",
-                       "Rotation":  "0,0,0,1",
-                       "Scale":  "1,1,1",
-                       "Tags":  "",
-                       "Enabled":  true,
-                       "NetworkMode":  2,
-                       "NetworkFlags":  0,
-                       "NetworkOrphaned":  0,
-                       "NetworkTransmit":  true,
-                       "OwnerTransfer":  1,
-                       "Components":  [
-                                          {
-                                              "__type": "PetComponent",
-                                              "__guid":  "35a9e9aa-791b-4831-aee8-8df4d536f5ec",
-                                              "__enabled":  true,
-                                              "Flags":  0,
-                                              "DisplayName":  "Koala",
-                                              "CoinMultiplier":  2,
-                                              "Damage":  1,
-                                              "AttackInterval":  1,
-                                              "AttackRangeMultiplier":  1,
-                                              "MoveSpeedMultiplier":  1,
-                                              "BobHeightMultiplier":  1,
-                                              "AttackLungeMultiplier":  1,
-                                              "OnComponentDestroy":  null,
-                                              "OnComponentDisabled":  null,
-                                              "OnComponentEnabled":  null,
-                                              "OnComponentFixedUpdate":  null,
-                                              "OnComponentStart":  null,
-                                              "OnComponentUpdate":  null
-                                          }
-                                      ],
-                       "Children":  [
-                                        {
-                                            "__guid":  "92c088f3-f599-4a73-b8a1-92029c0ab063",
-                                            "__version":  2,
-                                            "Flags":  0,
-                                            "Name":  "AnimalModel",
-                                            "Position":  "0,0,0",
-                                            "Rotation":  "0,0,0,1",
-                                            "Scale":  "0.5,0.5,0.5",
-                                            "Tags":  "",
-                                            "Enabled":  true,
-                                            "NetworkMode":  2,
-                                            "NetworkFlags":  0,
-                                            "NetworkOrphaned":  0,
-                                            "NetworkTransmit":  true,
-                                            "OwnerTransfer":  1,
-                                            "Components":  [
-                                                               {
-                                                                   "__type": "Sandbox.ModelRenderer",
-                                                                   "__guid":  "c4ea4c2f-c5d2-47f9-8ed9-84ecc5fe840f",
-                                                                   "__enabled":  true,
-                                                                   "Flags":  0,
-                                                                   "BodyGroups":  18446744073709551615,
-                                                                   "CreateAttachments":  false,
-                                                                   "LodOverride":  null,
-                                                                   "MaterialGroup":  null,
-                                                                   "MaterialOverride":  null,
-                                                                   "Materials":  null,
-                                                                   "Model":  "3rdparty/kenny.nl/animal-koala.vmdl",
-                                                                   "OnComponentDestroy":  null,
-                                                                   "OnComponentDisabled":  null,
-                                                                   "OnComponentEnabled":  null,
-                                                                   "OnComponentFixedUpdate":  null,
-                                                                   "OnComponentStart":  null,
-                                                                   "OnComponentUpdate":  null,
-                                                                   "RenderOptions":  {
-                                                                                         "GameLayer":  true,
-                                                                                         "OverlayLayer":  false,
-                                                                                         "BloomLayer":  false,
-                                                                                         "AfterUILayer":  false
-                                                                                     },
-                                                                   "RenderType":  "On",
-                                                                   "Tint":  "1,1,1,1"
-                                                               }
-                                                           ],
-                                            "Children":  [
-
-                                                         ]
-                                        }
-                                    ],
-                       "__properties":  {
-                                            "NetworkInterpolation":  true,
-                                            "TimeScale":  1,
-                                            "WantsSystemScene":  true,
-                                            "Metadata":  {
-
-                                                         },
-                                            "NavMesh":  {
-                                                            "Enabled":  false,
-                                                            "IncludeStaticBodies":  true,
-                                                            "IncludeKeyframedBodies":  true,
-                                                            "EditorAutoUpdate":  false,
-                                                            "AgentHeight":  64,
-                                                            "AgentRadius":  16,
-                                                            "AgentStepSize":  18,
-                                                            "AgentMaxSlope":  40,
-                                                            "ExcludedBodies":  "",
-                                                            "IncludedBodies":  "",
-                                                            "DeferGeneration":  false,
-                                                            "CustomBounds":  false
-                                                        }
-                                        },
-                       "__variables":  [
-
-                                       ]
-                   },
-    "ResourceVersion":  2,
-    "ShowInMenu":  false,
-    "MenuPath":  null,
-    "MenuIcon":  null,
-    "DontBreakAsTemplate":  false,
-    "__references":  [
-
-                     ],
-    "__version":  2
+  "RootObject": {
+    "__guid": "2b3f41b0-36ef-4422-b29e-07082fc3dd2b",
+    "__version": 2,
+    "Flags": 0,
+    "Name": "pet-koala",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkFlags": 0,
+    "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
+    "OwnerTransfer": 1,
+    "Components": [
+      {
+        "__type": "PetComponent",
+        "__guid": "35a9e9aa-791b-4831-aee8-8df4d536f5ec",
+        "__enabled": true,
+        "Flags": 0,
+        "AttackInterval": 1,
+        "AttackLungeMultiplier": 1,
+        "AttackRangeMultiplier": 1,
+        "BobHeightMultiplier": 1,
+        "CoinMultiplier": 1.1,
+        "Damage": 1,
+        "DisplayName": "Koala",
+        "MoveSpeedMultiplier": 1,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "92c088f3-f599-4a73-b8a1-92029c0ab063",
+        "__version": 2,
+        "Flags": 0,
+        "Name": "AnimalModel",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "0.5,0.5,0.5",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkFlags": 0,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "c4ea4c2f-c5d2-47f9-8ed9-84ecc5fe840f",
+            "__enabled": true,
+            "Flags": 0,
+            "BodyGroups": 18446744073709551615,
+            "CreateAttachments": false,
+            "LodOverride": null,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Materials": null,
+            "Model": "3rdparty/kenny.nl/animal-koala.vmdl",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ],
+        "Children": []
+      }
+    ],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": false,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": "",
+        "DeferGeneration": false,
+        "CustomBounds": false
+      }
+    },
+    "__variables": []
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [],
+  "__version": 2
 }

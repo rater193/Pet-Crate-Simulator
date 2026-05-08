@@ -1,124 +1,116 @@
 {
-    "RootObject":  {
-                       "__guid":  "1767d33c-fe61-446e-b1d0-a96177067790",
-                       "__version":  2,
-                       "Flags":  0,
-                       "Name":  "pet-tiger",
-                       "Position":  "0,0,0",
-                       "Rotation":  "0,0,0,1",
-                       "Scale":  "1,1,1",
-                       "Tags":  "",
-                       "Enabled":  true,
-                       "NetworkMode":  2,
-                       "NetworkFlags":  0,
-                       "NetworkOrphaned":  0,
-                       "NetworkTransmit":  true,
-                       "OwnerTransfer":  1,
-                       "Components":  [
-                                          {
-                                              "__type": "PetComponent",
-                                              "__guid":  "d1ecb25f-b16d-4ae7-aee5-0b925bf697bf",
-                                              "__enabled":  true,
-                                              "Flags":  0,
-                                              "DisplayName":  "Tiger",
-                                              "CoinMultiplier":  2,
-                                              "Damage":  1,
-                                              "AttackInterval":  1,
-                                              "AttackRangeMultiplier":  1,
-                                              "MoveSpeedMultiplier":  1,
-                                              "BobHeightMultiplier":  1,
-                                              "AttackLungeMultiplier":  1,
-                                              "OnComponentDestroy":  null,
-                                              "OnComponentDisabled":  null,
-                                              "OnComponentEnabled":  null,
-                                              "OnComponentFixedUpdate":  null,
-                                              "OnComponentStart":  null,
-                                              "OnComponentUpdate":  null
-                                          }
-                                      ],
-                       "Children":  [
-                                        {
-                                            "__guid":  "21d4be25-b495-4425-9538-5b9e6bcf3c23",
-                                            "__version":  2,
-                                            "Flags":  0,
-                                            "Name":  "AnimalModel",
-                                            "Position":  "0,0,0",
-                                            "Rotation":  "0,0,0,1",
-                                            "Scale":  "0.5,0.5,0.5",
-                                            "Tags":  "",
-                                            "Enabled":  true,
-                                            "NetworkMode":  2,
-                                            "NetworkFlags":  0,
-                                            "NetworkOrphaned":  0,
-                                            "NetworkTransmit":  true,
-                                            "OwnerTransfer":  1,
-                                            "Components":  [
-                                                               {
-                                                                   "__type": "Sandbox.ModelRenderer",
-                                                                   "__guid":  "731a604e-4fb5-4b48-959e-4a672edd169e",
-                                                                   "__enabled":  true,
-                                                                   "Flags":  0,
-                                                                   "BodyGroups":  18446744073709551615,
-                                                                   "CreateAttachments":  false,
-                                                                   "LodOverride":  null,
-                                                                   "MaterialGroup":  null,
-                                                                   "MaterialOverride":  null,
-                                                                   "Materials":  null,
-                                                                   "Model":  "3rdparty/kenny.nl/animal-tiger.vmdl",
-                                                                   "OnComponentDestroy":  null,
-                                                                   "OnComponentDisabled":  null,
-                                                                   "OnComponentEnabled":  null,
-                                                                   "OnComponentFixedUpdate":  null,
-                                                                   "OnComponentStart":  null,
-                                                                   "OnComponentUpdate":  null,
-                                                                   "RenderOptions":  {
-                                                                                         "GameLayer":  true,
-                                                                                         "OverlayLayer":  false,
-                                                                                         "BloomLayer":  false,
-                                                                                         "AfterUILayer":  false
-                                                                                     },
-                                                                   "RenderType":  "On",
-                                                                   "Tint":  "1,1,1,1"
-                                                               }
-                                                           ],
-                                            "Children":  [
-
-                                                         ]
-                                        }
-                                    ],
-                       "__properties":  {
-                                            "NetworkInterpolation":  true,
-                                            "TimeScale":  1,
-                                            "WantsSystemScene":  true,
-                                            "Metadata":  {
-
-                                                         },
-                                            "NavMesh":  {
-                                                            "Enabled":  false,
-                                                            "IncludeStaticBodies":  true,
-                                                            "IncludeKeyframedBodies":  true,
-                                                            "EditorAutoUpdate":  false,
-                                                            "AgentHeight":  64,
-                                                            "AgentRadius":  16,
-                                                            "AgentStepSize":  18,
-                                                            "AgentMaxSlope":  40,
-                                                            "ExcludedBodies":  "",
-                                                            "IncludedBodies":  "",
-                                                            "DeferGeneration":  false,
-                                                            "CustomBounds":  false
-                                                        }
-                                        },
-                       "__variables":  [
-
-                                       ]
-                   },
-    "ResourceVersion":  2,
-    "ShowInMenu":  false,
-    "MenuPath":  null,
-    "MenuIcon":  null,
-    "DontBreakAsTemplate":  false,
-    "__references":  [
-
-                     ],
-    "__version":  2
+  "RootObject": {
+    "__guid": "1767d33c-fe61-446e-b1d0-a96177067790",
+    "__version": 2,
+    "Flags": 0,
+    "Name": "pet-tiger",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkFlags": 0,
+    "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
+    "OwnerTransfer": 1,
+    "Components": [
+      {
+        "__type": "PetComponent",
+        "__guid": "d1ecb25f-b16d-4ae7-aee5-0b925bf697bf",
+        "__enabled": true,
+        "Flags": 0,
+        "AttackInterval": 1,
+        "AttackLungeMultiplier": 1,
+        "AttackRangeMultiplier": 1,
+        "BobHeightMultiplier": 1,
+        "CoinMultiplier": 1.1,
+        "Damage": 1,
+        "DisplayName": "Tiger",
+        "MoveSpeedMultiplier": 1,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "21d4be25-b495-4425-9538-5b9e6bcf3c23",
+        "__version": 2,
+        "Flags": 0,
+        "Name": "AnimalModel",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "0.5,0.5,0.5",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkFlags": 0,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "731a604e-4fb5-4b48-959e-4a672edd169e",
+            "__enabled": true,
+            "Flags": 0,
+            "BodyGroups": 18446744073709551615,
+            "CreateAttachments": false,
+            "LodOverride": null,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Materials": null,
+            "Model": "3rdparty/kenny.nl/animal-tiger.vmdl",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ],
+        "Children": []
+      }
+    ],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": false,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": "",
+        "DeferGeneration": false,
+        "CustomBounds": false
+      }
+    },
+    "__variables": []
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [],
+  "__version": 2
 }

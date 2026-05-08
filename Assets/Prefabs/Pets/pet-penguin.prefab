@@ -1,124 +1,116 @@
 {
-    "RootObject":  {
-                       "__guid":  "202b0ae8-c249-4a21-b2bb-a7b4bbc3394d",
-                       "__version":  2,
-                       "Flags":  0,
-                       "Name":  "pet-penguin",
-                       "Position":  "0,0,0",
-                       "Rotation":  "0,0,0,1",
-                       "Scale":  "1,1,1",
-                       "Tags":  "",
-                       "Enabled":  true,
-                       "NetworkMode":  2,
-                       "NetworkFlags":  0,
-                       "NetworkOrphaned":  0,
-                       "NetworkTransmit":  true,
-                       "OwnerTransfer":  1,
-                       "Components":  [
-                                          {
-                                              "__type": "PetComponent",
-                                              "__guid":  "22834647-35c7-4fc8-9e76-a99deeb9e20d",
-                                              "__enabled":  true,
-                                              "Flags":  0,
-                                              "DisplayName":  "Penguin",
-                                              "CoinMultiplier":  2,
-                                              "Damage":  1,
-                                              "AttackInterval":  1,
-                                              "AttackRangeMultiplier":  1,
-                                              "MoveSpeedMultiplier":  1,
-                                              "BobHeightMultiplier":  1,
-                                              "AttackLungeMultiplier":  1,
-                                              "OnComponentDestroy":  null,
-                                              "OnComponentDisabled":  null,
-                                              "OnComponentEnabled":  null,
-                                              "OnComponentFixedUpdate":  null,
-                                              "OnComponentStart":  null,
-                                              "OnComponentUpdate":  null
-                                          }
-                                      ],
-                       "Children":  [
-                                        {
-                                            "__guid":  "bc67a1a2-b21d-4011-a19c-45cebf9edcfd",
-                                            "__version":  2,
-                                            "Flags":  0,
-                                            "Name":  "AnimalModel",
-                                            "Position":  "0,0,0",
-                                            "Rotation":  "0,0,0,1",
-                                            "Scale":  "0.5,0.5,0.5",
-                                            "Tags":  "",
-                                            "Enabled":  true,
-                                            "NetworkMode":  2,
-                                            "NetworkFlags":  0,
-                                            "NetworkOrphaned":  0,
-                                            "NetworkTransmit":  true,
-                                            "OwnerTransfer":  1,
-                                            "Components":  [
-                                                               {
-                                                                   "__type": "Sandbox.ModelRenderer",
-                                                                   "__guid":  "d27183b9-1343-47e4-8190-9e3a1a2d0519",
-                                                                   "__enabled":  true,
-                                                                   "Flags":  0,
-                                                                   "BodyGroups":  18446744073709551615,
-                                                                   "CreateAttachments":  false,
-                                                                   "LodOverride":  null,
-                                                                   "MaterialGroup":  null,
-                                                                   "MaterialOverride":  null,
-                                                                   "Materials":  null,
-                                                                   "Model":  "3rdparty/kenny.nl/animal-penguin.vmdl",
-                                                                   "OnComponentDestroy":  null,
-                                                                   "OnComponentDisabled":  null,
-                                                                   "OnComponentEnabled":  null,
-                                                                   "OnComponentFixedUpdate":  null,
-                                                                   "OnComponentStart":  null,
-                                                                   "OnComponentUpdate":  null,
-                                                                   "RenderOptions":  {
-                                                                                         "GameLayer":  true,
-                                                                                         "OverlayLayer":  false,
-                                                                                         "BloomLayer":  false,
-                                                                                         "AfterUILayer":  false
-                                                                                     },
-                                                                   "RenderType":  "On",
-                                                                   "Tint":  "1,1,1,1"
-                                                               }
-                                                           ],
-                                            "Children":  [
-
-                                                         ]
-                                        }
-                                    ],
-                       "__properties":  {
-                                            "NetworkInterpolation":  true,
-                                            "TimeScale":  1,
-                                            "WantsSystemScene":  true,
-                                            "Metadata":  {
-
-                                                         },
-                                            "NavMesh":  {
-                                                            "Enabled":  false,
-                                                            "IncludeStaticBodies":  true,
-                                                            "IncludeKeyframedBodies":  true,
-                                                            "EditorAutoUpdate":  false,
-                                                            "AgentHeight":  64,
-                                                            "AgentRadius":  16,
-                                                            "AgentStepSize":  18,
-                                                            "AgentMaxSlope":  40,
-                                                            "ExcludedBodies":  "",
-                                                            "IncludedBodies":  "",
-                                                            "DeferGeneration":  false,
-                                                            "CustomBounds":  false
-                                                        }
-                                        },
-                       "__variables":  [
-
-                                       ]
-                   },
-    "ResourceVersion":  2,
-    "ShowInMenu":  false,
-    "MenuPath":  null,
-    "MenuIcon":  null,
-    "DontBreakAsTemplate":  false,
-    "__references":  [
-
-                     ],
-    "__version":  2
+  "RootObject": {
+    "__guid": "202b0ae8-c249-4a21-b2bb-a7b4bbc3394d",
+    "__version": 2,
+    "Flags": 0,
+    "Name": "pet-penguin",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkFlags": 0,
+    "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
+    "OwnerTransfer": 1,
+    "Components": [
+      {
+        "__type": "PetComponent",
+        "__guid": "22834647-35c7-4fc8-9e76-a99deeb9e20d",
+        "__enabled": true,
+        "Flags": 0,
+        "AttackInterval": 1,
+        "AttackLungeMultiplier": 1,
+        "AttackRangeMultiplier": 1,
+        "BobHeightMultiplier": 1,
+        "CoinMultiplier": 1.1,
+        "Damage": 1,
+        "DisplayName": "Penguin",
+        "MoveSpeedMultiplier": 1,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "bc67a1a2-b21d-4011-a19c-45cebf9edcfd",
+        "__version": 2,
+        "Flags": 0,
+        "Name": "AnimalModel",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "0.5,0.5,0.5",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkFlags": 0,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "d27183b9-1343-47e4-8190-9e3a1a2d0519",
+            "__enabled": true,
+            "Flags": 0,
+            "BodyGroups": 18446744073709551615,
+            "CreateAttachments": false,
+            "LodOverride": null,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Materials": null,
+            "Model": "3rdparty/kenny.nl/animal-penguin.vmdl",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ],
+        "Children": []
+      }
+    ],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": false,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": "",
+        "DeferGeneration": false,
+        "CustomBounds": false
+      }
+    },
+    "__variables": []
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [],
+  "__version": 2
 }

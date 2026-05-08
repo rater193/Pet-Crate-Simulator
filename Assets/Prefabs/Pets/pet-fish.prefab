@@ -1,124 +1,116 @@
 {
-    "RootObject":  {
-                       "__guid":  "29e5e27f-71bf-43aa-8095-a80bef2c6021",
-                       "__version":  2,
-                       "Flags":  0,
-                       "Name":  "pet-fish",
-                       "Position":  "0,0,0",
-                       "Rotation":  "0,0,0,1",
-                       "Scale":  "1,1,1",
-                       "Tags":  "",
-                       "Enabled":  true,
-                       "NetworkMode":  2,
-                       "NetworkFlags":  0,
-                       "NetworkOrphaned":  0,
-                       "NetworkTransmit":  true,
-                       "OwnerTransfer":  1,
-                       "Components":  [
-                                          {
-                                              "__type": "PetComponent",
-                                              "__guid":  "0281c8da-e2c7-43ac-adc2-18d11bf5bbe3",
-                                              "__enabled":  true,
-                                              "Flags":  0,
-                                              "DisplayName":  "Fish",
-                                              "CoinMultiplier":  2,
-                                              "Damage":  1,
-                                              "AttackInterval":  1,
-                                              "AttackRangeMultiplier":  1,
-                                              "MoveSpeedMultiplier":  1,
-                                              "BobHeightMultiplier":  1,
-                                              "AttackLungeMultiplier":  1,
-                                              "OnComponentDestroy":  null,
-                                              "OnComponentDisabled":  null,
-                                              "OnComponentEnabled":  null,
-                                              "OnComponentFixedUpdate":  null,
-                                              "OnComponentStart":  null,
-                                              "OnComponentUpdate":  null
-                                          }
-                                      ],
-                       "Children":  [
-                                        {
-                                            "__guid":  "cc436d73-c17c-488b-a4c5-ed93f438ee58",
-                                            "__version":  2,
-                                            "Flags":  0,
-                                            "Name":  "AnimalModel",
-                                            "Position":  "0,0,0",
-                                            "Rotation":  "0,0,0,1",
-                                            "Scale":  "0.5,0.5,0.5",
-                                            "Tags":  "",
-                                            "Enabled":  true,
-                                            "NetworkMode":  2,
-                                            "NetworkFlags":  0,
-                                            "NetworkOrphaned":  0,
-                                            "NetworkTransmit":  true,
-                                            "OwnerTransfer":  1,
-                                            "Components":  [
-                                                               {
-                                                                   "__type": "Sandbox.ModelRenderer",
-                                                                   "__guid":  "6308bbfb-ddd1-4dc4-a15f-dff67b2cd868",
-                                                                   "__enabled":  true,
-                                                                   "Flags":  0,
-                                                                   "BodyGroups":  18446744073709551615,
-                                                                   "CreateAttachments":  false,
-                                                                   "LodOverride":  null,
-                                                                   "MaterialGroup":  null,
-                                                                   "MaterialOverride":  null,
-                                                                   "Materials":  null,
-                                                                   "Model":  "3rdparty/kenny.nl/animal-fish.vmdl",
-                                                                   "OnComponentDestroy":  null,
-                                                                   "OnComponentDisabled":  null,
-                                                                   "OnComponentEnabled":  null,
-                                                                   "OnComponentFixedUpdate":  null,
-                                                                   "OnComponentStart":  null,
-                                                                   "OnComponentUpdate":  null,
-                                                                   "RenderOptions":  {
-                                                                                         "GameLayer":  true,
-                                                                                         "OverlayLayer":  false,
-                                                                                         "BloomLayer":  false,
-                                                                                         "AfterUILayer":  false
-                                                                                     },
-                                                                   "RenderType":  "On",
-                                                                   "Tint":  "1,1,1,1"
-                                                               }
-                                                           ],
-                                            "Children":  [
-
-                                                         ]
-                                        }
-                                    ],
-                       "__properties":  {
-                                            "NetworkInterpolation":  true,
-                                            "TimeScale":  1,
-                                            "WantsSystemScene":  true,
-                                            "Metadata":  {
-
-                                                         },
-                                            "NavMesh":  {
-                                                            "Enabled":  false,
-                                                            "IncludeStaticBodies":  true,
-                                                            "IncludeKeyframedBodies":  true,
-                                                            "EditorAutoUpdate":  false,
-                                                            "AgentHeight":  64,
-                                                            "AgentRadius":  16,
-                                                            "AgentStepSize":  18,
-                                                            "AgentMaxSlope":  40,
-                                                            "ExcludedBodies":  "",
-                                                            "IncludedBodies":  "",
-                                                            "DeferGeneration":  false,
-                                                            "CustomBounds":  false
-                                                        }
-                                        },
-                       "__variables":  [
-
-                                       ]
-                   },
-    "ResourceVersion":  2,
-    "ShowInMenu":  false,
-    "MenuPath":  null,
-    "MenuIcon":  null,
-    "DontBreakAsTemplate":  false,
-    "__references":  [
-
-                     ],
-    "__version":  2
+  "RootObject": {
+    "__guid": "29e5e27f-71bf-43aa-8095-a80bef2c6021",
+    "__version": 2,
+    "Flags": 0,
+    "Name": "pet-fish",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkFlags": 0,
+    "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
+    "OwnerTransfer": 1,
+    "Components": [
+      {
+        "__type": "PetComponent",
+        "__guid": "0281c8da-e2c7-43ac-adc2-18d11bf5bbe3",
+        "__enabled": true,
+        "Flags": 0,
+        "AttackInterval": 1,
+        "AttackLungeMultiplier": 1,
+        "AttackRangeMultiplier": 1,
+        "BobHeightMultiplier": 1,
+        "CoinMultiplier": 1.1,
+        "Damage": 1,
+        "DisplayName": "Fish",
+        "MoveSpeedMultiplier": 1,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "cc436d73-c17c-488b-a4c5-ed93f438ee58",
+        "__version": 2,
+        "Flags": 0,
+        "Name": "AnimalModel",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "0.5,0.5,0.5",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkFlags": 0,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "6308bbfb-ddd1-4dc4-a15f-dff67b2cd868",
+            "__enabled": true,
+            "Flags": 0,
+            "BodyGroups": 18446744073709551615,
+            "CreateAttachments": false,
+            "LodOverride": null,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Materials": null,
+            "Model": "3rdparty/kenny.nl/animal-fish.vmdl",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ],
+        "Children": []
+      }
+    ],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": false,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": "",
+        "DeferGeneration": false,
+        "CustomBounds": false
+      }
+    },
+    "__variables": []
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [],
+  "__version": 2
 }
