@@ -1,0 +1,163 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System;
+@inherits PanelComponent
+@namespace Sandbox
+
+<style>
+	.wip-root {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		align-items: center;
+		justify-content: center;
+		font-family: Poppins;
+	}
+
+	.wip-board {
+		width: 1560px;
+		height: 860px;
+		position: relative;
+		overflow: hidden;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		background-color: #142233;
+		border: 16px solid #f6d86b;
+		border-radius: 34px;
+		box-shadow: 0px 18px 0px rgba(8, 17, 29, 0.56), 0px 0px 38px rgba(99, 196, 255, 0.2);
+		transform: translateY(@BoardBobpx) scale(@BoardScalef);
+	}
+
+	.wip-board::before {
+		content: "";
+		position: absolute;
+		left: 34px;
+		top: 34px;
+		right: 34px;
+		bottom: 34px;
+		border: 5px solid rgba(255, 255, 255, 0.16);
+		border-radius: 22px;
+	}
+
+	.wip-shimmer {
+		position: absolute;
+		top: -160px;
+		left: -520px;
+		width: 340px;
+		height: 1180px;
+		background-color: rgba(255, 255, 255, 0.1);
+		transform: rotate(16deg) translateX(@ShimmerXpx);
+	}
+
+	.wip-accent {
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		top: 0px;
+		height: 26px;
+		background-color: #71d6ff;
+		opacity: @AccentOpacity;
+	}
+
+	.wip-label {
+		color: #71d6ff;
+		font-size: 48px;
+		font-weight: 900;
+		text-align: center;
+		text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.42);
+		z-index: 2;
+	}
+
+	.wip-title {
+		margin-top: 24px;
+		color: #fff7c9;
+		font-size: 132px;
+		font-weight: 900;
+		text-align: center;
+		text-shadow: 0px 7px 0px rgba(5, 12, 22, 0.82), 0px 0px 22px rgba(255, 226, 120, 0.24);
+		letter-spacing: 0px;
+		z-index: 2;
+	}
+
+	.wip-body {
+		margin-top: 34px;
+		width: 1220px;
+		color: #f2fbff;
+		font-size: 46px;
+		font-weight: 700;
+		line-height: 1.18;
+		text-align: center;
+		text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.42);
+		z-index: 2;
+	}
+
+	.wip-feedback {
+		margin-top: 48px;
+		padding: 24px 42px;
+		background-color: rgba(6, 14, 25, 0.46);
+		border: 4px solid rgba(113, 214, 255, 0.5);
+		border-radius: 18px;
+		color: #ffffff;
+		font-size: 40px;
+		font-weight: 800;
+		text-align: center;
+		text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.46);
+		z-index: 2;
+		transform: scale(@FeedbackScalef);
+	}
+
+	.wip-handle {
+		color: #ffe078;
+		font-weight: 900;
+	}
+</style>
+
+<root>
+	<div class="wip-root">
+		<div class="wip-board">
+			<div class="wip-accent"></div>
+			<div class="wip-shimmer"></div>
+			<div class="wip-label">@LabelText</div>
+			<div class="wip-title">@TitleText</div>
+			<div class="wip-body">@BodyText</div>
+			<div class="wip-feedback">
+				@FeedbackText <span class="wip-handle">@DiscordHandle</span>
+			</div>
+		</div>
+	</div>
+</root>
+
+@code
+{
+	[Property] public string LabelText { get; set; } = "Playtest Notice";
+	[Property] public string TitleText { get; set; } = "Work In Progress";
+	[Property] public string BodyText { get; set; } = "This is a playtest build and is being actively developed. Some systems may change, break, or feel unfinished while the game improves.";
+	[Property] public string FeedbackText { get; set; } = "Feedback is appreciated. Please send notes to Discord DMs:";
+	[Property] public string DiscordHandle { get; set; } = "rater193";
+
+	private int animationFrame;
+	private float TimeValue => Time.Now;
+	private string BoardBobpx => $"{MathF.Sin( TimeValue * 1.35f ) * 5f}px";
+	private string BoardScalef => $"{1f + MathF.Sin( TimeValue * 1.35f + 0.6f ) * 0.006f:0.###}";
+	private string FeedbackScalef => $"{1f + MathF.Sin( TimeValue * 2.2f ) * 0.01f:0.###}";
+	private string ShimmerXpx => $"{(MathF.Sin( TimeValue * 0.65f ) * 0.5f + 0.5f) * 2100f}px";
+	private string AccentOpacity => $"{0.68f + MathF.Sin( TimeValue * 2.1f ) * 0.14f:0.###}";
+
+	protected override void OnUpdate()
+	{
+		var currentFrame = (int)(Time.Now * 24f);
+		if ( currentFrame == animationFrame )
+			return;
+
+		animationFrame = currentFrame;
+		StateHasChanged();
+	}
+
+	protected override int BuildHash()
+	{
+		return HashCode.Combine( LabelText, TitleText, BodyText, FeedbackText, DiscordHandle, animationFrame );
+	}
+}

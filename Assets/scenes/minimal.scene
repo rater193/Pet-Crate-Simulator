@@ -27090,6 +27090,23 @@
           },
           "RenderScale": 1,
           "VerticalAlign": "Center"
+        },
+        {
+          "__type": "Sandbox.WipDisclaimerPanel",
+          "__guid": "bb0db45b-fad9-41c7-9b34-e69f6571d184",
+          "__enabled": true,
+          "BodyText": "This is a playtest build and is being actively developed. Some systems may change, break, or feel unfinished while the game improves.",
+          "DiscordHandle": "rater193",
+          "FeedbackText": "Feedback is appreciated. Please send notes to Discord DMs:",
+          "Flags": 0,
+          "LabelText": "Playtest Notice",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "TitleText": "Work In Progress"
         }
       ],
       "Children": []
