@@ -105587,6 +105587,536 @@
           }
         },
         {
+          "__guid": "ff678d92-e180-4272-aca2-2668e593d200",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantamaturea.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Name",
+                "Value": "pinevariantamaturea (2)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Position",
+                "Value": "-2101.58887,9558.40137,311.93866"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "89ee0e75-1747-55e2-8310-2400518a4ec3": "ff678d92-e180-4272-aca2-2668e593d200",
+            "8fe998b4-5bb0-53b3-87b8-5703b2b8b8d9": "22b95836-9165-4d27-85f2-0a2cbe0b8b58",
+            "aa38a904-2e24-55e0-8259-7735372a5b12": "cb0e565e-4547-4490-9e2a-a6a51c339fa5",
+            "792fdb4a-df35-57ae-abed-974f35bf9bd8": "728125ac-a552-4a49-9b80-980fe5a74d6a"
+          }
+        },
+        {
+          "__guid": "3dc7ee72-491d-4661-925e-0e9ab5e2b935",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantamaturea.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Name",
+                "Value": "pinevariantamaturea (2)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Position",
+                "Value": "3191.20581,8328.61035,322.549927"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "89ee0e75-1747-55e2-8310-2400518a4ec3": "3dc7ee72-491d-4661-925e-0e9ab5e2b935",
+            "8fe998b4-5bb0-53b3-87b8-5703b2b8b8d9": "c493cd88-fc34-46e2-a27e-52c9932c9ef3",
+            "aa38a904-2e24-55e0-8259-7735372a5b12": "0219bf03-f8eb-442e-bf01-703f0dbf7259",
+            "792fdb4a-df35-57ae-abed-974f35bf9bd8": "83a2c44a-3abe-4002-857d-429f276037a2"
+          }
+        },
+        {
+          "__guid": "4c5f08b3-3d6c-4bab-980a-35dfde7b2803",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantamaturea.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Name",
+                "Value": "pinevariantamaturea (2)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Position",
+                "Value": "2514.88281,7510.06641,321.490173"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Rotation",
+                "Value": "-2.71246099E-05,0.000718033989,-0.537299156,0.843391359"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "89ee0e75-1747-55e2-8310-2400518a4ec3": "4c5f08b3-3d6c-4bab-980a-35dfde7b2803",
+            "8fe998b4-5bb0-53b3-87b8-5703b2b8b8d9": "bfc1ac21-274f-4c46-9821-4da3763bb287",
+            "aa38a904-2e24-55e0-8259-7735372a5b12": "47d81c4f-0392-47d4-a406-68caf99e219e",
+            "792fdb4a-df35-57ae-abed-974f35bf9bd8": "bef3ae88-4b00-4c05-91d2-4e5d12383d85"
+          }
+        },
+        {
+          "__guid": "edd9f0ca-3a67-43bd-9575-2c2d48fd358a",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantamaturea.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Name",
+                "Value": "pinevariantamaturea (2)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Position",
+                "Value": "2187.19507,9371.37109,323.994049"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Rotation",
+                "Value": "-2.71246099E-05,0.000718033989,-0.537299156,0.843391359"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "89ee0e75-1747-55e2-8310-2400518a4ec3": "edd9f0ca-3a67-43bd-9575-2c2d48fd358a",
+            "8fe998b4-5bb0-53b3-87b8-5703b2b8b8d9": "9843bb23-a404-46d8-92f0-40f03cce417b",
+            "aa38a904-2e24-55e0-8259-7735372a5b12": "2ac36c2c-ec0d-47fe-b221-8e4802c7ba28",
+            "792fdb4a-df35-57ae-abed-974f35bf9bd8": "bee0be44-24f7-4853-b168-8371b5cae0ad"
+          }
+        },
+        {
+          "__guid": "472877c3-155d-4e07-92fb-b1c1776d2c32",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantamaturea.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Name",
+                "Value": "pinevariantamaturea (2)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Position",
+                "Value": "1340.65479,8739.28809,323.192078"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Rotation",
+                "Value": "-2.71246099E-05,0.000718033989,-0.537299156,0.843391359"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "89ee0e75-1747-55e2-8310-2400518a4ec3": "472877c3-155d-4e07-92fb-b1c1776d2c32",
+            "8fe998b4-5bb0-53b3-87b8-5703b2b8b8d9": "c87eee46-aa53-4904-8c80-0093f891bbd3",
+            "aa38a904-2e24-55e0-8259-7735372a5b12": "38d090a1-77ea-47bf-8b18-b6f3b5f179e5",
+            "792fdb4a-df35-57ae-abed-974f35bf9bd8": "36c73c41-487f-418f-b006-06b21f3ed0b4"
+          }
+        },
+        {
+          "__guid": "3b043da4-a877-4c87-ae21-b275a706b766",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantamaturea.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Name",
+                "Value": "pinevariantamaturea (2)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Position",
+                "Value": "1022.62769,8440.36426,322.808624"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Rotation",
+                "Value": "-2.71246099E-05,0.000718033989,-0.537299156,0.843391359"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "89ee0e75-1747-55e2-8310-2400518a4ec3": "3b043da4-a877-4c87-ae21-b275a706b766",
+            "8fe998b4-5bb0-53b3-87b8-5703b2b8b8d9": "e048dbce-78c9-46ee-8b47-5f523a0f8ae6",
+            "aa38a904-2e24-55e0-8259-7735372a5b12": "8bc941d5-414e-4a40-82ce-9af526b615a7",
+            "792fdb4a-df35-57ae-abed-974f35bf9bd8": "0b11647d-47f5-4a69-ac84-861df2212398"
+          }
+        },
+        {
+          "__guid": "c5e70fb7-4d5f-4353-b120-293875344091",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantamaturea.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Name",
+                "Value": "pinevariantamaturea (2)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Position",
+                "Value": "2853.45435,8003.20215,322.131927"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Rotation",
+                "Value": "-2.71246099E-05,0.000718033989,-0.537299156,0.843391359"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "89ee0e75-1747-55e2-8310-2400518a4ec3": "c5e70fb7-4d5f-4353-b120-293875344091",
+            "8fe998b4-5bb0-53b3-87b8-5703b2b8b8d9": "03bb9eb2-2016-49ee-90bb-25d4d6b921aa",
+            "aa38a904-2e24-55e0-8259-7735372a5b12": "cfb5d78e-e3f4-40c0-8d02-a965b097bf15",
+            "792fdb4a-df35-57ae-abed-974f35bf9bd8": "8ab2d8ef-fb59-43c6-858c-ebbcbdaf2f97"
+          }
+        },
+        {
+          "__guid": "946a71cf-72b3-40b1-8d82-17fda6739e94",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantamaturea.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Name",
+                "Value": "pinevariantamaturea (2)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Position",
+                "Value": "647.334229,8059.09473,322.318054"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Rotation",
+                "Value": "-1.51805725E-05,0.000401855883,-0.300705612,0.953716755"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "89ee0e75-1747-55e2-8310-2400518a4ec3": "946a71cf-72b3-40b1-8d82-17fda6739e94",
+            "8fe998b4-5bb0-53b3-87b8-5703b2b8b8d9": "3af5a8fe-bb42-4f71-b7e6-41cf27556d03",
+            "aa38a904-2e24-55e0-8259-7735372a5b12": "d1db9d70-1a5e-48f8-b1aa-b35ef4eec41d",
+            "792fdb4a-df35-57ae-abed-974f35bf9bd8": "3cba2573-c8b6-47d6-8004-f37bccfc681c"
+          }
+        },
+        {
+          "__guid": "acb27d62-a9fa-4453-9ca1-78d1e88080f2",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantamaturea.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Name",
+                "Value": "pinevariantamaturea (2)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Position",
+                "Value": "-1304.01953,8958.69531,323.618774"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Rotation",
+                "Value": "-1.51805725E-05,0.000401855883,-0.300705612,0.953716755"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "89ee0e75-1747-55e2-8310-2400518a4ec3": "acb27d62-a9fa-4453-9ca1-78d1e88080f2",
+            "8fe998b4-5bb0-53b3-87b8-5703b2b8b8d9": "27ece277-4b01-4ae1-aff7-31994745b76a",
+            "aa38a904-2e24-55e0-8259-7735372a5b12": "046029a4-fe2f-448e-aa1c-d9ff679bfe3b",
+            "792fdb4a-df35-57ae-abed-974f35bf9bd8": "02c90650-5222-41c9-8544-b49d26323e89"
+          }
+        },
+        {
+          "__guid": "9a2ed3e4-f97a-4f6f-a7c8-a9b0aa776302",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantamaturea.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Name",
+                "Value": "pinevariantamaturea (2)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Position",
+                "Value": "-1930.45996,7584.27344,321.813629"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Rotation",
+                "Value": "-1.51805725E-05,0.000401855883,-0.300705612,0.953716755"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "89ee0e75-1747-55e2-8310-2400518a4ec3": "9a2ed3e4-f97a-4f6f-a7c8-a9b0aa776302",
+            "8fe998b4-5bb0-53b3-87b8-5703b2b8b8d9": "4473848e-e169-406d-b19d-43f9bd56d42e",
+            "aa38a904-2e24-55e0-8259-7735372a5b12": "e9ce7e54-1edf-46d8-ae77-56ff9ebae30f",
+            "792fdb4a-df35-57ae-abed-974f35bf9bd8": "04af176e-387d-4a51-b994-aa801fb59c1a"
+          }
+        },
+        {
+          "__guid": "14df7f76-aa7e-453c-98bb-993fd71f8dc4",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantamaturea.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Name",
+                "Value": "pinevariantamaturea (2)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Position",
+                "Value": "-2484.198,7729.37207,322.035492"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Rotation",
+                "Value": "-1.51805725E-05,0.000401855883,-0.300705612,0.953716755"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "89ee0e75-1747-55e2-8310-2400518a4ec3": "14df7f76-aa7e-453c-98bb-993fd71f8dc4",
+            "8fe998b4-5bb0-53b3-87b8-5703b2b8b8d9": "9562745a-4775-4aa9-8208-861ae3ace84f",
+            "aa38a904-2e24-55e0-8259-7735372a5b12": "16de1cf3-006e-431f-b13e-3e6be46f7e05",
+            "792fdb4a-df35-57ae-abed-974f35bf9bd8": "774dbf7a-0414-42f7-b14a-b8810bc8e584"
+          }
+        },
+        {
+          "__guid": "af99ab73-5736-4709-accb-9dd8c40356b7",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantamaturea.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Name",
+                "Value": "pinevariantamaturea (2)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Position",
+                "Value": "-3130.17505,8312.87305,322.8479"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Rotation",
+                "Value": "-1.51805725E-05,0.000401855883,-0.300705612,0.953716755"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "89ee0e75-1747-55e2-8310-2400518a4ec3": "af99ab73-5736-4709-accb-9dd8c40356b7",
+            "8fe998b4-5bb0-53b3-87b8-5703b2b8b8d9": "c740d8b4-99e2-4bd2-a33a-51d8048a8ee9",
+            "aa38a904-2e24-55e0-8259-7735372a5b12": "233ca84b-c32b-4510-97da-8bfb7bc47477",
+            "792fdb4a-df35-57ae-abed-974f35bf9bd8": "cab02faf-02a6-4286-8e45-39e9cb4cc2ce"
+          }
+        },
+        {
+          "__guid": "0d411a7b-f0b9-4892-97ce-232e6d16ab4a",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantamaturea.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Name",
+                "Value": "pinevariantamaturea (2)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Position",
+                "Value": "-2838.50098,8014.53223,322.434448"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
+                },
+                "Property": "Rotation",
+                "Value": "-1.51805725E-05,0.000401855883,-0.300705612,0.953716755"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "89ee0e75-1747-55e2-8310-2400518a4ec3": "0d411a7b-f0b9-4892-97ce-232e6d16ab4a",
+            "8fe998b4-5bb0-53b3-87b8-5703b2b8b8d9": "8d17ef34-59f2-4b65-addf-db9704c97315",
+            "aa38a904-2e24-55e0-8259-7735372a5b12": "87342243-37c9-4605-9eb4-6953f7ebbdbb",
+            "792fdb4a-df35-57ae-abed-974f35bf9bd8": "e90d7dd5-ee37-423b-9599-7644ad8a8e13"
+          }
+        },
+        {
           "__guid": "3bac57ef-9114-4a66-bba0-f332a4c7f08c",
           "__version": 2,
           "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantamaturea.prefab",
@@ -107554,6 +108084,448 @@
             "45e4b6e0-e804-55b2-b0a5-edcacb0b342f": "3d68284e-b7ba-41bd-a25e-b4d1b69021c9",
             "80629398-9b45-5855-ba92-fe6e6d4c96f8": "8bd09de7-db83-4412-b149-5619af6919ab",
             "e6f797c9-45ab-50cc-a160-4acfa7b62eeb": "0b8e0dd0-b222-41f7-a76f-bbfe07ea40fb"
+          }
+        },
+        {
+          "__guid": "44b3219c-c240-4516-a657-94ca9254c953",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantaadulta.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Name",
+                "Value": "pinevariantaadulta (19)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Position",
+                "Value": "1934.19653,7445.625,319.999023"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "5a672f30-e609-5089-8bba-c11efa871077": "44b3219c-c240-4516-a657-94ca9254c953",
+            "45e4b6e0-e804-55b2-b0a5-edcacb0b342f": "eb948fb9-3fa9-45f7-89cb-344c6c9783f6",
+            "80629398-9b45-5855-ba92-fe6e6d4c96f8": "f2f02c6f-0b30-43bc-908b-b909d1c48609",
+            "e6f797c9-45ab-50cc-a160-4acfa7b62eeb": "6e8f884d-f274-44c1-b476-f27e2c7e95fa"
+          }
+        },
+        {
+          "__guid": "619ec86b-7ba0-42b1-8432-6990bb2c24a3",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantaadulta.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Name",
+                "Value": "pinevariantaadulta (19)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Position",
+                "Value": "2670.19653,7765.625,319.999023"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "5a672f30-e609-5089-8bba-c11efa871077": "619ec86b-7ba0-42b1-8432-6990bb2c24a3",
+            "45e4b6e0-e804-55b2-b0a5-edcacb0b342f": "bf59f610-5e7d-49e5-babf-5612ca6bf5ad",
+            "80629398-9b45-5855-ba92-fe6e6d4c96f8": "0cb96e03-fe67-429e-8297-76927c30c6eb",
+            "e6f797c9-45ab-50cc-a160-4acfa7b62eeb": "c93508b3-d6ef-4b0c-ad4d-ad8045c1b275"
+          }
+        },
+        {
+          "__guid": "25a5ad45-4a07-48f7-98d5-0118c1920df7",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantaadulta.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Name",
+                "Value": "pinevariantaadulta (19)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Position",
+                "Value": "2926.19653,8277.625,319.999023"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "5a672f30-e609-5089-8bba-c11efa871077": "25a5ad45-4a07-48f7-98d5-0118c1920df7",
+            "45e4b6e0-e804-55b2-b0a5-edcacb0b342f": "42f7ad9e-08d9-4670-a2cb-7c6a0b88290a",
+            "80629398-9b45-5855-ba92-fe6e6d4c96f8": "0ea80b4d-bd23-4ab7-b65a-013e9d71ecf9",
+            "e6f797c9-45ab-50cc-a160-4acfa7b62eeb": "1c1e7778-cc58-483f-a294-75e42454d703"
+          }
+        },
+        {
+          "__guid": "a56d25b9-55f2-45be-82be-2f9a38510e81",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantaadulta.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Name",
+                "Value": "pinevariantaadulta (19)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Position",
+                "Value": "1646.19653,8821.625,319.999023"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "5a672f30-e609-5089-8bba-c11efa871077": "a56d25b9-55f2-45be-82be-2f9a38510e81",
+            "45e4b6e0-e804-55b2-b0a5-edcacb0b342f": "4ff20cdb-ac58-48a5-8dc2-1224af37b354",
+            "80629398-9b45-5855-ba92-fe6e6d4c96f8": "b3007136-728c-40a6-b12b-6f76cd1dbc14",
+            "e6f797c9-45ab-50cc-a160-4acfa7b62eeb": "ce849434-42e5-49d1-81dc-5609728ecc77"
+          }
+        },
+        {
+          "__guid": "d01e1ffa-198b-46a6-9f4f-5b473fc64b83",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantaadulta.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Name",
+                "Value": "pinevariantaadulta (19)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Position",
+                "Value": "1806.19653,9077.625,319.999023"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "5a672f30-e609-5089-8bba-c11efa871077": "d01e1ffa-198b-46a6-9f4f-5b473fc64b83",
+            "45e4b6e0-e804-55b2-b0a5-edcacb0b342f": "9bd1ba28-039f-4ee6-bf78-bba146ff1dee",
+            "80629398-9b45-5855-ba92-fe6e6d4c96f8": "8a4995fe-d4ab-4ca4-9da1-e2f8aae1c318",
+            "e6f797c9-45ab-50cc-a160-4acfa7b62eeb": "caab8a7a-97eb-4b5f-9fee-46653b55ad2d"
+          }
+        },
+        {
+          "__guid": "5c21d621-bf5c-4d9f-8dc3-76ad660ef442",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantaadulta.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Name",
+                "Value": "pinevariantaadulta (19)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Position",
+                "Value": "2126.19653,9109.625,319.999023"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "5a672f30-e609-5089-8bba-c11efa871077": "5c21d621-bf5c-4d9f-8dc3-76ad660ef442",
+            "45e4b6e0-e804-55b2-b0a5-edcacb0b342f": "0b6dbe69-6339-42be-b4ae-7a03c8b743b8",
+            "80629398-9b45-5855-ba92-fe6e6d4c96f8": "891bab42-12ff-454e-a2d6-1a510eb109e9",
+            "e6f797c9-45ab-50cc-a160-4acfa7b62eeb": "94c208a9-5c35-4025-88da-ae1c1d6b2dbf"
+          }
+        },
+        {
+          "__guid": "2eae9a14-4039-4be4-b0f0-345fd99a5296",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantaadulta.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Name",
+                "Value": "pinevariantaadulta (19)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Position",
+                "Value": "974.196533,8149.625,319.999023"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "5a672f30-e609-5089-8bba-c11efa871077": "2eae9a14-4039-4be4-b0f0-345fd99a5296",
+            "45e4b6e0-e804-55b2-b0a5-edcacb0b342f": "2ca51a59-1b39-4a2a-a3e9-12acc9316fbc",
+            "80629398-9b45-5855-ba92-fe6e6d4c96f8": "489acc4d-92aa-48c4-b857-90aa13ade5c2",
+            "e6f797c9-45ab-50cc-a160-4acfa7b62eeb": "35d619c7-0763-4bce-97c1-d76246fbea45"
+          }
+        },
+        {
+          "__guid": "515a247b-c757-4ea7-b0d5-ab5a3bee7132",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantaadulta.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Name",
+                "Value": "pinevariantaadulta (19)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Position",
+                "Value": "462.196533,7893.625,319.999023"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "5a672f30-e609-5089-8bba-c11efa871077": "515a247b-c757-4ea7-b0d5-ab5a3bee7132",
+            "45e4b6e0-e804-55b2-b0a5-edcacb0b342f": "25c3ce8b-8467-40b1-b1e8-c23265606143",
+            "80629398-9b45-5855-ba92-fe6e6d4c96f8": "9785ef6a-dbe4-4726-b9dd-938fe140473c",
+            "e6f797c9-45ab-50cc-a160-4acfa7b62eeb": "6a253731-a123-49b0-abce-c5ec7d65ddc1"
+          }
+        },
+        {
+          "__guid": "3a7f13ac-8cea-4353-a6fb-70cfb78237fe",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantaadulta.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Name",
+                "Value": "pinevariantaadulta (19)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Position",
+                "Value": "-1777.80347,9301.625,319.999023"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "5a672f30-e609-5089-8bba-c11efa871077": "3a7f13ac-8cea-4353-a6fb-70cfb78237fe",
+            "45e4b6e0-e804-55b2-b0a5-edcacb0b342f": "7c7a0b63-9694-439b-99e1-ab90d6be8a57",
+            "80629398-9b45-5855-ba92-fe6e6d4c96f8": "11e72c19-d542-417b-8ab5-fa0a7e1a56fe",
+            "e6f797c9-45ab-50cc-a160-4acfa7b62eeb": "0cc21360-4aaa-4d2e-92c1-04b4b419fae4"
+          }
+        },
+        {
+          "__guid": "aa4076d1-e957-40fd-9157-5e3ae2a7f0ba",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantaadulta.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Name",
+                "Value": "pinevariantaadulta (19)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Position",
+                "Value": "-1041.80347,8533.625,319.999054"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "5a672f30-e609-5089-8bba-c11efa871077": "aa4076d1-e957-40fd-9157-5e3ae2a7f0ba",
+            "45e4b6e0-e804-55b2-b0a5-edcacb0b342f": "685a4e9c-89a5-42db-a0b8-15eec28b2bf2",
+            "80629398-9b45-5855-ba92-fe6e6d4c96f8": "c423134d-881b-46ef-8075-04df942e16e0",
+            "e6f797c9-45ab-50cc-a160-4acfa7b62eeb": "1aac005e-6234-4894-a7c0-0f5bce82e83d"
+          }
+        },
+        {
+          "__guid": "26e455b7-4da7-403e-8642-477e62a3bd88",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantaadulta.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Name",
+                "Value": "pinevariantaadulta (19)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Position",
+                "Value": "-2193.80347,7893.625,319.999054"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "5a672f30-e609-5089-8bba-c11efa871077": "26e455b7-4da7-403e-8642-477e62a3bd88",
+            "45e4b6e0-e804-55b2-b0a5-edcacb0b342f": "3b22839a-981d-43ec-a721-06e7605835e2",
+            "80629398-9b45-5855-ba92-fe6e6d4c96f8": "a883c7e1-2770-44a6-b116-8caa5d48588a",
+            "e6f797c9-45ab-50cc-a160-4acfa7b62eeb": "6bec8e36-69dd-499f-a55f-b49a23bac5f1"
+          }
+        },
+        {
+          "__guid": "4be48642-0caa-4acc-a76c-51e677fb054b",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantaadulta.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Name",
+                "Value": "pinevariantaadulta (19)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Position",
+                "Value": "-3185.80347,8661.625,319.999054"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "5a672f30-e609-5089-8bba-c11efa871077": "4be48642-0caa-4acc-a76c-51e677fb054b",
+            "45e4b6e0-e804-55b2-b0a5-edcacb0b342f": "dd1b360b-c9c5-4fdc-a7f7-1ba1881f000b",
+            "80629398-9b45-5855-ba92-fe6e6d4c96f8": "67f2754f-f481-4071-b929-b14d88fd6b64",
+            "e6f797c9-45ab-50cc-a160-4acfa7b62eeb": "0e3ad74c-138c-4f69-ba3c-b1b7296bd24b"
+          }
+        },
+        {
+          "__guid": "2fbba305-a31d-41ce-a616-7eb902f75e09",
+          "__version": 2,
+          "__Prefab": "3rdparty/lowpolynature/prefabs/env/trees/pines/pinesvarianta/pinevariantaadulta.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Name",
+                "Value": "pinevariantaadulta (19)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5a672f30-e609-5089-8bba-c11efa871077"
+                },
+                "Property": "Position",
+                "Value": "-2801.80347,8341.625,319.999023"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "5a672f30-e609-5089-8bba-c11efa871077": "2fbba305-a31d-41ce-a616-7eb902f75e09",
+            "45e4b6e0-e804-55b2-b0a5-edcacb0b342f": "34290708-96b7-41b2-af05-67de3864a3a1",
+            "80629398-9b45-5855-ba92-fe6e6d4c96f8": "933d11c7-ca98-464a-80a0-085a21068fde",
+            "e6f797c9-45ab-50cc-a160-4acfa7b62eeb": "5a5ff262-e649-4206-83d7-428bb1b403c7"
           }
         },
         {
@@ -110856,7 +111828,7 @@
               "IdValue": "f390930c-eac9-4577-919d-c99bf37f847f"
             },
             "Property": "Position",
-            "Value": "-676.709229,6119.30371,1495.50317"
+            "Value": "-675.587585,6068.07715,1495.55139"
           },
           {
             "Target": {
@@ -113475,6 +114447,1644 @@
       "Children": []
     },
     {
+      "__guid": "49ba7360-6177-4e6e-b1b9-5934af230ba9",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "darkdirtlowhilla (9)",
+      "Position": "-1067.28638,9630.74512,328.867737",
+      "Rotation": "0.000242647759,0.000623084372,-0.91747117,0.397801608",
+      "Scale": "0.188259631,0.212974772,0.142010704",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "7bba2bdc-98d7-45d6-a809-550411a790fe",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "MaterialGroup": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "StartAsleep": false,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "ff38a13d-66ed-4a9d-9ff4-7f6065304253",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "deef29d5-7f9b-4f84-9019-e17d89b1bfe2",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "25879e5e-894b-4058-a4d8-549b658e36ec",
+          "__enabled": true,
+          "Flags": 0,
+          "AngularDamping": 0,
+          "EnableImpactDamage": true,
+          "EnhancedCcd": false,
+          "Gravity": true,
+          "GravityScale": 1,
+          "ImpactDamage": 0,
+          "LinearDamping": 0,
+          "Locking": {
+            "X": false,
+            "Y": false,
+            "Z": false,
+            "Pitch": false,
+            "Yaw": false,
+            "Roll": false
+          },
+          "MassCenterOverride": "0,0,0",
+          "MassOverride": 0,
+          "MinImpactDamageSpeed": 500,
+          "MotionEnabled": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OverrideMassCenter": false,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "0c76f645-9663-4a4a-99a3-6e252da4fe4d",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "darkdirtlowhilla (10)",
+      "Position": "4225.5083,8400.9541,339.479004",
+      "Rotation": "0.000242647759,0.000623084372,-0.91747117,0.397801608",
+      "Scale": "0.188259631,0.212974772,0.142010704",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "84649c80-8986-4f72-a05a-77868c0368be",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "MaterialGroup": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "StartAsleep": false,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "9d8bc994-f717-4d9f-bb18-7512922d410d",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "8bcc48e7-a342-499c-8494-bd6f958dc978",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "350486c7-5955-43ce-b058-ca5c8933565b",
+          "__enabled": true,
+          "Flags": 0,
+          "AngularDamping": 0,
+          "EnableImpactDamage": true,
+          "EnhancedCcd": false,
+          "Gravity": true,
+          "GravityScale": 1,
+          "ImpactDamage": 0,
+          "LinearDamping": 0,
+          "Locking": {
+            "X": false,
+            "Y": false,
+            "Z": false,
+            "Pitch": false,
+            "Yaw": false,
+            "Roll": false
+          },
+          "MassCenterOverride": "0,0,0",
+          "MassOverride": 0,
+          "MinImpactDamageSpeed": 500,
+          "MotionEnabled": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OverrideMassCenter": false,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "e38c94f0-9ecd-4958-96e2-1245a9492d4d",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "darkdirtlowhilla (11)",
+      "Position": "3551.69604,7590.36914,338.429749",
+      "Rotation": "-0.000130136003,0.000655878626,-0.987525821,-0.15745452",
+      "Scale": "0.188259631,0.212974772,0.142010704",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "eccaa448-4f23-4c6e-986f-1dff2248caa1",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "MaterialGroup": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "StartAsleep": false,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "5f841221-5d96-43d1-afb4-4d39a6b6b2ce",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "1f051deb-6527-4116-9fa0-e97ac0da037a",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "a8e7fac0-0210-4e1b-8b8a-32420dec41d7",
+          "__enabled": true,
+          "Flags": 0,
+          "AngularDamping": 0,
+          "EnableImpactDamage": true,
+          "EnhancedCcd": false,
+          "Gravity": true,
+          "GravityScale": 1,
+          "ImpactDamage": 0,
+          "LinearDamping": 0,
+          "Locking": {
+            "X": false,
+            "Y": false,
+            "Z": false,
+            "Pitch": false,
+            "Yaw": false,
+            "Roll": false
+          },
+          "MassCenterOverride": "0,0,0",
+          "MassOverride": 0,
+          "MinImpactDamageSpeed": 500,
+          "MotionEnabled": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OverrideMassCenter": false,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "6600d1ac-7e87-4136-b8c3-e2c9eaf33a18",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "darkdirtlowhilla (12)",
+      "Position": "3224.0083,9451.67383,340.933624",
+      "Rotation": "-0.000130136003,0.000655878626,-0.987525821,-0.15745452",
+      "Scale": "0.188259631,0.212974772,0.142010704",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "f7ef4702-028c-455c-8933-2dd100af01a8",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "MaterialGroup": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "StartAsleep": false,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "85368fbb-10fa-4d4d-a605-a50750318c04",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "30027e37-513e-41fc-94a6-c3cb1699d9a5",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "35d66961-d63e-4c41-8350-fa740ea4b304",
+          "__enabled": true,
+          "Flags": 0,
+          "AngularDamping": 0,
+          "EnableImpactDamage": true,
+          "EnhancedCcd": false,
+          "Gravity": true,
+          "GravityScale": 1,
+          "ImpactDamage": 0,
+          "LinearDamping": 0,
+          "Locking": {
+            "X": false,
+            "Y": false,
+            "Z": false,
+            "Pitch": false,
+            "Yaw": false,
+            "Roll": false
+          },
+          "MassCenterOverride": "0,0,0",
+          "MassOverride": 0,
+          "MinImpactDamageSpeed": 500,
+          "MotionEnabled": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OverrideMassCenter": false,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "89f9f95b-5d91-4043-8f33-bed1528ccafd",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "darkdirtlowhilla (13)",
+      "Position": "2377.46802,8819.59082,340.131653",
+      "Rotation": "0.000102035883,0.000660833495,-0.981823385,0.189794898",
+      "Scale": "0.188259631,0.212974772,0.142010704",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "808b3ff1-7de0-4fa0-bc1a-58e6a7741b4e",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "MaterialGroup": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "StartAsleep": false,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "f188e559-aa7c-481a-9925-5ef2a82a9d9e",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "e7647610-cd59-4cfc-90ac-45c2ded87bfc",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "068e10ee-b36b-418c-8f7f-3a2dd14c6e9d",
+          "__enabled": true,
+          "Flags": 0,
+          "AngularDamping": 0,
+          "EnableImpactDamage": true,
+          "EnhancedCcd": false,
+          "Gravity": true,
+          "GravityScale": 1,
+          "ImpactDamage": 0,
+          "LinearDamping": 0,
+          "Locking": {
+            "X": false,
+            "Y": false,
+            "Z": false,
+            "Pitch": false,
+            "Yaw": false,
+            "Roll": false
+          },
+          "MassCenterOverride": "0,0,0",
+          "MassOverride": 0,
+          "MinImpactDamageSpeed": 500,
+          "MotionEnabled": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OverrideMassCenter": false,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "4d5b9f2a-0aa2-49c6-961d-ec74e99045d0",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "darkdirtlowhilla (20)",
+      "Position": "2059.44092,8520.66699,339.748199",
+      "Rotation": "0.000102035883,0.000660833495,-0.981823385,0.189794898",
+      "Scale": "0.188259631,0.212974772,0.142010704",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "ef7881e6-daf7-44cb-b889-be692d04f4cf",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "MaterialGroup": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "StartAsleep": false,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "07e941bc-b781-4f09-bbfa-285ceeacb28d",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "c07dfc1d-7b2c-4f94-863f-8c585ee2977f",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "285f7108-1efd-457e-9c2e-61ff88c3dbf4",
+          "__enabled": true,
+          "Flags": 0,
+          "AngularDamping": 0,
+          "EnableImpactDamage": true,
+          "EnhancedCcd": false,
+          "Gravity": true,
+          "GravityScale": 1,
+          "ImpactDamage": 0,
+          "LinearDamping": 0,
+          "Locking": {
+            "X": false,
+            "Y": false,
+            "Z": false,
+            "Pitch": false,
+            "Yaw": false,
+            "Roll": false
+          },
+          "MassCenterOverride": "0,0,0",
+          "MassOverride": 0,
+          "MinImpactDamageSpeed": 500,
+          "MotionEnabled": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OverrideMassCenter": false,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "69e95a47-ac51-424e-a311-adf5d8379c39",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "darkdirtlowhilla (21)",
+      "Position": "3890.26758,8083.50537,339.071503",
+      "Rotation": "0.000102035883,0.000660833495,-0.981823385,0.189794898",
+      "Scale": "0.188259631,0.212974772,0.142010704",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "dfef6854-afa6-4d6c-a3f8-5e2fa4989563",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "MaterialGroup": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "StartAsleep": false,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "8105c55e-81ac-4814-b5c1-bd7454637523",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "b59a53bf-82f5-4c46-bf54-b68e753856b6",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "2f2b465c-0e5c-401d-a8dc-957980a6d359",
+          "__enabled": true,
+          "Flags": 0,
+          "AngularDamping": 0,
+          "EnableImpactDamage": true,
+          "EnhancedCcd": false,
+          "Gravity": true,
+          "GravityScale": 1,
+          "ImpactDamage": 0,
+          "LinearDamping": 0,
+          "Locking": {
+            "X": false,
+            "Y": false,
+            "Z": false,
+            "Pitch": false,
+            "Yaw": false,
+            "Roll": false
+          },
+          "MassCenterOverride": "0,0,0",
+          "MassOverride": 0,
+          "MinImpactDamageSpeed": 500,
+          "MotionEnabled": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OverrideMassCenter": false,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "e4d18794-6a51-4c1f-a693-f81dd28f599a",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "darkdirtlowhilla (14)",
+      "Position": "1681.84082,8136.10498,339.253357",
+      "Rotation": "4.40521108E-05,0.000667211716,-0.994628906,0.103501037",
+      "Scale": "0.188259631,0.212974772,0.142010704",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "e5ceb74b-a423-4e2c-ba3f-84ae85ce54d3",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "MaterialGroup": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "StartAsleep": false,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "ef019616-a398-4e66-b6ef-e3c6ad9bf63f",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "7a6f111a-3e02-4fa1-8227-b0da07375559",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "6b5a9138-1419-459c-ae09-e0f7e6e1ba2d",
+          "__enabled": true,
+          "Flags": 0,
+          "AngularDamping": 0,
+          "EnableImpactDamage": true,
+          "EnhancedCcd": false,
+          "Gravity": true,
+          "GravityScale": 1,
+          "ImpactDamage": 0,
+          "LinearDamping": 0,
+          "Locking": {
+            "X": false,
+            "Y": false,
+            "Z": false,
+            "Pitch": false,
+            "Yaw": false,
+            "Roll": false
+          },
+          "MassCenterOverride": "0,0,0",
+          "MassOverride": 0,
+          "MinImpactDamageSpeed": 500,
+          "MotionEnabled": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OverrideMassCenter": false,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "df3f8873-9657-4f8f-b98b-0554c5129856",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "darkdirtlowhilla (15)",
+      "Position": "-269.512939,9035.70508,340.554077",
+      "Rotation": "4.40521108E-05,0.000667211716,-0.994628906,0.103501037",
+      "Scale": "0.188259631,0.212974772,0.142010704",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "f052d297-bd7d-4b7b-9b87-38639e0b7ce8",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "MaterialGroup": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "StartAsleep": false,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "747f1360-5d68-460b-a6f1-88322915ec68",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "dcaf519e-261a-498b-a456-58c17fdcab00",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "ddef7ec2-a5e6-4d45-b1f1-d79df39a884b",
+          "__enabled": true,
+          "Flags": 0,
+          "AngularDamping": 0,
+          "EnableImpactDamage": true,
+          "EnhancedCcd": false,
+          "Gravity": true,
+          "GravityScale": 1,
+          "ImpactDamage": 0,
+          "LinearDamping": 0,
+          "Locking": {
+            "X": false,
+            "Y": false,
+            "Z": false,
+            "Pitch": false,
+            "Yaw": false,
+            "Roll": false
+          },
+          "MassCenterOverride": "0,0,0",
+          "MassOverride": 0,
+          "MinImpactDamageSpeed": 500,
+          "MotionEnabled": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OverrideMassCenter": false,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "90cbed4b-76f6-4dc9-b5ba-f20916d4fba7",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "darkdirtlowhilla (16)",
+      "Position": "-895.953308,7661.2832,338.748932",
+      "Rotation": "4.40521108E-05,0.000667211716,-0.994628906,0.103501037",
+      "Scale": "0.188259631,0.212974772,0.142010704",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "656a58f6-49c2-455a-a0f4-354ce6bd9324",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "MaterialGroup": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "StartAsleep": false,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "ea39f203-9997-45dc-bfe3-ecb115eaa538",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "df6cefae-1693-45ad-a2ee-e11259182435",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "d01745e2-97b4-4710-8a45-5257e5a7a9b8",
+          "__enabled": true,
+          "Flags": 0,
+          "AngularDamping": 0,
+          "EnableImpactDamage": true,
+          "EnhancedCcd": false,
+          "Gravity": true,
+          "GravityScale": 1,
+          "ImpactDamage": 0,
+          "LinearDamping": 0,
+          "Locking": {
+            "X": false,
+            "Y": false,
+            "Z": false,
+            "Pitch": false,
+            "Yaw": false,
+            "Roll": false
+          },
+          "MassCenterOverride": "0,0,0",
+          "MassOverride": 0,
+          "MinImpactDamageSpeed": 500,
+          "MotionEnabled": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OverrideMassCenter": false,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "7590fc1c-e4fb-45c2-b5b4-80e166e0112b",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "darkdirtlowhilla (17)",
+      "Position": "-1449.69141,7806.38232,338.970795",
+      "Rotation": "4.40521108E-05,0.000667211716,-0.994628906,0.103501037",
+      "Scale": "0.188259631,0.212974772,0.142010704",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "e5a14ffa-8563-482f-9838-416af37cca84",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "MaterialGroup": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "StartAsleep": false,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "a38ec463-1a9f-48d8-9389-005a32c421f9",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "99448632-0897-411a-af79-0c8781b2a07e",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "26cc2d7d-7ae3-41a4-ab61-f88451ebab91",
+          "__enabled": true,
+          "Flags": 0,
+          "AngularDamping": 0,
+          "EnableImpactDamage": true,
+          "EnhancedCcd": false,
+          "Gravity": true,
+          "GravityScale": 1,
+          "ImpactDamage": 0,
+          "LinearDamping": 0,
+          "Locking": {
+            "X": false,
+            "Y": false,
+            "Z": false,
+            "Pitch": false,
+            "Yaw": false,
+            "Roll": false
+          },
+          "MassCenterOverride": "0,0,0",
+          "MassOverride": 0,
+          "MinImpactDamageSpeed": 500,
+          "MotionEnabled": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OverrideMassCenter": false,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "beec55af-964d-476c-a0c6-5536eb093e66",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "darkdirtlowhilla (18)",
+      "Position": "-2095.66846,8389.88281,339.783203",
+      "Rotation": "4.40521108E-05,0.000667211716,-0.994628906,0.103501037",
+      "Scale": "0.188259631,0.212974772,0.142010704",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "d44ae076-ac9f-47b4-97e6-0a59cf688081",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "MaterialGroup": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "StartAsleep": false,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "503d25d2-c8af-412d-af8a-d500ff133e96",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "20801368-3c9c-4463-9322-55ff3d79a4ad",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "33cbe1e6-6237-4bbb-b1fc-f848b5d3cb6d",
+          "__enabled": true,
+          "Flags": 0,
+          "AngularDamping": 0,
+          "EnableImpactDamage": true,
+          "EnhancedCcd": false,
+          "Gravity": true,
+          "GravityScale": 1,
+          "ImpactDamage": 0,
+          "LinearDamping": 0,
+          "Locking": {
+            "X": false,
+            "Y": false,
+            "Z": false,
+            "Pitch": false,
+            "Yaw": false,
+            "Roll": false
+          },
+          "MassCenterOverride": "0,0,0",
+          "MassOverride": 0,
+          "MinImpactDamageSpeed": 500,
+          "MotionEnabled": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OverrideMassCenter": false,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "8594f2a1-1db7-42cd-8cdd-2b42cc9049d2",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "darkdirtlowhilla (19)",
+      "Position": "-1803.99426,8091.54248,339.369751",
+      "Rotation": "4.40521108E-05,0.000667211716,-0.994628906,0.103501037",
+      "Scale": "0.188259631,0.212974772,0.142010704",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "33d6d9eb-6e45-4f34-87be-3441eba537aa",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "MaterialGroup": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "StartAsleep": false,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "4c2b5f5f-ef2a-4262-8172-9fbfa6192178",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "db589e81-9a10-4300-9182-2049ee8991a7",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "3rdparty/lowpolynature/models/env/ground/lowhills/darkdirtlowhilla.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "384748b1-30bb-4277-865c-83609d8030f1",
+          "__enabled": true,
+          "Flags": 0,
+          "AngularDamping": 0,
+          "EnableImpactDamage": true,
+          "EnhancedCcd": false,
+          "Gravity": true,
+          "GravityScale": 1,
+          "ImpactDamage": 0,
+          "LinearDamping": 0,
+          "Locking": {
+            "X": false,
+            "Y": false,
+            "Z": false,
+            "Pitch": false,
+            "Yaw": false,
+            "Roll": false
+          },
+          "MassCenterOverride": "0,0,0",
+          "MassOverride": 0,
+          "MinImpactDamageSpeed": 500,
+          "MotionEnabled": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OverrideMassCenter": false,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ],
+      "Children": []
+    },
+    {
       "__guid": "8f224191-8693-48e0-8f5f-91792362af66",
       "__version": 2,
       "Flags": 0,
@@ -114505,13 +117115,18 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
+      "Sandbox.MovieMaker.MovieRecorderSystem": {
+        "DisableClientRecording": false
+      },
+      "Sandbox.Clutter.ClutterGridSystem": {
+        "Storage": {
+          "$blob": "5b96e7a9-7a1e-43c7-9e3f-c3a581fb6442"
+        }
+      },
       "Sandbox.SelectionSetsSystem": {
         "Data": {
           "SelectionSets": []
         }
-      },
-      "Sandbox.MovieMaker.MovieRecorderSystem": {
-        "DisableClientRecording": false
       }
     }
   },
