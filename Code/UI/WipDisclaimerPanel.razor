@@ -17,13 +17,13 @@
 	}
 
 	.wip-board {
-		width: 1560px;
-		height: 860px;
+		width: 1600px;
+		height: 980px;
 		position: relative;
 		overflow: hidden;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
+		justify-content: flex-start;
 		background-color: #142233;
 		border: 16px solid #f6d86b;
 		border-radius: 34px;
@@ -63,8 +63,9 @@
 	}
 
 	.wip-label {
+		margin-top: 74px;
 		color: #71d6ff;
-		font-size: 48px;
+		font-size: 44px;
 		font-weight: 900;
 		text-align: center;
 		text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.42);
@@ -72,9 +73,9 @@
 	}
 
 	.wip-title {
-		margin-top: 24px;
+		margin-top: 18px;
 		color: #fff7c9;
-		font-size: 132px;
+		font-size: 116px;
 		font-weight: 900;
 		text-align: center;
 		text-shadow: 0px 7px 0px rgba(5, 12, 22, 0.82), 0px 0px 22px rgba(255, 226, 120, 0.24);
@@ -83,25 +84,35 @@
 	}
 
 	.wip-body {
-		margin-top: 34px;
-		width: 1220px;
-		color: #f2fbff;
-		font-size: 46px;
-		font-weight: 700;
-		line-height: 1.18;
-		text-align: center;
-		text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.42);
+		margin-top: 42px;
+		width: 1320px;
+		flex-direction: column;
+		align-items: center;
+		gap: 12px;
 		z-index: 2;
 	}
 
+	.wip-body-line {
+		color: #f2fbff;
+		font-size: 37px;
+		font-weight: 700;
+		text-align: center;
+		text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.42);
+		white-space: nowrap;
+	}
+
 	.wip-feedback {
-		margin-top: 48px;
-		padding: 24px 42px;
+		margin-top: 46px;
+		width: 1180px;
+		padding: 24px 38px 28px;
+		flex-direction: column;
+		align-items: center;
+		gap: 8px;
 		background-color: rgba(6, 14, 25, 0.46);
 		border: 4px solid rgba(113, 214, 255, 0.5);
 		border-radius: 18px;
 		color: #ffffff;
-		font-size: 40px;
+		font-size: 34px;
 		font-weight: 800;
 		text-align: center;
 		text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.46);
@@ -110,7 +121,9 @@
 	}
 
 	.wip-handle {
+		margin-top: 2px;
 		color: #ffe078;
+		font-size: 48px;
 		font-weight: 900;
 	}
 </style>
@@ -122,9 +135,15 @@
 			<div class="wip-shimmer"></div>
 			<div class="wip-label">@LabelText</div>
 			<div class="wip-title">@TitleText</div>
-			<div class="wip-body">@BodyText</div>
+			<div class="wip-body">
+				<div class="wip-body-line">@BodyLineOne</div>
+				<div class="wip-body-line">@BodyLineTwo</div>
+				<div class="wip-body-line">@BodyLineThree</div>
+			</div>
 			<div class="wip-feedback">
-				@FeedbackText <span class="wip-handle">@DiscordHandle</span>
+				<div>@FeedbackLineOne</div>
+				<div>@FeedbackLineTwo</div>
+				<div class="wip-handle">@DiscordHandle</div>
 			</div>
 		</div>
 	</div>
@@ -134,8 +153,11 @@
 {
 	[Property] public string LabelText { get; set; } = "Playtest Notice";
 	[Property] public string TitleText { get; set; } = "Work In Progress";
-	[Property] public string BodyText { get; set; } = "This is a playtest build and is being actively developed. Some systems may change, break, or feel unfinished while the game improves.";
-	[Property] public string FeedbackText { get; set; } = "Feedback is appreciated. Please send notes to Discord DMs:";
+	[Property] public string BodyLineOne { get; set; } = "This is a playtest build and is being actively developed.";
+	[Property] public string BodyLineTwo { get; set; } = "Some systems may change, break, or feel unfinished";
+	[Property] public string BodyLineThree { get; set; } = "while the game continues to improve.";
+	[Property] public string FeedbackLineOne { get; set; } = "Feedback is appreciated.";
+	[Property] public string FeedbackLineTwo { get; set; } = "Please send notes to Discord DMs:";
 	[Property] public string DiscordHandle { get; set; } = "rater193";
 
 	private int animationFrame;
@@ -158,6 +180,7 @@
 
 	protected override int BuildHash()
 	{
-		return HashCode.Combine( LabelText, TitleText, BodyText, FeedbackText, DiscordHandle, animationFrame );
+		var hash = HashCode.Combine( LabelText, TitleText, BodyLineOne, BodyLineTwo, BodyLineThree, FeedbackLineOne, FeedbackLineTwo, DiscordHandle );
+		return HashCode.Combine( hash, animationFrame );
 	}
 }
