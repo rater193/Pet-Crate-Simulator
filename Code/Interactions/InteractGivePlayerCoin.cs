@@ -2,6 +2,7 @@ using Sandbox;
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public sealed class InteractGivePlayerCoin : Interactable
 {
@@ -14,6 +15,10 @@ public sealed class InteractGivePlayerCoin : Interactable
 	[Property] public float HitMoveDistance { get; set; } = 10f;
 	[Property] public float HitFeedbackDuration { get; set; } = 0.22f;
 	[Property] public Color HitFlashColor { get; set; } = new( 1f, 0.08f, 0.05f, 1f );
+	[Property, Group( "Sounds" )] public List<SoundEvent> HitSounds { get; set; } = new();
+	[Property, Group( "Sounds" )] public List<SoundEvent> BreakSounds { get; set; } = new();
+	[Property, Group( "Sounds" )] public Vector2 SoundPitchRange { get; set; } = new( 0.94f, 1.08f );
+	[Property, Group( "Sounds" )] public Vector2 SoundVolumeRange { get; set; } = new( 0.88f, 1.04f );
 
 	private WorldSpaceHealthbar healthbar;
 	private readonly List<ModelVisual> modelVisuals = new();
@@ -117,6 +122,7 @@ public sealed class InteractGivePlayerCoin : Interactable
 
 		var playerData = interactingPlayer?.GetComponent<PlayerData>();
 		GameStatsTracker.RecordObjectDamage( GameObject.Name, damage, destroyed, petDamage );
+		PlayRandomDestructibleSound( destroyed ? BreakSounds : HitSounds );
 
 		if ( destroyed )
 		{
@@ -129,6 +135,42 @@ public sealed class InteractGivePlayerCoin : Interactable
 		}
 
 		UpdateHealthbar();
+	}
+
+	private void PlayRandomDestructibleSound( List<SoundEvent> sounds )
+	{
+		if ( sounds == null || sounds.Count == 0 )
+			return;
+
+		var validSounds = sounds.Where( sound => sound.IsValid() && !string.IsNullOrWhiteSpace( sound.ResourcePath ) ).ToList();
+		if ( validSounds.Count == 0 )
+			return;
+
+		var sound = validSounds[Game.Random.Next( validSounds.Count )];
+		var pitch = RandomInRange( SoundPitchRange, 1f );
+		var volume = RandomInRange( SoundVolumeRange, 1f );
+		PlayDestructibleSound( sound.ResourcePath, WorldPosition, pitch, volume );
+	}
+
+	[Rpc.Broadcast]
+	private void PlayDestructibleSound( string soundPath, Vector3 position, float pitch, float volume )
+	{
+		if ( string.IsNullOrWhiteSpace( soundPath ) )
+			return;
+
+		var handle = Sound.Play( soundPath, position );
+		handle.Pitch = MathF.Max( 0.01f, pitch );
+		handle.Volume = MathF.Max( 0f, volume );
+	}
+
+	private static float RandomInRange( Vector2 range, float fallback )
+	{
+		var min = MathF.Min( range.x, range.y );
+		var max = MathF.Max( range.x, range.y );
+		if ( max <= 0f )
+			return fallback;
+
+		return min + ((float)Game.Random.NextDouble() * (max - min));
 	}
 
 	private void BeginHitFeedback()

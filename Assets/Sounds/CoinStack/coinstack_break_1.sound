@@ -5,7 +5,7 @@
   "Decibels": 70,
   "SelectionMode": "Random",
   "Sounds": [
-    "sounds/coinstack/coinstack_break_1.vsnd"
+    "sounds/coinstack/CoinStack_Break_1.vsnd"
   ],
   "Occlusion": true,
   "AirAbsorption": true,

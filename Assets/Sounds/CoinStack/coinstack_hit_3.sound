@@ -5,7 +5,7 @@
   "Decibels": 70,
   "SelectionMode": "Random",
   "Sounds": [
-    "sounds/coinstack/coinstack_hit_3.vsnd"
+    "sounds/coinstack/CoinStack_Hit_3.vsnd"
   ],
   "Occlusion": true,
   "AirAbsorption": true,

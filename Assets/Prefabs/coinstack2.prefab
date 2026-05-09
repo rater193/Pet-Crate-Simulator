@@ -72,8 +72,20 @@
         "__type": "InteractGivePlayerCoin",
         "__guid": "855ee6f4-2dd5-4347-9500-993cc87e6624",
         "__enabled": true,
+        "BreakSounds": [
+          "sounds/coinstack/coinstack_break_1.sound",
+          "sounds/coinstack/coinstack_break_2.sound",
+          "sounds/coinstack/coinstack_break_3.sound",
+          "sounds/coinstack/coinstack_break_4.sound"
+        ],
         "Flags": 0,
         "health": 3,
+        "HitSounds": [
+          "sounds/coinstack/coinstack_hit_1.sound",
+          "sounds/coinstack/coinstack_hit_2.sound",
+          "sounds/coinstack/coinstack_hit_3.sound",
+          "sounds/coinstack/coinstack_hit_4.sound"
+        ],
         "HitFeedbackDuration": 0.22,
         "HitFlashColor": "1,0.08,0.05,1",
         "HitMoveDistance": 10,
@@ -87,6 +99,8 @@
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
+        "SoundPitchRange": "0.94,1.08",
+        "SoundVolumeRange": "0.55,0.72",
         "text": null
       }
     ],
