@@ -26,7 +26,7 @@ public static class PetRarityExtensions
 
 	public static float GetValueMultiplier( this PetRarity rarity )
 	{
-		return MathF.Pow( 3f, Math.Clamp( (int)rarity, 0, (int)PetRarity.Ancestral ) );
+		return MathF.Pow( 2f, Math.Clamp( (int)rarity, 0, (int)PetRarity.Ancestral ) );
 	}
 
 	public static Color GetColor( this PetRarity rarity )

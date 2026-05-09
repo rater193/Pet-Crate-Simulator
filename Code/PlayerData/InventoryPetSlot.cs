@@ -68,8 +68,6 @@ public sealed class InventoryPetSlot : Component
 		component.CoinMultiplier *= multiplier;
 		component.Damage = System.Math.Max( 0, (int)System.MathF.Round( component.Damage * multiplier ) );
 		component.AttackRangeMultiplier *= multiplier;
-		component.MoveSpeedMultiplier *= multiplier;
-		component.BobHeightMultiplier *= multiplier;
 		component.AttackLungeMultiplier *= multiplier;
 		component.AttackInterval = System.MathF.Max( 0.05f, component.AttackInterval / multiplier );
 	}
