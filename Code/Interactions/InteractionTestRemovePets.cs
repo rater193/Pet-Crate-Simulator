@@ -12,15 +12,15 @@ public sealed class InteractionTestRemovePets : Interactable
 		if ( !interactingPlayer.IsProxy )
 		{
 			PlayerData playerdata = interactingPlayer.GetComponent<PlayerData>();
-			Inventory inv = playerdata.inventory;
-			inv.InventorySize = 100;
-			playerdata.PlayerMoney = 10000;
-
+			/*Inventory inv = playerdata.inventory;
+			inv.InventorySize = 100;*/
+			playerdata.PlayerMoney += 1000;
+			/*
 			while ( inv.Count > 0)
 			{
 				inv.RemovePet( 0 );
 			}
-			
+			*/
 
 
 		}

@@ -130,6 +130,7 @@ public sealed class PetFramework : Component
 
 		var petComponent = pet.GetComponent<PetComponent>() ?? pet.GetComponentInChildren<PetComponent>();
 		InventoryPetSlot.ApplyRarityToPetComponent( petComponent, rarity );
+		ApplyRarityVisuals( pet, rarity );
 		var slot = new PetSlot( pet, petComponent );
 		equippedPets.Add( slot );
 
@@ -146,6 +147,14 @@ public sealed class PetFramework : Component
 		}
 
 		RegisterEquippedPet( pet );
+	}
+
+	private void ApplyRarityVisuals( GameObject pet, PetRarity rarity )
+	{
+		if ( !pet.IsValid() || rarity < PetRarity.Uncommon )
+			return;
+
+		pet.GetOrAddComponent<EquippedPetRarityVisuals>().Configure( rarity );
 	}
 
 	public void Unequip()

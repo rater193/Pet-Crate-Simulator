@@ -21619,7 +21619,7 @@
               "RevealStartLocalOffset": "0,0,0",
               "RewardSource": null,
               "text": "Buy Pet: $2500",
-              "UseShopDisplayRewards": true
+              "UseShopDisplayRewards": false
             }
           ],
           "Children": [
@@ -21629,7 +21629,7 @@
               "Flags": 0,
               "Name": "Model",
               "Position": "0,0,-24.907999",
-              "Rotation": "0,0,-0.411943197,0.911209822",
+              "Rotation": "0,0,0,1",
               "Scale": "1.5,1.5,1.5",
               "Tags": "",
               "Enabled": true,
@@ -26123,7 +26123,7 @@
                   }
                 },
                 {
-                  "Rarity": "Uncommon",
+                  "Rarity": "Common",
                   "SpawnWeight": 5,
                   "PetPrefab": {
                     "_type": "gameobject",
@@ -26231,7 +26231,7 @@
                   }
                 },
                 {
-                  "Rarity": "Uncommon",
+                  "Rarity": "Common",
                   "SpawnWeight": 25,
                   "PetPrefab": {
                     "_type": "gameobject",
@@ -26390,7 +26390,7 @@
                   }
                 },
                 {
-                  "Rarity": "Uncommon",
+                  "Rarity": "Common",
                   "SpawnWeight": 25,
                   "PetPrefab": {
                     "_type": "gameobject",
@@ -26549,7 +26549,7 @@
                   }
                 },
                 {
-                  "Rarity": "Uncommon",
+                  "Rarity": "Common",
                   "SpawnWeight": 25,
                   "PetPrefab": {
                     "_type": "gameobject",
@@ -26727,7 +26727,7 @@
                   }
                 },
                 {
-                  "Rarity": "Uncommon",
+                  "Rarity": "Common",
                   "SpawnWeight": 5,
                   "PetPrefab": {
                     "_type": "gameobject",
@@ -26886,7 +26886,7 @@
                   }
                 },
                 {
-                  "Rarity": "Uncommon",
+                  "Rarity": "Common",
                   "SpawnWeight": 5,
                   "PetPrefab": {
                     "_type": "gameobject",
@@ -27045,7 +27045,7 @@
                   }
                 },
                 {
-                  "Rarity": "Uncommon",
+                  "Rarity": "Common",
                   "SpawnWeight": 5,
                   "PetPrefab": {
                     "_type": "gameobject",
@@ -27181,7 +27181,7 @@
                   }
                 },
                 {
-                  "Rarity": "Uncommon",
+                  "Rarity": "Common",
                   "SpawnWeight": 5,
                   "PetPrefab": {
                     "_type": "gameobject",
