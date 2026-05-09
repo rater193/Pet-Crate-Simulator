@@ -43,6 +43,7 @@ public sealed class PlayerInteractionsController : Component
 
 					if(Input.Pressed("Use"))
 					{
+						GameStatsTracker.RecordInteraction( interactable.GetType().Name, interactable.GameObject.Name );
 						interactable.OnInteract( GetComponent<PlayerController>() );
 					}
 				}

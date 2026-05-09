@@ -25,7 +25,9 @@ public sealed class PlayerData : Component
 			return;
 
 		var petFramework = GetComponent<PetFramework>();
-		PlayerMoney += petFramework?.ApplyCoinMultiplier( amount ) ?? amount;
+		var finalAmount = petFramework?.ApplyCoinMultiplier( amount ) ?? amount;
+		PlayerMoney += finalAmount;
+		GameStatsTracker.RecordCoinsEarned( finalAmount, amount );
 		QueueSave();
 	}
 
@@ -36,6 +38,11 @@ public sealed class PlayerData : Component
 		if ( !IsProxy && AutoLoadOnStart )
 		{
 			Load();
+		}
+
+		if ( !IsProxy )
+		{
+			GameStatsTracker.RecordSessionStarted( this );
 		}
 	}
 
@@ -51,11 +58,17 @@ public sealed class PlayerData : Component
 			}
 
 			UpdateQueuedSave();
+			GameStatsTracker.UpdateSession( this, Time.Delta );
 		}
 	}
 
 	protected override void OnDestroy()
 	{
+		if ( !IsProxy )
+		{
+			GameStatsTracker.RecordSessionEnded( this );
+		}
+
 		if ( !IsProxy && saveQueued )
 		{
 			Save();
@@ -137,6 +150,7 @@ public sealed class PlayerData : Component
 			FileSystem.Data.WriteAllText( SaveFilePath, ToJson() );
 			saveQueued = false;
 			saveDelayRemaining = 0f;
+			GameStatsTracker.RecordSaveWritten();
 		}
 		catch ( System.Exception exception )
 		{
@@ -152,18 +166,26 @@ public sealed class PlayerData : Component
 		try
 		{
 			if ( !FileSystem.Data.FileExists( SaveFilePath ) )
+			{
+				GameStatsTracker.RecordSaveMissing();
 				return false;
+			}
 
 			var json = FileSystem.Data.ReadAllText( SaveFilePath );
 			if ( string.IsNullOrWhiteSpace( json ) )
+			{
+				GameStatsTracker.RecordSaveMissing();
 				return false;
+			}
 
 			LoadJson( json );
+			GameStatsTracker.RecordSaveLoaded();
 			return true;
 		}
 		catch ( System.Exception exception )
 		{
 			Log.Warning( exception, $"Failed to load player data from '{SaveFilePath}'. Starting with current defaults." );
+			GameStatsTracker.RecordSaveFailed();
 			return false;
 		}
 	}

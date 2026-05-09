@@ -27,12 +27,20 @@ public sealed class InteractLockedDoor : Interactable
 		Log.Info( "hasUnlocked: " + hasUnlocked );
 		if ( !interactingPlayer.IsProxy && hasUnlocked == false )
 		{
+			var saveState = EnsureSaveState();
+			GameStatsTracker.RecordDoorUnlockAttempt( saveState.ResolvedKey, unlockCost );
+
 			PlayerData playerData = interactingPlayer.GetComponent<PlayerData>();
 			if ( playerData != null && playerData.PlayerMoney >= unlockCost )
 			{
 				playerData.PlayerMoney -= unlockCost;
 				SetUnlocked( true );
+				GameStatsTracker.RecordDoorUnlocked( saveState.ResolvedKey, unlockCost );
 				playerData.QueueSave();
+			}
+			else
+			{
+				GameStatsTracker.RecordDoorUnlockFailed( saveState.ResolvedKey, unlockCost, "not_enough_money" );
 			}
 		}
 	}

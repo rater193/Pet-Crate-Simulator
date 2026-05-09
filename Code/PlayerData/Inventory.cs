@@ -47,6 +47,7 @@ public sealed class Inventory : Component
 			EquippedSlotIndexes.Add( slotNumber );
 		}
 
+		GameStatsTracker.RecordPetEquipped( slot.DisplayName, slot.PetPrefabPath );
 		QueueOwnerSave();
 		return true;
 	}
@@ -56,8 +57,10 @@ public sealed class Inventory : Component
 		if ( !IsPetEquipped( slotNumber ) )
 			return false;
 
+		var slot = GetPet( slotNumber );
 		EquippedSlotIndexes.RemoveAll( index => index == slotNumber );
 		RestoreEquippedPets();
+		GameStatsTracker.RecordPetUnequipped( slot?.DisplayName, slot?.PetPrefabPath );
 		QueueOwnerSave();
 		return true;
 	}
@@ -98,6 +101,11 @@ public sealed class Inventory : Component
 		}
 
 		RestoreEquippedPets();
+		if ( slot.IsValid() && slot.HasPet )
+		{
+			GameStatsTracker.RecordPetRemoved( slot.DisplayName, slot.PetPrefabPath );
+		}
+
 		QueueOwnerSave();
 		return true;
 	}
@@ -114,6 +122,7 @@ public sealed class Inventory : Component
 		}
 
 		Slots.Add( slot );
+		GameStatsTracker.RecordPetAdded( slot.DisplayName, slot.PetPrefabPath, slot.GetPetPrefab() );
 		QueueOwnerSave();
 		return true;
 	}
@@ -164,10 +173,8 @@ public sealed class Inventory : Component
 		slot.PetPrefabPath = GetPetPrefabPath( petPrefab );
 
 		Slots.Add( slot );
+		GameStatsTracker.RecordPetAdded( slot.DisplayName, slot.PetPrefabPath, petPrefab );
 		QueueOwnerSave();
-		Log.Info( "Increased " + petPrefab.GetComponent<PetComponent>().DisplayName + " by 1" );
-		Stats.Increment( petPrefab.GetComponent<PetComponent>().DisplayName, 1 );
-		Stats.FlushAsync();
 		return true;
 	}
 

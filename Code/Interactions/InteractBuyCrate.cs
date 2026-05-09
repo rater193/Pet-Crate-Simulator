@@ -63,23 +63,28 @@ public sealed class InteractBuyCrate : Interactable
 		if ( isRevealing || interactingPlayer == null || interactingPlayer.IsProxy )
 			return;
 
+		GameStatsTracker.RecordCratePurchaseAttempt( Cost );
+
 		var playerData = interactingPlayer.GetComponent<PlayerData>() ?? PlayerData.LOCALDATA;
 		var inventory = playerData?.inventory ?? playerData?.GetComponent<Inventory>();
 		if ( playerData == null || inventory == null )
 		{
 			Log.Warning( "Cannot buy a pet crate because the local player data or pet inventory is missing." );
+			GameStatsTracker.RecordCratePurchaseFailed( "missing_player_data_or_inventory", Cost );
 			return;
 		}
 
 		if ( inventory.Count >= inventory.InventorySize )
 		{
 			Log.Warning( "Cannot buy a pet crate because the pet inventory is full." );
+			GameStatsTracker.RecordCratePurchaseFailed( "inventory_full", Cost );
 			return;
 		}
 
 		if ( playerData.PlayerMoney < Cost )
 		{
 			Log.Info( $"Not enough money to buy a pet crate. Need {Cost}, have {playerData.PlayerMoney}." );
+			GameStatsTracker.RecordCratePurchaseFailed( "not_enough_money", Cost );
 			return;
 		}
 
@@ -87,10 +92,12 @@ public sealed class InteractBuyCrate : Interactable
 		if ( reward == null || !reward.PetPrefab.IsValid() )
 		{
 			Log.Warning( "Cannot buy a pet crate because no valid weighted pet rewards are configured." );
+			GameStatsTracker.RecordCratePurchaseFailed( "invalid_rewards", Cost );
 			return;
 		}
 
 		playerData.PlayerMoney -= Cost;
+		GameStatsTracker.RecordCratePurchased( Cost );
 		playerData.QueueSave();
 
 		StartReveal( playerData, inventory, reward );
@@ -251,6 +258,9 @@ public sealed class InteractBuyCrate : Interactable
 			}
 			else
 			{
+				var displayName = GetPetDisplayName( pendingReward.PetPrefab );
+				var prefabPath = GetPetPrefabPath( pendingReward.PetPrefab );
+				GameStatsTracker.RecordCrateOpened( displayName, prefabPath, pendingReward.Rarity, Cost );
 				pendingPlayerData?.QueueSave();
 			}
 		}
@@ -268,6 +278,7 @@ public sealed class InteractBuyCrate : Interactable
 			return;
 
 		pendingPlayerData.PlayerMoney += Cost;
+		GameStatsTracker.RecordCrateRefunded( Cost );
 		pendingPlayerData.QueueSave();
 		Log.Warning( "Pet crate reward could not be added to inventory, so the purchase was refunded." );
 	}
@@ -399,6 +410,23 @@ public sealed class InteractBuyCrate : Interactable
 		value = Math.Clamp( value, 0f, 1f );
 		var shifted = 1f - value;
 		return 1f - (shifted * shifted * shifted);
+	}
+
+	private static string GetPetDisplayName( GameObject petPrefab )
+	{
+		var petComponent = petPrefab.GetComponent<PetComponent>() ?? petPrefab.GetComponentInChildren<PetComponent>();
+		if ( !string.IsNullOrWhiteSpace( petComponent?.DisplayName ) )
+			return petComponent.DisplayName;
+
+		return petPrefab.IsValid() ? petPrefab.Name : "Unknown Pet";
+	}
+
+	private static string GetPetPrefabPath( GameObject petPrefab )
+	{
+		if ( !string.IsNullOrWhiteSpace( petPrefab.PrefabInstanceSource ) )
+			return petPrefab.PrefabInstanceSource;
+
+		return petPrefab.IsValid() ? petPrefab.Name : string.Empty;
 	}
 
 	private enum RevealPhase

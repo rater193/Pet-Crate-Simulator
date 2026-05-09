@@ -90,7 +90,7 @@ public sealed class InteractGivePlayerCoin : Interactable
 
 		interactingPlayer?.GetComponent<PetFramework>()?.AttackTarget( GameObject );
 
-		ApplyDamage( 1, interactingPlayer );
+		ApplyDamage( 1, interactingPlayer, false );
 	}
 
 	[Rpc.Broadcast]
@@ -104,18 +104,21 @@ public sealed class InteractGivePlayerCoin : Interactable
 		if ( IsProxy )
 			return;
 
-		ApplyDamage( damage, interactingPlayer );
+		ApplyDamage( damage, interactingPlayer, true );
 	}
 
-	private void ApplyDamage( int damage, PlayerController interactingPlayer )
+	private void ApplyDamage( int damage, PlayerController interactingPlayer, bool petDamage )
 	{
 		if ( damage <= 0 || health <= 0 )
 			return;
 
 		health -= damage;
+		var destroyed = health <= 0;
 
 		var playerData = interactingPlayer?.GetComponent<PlayerData>();
-		if ( health <= 0 )
+		GameStatsTracker.RecordObjectDamage( GameObject.Name, damage, destroyed, petDamage );
+
+		if ( destroyed )
 		{
 			playerData?.AddMoney( moneyWhenDestroyed );
 			GameObject.Destroy();

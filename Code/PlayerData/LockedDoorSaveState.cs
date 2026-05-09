@@ -7,6 +7,7 @@ public sealed class LockedDoorSaveState : PlayerDataSaveExtension
 	[Property] public bool DefaultUnlocked { get; set; }
 
 	public bool IsUnlocked { get; private set; }
+	public string ResolvedKey => GetResolvedKey();
 	private bool hasLoaded;
 
 	protected override void OnStart()

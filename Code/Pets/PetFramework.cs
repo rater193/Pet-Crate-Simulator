@@ -354,6 +354,7 @@ public sealed class PetFramework : Component
 
 		destructable.ApplyPetDamage( activeAttackOwner ?? GetComponent<PlayerController>(), damage );
 		PlayPetAttack( slot.Pet, activeAttackTarget.WorldPosition );
+		GameStatsTracker.RecordPetAttack( slot.Component?.DisplayName ?? slot.Pet.Name, activeAttackTarget.Name, damage );
 
 		var attackInterval = component?.AttackInterval ?? PetDefaultAttackInterval;
 		slot.AttackCooldown = MathF.Max( 0.05f, attackInterval );
