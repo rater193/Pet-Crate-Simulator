@@ -762,10 +762,19 @@
 
 		if ( Inventory?.RemovePet( slotIndex ) == true )
 		{
-			isDeleteMode = InventoryPetCount > 0;
+			BeginDeleteModeSettle();
 		}
 
 		StateHasChanged();
+	}
+
+	private void BeginDeleteModeSettle()
+	{
+		isDeleteMode = false;
+		isDeleteModeSettling = true;
+		deleteModeSettleStartTime = Time.Now;
+		deleteModeSettleTime = 0f;
+		pendingDeleteSlotIndex = -1;
 	}
 
 	private string GetPetCardClass( PetViewModel pet )
@@ -788,19 +797,32 @@
 
 	private string GetPetCardStyle( PetViewModel pet )
 	{
-		var style = pet.RarityBorderStyle;
+		var backgroundColor = pet.IsEquipped ? "#54c943" : "#37adf4";
+		var opacity = 1f;
+		var transform = "translateX(0px) translateY(0px) rotate(0deg) scale(1)";
+
 		if ( isDeleteMode || isDeleteModeSettling )
 		{
 			var shake = GetDeleteModeShake( pet.SlotIndex );
-			style += $" transform: translateX({shake.x:0.##}px) translateY({shake.y:0.##}px) rotate({shake.rotation:0.##}deg);";
+			transform = $"translateX({shake.x:0.##}px) translateY({shake.y:0.##}px) rotate({shake.rotation:0.##}deg) scale(1)";
+		}
+
+		if ( isDeleteMode )
+		{
+			backgroundColor = pendingDeleteSlotIndex == pet.SlotIndex
+				? "rgba(236, 36, 48, 0.5)"
+				: "rgba(255, 255, 255, 0.9)";
 		}
 
 		if ( deletingSlotIndex == pet.SlotIndex )
 		{
-			style += $" {GetDeleteAnimationStyle()}";
+			var deleteStyle = GetDeleteAnimationValues();
+			backgroundColor = "rgba(255, 255, 255, 0.96)";
+			transform = deleteStyle.transform;
+			opacity = deleteStyle.opacity;
 		}
 
-		return style;
+		return $"{pet.RarityBorderStyle} background-color: {backgroundColor}; opacity: {opacity:0.###}; transform: {transform};";
 	}
 
 	private string GetStatusText( PetViewModel pet )
@@ -852,7 +874,7 @@
 		);
 	}
 
-	private string GetDeleteAnimationStyle()
+	private (string transform, float opacity) GetDeleteAnimationValues()
 	{
 		var t = Smooth01( (deleteAnimationTime / DeleteAnimationDuration).Clamp( 0f, 1f ) );
 		var hop = -MathF.Sin( t * MathF.PI ) * 72f;
@@ -860,7 +882,7 @@
 		var spin = t * 560f;
 		var opacity = 1f - (t * 0.92f);
 
-		return $"transform: translateY({hop:0.##}px) rotate({spin:0.##}deg) scale({shrink:0.###}); opacity: {opacity:0.###}; background-color: rgba(255, 255, 255, 0.96);";
+		return ($"translateX(0px) translateY({hop:0.##}px) rotate({spin:0.##}deg) scale({shrink:0.###})", opacity);
 	}
 
 	private static float Smooth01( float value )
