@@ -97,6 +97,12 @@
 		margin-bottom: 12px;
 	}
 
+	.pet-section-actions {
+		flex-direction: row;
+		align-items: center;
+		gap: 12px;
+	}
+
 	.pet-section-title-row .pet-section-title {
 		margin-bottom: 0px;
 	}
@@ -105,6 +111,47 @@
 		color: #55708f;
 		font-size: 18px;
 		font-weight: 800;
+	}
+
+	.pet-delete-toggle {
+		width: 54px;
+		height: 48px;
+		border-radius: 14px;
+		background-color: #d9edff;
+		border: 3px solid #72cfff;
+		align-items: center;
+		justify-content: center;
+		pointer-events: all;
+		box-shadow: 0px 5px 0px rgba(20, 87, 132, 0.22);
+	}
+
+	.pet-delete-toggle.active {
+		background-color: #ffefef;
+		border-color: #ff5a5a;
+		box-shadow: 0px 5px 0px rgba(129, 23, 23, 0.24);
+	}
+
+	.pet-trash-icon {
+		width: 24px;
+		height: 28px;
+		border-radius: 4px;
+		background-color: #397da6;
+		position: relative;
+	}
+
+	.pet-trash-icon-lid {
+		position: absolute;
+		left: -4px;
+		top: -7px;
+		width: 32px;
+		height: 6px;
+		border-radius: 3px;
+		background-color: #397da6;
+	}
+
+	.pet-delete-toggle.active .pet-trash-icon,
+	.pet-delete-toggle.active .pet-trash-icon-lid {
+		background-color: #d92d3d;
 	}
 
 	.pet-equipped-list {
@@ -273,7 +320,7 @@
 		pointer-events: all;
 		position: relative;
 		overflow: hidden;
-		transition: border-color 0.08s ease, box-shadow 0.08s ease;
+		transition: background-color 0.14s ease, border-color 0.08s ease, box-shadow 0.08s ease;
 	}
 
 	.pet-card.equipped {
@@ -284,6 +331,26 @@
 	.pet-card:hover {
 		border-color: #4beb68;
 		box-shadow: 0px 7px 18px rgba(13, 116, 42, 0.34);
+	}
+
+	.pet-card.delete-mode {
+		background-color: rgba(255, 255, 255, 0.9);
+	}
+
+	.pet-card.delete-mode:hover {
+		background-color: rgba(236, 36, 48, 0.34);
+		border-color: #ff4a4a;
+		box-shadow: 0px 8px 24px rgba(160, 15, 25, 0.36);
+	}
+
+	.pet-card.pending-delete {
+		background-color: rgba(236, 36, 48, 0.5);
+		border-color: #ff2323;
+		box-shadow: 0px 8px 28px rgba(160, 15, 25, 0.46);
+	}
+
+	.pet-card.deleting {
+		z-index: 20;
 	}
 
 	.pet-card.equipped:hover {
@@ -338,6 +405,18 @@
 	.pet-action-overlay.max-equipped {
 		background-color: rgba(240, 72, 72, 0.5);
 		color: #7b1010;
+	}
+
+	.pet-action-overlay.delete {
+		background-color: rgba(236, 36, 48, 0.42);
+		color: #8b0e17;
+		opacity: 0;
+	}
+
+	.pet-card.delete-mode:hover .pet-action-overlay.delete,
+	.pet-card.pending-delete .pet-action-overlay.delete,
+	.pet-card.deleting .pet-action-overlay.delete {
+		opacity: 1;
 	}
 
 	.pet-card-status {
@@ -455,7 +534,14 @@
 			<div class="pet-inventory-body">
 				<div class="pet-section-title-row">
 					<div class="pet-section-title">Your Pets</div>
-					<div class="pet-inventory-count">@InventoryPetCount / @InventoryCapacity Pets</div>
+					<div class="pet-section-actions">
+						<div class="@DeleteToggleClass" onclick=@ToggleDeleteMode>
+							<div class="pet-trash-icon">
+								<div class="pet-trash-icon-lid"></div>
+							</div>
+						</div>
+						<div class="pet-inventory-count">@InventoryPetCount / @InventoryCapacity Pets</div>
+					</div>
 				</div>
 				@if ( AllPets.Count == 0 )
 				{
@@ -470,7 +556,7 @@
 						<div class="pet-grid" @ref=PetGridPanel>
 							@foreach ( var pet in AllPets )
 							{
-								<div class="@GetPetCardClass( pet )" style="@pet.RarityBorderStyle" onclick=@(() => TogglePet( pet.SlotIndex ))>
+								<div class="@GetPetCardClass( pet )" style="@GetPetCardStyle( pet )" onclick=@(() => HandlePetCardClicked( pet.SlotIndex ))>
 									<div class="pet-card-status">@GetStatusText( pet )</div>
 									<div class="pet-card-icon">
 										@if ( pet.PreviewTexture != null )
@@ -515,10 +601,20 @@
 
 	private const float ScrollTrackPadding = 28f;
 	private const float MinScrollbarThumbHeight = 42f;
+	private const float DeleteAnimationDuration = 0.72f;
+	private const float DeleteModeSettleDuration = 0.32f;
 
 	private Panel PetGridPanel { get; set; }
 	private float lastScrollRatio;
 	private float lastThumbHeight;
+	private bool isDeleteMode;
+	private bool isDeleteModeSettling;
+	private int pendingDeleteSlotIndex = -1;
+	private int deletingSlotIndex = -1;
+	private float deleteStartTime;
+	private float deleteAnimationTime;
+	private float deleteModeSettleStartTime;
+	private float deleteModeSettleTime;
 
 	private PlayerData LocalPlayerData => PlayerData.LOCALDATA;
 	private Inventory Inventory => LocalPlayerData?.inventory;
@@ -530,43 +626,181 @@
 	private List<PetViewModel> EquippedPets => AllPets.Where( pet => pet.IsEquipped ).ToList();
 	private bool ShouldShowScrollbar => PetGridPanel?.HasScrollY ?? AllPets.Count > 12;
 	private string ScrollbarThumbStyle => $"top: {GetScrollbarThumbTop()}%; height: {GetScrollbarThumbHeight()}%;";
+	private bool IsDeletingPet => deletingSlotIndex >= 0;
+	private string DeleteToggleClass => $"pet-delete-toggle {(isDeleteMode ? "active" : "")}";
 
 	public override void Tick()
 	{
 		base.Tick();
 
-		if ( !IsOpen || PetGridPanel == null )
+		if ( !IsOpen )
 			return;
 
-		var scrollRatio = GetScrollRatio();
-		var thumbHeight = GetScrollbarThumbHeight();
-		if ( MathF.Abs( scrollRatio - lastScrollRatio ) <= 0.005f && MathF.Abs( thumbHeight - lastThumbHeight ) <= 0.5f )
-			return;
+		var shouldUpdate = false;
+		if ( IsDeletingPet )
+		{
+			deleteAnimationTime = Time.Now - deleteStartTime;
+			if ( deleteAnimationTime >= DeleteAnimationDuration )
+			{
+				FinishDeletePet();
+				return;
+			}
 
-		lastScrollRatio = scrollRatio;
-		lastThumbHeight = thumbHeight;
-		StateHasChanged();
+			shouldUpdate = true;
+		}
+
+		if ( isDeleteMode )
+		{
+			shouldUpdate = true;
+		}
+
+		if ( isDeleteModeSettling )
+		{
+			deleteModeSettleTime = Time.Now - deleteModeSettleStartTime;
+			if ( deleteModeSettleTime >= DeleteModeSettleDuration )
+			{
+				isDeleteModeSettling = false;
+				deleteModeSettleTime = 0f;
+			}
+
+			shouldUpdate = true;
+		}
+
+		if ( PetGridPanel != null )
+		{
+			var scrollRatio = GetScrollRatio();
+			var thumbHeight = GetScrollbarThumbHeight();
+			if ( MathF.Abs( scrollRatio - lastScrollRatio ) > 0.005f || MathF.Abs( thumbHeight - lastThumbHeight ) > 0.5f )
+			{
+				lastScrollRatio = scrollRatio;
+				lastThumbHeight = thumbHeight;
+				shouldUpdate = true;
+			}
+		}
+
+		if ( shouldUpdate )
+		{
+			StateHasChanged();
+		}
 	}
 
 	private void Close()
 	{
+		isDeleteMode = false;
+		isDeleteModeSettling = false;
+		pendingDeleteSlotIndex = -1;
+
+		if ( IsDeletingPet )
+			return;
+
 		CloseRequested?.Invoke();
 	}
 
 	private void TogglePet( int slotIndex )
 	{
+		if ( isDeleteMode || IsDeletingPet )
+			return;
+
 		Inventory?.TogglePetEquipped( slotIndex );
+		StateHasChanged();
+	}
+
+	private void ToggleDeleteMode()
+	{
+		if ( IsDeletingPet )
+			return;
+
+		if ( isDeleteMode )
+		{
+			isDeleteMode = false;
+			isDeleteModeSettling = true;
+			deleteModeSettleStartTime = Time.Now;
+			deleteModeSettleTime = 0f;
+		}
+		else
+		{
+			isDeleteMode = true;
+			isDeleteModeSettling = false;
+			deleteModeSettleTime = 0f;
+		}
+
+		pendingDeleteSlotIndex = -1;
+		StateHasChanged();
+	}
+
+	private void HandlePetCardClicked( int slotIndex )
+	{
+		if ( IsDeletingPet )
+			return;
+
+		if ( !isDeleteMode )
+		{
+			TogglePet( slotIndex );
+			return;
+		}
+
+		if ( pendingDeleteSlotIndex != slotIndex )
+		{
+			pendingDeleteSlotIndex = slotIndex;
+			StateHasChanged();
+			return;
+		}
+
+		deletingSlotIndex = slotIndex;
+		deleteStartTime = Time.Now;
+		deleteAnimationTime = 0f;
+		pendingDeleteSlotIndex = -1;
+		StateHasChanged();
+	}
+
+	private void FinishDeletePet()
+	{
+		var slotIndex = deletingSlotIndex;
+		deletingSlotIndex = -1;
+		deleteAnimationTime = 0f;
+		pendingDeleteSlotIndex = -1;
+
+		if ( Inventory?.RemovePet( slotIndex ) == true )
+		{
+			isDeleteMode = InventoryPetCount > 0;
+		}
+
 		StateHasChanged();
 	}
 
 	private string GetPetCardClass( PetViewModel pet )
 	{
-		return pet.IsEquipped ? $"pet-card equipped {pet.RarityClass}" : $"pet-card {pet.RarityClass}";
+		var classes = pet.IsEquipped ? $"pet-card equipped {pet.RarityClass}" : $"pet-card {pet.RarityClass}";
+		if ( isDeleteMode )
+			classes += " delete-mode";
+		if ( pendingDeleteSlotIndex == pet.SlotIndex )
+			classes += " pending-delete";
+		if ( deletingSlotIndex == pet.SlotIndex )
+			classes += " deleting";
+
+		return classes;
 	}
 
 	private string GetEquippedPetCardClass( PetViewModel pet )
 	{
 		return $"pet-equipped-card {pet.RarityClass}";
+	}
+
+	private string GetPetCardStyle( PetViewModel pet )
+	{
+		var style = pet.RarityBorderStyle;
+		if ( isDeleteMode || isDeleteModeSettling )
+		{
+			var shake = GetDeleteModeShake( pet.SlotIndex );
+			style += $" transform: translateX({shake.x:0.##}px) translateY({shake.y:0.##}px) rotate({shake.rotation:0.##}deg);";
+		}
+
+		if ( deletingSlotIndex == pet.SlotIndex )
+		{
+			style += $" {GetDeleteAnimationStyle()}";
+		}
+
+		return style;
 	}
 
 	private string GetStatusText( PetViewModel pet )
@@ -579,6 +813,12 @@
 
 	private string GetHoverActionText( PetViewModel pet )
 	{
+		if ( deletingSlotIndex == pet.SlotIndex )
+			return "";
+
+		if ( isDeleteMode )
+			return pendingDeleteSlotIndex == pet.SlotIndex ? "Are you sure?" : "Delete";
+
 		if ( !pet.IsEquipped && IsMaxPetsEquipped )
 			return "Max pets equipped";
 
@@ -587,10 +827,46 @@
 
 	private string GetPetActionOverlayClass( PetViewModel pet )
 	{
+		if ( isDeleteMode )
+			return "pet-action-overlay delete";
+
 		if ( !pet.IsEquipped && IsMaxPetsEquipped )
 			return "pet-action-overlay max-equipped";
 
 		return pet.IsEquipped ? "pet-action-overlay unequip" : "pet-action-overlay equip";
+	}
+
+	private (float x, float y, float rotation) GetDeleteModeShake( int slotIndex )
+	{
+		if ( (!isDeleteMode && !isDeleteModeSettling) || IsDeletingPet )
+			return (0f, 0f, 0f);
+
+		var amplitude = isDeleteMode
+			? 1f
+			: 1f - Smooth01( (deleteModeSettleTime / DeleteModeSettleDuration).Clamp( 0f, 1f ) );
+		var time = Time.Now + (slotIndex * 0.37f);
+		return (
+			MathF.Sin( time * 24f ) * 1.25f * amplitude,
+			MathF.Cos( time * 21f ) * 0.95f * amplitude,
+			MathF.Sin( time * 27f ) * 1.45f * amplitude
+		);
+	}
+
+	private string GetDeleteAnimationStyle()
+	{
+		var t = Smooth01( (deleteAnimationTime / DeleteAnimationDuration).Clamp( 0f, 1f ) );
+		var hop = -MathF.Sin( t * MathF.PI ) * 72f;
+		var shrink = 1f - (t * 0.92f);
+		var spin = t * 560f;
+		var opacity = 1f - (t * 0.92f);
+
+		return $"transform: translateY({hop:0.##}px) rotate({spin:0.##}deg) scale({shrink:0.###}); opacity: {opacity:0.###}; background-color: rgba(255, 255, 255, 0.96);";
+	}
+
+	private static float Smooth01( float value )
+	{
+		var t = value.Clamp( 0f, 1f );
+		return t * t * (3f - (2f * t));
 	}
 
 	private bool IsMaxPetsEquipped => MaxEquipped > 0 && EquippedCount >= MaxEquipped;
@@ -674,7 +950,8 @@
 			}
 		}
 
-		return HashCode.Combine( IsOpen, inventory?.Count ?? 0, EquippedCount, MaxEquipped, slotHash, lastScrollRatio, lastThumbHeight, PetPreviewRenderer.PreviewVersion );
+		var uiStateHash = HashCode.Combine( isDeleteMode, isDeleteModeSettling, pendingDeleteSlotIndex, deletingSlotIndex, (int)(deleteAnimationTime * 30f), (int)(deleteModeSettleTime * 30f), PetPreviewRenderer.PreviewVersion );
+		return HashCode.Combine( IsOpen, inventory?.Count ?? 0, EquippedCount, MaxEquipped, slotHash, lastScrollRatio, lastThumbHeight, uiStateHash );
 	}
 
 	private sealed class PetViewModel
