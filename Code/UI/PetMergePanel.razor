@@ -60,8 +60,8 @@
 
 	.pet-merge-close {
 		position: absolute;
-		right: -86px;
-		top: 12px;
+		right: -32px;
+		top: -30px;
 		width: 64px;
 		height: 64px;
 		border-radius: 18px;
@@ -73,6 +73,11 @@
 		font-size: 42px;
 		font-weight: 900;
 		pointer-events: all;
+		transition: transform 0.08s ease;
+	}
+
+	.pet-merge-close:hover {
+		transform: scale(1.12);
 	}
 
 	.pet-merge-library {
@@ -318,8 +323,8 @@
 		<div class="pet-merge-window">
 			<div class="pet-merge-header">
 				<div class="pet-merge-title">Pet Forge</div>
-				<div class="pet-merge-close" onclick=@Close>X</div>
 			</div>
+			<div class="pet-merge-close" onclick=@Close>X</div>
 
 			<div class="pet-merge-library">
 				<div class="pet-merge-section-title">Select Pets</div>

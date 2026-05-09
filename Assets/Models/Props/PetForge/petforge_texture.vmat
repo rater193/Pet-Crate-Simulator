@@ -5,13 +5,10 @@ Layer0
 	shader "shaders/complex.shader"
 
 	//---- PBR ----
-	F_METALNESS_TEXTURE 1
 	F_SELF_ILLUM 1
-	F_SPECULAR 1
 
 	//---- Ambient Occlusion ----
 	g_flAmbientOcclusionDirectDiffuse "0.000"
-	g_flAmbientOcclusionDirectSpecular "0.000"
 	TextureAmbientOcclusion "materials/default/default_ao.tga"
 
 	//---- Color ----
@@ -26,19 +23,19 @@ Layer0
 	g_bFogEnabled "1"
 
 	//---- Metalness ----
-	TextureMetalness "models/props/petforge/petforge_texture_metallic.png"
+	g_flMetalness "0.000"
 
 	//---- Normal ----
-	TextureNormal "models/props/petforge/petforge_texture_normal.png"
+	TextureNormal "materials/default/default_normal.tga"
 
 	//---- Roughness ----
 	g_flRoughnessScaleFactor "1.000"
-	TextureRoughness "models/props/petforge/petforge_texture_roughness.png"
+	TextureRoughness "materials/default/default_rough.tga"
 
 	//---- Self Illum ----
 	g_flSelfIllumAlbedoFactor "1.000"
 	g_flSelfIllumBrightness "0.000"
-	g_flSelfIllumScale "1.000"
+	g_flSelfIllumScale "7.729"
 	g_vSelfIllumOffset "[0.000 0.000]"
 	g_vSelfIllumScrollSpeed "[0.000 0.000]"
 	g_vSelfIllumTint "[1.000000 1.000000 1.000000 0.000000]"

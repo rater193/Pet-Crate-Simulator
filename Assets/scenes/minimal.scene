@@ -21377,77 +21377,6 @@
           }
         },
         {
-          "__guid": "1650b327-59e3-4428-9f0e-0c4311ce184e",
-          "__version": 2,
-          "Flags": 0,
-          "Name": "concrete_cat_statue_2k",
-          "Position": "1050.60352,116.600708,12.4999495",
-          "Rotation": "0,0,0.79120481,0.611551285",
-          "Scale": "15,15,15",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "0eae4980-8a15-4f7d-81ac-4cccf7a63753",
-              "__enabled": true,
-              "Flags": 0,
-              "BodyGroups": 18446744073709551615,
-              "CreateAttachments": false,
-              "LodOverride": null,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
-              "Materials": null,
-              "Model": "models/polyhaven/concrete-cat-statue/concrete_cat_statue_2k.vmdl",
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "RenderOptions": {
-                "GameLayer": true,
-                "OverlayLayer": false,
-                "BloomLayer": false,
-                "AfterUILayer": false
-              },
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "Sandbox.ModelCollider",
-              "__guid": "b5193289-4207-4c87-a5fd-d981a9c4782f",
-              "__enabled": true,
-              "Flags": 0,
-              "ColliderFlags": 0,
-              "Elasticity": null,
-              "Friction": null,
-              "IsTrigger": false,
-              "Model": "models/polyhaven/concrete-cat-statue/concrete_cat_statue_2k.vmdl",
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "OnObjectTriggerEnter": null,
-              "OnObjectTriggerExit": null,
-              "OnTriggerEnter": null,
-              "OnTriggerExit": null,
-              "RollingResistance": null,
-              "Static": false,
-              "Surface": null,
-              "SurfaceVelocity": "0,0,0"
-            }
-          ],
-          "Children": []
-        },
-        {
           "__guid": "bd5479f8-fc23-4d55-a738-b3e2493416d6",
           "__version": 2,
           "Flags": 0,
@@ -27218,7 +27147,7 @@
               "IdValue": "dc0a764b-428d-4772-8571-ab57b9010a4e"
             },
             "Property": "Position",
-            "Value": "300.522766,345.890472,38.7662048"
+            "Value": "107.300842,718.50061,38.8647118"
           },
           {
             "Target": {
@@ -27247,6 +27176,155 @@
         "195e5262-117e-47bb-9569-645b3e3bcf22": "bf6d3bd5-b34c-4d2c-a9f7-5070a74c2ccb",
         "a465fb5a-7128-4fa6-8552-feab177c63cf": "e2a345c7-6b1e-459d-883b-3262c7b15c8c"
       }
+    },
+    {
+      "__guid": "b7e8e6ea-3566-4e15-a6b3-b5ba7a0527fa",
+      "__version": 2,
+      "__Prefab": "prefabs/props/petforge.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "dc0a764b-428d-4772-8571-ab57b9010a4e"
+            },
+            "Property": "Name",
+            "Value": "petforge (1)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "dc0a764b-428d-4772-8571-ab57b9010a4e"
+            },
+            "Property": "Position",
+            "Value": "131.208405,3208.86426,36.3221588"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "dc0a764b-428d-4772-8571-ab57b9010a4e"
+            },
+            "Property": "Rotation",
+            "Value": "-0.000401533092,0.00125194504,0.0787214786,0.99689579"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "195e5262-117e-47bb-9569-645b3e3bcf22"
+            },
+            "Property": "Rotation",
+            "Value": "0,0,0,1"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "dc0a764b-428d-4772-8571-ab57b9010a4e": "b7e8e6ea-3566-4e15-a6b3-b5ba7a0527fa",
+        "29d52304-97e0-4ea9-a586-e73688ac7639": "df056a26-5e8f-4d0c-bb11-9ae343457292",
+        "a8b6c508-b34f-4d99-bdd0-03d2a36dd980": "284a3993-c477-4a3d-878d-dbbe461deb34",
+        "65a4dd2b-aa20-4f34-b794-8142b34719a4": "964dd12f-e4d1-4c66-a1b2-716feb353bdc",
+        "195e5262-117e-47bb-9569-645b3e3bcf22": "0122463a-47dd-4ca4-9146-1bbf135f5847",
+        "a465fb5a-7128-4fa6-8552-feab177c63cf": "55f68374-9b50-4e58-8a81-06397d00f1bf"
+      }
+    },
+    {
+      "__guid": "fda67bd6-d471-42b1-b45e-c4e680a74610",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "petstatue",
+      "Position": "1076.71191,106.20755,207.003143",
+      "Rotation": "0,0,0.719704747,0.694280386",
+      "Scale": "10,10,10",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "3ee8394f-a409-4164-be5c-e96d65f6da99",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/props/petstatue/petstatue.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "21fa53a9-c10b-4070-9c78-2bb4c4008102",
+          "__enabled": false,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/props/petstatue/petstatue.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "a6d0a8b6-4318-4674-8cbb-b769192ecbae",
+          "__enabled": true,
+          "Flags": 0,
+          "Center": "-0.0118160248,0.0560436249,0.0103645325",
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Scale": "42.4529228,42.0153389,74.7090149",
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
     }
   ],
   "SceneProperties": {
@@ -27291,8 +27369,7 @@
   "Description": null,
   "__references": [
     "fish.gt_big_crate#89786",
-    "kenneynl.towerdefensespawnround#81458",
-    "titanovsky.concrete_cat_statue_2k#53797"
+    "kenneynl.towerdefensespawnround#81458"
   ],
   "__version": 3
 }

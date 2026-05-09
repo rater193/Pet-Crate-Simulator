@@ -6,7 +6,6 @@ Layer0
 
 	//---- PBR ----
 	F_METALNESS_TEXTURE 1
-	F_SELF_ILLUM 1
 	F_SPECULAR 1
 
 	//---- Ambient Occlusion ----
@@ -17,7 +16,7 @@ Layer0
 	//---- Color ----
 	g_flModelTintAmount "1.000"
 	g_vColorTint "[1.000000 1.000000 1.000000 0.000000]"
-	TextureColor "models/pets/dog_1_2/dog_1_2_texture.png"
+	TextureColor "models/props/petstatue/petstatue_texture.png"
 
 	//---- Fade ----
 	g_flFadeExponent "1.000"
@@ -26,23 +25,14 @@ Layer0
 	g_bFogEnabled "1"
 
 	//---- Metalness ----
-	TextureMetalness "models/pets/dog_1_2/dog_1_2_texture_metallic.png"
+	TextureMetalness "models/props/petstatue/petstatue_texture_metallic.png"
 
 	//---- Normal ----
-	TextureNormal "models/pets/dog_1_2/dog_1_2_texture_normal.png"
+	TextureNormal "models/props/petstatue/petstatue_texture_normal.png"
 
 	//---- Roughness ----
 	g_flRoughnessScaleFactor "1.000"
-	TextureRoughness "models/pets/dog_1_2/dog_1_2_texture_roughness.png"
-
-	//---- Self Illum ----
-	g_flSelfIllumAlbedoFactor "1.000"
-	g_flSelfIllumBrightness "0.000"
-	g_flSelfIllumScale "1.000"
-	g_vSelfIllumOffset "[0.000 0.000]"
-	g_vSelfIllumScrollSpeed "[0.000 0.000]"
-	g_vSelfIllumTint "[1.000000 1.000000 1.000000 0.000000]"
-	TextureSelfIllumMask "models/pets/dog_1_2/dog_1_2_texture_emission.png"
+	TextureRoughness "models/props/petstatue/petstatue_texture_roughness.png"
 
 	//---- Texture Coordinates ----
 	g_vTexCoordOffset "[0.000 0.000]"
