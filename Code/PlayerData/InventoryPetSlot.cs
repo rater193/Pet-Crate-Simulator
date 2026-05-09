@@ -67,8 +67,6 @@ public sealed class InventoryPetSlot : Component
 		var multiplier = rarity.GetValueMultiplier();
 		component.CoinMultiplier *= multiplier;
 		component.Damage = System.Math.Max( 0, (int)System.MathF.Round( component.Damage * multiplier ) );
-		component.AttackRangeMultiplier *= multiplier;
-		component.AttackLungeMultiplier *= multiplier;
 		component.AttackInterval = System.MathF.Max( 0.05f, component.AttackInterval / multiplier );
 	}
 
