@@ -101,6 +101,19 @@ public sealed class PetFramework : Component
 
 	public void Equip( GameObject prefab )
 	{
+		Equip( prefab, PetRarity.Common );
+	}
+
+	public void Equip( InventoryPetSlot inventorySlot )
+	{
+		if ( !inventorySlot.IsValid() )
+			return;
+
+		Equip( inventorySlot.GetPetPrefab(), inventorySlot.Rarity );
+	}
+
+	public void Equip( GameObject prefab, PetRarity rarity )
+	{
 		if ( IsProxy || !prefab.IsValid() )
 			return;
 
@@ -116,6 +129,7 @@ public sealed class PetFramework : Component
 		pet.WorldRotation = EquippedPetLocalRotation;
 
 		var petComponent = pet.GetComponent<PetComponent>() ?? pet.GetComponentInChildren<PetComponent>();
+		InventoryPetSlot.ApplyRarityToPetComponent( petComponent, rarity );
 		var slot = new PetSlot( pet, petComponent );
 		equippedPets.Add( slot );
 

@@ -134,7 +134,7 @@
         <img class="Icon-Cash" src="ui/sandcoin_small.vtex" />
         <div class="StatBox-Money-Container"><div class="StatBox-Money-Bock">@RenderedMoneyValue</div></div>
     </div>
-    @if ( !isPetInventoryOpen )
+    @if ( !isPetInventoryOpen && !isPetMergerOpen )
     {
         <div class="InventoryPrompt">
             <Image class="InventoryPrompt-Glyph" Texture=@InventoryInputTexture />
@@ -146,6 +146,7 @@
         <div class="PTT-Text">Push to Talk</div>
     </div>
     <PetInventoryPanel IsOpen=@isPetInventoryOpen CloseRequested=@ClosePetInventory />
+    <PetMergePanel IsOpen=@isPetMergerOpen CloseRequested=@ClosePetMerger />
 </root>
 
 
@@ -156,6 +157,7 @@
     [Property] public int width { get; set; } = 128;
     public static PlayerHud SINGLETON;
     private static bool isPetInventoryOpen;
+    private static bool isPetMergerOpen;
     private Texture InventoryInputTexture;
     private Texture PTTInputTexture;
 
@@ -171,8 +173,19 @@
         if ( Input.Pressed( "Score" ) )
         {
             isPetInventoryOpen = !isPetInventoryOpen;
+            if ( isPetInventoryOpen )
+            {
+                isPetMergerOpen = false;
+            }
             StateHasChanged();
         }
+    }
+
+    public static void OpenPetMerger()
+    {
+        isPetInventoryOpen = false;
+        isPetMergerOpen = true;
+        SINGLETON?.StateHasChanged();
     }
 
     private void ClosePetInventory()
@@ -181,8 +194,14 @@
         StateHasChanged();
     }
 
+    private void ClosePetMerger()
+    {
+        isPetMergerOpen = false;
+        StateHasChanged();
+    }
+
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-    protected override int BuildHash() => System.HashCode.Combine(MyStringValue, width, RenderedMoneyValue, isPetInventoryOpen, InventoryInputTexture, PTTInputTexture);
+    protected override int BuildHash() => System.HashCode.Combine(MyStringValue, width, RenderedMoneyValue, isPetInventoryOpen, isPetMergerOpen, InventoryInputTexture, PTTInputTexture);
 }

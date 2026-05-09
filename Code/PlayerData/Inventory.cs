@@ -41,7 +41,7 @@ public sealed class Inventory : Component
 			return false;
 		}
 
-		petFramework.Equip( petPrefab );
+		petFramework.Equip( slot );
 		if ( !EquippedSlotIndexes.Contains( slotNumber ) )
 		{
 			EquippedSlotIndexes.Add( slotNumber );
@@ -151,7 +151,7 @@ public sealed class Inventory : Component
 		return false;
 	}
 
-	public bool AddPetPrefab( GameObject petPrefab, string displayName = null )
+	public bool AddPetPrefab( GameObject petPrefab, string displayName = null, PetRarity rarity = PetRarity.Common )
 	{
 		if ( !petPrefab.IsValid() )
 			return false;
@@ -171,11 +171,84 @@ public sealed class Inventory : Component
 				: petPrefab.Name;
 		slot.PetPrefab = petPrefab;
 		slot.PetPrefabPath = GetPetPrefabPath( petPrefab );
+		slot.Rarity = rarity;
 
 		Slots.Add( slot );
 		GameStatsTracker.RecordPetAdded( slot.DisplayName, slot.PetPrefabPath, petPrefab );
 		QueueOwnerSave();
 		return true;
+	}
+
+	public bool CanMergePets( IReadOnlyList<int> slotIndexes )
+	{
+		return GetMergeCandidate( slotIndexes ) != null;
+	}
+
+	public bool TryMergePets( IReadOnlyList<int> slotIndexes, out InventoryPetSlot mergedSlot )
+	{
+		mergedSlot = null;
+
+		var candidate = GetMergeCandidate( slotIndexes );
+		if ( candidate == null )
+			return false;
+
+		var sortedIndexes = slotIndexes.Distinct().OrderByDescending( index => index ).ToList();
+		var sourceSlot = candidate;
+		var sourceDisplayName = sourceSlot.DisplayName;
+		var sourcePrefab = sourceSlot.PetPrefab;
+		var sourcePrefabPath = sourceSlot.PetPrefabPath;
+		var sourceRarity = sourceSlot.Rarity;
+		var nextRarity = sourceSlot.Rarity.NextRarity();
+		var wasAnyEquipped = sortedIndexes.Any( IsPetEquipped );
+
+		foreach ( var slotIndex in sortedIndexes )
+		{
+			if ( slotIndex < 0 || slotIndex >= Slots.Count )
+				return false;
+
+			var slot = Slots[slotIndex];
+			Slots.RemoveAt( slotIndex );
+			RemoveEquippedSlotIndex( slotIndex );
+
+			if ( slot.IsValid() && slot.GameObject.IsValid() && slot.GameObject.Parent == GameObject )
+			{
+				slot.GameObject.Destroy();
+			}
+		}
+
+		mergedSlot = CreateRuntimeSlot();
+		mergedSlot.DisplayName = sourceDisplayName;
+		mergedSlot.PetPrefab = sourcePrefab;
+		mergedSlot.PetPrefabPath = sourcePrefabPath;
+		mergedSlot.Rarity = nextRarity;
+		Slots.Add( mergedSlot );
+
+		if ( wasAnyEquipped )
+		{
+			EquippedSlotIndexes.Add( Slots.Count - 1 );
+		}
+
+		RestoreEquippedPets();
+		GameStatsTracker.RecordPetMerged( mergedSlot.DisplayName, mergedSlot.PetPrefabPath, sourceRarity, nextRarity );
+		QueueOwnerSave();
+		return true;
+	}
+
+	private InventoryPetSlot GetMergeCandidate( IReadOnlyList<int> slotIndexes )
+	{
+		if ( slotIndexes == null )
+			return null;
+
+		var distinctIndexes = slotIndexes.Distinct().ToList();
+		if ( distinctIndexes.Count != 3 )
+			return null;
+
+		var slots = distinctIndexes.Select( GetPet ).ToList();
+		if ( slots.Any( slot => !slot.IsValid() || !slot.HasPet || !slot.Rarity.CanMergeUp() ) )
+			return null;
+
+		var first = slots[0];
+		return slots.All( slot => first.IsSamePetAndRarity( slot ) ) ? first : null;
 	}
 
 	public List<int> GetEquippedSlotIndexes()
@@ -319,7 +392,7 @@ public sealed class Inventory : Component
 					continue;
 				}
 
-				petFramework.Equip( petPrefab );
+				petFramework.Equip( slot );
 			}
 		}
 		finally

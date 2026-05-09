@@ -254,7 +254,7 @@ public sealed class InteractBuyCrate : Interactable
 	{
 		if ( pendingInventory.IsValid() && pendingReward?.PetPrefab.IsValid() == true )
 		{
-			if ( !pendingInventory.AddPetPrefab( pendingReward.PetPrefab ) )
+			if ( !pendingInventory.AddPetPrefab( pendingReward.PetPrefab, rarity: pendingReward.Rarity ) )
 			{
 				RefundPendingPurchase();
 			}
@@ -479,15 +479,6 @@ public sealed class InteractBuyCrate : Interactable
 		Rising,
 		Celebrating,
 		Collecting
-	}
-
-	public enum PetRarity
-	{
-		Common,
-		Uncommon,
-		Rare,
-		Epic,
-		Legendary
 	}
 
 	public sealed class PetCrateReward

@@ -291,6 +291,11 @@
 		box-shadow: 0px 7px 18px rgba(142, 18, 18, 0.34);
 	}
 
+	.pet-card.ancestral,
+	.pet-equipped-card.ancestral {
+		box-shadow: 0px 0px 0px 3px #ff3434, 0px 0px 16px #ffd740, 0px 0px 28px #3d8fff;
+	}
+
 	.pet-card:hover .pet-action-overlay {
 		opacity: 1;
 	}
@@ -427,7 +432,7 @@
 					{
 						@foreach ( var pet in EquippedPets )
 						{
-							<div class="pet-equipped-card" onclick=@(() => TogglePet( pet.SlotIndex ))>
+							<div class="@GetEquippedPetCardClass( pet )" style="@pet.RarityBorderStyle" onclick=@(() => TogglePet( pet.SlotIndex ))>
 								<div class="pet-avatar">
 									@if ( pet.PreviewTexture != null )
 									{
@@ -465,7 +470,7 @@
 						<div class="pet-grid" @ref=PetGridPanel>
 							@foreach ( var pet in AllPets )
 							{
-								<div class="@GetPetCardClass( pet )" onclick=@(() => TogglePet( pet.SlotIndex ))>
+								<div class="@GetPetCardClass( pet )" style="@pet.RarityBorderStyle" onclick=@(() => TogglePet( pet.SlotIndex ))>
 									<div class="pet-card-status">@GetStatusText( pet )</div>
 									<div class="pet-card-icon">
 										@if ( pet.PreviewTexture != null )
@@ -556,7 +561,12 @@
 
 	private string GetPetCardClass( PetViewModel pet )
 	{
-		return pet.IsEquipped ? "pet-card equipped" : "pet-card";
+		return pet.IsEquipped ? $"pet-card equipped {pet.RarityClass}" : $"pet-card {pet.RarityClass}";
+	}
+
+	private string GetEquippedPetCardClass( PetViewModel pet )
+	{
+		return $"pet-equipped-card {pet.RarityClass}";
 	}
 
 	private string GetStatusText( PetViewModel pet )
@@ -635,8 +645,9 @@
 				SlotIndex = i,
 				DisplayName = string.IsNullOrWhiteSpace( displayName ) ? "Pet" : displayName,
 				IsEquipped = inventory.IsPetEquipped( i ),
-				CoinMultiplier = MathF.Max( 0f, petComponent?.CoinMultiplier ?? 1f ),
-				Damage = Math.Max( 0, petComponent?.Damage ?? 1 ),
+				Rarity = slot.Rarity,
+				CoinMultiplier = MathF.Max( 0f, petComponent?.CoinMultiplier ?? 1f ) * slot.RarityValueMultiplier,
+				Damage = Math.Max( 0, (int)MathF.Round( (petComponent?.Damage ?? 1) * slot.RarityValueMultiplier ) ),
 				PreviewTexture = previewTexture
 			} );
 		}
@@ -654,7 +665,7 @@
 			{
 				var petPrefab = slot?.GetPetPrefab();
 				var petComponent = petPrefab?.GetComponent<PetComponent>() ?? petPrefab?.GetComponentInChildren<PetComponent>();
-				slotHash = HashCode.Combine( slotHash, slot?.DisplayName, slot?.PetPrefabPath, petComponent?.DisplayName );
+				slotHash = HashCode.Combine( slotHash, slot?.DisplayName, slot?.PetPrefabPath, slot?.Rarity, petComponent?.DisplayName );
 			}
 
 			foreach ( var equippedSlotIndex in inventory.GetEquippedSlotIndexes() )
@@ -671,10 +682,13 @@
 		public int SlotIndex { get; set; }
 		public string DisplayName { get; set; }
 		public bool IsEquipped { get; set; }
+		public PetRarity Rarity { get; set; }
 		public float CoinMultiplier { get; set; }
 		public int Damage { get; set; }
 		public Texture PreviewTexture { get; set; }
 		public string IconText => string.IsNullOrWhiteSpace( DisplayName ) ? "?" : DisplayName[..1].ToUpperInvariant();
 		public string CoinMultiplierText => CoinMultiplier.ToString( "0.##" );
+		public string RarityClass => Rarity.GetCssClass();
+		public string RarityBorderStyle => $"border-color: {Rarity.GetCssColor()};";
 	}
 }

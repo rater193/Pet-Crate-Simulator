@@ -1,0 +1,546 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System;
+@using System.Collections.Generic;
+@using System.Linq;
+@inherits Panel
+@namespace Sandbox
+
+@if ( !IsOpen )
+	return;
+
+<style>
+	.pet-merge-shell {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		align-items: center;
+		justify-content: center;
+		pointer-events: all;
+		background-color: rgba(8, 14, 30, 0.38);
+		font-family: Poppins;
+	}
+
+	.pet-merge-window {
+		width: 1260px;
+		height: 720px;
+		background-color: #eef7ff;
+		border: 4px solid #7bd3ff;
+		border-radius: 28px;
+		box-shadow: 0px 18px 48px rgba(0, 35, 70, 0.45);
+		padding: 72px 30px 30px 30px;
+		flex-direction: row;
+		gap: 24px;
+		position: relative;
+	}
+
+	.pet-merge-header {
+		position: absolute;
+		top: -36px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 430px;
+		height: 76px;
+		background-color: #2375df;
+		border: 4px solid #83d6ff;
+		border-radius: 24px;
+		align-items: center;
+		justify-content: center;
+		box-shadow: 0px 8px 20px rgba(9, 52, 116, 0.35);
+	}
+
+	.pet-merge-title {
+		color: white;
+		font-size: 34px;
+		font-weight: 900;
+		text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.25);
+	}
+
+	.pet-merge-close {
+		position: absolute;
+		right: -86px;
+		top: 12px;
+		width: 64px;
+		height: 64px;
+		border-radius: 18px;
+		background-color: #2375df;
+		border: 4px solid #83d6ff;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font-size: 42px;
+		font-weight: 900;
+		pointer-events: all;
+	}
+
+	.pet-merge-library {
+		width: 720px;
+		height: 100%;
+		flex-direction: column;
+	}
+
+	.pet-merge-side {
+		flex-grow: 1;
+		height: 100%;
+		background-color: #dff1ff;
+		border: 3px solid rgba(80, 170, 230, 0.5);
+		border-radius: 20px;
+		padding: 18px;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.pet-merge-section-title {
+		color: #334766;
+		font-size: 24px;
+		font-weight: 900;
+		margin-bottom: 14px;
+	}
+
+	.pet-merge-grid {
+		flex-grow: 1;
+		width: 100%;
+		flex-direction: row;
+		flex-wrap: wrap;
+		overflow-y: scroll;
+		gap: 12px;
+		align-content: flex-start;
+		justify-content: center;
+		padding-right: 8px;
+	}
+
+	.pet-merge-card {
+		width: 144px;
+		height: 170px;
+		border-radius: 14px;
+		background-color: #37adf4;
+		border: 4px solid white;
+		box-shadow: 0px 6px 13px rgba(21, 52, 86, 0.22);
+		padding: 8px;
+		flex-direction: column;
+		align-items: center;
+		pointer-events: all;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.pet-merge-card.selected {
+		background-color: #54c943;
+		box-shadow: 0px 8px 22px rgba(13, 116, 42, 0.34);
+	}
+
+	.pet-merge-card.equipped {
+		background-color: #2f97dd;
+	}
+
+	.pet-merge-card:hover {
+		transform: scale(1.03);
+	}
+
+	.pet-merge-icon {
+		width: 76px;
+		height: 76px;
+		border-radius: 20px;
+		background-color: rgba(255, 255, 255, 0.32);
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font-size: 40px;
+		font-weight: 900;
+		margin: 8px auto;
+		text-shadow: 1px 3px 0px rgba(0, 0, 0, 0.22);
+	}
+
+	.pet-merge-preview {
+		width: 72px;
+		height: 72px;
+	}
+
+	.pet-merge-name {
+		color: white;
+		font-size: 18px;
+		font-weight: 900;
+		text-align: center;
+		text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.25);
+		max-width: 120px;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+
+	.pet-merge-rarity {
+		color: rgba(255, 255, 255, 0.9);
+		font-size: 13px;
+		font-weight: 900;
+		text-align: center;
+		text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.24);
+		margin-top: 4px;
+	}
+
+	.pet-merge-selected-area {
+		width: 430px;
+		height: 100%;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.pet-merge-slots {
+		width: 100%;
+		height: 250px;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		gap: 18px;
+		margin-top: 14px;
+	}
+
+	.pet-merge-slot {
+		width: 122px;
+		height: 156px;
+		border-radius: 18px;
+		background-color: rgba(255, 255, 255, 0.42);
+		border: 4px solid rgba(77, 115, 155, 0.55);
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.pet-merge-slot.filled {
+		background-color: #37adf4;
+		box-shadow: 0px 6px 13px rgba(21, 52, 86, 0.22);
+	}
+
+	.pet-merge-slot.merging {
+		transform: translateY(@MergeSlotBobpx) scale(@MergeSlotScale);
+	}
+
+	.pet-merge-slot-empty {
+		color: #64819e;
+		font-size: 44px;
+		font-weight: 900;
+	}
+
+	.pet-merge-result {
+		height: 70px;
+		color: #334766;
+		font-size: 24px;
+		font-weight: 900;
+		text-align: center;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.pet-merge-button {
+		width: 310px;
+		height: 82px;
+		border-radius: 18px;
+		border: 4px solid white;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font-size: 32px;
+		font-weight: 900;
+		text-shadow: 1px 3px 0px rgba(0, 0, 0, 0.28);
+		pointer-events: all;
+		box-shadow: 0px 9px 0px rgba(0, 0, 0, 0.24);
+	}
+
+	.pet-merge-button.valid {
+		background-color: #39c957;
+	}
+
+	.pet-merge-button.invalid {
+		background-color: #e84d4d;
+	}
+
+	.pet-merge-button.merging {
+		background-color: #ffd740;
+		color: #6f4c00;
+	}
+
+	.pet-merge-burst {
+		margin-top: 34px;
+		width: 210px;
+		height: 210px;
+		border-radius: 999px;
+		background-color: rgba(255, 215, 64, 0.18);
+		border: 8px solid rgba(255, 215, 64, 0.45);
+		transform: scale(@MergeBurstScale) rotate(@MergeBurstRotationdeg);
+		opacity: @MergeBurstOpacity;
+	}
+
+	.ancestral {
+		box-shadow: 0px 0px 0px 3px #ff3434, 0px 0px 18px #ffd740, 0px 0px 32px #3d8fff;
+	}
+</style>
+
+<root>
+	<div class="pet-merge-shell">
+		<div class="pet-merge-window">
+			<div class="pet-merge-header">
+				<div class="pet-merge-title">Pet Merger</div>
+				<div class="pet-merge-close" onclick=@Close>X</div>
+			</div>
+
+			<div class="pet-merge-library">
+				<div class="pet-merge-section-title">Select Pets</div>
+				<div class="pet-merge-grid">
+					@foreach ( var pet in AllPets )
+					{
+						<div class="@GetPetCardClass( pet )" style="@pet.BorderStyle" onclick=@(() => ToggleSelectedPet( pet.SlotIndex ))>
+							<div class="pet-merge-icon">
+								@if ( pet.PreviewTexture != null )
+								{
+									<Image class="pet-merge-preview" Texture=@pet.PreviewTexture />
+								}
+								else
+								{
+									@pet.IconText
+								}
+							</div>
+							<div class="pet-merge-name">@pet.DisplayName</div>
+							<div class="pet-merge-rarity">@pet.Rarity</div>
+						</div>
+					}
+				</div>
+			</div>
+
+			<div class="pet-merge-side">
+				<div class="pet-merge-section-title">Merge Slots</div>
+				<div class="pet-merge-slots">
+					@for ( var i = 0; i < 3; i++ )
+					{
+						var pet = GetSelectedPetView( i );
+						<div class="@GetSlotClass( pet )" style="@GetSlotStyle( pet )">
+							@if ( pet != null )
+							{
+								<div class="pet-merge-icon">
+									@if ( pet.PreviewTexture != null )
+									{
+										<Image class="pet-merge-preview" Texture=@pet.PreviewTexture />
+									}
+									else
+									{
+										@pet.IconText
+									}
+								</div>
+							}
+							else
+							{
+								<div class="pet-merge-slot-empty">+</div>
+							}
+						</div>
+					}
+				</div>
+				<div class="pet-merge-result">@MergeStatusText</div>
+				<div class="@MergeButtonClass" onclick=@StartMerge>@MergeButtonText</div>
+				<div class="pet-merge-burst"></div>
+			</div>
+		</div>
+	</div>
+</root>
+
+@code
+{
+	private const float MergeDuration = 1.15f;
+
+	public bool IsOpen { get; set; }
+	public Action CloseRequested { get; set; }
+
+	private readonly List<int> selectedSlotIndexes = new();
+	private bool isMerging;
+	private float mergeStartTime;
+	private float mergeAnimationTime;
+
+	private PlayerData LocalPlayerData => PlayerData.LOCALDATA;
+	private Inventory Inventory => LocalPlayerData?.inventory;
+	private List<MergePetViewModel> AllPets => BuildPetList();
+	private bool CanMergeSelection => Inventory?.CanMergePets( selectedSlotIndexes ) == true;
+	private string MergeButtonClass => $"pet-merge-button {(isMerging ? "merging" : CanMergeSelection ? "valid" : "invalid")}";
+	private string MergeButtonText => isMerging ? "Merging..." : "Merge";
+	private string MergeStatusText => GetMergeStatusText();
+	private string MergeSlotBobpx => $"{MathF.Sin( mergeAnimationTime * 28f ) * 10f}px";
+	private string MergeSlotScale => $"{1f + (MathF.Sin( mergeAnimationTime * 18f ) * 0.08f):0.###}";
+	private string MergeBurstScale => $"{(isMerging ? 0.85f + (MathF.Sin( mergeAnimationTime * 16f ) * 0.18f) : 0.75f):0.###}";
+	private string MergeBurstRotationdeg => $"{mergeAnimationTime * 210f:0.##}deg";
+	private string MergeBurstOpacity => $"{(isMerging ? 0.85f : 0.22f):0.###}";
+
+	public override void Tick()
+	{
+		base.Tick();
+
+		if ( !IsOpen )
+			return;
+
+		if ( isMerging )
+		{
+			mergeAnimationTime = Time.Now - mergeStartTime;
+			if ( mergeAnimationTime >= MergeDuration )
+			{
+				FinishMerge();
+			}
+
+			StateHasChanged();
+		}
+	}
+
+	private void Close()
+	{
+		if ( isMerging )
+			return;
+
+		selectedSlotIndexes.Clear();
+		CloseRequested?.Invoke();
+	}
+
+	private void ToggleSelectedPet( int slotIndex )
+	{
+		if ( isMerging )
+			return;
+
+		if ( selectedSlotIndexes.Contains( slotIndex ) )
+		{
+			selectedSlotIndexes.Remove( slotIndex );
+		}
+		else if ( selectedSlotIndexes.Count < 3 )
+		{
+			selectedSlotIndexes.Add( slotIndex );
+		}
+
+		StateHasChanged();
+	}
+
+	private void StartMerge()
+	{
+		if ( isMerging || !CanMergeSelection )
+			return;
+
+		isMerging = true;
+		mergeStartTime = Time.Now;
+		mergeAnimationTime = 0f;
+		StateHasChanged();
+	}
+
+	private void FinishMerge()
+	{
+		isMerging = false;
+		mergeAnimationTime = 0f;
+
+		if ( Inventory?.TryMergePets( selectedSlotIndexes, out _ ) == true )
+		{
+			selectedSlotIndexes.Clear();
+		}
+
+		StateHasChanged();
+	}
+
+	private MergePetViewModel GetSelectedPetView( int selectedIndex )
+	{
+		if ( selectedIndex < 0 || selectedIndex >= selectedSlotIndexes.Count )
+			return null;
+
+		var slotIndex = selectedSlotIndexes[selectedIndex];
+		return AllPets.FirstOrDefault( pet => pet.SlotIndex == slotIndex );
+	}
+
+	private string GetSlotClass( MergePetViewModel pet )
+	{
+		return $"pet-merge-slot {(pet != null ? "filled" : "")} {(isMerging ? "merging" : "")} {pet?.Rarity.GetCssClass()}";
+	}
+
+	private string GetSlotStyle( MergePetViewModel pet )
+	{
+		return pet?.BorderStyle ?? "";
+	}
+
+	private string GetPetCardClass( MergePetViewModel pet )
+	{
+		var classes = $"pet-merge-card {pet.Rarity.GetCssClass()}";
+		if ( pet.IsSelected )
+			classes += " selected";
+		if ( pet.IsEquipped )
+			classes += " equipped";
+
+		return classes;
+	}
+
+	private string GetMergeStatusText()
+	{
+		if ( isMerging )
+			return "Combining power...";
+
+		if ( selectedSlotIndexes.Count == 0 )
+			return "Pick 3 matching pets";
+
+		if ( selectedSlotIndexes.Count < 3 )
+			return $"{selectedSlotIndexes.Count} / 3 selected";
+
+		return CanMergeSelection ? $"Ready: {GetSelectedPetView( 0 )?.Rarity.NextRarity()}" : "Pets must match";
+	}
+
+	private List<MergePetViewModel> BuildPetList()
+	{
+		var pets = new List<MergePetViewModel>();
+		var inventory = Inventory;
+		if ( inventory == null )
+			return pets;
+
+		for ( var i = 0; i < inventory.Slots.Count; i++ )
+		{
+			var slot = inventory.GetPet( i );
+			if ( !slot.IsValid() )
+				continue;
+
+			var petPrefab = slot.GetPetPrefab();
+			var petComponent = petPrefab?.GetComponent<PetComponent>() ?? petPrefab?.GetComponentInChildren<PetComponent>();
+			var displayName = !string.IsNullOrWhiteSpace( petComponent?.DisplayName ) ? petComponent.DisplayName : slot.DisplayName;
+
+			pets.Add( new MergePetViewModel
+			{
+				SlotIndex = i,
+				DisplayName = string.IsNullOrWhiteSpace( displayName ) ? "Pet" : displayName,
+				Rarity = slot.Rarity,
+				IsSelected = selectedSlotIndexes.Contains( i ),
+				IsEquipped = inventory.IsPetEquipped( i ),
+				PreviewTexture = PetPreviewRenderer.Instance?.GetPreviewTexture( slot.PetPrefabPath, petPrefab )
+			} );
+		}
+
+		return pets;
+	}
+
+	protected override int BuildHash()
+	{
+		var inventory = Inventory;
+		var slotHash = 0;
+		if ( inventory != null )
+		{
+			foreach ( var slot in inventory.Slots )
+			{
+				slotHash = HashCode.Combine( slotHash, slot?.DisplayName, slot?.PetPrefabPath, slot?.Rarity );
+			}
+		}
+
+		foreach ( var selectedIndex in selectedSlotIndexes )
+		{
+			slotHash = HashCode.Combine( slotHash, selectedIndex );
+		}
+
+		return HashCode.Combine( IsOpen, inventory?.Count ?? 0, slotHash, isMerging, (int)(mergeAnimationTime * 30f), PetPreviewRenderer.PreviewVersion );
+	}
+
+	private sealed class MergePetViewModel
+	{
+		public int SlotIndex { get; set; }
+		public string DisplayName { get; set; }
+		public PetRarity Rarity { get; set; }
+		public bool IsSelected { get; set; }
+		public bool IsEquipped { get; set; }
+		public Texture PreviewTexture { get; set; }
+		public string BorderStyle => $"border-color: {Rarity.GetCssColor()};";
+		public string IconText => string.IsNullOrWhiteSpace( DisplayName ) ? "?" : DisplayName[..1].ToUpperInvariant();
+	}
+}

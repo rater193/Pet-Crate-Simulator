@@ -136,7 +136,7 @@ public static class GameStatsTracker
 		}
 	}
 
-	public static void RecordPetHatched( string displayName, string prefabPath, InteractBuyCrate.PetRarity rarity, int crateCost )
+	public static void RecordPetHatched( string displayName, string prefabPath, PetRarity rarity, int crateCost )
 	{
 		var petKey = ToStatKeySuffix( displayName, "unknown_pet" );
 		var rarityKey = ToStatKeySuffix( rarity.ToString(), "unknown" );
@@ -176,6 +176,22 @@ public static class GameStatsTracker
 
 		Increment( "pets_removed", 1, data );
 		Increment( $"pets_removed_{petKey}", 1, data );
+	}
+
+	public static void RecordPetMerged( string displayName, string prefabPath, PetRarity fromRarity, PetRarity toRarity )
+	{
+		var petKey = ToStatKeySuffix( displayName, "unknown_pet" );
+		var fromKey = ToStatKeySuffix( fromRarity.ToString(), "unknown" );
+		var toKey = ToStatKeySuffix( toRarity.ToString(), "unknown" );
+		var data = PetData( displayName, prefabPath );
+		data["from_rarity"] = fromRarity.ToString();
+		data["to_rarity"] = toRarity.ToString();
+
+		Increment( "pets_merged", 1, data );
+		Increment( $"pets_merged_{petKey}", 1, data );
+		Increment( $"pets_merged_from_{fromKey}", 1, data );
+		Increment( $"pets_merged_to_{toKey}", 1, data );
+		Flush();
 	}
 
 	public static void RecordPetAttack( string displayName, string targetName, int damage )
@@ -220,7 +236,7 @@ public static class GameStatsTracker
 		RecordCoinsSpent( "crates", cost );
 	}
 
-	public static void RecordCrateOpened( string displayName, string prefabPath, InteractBuyCrate.PetRarity rarity, int cost )
+	public static void RecordCrateOpened( string displayName, string prefabPath, PetRarity rarity, int cost )
 	{
 		var data = PetData( displayName, prefabPath );
 		data["rarity"] = rarity.ToString();
