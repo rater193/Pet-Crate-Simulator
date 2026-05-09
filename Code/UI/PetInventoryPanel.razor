@@ -59,8 +59,8 @@
 
 	.pet-inventory-close {
 		position: absolute;
-		right: -86px;
-		top: 12px;
+		right: -32px;
+		top: -30px;
 		width: 64px;
 		height: 64px;
 		border-radius: 18px;
@@ -72,6 +72,11 @@
 		font-size: 42px;
 		font-weight: 900;
 		pointer-events: all;
+		transition: transform 0.08s ease;
+	}
+
+	.pet-inventory-close:hover {
+		transform: scale(1.12);
 	}
 
 	.pet-inventory-equipped {
@@ -118,17 +123,22 @@
 		height: 48px;
 		border-radius: 14px;
 		background-color: #d9edff;
-		border: 3px solid #72cfff;
+		border: 3px solid #64c7f5;
 		align-items: center;
 		justify-content: center;
 		pointer-events: all;
-		box-shadow: 0px 5px 0px rgba(20, 87, 132, 0.22);
+		box-shadow: none;
+		transition: transform 0.08s ease;
+	}
+
+	.pet-delete-toggle:hover {
+		transform: scale(1.1);
 	}
 
 	.pet-delete-toggle.active {
 		background-color: #ffefef;
-		border-color: #ff5a5a;
-		box-shadow: 0px 5px 0px rgba(129, 23, 23, 0.24);
+		border-color: #ef4a4a;
+		box-shadow: none;
 	}
 
 	.pet-trash-icon {
@@ -259,9 +269,9 @@
 		bottom: 28px;
 		position: absolute;
 		background-color: #d8eeff;
-		border: 4px solid #c2e0fb;
+		border: 4px solid #64c7f5;
 		border-radius: 999px;
-		box-shadow: 0px 0px 8px rgba(66, 145, 203, 0.18);
+		box-shadow: none;
 	}
 
 	.pet-scrollbar-cap {
@@ -271,7 +281,7 @@
 		height: 34px;
 		border-radius: 999px;
 		background-color: #dff1ff;
-		border: 5px solid #c2e0fb;
+		border: 5px solid #64c7f5;
 		transform: translateX(-50%);
 	}
 
@@ -290,9 +300,9 @@
 		min-height: 42px;
 		border-radius: 999px;
 		background-color: #dff1ff;
-		border: 5px solid #70cdfc;
+		border: 5px solid #64c7f5;
 		transform: translateX(-50%);
-		box-shadow: 0px 4px 10px rgba(24, 100, 155, 0.22);
+		box-shadow: none;
 	}
 
 	.pet-card {
@@ -484,8 +494,8 @@
 		<div class="pet-inventory-window">
 			<div class="pet-inventory-header">
 				<div class="pet-inventory-title">Pets Inventory</div>
-				<div class="pet-inventory-close" onclick=@Close>X</div>
 			</div>
+			<div class="pet-inventory-close" onclick=@Close>X</div>
 
 			<div class="pet-inventory-equipped">
 				<div class="pet-section-title">@EquippedCount / @MaxEquipped Equipped</div>
