@@ -26107,16 +26107,28 @@
               "AutoUseCrateRewards": true,
               "FeaturedPets": [
                 {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/pets/zone1.1/pet-cat.prefab"
+                  "Rarity": "Common",
+                  "SpawnWeight": 996,
+                  "PetPrefab": {
+                    "_type": "gameobject",
+                    "prefab": "prefabs/pets/zone1.1/pet-cat.prefab"
+                  }
                 },
                 {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/pets/zone1.1/pet-chick.prefab"
+                  "Rarity": "Common",
+                  "SpawnWeight": 249,
+                  "PetPrefab": {
+                    "_type": "gameobject",
+                    "prefab": "prefabs/pets/zone1.1/pet-chick.prefab"
+                  }
                 },
                 {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/pets/zone1.1/pet-dog.prefab"
+                  "Rarity": "Uncommon",
+                  "SpawnWeight": 5,
+                  "PetPrefab": {
+                    "_type": "gameobject",
+                    "prefab": "prefabs/pets/zone1.1/pet-dog.prefab"
+                  }
                 }
               ],
               "OnComponentDestroy": null,
@@ -26126,8 +26138,7 @@
               "OnComponentStart": null,
               "OnComponentUpdate": null,
               "PetSwapInterval": 6,
-              "Rewards": [],
-              "SubtitleText": "Open crates. Find pets.",
+              "SubtitleText": "Pet Index",
               "TitleText": "Crate Shop"
             }
           ],
@@ -27154,16 +27165,28 @@
               "AutoUseCrateRewards": true,
               "FeaturedPets": [
                 {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/pets/zone1.2/pet-bee.prefab"
+                  "Rarity": "Common",
+                  "SpawnWeight": 996,
+                  "PetPrefab": {
+                    "_type": "gameobject",
+                    "prefab": "prefabs/pets/zone1.2/pet-bunny.prefab"
+                  }
                 },
                 {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/pets/zone1.2/pet-bever.prefab"
+                  "Rarity": "Common",
+                  "SpawnWeight": 249,
+                  "PetPrefab": {
+                    "_type": "gameobject",
+                    "prefab": "prefabs/pets/zone1.2/pet-bever.prefab"
+                  }
                 },
                 {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/pets/zone1.2/pet-bunny.prefab"
+                  "Rarity": "Uncommon",
+                  "SpawnWeight": 5,
+                  "PetPrefab": {
+                    "_type": "gameobject",
+                    "prefab": "prefabs/pets/zone1.2/pet-bee.prefab"
+                  }
                 }
               ],
               "OnComponentDestroy": null,
@@ -27173,8 +27196,7 @@
               "OnComponentStart": null,
               "OnComponentUpdate": null,
               "PetSwapInterval": 6,
-              "Rewards": [],
-              "SubtitleText": "Open crates. Find pets.",
+              "SubtitleText": "Pet Index",
               "TitleText": "Crate Shop"
             }
           ],

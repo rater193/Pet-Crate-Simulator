@@ -277,8 +277,7 @@
 {
 	[Property] public string TitleText { get; set; } = "Crate Shop";
 	[Property] public string SubtitleText { get; set; } = "Pet Index";
-	[Property] public List<InteractBuyCrate.PetCrateReward> Rewards { get; set; } = new();
-	[Property] public List<GameObject> FeaturedPets { get; set; } = new();
+	[Property] public List<InteractBuyCrate.PetCrateReward> FeaturedPets { get; set; } = new();
 	[Property] public float PetSwapInterval { get; set; } = 6f;
 	[Property] public bool AutoUseCrateRewards { get; set; } = true;
 
@@ -305,37 +304,18 @@
 
 	public List<InteractBuyCrate.PetCrateReward> GetConfiguredRewards()
 	{
-		var configuredRewards = Rewards?
-			.Where( reward => reward != null && reward.PetPrefab.IsValid() && reward.SpawnWeight > 0f )
-			.ToList() ?? new List<InteractBuyCrate.PetCrateReward>();
-
-		if ( configuredRewards.Count > 0 )
-			return configuredRewards;
-
 		return FeaturedPets?
-			.Where( petPrefab => petPrefab.IsValid() )
-			.Select( petPrefab => new InteractBuyCrate.PetCrateReward
-			{
-				Rarity = InteractBuyCrate.PetRarity.Common,
-				SpawnWeight = 1f,
-				PetPrefab = petPrefab
-			} )
+			.Where( reward => reward != null && reward.PetPrefab.IsValid() && reward.SpawnWeight > 0f )
 			.ToList() ?? new List<InteractBuyCrate.PetCrateReward>();
 	}
 
 	private List<PetIndexEntry> BuildPetIndexEntries()
 	{
-		var rewards = GetConfiguredRewards()
-			.GroupBy( reward => GetPetPrefabPath( reward.PetPrefab ) )
-			.Select( group => group.First() )
-			.ToList();
+		var rewards = MergeRewardsByPet( GetConfiguredRewards() );
 
 		if ( rewards.Count == 0 && AutoUseCrateRewards )
 		{
-			rewards = GetNearbyCrateRewards()
-				.GroupBy( reward => GetPetPrefabPath( reward.PetPrefab ) )
-				.Select( group => group.First() )
-				.ToList();
+			rewards = MergeRewardsByPet( GetNearbyCrateRewards() );
 		}
 
 		var totalWeight = MathF.Max( 0.001f, rewards.Sum( reward => MathF.Max( 0f, reward.SpawnWeight ) ) );
@@ -367,6 +347,27 @@
 		}
 
 		return entries;
+	}
+
+	private static List<InteractBuyCrate.PetCrateReward> MergeRewardsByPet( IEnumerable<InteractBuyCrate.PetCrateReward> rewards )
+	{
+		if ( rewards == null )
+			return new List<InteractBuyCrate.PetCrateReward>();
+
+		return rewards
+			.Where( reward => reward != null && reward.PetPrefab.IsValid() && reward.SpawnWeight > 0f )
+			.GroupBy( reward => GetPetPrefabPath( reward.PetPrefab ) )
+			.Select( group =>
+			{
+				var first = group.First();
+				return new InteractBuyCrate.PetCrateReward
+				{
+					Rarity = group.Max( reward => reward.Rarity ),
+					SpawnWeight = group.Sum( reward => MathF.Max( 0f, reward.SpawnWeight ) ),
+					PetPrefab = first.PetPrefab
+				};
+			} )
+			.ToList();
 	}
 
 	private List<InteractBuyCrate.PetCrateReward> GetNearbyCrateRewards()
@@ -447,7 +448,7 @@
 
 	protected override int BuildHash()
 	{
-		var hash = HashCode.Combine( TitleText, SubtitleText, Rewards?.Count ?? 0, FeaturedPets?.Count ?? 0, animationFrame, PetPreviewRenderer.PreviewVersion );
+		var hash = HashCode.Combine( TitleText, SubtitleText, FeaturedPets?.Count ?? 0, animationFrame, PetPreviewRenderer.PreviewVersion );
 		foreach ( var reward in GetConfiguredRewards() )
 		{
 			hash = HashCode.Combine( hash, reward.Rarity, reward.SpawnWeight, GetPetPrefabPath( reward.PetPrefab ), HasDiscoveredPet( GetPetDisplayName( reward.PetPrefab ), GetPetPrefabPath( reward.PetPrefab ) ) );
