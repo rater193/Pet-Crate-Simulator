@@ -1,4 +1,5 @@
 @using Sandbox;
+@using Sandbox.Services;
 @using Sandbox.UI;
 @using System;
 @using System.Collections.Generic;
@@ -19,8 +20,8 @@
 	}
 
 	.shop-sign {
-		width: 1540px;
-		height: 760px;
+		width: 1780px;
+		height: 1180px;
 		background-color: #10243a;
 		border: 18px solid #ffd66f;
 		border-radius: 48px;
@@ -29,7 +30,6 @@
 		overflow: hidden;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
 	}
 
 	.shop-sign-inner {
@@ -44,76 +44,12 @@
 
 	.shop-shimmer {
 		position: absolute;
-		top: -120px;
-		left: -520px;
-		width: 380px;
-		height: 1000px;
+		top: -180px;
+		left: -620px;
+		width: 420px;
+		height: 1500px;
 		background-color: rgba(255, 255, 255, 0.12);
 		transform: rotate(16deg) translateX(@ShimmerXpx);
-	}
-
-	.shop-title {
-		color: #fff4b8;
-		font-size: 148px;
-		font-weight: 900;
-		text-align: center;
-		text-shadow: 0px 8px 0px rgba(75, 33, 10, 0.85), 0px 0px 18px rgba(255, 221, 105, 0.32);
-		transform: translateY(-200px) translateY(@TitleBobpx) scale(@TitleScale);
-		letter-spacing: 0px;
-		z-index: 3;
-	}
-
-	.shop-subtitle {
-		margin-top: 8px;
-		color: #aeeeff;
-		font-size: 42px;
-		font-weight: 900;
-		text-shadow: 0px 4px 0px rgba(0, 0, 0, 0.45);
-        transform: translateY(-200px);
-		z-index: 3;
-	}
-
-	.shop-pet-row {
-		position: absolute;
-		left: 150px;
-		right: 150px;
-		bottom: 70px;
-		height: 190px;
-		flex-direction: row;
-		align-items: center;
-		justify-content: space-between;
-		z-index: 4;
-	}
-
-	.shop-pet {
-		width: 250px;
-		height: 250px;
-		border-radius: 36px;
-		background-color: #23a7d8;
-		border: 9px solid #ffffff;
-		box-shadow: 0px 12px 0px rgba(0, 53, 78, 0.42);
-		align-items: center;
-		justify-content: center;
-		position: relative;
-		overflow: hidden;
-		transform: translateY(@PetBob0px) rotate(@PetTilt0deg);
-	}
-
-	.shop-pet.second {
-		background-color: #ef5a7a;
-		transform: translateY(@PetBob1px) rotate(@PetTilt1deg);
-	}
-
-	.shop-pet-preview {
-		width: 212px;
-		height: 212px;
-	}
-
-	.shop-pet-letter {
-		color: white;
-		font-size: 110px;
-		font-weight: 900;
-		text-shadow: 0px 6px 0px rgba(0, 0, 0, 0.28);
 	}
 
 	.shop-spark {
@@ -122,8 +58,8 @@
 		height: 28px;
 		border-radius: 6px;
 		background-color: #ffffff;
-		transform: rotate(45deg) scale(@SparkScale);
 		opacity: @SparkOpacity;
+		transform: rotate(45deg) scale(@SparkScale);
 	}
 
 	.shop-spark.one {
@@ -141,9 +77,157 @@
 
 	.shop-spark.three {
 		left: 50%;
-		bottom: 150px;
+		bottom: 95px;
 		background-color: #ffe98c;
 		transform: translateX(-50%) rotate(45deg) scale(@SparkScaleThree);
+	}
+
+	.shop-title {
+		margin-top: 74px;
+		color: #fff4b8;
+		font-size: 118px;
+		font-weight: 900;
+		text-align: center;
+		text-shadow: 0px 8px 0px rgba(75, 33, 10, 0.85), 0px 0px 18px rgba(255, 221, 105, 0.32);
+		transform: translateY(@TitleBobpx) scale(@TitleScale);
+		letter-spacing: 0px;
+		z-index: 3;
+	}
+
+	.shop-subtitle {
+		margin-top: 2px;
+		color: #aeeeff;
+		font-size: 34px;
+		font-weight: 900;
+		text-shadow: 0px 4px 0px rgba(0, 0, 0, 0.45);
+		z-index: 3;
+	}
+
+	.pet-index-grid {
+		margin-top: 54px;
+		width: 1500px;
+		height: 760px;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		gap: 34px;
+		z-index: 4;
+	}
+
+	.pet-index-card {
+		width: 420px;
+		height: 336px;
+		border-radius: 34px;
+		background-color: rgba(31, 180, 218, 0.94);
+		border: 9px solid #ffffff;
+		box-shadow: 0px 12px 0px rgba(0, 53, 78, 0.42);
+		position: relative;
+		overflow: hidden;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		transform: translateY(0px);
+	}
+
+	.pet-index-card.locked {
+		background-color: rgba(42, 55, 71, 0.96);
+		border-color: rgba(255, 255, 255, 0.62);
+		box-shadow: 0px 12px 0px rgba(0, 0, 0, 0.34);
+	}
+
+	.pet-index-card.uncommon {
+		background-color: rgba(50, 194, 112, 0.94);
+	}
+
+	.pet-index-card.rare {
+		background-color: rgba(69, 130, 235, 0.94);
+	}
+
+	.pet-index-card.epic {
+		background-color: rgba(177, 91, 239, 0.94);
+	}
+
+	.pet-index-card.legendary {
+		background-color: rgba(245, 160, 54, 0.96);
+	}
+
+	.pet-index-glow {
+		position: absolute;
+		left: -70px;
+		top: -110px;
+		width: 560px;
+		height: 250px;
+		background-color: rgba(255, 255, 255, 0.16);
+		transform: rotate(-11deg);
+	}
+
+	.pet-index-preview-frame {
+		width: 214px;
+		height: 214px;
+		border-radius: 28px;
+		background-color: rgba(255, 255, 255, 0.18);
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.pet-index-preview {
+		width: 196px;
+		height: 196px;
+	}
+
+	.pet-index-preview.locked {
+		filter-brightness: 0;
+		filter-tint: #02070d;
+		opacity: 0.9;
+	}
+
+	.pet-index-letter {
+		color: white;
+		font-size: 106px;
+		font-weight: 900;
+		text-shadow: 0px 6px 0px rgba(0, 0, 0, 0.28);
+	}
+
+	.pet-index-letter.locked {
+		color: #05070d;
+		text-shadow: none;
+	}
+
+	.pet-index-name {
+		margin-top: 14px;
+		color: #ffffff;
+		font-size: 32px;
+		font-weight: 900;
+		text-align: center;
+		text-shadow: 0px 4px 0px rgba(0, 0, 0, 0.3);
+		max-width: 360px;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+
+	.pet-index-name.locked {
+		color: rgba(255, 255, 255, 0.78);
+	}
+
+	.pet-index-chance {
+		margin-top: 4px;
+		color: #fff4b8;
+		font-size: 30px;
+		font-weight: 900;
+		text-align: center;
+		text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.38);
+	}
+
+	.pet-index-empty {
+		color: #ffffff;
+		font-size: 48px;
+		font-weight: 900;
+		text-align: center;
+		text-shadow: 0px 4px 0px rgba(0, 0, 0, 0.35);
 	}
 </style>
 
@@ -157,20 +241,32 @@
 			<div class="shop-spark three"></div>
 			<div class="shop-title">@TitleText</div>
 			<div class="shop-subtitle">@SubtitleText</div>
-			<div class="shop-pet-row">
-				@for ( var i = 0; i < FeaturedPetViews.Count; i++ )
+			<div class="pet-index-grid">
+				@if ( PetIndexEntries.Count == 0 )
 				{
-					var pet = FeaturedPetViews[i];
-					<div class="@(i == 1 ? "shop-pet second" : "shop-pet")">
-						@if ( pet.PreviewTexture != null )
-						{
-							<Image class="shop-pet-preview" Texture=@pet.PreviewTexture />
-						}
-						else
-						{
-							<div class="shop-pet-letter">@pet.IconText</div>
-						}
-					</div>
+					<div class="pet-index-empty">Configure crate pets here</div>
+				}
+				else
+				{
+					@for ( var i = 0; i < PetIndexEntries.Count; i++ )
+					{
+						var pet = PetIndexEntries[i];
+						<div class="@pet.CardClass" style="@pet.CardStyle">
+							<div class="pet-index-glow"></div>
+							<div class="pet-index-preview-frame" style="@pet.IconStyle">
+								@if ( pet.PreviewTexture != null )
+								{
+									<Image class="@pet.PreviewClass" Texture=@pet.PreviewTexture />
+								}
+								else
+								{
+									<div class="@pet.LetterClass">@pet.IconText</div>
+								}
+							</div>
+							<div class="@pet.NameClass">@pet.DisplayName</div>
+							<div class="pet-index-chance">@pet.ChanceText</div>
+						</div>
+					}
 				}
 			</div>
 		</div>
@@ -180,124 +276,165 @@
 @code
 {
 	[Property] public string TitleText { get; set; } = "Crate Shop";
-	[Property] public string SubtitleText { get; set; } = "Open crates. Find pets.";
+	[Property] public string SubtitleText { get; set; } = "Pet Index";
+	[Property] public List<InteractBuyCrate.PetCrateReward> Rewards { get; set; } = new();
 	[Property] public List<GameObject> FeaturedPets { get; set; } = new();
 	[Property] public float PetSwapInterval { get; set; } = 6f;
 	[Property] public bool AutoUseCrateRewards { get; set; } = true;
 
-	private readonly List<PetView> selectedPets = new();
 	private int animationFrame;
-	private float nextPetSwapTime;
-
 	private float TimeValue => Time.Now;
 	private string TitleBobpx => $"{MathF.Sin( TimeValue * 2.2f ) * 8f}px";
 	private string TitleScale => $"{1f + (MathF.Sin( TimeValue * 2.2f + 0.8f ) * 0.018f):0.###}";
-	private string PetBob0px => $"{MathF.Sin( TimeValue * 2.8f ) * 16f}px";
-	private string PetBob1px => $"{MathF.Sin( TimeValue * 2.8f + 1.6f ) * 16f}px";
-	private string PetTilt0deg => $"{MathF.Sin( TimeValue * 2.1f ) * 3.5f}deg";
-	private string PetTilt1deg => $"{MathF.Sin( TimeValue * 2.1f + 2.1f ) * -3.5f}deg";
-	private string ShimmerXpx => $"{(MathF.Sin( TimeValue * 0.85f ) * 0.5f + 0.5f) * 2100f}px";
+	private string ShimmerXpx => $"{(MathF.Sin( TimeValue * 0.85f ) * 0.5f + 0.5f) * 2400f}px";
 	private string SparkOpacity => $"{0.45f + (MathF.Sin( TimeValue * 3.1f ) * 0.22f):0.###}";
 	private string SparkScale => $"{0.8f + (MathF.Sin( TimeValue * 3.1f ) * 0.25f):0.###}";
 	private string SparkScaleTwo => $"{0.8f + (MathF.Sin( TimeValue * 2.7f + 1.2f ) * 0.25f):0.###}";
 	private string SparkScaleThree => $"{0.8f + (MathF.Sin( TimeValue * 3.5f + 2.4f ) * 0.25f):0.###}";
-	private List<PetView> FeaturedPetViews => BuildFeaturedPetViews();
-
-	protected override void OnStart()
-	{
-		SelectRandomPets();
-		nextPetSwapTime = Time.Now + MathF.Max( 1f, PetSwapInterval );
-	}
+	private List<PetIndexEntry> PetIndexEntries => BuildPetIndexEntries();
 
 	protected override void OnUpdate()
 	{
 		var currentFrame = (int)(Time.Now * 30f);
-		if ( currentFrame != animationFrame )
-		{
-			animationFrame = currentFrame;
-			StateHasChanged();
-		}
-
-		if ( Time.Now < nextPetSwapTime )
+		if ( currentFrame == animationFrame )
 			return;
 
-		SelectRandomPets();
-		nextPetSwapTime = Time.Now + MathF.Max( 1f, PetSwapInterval );
+		animationFrame = currentFrame;
 		StateHasChanged();
 	}
 
-	private void SelectRandomPets()
+	public List<InteractBuyCrate.PetCrateReward> GetConfiguredRewards()
 	{
-		var candidates = GetCandidatePets();
-		selectedPets.Clear();
+		var configuredRewards = Rewards?
+			.Where( reward => reward != null && reward.PetPrefab.IsValid() && reward.SpawnWeight > 0f )
+			.ToList() ?? new List<InteractBuyCrate.PetCrateReward>();
 
-		if ( candidates.Count == 0 )
-			return;
+		if ( configuredRewards.Count > 0 )
+			return configuredRewards;
 
-		while ( selectedPets.Count < Math.Min( 2, candidates.Count ) )
-		{
-			var candidate = candidates[Game.Random.Next( candidates.Count )];
-			if ( selectedPets.Any( pet => pet.Prefab == candidate.Prefab ) )
-				continue;
-
-			selectedPets.Add( candidate );
-		}
-	}
-
-	private List<PetView> BuildFeaturedPetViews()
-	{
-		if ( selectedPets.Count == 0 )
-		{
-			SelectRandomPets();
-		}
-
-		foreach ( var pet in selectedPets )
-		{
-			pet.PreviewTexture = PetPreviewRenderer.Instance?.GetPreviewTexture( pet.PrefabPath, pet.Prefab );
-		}
-
-		return selectedPets;
-	}
-
-	private List<PetView> GetCandidatePets()
-	{
-		var pets = new List<PetView>();
-		AddPets( pets, FeaturedPets );
-
-		if ( AutoUseCrateRewards && Scene != null )
-		{
-			foreach ( var crate in Scene.GetAll<InteractBuyCrate>() )
+		return FeaturedPets?
+			.Where( petPrefab => petPrefab.IsValid() )
+			.Select( petPrefab => new InteractBuyCrate.PetCrateReward
 			{
-				AddPets( pets, crate.Pets.Select( reward => reward?.PetPrefab ) );
+				Rarity = InteractBuyCrate.PetRarity.Common,
+				SpawnWeight = 1f,
+				PetPrefab = petPrefab
+			} )
+			.ToList() ?? new List<InteractBuyCrate.PetCrateReward>();
+	}
+
+	private List<PetIndexEntry> BuildPetIndexEntries()
+	{
+		var rewards = GetConfiguredRewards()
+			.GroupBy( reward => GetPetPrefabPath( reward.PetPrefab ) )
+			.Select( group => group.First() )
+			.ToList();
+
+		if ( rewards.Count == 0 && AutoUseCrateRewards )
+		{
+			rewards = GetNearbyCrateRewards()
+				.GroupBy( reward => GetPetPrefabPath( reward.PetPrefab ) )
+				.Select( group => group.First() )
+				.ToList();
+		}
+
+		var totalWeight = MathF.Max( 0.001f, rewards.Sum( reward => MathF.Max( 0f, reward.SpawnWeight ) ) );
+		var entries = new List<PetIndexEntry>();
+
+		for ( var i = 0; i < rewards.Count; i++ )
+		{
+			var reward = rewards[i];
+			var prefab = reward.PetPrefab;
+			var displayName = GetPetDisplayName( prefab );
+			var prefabPath = GetPetPrefabPath( prefab );
+			var discovered = HasDiscoveredPet( displayName, prefabPath );
+			var chance = Math.Clamp( MathF.Max( 0f, reward.SpawnWeight ) / totalWeight * 100f, 0f, 100f );
+			var bob = MathF.Sin( TimeValue * 2.7f + (i * 1.37f) ) * 10f;
+			var tilt = MathF.Sin( TimeValue * 1.9f + (i * 0.91f) ) * 2.4f;
+			var iconScale = 1f + (MathF.Sin( TimeValue * 3.6f + (i * 1.7f) ) * 0.025f);
+
+			entries.Add( new PetIndexEntry
+			{
+				DisplayName = discovered ? displayName : "???",
+				PrefabPath = prefabPath,
+				PreviewTexture = PetPreviewRenderer.Instance?.GetPreviewTexture( prefabPath, prefab ),
+				Rarity = reward.Rarity,
+				Discovered = discovered,
+				Chance = chance,
+				CardStyle = $"transform: translateY({bob:0.##}px) rotate({tilt:0.##}deg);",
+				IconStyle = $"transform: scale({iconScale:0.###});"
+			} );
+		}
+
+		return entries;
+	}
+
+	private List<InteractBuyCrate.PetCrateReward> GetNearbyCrateRewards()
+	{
+		var results = new List<InteractBuyCrate.PetCrateReward>();
+		if ( GameObject.IsValid() )
+		{
+			var parent = GameObject.Parent;
+			if ( parent.IsValid() )
+			{
+				foreach ( var crate in parent.GetAllObjects( true ).Select( obj => obj.GetComponent<InteractBuyCrate>() ).Where( crate => crate != null ) )
+				{
+					results.AddRange( crate.Pets.Where( reward => reward != null && reward.PetPrefab.IsValid() && reward.SpawnWeight > 0f ) );
+				}
 			}
 		}
 
-		return pets
-			.Where( pet => pet.Prefab.IsValid() )
-			.GroupBy( pet => pet.PrefabPath )
-			.Select( group => group.First() )
-			.ToList();
+		return results;
 	}
 
-	private static void AddPets( List<PetView> pets, IEnumerable<GameObject> petPrefabs )
+	private static bool HasDiscoveredPet( string displayName, string prefabPath )
 	{
-		if ( petPrefabs == null )
-			return;
+		var petKey = GameStatsTracker.ToStatKeySuffix( displayName, "unknown_pet" );
+		if ( GetLocalStatSum( $"pets_added_{petKey}" ) > 0 || GetLocalStatSum( $"pet_added_{petKey}" ) > 0 || GetLocalStatSum( $"pets_hatched_{petKey}" ) > 0 )
+			return true;
 
-		foreach ( var petPrefab in petPrefabs )
+		if ( !string.IsNullOrWhiteSpace( displayName ) && GetLocalStatSum( displayName ) > 0 )
+			return true;
+
+		return HasPetInInventory( displayName, prefabPath );
+	}
+
+	private static double GetLocalStatSum( string statName )
+	{
+		if ( string.IsNullOrWhiteSpace( statName ) )
+			return 0;
+
+		try
 		{
-			if ( !petPrefab.IsValid() )
-				continue;
-
-			var component = petPrefab.GetComponent<PetComponent>() ?? petPrefab.GetComponentInChildren<PetComponent>();
-			var displayName = !string.IsNullOrWhiteSpace( component?.DisplayName ) ? component.DisplayName : petPrefab.Name;
-			pets.Add( new PetView
-			{
-				DisplayName = string.IsNullOrWhiteSpace( displayName ) ? "Pet" : displayName,
-				Prefab = petPrefab,
-				PrefabPath = GetPetPrefabPath( petPrefab )
-			} );
+			return Stats.LocalPlayer.Get( statName ).Sum;
 		}
+		catch ( Exception exception )
+		{
+			Log.Warning( exception, $"Failed to read local stat '{statName}'." );
+			return 0;
+		}
+	}
+
+	private static bool HasPetInInventory( string displayName, string prefabPath )
+	{
+		var inventory = PlayerData.LOCALDATA?.inventory ?? PlayerData.LOCALDATA?.GetComponent<global::Inventory>();
+		if ( inventory == null )
+			return false;
+
+		return inventory.Slots.Any( slot =>
+			slot.IsValid()
+			&& slot.HasPet
+			&& (string.Equals( slot.DisplayName, displayName, StringComparison.OrdinalIgnoreCase )
+				|| string.Equals( slot.PetPrefabPath, prefabPath, StringComparison.OrdinalIgnoreCase )) );
+	}
+
+	private static string GetPetDisplayName( GameObject petPrefab )
+	{
+		var component = petPrefab.GetComponent<PetComponent>() ?? petPrefab.GetComponentInChildren<PetComponent>();
+		if ( !string.IsNullOrWhiteSpace( component?.DisplayName ) )
+			return component.DisplayName;
+
+		return petPrefab.IsValid() && !string.IsNullOrWhiteSpace( petPrefab.Name ) ? petPrefab.Name : "Pet";
 	}
 
 	private static string GetPetPrefabPath( GameObject petPrefab )
@@ -305,26 +442,36 @@
 		if ( !string.IsNullOrWhiteSpace( petPrefab.PrefabInstanceSource ) )
 			return petPrefab.PrefabInstanceSource;
 
-		return string.IsNullOrWhiteSpace( petPrefab.Name ) ? "Pet" : petPrefab.Name;
+		return petPrefab.IsValid() && !string.IsNullOrWhiteSpace( petPrefab.Name ) ? petPrefab.Name : "Pet";
 	}
 
 	protected override int BuildHash()
 	{
-		var hash = HashCode.Combine( TitleText, SubtitleText, selectedPets.Count, animationFrame, PetPreviewRenderer.PreviewVersion );
-		foreach ( var pet in selectedPets )
+		var hash = HashCode.Combine( TitleText, SubtitleText, Rewards?.Count ?? 0, FeaturedPets?.Count ?? 0, animationFrame, PetPreviewRenderer.PreviewVersion );
+		foreach ( var reward in GetConfiguredRewards() )
 		{
-			hash = HashCode.Combine( hash, pet.DisplayName, pet.PrefabPath, pet.PreviewTexture );
+			hash = HashCode.Combine( hash, reward.Rarity, reward.SpawnWeight, GetPetPrefabPath( reward.PetPrefab ), HasDiscoveredPet( GetPetDisplayName( reward.PetPrefab ), GetPetPrefabPath( reward.PetPrefab ) ) );
 		}
 
 		return hash;
 	}
 
-	private sealed class PetView
+	private sealed class PetIndexEntry
 	{
 		public string DisplayName { get; set; }
-		public GameObject Prefab { get; set; }
 		public string PrefabPath { get; set; }
 		public Texture PreviewTexture { get; set; }
+		public InteractBuyCrate.PetRarity Rarity { get; set; }
+		public bool Discovered { get; set; }
+		public float Chance { get; set; }
+		public string CardStyle { get; set; }
+		public string IconStyle { get; set; }
+		public string ChanceText => $"{Chance:0.00}%";
 		public string IconText => string.IsNullOrWhiteSpace( DisplayName ) ? "?" : DisplayName[..1].ToUpperInvariant();
+		public string RarityClass => Rarity.ToString().ToLowerInvariant();
+		public string CardClass => $"pet-index-card {RarityClass} {(Discovered ? "unlocked" : "locked")}";
+		public string PreviewClass => $"pet-index-preview {(Discovered ? "unlocked" : "locked")}";
+		public string LetterClass => $"pet-index-letter {(Discovered ? "unlocked" : "locked")}";
+		public string NameClass => $"pet-index-name {(Discovered ? "unlocked" : "locked")}";
 	}
 }

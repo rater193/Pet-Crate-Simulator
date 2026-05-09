@@ -24,7 +24,9 @@ public sealed class InteractBuyCrate : Interactable
 	[Property] public float CrateOpenSquashStretch { get; set; } = 0.08f;
 	[Property] public Vector3 RevealStartLocalOffset { get; set; } = Vector3.Zero;
 	[Property] public Rotation RevealedPetRotation { get; set; } = Rotation.Identity;
-	[Property] public List<PetCrateReward> Pets { get; set; } = new();
+	[Property] public bool UseShopDisplayRewards { get; set; } = true;
+	[Property] public CrateShopDisplay RewardSource { get; set; }
+	[Property, ShowIf( nameof( UseShopDisplayRewards ), false )] public List<PetCrateReward> Pets { get; set; } = new();
 	[Property] public List<PetRarityParticle> RarityParticles { get; set; } = new();
 
 	private GameObject crateModel;
@@ -301,7 +303,7 @@ public sealed class InteractBuyCrate : Interactable
 
 	private PetCrateReward RollReward()
 	{
-		var validRewards = Pets
+		var validRewards = GetRewardTable()
 			.Where( reward => reward != null && reward.PetPrefab.IsValid() && reward.SpawnWeight > 0f )
 			.ToList();
 
@@ -319,6 +321,49 @@ public sealed class InteractBuyCrate : Interactable
 		}
 
 		return validRewards[^1];
+	}
+
+	private IReadOnlyList<PetCrateReward> GetRewardTable()
+	{
+		if ( UseShopDisplayRewards )
+		{
+			var rewardSource = ResolveRewardSource();
+			var sourceRewards = rewardSource?.GetConfiguredRewards();
+			if ( sourceRewards is { Count: > 0 } )
+				return sourceRewards;
+		}
+
+		return Pets;
+	}
+
+	private CrateShopDisplay ResolveRewardSource()
+	{
+		if ( RewardSource != null && RewardSource.GameObject.IsValid() )
+			return RewardSource;
+
+		var current = GameObject;
+		while ( current.IsValid() )
+		{
+			var localDisplay = current.GetComponent<CrateShopDisplay>();
+			if ( localDisplay != null && localDisplay.GameObject.IsValid() )
+				return localDisplay;
+
+			var parent = current.Parent;
+			if ( !parent.IsValid() )
+				break;
+
+			var siblingDisplay = parent.GetAllObjects( true )
+				.Where( obj => obj != GameObject )
+				.Select( obj => obj.GetComponent<CrateShopDisplay>() )
+				.FirstOrDefault( display => display != null && display.GameObject.IsValid() && display.GetConfiguredRewards().Count > 0 );
+
+			if ( siblingDisplay != null )
+				return siblingDisplay;
+
+			current = parent;
+		}
+
+		return null;
 	}
 
 	private void SpawnRarityParticle( PetRarity rarity, Vector3 position )

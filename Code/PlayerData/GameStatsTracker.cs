@@ -417,7 +417,7 @@ public static class GameStatsTracker
 		return petPrefab.IsValid() ? petPrefab.Name : "Unknown Pet";
 	}
 
-	private static string ToStatKeySuffix( string value, string fallback )
+	public static string ToStatKeySuffix( string value, string fallback )
 	{
 		if ( string.IsNullOrWhiteSpace( value ) )
 			return fallback;

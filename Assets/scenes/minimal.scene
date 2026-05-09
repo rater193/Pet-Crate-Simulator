@@ -21617,7 +21617,9 @@
               "RevealedPetRotation": "0,0,0,1",
               "RevealHeight": 30,
               "RevealStartLocalOffset": "0,0,0",
-              "text": "Buy Pet: $2500"
+              "RewardSource": null,
+              "text": "Buy Pet: $2500",
+              "UseShopDisplayRewards": true
             }
           ],
           "Children": [
@@ -26062,7 +26064,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "ShopDisplayWorldPanel",
-          "Position": "230.572189,1061.82104,215.883972",
+          "Position": "230.572006,1061.82056,254.492966",
           "Rotation": "0,0,-0.40500772,0.914313257",
           "Scale": "4,4,4",
           "Tags": "",
@@ -26087,7 +26089,7 @@
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null,
-              "PanelSize": "2048,2048",
+              "PanelSize": "3072,3072",
               "RenderOptions": {
                 "GameLayer": true,
                 "OverlayLayer": false,
@@ -26124,6 +26126,7 @@
               "OnComponentStart": null,
               "OnComponentUpdate": null,
               "PetSwapInterval": 6,
+              "Rewards": [],
               "SubtitleText": "Open crates. Find pets.",
               "TitleText": "Crate Shop"
             }
@@ -26230,7 +26233,14 @@
               "RevealedPetRotation": "0,0,0,1",
               "RevealHeight": 30,
               "RevealStartLocalOffset": "0,0,0",
-              "text": "Buy Pet: $25"
+              "RewardSource": {
+                "_type": "component",
+                "component_id": "8f8d48fd-1a33-4b3f-b8ad-f056dd5dfb40",
+                "go": "78366856-61fc-4339-a81f-b377e84ecf8d",
+                "component_type": "CrateShopDisplay"
+              },
+              "text": "Buy Pet: $25",
+              "UseShopDisplayRewards": true
             }
           ],
           "Children": [
@@ -26382,7 +26392,14 @@
               "RevealedPetRotation": "0,0,0,1",
               "RevealHeight": 30,
               "RevealStartLocalOffset": "0,0,0",
-              "text": "Buy Pet: $25"
+              "RewardSource": {
+                "_type": "component",
+                "component_id": "8f8d48fd-1a33-4b3f-b8ad-f056dd5dfb40",
+                "go": "78366856-61fc-4339-a81f-b377e84ecf8d",
+                "component_type": "CrateShopDisplay"
+              },
+              "text": "Buy Pet: $25",
+              "UseShopDisplayRewards": true
             }
           ],
           "Children": [
@@ -26534,7 +26551,14 @@
               "RevealedPetRotation": "0,0,0,1",
               "RevealHeight": 30,
               "RevealStartLocalOffset": "0,0,0",
-              "text": "Buy Pet: $25"
+              "RewardSource": {
+                "_type": "component",
+                "component_id": "8f8d48fd-1a33-4b3f-b8ad-f056dd5dfb40",
+                "go": "78366856-61fc-4339-a81f-b377e84ecf8d",
+                "component_type": "CrateShopDisplay"
+              },
+              "text": "Buy Pet: $25",
+              "UseShopDisplayRewards": true
             }
           ],
           "Children": [
@@ -26592,7 +26616,7 @@
       "__guid": "d7e780ea-6351-4594-a964-c8b9381605e4",
       "__version": 2,
       "Flags": 0,
-      "Name": "Shop_2_2",
+      "Name": "Shop_1_2",
       "Position": "0,0,0",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
@@ -26610,7 +26634,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "PetShopCrate1.2",
-          "Position": "274.872528,3003.1272,36.8099976",
+          "Position": "324.677399,2951.76611,36.8100052",
           "Rotation": "0,0,0.375565797,0.926795602",
           "Scale": "1,1,1",
           "Tags": "",
@@ -26705,7 +26729,14 @@
               "RevealedPetRotation": "0,0,0,1",
               "RevealHeight": 30,
               "RevealStartLocalOffset": "0,0,0",
-              "text": "Buy Pet: $150"
+              "RewardSource": {
+                "_type": "component",
+                "component_id": "70ca3417-3fd4-42c6-9a83-afc2ca340caf",
+                "go": "46507b54-da8f-40b2-890c-e1a95ab32ca7",
+                "component_type": "CrateShopDisplay"
+              },
+              "text": "Buy Pet: $150",
+              "UseShopDisplayRewards": true
             }
           ],
           "Children": [
@@ -26762,7 +26793,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "PetShopCrate1.2",
-          "Position": "389.323456,2944.9292,36.8095703",
+          "Position": "439.128326,2893.56812,36.8095779",
           "Rotation": "0,0,0.610560477,0.791969478",
           "Scale": "1,1,1",
           "Tags": "",
@@ -26857,7 +26888,14 @@
               "RevealedPetRotation": "0,0,0,1",
               "RevealHeight": 30,
               "RevealStartLocalOffset": "0,0,0",
-              "text": "Buy Pet: $150"
+              "RewardSource": {
+                "_type": "component",
+                "component_id": "70ca3417-3fd4-42c6-9a83-afc2ca340caf",
+                "go": "46507b54-da8f-40b2-890c-e1a95ab32ca7",
+                "component_type": "CrateShopDisplay"
+              },
+              "text": "Buy Pet: $150",
+              "UseShopDisplayRewards": true
             }
           ],
           "Children": [
@@ -26914,7 +26952,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "PetShopCrate1.2",
-          "Position": "230.801666,3120.41064,36.9709473",
+          "Position": "280.606537,3069.04956,36.9709549",
           "Rotation": "0,0,0.117947102,0.9930197",
           "Scale": "1,1,1",
           "Tags": "",
@@ -27009,7 +27047,14 @@
               "RevealedPetRotation": "0,0,0,1",
               "RevealHeight": 30,
               "RevealStartLocalOffset": "0,0,0",
-              "text": "Buy Pet: $150"
+              "RewardSource": {
+                "_type": "component",
+                "component_id": "70ca3417-3fd4-42c6-9a83-afc2ca340caf",
+                "go": "46507b54-da8f-40b2-890c-e1a95ab32ca7",
+                "component_type": "CrateShopDisplay"
+              },
+              "text": "Buy Pet: $150",
+              "UseShopDisplayRewards": true
             }
           ],
           "Children": [
@@ -27066,7 +27111,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "ShopDisplayWorldPanel (1)",
-          "Position": "234.371704,2966.20068,178.354858",
+          "Position": "284.176392,2914.83887,254.492996",
           "Rotation": "0,0,0.376021832,0.926610947",
           "Scale": "4,4,4",
           "Tags": "",
@@ -27091,7 +27136,7 @@
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null,
-              "PanelSize": "2048,2048",
+              "PanelSize": "3072,3072",
               "RenderOptions": {
                 "GameLayer": true,
                 "OverlayLayer": false,
@@ -27128,6 +27173,7 @@
               "OnComponentStart": null,
               "OnComponentUpdate": null,
               "PetSwapInterval": 6,
+              "Rewards": [],
               "SubtitleText": "Open crates. Find pets.",
               "TitleText": "Crate Shop"
             }
