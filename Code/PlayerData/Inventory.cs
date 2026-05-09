@@ -1,4 +1,5 @@
 using Sandbox;
+using Sandbox.Services;
 
 public sealed class Inventory : Component
 {
@@ -164,6 +165,9 @@ public sealed class Inventory : Component
 
 		Slots.Add( slot );
 		QueueOwnerSave();
+		Log.Info( "Increased " + petPrefab.GetComponent<PetComponent>().DisplayName + " by 1" );
+		Stats.Increment( petPrefab.GetComponent<PetComponent>().DisplayName, 1 );
+		Stats.FlushAsync();
 		return true;
 	}
 

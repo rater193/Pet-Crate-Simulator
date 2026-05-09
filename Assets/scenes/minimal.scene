@@ -22732,7 +22732,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "UseThisToLetPlayerButARandomPet",
-          "Position": "5702.45801,-104.980988,962.735718",
+          "Position": "2100.62524,-551.294067,34.2734909",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "Tags": "",
@@ -22812,22 +22812,6 @@
                 {
                   "_type": "gameobject",
                   "prefab": "prefabs/pets/pet-crab.prefab"
-                },
-                {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/pets/pet-fish.prefab"
-                },
-                {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/pets/pet-giraffe.prefab"
-                },
-                {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/pets/pet-penguin.prefab"
-                },
-                {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/pets/pet-pig.prefab"
                 }
               ],
               "text": null
@@ -27056,8 +27040,8 @@
       "__version": 2,
       "Flags": 0,
       "Name": "WIP DISCLAIMER",
-      "Position": "1413.96521,1028.68152,196.24498",
-      "Rotation": "0,0,0.968716621,-0.248169392",
+      "Position": "1490.49902,1048.78528,196.24498",
+      "Rotation": "0,0,0.85826838,-0.513201118",
       "Scale": "3,3,3",
       "Tags": "",
       "Enabled": true,
@@ -27140,14 +27124,14 @@
       "Sandbox.MovieMaker.MovieRecorderSystem": {
         "DisableClientRecording": false
       },
-      "Sandbox.Clutter.ClutterGridSystem": {
-        "Storage": {
-          "$blob": "270678c0-b3fa-442a-8d97-a44eb9066ca6"
-        }
-      },
       "Sandbox.SelectionSetsSystem": {
         "Data": {
           "SelectionSets": []
+        }
+      },
+      "Sandbox.Clutter.ClutterGridSystem": {
+        "Storage": {
+          "$blob": "270678c0-b3fa-442a-8d97-a44eb9066ca6"
         }
       }
     }

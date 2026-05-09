@@ -271,6 +271,56 @@
         "OnComponentStart": null,
         "OnComponentUpdate": null,
         "Slots": []
+      },
+      {
+        "__type": "Sandbox.Voice",
+        "__guid": "1a1afd65-198d-463e-aea8-046d00edbec0",
+        "__enabled": true,
+        "Flags": 0,
+        "Distance": 15000,
+        "Falloff": {
+          "rangex": "0.53125,1",
+          "frames": [
+            {
+              "x": 0,
+              "y": 1,
+              "in": -0,
+              "out": -0,
+              "mode": "Mirrored"
+            },
+            {
+              "x": 1,
+              "y": 0,
+              "in": 3.1415927,
+              "out": -3.1415927,
+              "mode": "Mirrored"
+            }
+          ]
+        },
+        "LipSync": true,
+        "Loopback": false,
+        "Mode": "PushToTalk",
+        "MorphScale": 3,
+        "MorphSmoothTime": 0.1,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "PushToTalkInput": "voice",
+        "Renderer": {
+          "_type": "component",
+          "component_id": "e9fb4340-2103-4286-bcfd-17b5896bc247",
+          "go": "24fa3484-e4a7-44ab-b85d-366fcc22df92",
+          "component_type": "SkinnedModelRenderer"
+        },
+        "VoiceMixer": {
+          "Name": "game",
+          "Id": "415b92e2-9cbe-4725-a2c4-a0439cbc1411"
+        },
+        "Volume": 1,
+        "WorldspacePlayback": true
       }
     ],
     "Children": [
