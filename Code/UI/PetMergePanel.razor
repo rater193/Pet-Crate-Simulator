@@ -194,6 +194,7 @@
 		justify-content: center;
 		gap: 18px;
 		margin-top: 14px;
+		position: relative;
 	}
 
 	.pet-merge-slot {
@@ -214,7 +215,18 @@
 	}
 
 	.pet-merge-slot.merging {
-		transform: translateY(@MergeSlotBobpx) scale(@MergeSlotScale);
+		z-index: 3;
+	}
+
+	.pet-merge-slot-blackout {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		background-color: black;
+		opacity: @MergeBlackoutOpacity;
+		z-index: 5;
 	}
 
 	.pet-merge-slot-empty {
@@ -261,15 +273,39 @@
 		color: #6f4c00;
 	}
 
-	.pet-merge-burst {
-		margin-top: 34px;
-		width: 210px;
-		height: 210px;
-		border-radius: 999px;
-		background-color: rgba(255, 215, 64, 0.18);
-		border: 8px solid rgba(255, 215, 64, 0.45);
-		transform: scale(@MergeBurstScale) rotate(@MergeBurstRotationdeg);
+	.pet-merge-effect {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 230px;
+		height: 230px;
+		transform: translateX(-50%) translateY(-50%) scale(@MergeBurstScale) rotate(@MergeBurstRotationdeg);
 		opacity: @MergeBurstOpacity;
+		z-index: 8;
+		pointer-events: none;
+	}
+
+	.pet-merge-burst-core {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 88px;
+		height: 88px;
+		border-radius: 999px;
+		background-color: rgba(255, 245, 166, 0.86);
+		border: 7px solid rgba(255, 255, 255, 0.92);
+		box-shadow: 0px 0px 22px rgba(255, 215, 64, 0.88), 0px 0px 48px rgba(61, 143, 255, 0.42);
+		transform: translateX(-50%) translateY(-50%);
+	}
+
+	.pet-merge-particle {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 18px;
+		height: 18px;
+		border-radius: 999px;
+		box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.72);
 	}
 
 	.ancestral {
@@ -314,7 +350,7 @@
 					@for ( var i = 0; i < 3; i++ )
 					{
 						var pet = GetSelectedPetView( i );
-						<div class="@GetSlotClass( pet )" style="@GetSlotStyle( pet )">
+						<div class="@GetSlotClass( pet )" style="@GetSlotStyle( pet, i )">
 							@if ( pet != null )
 							{
 								<div class="pet-merge-icon">
@@ -327,6 +363,10 @@
 										@pet.IconText
 									}
 								</div>
+								@if ( isMerging )
+								{
+									<div class="pet-merge-slot-blackout"></div>
+								}
 							}
 							else
 							{
@@ -334,10 +374,19 @@
 							}
 						</div>
 					}
+					@if ( isMerging )
+					{
+						<div class="pet-merge-effect">
+							<div class="pet-merge-burst-core"></div>
+							@for ( var particleIndex = 0; particleIndex < MergeParticleCount; particleIndex++ )
+							{
+								<div class="pet-merge-particle" style="@GetMergeParticleStyle( particleIndex )"></div>
+							}
+						</div>
+					}
 				</div>
 				<div class="pet-merge-result">@MergeStatusText</div>
 				<div class="@MergeButtonClass" onclick=@StartMerge>@MergeButtonText</div>
-				<div class="pet-merge-burst"></div>
 			</div>
 		</div>
 	</div>
@@ -345,13 +394,21 @@
 
 @code
 {
-	private const float MergeDuration = 1.15f;
+	private const float MergeLiftDuration = 1f;
+	private const float MergeConvergeDuration = 0.34f;
+	private const float MergeBurstDuration = 0.42f;
+	private const float MergeReturnDuration = 0.42f;
+	private const float MergeConsumeTime = MergeLiftDuration + MergeConvergeDuration;
+	private const float MergeDuration = MergeLiftDuration + MergeConvergeDuration + MergeBurstDuration + MergeReturnDuration;
+	private const int MergeParticleCount = 24;
+	private const string DefaultMergeSlotBorderStyle = "border-color: rgba(77, 115, 155, 0.55);";
 
 	public bool IsOpen { get; set; }
 	public Action CloseRequested { get; set; }
 
 	private readonly List<int> selectedSlotIndexes = new();
 	private bool isMerging;
+	private bool mergeConsumed;
 	private float mergeStartTime;
 	private float mergeAnimationTime;
 
@@ -362,11 +419,14 @@
 	private string MergeButtonClass => $"pet-merge-button {(isMerging ? "merging" : CanMergeSelection ? "valid" : "invalid")}";
 	private string MergeButtonText => isMerging ? "Merging..." : "Merge";
 	private string MergeStatusText => GetMergeStatusText();
-	private string MergeSlotBobpx => $"{MathF.Sin( mergeAnimationTime * 28f ) * 10f}px";
-	private string MergeSlotScale => $"{1f + (MathF.Sin( mergeAnimationTime * 18f ) * 0.08f):0.###}";
-	private string MergeBurstScale => $"{(isMerging ? 0.85f + (MathF.Sin( mergeAnimationTime * 16f ) * 0.18f) : 0.75f):0.###}";
-	private string MergeBurstRotationdeg => $"{mergeAnimationTime * 210f:0.##}deg";
-	private string MergeBurstOpacity => $"{(isMerging ? 0.85f : 0.22f):0.###}";
+	private float MergeLiftProgress => Smooth01( Saturate( mergeAnimationTime / MergeLiftDuration ) );
+	private float MergeConvergeProgress => Smooth01( Saturate( (mergeAnimationTime - MergeLiftDuration) / MergeConvergeDuration ) );
+	private float MergeBurstProgress => Smooth01( Saturate( (mergeAnimationTime - MergeLiftDuration - MergeConvergeDuration) / MergeBurstDuration ) );
+	private float MergeReturnProgress => Smooth01( Saturate( (mergeAnimationTime - MergeLiftDuration - MergeConvergeDuration - MergeBurstDuration) / MergeReturnDuration ) );
+	private string MergeBlackoutOpacity => $"{GetMergeBlackoutOpacity():0.###}";
+	private string MergeBurstScale => $"{0.35f + (MergeBurstProgress * 1.35f) - (MergeReturnProgress * 0.38f):0.###}";
+	private string MergeBurstRotationdeg => $"{mergeAnimationTime * 360f:0.##}deg";
+	private string MergeBurstOpacity => $"{Saturate( MathF.Sin( MergeBurstProgress * MathF.PI ) * 1.15f ) * (1f - MergeReturnProgress):0.###}";
 
 	public override void Tick()
 	{
@@ -378,6 +438,11 @@
 		if ( isMerging )
 		{
 			mergeAnimationTime = Time.Now - mergeStartTime;
+			if ( !mergeConsumed && mergeAnimationTime >= MergeConsumeTime )
+			{
+				ConsumeMergeSelection();
+			}
+
 			if ( mergeAnimationTime >= MergeDuration )
 			{
 				FinishMerge();
@@ -419,20 +484,31 @@
 			return;
 
 		isMerging = true;
+		mergeConsumed = false;
 		mergeStartTime = Time.Now;
 		mergeAnimationTime = 0f;
 		StateHasChanged();
 	}
 
-	private void FinishMerge()
+	private void ConsumeMergeSelection()
 	{
-		isMerging = false;
-		mergeAnimationTime = 0f;
+		mergeConsumed = true;
 
 		if ( Inventory?.TryMergePets( selectedSlotIndexes, out _ ) == true )
 		{
 			selectedSlotIndexes.Clear();
+			return;
 		}
+
+		isMerging = false;
+		mergeAnimationTime = 0f;
+	}
+
+	private void FinishMerge()
+	{
+		isMerging = false;
+		mergeConsumed = false;
+		mergeAnimationTime = 0f;
 
 		StateHasChanged();
 	}
@@ -448,12 +524,95 @@
 
 	private string GetSlotClass( MergePetViewModel pet )
 	{
-		return $"pet-merge-slot {(pet != null ? "filled" : "")} {(isMerging ? "merging" : "")} {pet?.Rarity.GetCssClass()}";
+		return $"pet-merge-slot {(pet != null ? "filled" : "")} {(isMerging ? "merging" : "")}";
 	}
 
-	private string GetSlotStyle( MergePetViewModel pet )
+	private string GetSlotStyle( MergePetViewModel pet, int selectedIndex )
 	{
-		return pet?.BorderStyle ?? "";
+		var borderStyle = pet?.BorderStyle ?? DefaultMergeSlotBorderStyle;
+
+		if ( !isMerging )
+			return borderStyle;
+
+		return $"{borderStyle} transform: {GetMergeSlotTransform( selectedIndex )}; opacity: {GetMergeSlotOpacity()};";
+	}
+
+	private string GetMergeSlotTransform( int selectedIndex )
+	{
+		var lift = MergeLiftProgress;
+		var converge = MergeConvergeProgress;
+		var burst = MergeBurstProgress;
+		var reset = 1f - MergeReturnProgress;
+		var side = selectedIndex == 0 ? 1f : selectedIndex == 2 ? -1f : 0f;
+		var x = side * 140f * converge * reset;
+		var y = (selectedIndex == 1
+			? -8f * converge
+			: (-64f * lift) + (14f * converge)) * reset;
+		var scaleOffset = selectedIndex == 1
+			? 1f + (0.08f * converge) - (0.16f * burst)
+			: 1f + (0.04f * lift) - (0.2f * converge) - (0.12f * burst);
+		var scale = Lerp( 1f, scaleOffset, reset );
+
+		return $"translateX({x:0.##}px) translateY({y:0.##}px) scale({scale:0.###})";
+	}
+
+	private string GetMergeSlotOpacity()
+	{
+		var faded = 1f - (MergeBurstProgress * 0.72f);
+		return $"{Lerp( faded, 1f, MergeReturnProgress ):0.###}";
+	}
+
+	private float GetMergeBlackoutOpacity()
+	{
+		var fadedIn = Saturate( (MergeConvergeProgress * 0.82f) + (MergeBurstProgress * 0.18f) );
+		return Lerp( fadedIn, 0f, MergeReturnProgress );
+	}
+
+	private string GetMergeParticleStyle( int index )
+	{
+		var progress = MergeBurstProgress;
+		var angle = ((MathF.PI * 2f) / MergeParticleCount) * index;
+		var stagger = (index % 5) * 0.035f;
+		var distanceProgress = Saturate( progress + stagger );
+		var distance = 26f + (118f * distanceProgress);
+		var wobble = MathF.Sin( (mergeAnimationTime * 18f) + index ) * 8f * progress;
+		var x = MathF.Cos( angle ) * distance;
+		var y = MathF.Sin( angle ) * (distance * 0.72f) + wobble;
+		var size = 10f + ((index % 4) * 3f);
+		var opacity = Saturate( MathF.Sin( progress * MathF.PI ) * (0.72f + ((index % 3) * 0.12f)) );
+		var scale = 0.45f + (progress * 0.95f);
+		var color = GetMergeParticleColor( index );
+
+		return $"width: {size:0.##}px; height: {size:0.##}px; background-color: {color}; opacity: {opacity:0.###}; transform: translateX({x:0.##}px) translateY({y:0.##}px) scale({scale:0.###});";
+	}
+
+	private string GetMergeParticleColor( int index )
+	{
+		return (index % 6) switch
+		{
+			0 => "#ffffff",
+			1 => "#ffd740",
+			2 => "#7bd3ff",
+			3 => "#b356ff",
+			4 => "#4bff5c",
+			_ => "#ff8f28"
+		};
+	}
+
+	private static float Saturate( float value )
+	{
+		return Math.Clamp( value, 0f, 1f );
+	}
+
+	private static float Smooth01( float value )
+	{
+		var t = Saturate( value );
+		return t * t * (3f - (2f * t));
+	}
+
+	private static float Lerp( float start, float end, float amount )
+	{
+		return start + ((end - start) * Saturate( amount ));
 	}
 
 	private string GetPetCardClass( MergePetViewModel pet )
