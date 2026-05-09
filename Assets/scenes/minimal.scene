@@ -11410,7 +11410,7 @@
               "__version": 2,
               "Flags": 0,
               "Name": "Polygon",
-              "Position": "1056.75024,1075,12",
+              "Position": "1056.75024,1075,11.9899998",
               "Rotation": "0,0,0,1",
               "Scale": "1,1,1",
               "Tags": "world",
@@ -26108,7 +26108,7 @@
               "FeaturedPets": [
                 {
                   "Rarity": "Common",
-                  "SpawnWeight": 996,
+                  "SpawnWeight": 500,
                   "PetPrefab": {
                     "_type": "gameobject",
                     "prefab": "prefabs/pets/zone1.1/pet-cat.prefab"
@@ -26116,7 +26116,7 @@
                 },
                 {
                   "Rarity": "Common",
-                  "SpawnWeight": 249,
+                  "SpawnWeight": 400,
                   "PetPrefab": {
                     "_type": "gameobject",
                     "prefab": "prefabs/pets/zone1.1/pet-chick.prefab"
@@ -26124,7 +26124,7 @@
                 },
                 {
                   "Rarity": "Common",
-                  "SpawnWeight": 5,
+                  "SpawnWeight": 300,
                   "PetPrefab": {
                     "_type": "gameobject",
                     "prefab": "prefabs/pets/zone1.1/pet-dog.prefab"
@@ -27205,12 +27205,56 @@
       ]
     },
     {
-      "__guid": "f21ebfb5-d653-44c5-819c-4691456da2f2",
+      "__guid": "504a2e9a-698a-4454-a324-7155943ab985",
+      "__version": 2,
+      "__Prefab": "prefabs/props/petforge.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "dc0a764b-428d-4772-8571-ab57b9010a4e"
+            },
+            "Property": "Position",
+            "Value": "300.522766,345.890472,38.7662048"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "dc0a764b-428d-4772-8571-ab57b9010a4e"
+            },
+            "Property": "Rotation",
+            "Value": "-0.000664673338,0.00113437418,-0.140384763,0.990096152"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "195e5262-117e-47bb-9569-645b3e3bcf22"
+            },
+            "Property": "Rotation",
+            "Value": "0,0,0,1"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "dc0a764b-428d-4772-8571-ab57b9010a4e": "504a2e9a-698a-4454-a324-7155943ab985",
+        "29d52304-97e0-4ea9-a586-e73688ac7639": "bd8e4e22-121a-4582-a181-0303887939d2",
+        "a8b6c508-b34f-4d99-bdd0-03d2a36dd980": "13d7b442-f582-4aca-bf9d-006df1fd7376",
+        "65a4dd2b-aa20-4f34-b794-8142b34719a4": "7752b93b-a003-4d18-83d2-ac1cc90f705a",
+        "195e5262-117e-47bb-9569-645b3e3bcf22": "bf6d3bd5-b34c-4d2c-a9f7-5070a74c2ccb",
+        "a465fb5a-7128-4fa6-8552-feab177c63cf": "e2a345c7-6b1e-459d-883b-3262c7b15c8c"
+      }
+    },
+    {
+      "__guid": "2e9a8b6e-cfec-46d2-9615-5cab2a410ef6",
       "__version": 2,
       "Flags": 0,
-      "Name": "MergePetsTogetherInteractable",
-      "Position": "859.263062,-932.351501,34.2730141",
-      "Rotation": "0,0,0,1",
+      "Name": "dog_1_2",
+      "Position": "336.785217,427.063629,44.3093872",
+      "Rotation": "-0.000892502838,0.000965418934,-0.349470496,0.936946452",
       "Scale": "1,1,1",
       "Tags": "",
       "Enabled": true,
@@ -27222,7 +27266,7 @@
       "Components": [
         {
           "__type": "Sandbox.ModelRenderer",
-          "__guid": "5113fbab-0128-4c80-b4e2-e9a0dda31779",
+          "__guid": "9102aab7-ceb9-46ac-93af-65b2784653df",
           "__enabled": true,
           "Flags": 0,
           "BodyGroups": 18446744073709551615,
@@ -27231,7 +27275,7 @@
           "MaterialGroup": null,
           "MaterialOverride": null,
           "Materials": null,
-          "Model": "models/dev/box.vmdl",
+          "Model": "models/pets/dog_1_2/dog_1_2.vmdl",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -27246,46 +27290,6 @@
           },
           "RenderType": "On",
           "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "9704725a-f92c-4a75-ace5-fc5d877f8463",
-          "__enabled": true,
-          "Flags": 0,
-          "Center": "0,0,0",
-          "ColliderFlags": 0,
-          "Elasticity": null,
-          "Friction": null,
-          "IsTrigger": false,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OnObjectTriggerEnter": null,
-          "OnObjectTriggerExit": null,
-          "OnTriggerEnter": null,
-          "OnTriggerExit": null,
-          "RollingResistance": null,
-          "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null,
-          "SurfaceVelocity": "0,0,0"
-        },
-        {
-          "__type": "InteractionOpenPetMerger",
-          "__guid": "c8bb211e-28a1-4574-a237-f773b7cf065c",
-          "__enabled": true,
-          "Flags": 0,
-          "InteractableShortcutOffset": "0,0,0",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "text": null
         }
       ],
       "Children": []

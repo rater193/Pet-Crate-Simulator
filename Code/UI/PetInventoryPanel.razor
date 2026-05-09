@@ -601,7 +601,8 @@
 
 	private const float ScrollTrackPadding = 28f;
 	private const float MinScrollbarThumbHeight = 42f;
-	private const float DeleteAnimationDuration = 0.72f;
+	private const float DeleteAnimationDuration = 0.98f;
+	private const float DeleteCollapseStart = 0.68f;
 	private const float DeleteModeSettleDuration = 0.32f;
 
 	private Panel PetGridPanel { get; set; }
@@ -800,6 +801,9 @@
 		var backgroundColor = pet.IsEquipped ? "#54c943" : "#37adf4";
 		var opacity = 1f;
 		var transform = "translateX(0px) translateY(0px) rotate(0deg) scale(1)";
+		var width = 150f;
+		var height = 176f;
+		var marginRight = 0f;
 
 		if ( isDeleteMode || isDeleteModeSettling )
 		{
@@ -820,9 +824,12 @@
 			backgroundColor = "rgba(255, 255, 255, 0.96)";
 			transform = deleteStyle.transform;
 			opacity = deleteStyle.opacity;
+			width = deleteStyle.width;
+			height = deleteStyle.height;
+			marginRight = deleteStyle.marginRight;
 		}
 
-		return $"{pet.RarityBorderStyle} background-color: {backgroundColor}; opacity: {opacity:0.###}; transform: {transform};";
+		return $"{pet.RarityBorderStyle} width: {width:0.##}px; height: {height:0.##}px; margin-right: {marginRight:0.##}px; background-color: {backgroundColor}; opacity: {opacity:0.###}; transform: {transform};";
 	}
 
 	private string GetStatusText( PetViewModel pet )
@@ -874,15 +881,19 @@
 		);
 	}
 
-	private (string transform, float opacity) GetDeleteAnimationValues()
+	private (string transform, float opacity, float width, float height, float marginRight) GetDeleteAnimationValues()
 	{
 		var t = Smooth01( (deleteAnimationTime / DeleteAnimationDuration).Clamp( 0f, 1f ) );
+		var collapse = Smooth01( ((deleteAnimationTime / DeleteAnimationDuration) - DeleteCollapseStart) / (1f - DeleteCollapseStart) );
 		var hop = -MathF.Sin( t * MathF.PI ) * 72f;
 		var shrink = 1f - (t * 0.92f);
 		var spin = t * 560f;
 		var opacity = 1f - (t * 0.92f);
+		var width = MathF.Max( 0f, 150f * (1f - collapse) );
+		var height = MathF.Max( 0f, 176f * (1f - collapse) );
+		var marginRight = -14f * collapse;
 
-		return ($"translateX(0px) translateY({hop:0.##}px) rotate({spin:0.##}deg) scale({shrink:0.###})", opacity);
+		return ($"translateX(0px) translateY({hop:0.##}px) rotate({spin:0.##}deg) scale({shrink:0.###})", opacity, width, height, marginRight);
 	}
 
 	private static float Smooth01( float value )

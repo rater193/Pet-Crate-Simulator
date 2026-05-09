@@ -1,0 +1,14 @@
+
+Layer0
+{
+	shader "shaders/complex.shader_c"
+
+	TextureColor "models/pets/dog_1_2/dog_1_2_texture.png"
+	TextureAmbientOcclusion "materials/default/default_ao.tga"
+	TextureNormal "models/pets/dog_1_2/dog_1_2_texture_normal.png"
+	TextureRoughness "models/pets/dog_1_2/dog_1_2_texture_roughness.png"
+	F_METALNESS_TEXTURE 1
+	F_SPECULAR 1
+	TextureMetalness "models/pets/dog_1_2/dog_1_2_texture_metallic.png"
+
+}
