@@ -838,7 +838,7 @@
 
 	private (float x, float y, float rotation) GetDeleteModeShake( int slotIndex )
 	{
-		if ( (!isDeleteMode && !isDeleteModeSettling) || IsDeletingPet )
+		if ( (!isDeleteMode && !isDeleteModeSettling) || deletingSlotIndex == slotIndex )
 			return (0f, 0f, 0f);
 
 		var amplitude = isDeleteMode
