@@ -27247,52 +27247,6 @@
         "195e5262-117e-47bb-9569-645b3e3bcf22": "bf6d3bd5-b34c-4d2c-a9f7-5070a74c2ccb",
         "a465fb5a-7128-4fa6-8552-feab177c63cf": "e2a345c7-6b1e-459d-883b-3262c7b15c8c"
       }
-    },
-    {
-      "__guid": "2e9a8b6e-cfec-46d2-9615-5cab2a410ef6",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "dog_1_2",
-      "Position": "336.785217,427.063629,44.3093872",
-      "Rotation": "-0.000892502838,0.000965418934,-0.349470496,0.936946452",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "9102aab7-ceb9-46ac-93af-65b2784653df",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "models/pets/dog_1_2/dog_1_2.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
     }
   ],
   "SceneProperties": {

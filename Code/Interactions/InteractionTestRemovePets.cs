@@ -14,7 +14,7 @@ public sealed class InteractionTestRemovePets : Interactable
 			PlayerData playerdata = interactingPlayer.GetComponent<PlayerData>();
 			Inventory inv = playerdata.inventory;
 			inv.InventorySize = 100;
-			playerdata.PlayerMoney += 0;
+			playerdata.PlayerMoney = 0;
 			
 			while ( inv.Count > 0)
 			{

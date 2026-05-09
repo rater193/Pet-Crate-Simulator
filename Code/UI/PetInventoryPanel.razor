@@ -132,26 +132,13 @@
 	}
 
 	.pet-trash-icon {
-		width: 24px;
-		height: 28px;
-		border-radius: 4px;
-		background-color: #397da6;
-		position: relative;
+		width: 30px;
+		height: 30px;
 	}
 
-	.pet-trash-icon-lid {
-		position: absolute;
-		left: -4px;
-		top: -7px;
-		width: 32px;
-		height: 6px;
-		border-radius: 3px;
-		background-color: #397da6;
-	}
-
-	.pet-delete-toggle.active .pet-trash-icon,
-	.pet-delete-toggle.active .pet-trash-icon-lid {
-		background-color: #d92d3d;
+	.pet-delete-toggle.active .pet-trash-icon {
+		opacity: 0.82;
+		transform: scale(1.08);
 	}
 
 	.pet-equipped-list {
@@ -360,7 +347,7 @@
 
 	.pet-card.ancestral,
 	.pet-equipped-card.ancestral {
-		box-shadow: 0px 0px 0px 3px #ff3434, 0px 0px 16px #ffd740, 0px 0px 28px #3d8fff;
+		box-shadow: 0px 0px 0px 3px #ff3434;
 	}
 
 	.pet-card:hover .pet-action-overlay {
@@ -536,9 +523,7 @@
 					<div class="pet-section-title">Your Pets</div>
 					<div class="pet-section-actions">
 						<div class="@DeleteToggleClass" onclick=@ToggleDeleteMode>
-							<div class="pet-trash-icon">
-								<div class="pet-trash-icon-lid"></div>
-							</div>
+							<img class="pet-trash-icon" src="ui/icons/icon_trashcan.vtex" />
 						</div>
 						<div class="pet-inventory-count">@InventoryPetCount / @InventoryCapacity Pets</div>
 					</div>
@@ -763,7 +748,9 @@
 
 		if ( Inventory?.RemovePet( slotIndex ) == true )
 		{
-			BeginDeleteModeSettle();
+			isDeleteMode = true;
+			isDeleteModeSettling = false;
+			deleteModeSettleTime = 0f;
 		}
 
 		StateHasChanged();
