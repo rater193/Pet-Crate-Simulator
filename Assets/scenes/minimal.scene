@@ -334,6 +334,21 @@
                   "mode": "Mirrored"
                 }
               ]
+            },
+            {
+              "__type": "Sandbox.WorldInput",
+              "__guid": "b029e030-c099-4372-a93a-3560db098b14",
+              "__enabled": true,
+              "Flags": 0,
+              "LeftMouseAction": "Attack1",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RightMouseAction": "Attack2",
+              "VRHandSource": "Left"
             }
           ],
           "Children": []
@@ -27444,7 +27459,7 @@
           "Flags": 0,
           "Contributors": [
             {
-              "SteamId": 0,
+              "SteamId": 76561198052494963,
               "Contributions": [
                 "Created and directed Pet Crate Simulator.",
                 "Designed the pet crate, inventory, and progression goals."
@@ -27458,10 +27473,10 @@
               ]
             },
             {
-              "SteamId": 0,
+              "SteamId": 76561197991348132,
               "Contributions": [
-                "Provided gameplay feedback and balance suggestions.",
-                "Shared ideas for polish, UI, and pet rewards."
+                "Suggestions, Crown, Auto Merge for Pet Forge, Texture changes",
+                "Being a great lad"
               ]
             }
           ],

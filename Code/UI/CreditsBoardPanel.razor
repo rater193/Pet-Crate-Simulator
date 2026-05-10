@@ -42,6 +42,7 @@
 		bottom: 34px;
 		border: 5px solid rgba(255, 255, 255, 0.16);
 		border-radius: 24px;
+		pointer-events: none;
 	}
 
 	.credits-shimmer {
@@ -52,6 +53,7 @@
 		height: 1380px;
 		background-color: rgba(255, 255, 255, 0.1);
 		transform: rotate(16deg) translateX(@ShimmerXpx);
+		pointer-events: none;
 	}
 
 	.credits-accent {
@@ -62,6 +64,7 @@
 		height: 28px;
 		background-color: #71d6ff;
 		opacity: @AccentOpacity;
+		pointer-events: none;
 	}
 
 	.credits-title {
@@ -287,6 +290,7 @@
 		opacity: @SparkOpacity;
 		transform: rotate(45deg) scale(@SparkScale);
 		z-index: 1;
+		pointer-events: none;
 	}
 
 	.credits-spark.one {
@@ -325,9 +329,8 @@
 						@for ( var i = 0; i < DisplayContributors.Count; i++ )
 						{
 							var contributor = DisplayContributors[i];
-							var contributorIndex = i;
-							<div class="credits-user-shell" style="@GetContributorButtonStyle( contributorIndex )">
-								<div class="credits-user-button" onclick=@(() => SelectContributor( contributorIndex ))>
+							<div class="credits-user-shell" style="@GetContributorButtonStyle( i )">
+								<div class="credits-user-button" onmousedown=@(() => SelectContributor( contributor )) onclick=@(() => SelectContributor( contributor ))>
 									<div class="credits-avatar">
 										@if ( GetContributorAvatar( contributor, 64 ) != null )
 										{
@@ -373,7 +376,7 @@
 							}
 						}
 					</div>
-					<div class="credits-back-button" onclick=@BackToList>Back</div>
+					<div class="credits-back-button" onmousedown=@BackToList onclick=@BackToList>Back</div>
 				</div>
 			}
 		</div>
@@ -415,13 +418,11 @@
 		}
 	};
 
-	private int selectedContributorIndex = -1;
+	private CreditsContributor selectedContributor;
 	private int animationFrame;
 	private float TimeValue => Time.Now;
 	private List<CreditsContributor> DisplayContributors => Contributors ?? new List<CreditsContributor>();
-	private CreditsContributor SelectedContributor => selectedContributorIndex >= 0 && selectedContributorIndex < DisplayContributors.Count
-		? DisplayContributors[selectedContributorIndex]
-		: null;
+	private CreditsContributor SelectedContributor => selectedContributor;
 	private string BoardBobpx => $"{MathF.Sin( TimeValue * 1.25f ) * 5f}px";
 	private string BoardScalef => $"{1f + MathF.Sin( TimeValue * 1.25f + 0.6f ) * 0.005f:0.###}";
 	private string TitleBobpx => $"{MathF.Sin( TimeValue * 1.9f ) * 5f}px";
@@ -454,21 +455,21 @@
 			}
 		}
 
-		return HashCode.Combine( TitleText, SubtitleText, selectedContributorIndex, animationFrame, contributorHash );
+		return HashCode.Combine( TitleText, SubtitleText, selectedContributor?.SteamId, animationFrame, contributorHash );
 	}
 
-	private void SelectContributor( int index )
+	private void SelectContributor( CreditsContributor contributor )
 	{
-		if ( index < 0 || index >= DisplayContributors.Count )
+		if ( contributor == null )
 			return;
 
-		selectedContributorIndex = index;
+		selectedContributor = contributor;
 		StateHasChanged();
 	}
 
 	private void BackToList()
 	{
-		selectedContributorIndex = -1;
+		selectedContributor = null;
 		StateHasChanged();
 	}
 
