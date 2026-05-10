@@ -182,6 +182,7 @@
 		align-items: center;
 		position: relative;
 		overflow: hidden;
+		pointer-events: all;
 		transition: background-color 0.1s ease, box-shadow 0.08s ease, transform 0.08s ease;
 	}
 
@@ -196,6 +197,48 @@
 
 	.pet-merge-card:hover {
 		transform: scale(1.08);
+	}
+
+	.pet-merge-card:hover .pet-merge-action-overlay,
+	.pet-merge-slot.filled:hover .pet-merge-action-overlay {
+		opacity: 1;
+	}
+
+	.pet-merge-action-overlay {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		border-radius: 10px;
+		align-items: center;
+		justify-content: center;
+		font-size: 24px;
+		font-weight: 900;
+		text-transform: uppercase;
+		text-stroke: 2px rgba(255, 255, 255, 0.58);
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity 0.08s ease;
+		z-index: 10;
+	}
+
+	.pet-merge-action-overlay.add {
+		background-color: rgba(62, 225, 92, 0.5);
+		color: #075f25;
+	}
+
+	.pet-merge-action-overlay.remove {
+		background-color: rgba(240, 72, 72, 0.5);
+		color: #7b1010;
+	}
+
+	.pet-merge-action-overlay.max-selected {
+		background-color: rgba(240, 72, 72, 0.5);
+		color: #7b1010;
+		font-size: 16px;
+		text-align: center;
+		padding: 12px;
 	}
 
 	.pet-merge-icon {
@@ -445,6 +488,7 @@
 								</div>
 								<div class="pet-merge-name">@pet.DisplayName</div>
 								<div class="pet-merge-rarity">@pet.Rarity</div>
+								<div class="@GetPetCardOverlayClass( pet )">@GetPetCardOverlayText( pet )</div>
 							</div>
 						</div>
 					}
@@ -474,6 +518,10 @@
 								@if ( isMerging )
 								{
 									<div class="pet-merge-slot-blackout"></div>
+								}
+								else
+								{
+									<div class="pet-merge-action-overlay remove">Remove</div>
 								}
 							}
 							else
@@ -820,6 +868,28 @@
 		var y = sortOffset * 12f;
 		var scale = 0.96f + ((1f - sortOffset) * 0.04f);
 		return $"opacity: {opacity:0.###}; transform: translateX(0px) translateY({y:0.##}px) scale({scale:0.###});";
+	}
+
+	private string GetPetCardOverlayClass( MergePetViewModel pet )
+	{
+		if ( pet.IsSelected )
+			return "pet-merge-action-overlay remove";
+
+		if ( selectedSlotIndexes.Count >= 3 )
+			return "pet-merge-action-overlay max-selected";
+
+		return "pet-merge-action-overlay add";
+	}
+
+	private string GetPetCardOverlayText( MergePetViewModel pet )
+	{
+		if ( pet.IsSelected )
+			return "Remove";
+
+		if ( selectedSlotIndexes.Count >= 3 )
+			return "Max merge pets selected";
+
+		return "Add";
 	}
 
 	private string GetSortButtonClass( PetMergeSortMode mode )
