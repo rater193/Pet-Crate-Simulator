@@ -19,8 +19,8 @@
 	}
 
 	.pet-trade-window {
-		width: 1180px;
-		height: 770px;
+		width: 1320px;
+		height: 94%;
 		flex-direction: column;
 		background-color: #edf8ff;
 		border: 6px solid #65c8ff;
@@ -88,10 +88,10 @@
 
 	.pet-trade-selected-row {
 		margin-top: 10px;
-		height: 112px;
+		height: 276px;
 		flex-direction: row;
 		gap: 10px;
-		overflow: hidden;
+		overflow: scroll;
 	}
 
 	.pet-trade-list {
@@ -105,8 +105,8 @@
 	}
 
 	.pet-trade-card {
-		width: 132px;
-		height: 148px;
+		width: 154px;
+		height: 178px;
 		flex-direction: column;
 		align-items: center;
 		background-color: #33a9ed;
@@ -130,17 +130,25 @@
 	}
 
 	.pet-trade-thumb {
-		width: 58px;
-		height: 58px;
+		width: 76px;
+		height: 76px;
 		border-radius: 14px;
 		background-color: rgba(255, 255, 255, 0.45);
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+	}
+
+	.pet-trade-thumb-image {
+		width: 76px;
+		height: 76px;
 	}
 
 	.pet-trade-name {
 		margin-top: 8px;
 		width: 100%;
 		color: white;
-		font-size: 18px;
+		font-size: 19px;
 		font-weight: 900;
 		text-align: center;
 		text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.22);
@@ -149,7 +157,7 @@
 	.pet-trade-stats {
 		margin-top: 2px;
 		color: white;
-		font-size: 13px;
+		font-size: 14px;
 		font-weight: 900;
 		text-align: center;
 		text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.2);
@@ -339,6 +347,7 @@
 		if ( pet.PreviewTexture != null )
 		{
 			builder.OpenComponent<Image>( sequence++ );
+			builder.AddAttribute( sequence++, "class", "pet-trade-thumb-image" );
 			builder.AddAttribute( sequence++, "Texture", pet.PreviewTexture );
 			builder.CloseComponent();
 		}
