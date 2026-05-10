@@ -25913,7 +25913,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "WIP DISCLAIMER",
-      "Position": "1490.49902,1048.78528,196.24498",
+      "Position": "1636.06165,1048.78528,166.496979",
       "Rotation": "0,0,0.85826838,-0.513201118",
       "Scale": "3,3,3",
       "Tags": "",
@@ -27325,6 +27325,77 @@
         }
       ],
       "Children": []
+    },
+    {
+      "__guid": "9bf8b2d4-f20b-48d3-8ad0-24ae07914671",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "crown",
+      "Position": "1115.81824,198.019272,518.58905",
+      "Rotation": "0,0.293232799,0,0.956041098",
+      "Scale": "3.67782593,3.67782593,3.67782593",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "a730147a-4d05-4948-9069-c567e35e4b9d",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/lowobjects/crown.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "12e006bf-76b0-4591-b873-85ca0f19ad39",
+          "__enabled": false,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/lowobjects/crown.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
     }
   ],
   "SceneProperties": {
@@ -27369,7 +27440,8 @@
   "Description": null,
   "__references": [
     "fish.gt_big_crate#89786",
-    "kenneynl.towerdefensespawnround#81458"
+    "kenneynl.towerdefensespawnround#81458",
+    "titanovsky.lo_crown#79189"
   ],
   "__version": 3
 }

@@ -108,6 +108,43 @@
 		gap: 12px;
 	}
 
+	.pet-sort-controls {
+		flex-direction: row;
+		align-items: center;
+		gap: 8px;
+	}
+
+	.pet-sort-button {
+		height: 42px;
+		padding: 0px 14px;
+		border-radius: 12px;
+		background-color: #d9edff;
+		border: 3px solid #64c7f5;
+		color: #36516e;
+		font-size: 15px;
+		font-weight: 900;
+		align-items: center;
+		justify-content: center;
+		pointer-events: all;
+		transition: transform 0.08s ease, background-color 0.1s ease;
+        transform: translateY(-16px);
+	}
+
+	.pet-sort-button:hover {
+		transform: scale(1.06);
+		background-color: #ecf8ff;
+	}
+
+	.pet-sort-button.active {
+		background-color: #2375df;
+		color: white;
+		border-color: #2375df;
+	}
+
+	.pet-sort-direction {
+		min-width: 104px;
+	}
+
 	.pet-section-title-row .pet-section-title {
 		margin-bottom: 0px;
 	}
@@ -129,10 +166,11 @@
 		pointer-events: all;
 		box-shadow: none;
 		transition: transform 0.08s ease;
+        transform: translateY(-16px);
 	}
 
 	.pet-delete-toggle:hover {
-		transform: scale(1.1);
+		transform: translateY(-16px) scale(1.1);
 	}
 
 	.pet-delete-toggle.active {
@@ -531,6 +569,11 @@
 			<div class="pet-inventory-body">
 				<div class="pet-section-title-row">
 					<div class="pet-section-title">Your Pets</div>
+					<div class="pet-sort-controls">
+						<div class="@GetSortButtonClass( PetInventorySortMode.Rarity )" onclick=@(() => SetSortMode( PetInventorySortMode.Rarity ))>Sort by rarity</div>
+						<div class="@GetSortButtonClass( PetInventorySortMode.Name )" onclick=@(() => SetSortMode( PetInventorySortMode.Name ))>Sort by name</div>
+						<div class="pet-sort-button pet-sort-direction" onclick=@ToggleSortDirection>@SortDirectionText</div>
+					</div>
 					<div class="pet-section-actions">
 						<div class="@DeleteToggleClass" onclick=@ToggleDeleteMode>
 							<img class="pet-trash-icon" src="ui/icons/icon_trashcan.vtex" />
@@ -599,6 +642,7 @@
 	private const float DeleteAnimationDuration = 0.98f;
 	private const float DeleteCollapseStart = 0.68f;
 	private const float DeleteModeSettleDuration = 0.32f;
+	private const float SortAnimationDuration = 0.34f;
 
 	private Panel PetGridPanel { get; set; }
 	private float lastScrollRatio;
@@ -611,6 +655,10 @@
 	private float deleteAnimationTime;
 	private float deleteModeSettleStartTime;
 	private float deleteModeSettleTime;
+	private PetInventorySortMode sortMode = PetInventorySortMode.Rarity;
+	private bool sortAscending = true;
+	private float sortAnimationStartTime;
+	private float sortAnimationTime = SortAnimationDuration;
 
 	private PlayerData LocalPlayerData => PlayerData.LOCALDATA;
 	private Inventory Inventory => LocalPlayerData?.inventory;
@@ -624,6 +672,9 @@
 	private string ScrollbarThumbStyle => $"top: {GetScrollbarThumbTop()}%; height: {GetScrollbarThumbHeight()}%;";
 	private bool IsDeletingPet => deletingSlotIndex >= 0;
 	private string DeleteToggleClass => $"pet-delete-toggle {(isDeleteMode ? "active" : "")}";
+	private string SortDirectionText => sortMode == PetInventorySortMode.Name
+		? sortAscending ? "A to Z" : "Z to A"
+		: sortAscending ? "Low to High" : "High to Low";
 
 	public override void Tick()
 	{
@@ -659,6 +710,12 @@
 				deleteModeSettleTime = 0f;
 			}
 
+			shouldUpdate = true;
+		}
+
+		if ( sortAnimationTime < SortAnimationDuration )
+		{
+			sortAnimationTime = Time.Now - sortAnimationStartTime;
 			shouldUpdate = true;
 		}
 
@@ -722,6 +779,31 @@
 
 		pendingDeleteSlotIndex = -1;
 		StateHasChanged();
+	}
+
+	private void SetSortMode( PetInventorySortMode mode )
+	{
+		if ( sortMode == mode )
+			return;
+
+		sortMode = mode;
+		pendingDeleteSlotIndex = -1;
+		StartSortAnimation();
+		StateHasChanged();
+	}
+
+	private void ToggleSortDirection()
+	{
+		sortAscending = !sortAscending;
+		pendingDeleteSlotIndex = -1;
+		StartSortAnimation();
+		StateHasChanged();
+	}
+
+	private void StartSortAnimation()
+	{
+		sortAnimationStartTime = Time.Now;
+		sortAnimationTime = 0f;
 	}
 
 	private void HandlePetCardClicked( int slotIndex )
@@ -788,6 +870,11 @@
 		return classes;
 	}
 
+	private string GetSortButtonClass( PetInventorySortMode mode )
+	{
+		return $"pet-sort-button {(sortMode == mode ? "active" : "")}";
+	}
+
 	private string GetEquippedPetCardClass( PetViewModel pet )
 	{
 		return $"pet-equipped-card {pet.RarityClass}";
@@ -801,11 +888,20 @@
 		var width = 150f;
 		var height = 176f;
 		var marginRight = 0f;
+		var sortOffset = GetSortAnimationOffset( pet.DisplayIndex );
 
 		if ( isDeleteMode || isDeleteModeSettling )
 		{
 			var shake = GetDeleteModeShake( pet.SlotIndex );
 			transform = $"translateX({shake.x:0.##}px) translateY({shake.y:0.##}px) rotate({shake.rotation:0.##}deg) scale(1)";
+			sortOffset = 0f;
+		}
+		else if ( sortOffset > 0f )
+		{
+			var y = sortOffset * 12f;
+			var scale = 0.96f + ((1f - sortOffset) * 0.04f);
+			transform = $"translateX(0px) translateY({y:0.##}px) rotate(0deg) scale({scale:0.###})";
+			opacity = 1f - (sortOffset * 0.34f);
 		}
 
 		if ( isDeleteMode )
@@ -958,7 +1054,38 @@
 			} );
 		}
 
+		pets = SortPets( pets );
+		for ( var i = 0; i < pets.Count; i++ )
+		{
+			pets[i].DisplayIndex = i;
+		}
+
 		return pets;
+	}
+
+	private List<PetViewModel> SortPets( List<PetViewModel> pets )
+	{
+		IOrderedEnumerable<PetViewModel> sorted = sortMode switch
+		{
+			PetInventorySortMode.Name => sortAscending
+				? pets.OrderBy( pet => pet.DisplayName, StringComparer.OrdinalIgnoreCase ).ThenBy( pet => (int)pet.Rarity ).ThenBy( pet => pet.SlotIndex )
+				: pets.OrderByDescending( pet => pet.DisplayName, StringComparer.OrdinalIgnoreCase ).ThenByDescending( pet => (int)pet.Rarity ).ThenBy( pet => pet.SlotIndex ),
+			_ => sortAscending
+				? pets.OrderBy( pet => (int)pet.Rarity ).ThenBy( pet => pet.DisplayName, StringComparer.OrdinalIgnoreCase ).ThenBy( pet => pet.SlotIndex )
+				: pets.OrderByDescending( pet => (int)pet.Rarity ).ThenBy( pet => pet.DisplayName, StringComparer.OrdinalIgnoreCase ).ThenBy( pet => pet.SlotIndex )
+		};
+
+		return sorted.ToList();
+	}
+
+	private float GetSortAnimationOffset( int displayIndex )
+	{
+		if ( sortAnimationTime >= SortAnimationDuration )
+			return 0f;
+
+		var stagger = MathF.Min( displayIndex, 18 ) * 0.012f;
+		var t = ((sortAnimationTime - stagger) / SortAnimationDuration).Clamp( 0f, 1f );
+		return 1f - Smooth01( t );
 	}
 
 	protected override int BuildHash()
@@ -980,13 +1107,22 @@
 			}
 		}
 
-		var uiStateHash = HashCode.Combine( isDeleteMode, isDeleteModeSettling, pendingDeleteSlotIndex, deletingSlotIndex, (int)(deleteAnimationTime * 30f), (int)(deleteModeSettleTime * 30f), PetPreviewRenderer.PreviewVersion );
+		var deleteStateHash = HashCode.Combine( isDeleteMode, isDeleteModeSettling, pendingDeleteSlotIndex, deletingSlotIndex, (int)(deleteAnimationTime * 30f), (int)(deleteModeSettleTime * 30f) );
+		var sortStateHash = HashCode.Combine( sortMode, sortAscending, (int)(sortAnimationTime * 30f), PetPreviewRenderer.PreviewVersion );
+		var uiStateHash = HashCode.Combine( deleteStateHash, sortStateHash );
 		return HashCode.Combine( IsOpen, inventory?.Count ?? 0, EquippedCount, MaxEquipped, slotHash, lastScrollRatio, lastThumbHeight, uiStateHash );
+	}
+
+	private enum PetInventorySortMode
+	{
+		Rarity,
+		Name
 	}
 
 	private sealed class PetViewModel
 	{
 		public int SlotIndex { get; set; }
+		public int DisplayIndex { get; set; }
 		public string DisplayName { get; set; }
 		public bool IsEquipped { get; set; }
 		public PetRarity Rarity { get; set; }
