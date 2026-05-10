@@ -108,6 +108,40 @@
 		gap: 12px;
 	}
 
+	.pet-equipped-title-row {
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 12px;
+	}
+
+	.pet-auto-equip-controls {
+		flex-direction: row;
+		align-items: center;
+		gap: 8px;
+	}
+
+	.pet-auto-equip-button {
+		height: 38px;
+		padding: 0px 12px;
+		border-radius: 12px;
+		background-color: #d9edff;
+		border: 3px solid #64c7f5;
+		color: #36516e;
+		font-size: 14px;
+		font-weight: 900;
+		align-items: center;
+		justify-content: center;
+		pointer-events: all;
+		transition: transform 0.08s ease, background-color 0.1s ease, border-color 0.1s ease;
+	}
+
+	.pet-auto-equip-button:hover {
+		transform: scale(1.06);
+		background-color: #ecf8ff;
+		border-color: #2375df;
+	}
+
 	.pet-sort-controls {
 		flex-direction: row;
 		align-items: center;
@@ -536,7 +570,13 @@
 			<div class="pet-inventory-close" onclick=@Close>X</div>
 
 			<div class="pet-inventory-equipped">
-				<div class="pet-section-title">@EquippedCount / @MaxEquipped Equipped</div>
+				<div class="pet-equipped-title-row">
+					<div class="pet-section-title">@EquippedCount / @MaxEquipped Equipped</div>
+					<div class="pet-auto-equip-controls">
+						<div class="pet-auto-equip-button" onclick=@(() => EquipBest( InventoryAutoEquipMode.Damage ))>Equip best damage</div>
+						<div class="pet-auto-equip-button" onclick=@(() => EquipBest( InventoryAutoEquipMode.CoinMultiplier ))>Equip best coins</div>
+					</div>
+				</div>
 				<div class="pet-equipped-list">
 					@if ( EquippedPets.Count == 0 )
 					{
@@ -797,6 +837,28 @@
 		sortAscending = !sortAscending;
 		pendingDeleteSlotIndex = -1;
 		StartSortAnimation();
+		StateHasChanged();
+	}
+
+	private void EquipBest( InventoryAutoEquipMode mode )
+	{
+		if ( IsDeletingPet )
+			return;
+
+		if ( isDeleteMode )
+		{
+			BeginDeleteModeSettle();
+		}
+		else
+		{
+			pendingDeleteSlotIndex = -1;
+		}
+
+		if ( Inventory?.EquipBestPets( mode ) == true )
+		{
+			StartSortAnimation();
+		}
+
 		StateHasChanged();
 	}
 

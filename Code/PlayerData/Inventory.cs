@@ -1,5 +1,6 @@
 using Sandbox;
 using Sandbox.Services;
+using System;
 
 public sealed class Inventory : Component
 {
@@ -70,6 +71,44 @@ public sealed class Inventory : Component
 		return IsPetEquipped( slotNumber )
 			? UnequipPet( slotNumber )
 			: EquipPet( slotNumber );
+	}
+
+	public bool EquipBestPets( InventoryAutoEquipMode mode )
+	{
+		var petFramework = GetComponent<PetFramework>();
+		if ( !petFramework.IsValid() )
+		{
+			Log.Warning( "Tried to equip best pets, but no PetFramework was found on the player." );
+			return false;
+		}
+
+		var maxEquippedPets = Math.Max( 0, petFramework.MaxEquippedPets );
+		if ( maxEquippedPets == 0 )
+			return false;
+
+		var bestSlotIndexes = GetBestPetSlotIndexes( mode, maxEquippedPets );
+		if ( bestSlotIndexes.Count == 0 )
+			return false;
+
+		var oldEquippedSlotIndexes = GetEquippedSlotIndexes();
+		if ( oldEquippedSlotIndexes.SequenceEqual( bestSlotIndexes ) )
+			return false;
+
+		foreach ( var oldSlotIndex in oldEquippedSlotIndexes.Except( bestSlotIndexes ) )
+		{
+			var slot = GetPet( oldSlotIndex );
+			GameStatsTracker.RecordPetUnequipped( slot?.DisplayName, slot?.PetPrefabPath );
+		}
+
+		foreach ( var newSlotIndex in bestSlotIndexes.Except( oldEquippedSlotIndexes ) )
+		{
+			var slot = GetPet( newSlotIndex );
+			GameStatsTracker.RecordPetEquipped( slot?.DisplayName, slot?.PetPrefabPath );
+		}
+
+		LoadEquippedSlotIndexes( bestSlotIndexes );
+		QueueOwnerSave();
+		return true;
 	}
 
 	public bool IsPetEquipped( int slotNumber )
@@ -293,6 +332,43 @@ public sealed class Inventory : Component
 			.ThenBy( group => group.Key.PetPrefabPath, System.StringComparer.OrdinalIgnoreCase )
 			.Select( group => group.Take( 3 ).Select( entry => entry.Index ).ToList() )
 			.FirstOrDefault();
+	}
+
+	private List<int> GetBestPetSlotIndexes( InventoryAutoEquipMode mode, int maxEquippedPets )
+	{
+		return Slots
+			.Select( ( slot, index ) => new
+			{
+				Slot = slot,
+				Index = index,
+				Score = GetAutoEquipScore( slot, mode ),
+				TieBreakerScore = GetAutoEquipScore( slot, mode == InventoryAutoEquipMode.Damage ? InventoryAutoEquipMode.CoinMultiplier : InventoryAutoEquipMode.Damage )
+			} )
+			.Where( entry => entry.Slot.IsValid() && entry.Slot.HasPet )
+			.OrderByDescending( entry => entry.Score )
+			.ThenByDescending( entry => entry.TieBreakerScore )
+			.ThenByDescending( entry => (int)entry.Slot.Rarity )
+			.ThenBy( entry => entry.Slot.DisplayName, System.StringComparer.OrdinalIgnoreCase )
+			.ThenBy( entry => entry.Index )
+			.Take( maxEquippedPets )
+			.Select( entry => entry.Index )
+			.ToList();
+	}
+
+	private static float GetAutoEquipScore( InventoryPetSlot slot, InventoryAutoEquipMode mode )
+	{
+		if ( !slot.IsValid() || !slot.HasPet )
+			return 0f;
+
+		var petPrefab = slot.GetPetPrefab();
+		var petComponent = petPrefab?.GetComponent<PetComponent>() ?? petPrefab?.GetComponentInChildren<PetComponent>();
+		var rarityMultiplier = slot.RarityValueMultiplier;
+
+		return mode switch
+		{
+			InventoryAutoEquipMode.Damage => Math.Max( 0, (int)MathF.Round( (petComponent?.Damage ?? 1) * rarityMultiplier ) ),
+			_ => MathF.Max( 0f, petComponent?.CoinMultiplier ?? 1f ) * rarityMultiplier
+		};
 	}
 
 	public List<int> GetEquippedSlotIndexes()
@@ -520,4 +596,10 @@ public sealed class Inventory : Component
 
 		return result;
 	}
+}
+
+public enum InventoryAutoEquipMode
+{
+	Damage,
+	CoinMultiplier
 }

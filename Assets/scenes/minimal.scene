@@ -26984,7 +26984,7 @@
             {
               "SteamId": 76561197991348132,
               "Contributions": [
-                "Suggestions, Crown, Auto Merge for Pet Forge, Texture changes",
+                "Suggestions, Crown, Auto Merge for Pet Forge, Texture changes, Autobattling",
                 "Being a great lad",
                 "Playtester"
               ]
@@ -27042,13 +27042,13 @@
           "$blob": "270678c0-b3fa-442a-8d97-a44eb9066ca6"
         }
       },
-      "Sandbox.MovieMaker.MovieRecorderSystem": {
-        "DisableClientRecording": false
-      },
       "Sandbox.SelectionSetsSystem": {
         "Data": {
           "SelectionSets": []
         }
+      },
+      "Sandbox.MovieMaker.MovieRecorderSystem": {
+        "DisableClientRecording": false
       }
     }
   },
