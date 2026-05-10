@@ -1,0 +1,225 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using Sandbox.Services;
+@using System;
+@inherits Panel
+@namespace Sandbox
+
+<style>
+	.player-details-root {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		align-items: center;
+		justify-content: center;
+		pointer-events: all;
+		font-family: Poppins;
+	}
+
+	.player-details-card {
+		width: 760px;
+		min-height: 560px;
+		flex-direction: column;
+		background-color: #eaf7ff;
+		border: 6px solid #65c8ff;
+		border-radius: 28px;
+		padding: 28px;
+		box-shadow: 0px 16px 28px rgba(8, 38, 76, 0.28);
+		transform: scale(1);
+		transition: transform 0.12s ease;
+	}
+
+	.player-details-header {
+		flex-direction: row;
+		align-items: center;
+		gap: 18px;
+	}
+
+	.player-details-avatar {
+		width: 112px;
+		height: 112px;
+		border-radius: 18px;
+		border: 5px solid #ffffff;
+		background-color: #bfe9ff;
+		box-shadow: 0px 8px 14px rgba(34, 112, 168, 0.22);
+	}
+
+	.player-details-title-stack {
+		flex-direction: column;
+		flex-grow: 1;
+	}
+
+	.player-details-name {
+		color: #163c62;
+		font-size: 42px;
+		font-weight: 900;
+		text-shadow: 1px 2px 0px rgba(255, 255, 255, 0.85);
+	}
+
+	.player-details-subtitle {
+		color: #5080a5;
+		font-size: 22px;
+		font-weight: 800;
+	}
+
+	.player-details-close {
+		width: 62px;
+		height: 62px;
+		align-items: center;
+		justify-content: center;
+		background-color: #2b7de1;
+		border: 4px solid #ffffff;
+		border-radius: 18px;
+		color: white;
+		font-size: 42px;
+		font-weight: 900;
+		transition: transform 0.08s ease, background-color 0.1s ease;
+	}
+
+	.player-details-close:hover {
+		transform: scale(1.1);
+		background-color: #ef4a5a;
+	}
+
+	.player-details-stats {
+		margin-top: 26px;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	.player-details-stat {
+		height: 62px;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		background-color: rgba(255, 255, 255, 0.72);
+		border: 3px solid rgba(112, 190, 238, 0.55);
+		border-radius: 16px;
+		padding: 0px 20px;
+	}
+
+	.player-details-stat-label {
+		color: #356d94;
+		font-size: 25px;
+		font-weight: 900;
+	}
+
+	.player-details-stat-value {
+		color: #15395e;
+		font-size: 27px;
+		font-weight: 900;
+	}
+
+	.player-details-trade {
+		margin-top: 28px;
+		height: 76px;
+		align-items: center;
+		justify-content: center;
+		background-color: #39c958;
+		border: 5px solid #ffffff;
+		border-radius: 20px;
+		color: white;
+		font-size: 34px;
+		font-weight: 900;
+		text-shadow: 1px 3px 0px rgba(0, 0, 0, 0.2);
+		transition: transform 0.08s ease, background-color 0.1s ease;
+	}
+
+	.player-details-trade:hover {
+		transform: scale(1.035);
+		background-color: #2fb84b;
+	}
+</style>
+
+@if ( IsOpen && Target.IsValid() )
+{
+	<root>
+		<div class="player-details-root">
+			<div class="player-details-card">
+				<div class="player-details-header">
+					<Image class="player-details-avatar" Texture=@GetAvatar( 128 ) />
+					<div class="player-details-title-stack">
+						<div class="player-details-name">@DisplayName</div>
+						<div class="player-details-subtitle">Player Details</div>
+					</div>
+					<button class="player-details-close" onclick=@CloseRequested>X</button>
+				</div>
+
+				<div class="player-details-stats">
+					@foreach ( var stat in GetStatRows() )
+					{
+						<div class="player-details-stat">
+							<div class="player-details-stat-label">@stat.Label</div>
+							<div class="player-details-stat-value">@stat.Value</div>
+						</div>
+					}
+				</div>
+
+				<button class="player-details-trade" onclick=@SendTradeInvite>Send Trade Invite</button>
+			</div>
+		</div>
+	</root>
+}
+
+@code
+{
+	[Parameter] public bool IsOpen { get; set; }
+	[Parameter] public GameObject Target { get; set; }
+	[Parameter] public Action CloseRequested { get; set; }
+
+	private string DisplayName => Target?.Network.Owner?.DisplayName ?? Target?.Name ?? "Player";
+	private long SteamId
+	{
+		get
+		{
+			var owner = Target?.Network.Owner;
+			return owner is null ? 0L : owner.SteamId;
+		}
+	}
+
+	private Texture GetAvatar( int size )
+	{
+		return Texture.LoadAvatar( SteamId, size );
+	}
+
+	private void SendTradeInvite()
+	{
+		PlayerTradeController.LOCAL?.SendTradeInvite( Target );
+	}
+
+	private IEnumerable<StatRow> GetStatRows()
+	{
+		var petsHatched = GetStatValue( "petshatched" );
+		if ( petsHatched <= 0 )
+		{
+			petsHatched = GetStatValue( "pets_hatched" );
+		}
+
+		var playtimeSeconds = GetStatValue( "playtime_seconds" );
+		var playtimeMinutes = GetStatValue( "playtime_minutes" );
+		var hoursPlayed = playtimeSeconds > 0 ? playtimeSeconds / 3600f : playtimeMinutes / 60f;
+
+		yield return new StatRow( "Pets Hatched", FormatWhole( petsHatched ) );
+		yield return new StatRow( "Hours Played", hoursPlayed.ToString( "0.0" ) );
+		yield return new StatRow( "Crates Opened", FormatWhole( GetStatValue( "crates_opened" ) ) );
+		yield return new StatRow( "Objects Destroyed", FormatWhole( GetStatValue( "objects_destroyed" ) ) );
+		yield return new StatRow( "Logins", FormatWhole( GetStatValue( "login_count" ) ) );
+	}
+
+	private float GetStatValue( string statName )
+	{
+		if ( SteamId <= 0 || string.IsNullOrWhiteSpace( Game.Ident ) )
+			return 0f;
+
+		return (float)Stats.GetPlayerStats( Game.Ident, SteamId ).Get( statName ).Sum;
+	}
+
+	private static string FormatWhole( float value )
+	{
+		return MathF.Round( value ).ToString( "0" );
+	}
+
+	private readonly record struct StatRow( string Label, string Value );
+}

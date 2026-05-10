@@ -134,7 +134,7 @@
         <img class="Icon-Cash" src="ui/sandcoin_small.vtex" />
         <div class="StatBox-Money-Container"><div class="StatBox-Money-Bock">@RenderedMoneyValue</div></div>
     </div>
-    @if ( !isPetInventoryOpen && !isPetMergerOpen )
+    @if ( !isPetInventoryOpen && !isPetMergerOpen && PlayerTradeController.LOCAL?.IsTradeOpen != true && PlayerTradeController.LOCAL?.IsDetailsOpen != true )
     {
         <div class="InventoryPrompt">
             <Image class="InventoryPrompt-Glyph" Texture=@InventoryInputTexture />
@@ -147,6 +147,9 @@
     </div>
     <PetInventoryPanel IsOpen=@isPetInventoryOpen CloseRequested=@ClosePetInventory />
     <PetMergePanel IsOpen=@isPetMergerOpen CloseRequested=@ClosePetMerger />
+    <Sandbox.PlayerDetailsPanel IsOpen=@(PlayerTradeController.LOCAL?.IsDetailsOpen == true) Target=@(PlayerTradeController.LOCAL?.DetailsTarget) CloseRequested=@ClosePlayerDetails />
+    <Sandbox.TradeInviteToast />
+    <Sandbox.PetTradePanel />
 </root>
 
 
@@ -160,6 +163,7 @@
     private static bool isPetMergerOpen;
     private Texture InventoryInputTexture;
     private Texture PTTInputTexture;
+    private int lastTradeUiVersion;
 
     protected override void OnStart()
     {
@@ -176,7 +180,14 @@
             if ( isPetInventoryOpen )
             {
                 isPetMergerOpen = false;
+                PlayerTradeController.LOCAL?.ClosePlayerDetails();
             }
+            StateHasChanged();
+        }
+
+        if ( lastTradeUiVersion != PlayerTradeController.UiVersion )
+        {
+            lastTradeUiVersion = PlayerTradeController.UiVersion;
             StateHasChanged();
         }
     }
@@ -200,8 +211,14 @@
         StateHasChanged();
     }
 
+    private void ClosePlayerDetails()
+    {
+        PlayerTradeController.LOCAL?.ClosePlayerDetails();
+        StateHasChanged();
+    }
+
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-    protected override int BuildHash() => System.HashCode.Combine(MyStringValue, width, RenderedMoneyValue, isPetInventoryOpen, isPetMergerOpen, InventoryInputTexture, PTTInputTexture);
+    protected override int BuildHash() => System.HashCode.Combine(MyStringValue, width, RenderedMoneyValue, isPetInventoryOpen, isPetMergerOpen, InventoryInputTexture, PTTInputTexture, PlayerTradeController.UiVersion);
 }

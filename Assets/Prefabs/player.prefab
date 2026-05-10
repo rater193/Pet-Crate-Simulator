@@ -291,6 +291,32 @@
         "Slots": []
       },
       {
+        "__type": "PlayerTradeController",
+        "__guid": "e92f0be6-7874-4628-96ee-2afc4806a608",
+        "__enabled": true,
+        "Flags": 0,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null
+      },
+      {
+        "__type": "InteractPlayerDetails",
+        "__guid": "6577f9b3-245e-47a4-a00e-f04cb3f0877d",
+        "__enabled": true,
+        "Flags": 0,
+        "InteractableShortcutOffset": "0,0,84",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "text": "View Player"
+      },
+      {
         "__type": "Sandbox.Voice",
         "__guid": "1a1afd65-198d-463e-aea8-046d00edbec0",
         "__enabled": true,

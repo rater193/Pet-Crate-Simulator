@@ -1,0 +1,389 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System;
+@using System.Linq;
+@inherits Panel
+@namespace Sandbox
+
+<style>
+	.pet-trade-root {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		align-items: center;
+		justify-content: center;
+		pointer-events: all;
+		font-family: Poppins;
+	}
+
+	.pet-trade-window {
+		width: 1180px;
+		height: 770px;
+		flex-direction: column;
+		background-color: #edf8ff;
+		border: 6px solid #65c8ff;
+		border-radius: 30px;
+		padding: 22px;
+		box-shadow: 0px 18px 34px rgba(8, 38, 76, 0.3);
+	}
+
+	.pet-trade-header {
+		height: 72px;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.pet-trade-title {
+		flex-grow: 1;
+		color: #173d63;
+		font-size: 42px;
+		font-weight: 900;
+		text-align: center;
+		text-shadow: 1px 2px 0px rgba(255, 255, 255, 0.85);
+	}
+
+	.pet-trade-close {
+		width: 62px;
+		height: 62px;
+		align-items: center;
+		justify-content: center;
+		background-color: #2b7de1;
+		border: 4px solid #ffffff;
+		border-radius: 18px;
+		color: white;
+		font-size: 40px;
+		font-weight: 900;
+		transition: transform 0.08s ease, background-color 0.1s ease;
+	}
+
+	.pet-trade-close:hover {
+		transform: scale(1.1);
+		background-color: #ef4a5a;
+	}
+
+	.pet-trade-body {
+		flex-grow: 1;
+		flex-direction: row;
+		gap: 18px;
+	}
+
+	.pet-trade-side {
+		position: relative;
+		flex-grow: 1;
+		flex-direction: column;
+		background-color: rgba(255, 255, 255, 0.68);
+		border: 4px solid rgba(101, 200, 255, 0.5);
+		border-radius: 22px;
+		padding: 16px;
+		overflow: hidden;
+	}
+
+	.pet-trade-side-title {
+		color: #235e89;
+		font-size: 28px;
+		font-weight: 900;
+	}
+
+	.pet-trade-selected-row {
+		margin-top: 10px;
+		height: 112px;
+		flex-direction: row;
+		gap: 10px;
+		overflow: hidden;
+	}
+
+	.pet-trade-list {
+		margin-top: 14px;
+		flex-grow: 1;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-content: flex-start;
+		gap: 12px;
+		overflow: scroll;
+	}
+
+	.pet-trade-card {
+		width: 132px;
+		height: 148px;
+		flex-direction: column;
+		align-items: center;
+		background-color: #33a9ed;
+		border: 4px solid white;
+		border-radius: 16px;
+		padding: 8px;
+		transition: transform 0.08s ease, background-color 0.1s ease, opacity 0.12s ease;
+	}
+
+	.pet-trade-card:hover {
+		transform: scale(1.06);
+	}
+
+	.pet-trade-card.selected {
+		background-color: #2fd35b;
+		box-shadow: 0px 0px 16px rgba(47, 211, 91, 0.38);
+	}
+
+	.pet-trade-card.disabled {
+		opacity: 0.58;
+	}
+
+	.pet-trade-thumb {
+		width: 58px;
+		height: 58px;
+		border-radius: 14px;
+		background-color: rgba(255, 255, 255, 0.45);
+	}
+
+	.pet-trade-name {
+		margin-top: 8px;
+		width: 100%;
+		color: white;
+		font-size: 18px;
+		font-weight: 900;
+		text-align: center;
+		text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.22);
+	}
+
+	.pet-trade-stats {
+		margin-top: 2px;
+		color: white;
+		font-size: 13px;
+		font-weight: 900;
+		text-align: center;
+		text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.2);
+	}
+
+	.pet-trade-submit {
+		margin-top: 14px;
+		height: 66px;
+		align-items: center;
+		justify-content: center;
+		background-color: #38cb58;
+		border: 5px solid white;
+		border-radius: 18px;
+		color: white;
+		font-size: 28px;
+		font-weight: 900;
+		text-shadow: 1px 3px 0px rgba(0, 0, 0, 0.2);
+		transition: transform 0.08s ease, background-color 0.1s ease;
+	}
+
+	.pet-trade-submit:hover {
+		transform: scale(1.025);
+	}
+
+	.pet-trade-submit.cancel {
+		background-color: #ef4a5a;
+	}
+
+	.pet-trade-submit.disabled {
+		background-color: #92a7b9;
+	}
+
+	.pet-trade-ready-overlay {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		background-color: rgba(40, 202, 86, 0.28);
+		border-radius: 18px;
+		pointer-events: none;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font-size: 42px;
+		font-weight: 900;
+		text-shadow: 0px 4px 0px rgba(0, 0, 0, 0.28);
+	}
+
+	.pet-trade-review {
+		flex-grow: 1;
+		flex-direction: column;
+	}
+
+	.pet-trade-countdown {
+		height: 64px;
+		align-items: center;
+		justify-content: center;
+		color: #173d63;
+		font-size: 32px;
+		font-weight: 900;
+	}
+</style>
+
+@if ( Trade?.IsTradeOpen == true )
+{
+	<root>
+		<div class="pet-trade-root">
+			<div class="pet-trade-window">
+				<div class="pet-trade-header">
+					<div class="pet-trade-title">@HeaderTitle</div>
+					<button class="pet-trade-close" onclick=@CancelTrade>X</button>
+				</div>
+
+				@if ( Trade.IsReviewPhase )
+				{
+					<div class="pet-trade-review">
+						<div class="pet-trade-body">
+							@RenderTradeSide( "Your Offer", Trade.GetOwnSelectedPets(), Trade.GetOwnSelectedPets(), true, false )
+							@RenderTradeSide( PartnerName + "'s Offer", Trade.GetPartnerSelectedPets(), Trade.GetPartnerSelectedPets(), false, false )
+						</div>
+						<div class="pet-trade-countdown">@ReviewStatus</div>
+						<button class="@AcceptButtonClass" onclick=@ToggleAccepted>@AcceptButtonText</button>
+					</div>
+				}
+				else
+				{
+					<div class="pet-trade-body">
+						@RenderTradeSide( "Your Pets", Trade.GetOwnSelectedPets(), OwnVisiblePets, true, true )
+						@RenderTradeSide( PartnerName + "'s Pets", Trade.GetPartnerSelectedPets(), Trade.GetPartnerPets(), false, false )
+					</div>
+				}
+			</div>
+		</div>
+	</root>
+}
+
+@code
+{
+	private PlayerTradeController Trade => PlayerTradeController.LOCAL;
+	private string PartnerName => Trade?.TradePartner?.Network.Owner?.DisplayName ?? "Other Player";
+	private string HeaderTitle => Trade?.IsReviewPhase == true ? "Review Trade" : "Player Trade";
+	private IReadOnlyList<PlayerTradeController.TradePetView> OwnVisiblePets => Trade?.OwnSubmitted == true ? Trade.GetOwnSelectedPets() : Trade?.GetOwnPets() ?? Array.Empty<PlayerTradeController.TradePetView>();
+	private string AcceptButtonText => Trade?.OwnAccepted == true ? "Cancel" : "Accept";
+	private string AcceptButtonClass => Trade?.OwnAccepted == true ? "pet-trade-submit cancel" : "pet-trade-submit";
+
+	private string ReviewStatus
+	{
+		get
+		{
+			if ( Trade == null )
+				return string.Empty;
+
+			if ( Trade.OwnAccepted && Trade.PartnerAccepted )
+				return $"Trade completes in {MathF.Ceiling( Trade.CountdownRemaining ):0}";
+
+			return "Both players must accept to start the countdown";
+		}
+	}
+
+	private RenderFragment RenderTradeSide( string title, IReadOnlyList<PlayerTradeController.TradePetView> selectedPets, IReadOnlyList<PlayerTradeController.TradePetView> pets, bool isOwnSide, bool allowSelection ) => builder =>
+	{
+		var sequence = 0;
+		builder.OpenElement( sequence++, "div" );
+		builder.AddAttribute( sequence++, "class", "pet-trade-side" );
+
+		builder.OpenElement( sequence++, "div" );
+		builder.AddAttribute( sequence++, "class", "pet-trade-side-title" );
+		builder.AddContent( sequence++, title );
+		builder.CloseElement();
+
+		builder.OpenElement( sequence++, "div" );
+		builder.AddAttribute( sequence++, "class", "pet-trade-selected-row" );
+		foreach ( var pet in selectedPets )
+		{
+			RenderPetCard( builder, ref sequence, pet, false, isOwnSide && allowSelection );
+		}
+		builder.CloseElement();
+
+		builder.OpenElement( sequence++, "div" );
+		builder.AddAttribute( sequence++, "class", "pet-trade-list" );
+		foreach ( var pet in pets )
+		{
+			RenderPetCard( builder, ref sequence, pet, allowSelection, allowSelection );
+		}
+		builder.CloseElement();
+
+		if ( isOwnSide && allowSelection )
+		{
+			builder.OpenElement( sequence++, "button" );
+			builder.AddAttribute( sequence++, "class", GetSubmitClass() );
+			builder.AddAttribute( sequence++, "onclick", (Action)ToggleSubmitted );
+			builder.AddContent( sequence++, Trade?.OwnSubmitted == true ? "Edit Offer" : "Initiate Trade" );
+			builder.CloseElement();
+		}
+
+		if ( (isOwnSide && Trade?.OwnSubmitted == true) || (!isOwnSide && Trade?.PartnerSubmitted == true) )
+		{
+			builder.OpenElement( sequence++, "div" );
+			builder.AddAttribute( sequence++, "class", "pet-trade-ready-overlay" );
+			builder.AddContent( sequence++, "READY" );
+			builder.CloseElement();
+		}
+
+		builder.CloseElement();
+	};
+
+	private void RenderPetCard( RenderTreeBuilder builder, ref int sequence, PlayerTradeController.TradePetView pet, bool allowSelection, bool clickable )
+	{
+		var isSelected = Trade?.IsSlotSelected( pet.SlotIndex ) == true;
+		var cardClass = isSelected ? "pet-trade-card selected" : "pet-trade-card";
+		if ( !allowSelection && !isSelected && Trade?.OwnSubmitted == true )
+		{
+			cardClass += " disabled";
+		}
+
+		builder.OpenElement( sequence++, clickable ? "button" : "div" );
+		builder.AddAttribute( sequence++, "class", cardClass );
+		builder.AddAttribute( sequence++, "style", $"border-color: {pet.Rarity.GetCssColor()};" );
+		if ( clickable )
+		{
+			builder.AddAttribute( sequence++, "onclick", (Action)(() => TogglePet( pet.SlotIndex )) );
+		}
+
+		builder.OpenElement( sequence++, "div" );
+		builder.AddAttribute( sequence++, "class", "pet-trade-thumb" );
+		if ( pet.PreviewTexture != null )
+		{
+			builder.OpenComponent<Image>( sequence++ );
+			builder.AddAttribute( sequence++, "Texture", pet.PreviewTexture );
+			builder.CloseComponent();
+		}
+		builder.CloseElement();
+
+		builder.OpenElement( sequence++, "div" );
+		builder.AddAttribute( sequence++, "class", "pet-trade-name" );
+		builder.AddContent( sequence++, pet.DisplayName );
+		builder.CloseElement();
+
+		builder.OpenElement( sequence++, "div" );
+		builder.AddAttribute( sequence++, "class", "pet-trade-stats" );
+		builder.AddContent( sequence++, $"{pet.Rarity} | x{pet.CoinMultiplier:0.#} | {pet.Damage} dmg" );
+		builder.CloseElement();
+
+		builder.CloseElement();
+	}
+
+	private string GetSubmitClass()
+	{
+		if ( Trade == null || Trade.SelectedSlotIndexes.Count == 0 )
+			return "pet-trade-submit disabled";
+
+		return Trade.OwnSubmitted ? "pet-trade-submit cancel" : "pet-trade-submit";
+	}
+
+	private void TogglePet( int slotIndex )
+	{
+		Trade?.ToggleSelectedPet( slotIndex );
+	}
+
+	private void ToggleSubmitted()
+	{
+		Trade?.ToggleSubmitted();
+	}
+
+	private void ToggleAccepted()
+	{
+		Trade?.ToggleAccepted();
+	}
+
+	private void CancelTrade()
+	{
+		Trade?.CancelTrade();
+	}
+
+	protected override int BuildHash() => PlayerTradeController.UiVersion;
+}

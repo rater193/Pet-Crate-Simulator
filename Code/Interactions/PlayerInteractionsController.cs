@@ -33,11 +33,11 @@ public sealed class PlayerInteractionsController : Component
 
 			if ( tr.Hit )
 			{
-				if ( tr.Collider.GetComponent<Interactable>() != null )
+				var interactable = tr.Collider.Components.Get<Interactable>( FindMode.EverythingInSelfAndAncestors );
+				if ( interactable.IsValid() && !IsOwnInteractable( interactable ) )
 				{
-					var interactable = tr.Collider.GetComponent<Interactable>();
 					tar.Enabled = true;
-					tar.WorldPosition = tr.Collider.WorldPosition + interactable.InteractableShortcutOffset;// * tr.Collider.GetComponent<Interactable>().LocalInteractionPromptOffset;
+					tar.WorldPosition = interactable.GameObject.WorldPosition + interactable.InteractableShortcutOffset;
 					interactionUi ??= tar.GetComponent<InteractionFrameworkUI>();
 					interactionUi?.SetPromptText( interactable.text );
 
@@ -57,5 +57,16 @@ public sealed class PlayerInteractionsController : Component
 				tar.Enabled = false;
 			}
 		}
+	}
+
+	private bool IsOwnInteractable( Interactable interactable )
+	{
+		for ( var current = interactable.GameObject; current.IsValid(); current = current.Parent )
+		{
+			if ( current == GameObject )
+				return true;
+		}
+
+		return false;
 	}
 }

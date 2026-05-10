@@ -1,0 +1,127 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System;
+@inherits Panel
+@namespace Sandbox
+
+<style>
+	.trade-invite-root {
+		position: absolute;
+		right: 34px;
+		bottom: 34px;
+		width: 520px;
+		height: 142px;
+		pointer-events: all;
+		font-family: Poppins;
+	}
+
+	.trade-invite-card {
+		width: 100%;
+		height: 100%;
+		flex-direction: row;
+		align-items: center;
+		gap: 16px;
+		background-color: #eaf7ff;
+		border: 5px solid #65c8ff;
+		border-radius: 24px;
+		padding: 14px 18px;
+		box-shadow: 0px 14px 26px rgba(8, 38, 76, 0.28);
+		transform: translateY(0px) scale(1);
+		transition: transform 0.12s ease;
+	}
+
+	.trade-invite-card:hover {
+		transform: translateY(-4px) scale(1.02);
+	}
+
+	.trade-invite-avatar {
+		width: 86px;
+		height: 86px;
+		border-radius: 16px;
+		border: 4px solid white;
+		background-color: #bfe9ff;
+	}
+
+	.trade-invite-text {
+		flex-direction: column;
+		flex-grow: 1;
+	}
+
+	.trade-invite-title {
+		color: #173d63;
+		font-size: 27px;
+		font-weight: 900;
+	}
+
+	.trade-invite-name {
+		color: #2b7de1;
+		font-size: 25px;
+		font-weight: 900;
+	}
+
+	.trade-invite-prompt {
+		margin-top: 6px;
+		flex-direction: row;
+		align-items: center;
+		gap: 8px;
+	}
+
+	.trade-invite-glyph {
+		width: 38px;
+		height: 38px;
+	}
+
+	.trade-invite-prompt-text {
+		color: #4f7fa4;
+		font-size: 20px;
+		font-weight: 900;
+	}
+</style>
+
+@if ( TradeController?.IsInviteVisible == true )
+{
+	<root>
+		<button class="trade-invite-root" onclick=@AcceptInvite>
+			<div class="trade-invite-card">
+				<Image class="trade-invite-avatar" Texture=@GetAvatar( 96 ) />
+				<div class="trade-invite-text">
+					<div class="trade-invite-title">Trade Invite</div>
+					<div class="trade-invite-name">@InviteName</div>
+					<div class="trade-invite-prompt">
+						<Image class="trade-invite-glyph" Texture=@ReloadGlyph />
+						<div class="trade-invite-prompt-text">Press Reload to accept</div>
+					</div>
+				</div>
+			</div>
+		</button>
+	</root>
+}
+
+@code
+{
+	private PlayerTradeController TradeController => PlayerTradeController.LOCAL;
+	private Texture reloadGlyph;
+	private Texture ReloadGlyph => reloadGlyph ??= Input.GetGlyph( "Reload", InputGlyphSize.Medium, true );
+
+	private string InviteName => TradeController?.InviteFromPlayer?.Network.Owner?.DisplayName ?? "Player";
+	private long InviteSteamId
+	{
+		get
+		{
+			var owner = TradeController?.InviteFromPlayer?.Network.Owner;
+			return owner is null ? 0L : owner.SteamId;
+		}
+	}
+
+	private Texture GetAvatar( int size )
+	{
+		return Texture.LoadAvatar( InviteSteamId, size );
+	}
+
+	private void AcceptInvite()
+	{
+		TradeController?.AcceptTradeInvite();
+	}
+
+	protected override int BuildHash() => HashCode.Combine( PlayerTradeController.UiVersion, ReloadGlyph );
+}
