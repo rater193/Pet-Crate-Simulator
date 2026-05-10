@@ -164,9 +164,15 @@
 		padding-right: 8px;
 	}
 
-	.pet-merge-card {
+	.pet-merge-card-shell {
 		width: 144px;
 		height: 170px;
+		pointer-events: all;
+	}
+
+	.pet-merge-card {
+		width: 100%;
+		height: 100%;
 		border-radius: 14px;
 		background-color: #37adf4;
 		border: 4px solid white;
@@ -174,7 +180,6 @@
 		padding: 8px;
 		flex-direction: column;
 		align-items: center;
-		pointer-events: all;
 		position: relative;
 		overflow: hidden;
 		transition: background-color 0.1s ease, box-shadow 0.08s ease, transform 0.08s ease;
@@ -426,19 +431,21 @@
 				<div class="pet-merge-grid">
 					@foreach ( var pet in AllPets )
 					{
-						<div class="@GetPetCardClass( pet )" style="@GetPetCardStyle( pet )" onclick=@(() => ToggleSelectedPet( pet.SlotIndex ))>
-							<div class="pet-merge-icon">
-								@if ( pet.PreviewTexture != null )
-								{
-									<Image class="pet-merge-preview" Texture=@pet.PreviewTexture />
-								}
-								else
-								{
-									@pet.IconText
-								}
+						<div class="pet-merge-card-shell" style="@GetPetCardStyle( pet )">
+							<div class="@GetPetCardClass( pet )" style="@pet.BorderStyle" onclick=@(() => ToggleSelectedPet( pet.SlotIndex ))>
+								<div class="pet-merge-icon">
+									@if ( pet.PreviewTexture != null )
+									{
+										<Image class="pet-merge-preview" Texture=@pet.PreviewTexture />
+									}
+									else
+									{
+										@pet.IconText
+									}
+								</div>
+								<div class="pet-merge-name">@pet.DisplayName</div>
+								<div class="pet-merge-rarity">@pet.Rarity</div>
 							</div>
-							<div class="pet-merge-name">@pet.DisplayName</div>
-							<div class="pet-merge-rarity">@pet.Rarity</div>
 						</div>
 					}
 				</div>
@@ -807,12 +814,12 @@
 	{
 		var sortOffset = GetSortAnimationOffset( pet.DisplayIndex );
 		if ( sortOffset <= 0f )
-			return pet.BorderStyle;
+			return "opacity: 1; transform: translateX(0px) translateY(0px) scale(1);";
 
 		var opacity = 1f - (sortOffset * 0.34f);
 		var y = sortOffset * 12f;
 		var scale = 0.96f + ((1f - sortOffset) * 0.04f);
-		return $"{pet.BorderStyle} opacity: {opacity:0.###}; transform: translateX(0px) translateY({y:0.##}px) scale({scale:0.###});";
+		return $"opacity: {opacity:0.###}; transform: translateX(0px) translateY({y:0.##}px) scale({scale:0.###});";
 	}
 
 	private string GetSortButtonClass( PetMergeSortMode mode )
