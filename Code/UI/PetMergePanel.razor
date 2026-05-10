@@ -177,7 +177,7 @@
 		pointer-events: all;
 		position: relative;
 		overflow: hidden;
-		transition: background-color 0.1s ease, box-shadow 0.08s ease;
+		transition: background-color 0.1s ease, box-shadow 0.08s ease, transform 0.08s ease;
 	}
 
 	.pet-merge-card.selected {
@@ -190,7 +190,7 @@
 	}
 
 	.pet-merge-card:hover {
-		transform: scale(1.03);
+		transform: scale(1.08);
 	}
 
 	.pet-merge-icon {
@@ -261,6 +261,12 @@
 		justify-content: center;
 		position: relative;
 		overflow: hidden;
+		pointer-events: all;
+		transition: transform 0.08s ease;
+	}
+
+	.pet-merge-slot.filled:hover {
+		transform: scale(1.06);
 	}
 
 	.pet-merge-slot.filled {
@@ -323,6 +329,39 @@
 	}
 
 	.pet-merge-button.merging {
+		background-color: #ffd740;
+		color: #6f4c00;
+	}
+
+	.pet-auto-merge-button {
+		width: 260px;
+		height: 54px;
+		border-radius: 16px;
+		border: 4px solid white;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font-size: 22px;
+		font-weight: 900;
+		text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.24);
+		pointer-events: all;
+		margin-top: 12px;
+		transition: transform 0.08s ease;
+	}
+
+	.pet-auto-merge-button:hover {
+		transform: scale(1.06);
+	}
+
+	.pet-auto-merge-button.ready {
+		background-color: #2375df;
+	}
+
+	.pet-auto-merge-button.empty {
+		background-color: #8da8c4;
+	}
+
+	.pet-auto-merge-button.merging {
 		background-color: #ffd740;
 		color: #6f4c00;
 	}
@@ -411,7 +450,8 @@
 					@for ( var i = 0; i < 3; i++ )
 					{
 						var pet = GetSelectedPetView( i );
-						<div class="@GetSlotClass( pet )" style="@GetSlotStyle( pet, i )">
+						var selectedIndex = i;
+						<div class="@GetSlotClass( pet )" style="@GetSlotStyle( pet, selectedIndex )" onclick=@(() => RemoveSelectedPetAt( selectedIndex ))>
 							@if ( pet != null )
 							{
 								<div class="pet-merge-icon">
@@ -448,6 +488,7 @@
 				</div>
 				<div class="pet-merge-result">@MergeStatusText</div>
 				<div class="@MergeButtonClass" onclick=@StartMerge>@MergeButtonText</div>
+				<div class="@AutoMergeButtonClass" onclick=@AutoMergePets>@AutoMergeButtonText</div>
 			</div>
 		</div>
 	</div>
@@ -473,6 +514,7 @@
 	private bool mergeConsumed;
 	private float mergeStartTime;
 	private float mergeAnimationTime;
+	private int lastAutoMergeCount;
 	private PetMergeSortMode sortMode = PetMergeSortMode.Rarity;
 	private bool sortAscending = true;
 	private float sortAnimationStartTime;
@@ -482,8 +524,11 @@
 	private Inventory Inventory => LocalPlayerData?.inventory;
 	private List<MergePetViewModel> AllPets => BuildPetList();
 	private bool CanMergeSelection => Inventory?.CanMergePets( selectedSlotIndexes ) == true;
+	private bool CanAutoMerge => Inventory?.CanAutoMergePets() == true;
 	private string MergeButtonClass => $"pet-merge-button {(isMerging ? "merging" : CanMergeSelection ? "valid" : "invalid")}";
 	private string MergeButtonText => isMerging ? "Merging..." : "Merge";
+	private string AutoMergeButtonClass => $"pet-auto-merge-button {(isMerging ? "merging" : CanAutoMerge ? "ready" : "empty")}";
+	private string AutoMergeButtonText => isMerging ? "Working..." : "Auto Merge";
 	private string MergeStatusText => GetMergeStatusText();
 	private float MergeLiftProgress => Smooth01( Saturate( mergeAnimationTime / MergeLiftDuration ) );
 	private float MergeConvergeProgress => Smooth01( Saturate( (mergeAnimationTime - MergeLiftDuration) / MergeConvergeDuration ) );
@@ -547,6 +592,7 @@
 		if ( isMerging )
 			return;
 
+		lastAutoMergeCount = 0;
 		if ( selectedSlotIndexes.Contains( slotIndex ) )
 		{
 			selectedSlotIndexes.Remove( slotIndex );
@@ -556,6 +602,30 @@
 			selectedSlotIndexes.Add( slotIndex );
 		}
 
+		StateHasChanged();
+	}
+
+	private void RemoveSelectedPetAt( int selectedIndex )
+	{
+		if ( isMerging )
+			return;
+
+		if ( selectedIndex < 0 || selectedIndex >= selectedSlotIndexes.Count )
+			return;
+
+		lastAutoMergeCount = 0;
+		selectedSlotIndexes.RemoveAt( selectedIndex );
+		StateHasChanged();
+	}
+
+	private void AutoMergePets()
+	{
+		if ( isMerging || !CanAutoMerge )
+			return;
+
+		lastAutoMergeCount = Inventory?.TryAutoMergePets() ?? 0;
+		selectedSlotIndexes.Clear();
+		StartSortAnimation();
 		StateHasChanged();
 	}
 
@@ -736,6 +806,9 @@
 	private string GetPetCardStyle( MergePetViewModel pet )
 	{
 		var sortOffset = GetSortAnimationOffset( pet.DisplayIndex );
+		if ( sortOffset <= 0f )
+			return pet.BorderStyle;
+
 		var opacity = 1f - (sortOffset * 0.34f);
 		var y = sortOffset * 12f;
 		var scale = 0.96f + ((1f - sortOffset) * 0.04f);
@@ -751,6 +824,9 @@
 	{
 		if ( isMerging )
 			return "Combining power...";
+
+		if ( lastAutoMergeCount > 0 )
+			return $"Auto merged {lastAutoMergeCount}x";
 
 		if ( selectedSlotIndexes.Count == 0 )
 			return "Pick 3 matching pets";
@@ -840,7 +916,7 @@
 			slotHash = HashCode.Combine( slotHash, selectedIndex );
 		}
 
-		var sortStateHash = HashCode.Combine( sortMode, sortAscending, (int)(sortAnimationTime * 30f), PetPreviewRenderer.PreviewVersion );
+		var sortStateHash = HashCode.Combine( sortMode, sortAscending, lastAutoMergeCount, (int)(sortAnimationTime * 30f), PetPreviewRenderer.PreviewVersion );
 		return HashCode.Combine( IsOpen, inventory?.Count ?? 0, slotHash, isMerging, (int)(mergeAnimationTime * 30f), sortStateHash );
 	}
 

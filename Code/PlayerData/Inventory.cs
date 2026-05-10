@@ -234,6 +234,29 @@ public sealed class Inventory : Component
 		return true;
 	}
 
+	public bool CanAutoMergePets()
+	{
+		return GetAutoMergeCandidate() != null;
+	}
+
+	public int TryAutoMergePets( int maxMergeCount = 256 )
+	{
+		var mergeCount = 0;
+		while ( mergeCount < maxMergeCount )
+		{
+			var candidateIndexes = GetAutoMergeCandidate();
+			if ( candidateIndexes == null || candidateIndexes.Count != 3 )
+				break;
+
+			if ( !TryMergePets( candidateIndexes, out _ ) )
+				break;
+
+			mergeCount++;
+		}
+
+		return mergeCount;
+	}
+
 	private InventoryPetSlot GetMergeCandidate( IReadOnlyList<int> slotIndexes )
 	{
 		if ( slotIndexes == null )
@@ -249,6 +272,27 @@ public sealed class Inventory : Component
 
 		var first = slots[0];
 		return slots.All( slot => first.IsSamePetAndRarity( slot ) ) ? first : null;
+	}
+
+	private List<int> GetAutoMergeCandidate()
+	{
+		return Slots
+			.Select( ( slot, index ) => new { Slot = slot, Index = index } )
+			.Where( entry => entry.Slot.IsValid()
+				&& entry.Slot.HasPet
+				&& entry.Slot.Rarity.CanMergeUp()
+				&& !string.IsNullOrWhiteSpace( entry.Slot.PetPrefabPath ) )
+			.GroupBy( entry => new
+			{
+				entry.Slot.PetPrefabPath,
+				entry.Slot.Rarity
+			} )
+			.Where( group => group.Count() >= 3 )
+			.OrderBy( group => (int)group.Key.Rarity )
+			.ThenBy( group => group.First().Slot.DisplayName, System.StringComparer.OrdinalIgnoreCase )
+			.ThenBy( group => group.Key.PetPrefabPath, System.StringComparer.OrdinalIgnoreCase )
+			.Select( group => group.Take( 3 ).Select( entry => entry.Index ).ToList() )
+			.FirstOrDefault();
 	}
 
 	public List<int> GetEquippedSlotIndexes()
