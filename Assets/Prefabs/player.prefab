@@ -252,6 +252,8 @@
         "GroundTraceHeight": 96,
         "MaxEquippedPets": 3,
         "NetworkSpawnEquippedPet": true,
+        "AutoBattleEnabled": true,
+        "AutoBattleRange": 260,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,

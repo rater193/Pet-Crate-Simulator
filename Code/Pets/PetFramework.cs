@@ -23,6 +23,8 @@ public sealed class PetFramework : Component
 	[Property] public float PetSwarmRadius { get; set; } = 64f;
 	[Property] public float PetSwarmAngleOffset { get; set; } = 0f;
 	[Property] public float PetAttackStartDelayStep { get; set; } = 0.12f;
+	[Property, Group( "Auto Battle" )] public bool AutoBattleEnabled { get; set; } = true;
+	[Property, Group( "Auto Battle" )] public float AutoBattleRange { get; set; } = 260f;
 	[Property] public float GroundTraceHeight { get; set; } = 96f;
 	[Property] public Rotation EquippedPetLocalRotation { get; set; } = Rotation.Identity;
 	[Property] public bool NetworkSpawnEquippedPet { get; set; } = true;
@@ -265,6 +267,8 @@ public sealed class PetFramework : Component
 			activeAttackOwner = null;
 		}
 
+		TryAcquireAutoBattleTarget();
+
 		var angleStep = MathF.PI * 2f / count;
 		var angleOffset = PetCircleAngleOffset * (MathF.PI / 180f);
 		var swarmAngleOffset = PetSwarmAngleOffset * (MathF.PI / 180f);
@@ -352,6 +356,47 @@ public sealed class PetFramework : Component
 
 		var destructable = activeAttackTarget.GetComponent<InteractGivePlayerCoin>() ?? activeAttackTarget.GetComponentInChildren<InteractGivePlayerCoin>();
 		return destructable.IsValid() && destructable.CanReceivePetDamage;
+	}
+
+	private void TryAcquireAutoBattleTarget()
+	{
+		if ( !AutoBattleEnabled || activeAttackTarget.IsValid() )
+			return;
+
+		var target = FindNearestAutoBattleTarget();
+		if ( target.IsValid() )
+		{
+			SetAttackTarget( target, GetComponent<PlayerController>() );
+		}
+	}
+
+	private GameObject FindNearestAutoBattleTarget()
+	{
+		if ( Scene == null || AutoBattleRange <= 0f )
+			return null;
+
+		var rangeSquared = AutoBattleRange * AutoBattleRange;
+		var bestDistanceSquared = float.MaxValue;
+		GameObject bestTarget = null;
+
+		foreach ( var destructable in Scene.GetAllComponents<InteractGivePlayerCoin>() )
+		{
+			if ( !destructable.IsValid() || !destructable.CanReceivePetDamage )
+				continue;
+
+			var target = destructable.GameObject;
+			if ( !target.IsValid() )
+				continue;
+
+			var distanceSquared = (target.WorldPosition - GameObject.WorldPosition).LengthSquared;
+			if ( distanceSquared > rangeSquared || distanceSquared >= bestDistanceSquared )
+				continue;
+
+			bestDistanceSquared = distanceSquared;
+			bestTarget = target;
+		}
+
+		return bestTarget;
 	}
 
 	private void TryPetAttack( PetSlot slot )
