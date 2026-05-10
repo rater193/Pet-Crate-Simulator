@@ -113,12 +113,16 @@
 		align-items: center;
 		justify-content: space-between;
 		margin-bottom: 12px;
+		position: relative;
+		z-index: 30;
 	}
 
 	.pet-auto-equip-controls {
 		flex-direction: row;
 		align-items: center;
 		gap: 8px;
+		position: relative;
+		z-index: 31;
 	}
 
 	.pet-auto-equip-button {
@@ -133,6 +137,8 @@
 		align-items: center;
 		justify-content: center;
 		pointer-events: all;
+		position: relative;
+		z-index: 32;
 		transition: transform 0.08s ease, background-color 0.1s ease, border-color 0.1s ease;
 	}
 
@@ -233,6 +239,8 @@
 		flex-wrap: nowrap;
 		overflow-x: scroll;
 		overflow-y: hidden;
+		position: relative;
+		z-index: 1;
 	}
 
 	.pet-equipped-card {
@@ -257,7 +265,7 @@
 		border-color: #ef5b5b;
 	}
 
-	.pet-equipped-card:hover .pet-action-overlay {
+	.pet-equipped-card:hover .pet-action-overlay.unequip {
 		opacity: 1;
 	}
 
@@ -447,7 +455,9 @@
 		box-shadow: 0px 0px 0px 3px #ff3434, 0px 0px 16px #ffd740, 0px 0px 28px #3d8fff;
 	}
 
-	.pet-card:hover .pet-action-overlay {
+	.pet-card:hover .pet-action-overlay.equip,
+	.pet-card:hover .pet-action-overlay.unequip,
+	.pet-card:hover .pet-action-overlay.max-equipped {
 		opacity: 1;
 	}
 
@@ -458,6 +468,8 @@
 		right: 0px;
 		bottom: 0px;
 		border-radius: 10px;
+		width: 100%;
+		height: 100%;
 		align-items: center;
 		justify-content: center;
 		font-size: 30px;
@@ -467,7 +479,7 @@
 		pointer-events: none;
 		opacity: 0;
 		transition: opacity 0.08s ease;
-		z-index: 10;
+		z-index: 50;
 	}
 
 	.pet-action-overlay.max-equipped {
@@ -588,8 +600,8 @@
 				<div class="pet-equipped-title-row">
 					<div class="pet-section-title">@EquippedCount / @MaxEquipped Equipped</div>
 					<div class="pet-auto-equip-controls">
-						<div class="pet-auto-equip-button" onclick=@(() => EquipBest( InventoryAutoEquipMode.Damage ))>Equip best damage</div>
-						<div class="pet-auto-equip-button" onclick=@(() => EquipBest( InventoryAutoEquipMode.CoinMultiplier ))>Equip best coins</div>
+						<button class="pet-auto-equip-button" onclick=@(() => EquipBest( InventoryAutoEquipMode.Damage ))>Equip best damage</button>
+						<button class="pet-auto-equip-button" onclick=@(() => EquipBest( InventoryAutoEquipMode.CoinMultiplier ))>Equip best coins</button>
 					</div>
 				</div>
 				<div class="pet-equipped-list">
