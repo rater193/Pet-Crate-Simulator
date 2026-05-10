@@ -224,8 +224,8 @@
 	}
 
 	.pet-equipped-list {
-		height: 118px;
-		min-height: 118px;
+		height: 132px;
+		min-height: 132px;
 		flex-direction: row;
 		gap: 14px;
 		justify-content: center;
@@ -236,12 +236,12 @@
 	}
 
 	.pet-equipped-card {
-		width: 164px;
-		min-width: 164px;
-		max-width: 164px;
-		height: 96px;
-		min-height: 96px;
-		max-height: 96px;
+		width: 196px;
+		min-width: 196px;
+		max-width: 196px;
+		height: 112px;
+		min-height: 112px;
+		max-height: 112px;
 		flex-shrink: 0;
 		background-color: #d9edff;
 		border: 3px solid #60c7ff;
@@ -288,10 +288,25 @@
 		color: #253c5b;
 		font-size: 19px;
 		font-weight: 900;
-		width: 76px;
-		max-height: 44px;
+		width: 104px;
+		max-height: 28px;
 		text-overflow: ellipsis;
 		overflow: hidden;
+	}
+
+	.pet-equipped-info {
+		flex-direction: column;
+		width: 104px;
+		min-width: 104px;
+	}
+
+	.pet-equipped-stats {
+		margin-top: 2px;
+		flex-direction: column;
+		color: #36516e;
+		font-size: 11px;
+		font-weight: 800;
+		line-height: 12px;
 	}
 
 	.pet-equipped-action {
@@ -597,7 +612,14 @@
 										@pet.IconText
 									}
 								</div>
-								<div class="pet-equipped-name">@pet.DisplayName</div>
+								<div class="pet-equipped-info">
+									<div class="pet-equipped-name">@pet.DisplayName</div>
+									<div class="pet-equipped-stats">
+										<span>@pet.Rarity</span>
+										<span>Coins x@(pet.CoinMultiplierText)</span>
+										<span>Damage @(pet.Damage)</span>
+									</div>
+								</div>
 								<div class="pet-equipped-action"></div>
 								<div class="pet-action-overlay unequip">Unequip</div>
 							</div>
@@ -648,6 +670,7 @@
 									</div>
 									<div class="pet-card-name">@pet.DisplayName</div>
 									<div class="pet-card-stats">
+										<span>@pet.Rarity</span>
 										<span>Coins x@(pet.CoinMultiplierText)</span>
 										<span>Damage @(pet.Damage)</span>
 									</div>

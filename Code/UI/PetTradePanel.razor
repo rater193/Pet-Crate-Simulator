@@ -105,24 +105,30 @@
 	}
 
 	.pet-trade-card {
-		width: 154px;
-		height: 178px;
+		width: 150px;
+		height: 176px;
 		flex-direction: column;
-		align-items: center;
-		background-color: #33a9ed;
-		border: 4px solid white;
-		border-radius: 16px;
-		padding: 8px;
-		transition: transform 0.08s ease, background-color 0.1s ease, opacity 0.12s ease;
+		background-color: #37adf4;
+		border: 4px solid rgba(255, 255, 255, 0.65);
+		border-radius: 14px;
+		box-shadow: 0px 6px 13px rgba(21, 52, 86, 0.22);
+		padding: 10px;
+		position: relative;
+		overflow: hidden;
+		pointer-events: all;
+		transition: transform 0.08s ease, background-color 0.14s ease, border-color 0.08s ease, box-shadow 0.08s ease, opacity 0.12s ease;
 	}
 
 	.pet-trade-card:hover {
 		transform: scale(1.06);
+		border-color: #4beb68;
+		box-shadow: 0px 7px 18px rgba(13, 116, 42, 0.34);
 	}
 
 	.pet-trade-card.selected {
-		background-color: #2fd35b;
-		box-shadow: 0px 0px 16px rgba(47, 211, 91, 0.38);
+		background-color: #54c943;
+		border-color: #ffe16a;
+		box-shadow: 0px 7px 18px rgba(13, 116, 42, 0.28);
 	}
 
 	.pet-trade-card.disabled {
@@ -130,37 +136,41 @@
 	}
 
 	.pet-trade-thumb {
-		width: 76px;
-		height: 76px;
-		border-radius: 14px;
-		background-color: rgba(255, 255, 255, 0.45);
+		width: 74px;
+		height: 74px;
+		border-radius: 20px;
+		background-color: rgba(255, 255, 255, 0.32);
 		align-items: center;
 		justify-content: center;
 		overflow: hidden;
+		color: white;
+		font-size: 42px;
+		font-weight: 900;
+		margin: 10px auto 8px auto;
+		text-shadow: 1px 3px 0px rgba(0, 0, 0, 0.22);
 	}
 
 	.pet-trade-thumb-image {
-		width: 76px;
-		height: 76px;
+		width: 72px;
+		height: 72px;
 	}
 
 	.pet-trade-name {
-		margin-top: 8px;
 		width: 100%;
 		color: white;
-		font-size: 19px;
+		font-size: 20px;
 		font-weight: 900;
 		text-align: center;
-		text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.22);
+		text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.25);
 	}
 
 	.pet-trade-stats {
-		margin-top: 2px;
-		color: white;
-		font-size: 14px;
-		font-weight: 900;
+		margin-top: 6px;
+		flex-direction: column;
+		color: rgba(255, 255, 255, 0.9);
+		font-size: 13px;
+		font-weight: 700;
 		text-align: center;
-		text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.2);
 	}
 
 	.pet-trade-submit {
@@ -318,7 +328,11 @@
 			}
 		</div>
 		<div class="pet-trade-name">@pet.DisplayName</div>
-		<div class="pet-trade-stats">@pet.Rarity | x@(pet.CoinMultiplier.ToString( "0.#" )) | @pet.Damage dmg</div>
+		<div class="pet-trade-stats">
+			<span>@pet.Rarity</span>
+			<span>Coins x@(pet.CoinMultiplier.ToString( "0.##" ))</span>
+			<span>Damage @pet.Damage</span>
+		</div>
 	</div>;
 
 	private string GetPetCardClass( PlayerTradeController.TradePetView pet, bool allowSelection )
