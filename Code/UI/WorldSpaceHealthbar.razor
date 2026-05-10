@@ -78,8 +78,26 @@
     }
 
 
+    protected override void OnEnabled()
+    {
+        FaceCamera();
+    }
+
+    protected override void OnStart()
+    {
+        FaceCamera();
+    }
+
     protected override void OnUpdate()
     {
+        FaceCamera();
+    }
+
+    public void FaceCamera()
+    {
+        if ( Scene?.Camera.IsValid() != true )
+            return;
+
         GameObject.WorldRotation = Scene.Camera.WorldRotation * Rotation.FromYaw(180f);
     }
 

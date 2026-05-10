@@ -27466,18 +27466,22 @@
               ]
             },
             {
-              "SteamId": 0,
+              "SteamId": 76561198137893301,
               "Contributions": [
-                "Helped test early playtest builds.",
-                "Reported bugs and confusing player flows."
+                "Developer, World Designer, 3D Modeler, Artist"
               ]
             },
             {
               "SteamId": 76561197991348132,
               "Contributions": [
                 "Suggestions, Crown, Auto Merge for Pet Forge, Texture changes",
-                "Being a great lad"
+                "Being a great lad",
+                "Playtester"
               ]
+            },
+            {
+              "SteamId": 0,
+              "Contributions": []
             }
           ],
           "OnComponentDestroy": null,

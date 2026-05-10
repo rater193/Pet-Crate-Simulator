@@ -54,12 +54,21 @@ public sealed class InteractGivePlayerCoin : Interactable
 	void CreateHealthbar()
 	{
 		GameObject clone = GameObject.GetPrefab( "Prefabs/CoinHealthbar.prefab" ).Clone();
-		healthbar = clone.GetComponentInChildren<WorldSpaceHealthbar>();
-		healthbar.health = health;
-		healthbar.maxHealth = maxHealth;
 
 		clone.Parent = GameObject;
 		clone.LocalPosition = Vector3.Zero;
+
+		var surfaceSnap = clone.GetComponent<SurfaceCameraSnap>();
+		surfaceSnap?.ApplyCameraRotation();
+
+		healthbar = clone.GetComponentInChildren<WorldSpaceHealthbar>();
+		if ( healthbar != null )
+		{
+			healthbar.health = health;
+			healthbar.maxHealth = maxHealth;
+			healthbar.FaceCamera();
+		}
+
 		clone.NetworkSpawn();
 	}
 

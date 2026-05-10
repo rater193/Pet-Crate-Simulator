@@ -56,6 +56,16 @@
 		pointer-events: none;
 	}
 
+	.credits-drift-rect {
+		position: absolute;
+		width: 270px;
+		height: 42px;
+		background-color: rgba(255, 255, 255, 0.105);
+		border-radius: 8px;
+		z-index: 1;
+		pointer-events: none;
+	}
+
 	.credits-accent {
 		position: absolute;
 		left: 0px;
@@ -312,6 +322,12 @@
 		<div class="credits-board">
 			<div class="credits-accent"></div>
 			<div class="credits-shimmer"></div>
+			<div class="credits-drift-rect" style="@DriftRectOneStyle"></div>
+			<div class="credits-drift-rect" style="@DriftRectTwoStyle"></div>
+			<div class="credits-drift-rect" style="@DriftRectThreeStyle"></div>
+			<div class="credits-drift-rect" style="@DriftRectFourStyle"></div>
+			<div class="credits-drift-rect" style="@DriftRectFiveStyle"></div>
+			<div class="credits-drift-rect" style="@DriftRectSixStyle"></div>
 			<div class="credits-spark one"></div>
 			<div class="credits-spark two"></div>
 			<div class="credits-title">@TitleText</div>
@@ -432,6 +448,12 @@
 	private string SparkOpacity => $"{0.45f + MathF.Sin( TimeValue * 3.1f ) * 0.22f:0.###}";
 	private string SparkScale => $"{0.8f + MathF.Sin( TimeValue * 3.1f ) * 0.24f:0.###}";
 	private string SparkScaleTwo => $"{0.8f + MathF.Sin( TimeValue * 2.7f + 1.2f ) * 0.24f:0.###}";
+	private string DriftRectOneStyle => BuildDriftRectStyle( 92f, 170f, -12f, 0.62f, 0.0f, 30f, 14f, 7f, 270f, 42f );
+	private string DriftRectTwoStyle => BuildDriftRectStyle( 1278f, 164f, 11f, 0.5f, 1.6f, 24f, 18f, 6f, 260f, 42f );
+	private string DriftRectThreeStyle => BuildDriftRectStyle( 134f, 746f, 9f, 0.48f, 3.1f, 34f, 12f, 5f, 300f, 44f );
+	private string DriftRectFourStyle => BuildDriftRectStyle( 1182f, 688f, -10f, 0.44f, 4.4f, 28f, 18f, 6.5f, 292f, 42f );
+	private string DriftRectFiveStyle => BuildDriftRectStyle( 684f, 844f, 5f, 0.35f, 5.7f, 20f, 10f, 4f, 230f, 38f );
+	private string DriftRectSixStyle => BuildDriftRectStyle( 708f, 284f, -6f, 0.28f, 7.3f, 26f, 16f, 5.5f, 250f, 40f );
 
 	protected override void OnUpdate()
 	{
@@ -477,6 +499,17 @@
 	{
 		var y = MathF.Sin( TimeValue * 1.8f + (index * 0.72f) ) * 3.5f;
 		return $"transform: translateY({y:0.##}px);";
+	}
+
+	private string BuildDriftRectStyle( float left, float top, float rotation, float opacity, float phase, float xAmount, float yAmount, float rotationAmount, float width, float height )
+	{
+		var x = MathF.Sin( TimeValue * 0.9f + phase ) * xAmount;
+		var y = MathF.Cos( TimeValue * 0.75f + phase ) * yAmount;
+		var tilt = rotation + MathF.Sin( TimeValue * 0.65f + phase ) * rotationAmount;
+		var pulse = opacity + MathF.Sin( TimeValue * 1.1f + phase ) * 0.045f;
+		var scale = 1f + MathF.Sin( TimeValue * 0.8f + phase ) * 0.04f;
+
+		return $"left: {left + x:0.##}px; top: {top + y:0.##}px; width: {width:0.##}px; height: {height:0.##}px; opacity: {pulse:0.###}; transform: rotate({tilt:0.##}deg) scale({scale:0.###});";
 	}
 
 	private static string GetContributorName( CreditsContributor contributor )

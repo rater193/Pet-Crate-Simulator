@@ -65,8 +65,26 @@
 
 @code
 {
+    protected override void OnEnabled()
+    {
+        FaceCamera();
+    }
+
+    protected override void OnStart()
+    {
+        FaceCamera();
+    }
+
     protected override void OnUpdate()
     {
-        WorldRotation = new Rotation(Scene.Camera.WorldRotation.x, Scene.Camera.WorldRotation.y, Scene.Camera.WorldRotation.z, Scene.Camera.WorldRotation.w).RotateAroundAxis(Vector3.Up, 180f);
+        FaceCamera();
+    }
+
+    private void FaceCamera()
+    {
+        if ( Scene?.Camera.IsValid() != true )
+            return;
+
+        WorldRotation = Scene.Camera.WorldRotation * Rotation.FromYaw( 180f );
     }
 }
