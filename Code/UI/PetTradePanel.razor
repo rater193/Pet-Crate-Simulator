@@ -236,8 +236,8 @@
 				{
 					<div class="pet-trade-review">
 						<div class="pet-trade-body">
-							@RenderTradeSide( "Your Offer", Trade.GetOwnSelectedPets(), Trade.GetOwnSelectedPets(), true, false )
-							@RenderTradeSide( PartnerName + "'s Offer", Trade.GetPartnerSelectedPets(), Trade.GetPartnerSelectedPets(), false, false )
+							@TradeSide( "Your Offer", Trade.GetOwnSelectedPets(), Trade.GetOwnSelectedPets(), true, false )
+							@TradeSide( PartnerName + "'s Offer", Trade.GetPartnerSelectedPets(), Trade.GetPartnerSelectedPets(), false, false )
 						</div>
 						<div class="pet-trade-countdown">@ReviewStatus</div>
 						<button class="@AcceptButtonClass" onclick=@ToggleAccepted>@AcceptButtonText</button>
@@ -246,8 +246,8 @@
 				else
 				{
 					<div class="pet-trade-body">
-						@RenderTradeSide( "Your Pets", Trade.GetOwnSelectedPets(), OwnVisiblePets, true, true )
-						@RenderTradeSide( PartnerName + "'s Pets", Trade.GetPartnerSelectedPets(), Trade.GetPartnerPets(), false, false )
+						@TradeSide( "Your Pets", Trade.GetOwnSelectedPets(), OwnVisiblePets, true, true )
+						@TradeSide( PartnerName + "'s Pets", Trade.GetPartnerSelectedPets(), Trade.GetPartnerPets(), false, false )
 					</div>
 				}
 			</div>
@@ -278,54 +278,50 @@
 		}
 	}
 
-	private RenderFragment RenderTradeSide( string title, IReadOnlyList<PlayerTradeController.TradePetView> selectedPets, IReadOnlyList<PlayerTradeController.TradePetView> pets, bool isOwnSide, bool allowSelection ) => builder =>
-	{
-		var sequence = 0;
-		builder.OpenElement( sequence++, "div" );
-		builder.AddAttribute( sequence++, "class", "pet-trade-side" );
+	private RenderFragment TradeSide( string title, IReadOnlyList<PlayerTradeController.TradePetView> selectedPets, IReadOnlyList<PlayerTradeController.TradePetView> pets, bool isOwnSide, bool allowSelection ) => @<div class="pet-trade-side">
+		<div class="pet-trade-side-title">@title</div>
 
-		builder.OpenElement( sequence++, "div" );
-		builder.AddAttribute( sequence++, "class", "pet-trade-side-title" );
-		builder.AddContent( sequence++, title );
-		builder.CloseElement();
+		<div class="pet-trade-selected-row">
+			@foreach ( var pet in selectedPets )
+			{
+				@PetCard( pet, false, isOwnSide && allowSelection )
+			}
+		</div>
 
-		builder.OpenElement( sequence++, "div" );
-		builder.AddAttribute( sequence++, "class", "pet-trade-selected-row" );
-		foreach ( var pet in selectedPets )
+		<div class="pet-trade-list">
+			@foreach ( var pet in pets )
+			{
+				@PetCard( pet, allowSelection, allowSelection )
+			}
+		</div>
+
+		@if ( isOwnSide && allowSelection )
 		{
-			RenderPetCard( builder, ref sequence, pet, false, isOwnSide && allowSelection );
-		}
-		builder.CloseElement();
-
-		builder.OpenElement( sequence++, "div" );
-		builder.AddAttribute( sequence++, "class", "pet-trade-list" );
-		foreach ( var pet in pets )
-		{
-			RenderPetCard( builder, ref sequence, pet, allowSelection, allowSelection );
-		}
-		builder.CloseElement();
-
-		if ( isOwnSide && allowSelection )
-		{
-			builder.OpenElement( sequence++, "button" );
-			builder.AddAttribute( sequence++, "class", GetSubmitClass() );
-			builder.AddAttribute( sequence++, "onclick", (Action)ToggleSubmitted );
-			builder.AddContent( sequence++, Trade?.OwnSubmitted == true ? "Edit Offer" : "Initiate Trade" );
-			builder.CloseElement();
+			<button class="@GetSubmitClass()" onclick=@ToggleSubmitted>@(Trade?.OwnSubmitted == true ? "Edit Offer" : "Initiate Trade")</button>
 		}
 
-		if ( (isOwnSide && Trade?.OwnSubmitted == true) || (!isOwnSide && Trade?.PartnerSubmitted == true) )
+		@if ( (isOwnSide && Trade?.OwnSubmitted == true) || (!isOwnSide && Trade?.PartnerSubmitted == true) )
 		{
-			builder.OpenElement( sequence++, "div" );
-			builder.AddAttribute( sequence++, "class", "pet-trade-ready-overlay" );
-			builder.AddContent( sequence++, "READY" );
-			builder.CloseElement();
+			<div class="pet-trade-ready-overlay">READY</div>
 		}
+	</div>;
 
-		builder.CloseElement();
-	};
+	private RenderFragment PetCard( PlayerTradeController.TradePetView pet, bool allowSelection, bool clickable ) => @<div class="@GetPetCardClass( pet, allowSelection )" style="@GetPetCardStyle( pet )" onclick=@(() => HandlePetCardClicked( pet, clickable ))>
+		<div class="pet-trade-thumb">
+			@if ( pet.PreviewTexture != null )
+			{
+				<Image class="pet-trade-thumb-image" Texture=@pet.PreviewTexture />
+			}
+			else
+			{
+				@pet.IconText
+			}
+		</div>
+		<div class="pet-trade-name">@pet.DisplayName</div>
+		<div class="pet-trade-stats">@pet.Rarity | x@(pet.CoinMultiplier.ToString( "0.#" )) | @pet.Damage dmg</div>
+	</div>;
 
-	private void RenderPetCard( RenderTreeBuilder builder, ref int sequence, PlayerTradeController.TradePetView pet, bool allowSelection, bool clickable )
+	private string GetPetCardClass( PlayerTradeController.TradePetView pet, bool allowSelection )
 	{
 		var isSelected = Trade?.IsSlotSelected( pet.SlotIndex ) == true;
 		var cardClass = isSelected ? "pet-trade-card selected" : "pet-trade-card";
@@ -334,36 +330,12 @@
 			cardClass += " disabled";
 		}
 
-		builder.OpenElement( sequence++, clickable ? "button" : "div" );
-		builder.AddAttribute( sequence++, "class", cardClass );
-		builder.AddAttribute( sequence++, "style", $"border-color: {pet.Rarity.GetCssColor()};" );
-		if ( clickable )
-		{
-			builder.AddAttribute( sequence++, "onclick", (Action)(() => TogglePet( pet.SlotIndex )) );
-		}
+		return cardClass;
+	}
 
-		builder.OpenElement( sequence++, "div" );
-		builder.AddAttribute( sequence++, "class", "pet-trade-thumb" );
-		if ( pet.PreviewTexture != null )
-		{
-			builder.OpenComponent<Image>( sequence++ );
-			builder.AddAttribute( sequence++, "class", "pet-trade-thumb-image" );
-			builder.AddAttribute( sequence++, "Texture", pet.PreviewTexture );
-			builder.CloseComponent();
-		}
-		builder.CloseElement();
-
-		builder.OpenElement( sequence++, "div" );
-		builder.AddAttribute( sequence++, "class", "pet-trade-name" );
-		builder.AddContent( sequence++, pet.DisplayName );
-		builder.CloseElement();
-
-		builder.OpenElement( sequence++, "div" );
-		builder.AddAttribute( sequence++, "class", "pet-trade-stats" );
-		builder.AddContent( sequence++, $"{pet.Rarity} | x{pet.CoinMultiplier:0.#} | {pet.Damage} dmg" );
-		builder.CloseElement();
-
-		builder.CloseElement();
+	private static string GetPetCardStyle( PlayerTradeController.TradePetView pet )
+	{
+		return $"border-color: {pet.Rarity.GetCssColor()};";
 	}
 
 	private string GetSubmitClass()
@@ -377,6 +349,14 @@
 	private void TogglePet( int slotIndex )
 	{
 		Trade?.ToggleSelectedPet( slotIndex );
+	}
+
+	private void HandlePetCardClicked( PlayerTradeController.TradePetView pet, bool clickable )
+	{
+		if ( clickable )
+		{
+			TogglePet( pet.SlotIndex );
+		}
 	}
 
 	private void ToggleSubmitted()
@@ -394,5 +374,5 @@
 		Trade?.CancelTrade();
 	}
 
-	protected override int BuildHash() => PlayerTradeController.UiVersion;
+	protected override int BuildHash() => HashCode.Combine( PlayerTradeController.UiVersion, PetPreviewRenderer.PreviewVersion );
 }

@@ -11,6 +11,7 @@ public sealed class PlayerTradeController : Component
 		public PetRarity Rarity { get; set; } = PetRarity.Common;
 		public float CoinMultiplier { get; set; } = 1f;
 		public int Damage { get; set; } = 1;
+		public string IconText { get; set; } = "?";
 		public Texture PreviewTexture { get; set; }
 	}
 
@@ -44,6 +45,14 @@ public sealed class PlayerTradeController : Component
 	private float countdownStartedAt;
 	private bool isCompletingTrade;
 
+	protected override void OnStart()
+	{
+		if ( !IsProxy )
+		{
+			LOCAL = this;
+		}
+	}
+
 	protected override void OnUpdate()
 	{
 		if ( IsProxy )
@@ -62,6 +71,15 @@ public sealed class PlayerTradeController : Component
 		}
 
 		UpdateTradeCountdown();
+	}
+
+	protected override void OnDestroy()
+	{
+		if ( LOCAL == this )
+		{
+			LOCAL = null;
+			BumpUi();
+		}
 	}
 
 	public void OpenPlayerDetails( GameObject targetPlayer )
@@ -113,10 +131,11 @@ public sealed class PlayerTradeController : Component
 
 	public void ToggleSelectedPet( int slotIndex )
 	{
-		if ( !IsTradeOpen || IsReviewPhase || OwnSubmitted || !GetComponent<Inventory>().IsValid() )
+		var inventory = GetInventory();
+		if ( !IsTradeOpen || IsReviewPhase || OwnSubmitted || !inventory.IsValid() )
 			return;
 
-		if ( !GetComponent<Inventory>().GetPet( slotIndex ).IsValid() )
+		if ( !inventory.GetPet( slotIndex ).IsValid() )
 			return;
 
 		if ( selectedSlotIndexes.Contains( slotIndex ) )
@@ -192,7 +211,7 @@ public sealed class PlayerTradeController : Component
 
 	public IReadOnlyList<TradePetView> GetOwnPets()
 	{
-		var inventory = GetComponent<Inventory>();
+		var inventory = GetInventory();
 		if ( !inventory.IsValid() )
 			return Array.Empty<TradePetView>();
 
@@ -201,7 +220,7 @@ public sealed class PlayerTradeController : Component
 
 	public IReadOnlyList<TradePetView> GetOwnSelectedPets()
 	{
-		var inventory = GetComponent<Inventory>();
+		var inventory = GetInventory();
 		if ( !inventory.IsValid() )
 			return Array.Empty<TradePetView>();
 
@@ -236,7 +255,7 @@ public sealed class PlayerTradeController : Component
 
 	public bool CanReceivePartnerOffer()
 	{
-		var inventory = GetComponent<Inventory>();
+		var inventory = GetInventory();
 		if ( !inventory.IsValid() )
 			return false;
 
@@ -382,7 +401,7 @@ public sealed class PlayerTradeController : Component
 			return;
 		}
 
-		var inventory = GetComponent<Inventory>();
+		var inventory = GetInventory();
 		if ( !inventory.IsValid() )
 			return;
 
@@ -431,7 +450,7 @@ public sealed class PlayerTradeController : Component
 
 	private string BuildInventoryJson()
 	{
-		var inventory = GetComponent<Inventory>();
+		var inventory = GetInventory();
 		if ( !inventory.IsValid() )
 			return "{}";
 
@@ -477,6 +496,7 @@ public sealed class PlayerTradeController : Component
 			Rarity = slot.Rarity,
 			CoinMultiplier = coinMultiplier,
 			Damage = damage,
+			IconText = GetIconText( slot.DisplayName ),
 			PreviewTexture = PetPreviewRenderer.Instance?.GetPreviewTexture( slot.PetPrefabPath, petPrefab )
 		};
 	}
@@ -495,6 +515,7 @@ public sealed class PlayerTradeController : Component
 			petObject.Set( "Rarity", pet.Rarity.ToString() );
 			petObject.Set( "CoinMultiplier", pet.CoinMultiplier );
 			petObject.Set( "Damage", pet.Damage );
+			petObject.Set( "IconText", pet.IconText ?? "?" );
 			petData.Add( petObject );
 		}
 
@@ -530,6 +551,7 @@ public sealed class PlayerTradeController : Component
 				Rarity = rarity,
 				CoinMultiplier = petJson.Get( "CoinMultiplier", 1f ),
 				Damage = petJson.Get( "Damage", 1 ),
+				IconText = petJson.Get( "IconText", GetIconText( petJson.Get( "DisplayName", "Pet" ) ) ),
 				PreviewTexture = PetPreviewRenderer.Instance?.GetPreviewTexture( prefabPath, prefab )
 			} );
 		}
@@ -537,9 +559,25 @@ public sealed class PlayerTradeController : Component
 		return pets;
 	}
 
+	private static string GetIconText( string displayName )
+	{
+		if ( string.IsNullOrWhiteSpace( displayName ) )
+			return "?";
+
+		return displayName.Trim()[0].ToString().ToUpperInvariant();
+	}
+
 	private static void BumpUi()
 	{
 		UiVersion++;
 		PlayerHud.SINGLETON?.StateHasChanged();
+	}
+
+	private Inventory GetInventory()
+	{
+		if ( !GameObject.IsValid() )
+			return null;
+
+		return GameObject.Components.Get<Inventory>( FindMode.EverythingInSelf );
 	}
 }
