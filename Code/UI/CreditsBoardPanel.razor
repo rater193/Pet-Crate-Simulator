@@ -1,0 +1,418 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System;
+@using System.Collections.Generic;
+@using System.Linq;
+@inherits PanelComponent
+@namespace Sandbox
+
+<style>
+	.credits-root {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		align-items: center;
+		justify-content: center;
+		font-family: Poppins;
+		pointer-events: all;
+	}
+
+	.credits-board {
+		width: 1640px;
+		height: 1040px;
+		position: relative;
+		overflow: hidden;
+		flex-direction: column;
+		align-items: center;
+		background-color: #122235;
+		border: 16px solid #f6d86b;
+		border-radius: 36px;
+		box-shadow: 0px 18px 0px rgba(8, 17, 29, 0.56), 0px 0px 38px rgba(99, 196, 255, 0.18);
+		transform: translateY(@BoardBobpx) scale(@BoardScalef);
+	}
+
+	.credits-board::before {
+		content: "";
+		position: absolute;
+		left: 34px;
+		top: 34px;
+		right: 34px;
+		bottom: 34px;
+		border: 5px solid rgba(255, 255, 255, 0.16);
+		border-radius: 24px;
+	}
+
+	.credits-shimmer {
+		position: absolute;
+		top: -180px;
+		left: -560px;
+		width: 380px;
+		height: 1380px;
+		background-color: rgba(255, 255, 255, 0.1);
+		transform: rotate(16deg) translateX(@ShimmerXpx);
+	}
+
+	.credits-accent {
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		top: 0px;
+		height: 28px;
+		background-color: #71d6ff;
+		opacity: @AccentOpacity;
+	}
+
+	.credits-title {
+		margin-top: 72px;
+		color: #fff7c9;
+		font-size: 104px;
+		font-weight: 900;
+		text-align: center;
+		text-shadow: 0px 7px 0px rgba(5, 12, 22, 0.82), 0px 0px 22px rgba(255, 226, 120, 0.24);
+		letter-spacing: 0px;
+		z-index: 2;
+		transform: translateY(@TitleBobpx) scale(@TitleScalef);
+	}
+
+	.credits-subtitle {
+		margin-top: 4px;
+		width: 1240px;
+		color: #aeeeff;
+		font-size: 34px;
+		font-weight: 900;
+		text-align: center;
+		text-shadow: 0px 4px 0px rgba(0, 0, 0, 0.45);
+		z-index: 2;
+	}
+
+	.credits-list {
+		margin-top: 54px;
+		width: 1240px;
+		flex-direction: column;
+		gap: 22px;
+		z-index: 2;
+	}
+
+	.credits-user-shell {
+		height: 116px;
+		width: 100%;
+		pointer-events: all;
+	}
+
+	.credits-user-button {
+		height: 100%;
+		width: 100%;
+		background-color: rgba(31, 180, 218, 0.9);
+		border: 7px solid rgba(255, 255, 255, 0.86);
+		border-radius: 22px;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		overflow: hidden;
+		pointer-events: all;
+		box-shadow: 0px 10px 0px rgba(0, 53, 78, 0.38);
+		transition: transform 0.08s ease, background-color 0.1s ease, box-shadow 0.1s ease;
+	}
+
+	.credits-user-button:hover {
+		background-color: rgba(62, 213, 236, 0.96);
+		transform: scale(1.035);
+		box-shadow: 0px 13px 0px rgba(0, 53, 78, 0.38), 0px 0px 28px rgba(113, 214, 255, 0.28);
+	}
+
+	.credits-user-name {
+		color: white;
+		font-size: 48px;
+		font-weight: 900;
+		text-align: center;
+		text-shadow: 0px 4px 0px rgba(0, 0, 0, 0.3);
+	}
+
+	.credits-user-hint {
+		position: absolute;
+		right: 34px;
+		color: #fff7c9;
+		font-size: 30px;
+		font-weight: 900;
+		text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.35);
+	}
+
+	.credits-detail {
+		margin-top: 48px;
+		width: 1320px;
+		height: 690px;
+		flex-direction: column;
+		align-items: center;
+		z-index: 2;
+	}
+
+	.credits-detail-name {
+		color: #ffffff;
+		font-size: 66px;
+		font-weight: 900;
+		text-align: center;
+		text-shadow: 0px 5px 0px rgba(0, 0, 0, 0.36);
+		max-width: 1200px;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+
+	.credits-contribution-list {
+		margin-top: 28px;
+		width: 1180px;
+		height: 430px;
+		flex-direction: column;
+		gap: 16px;
+		overflow-y: scroll;
+	}
+
+	.credits-contribution {
+		min-height: 72px;
+		background-color: rgba(6, 14, 25, 0.42);
+		border: 4px solid rgba(113, 214, 255, 0.5);
+		border-radius: 16px;
+		align-items: center;
+		padding: 0px 34px;
+		color: #f2fbff;
+		font-size: 30px;
+		font-weight: 800;
+		text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.4);
+	}
+
+	.credits-empty {
+		height: 100%;
+		align-items: center;
+		justify-content: center;
+		color: rgba(255, 255, 255, 0.78);
+		font-size: 36px;
+		font-weight: 900;
+		text-align: center;
+	}
+
+	.credits-back-button {
+		margin-top: 34px;
+		width: 360px;
+		height: 82px;
+		background-color: #2375df;
+		border: 6px solid #83d6ff;
+		border-radius: 20px;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font-size: 38px;
+		font-weight: 900;
+		text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.34);
+		pointer-events: all;
+		box-shadow: 0px 8px 0px rgba(9, 52, 116, 0.38);
+		transition: transform 0.08s ease, background-color 0.1s ease;
+	}
+
+	.credits-back-button:hover {
+		background-color: #2f8cff;
+		transform: scale(1.08);
+	}
+
+	.credits-spark {
+		position: absolute;
+		width: 28px;
+		height: 28px;
+		border-radius: 6px;
+		background-color: #ffffff;
+		opacity: @SparkOpacity;
+		transform: rotate(45deg) scale(@SparkScale);
+		z-index: 1;
+	}
+
+	.credits-spark.one {
+		left: 116px;
+		top: 126px;
+		background-color: #88f7ff;
+	}
+
+	.credits-spark.two {
+		right: 132px;
+		top: 158px;
+		background-color: #ffe98c;
+		transform: rotate(45deg) scale(@SparkScaleTwo);
+	}
+</style>
+
+<root>
+	<div class="credits-root">
+		<div class="credits-board">
+			<div class="credits-accent"></div>
+			<div class="credits-shimmer"></div>
+			<div class="credits-spark one"></div>
+			<div class="credits-spark two"></div>
+			<div class="credits-title">@TitleText</div>
+			<div class="credits-subtitle">@SubtitleText</div>
+
+			@if ( SelectedContributor == null )
+			{
+				<div class="credits-list">
+					@if ( DisplayContributors.Count == 0 )
+					{
+						<div class="credits-empty">Add contributors in the Credits Board component.</div>
+					}
+					else
+					{
+						@for ( var i = 0; i < DisplayContributors.Count; i++ )
+						{
+							var contributor = DisplayContributors[i];
+							var contributorIndex = i;
+							<div class="credits-user-shell" style="@GetContributorButtonStyle( contributorIndex )">
+								<div class="credits-user-button" onclick=@(() => SelectContributor( contributorIndex ))>
+									<div class="credits-user-name">@GetContributorName( contributor )</div>
+									<div class="credits-user-hint">View</div>
+								</div>
+							</div>
+						}
+					}
+				</div>
+			}
+			else
+			{
+				<div class="credits-detail">
+					<div class="credits-detail-name">@GetContributorName( SelectedContributor )</div>
+					<div class="credits-contribution-list">
+						@if ( GetContributionLines( SelectedContributor ).Count == 0 )
+						{
+							<div class="credits-empty">No contributions configured yet.</div>
+						}
+						else
+						{
+							@foreach ( var contribution in GetContributionLines( SelectedContributor ) )
+							{
+								<div class="credits-contribution">@contribution</div>
+							}
+						}
+					</div>
+					<div class="credits-back-button" onclick=@BackToList>Back</div>
+				</div>
+			}
+		</div>
+	</div>
+</root>
+
+@code
+{
+	[Property] public string TitleText { get; set; } = "Credits";
+	[Property] public string SubtitleText { get; set; } = "Thank you to everyone helping shape the game.";
+	[Property] public List<CreditsContributor> Contributors { get; set; } = new()
+	{
+		new CreditsContributor
+		{
+			DisplayName = "rater193",
+			Contributions = new List<string>
+			{
+				"Created and directed Pet Crate Simulator.",
+				"Designed the pet crate, inventory, and progression goals."
+			}
+		},
+		new CreditsContributor
+		{
+			DisplayName = "Sample Playtester",
+			Contributions = new List<string>
+			{
+				"Helped test early playtest builds.",
+				"Reported bugs and confusing player flows."
+			}
+		},
+		new CreditsContributor
+		{
+			DisplayName = "Sample Contributor",
+			Contributions = new List<string>
+			{
+				"Provided gameplay feedback and balance suggestions.",
+				"Shared ideas for polish, UI, and pet rewards."
+			}
+		}
+	};
+
+	private int selectedContributorIndex = -1;
+	private int animationFrame;
+	private float TimeValue => Time.Now;
+	private List<CreditsContributor> DisplayContributors => Contributors ?? new List<CreditsContributor>();
+	private CreditsContributor SelectedContributor => selectedContributorIndex >= 0 && selectedContributorIndex < DisplayContributors.Count
+		? DisplayContributors[selectedContributorIndex]
+		: null;
+	private string BoardBobpx => $"{MathF.Sin( TimeValue * 1.25f ) * 5f}px";
+	private string BoardScalef => $"{1f + MathF.Sin( TimeValue * 1.25f + 0.6f ) * 0.005f:0.###}";
+	private string TitleBobpx => $"{MathF.Sin( TimeValue * 1.9f ) * 5f}px";
+	private string TitleScalef => $"{1f + MathF.Sin( TimeValue * 1.9f + 0.7f ) * 0.01f:0.###}";
+	private string ShimmerXpx => $"{(MathF.Sin( TimeValue * 0.62f ) * 0.5f + 0.5f) * 2200f}px";
+	private string AccentOpacity => $"{0.62f + MathF.Sin( TimeValue * 2.1f ) * 0.14f:0.###}";
+	private string SparkOpacity => $"{0.45f + MathF.Sin( TimeValue * 3.1f ) * 0.22f:0.###}";
+	private string SparkScale => $"{0.8f + MathF.Sin( TimeValue * 3.1f ) * 0.24f:0.###}";
+	private string SparkScaleTwo => $"{0.8f + MathF.Sin( TimeValue * 2.7f + 1.2f ) * 0.24f:0.###}";
+
+	protected override void OnUpdate()
+	{
+		var currentFrame = (int)(Time.Now * 24f);
+		if ( currentFrame == animationFrame )
+			return;
+
+		animationFrame = currentFrame;
+		StateHasChanged();
+	}
+
+	protected override int BuildHash()
+	{
+		var contributorHash = 0;
+		foreach ( var contributor in DisplayContributors )
+		{
+			contributorHash = HashCode.Combine( contributorHash, contributor?.DisplayName );
+			foreach ( var contribution in GetContributionLines( contributor ) )
+			{
+				contributorHash = HashCode.Combine( contributorHash, contribution );
+			}
+		}
+
+		return HashCode.Combine( TitleText, SubtitleText, selectedContributorIndex, animationFrame, contributorHash );
+	}
+
+	private void SelectContributor( int index )
+	{
+		if ( index < 0 || index >= DisplayContributors.Count )
+			return;
+
+		selectedContributorIndex = index;
+		StateHasChanged();
+	}
+
+	private void BackToList()
+	{
+		selectedContributorIndex = -1;
+		StateHasChanged();
+	}
+
+	private string GetContributorButtonStyle( int index )
+	{
+		var y = MathF.Sin( TimeValue * 1.8f + (index * 0.72f) ) * 3.5f;
+		return $"transform: translateY({y:0.##}px);";
+	}
+
+	private static string GetContributorName( CreditsContributor contributor )
+	{
+		if ( !string.IsNullOrWhiteSpace( contributor?.DisplayName ) )
+			return contributor.DisplayName;
+
+		return "Unnamed Contributor";
+	}
+
+	private static List<string> GetContributionLines( CreditsContributor contributor )
+	{
+		return contributor?.Contributions?
+			.Where( contribution => !string.IsNullOrWhiteSpace( contribution ) )
+			.ToList() ?? new List<string>();
+	}
+
+	public sealed class CreditsContributor
+	{
+		[Property] public string DisplayName { get; set; } = "Contributor";
+		[Property] public List<string> Contributions { get; set; } = new();
+	}
+}

@@ -27396,6 +27396,86 @@
         }
       ],
       "Children": []
+    },
+    {
+      "__guid": "093409e2-7332-4a98-8487-b345e1ce3aee",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "Credits Board",
+      "Position": "1997.19849,636.631287,166.497284",
+      "Rotation": "0,0,0.978244722,-0.207454145",
+      "Scale": "3,3,3",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.WorldPanel",
+          "__guid": "ce367dd5-b15c-4c29-8da3-de30629ed51f",
+          "__enabled": true,
+          "Flags": 0,
+          "HorizontalAlign": "Center",
+          "InteractionRange": 1000,
+          "LookAtCamera": false,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "PanelSize": "3072,2048",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderScale": 1,
+          "VerticalAlign": "Center"
+        },
+        {
+          "__type": "Sandbox.CreditsBoardPanel",
+          "__guid": "fc1bc238-f2dc-4139-919e-7be1d65ed75a",
+          "__enabled": true,
+          "Flags": 0,
+          "Contributors": [
+            {
+              "DisplayName": "rater193",
+              "Contributions": [
+                "Created and directed Pet Crate Simulator.",
+                "Designed the pet crate, inventory, and progression goals."
+              ]
+            },
+            {
+              "DisplayName": "Sample Playtester",
+              "Contributions": [
+                "Helped test early playtest builds.",
+                "Reported bugs and confusing player flows."
+              ]
+            },
+            {
+              "DisplayName": "Sample Contributor",
+              "Contributions": [
+                "Provided gameplay feedback and balance suggestions.",
+                "Shared ideas for polish, UI, and pet rewards."
+              ]
+            }
+          ],
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "SubtitleText": "Thank you to everyone helping shape the game.",
+          "TitleText": "Credits"
+        }
+      ],
+      "Children": []
     }
   ],
   "SceneProperties": {
