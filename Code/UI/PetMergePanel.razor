@@ -104,6 +104,54 @@
 		margin-bottom: 14px;
 	}
 
+	.pet-merge-library-header {
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 14px;
+		gap: 10px;
+	}
+
+	.pet-merge-library-header .pet-merge-section-title {
+		margin-bottom: 0px;
+	}
+
+	.pet-merge-sort-controls {
+		flex-direction: row;
+		align-items: center;
+		gap: 8px;
+	}
+
+	.pet-merge-sort-button {
+		height: 40px;
+		padding: 0px 12px;
+		border-radius: 12px;
+		background-color: #d9edff;
+		border: 3px solid #64c7f5;
+		color: #36516e;
+		font-size: 14px;
+		font-weight: 900;
+		align-items: center;
+		justify-content: center;
+		pointer-events: all;
+		transition: transform 0.08s ease, background-color 0.1s ease;
+	}
+
+	.pet-merge-sort-button:hover {
+		transform: scale(1.06);
+		background-color: #ecf8ff;
+	}
+
+	.pet-merge-sort-button.active {
+		background-color: #2375df;
+		color: white;
+		border-color: #2375df;
+	}
+
+	.pet-merge-sort-direction {
+		min-width: 96px;
+	}
+
 	.pet-merge-grid {
 		flex-grow: 1;
 		width: 100%;
@@ -129,6 +177,7 @@
 		pointer-events: all;
 		position: relative;
 		overflow: hidden;
+		transition: background-color 0.1s ease, box-shadow 0.08s ease;
 	}
 
 	.pet-merge-card.selected {
@@ -327,11 +376,18 @@
 			<div class="pet-merge-close" onclick=@Close>X</div>
 
 			<div class="pet-merge-library">
-				<div class="pet-merge-section-title">Select Pets</div>
+				<div class="pet-merge-library-header">
+					<div class="pet-merge-section-title">Select Pets</div>
+					<div class="pet-merge-sort-controls">
+						<div class="@GetSortButtonClass( PetMergeSortMode.Rarity )" onclick=@(() => SetSortMode( PetMergeSortMode.Rarity ))>Sort by rarity</div>
+						<div class="@GetSortButtonClass( PetMergeSortMode.Name )" onclick=@(() => SetSortMode( PetMergeSortMode.Name ))>Sort by name</div>
+						<div class="pet-merge-sort-button pet-merge-sort-direction" onclick=@ToggleSortDirection>@SortDirectionText</div>
+					</div>
+				</div>
 				<div class="pet-merge-grid">
 					@foreach ( var pet in AllPets )
 					{
-						<div class="@GetPetCardClass( pet )" style="@pet.BorderStyle" onclick=@(() => ToggleSelectedPet( pet.SlotIndex ))>
+						<div class="@GetPetCardClass( pet )" style="@GetPetCardStyle( pet )" onclick=@(() => ToggleSelectedPet( pet.SlotIndex ))>
 							<div class="pet-merge-icon">
 								@if ( pet.PreviewTexture != null )
 								{
@@ -407,6 +463,7 @@
 	private const float MergeDuration = MergeLiftDuration + MergeConvergeDuration + MergeBurstDuration + MergeReturnDuration;
 	private const int MergeParticleCount = 24;
 	private const string DefaultMergeSlotBorderStyle = "border-color: rgba(77, 115, 155, 0.55);";
+	private const float SortAnimationDuration = 0.34f;
 
 	public bool IsOpen { get; set; }
 	public Action CloseRequested { get; set; }
@@ -416,6 +473,10 @@
 	private bool mergeConsumed;
 	private float mergeStartTime;
 	private float mergeAnimationTime;
+	private PetMergeSortMode sortMode = PetMergeSortMode.Rarity;
+	private bool sortAscending = true;
+	private float sortAnimationStartTime;
+	private float sortAnimationTime = SortAnimationDuration;
 
 	private PlayerData LocalPlayerData => PlayerData.LOCALDATA;
 	private Inventory Inventory => LocalPlayerData?.inventory;
@@ -432,6 +493,9 @@
 	private string MergeBurstScale => $"{0.35f + (MergeBurstProgress * 1.35f) - (MergeReturnProgress * 0.38f):0.###}";
 	private string MergeBurstRotationdeg => $"{mergeAnimationTime * 360f:0.##}deg";
 	private string MergeBurstOpacity => $"{Saturate( MathF.Sin( MergeBurstProgress * MathF.PI ) * 1.15f ) * (1f - MergeReturnProgress):0.###}";
+	private string SortDirectionText => sortMode == PetMergeSortMode.Name
+		? sortAscending ? "A to Z" : "Z to A"
+		: sortAscending ? "Low to High" : "High to Low";
 
 	public override void Tick()
 	{
@@ -440,6 +504,7 @@
 		if ( !IsOpen )
 			return;
 
+		var shouldUpdate = false;
 		if ( isMerging )
 		{
 			mergeAnimationTime = Time.Now - mergeStartTime;
@@ -453,6 +518,17 @@
 				FinishMerge();
 			}
 
+			shouldUpdate = true;
+		}
+
+		if ( sortAnimationTime < SortAnimationDuration )
+		{
+			sortAnimationTime = Time.Now - sortAnimationStartTime;
+			shouldUpdate = true;
+		}
+
+		if ( shouldUpdate )
+		{
 			StateHasChanged();
 		}
 	}
@@ -481,6 +557,32 @@
 		}
 
 		StateHasChanged();
+	}
+
+	private void SetSortMode( PetMergeSortMode mode )
+	{
+		if ( isMerging || sortMode == mode )
+			return;
+
+		sortMode = mode;
+		StartSortAnimation();
+		StateHasChanged();
+	}
+
+	private void ToggleSortDirection()
+	{
+		if ( isMerging )
+			return;
+
+		sortAscending = !sortAscending;
+		StartSortAnimation();
+		StateHasChanged();
+	}
+
+	private void StartSortAnimation()
+	{
+		sortAnimationStartTime = Time.Now;
+		sortAnimationTime = 0f;
 	}
 
 	private void StartMerge()
@@ -631,6 +733,20 @@
 		return classes;
 	}
 
+	private string GetPetCardStyle( MergePetViewModel pet )
+	{
+		var sortOffset = GetSortAnimationOffset( pet.DisplayIndex );
+		var opacity = 1f - (sortOffset * 0.34f);
+		var y = sortOffset * 12f;
+		var scale = 0.96f + ((1f - sortOffset) * 0.04f);
+		return $"{pet.BorderStyle} opacity: {opacity:0.###}; transform: translateX(0px) translateY({y:0.##}px) scale({scale:0.###});";
+	}
+
+	private string GetSortButtonClass( PetMergeSortMode mode )
+	{
+		return $"pet-merge-sort-button {(sortMode == mode ? "active" : "")}";
+	}
+
 	private string GetMergeStatusText()
 	{
 		if ( isMerging )
@@ -673,7 +789,38 @@
 			} );
 		}
 
+		pets = SortPets( pets );
+		for ( var i = 0; i < pets.Count; i++ )
+		{
+			pets[i].DisplayIndex = i;
+		}
+
 		return pets;
+	}
+
+	private List<MergePetViewModel> SortPets( List<MergePetViewModel> pets )
+	{
+		IOrderedEnumerable<MergePetViewModel> sorted = sortMode switch
+		{
+			PetMergeSortMode.Name => sortAscending
+				? pets.OrderBy( pet => pet.DisplayName, StringComparer.OrdinalIgnoreCase ).ThenBy( pet => (int)pet.Rarity ).ThenBy( pet => pet.SlotIndex )
+				: pets.OrderByDescending( pet => pet.DisplayName, StringComparer.OrdinalIgnoreCase ).ThenByDescending( pet => (int)pet.Rarity ).ThenBy( pet => pet.SlotIndex ),
+			_ => sortAscending
+				? pets.OrderBy( pet => (int)pet.Rarity ).ThenBy( pet => pet.DisplayName, StringComparer.OrdinalIgnoreCase ).ThenBy( pet => pet.SlotIndex )
+				: pets.OrderByDescending( pet => (int)pet.Rarity ).ThenBy( pet => pet.DisplayName, StringComparer.OrdinalIgnoreCase ).ThenBy( pet => pet.SlotIndex )
+		};
+
+		return sorted.ToList();
+	}
+
+	private float GetSortAnimationOffset( int displayIndex )
+	{
+		if ( sortAnimationTime >= SortAnimationDuration )
+			return 0f;
+
+		var stagger = MathF.Min( displayIndex, 18 ) * 0.012f;
+		var t = ((sortAnimationTime - stagger) / SortAnimationDuration).Clamp( 0f, 1f );
+		return 1f - Smooth01( t );
 	}
 
 	protected override int BuildHash()
@@ -693,12 +840,20 @@
 			slotHash = HashCode.Combine( slotHash, selectedIndex );
 		}
 
-		return HashCode.Combine( IsOpen, inventory?.Count ?? 0, slotHash, isMerging, (int)(mergeAnimationTime * 30f), PetPreviewRenderer.PreviewVersion );
+		var sortStateHash = HashCode.Combine( sortMode, sortAscending, (int)(sortAnimationTime * 30f), PetPreviewRenderer.PreviewVersion );
+		return HashCode.Combine( IsOpen, inventory?.Count ?? 0, slotHash, isMerging, (int)(mergeAnimationTime * 30f), sortStateHash );
+	}
+
+	private enum PetMergeSortMode
+	{
+		Rarity,
+		Name
 	}
 
 	private sealed class MergePetViewModel
 	{
 		public int SlotIndex { get; set; }
+		public int DisplayIndex { get; set; }
 		public string DisplayName { get; set; }
 		public PetRarity Rarity { get; set; }
 		public bool IsSelected { get; set; }
