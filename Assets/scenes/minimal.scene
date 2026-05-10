@@ -677,7 +677,7 @@
             {
               "__type": "Sandbox.SoundBoxComponent",
               "__guid": "e4aaa670-0093-4401-8012-ac1a1bc9264a",
-              "__enabled": true,
+              "__enabled": false,
               "Flags": 0,
               "Distance": 512,
               "DistanceAttenuation": true,
@@ -731,6 +731,67 @@
                 "Id": "5c275bf6-b4bc-4b77-9ad2-3bcaec3c4d77"
               },
               "Volume": 0.13875598
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "6c5e74eb-b7d8-468a-b4cf-7b835e243f3d",
+              "__enabled": true,
+              "Flags": 0,
+              "Center": "0,251.134155,0",
+              "ColliderFlags": 0,
+              "Elasticity": null,
+              "Friction": 0,
+              "IsTrigger": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "RollingResistance": null,
+              "Scale": "2546.75513,3502.26831,2500",
+              "Static": false,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "BackgroundMusicController",
+              "__guid": "89712e7f-f191-46c2-90bf-956f79703f83",
+              "__enabled": true,
+              "Flags": 0,
+              "DefaultSound": "sounds/banjo loop.sound",
+              "FadeDuration": 2,
+              "Force2d": true,
+              "MasterVolume": 0.1,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "PlayDefaultOnStart": true,
+              "TargetSound": "sounds/banjo loop.sound"
+            },
+            {
+              "__type": "MusicZoneTrigger",
+              "__guid": "1d2a11a9-6480-4c61-8ca3-58efcd15ac9d",
+              "__enabled": true,
+              "Flags": 0,
+              "ClearMusicWhenExited": true,
+              "Controller": null,
+              "Music": "sounds/banjo loop.sound",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Priority": 0,
+              "Volume": 1
             }
           ],
           "Children": []
@@ -754,7 +815,7 @@
             {
               "__type": "Sandbox.SoundBoxComponent",
               "__guid": "8375aab8-5bba-4174-8fc3-2298d9ba5419",
-              "__enabled": true,
+              "__enabled": false,
               "Flags": 0,
               "Distance": 512,
               "DistanceAttenuation": true,
@@ -807,161 +868,50 @@
                 "Name": "music",
                 "Id": "5c275bf6-b4bc-4b77-9ad2-3bcaec3c4d77"
               },
-              "Volume": 0.13875598
-            }
-          ],
-          "Children": []
-        },
-        {
-          "__guid": "980f1ff2-2c59-4a11-8ddb-0e47f8f15055",
-          "__version": 2,
-          "Flags": 0,
-          "Name": "MusicZone1",
-          "Position": "-2054.38477,4165.47168,252.007324",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
+              "Volume": 0.056338027
+            },
             {
-              "__type": "Sandbox.SoundBoxComponent",
-              "__guid": "4195d0e3-e04f-44b3-9815-7dc9005ce90a",
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "a9b0e1e5-78af-41ee-b9c2-21c3334e59a2",
               "__enabled": true,
               "Flags": 0,
-              "Distance": 512,
-              "DistanceAttenuation": true,
-              "DistanceAttenuationOverride": true,
-              "Falloff": [
-                {
-                  "x": 0,
-                  "y": 1,
-                  "in": -1.7484555E-07,
-                  "out": 1.7484555E-07,
-                  "mode": "Mirrored"
-                },
-                {
-                  "x": 0.7140625,
-                  "y": 1,
-                  "in": 0,
-                  "out": 0,
-                  "mode": "Mirrored"
-                },
-                {
-                  "x": 1,
-                  "y": 0,
-                  "in": 0,
-                  "out": 0,
-                  "mode": "Mirrored"
-                }
-              ],
-              "Force2d": false,
-              "MaxRepeatTime": 0,
-              "MinRepeatTime": 0,
-              "Occlusion": false,
-              "OcclusionOverride": false,
-              "OcclusionRadius": 32,
+              "Center": "0,0,0",
+              "ColliderFlags": 0,
+              "Elasticity": null,
+              "Friction": 0,
+              "IsTrigger": true,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null,
-              "Pitch": 1,
-              "PlayOnStart": true,
-              "ReflectionOverride": false,
-              "Reflections": false,
-              "Repeat": true,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "RollingResistance": null,
               "Scale": "2546.75513,3000,2500",
-              "SoundEvent": "sounds/casual menu guitar loop.sound",
-              "SoundOverride": true,
-              "StopOnNew": false,
-              "TargetMixer": {
-                "Name": "music",
-                "Id": "5c275bf6-b4bc-4b77-9ad2-3bcaec3c4d77"
-              },
-              "Volume": 0.13875598
-            }
-          ],
-          "Children": []
-        },
-        {
-          "__guid": "e30dc31e-ee05-4736-8a71-61a29104dd53",
-          "__version": 2,
-          "Flags": 0,
-          "Name": "MusicZone1",
-          "Position": "3887.72754,4165.47168,252.007324",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
+              "Static": false,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            },
             {
-              "__type": "Sandbox.SoundBoxComponent",
-              "__guid": "5b00df59-99c7-4b1f-a66d-e561aaceb1fe",
+              "__type": "MusicZoneTrigger",
+              "__guid": "b14f74c0-1f49-4d82-9e6c-a83c6ee04b1d",
               "__enabled": true,
               "Flags": 0,
-              "Distance": 512,
-              "DistanceAttenuation": true,
-              "DistanceAttenuationOverride": true,
-              "Falloff": [
-                {
-                  "x": 0,
-                  "y": 1,
-                  "in": -1.7484555E-07,
-                  "out": 1.7484555E-07,
-                  "mode": "Mirrored"
-                },
-                {
-                  "x": 0.7140625,
-                  "y": 1,
-                  "in": 0,
-                  "out": 0,
-                  "mode": "Mirrored"
-                },
-                {
-                  "x": 1,
-                  "y": 0,
-                  "in": 0,
-                  "out": 0,
-                  "mode": "Mirrored"
-                }
-              ],
-              "Force2d": false,
-              "MaxRepeatTime": 0,
-              "MinRepeatTime": 0,
-              "Occlusion": false,
-              "OcclusionOverride": false,
-              "OcclusionRadius": 32,
+              "ClearMusicWhenExited": false,
+              "Controller": null,
+              "Music": "sounds/casual menu guitar loop.sound",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null,
-              "Pitch": 1,
-              "PlayOnStart": true,
-              "ReflectionOverride": false,
-              "Reflections": false,
-              "Repeat": true,
-              "Scale": "2546.75513,3000,2500",
-              "SoundEvent": "sounds/casual menu guitar loop.sound",
-              "SoundOverride": true,
-              "StopOnNew": false,
-              "TargetMixer": {
-                "Name": "music",
-                "Id": "5c275bf6-b4bc-4b77-9ad2-3bcaec3c4d77"
-              },
-              "Volume": 0.13875598
+              "Priority": 0,
+              "Volume": 1
             }
           ],
           "Children": []
