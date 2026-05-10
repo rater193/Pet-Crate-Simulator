@@ -27444,21 +27444,21 @@
           "Flags": 0,
           "Contributors": [
             {
-              "DisplayName": "rater193",
+              "SteamId": 0,
               "Contributions": [
                 "Created and directed Pet Crate Simulator.",
                 "Designed the pet crate, inventory, and progression goals."
               ]
             },
             {
-              "DisplayName": "Sample Playtester",
+              "SteamId": 0,
               "Contributions": [
                 "Helped test early playtest builds.",
                 "Reported bugs and confusing player flows."
               ]
             },
             {
-              "DisplayName": "Sample Contributor",
+              "SteamId": 0,
               "Contributions": [
                 "Provided gameplay feedback and balance suggestions.",
                 "Shared ideas for polish, UI, and pet rewards."

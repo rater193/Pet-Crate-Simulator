@@ -108,12 +108,13 @@
 		border: 7px solid rgba(255, 255, 255, 0.86);
 		border-radius: 22px;
 		align-items: center;
-		justify-content: center;
+		justify-content: flex-start;
 		position: relative;
 		overflow: hidden;
 		pointer-events: all;
 		box-shadow: 0px 10px 0px rgba(0, 53, 78, 0.38);
 		transition: transform 0.08s ease, background-color 0.1s ease, box-shadow 0.1s ease;
+		padding: 0px 120px 0px 34px;
 	}
 
 	.credits-user-button:hover {
@@ -122,12 +123,45 @@
 		box-shadow: 0px 13px 0px rgba(0, 53, 78, 0.38), 0px 0px 28px rgba(113, 214, 255, 0.28);
 	}
 
+	.credits-avatar {
+		width: 76px;
+		height: 76px;
+		min-width: 76px;
+		max-width: 76px;
+		min-height: 76px;
+		max-height: 76px;
+		border-radius: 18px;
+		background-color: rgba(255, 255, 255, 0.18);
+		border: 4px solid rgba(255, 255, 255, 0.72);
+		align-items: center;
+		justify-content: center;
+		margin-right: 24px;
+		overflow: hidden;
+		box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.22);
+	}
+
+	.credits-avatar-image {
+		width: 76px;
+		height: 76px;
+	}
+
+	.credits-avatar-placeholder {
+		color: #fff7c9;
+		font-size: 34px;
+		font-weight: 900;
+		text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.34);
+	}
+
 	.credits-user-name {
 		color: white;
 		font-size: 48px;
 		font-weight: 900;
-		text-align: center;
+		text-align: left;
 		text-shadow: 0px 4px 0px rgba(0, 0, 0, 0.3);
+		max-width: 900px;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
 	}
 
 	.credits-user-hint {
@@ -158,6 +192,35 @@
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		overflow: hidden;
+	}
+
+	.credits-detail-avatar {
+		width: 138px;
+		height: 138px;
+		min-width: 138px;
+		max-width: 138px;
+		min-height: 138px;
+		max-height: 138px;
+		border-radius: 28px;
+		background-color: rgba(255, 255, 255, 0.18);
+		border: 7px solid rgba(255, 255, 255, 0.78);
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.26);
+		margin-bottom: 20px;
+	}
+
+	.credits-detail-avatar-image {
+		width: 138px;
+		height: 138px;
+	}
+
+	.credits-detail-avatar-placeholder {
+		color: #fff7c9;
+		font-size: 62px;
+		font-weight: 900;
+		text-shadow: 0px 4px 0px rgba(0, 0, 0, 0.36);
 	}
 
 	.credits-contribution-list {
@@ -265,6 +328,16 @@
 							var contributorIndex = i;
 							<div class="credits-user-shell" style="@GetContributorButtonStyle( contributorIndex )">
 								<div class="credits-user-button" onclick=@(() => SelectContributor( contributorIndex ))>
+									<div class="credits-avatar">
+										@if ( GetContributorAvatar( contributor, 64 ) != null )
+										{
+											<Image class="credits-avatar-image" Texture=@GetContributorAvatar( contributor, 64 ) />
+										}
+										else
+										{
+											<div class="credits-avatar-placeholder">@GetContributorInitial( contributor )</div>
+										}
+									</div>
 									<div class="credits-user-name">@GetContributorName( contributor )</div>
 									<div class="credits-user-hint">View</div>
 								</div>
@@ -276,6 +349,16 @@
 			else
 			{
 				<div class="credits-detail">
+					<div class="credits-detail-avatar">
+						@if ( GetContributorAvatar( SelectedContributor, 128 ) != null )
+						{
+							<Image class="credits-detail-avatar-image" Texture=@GetContributorAvatar( SelectedContributor, 128 ) />
+						}
+						else
+						{
+							<div class="credits-detail-avatar-placeholder">@GetContributorInitial( SelectedContributor )</div>
+						}
+					</div>
 					<div class="credits-detail-name">@GetContributorName( SelectedContributor )</div>
 					<div class="credits-contribution-list">
 						@if ( GetContributionLines( SelectedContributor ).Count == 0 )
@@ -305,7 +388,7 @@
 	{
 		new CreditsContributor
 		{
-			DisplayName = "rater193",
+			SteamId = 0,
 			Contributions = new List<string>
 			{
 				"Created and directed Pet Crate Simulator.",
@@ -314,7 +397,7 @@
 		},
 		new CreditsContributor
 		{
-			DisplayName = "Sample Playtester",
+			SteamId = 0,
 			Contributions = new List<string>
 			{
 				"Helped test early playtest builds.",
@@ -323,7 +406,7 @@
 		},
 		new CreditsContributor
 		{
-			DisplayName = "Sample Contributor",
+			SteamId = 0,
 			Contributions = new List<string>
 			{
 				"Provided gameplay feedback and balance suggestions.",
@@ -364,7 +447,7 @@
 		var contributorHash = 0;
 		foreach ( var contributor in DisplayContributors )
 		{
-			contributorHash = HashCode.Combine( contributorHash, contributor?.DisplayName );
+			contributorHash = HashCode.Combine( contributorHash, contributor?.SteamId );
 			foreach ( var contribution in GetContributionLines( contributor ) )
 			{
 				contributorHash = HashCode.Combine( contributorHash, contribution );
@@ -397,10 +480,28 @@
 
 	private static string GetContributorName( CreditsContributor contributor )
 	{
-		if ( !string.IsNullOrWhiteSpace( contributor?.DisplayName ) )
-			return contributor.DisplayName;
+		if ( contributor != null && contributor.SteamId > 0 )
+		{
+			var steamName = new Friend( (ulong)contributor.SteamId ).Name;
+			if ( !string.IsNullOrWhiteSpace( steamName ) )
+				return steamName;
+		}
 
-		return "Unnamed Contributor";
+		return contributor?.SteamId > 0 ? $"Steam User {contributor.SteamId}" : "Steam User";
+	}
+
+	private static Texture GetContributorAvatar( CreditsContributor contributor, int size )
+	{
+		if ( contributor == null || contributor.SteamId <= 0 )
+			return null;
+
+		return Texture.LoadAvatar( contributor.SteamId, size );
+	}
+
+	private static string GetContributorInitial( CreditsContributor contributor )
+	{
+		var name = GetContributorName( contributor );
+		return string.IsNullOrWhiteSpace( name ) ? "?" : name[..1].ToUpperInvariant();
 	}
 
 	private static List<string> GetContributionLines( CreditsContributor contributor )
@@ -412,7 +513,7 @@
 
 	public sealed class CreditsContributor
 	{
-		[Property] public string DisplayName { get; set; } = "Contributor";
+		[Property] public long SteamId { get; set; }
 		[Property] public List<string> Contributions { get; set; } = new();
 	}
 }
