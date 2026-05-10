@@ -285,11 +285,13 @@
 		font-size: 28px;
 		font-weight: 900;
 		margin-right: 10px;
+		pointer-events: none;
 	}
 
 	.pet-avatar-preview {
 		width: 54px;
 		height: 54px;
+		pointer-events: none;
 	}
 
 	.pet-equipped-name {
@@ -300,12 +302,14 @@
 		max-height: 28px;
 		text-overflow: ellipsis;
 		overflow: hidden;
+		pointer-events: none;
 	}
 
 	.pet-equipped-info {
 		flex-direction: column;
 		width: 104px;
 		min-width: 104px;
+		pointer-events: none;
 	}
 
 	.pet-equipped-stats {
@@ -315,6 +319,7 @@
 		font-size: 11px;
 		font-weight: 800;
 		line-height: 12px;
+		pointer-events: none;
 	}
 
 	.pet-equipped-action {
@@ -482,6 +487,10 @@
 		z-index: 50;
 	}
 
+	.pet-action-overlay.visible {
+		opacity: 1;
+	}
+
 	.pet-action-overlay.max-equipped {
 		font-size: 22px;
 		text-align: center;
@@ -521,6 +530,7 @@
 		font-weight: 900;
 		text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.25);
 		align-self: flex-end;
+		pointer-events: none;
 	}
 
 	.pet-card-icon {
@@ -535,11 +545,13 @@
 		font-weight: 900;
 		margin: 10px auto 8px auto;
 		text-shadow: 1px 3px 0px rgba(0, 0, 0, 0.22);
+		pointer-events: none;
 	}
 
 	.pet-card-preview {
 		width: 72px;
 		height: 72px;
+		pointer-events: none;
 	}
 
 	.pet-card-name {
@@ -548,6 +560,7 @@
 		font-weight: 900;
 		text-align: center;
 		text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.25);
+		pointer-events: none;
 	}
 
 	.pet-card-stats {
@@ -557,6 +570,7 @@
 		font-size: 13px;
 		font-weight: 700;
 		text-align: center;
+		pointer-events: none;
 	}
 
 	.pet-empty-state {
@@ -613,7 +627,7 @@
 					{
 						@foreach ( var pet in EquippedPets )
 						{
-							<div class="@GetEquippedPetCardClass( pet )" style="@pet.RarityBorderStyle" onclick=@(() => TogglePet( pet.SlotIndex ))>
+							<div class="@GetEquippedPetCardClass( pet )" style="@pet.RarityBorderStyle" onmouseover=@(() => SetHoveredPet( pet.SlotIndex )) onmouseout=@(() => ClearHoveredPet( pet.SlotIndex )) onclick=@(() => TogglePet( pet.SlotIndex ))>
 								<div class="pet-avatar">
 									@if ( pet.PreviewTexture != null )
 									{
@@ -633,7 +647,7 @@
 									</div>
 								</div>
 								<div class="pet-equipped-action"></div>
-								<div class="pet-action-overlay unequip">Unequip</div>
+								<div class="@GetPetActionOverlayClass( pet )">@GetHoverActionText( pet )</div>
 							</div>
 						}
 					}
@@ -668,7 +682,7 @@
 						<div class="pet-grid" @ref=PetGridPanel>
 							@foreach ( var pet in AllPets )
 							{
-								<div class="@GetPetCardClass( pet )" style="@GetPetCardStyle( pet )" onclick=@(() => HandlePetCardClicked( pet.SlotIndex ))>
+								<div class="@GetPetCardClass( pet )" style="@GetPetCardStyle( pet )" onmouseover=@(() => SetHoveredPet( pet.SlotIndex )) onmouseout=@(() => ClearHoveredPet( pet.SlotIndex )) onclick=@(() => HandlePetCardClicked( pet.SlotIndex ))>
 									<div class="pet-card-status">@GetStatusText( pet )</div>
 									<div class="pet-card-icon">
 										@if ( pet.PreviewTexture != null )
@@ -734,10 +748,37 @@
 	private bool sortAscending = true;
 	private float sortAnimationStartTime;
 	private float sortAnimationTime = SortAnimationDuration;
+	private int hoveredPetSlotIndex = -1;
 
-	private PlayerData LocalPlayerData => PlayerData.LOCALDATA;
-	private Inventory Inventory => LocalPlayerData?.inventory;
-	private int MaxEquipped => LocalPlayerData?.GetComponent<PetFramework>()?.MaxEquippedPets ?? 0;
+	private PlayerData LocalPlayerData
+	{
+		get
+		{
+			var playerData = PlayerData.LOCALDATA;
+			return playerData.IsValid() ? playerData : null;
+		}
+	}
+
+	private Inventory Inventory
+	{
+		get
+		{
+			var inventory = LocalPlayerData?.inventory;
+			return inventory.IsValid() ? inventory : null;
+		}
+	}
+
+	private int MaxEquipped
+	{
+		get
+		{
+			var playerData = LocalPlayerData;
+			if ( !playerData.IsValid() || !playerData.GameObject.IsValid() )
+				return 0;
+
+			return playerData.GameObject.Components.Get<PetFramework>( FindMode.EverythingInSelf )?.MaxEquippedPets ?? 0;
+		}
+	}
 	private int EquippedCount => Inventory?.GetEquippedSlotIndexes().Count ?? 0;
 	private int InventoryPetCount => Inventory?.Count ?? 0;
 	private int InventoryCapacity => Inventory?.InventorySize ?? 0;
@@ -928,6 +969,24 @@
 		StateHasChanged();
 	}
 
+	private void SetHoveredPet( int slotIndex )
+	{
+		if ( hoveredPetSlotIndex == slotIndex )
+			return;
+
+		hoveredPetSlotIndex = slotIndex;
+		StateHasChanged();
+	}
+
+	private void ClearHoveredPet( int slotIndex )
+	{
+		if ( hoveredPetSlotIndex != slotIndex )
+			return;
+
+		hoveredPetSlotIndex = -1;
+		StateHasChanged();
+	}
+
 	private void FinishDeletePet()
 	{
 		var slotIndex = deletingSlotIndex;
@@ -1046,13 +1105,26 @@
 
 	private string GetPetActionOverlayClass( PetViewModel pet )
 	{
+		var classes = "pet-action-overlay";
 		if ( isDeleteMode )
-			return "pet-action-overlay delete";
+		{
+			classes += " delete";
+		}
+		else if ( !pet.IsEquipped && IsMaxPetsEquipped )
+		{
+			classes += " max-equipped";
+		}
+		else
+		{
+			classes += pet.IsEquipped ? " unequip" : " equip";
+		}
 
-		if ( !pet.IsEquipped && IsMaxPetsEquipped )
-			return "pet-action-overlay max-equipped";
+		if ( hoveredPetSlotIndex == pet.SlotIndex || pendingDeleteSlotIndex == pet.SlotIndex || deletingSlotIndex == pet.SlotIndex )
+		{
+			classes += " visible";
+		}
 
-		return pet.IsEquipped ? "pet-action-overlay unequip" : "pet-action-overlay equip";
+		return classes;
 	}
 
 	private (float x, float y, float rotation) GetDeleteModeShake( int slotIndex )
@@ -1206,7 +1278,7 @@
 
 		var deleteStateHash = HashCode.Combine( isDeleteMode, isDeleteModeSettling, pendingDeleteSlotIndex, deletingSlotIndex, (int)(deleteAnimationTime * 30f), (int)(deleteModeSettleTime * 30f) );
 		var sortStateHash = HashCode.Combine( sortMode, sortAscending, (int)(sortAnimationTime * 30f), PetPreviewRenderer.PreviewVersion );
-		var uiStateHash = HashCode.Combine( deleteStateHash, sortStateHash );
+		var uiStateHash = HashCode.Combine( deleteStateHash, sortStateHash, hoveredPetSlotIndex );
 		return HashCode.Combine( IsOpen, inventory?.Count ?? 0, EquippedCount, MaxEquipped, slotHash, lastScrollRatio, lastThumbHeight, uiStateHash );
 	}
 
