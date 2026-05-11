@@ -26927,7 +26927,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "Credits Board",
-      "Position": "1997.19849,636.631287,213.670486",
+      "Position": "1997.19849,636.631287,227.297333",
       "Rotation": "0,0,0.978244722,-0.207454145",
       "Scale": "3,3,3",
       "Tags": "",
@@ -26952,7 +26952,7 @@
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
-          "PanelSize": "3072,2700",
+          "PanelSize": "3072,2900",
           "RenderOptions": {
             "GameLayer": true,
             "OverlayLayer": false,
@@ -26979,6 +26979,13 @@
               "SteamId": 76561198137893301,
               "Contributions": [
                 "Developer, World Designer, 3D Modeler, Artist"
+              ]
+            },
+            {
+              "SteamId": 76561198079815508,
+              "Contributions": [
+                "Ideas, Pet Essence",
+                "Playtester"
               ]
             },
             {
