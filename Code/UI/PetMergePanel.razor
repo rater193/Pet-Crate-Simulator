@@ -310,7 +310,7 @@
 		position: relative;
 		overflow: hidden;
 		pointer-events: all;
-		transition: transform 0.08s ease;
+		transition: transform 0.08s ease, opacity 0.08s ease;
 	}
 
 	.pet-merge-slot.filled:hover {
@@ -324,6 +324,10 @@
 
 	.pet-merge-slot.merging {
 		z-index: 3;
+	}
+
+	.pet-merge-slot.result {
+		box-shadow: 0px 8px 18px rgba(21, 52, 86, 0.24), 0px 0px 24px rgba(255, 215, 64, 0.42);
 	}
 
 	.pet-merge-slot-blackout {
@@ -500,7 +504,7 @@
 				<div class="pet-merge-slots">
 					@for ( var i = 0; i < 3; i++ )
 					{
-						var pet = GetSelectedPetView( i );
+						var pet = GetSlotPetView( i );
 						var selectedIndex = i;
 						<div class="@GetSlotClass( pet )" style="@GetSlotStyle( pet, selectedIndex )" onclick=@(() => RemoveSelectedPetAt( selectedIndex ))>
 							@if ( pet != null )
@@ -557,6 +561,9 @@
 	private const float MergeReturnDuration = 0.42f;
 	private const float MergeConsumeTime = MergeLiftDuration + MergeConvergeDuration;
 	private const float MergeDuration = MergeLiftDuration + MergeConvergeDuration + MergeBurstDuration + MergeReturnDuration;
+	private const float MergeSideConvergeDistance = 100f;
+	private const float MergeSideLiftHeight = 116f;
+	private const float MergeCenterLiftHeight = 12f;
 	private const int MergeParticleCount = 24;
 	private const string DefaultMergeSlotBorderStyle = "border-color: rgba(77, 115, 155, 0.55);";
 	private const float SortAnimationDuration = 0.34f;
@@ -565,11 +572,15 @@
 	public Action CloseRequested { get; set; }
 
 	private readonly List<int> selectedSlotIndexes = new();
+	private readonly List<int> mergeAnimatedSlotIndexes = new();
+	private readonly List<MergePetViewModel> mergeAnimatedPets = new();
 	private bool isMerging;
 	private bool mergeConsumed;
 	private float mergeStartTime;
 	private float mergeAnimationTime;
 	private int lastAutoMergeCount;
+	private MergePetViewModel mergedPetView;
+	private MergePetViewModel recentMergedPetView;
 	private PetMergeSortMode sortMode = PetMergeSortMode.Rarity;
 	private bool sortAscending = true;
 	private float sortAnimationStartTime;
@@ -647,6 +658,7 @@
 		if ( isMerging )
 			return;
 
+		ClearRecentMergedPet();
 		lastAutoMergeCount = 0;
 		if ( selectedSlotIndexes.Contains( slotIndex ) )
 		{
@@ -665,9 +677,17 @@
 		if ( isMerging )
 			return;
 
+		if ( selectedSlotIndexes.Count == 0 && recentMergedPetView != null )
+		{
+			ClearRecentMergedPet();
+			StateHasChanged();
+			return;
+		}
+
 		if ( selectedIndex < 0 || selectedIndex >= selectedSlotIndexes.Count )
 			return;
 
+		ClearRecentMergedPet();
 		lastAutoMergeCount = 0;
 		selectedSlotIndexes.RemoveAt( selectedIndex );
 		StateHasChanged();
@@ -678,6 +698,7 @@
 		if ( isMerging || !CanAutoMerge )
 			return;
 
+		ClearRecentMergedPet();
 		lastAutoMergeCount = Inventory?.TryAutoMergePets() ?? 0;
 		selectedSlotIndexes.Clear();
 		StartSortAnimation();
@@ -715,6 +736,23 @@
 		if ( isMerging || !CanMergeSelection )
 			return;
 
+		mergeAnimatedSlotIndexes.Clear();
+		mergeAnimatedSlotIndexes.AddRange( selectedSlotIndexes );
+		mergeAnimatedPets.Clear();
+		for ( var i = 0; i < mergeAnimatedSlotIndexes.Count; i++ )
+		{
+			var pet = BuildPetViewFromSlot( Inventory?.GetPet( mergeAnimatedSlotIndexes[i] ), mergeAnimatedSlotIndexes[i] );
+			if ( pet == null )
+				return;
+
+			mergeAnimatedPets.Add( pet );
+		}
+
+		if ( mergeAnimatedPets.Count != 3 )
+			return;
+
+		ClearRecentMergedPet();
+		mergedPetView = null;
 		isMerging = true;
 		mergeConsumed = false;
 		mergeStartTime = Time.Now;
@@ -726,8 +764,10 @@
 	{
 		mergeConsumed = true;
 
-		if ( Inventory?.TryMergePets( selectedSlotIndexes, out _ ) == true )
+		if ( Inventory?.TryMergePets( mergeAnimatedSlotIndexes, out var mergedSlot ) == true )
 		{
+			var mergedSlotIndex = Inventory?.Slots.IndexOf( mergedSlot ) ?? -1;
+			mergedPetView = BuildPetViewFromSlot( mergedSlot, mergedSlotIndex );
 			selectedSlotIndexes.Clear();
 			return;
 		}
@@ -741,6 +781,10 @@
 		isMerging = false;
 		mergeConsumed = false;
 		mergeAnimationTime = 0f;
+		mergeAnimatedSlotIndexes.Clear();
+		mergeAnimatedPets.Clear();
+		recentMergedPetView = mergedPetView;
+		mergedPetView = null;
 
 		StateHasChanged();
 	}
@@ -754,36 +798,71 @@
 		return AllPets.FirstOrDefault( pet => pet.SlotIndex == slotIndex );
 	}
 
+	private MergePetViewModel GetSlotPetView( int selectedIndex )
+	{
+		if ( isMerging )
+		{
+			if ( mergeConsumed )
+				return selectedIndex == 1 ? mergedPetView : null;
+
+			return selectedIndex >= 0 && selectedIndex < mergeAnimatedPets.Count
+				? mergeAnimatedPets[selectedIndex]
+				: null;
+		}
+
+		if ( selectedSlotIndexes.Count == 0 && selectedIndex == 1 && recentMergedPetView != null )
+			return recentMergedPetView;
+
+		return GetSelectedPetView( selectedIndex );
+	}
+
 	private string GetSlotClass( MergePetViewModel pet )
 	{
-		return $"pet-merge-slot {(pet != null ? "filled" : "")} {(isMerging ? "merging" : "")}";
+		var classes = $"pet-merge-slot {(pet != null ? "filled" : "")} {(isMerging ? "merging" : "")}";
+		if ( pet != null && (pet == mergedPetView || pet == recentMergedPetView) )
+		{
+			classes += " result";
+		}
+
+		return classes;
 	}
 
 	private string GetSlotStyle( MergePetViewModel pet, int selectedIndex )
 	{
 		var borderStyle = pet?.BorderStyle ?? DefaultMergeSlotBorderStyle;
 
-		if ( !isMerging )
-			return borderStyle;
-
-		return $"{borderStyle} transform: {GetMergeSlotTransform( selectedIndex )}; opacity: {GetMergeSlotOpacity()};";
+		var opacity = isMerging ? GetMergeSlotOpacity() : "1";
+		return $"{borderStyle} transform: {GetMergeSlotTransform( selectedIndex )}; opacity: {opacity};";
 	}
 
 	private string GetMergeSlotTransform( int selectedIndex )
 	{
+		var x = 0f;
+		var y = 0f;
+		var scale = 1f;
+
+		if ( !isMerging )
+			return "translateX(0px) translateY(0px) scale(1)";
+
 		var lift = MergeLiftProgress;
 		var converge = MergeConvergeProgress;
 		var burst = MergeBurstProgress;
-		var reset = 1f - MergeReturnProgress;
-		var side = selectedIndex == 0 ? 1f : selectedIndex == 2 ? -1f : 0f;
-		var x = side * 140f * converge * reset;
-		var y = (selectedIndex == 1
-			? -8f * converge
-			: (-64f * lift) + (14f * converge)) * reset;
-		var scaleOffset = selectedIndex == 1
-			? 1f + (0.08f * converge) - (0.16f * burst)
-			: 1f + (0.04f * lift) - (0.2f * converge) - (0.12f * burst);
-		var scale = Lerp( 1f, scaleOffset, reset );
+		var returning = MergeReturnProgress;
+		var returnScale = 1f - returning;
+
+		if ( selectedIndex == 1 )
+		{
+			x = 0f;
+			y = -MergeCenterLiftHeight * converge * returnScale;
+			scale = Lerp( 1f + (0.08f * converge) - (0.12f * burst), 1f, returning );
+		}
+		else
+		{
+			var sideDirection = selectedIndex == 0 ? 1f : -1f;
+			x = sideDirection * MergeSideConvergeDistance * converge * returnScale;
+			y = Lerp( -MergeSideLiftHeight * lift, 0f, converge ) * returnScale;
+			scale = Lerp( 1f + (0.04f * lift) - (0.16f * converge) - (0.1f * burst), 1f, returning );
+		}
 
 		return $"translateX({x:0.##}px) translateY({y:0.##}px) scale({scale:0.###})";
 	}
@@ -927,19 +1006,13 @@
 			if ( !slot.IsValid() )
 				continue;
 
-			var petPrefab = slot.GetPetPrefab();
-			var petComponent = petPrefab?.GetComponent<PetComponent>() ?? petPrefab?.GetComponentInChildren<PetComponent>();
-			var displayName = !string.IsNullOrWhiteSpace( petComponent?.DisplayName ) ? petComponent.DisplayName : slot.DisplayName;
-
-			pets.Add( new MergePetViewModel
+			var pet = BuildPetViewFromSlot( slot, i );
+			if ( pet != null )
 			{
-				SlotIndex = i,
-				DisplayName = string.IsNullOrWhiteSpace( displayName ) ? "Pet" : displayName,
-				Rarity = slot.Rarity,
-				IsSelected = selectedSlotIndexes.Contains( i ),
-				IsEquipped = inventory.IsPetEquipped( i ),
-				PreviewTexture = PetPreviewRenderer.Instance?.GetPreviewTexture( slot.PetPrefabPath, petPrefab )
-			} );
+				pet.IsSelected = selectedSlotIndexes.Contains( i );
+				pet.IsEquipped = inventory.IsPetEquipped( i );
+				pets.Add( pet );
+			}
 		}
 
 		pets = SortPets( pets );
@@ -964,6 +1037,29 @@
 		};
 
 		return sorted.ToList();
+	}
+
+	private MergePetViewModel BuildPetViewFromSlot( InventoryPetSlot slot, int slotIndex )
+	{
+		if ( !slot.IsValid() )
+			return null;
+
+		var petPrefab = slot.GetPetPrefab();
+		var petComponent = petPrefab?.GetComponent<PetComponent>() ?? petPrefab?.GetComponentInChildren<PetComponent>();
+		var displayName = !string.IsNullOrWhiteSpace( petComponent?.DisplayName ) ? petComponent.DisplayName : slot.DisplayName;
+
+		return new MergePetViewModel
+		{
+			SlotIndex = slotIndex,
+			DisplayName = string.IsNullOrWhiteSpace( displayName ) ? "Pet" : displayName,
+			Rarity = slot.Rarity,
+			PreviewTexture = PetPreviewRenderer.Instance?.GetPreviewTexture( slot.PetPrefabPath, petPrefab )
+		};
+	}
+
+	private void ClearRecentMergedPet()
+	{
+		recentMergedPetView = null;
 	}
 
 	private float GetSortAnimationOffset( int displayIndex )
@@ -992,6 +1088,13 @@
 		{
 			slotHash = HashCode.Combine( slotHash, selectedIndex );
 		}
+
+		foreach ( var pet in mergeAnimatedPets )
+		{
+			slotHash = HashCode.Combine( slotHash, pet?.DisplayName, pet?.Rarity, pet?.SlotIndex );
+		}
+
+		slotHash = HashCode.Combine( slotHash, mergeConsumed, mergedPetView?.DisplayName, mergedPetView?.Rarity, recentMergedPetView?.DisplayName, recentMergedPetView?.Rarity );
 
 		var sortStateHash = HashCode.Combine( sortMode, sortAscending, lastAutoMergeCount, (int)(sortAnimationTime * 30f), PetPreviewRenderer.PreviewVersion );
 		return HashCode.Combine( IsOpen, inventory?.Count ?? 0, slotHash, isMerging, (int)(mergeAnimationTime * 30f), sortStateHash );
