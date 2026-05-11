@@ -63,10 +63,10 @@
               "BannedPlayers": [
                 {
                   "SteamId": 76561198136953193,
-                  "Reason": "Banned from this game. You joined when the game was being developed and left a negative review. The game was set to hidden and you joined a development session, which was not ready for the public. The developer has been trying to reach out to you. If you see this, reach out to him on discord and he will unban you. They just want to talk about the review. Thanks for the interest to play!\n\ndiscord: rater193"
+                  "Reason": "Please submit a ban appeal for review."
                 }
               ],
-              "KickDelay": 1000,
+              "KickDelay": 60,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -805,6 +805,7 @@
               "DefaultSound": "sounds/banjo loop.sound",
               "FadeDuration": 2,
               "Force2d": true,
+              "LoopMusic": true,
               "MasterVolume": 0.1,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,

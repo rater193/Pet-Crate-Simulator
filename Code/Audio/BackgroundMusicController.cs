@@ -12,6 +12,7 @@ public sealed class BackgroundMusicController : Component
 	[Property] public float FadeDuration { get; set; } = 2f;
 	[Property] public float MasterVolume { get; set; } = 1f;
 	[Property] public bool PlayDefaultOnStart { get; set; } = true;
+	[Property] public bool LoopMusic { get; set; } = true;
 	[Property] public bool Force2d { get; set; } = true;
 
 	private readonly Dictionary<Component, MusicRequest> requests = new();
@@ -59,6 +60,7 @@ public sealed class BackgroundMusicController : Component
 	protected override void OnUpdate()
 	{
 		ApplyTargetSound();
+		UpdateLooping();
 		UpdateFade();
 	}
 
@@ -168,12 +170,12 @@ public sealed class BackgroundMusicController : Component
 		fadeElapsed = 0f;
 	}
 
-	private MusicLayer StartLayer( SoundEvent sound, float volume )
+	private MusicLayer StartLayer( SoundEvent sound, float volume, float startVolume = 0f )
 	{
 		var handle = Sound.Play( sound );
 		if ( handle.IsValid() )
 		{
-			handle.Volume = 0f;
+			handle.Volume = MathF.Max( 0f, startVolume );
 			handle.Name = $"Background Music - {sound.ResourceName}";
 
 			if ( Force2d )
@@ -189,8 +191,9 @@ public sealed class BackgroundMusicController : Component
 
 		return new MusicLayer
 		{
+			Sound = sound,
 			Handle = handle,
-			StartVolume = 0f,
+			StartVolume = MathF.Max( 0f, startVolume ),
 			TargetVolume = volume
 		};
 	}
@@ -254,6 +257,19 @@ public sealed class BackgroundMusicController : Component
 		fadingLayer = default;
 	}
 
+	private void UpdateLooping()
+	{
+		if ( !LoopMusic || !currentLayer.Sound.IsValid() || currentSoundKey != targetSoundKey )
+			return;
+
+		if ( currentLayer.Handle.IsValid() && currentLayer.Handle.IsPlaying )
+			return;
+
+		var restartVolume = GetTargetVolume();
+		currentLayer = StartLayer( currentLayer.Sound, restartVolume, restartVolume );
+		fadeElapsed = FadeDuration;
+	}
+
 	private float GetTargetVolume()
 	{
 		return MathF.Max( 0f, targetVolume * MasterVolume );
@@ -274,6 +290,7 @@ public sealed class BackgroundMusicController : Component
 
 	private struct MusicLayer
 	{
+		public SoundEvent Sound;
 		public SoundHandle Handle;
 		public float StartVolume;
 		public float TargetVolume;
