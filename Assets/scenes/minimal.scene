@@ -26927,7 +26927,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "Credits Board",
-      "Position": "1997.19849,636.631287,197.592346",
+      "Position": "1997.19849,636.631287,213.670486",
       "Rotation": "0,0,0.978244722,-0.207454145",
       "Scale": "3,3,3",
       "Tags": "",
@@ -26952,7 +26952,7 @@
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
-          "PanelSize": "3072,2500",
+          "PanelSize": "3072,2700",
           "RenderOptions": {
             "GameLayer": true,
             "OverlayLayer": false,
@@ -27000,6 +27000,13 @@
               "Contributions": [
                 "Playtest"
               ]
+            },
+            {
+              "SteamId": 76561198010241998,
+              "Contributions": [
+                "Ideas",
+                "Playtester"
+              ]
             }
           ],
           "OnComponentDestroy": null,
@@ -27042,13 +27049,13 @@
           "$blob": "270678c0-b3fa-442a-8d97-a44eb9066ca6"
         }
       },
+      "Sandbox.MovieMaker.MovieRecorderSystem": {
+        "DisableClientRecording": false
+      },
       "Sandbox.SelectionSetsSystem": {
         "Data": {
           "SelectionSets": []
         }
-      },
-      "Sandbox.MovieMaker.MovieRecorderSystem": {
-        "DisableClientRecording": false
       }
     }
   },
