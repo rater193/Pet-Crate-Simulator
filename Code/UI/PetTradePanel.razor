@@ -246,8 +246,8 @@
 				{
 					<div class="pet-trade-review">
 						<div class="pet-trade-body">
-							@TradeSide( "Your Offer", Trade.GetOwnSelectedPets(), Trade.GetOwnSelectedPets(), true, false )
-							@TradeSide( PartnerName + "'s Offer", Trade.GetPartnerSelectedPets(), Trade.GetPartnerSelectedPets(), false, false )
+							@ReviewTradeSide( "Your Offer", Trade.GetOwnSelectedPets(), Trade.OwnAccepted )
+							@ReviewTradeSide( PartnerName + "'s Offer", Trade.GetPartnerSelectedPets(), Trade.PartnerAccepted )
 						</div>
 						<div class="pet-trade-countdown">@ReviewStatus</div>
 						<button class="@AcceptButtonClass" onclick=@ToggleAccepted>@AcceptButtonText</button>
@@ -316,7 +316,23 @@
 		}
 	</div>;
 
-	private RenderFragment PetCard( PlayerTradeController.TradePetView pet, bool allowSelection, bool clickable ) => @<div class="@GetPetCardClass( pet, allowSelection )" style="@GetPetCardStyle( pet )" onclick=@(() => HandlePetCardClicked( pet, clickable ))>
+	private RenderFragment ReviewTradeSide( string title, IReadOnlyList<PlayerTradeController.TradePetView> offerPets, bool isAccepted ) => @<div class="pet-trade-side">
+		<div class="pet-trade-side-title">@title</div>
+
+		<div class="pet-trade-list">
+			@foreach ( var pet in offerPets )
+			{
+				@PetCard( pet, false, false, false )
+			}
+		</div>
+
+		@if ( isAccepted )
+		{
+			<div class="pet-trade-ready-overlay">READY</div>
+		}
+	</div>;
+
+	private RenderFragment PetCard( PlayerTradeController.TradePetView pet, bool allowSelection, bool clickable, bool dimUnselectedSubmittedPets = true ) => @<div class="@GetPetCardClass( pet, allowSelection, dimUnselectedSubmittedPets )" style="@GetPetCardStyle( pet )" onclick=@(() => HandlePetCardClicked( pet, clickable ))>
 		<div class="pet-trade-thumb">
 			@if ( pet.PreviewTexture != null )
 			{
@@ -335,11 +351,11 @@
 		</div>
 	</div>;
 
-	private string GetPetCardClass( PlayerTradeController.TradePetView pet, bool allowSelection )
+	private string GetPetCardClass( PlayerTradeController.TradePetView pet, bool allowSelection, bool dimUnselectedSubmittedPets )
 	{
 		var isSelected = Trade?.IsSlotSelected( pet.SlotIndex ) == true;
 		var cardClass = isSelected ? "pet-trade-card selected" : "pet-trade-card";
-		if ( !allowSelection && !isSelected && Trade?.OwnSubmitted == true )
+		if ( dimUnselectedSubmittedPets && !allowSelection && !isSelected && Trade?.OwnSubmitted == true )
 		{
 			cardClass += " disabled";
 		}

@@ -781,7 +781,7 @@
               "__guid": "1d2a11a9-6480-4c61-8ca3-58efcd15ac9d",
               "__enabled": true,
               "Flags": 0,
-              "ClearMusicWhenExited": true,
+              "ClearMusicWhenExited": false,
               "Controller": null,
               "Music": "sounds/banjo loop.sound",
               "OnComponentDestroy": null,
