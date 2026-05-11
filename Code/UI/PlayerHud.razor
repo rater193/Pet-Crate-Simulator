@@ -150,6 +150,7 @@
     <Sandbox.PlayerDetailsPanel IsOpen=@(PlayerTradeController.LOCAL?.IsDetailsOpen == true) Target=@(PlayerTradeController.LOCAL?.DetailsTarget) CloseRequested=@ClosePlayerDetails />
     <Sandbox.TradeInviteToast />
     <Sandbox.PetTradePanel />
+    <Sandbox.BanNoticePanel />
 </root>
 
 
@@ -220,5 +221,14 @@
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-    protected override int BuildHash() => System.HashCode.Combine(MyStringValue, width, RenderedMoneyValue, isPetInventoryOpen, isPetMergerOpen, InventoryInputTexture, PTTInputTexture, PlayerTradeController.UiVersion);
+    protected override int BuildHash()
+    {
+        return System.HashCode.Combine(
+            System.HashCode.Combine(MyStringValue, width, RenderedMoneyValue, isPetInventoryOpen, isPetMergerOpen),
+            InventoryInputTexture,
+            PTTInputTexture,
+            PlayerTradeController.UiVersion,
+            BanListController.NoticeVersion
+        );
+    }
 }

@@ -39,6 +39,45 @@
       ],
       "Children": [
         {
+          "__guid": "bbf9c852-858d-4d64-bab5-51f0d815e39d",
+          "__version": 2,
+          "Flags": 0,
+          "Name": "Ban Manager",
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "BanListController",
+              "__guid": "2e8dcc52-3cfc-49c0-a689-76561c5c017c",
+              "__enabled": true,
+              "Flags": 0,
+              "BanListEnabled": true,
+              "BannedPlayers": [
+                {
+                  "SteamId": 76561198136953193,
+                  "Reason": "Banned from this game. You joined when the game was being developed and left a negative review. The game was set to hidden and you joined a development session, which was not ready for the public. The developer has been trying to reach out to you. If you see this, reach out to him on discord and he will unban you. They just want to talk about the review. Thanks for the interest to play!\n\ndiscord: rater193"
+                }
+              ],
+              "KickDelay": 1000,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ],
+          "Children": []
+        },
+        {
           "__guid": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
           "__version": 2,
           "Flags": 0,
@@ -27051,17 +27090,17 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
-      "Sandbox.Clutter.ClutterGridSystem": {
-        "Storage": {
-          "$blob": "270678c0-b3fa-442a-8d97-a44eb9066ca6"
-        }
-      },
       "Sandbox.MovieMaker.MovieRecorderSystem": {
         "DisableClientRecording": false
       },
       "Sandbox.SelectionSetsSystem": {
         "Data": {
           "SelectionSets": []
+        }
+      },
+      "Sandbox.Clutter.ClutterGridSystem": {
+        "Storage": {
+          "$blob": "270678c0-b3fa-442a-8d97-a44eb9066ca6"
         }
       }
     }

@@ -1,0 +1,93 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits Panel
+@namespace Sandbox
+
+<style>
+	.ban-notice-root {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		align-items: center;
+		justify-content: center;
+		background-color: rgba(6, 16, 28, 0.72);
+		font-family: Poppins;
+		pointer-events: all;
+		z-index: 10000;
+	}
+
+	.ban-notice-card {
+		width: 820px;
+		min-height: 360px;
+		background-color: #ecf7ff;
+		border: 7px solid #63c7ff;
+		border-radius: 28px;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 42px 54px;
+		box-shadow: 0px 18px 0px rgba(0, 37, 74, 0.32), 0px 0px 42px rgba(99, 199, 255, 0.28);
+	}
+
+	.ban-notice-title {
+		color: #d92d3d;
+		font-size: 58px;
+		font-weight: 900;
+		text-align: center;
+		text-shadow: 0px 4px 0px rgba(255, 255, 255, 0.9);
+		margin-bottom: 22px;
+	}
+
+	.ban-notice-copy {
+		color: #173b64;
+		font-size: 26px;
+		font-weight: 800;
+		text-align: center;
+		line-height: 34px;
+		margin-bottom: 26px;
+	}
+
+	.ban-notice-reason {
+		width: 100%;
+		min-height: 94px;
+		background-color: rgba(255, 255, 255, 0.74);
+		border: 4px solid rgba(99, 199, 255, 0.58);
+		border-radius: 18px;
+		color: #143557;
+		font-size: 30px;
+		font-weight: 900;
+		text-align: center;
+		line-height: 38px;
+		padding: 20px 24px;
+		white-space: normal;
+	}
+
+	.ban-notice-footer {
+		margin-top: 24px;
+		color: #5a86a8;
+		font-size: 22px;
+		font-weight: 800;
+		text-align: center;
+	}
+</style>
+
+<root>
+	@if ( BanListController.IsBanNoticeVisible )
+	{
+		<div class="ban-notice-root">
+			<div class="ban-notice-card">
+				<div class="ban-notice-title">You have been banned</div>
+				<div class="ban-notice-copy">You are being removed from this multiplayer session.</div>
+				<div class="ban-notice-reason">@BanListController.BanNoticeReason</div>
+				<div class="ban-notice-footer">Disconnecting...</div>
+			</div>
+		</div>
+	}
+</root>
+
+@code
+{
+	protected override int BuildHash() => BanListController.NoticeVersion;
+}
