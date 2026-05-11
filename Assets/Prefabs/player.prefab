@@ -73,8 +73,8 @@
         "RotateWithGround": true,
         "RotationAngleLimit": 45,
         "RotationSpeed": 1,
-        "RunByDefault": false,
-        "RunSpeed": 320,
+        "RunByDefault": true,
+        "RunSpeed": 400,
         "ShowColliderComponents": false,
         "ShowRigidbodyComponent": false,
         "ThirdPerson": true,
@@ -85,7 +85,7 @@
         "UseFovFromPreferences": true,
         "UseInputControls": true,
         "UseLookControls": true,
-        "WalkSpeed": 110
+        "WalkSpeed": 400
       },
       {
         "__type": "Sandbox.Rigidbody",
@@ -248,12 +248,12 @@
         "__guid": "af1ef162-256e-4535-863e-d6b85291c0c7",
         "__enabled": true,
         "Flags": 0,
+        "AutoBattleEnabled": true,
+        "AutoBattleRange": 260,
         "EquippedPetLocalRotation": "0,0,0,1",
         "GroundTraceHeight": 96,
         "MaxEquippedPets": 3,
         "NetworkSpawnEquippedPet": true,
-        "AutoBattleEnabled": true,
-        "AutoBattleRange": 260,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -432,7 +432,7 @@
         ],
         "Children": [
           {
-            "__guid": "94431d02-adc1-4c8b-8b53-aa395071fa06",
+            "__guid": "33f4cd09-657a-49be-a244-f59888ce31b5",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - flannel_shirt",
@@ -449,7 +449,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "4dc6043b-31d3-4e9e-a6aa-b6a6f2be5dc9",
+                "__guid": "69d34950-55ae-46c5-a213-620cee7060aa",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -501,7 +501,7 @@
             "Children": []
           },
           {
-            "__guid": "06b3331e-8a2d-4966-a2ed-764150cc1326",
+            "__guid": "fa7c6071-527a-42d6-8995-af7e6435eaf2",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - jeans",
@@ -518,7 +518,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "6302215f-6a92-4453-a72d-e43817a33a0c",
+                "__guid": "016840f2-a79b-4670-945c-c36eca0cf8b6",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -570,7 +570,7 @@
             "Children": []
           },
           {
-            "__guid": "4785fc2b-2ef7-41c0-9cc5-dc0b27146893",
+            "__guid": "4c14b22e-cad3-4f5c-be4e-6b1bbc2c28f9",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - blue_sneakers",
@@ -587,7 +587,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "7b254426-e0e5-49e2-a638-f0ed3f62b406",
+                "__guid": "cd97bcab-0092-4037-a3d8-fc9f35824717",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -639,7 +639,7 @@
             "Children": []
           },
           {
-            "__guid": "51957ef6-323b-49ce-8d96-4f487a91ff51",
+            "__guid": "b8233b17-6913-43f2-9cbe-13c0f63f2768",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - hair_shortscruffy_brown",
@@ -656,7 +656,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "ab341669-8c78-45b3-9227-4c5225a8d148",
+                "__guid": "a531025e-659f-4fda-b20d-d2c4967ecf01",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -708,7 +708,7 @@
             "Children": []
           },
           {
-            "__guid": "b993cd6c-003d-45b0-b0d4-f2103fac6935",
+            "__guid": "87979d4c-358f-4a28-a3d9-0cd5790ecd46",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - eyebrows_styled",
@@ -725,7 +725,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "d6f9d967-1018-4006-a1b0-916593134c0d",
+                "__guid": "ee71ebe7-3fa9-495d-90c8-7ec390b559f1",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
