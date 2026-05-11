@@ -1160,3 +1160,65 @@ These notes reflect the current background music implementation in `E:\Git\Pet-C
 - After editing music code or scene music components, run:
   - `dotnet build E:\Git\Pet-Crate-Simulator\Code\hatch_simulator.csproj -v:minimal`
 
+## Current Project Addendum: Player Trading System
+
+These notes reflect the current player trading implementation in `E:\Git\Pet-Crate-Simulator`.
+
+### Trading Files and Scene Integration
+
+- The main trading controller lives at `Code/Trading/PlayerTradeController.cs`.
+- The player details interaction lives at `Code/Interactions/InteractPlayerDetails.cs`.
+- Player-to-player interaction support uses `Code/Interactions/PlayerInteractionsController.cs`.
+- The trade UI lives at `Code/UI/PetTradePanel.razor`.
+- The target player details UI lives at `Code/UI/PlayerDetailsPanel.razor`.
+- The trade invite popup lives at `Code/UI/TradeInviteToast.razor`.
+- `PlayerHud.razor` hosts `PlayerDetailsPanel`, `TradeInviteToast`, and `PetTradePanel`.
+- The player prefab at `Assets/Prefabs/player.prefab` should include `PlayerTradeController` and `InteractPlayerDetails`.
+
+### Trading Flow
+
+- Players interact with another player through the existing interaction framework.
+- `InteractPlayerDetails` opens a details panel for the local player and shows the target player's Steam name, avatar, and selected stats.
+- Pressing the trade button calls `PlayerTradeController.SendTradeInvite(...)`.
+- The target receives the invite through an owner RPC and sees `TradeInviteToast`.
+- The invite uses the `Reload` input action and its glyph, not a hard-coded key.
+- Invites expire after `PlayerTradeController.InviteLifetimeSeconds`, currently 5 seconds.
+- Once accepted, both players open `PetTradePanel`.
+- Each client owns its own selected slot indexes and sends serialized inventory/offer snapshots to the partner.
+- Both players must submit their offer before review mode begins.
+- In review mode, both players must accept. When both have accepted, a countdown begins.
+- Either player can cancel/unaccept during the countdown, which resets the countdown.
+- Trade completion should mutate inventory through the existing `Inventory` APIs and then save through the existing player data save flow.
+
+### Trading Networking Rules
+
+- `PlayerTradeController` is local-owner driven. Do not make UI code directly mutate the other player's local inventory.
+- Use `Rpc.Owner` for trade invites, accepted notices, trade state sync, and cancellation messages that should only be delivered to the owning client.
+- Keep the authoritative local state for each side on that side's own `PlayerTradeController`.
+- Partner inventory and partner offer data are serialized snapshots, not live references to the other player's inventory slots.
+- Do not rely on shared slot indexes across players. A selected slot index is meaningful only for the player who owns that inventory.
+- Be careful with selected visual state in the trade UI: local selected pets and partner selected pets must be highlighted from separate data sources.
+
+### Trade UI and Pet Rendering Notes
+
+- `PetTradePanel.razor` should render trade pets with the same card language as `PetInventoryPanel.razor`: preview image, display name, rarity text, coin multiplier, damage, and rarity-colored border.
+- Trade pet previews should use `PetPreviewRenderer.Instance.GetPreviewTexture(...)` through the view models built by `PlayerTradeController`.
+- Include `PetPreviewRenderer.PreviewVersion` in trade UI build hashes so previews refresh after render targets finish.
+- The trade menu has two main phases:
+  - offer selection
+  - final review/accept countdown
+- Do not render offered pets twice in review mode. Use the dedicated review render path for the final offer display.
+- Do not mark both review sides ready unless the corresponding `OwnAccepted` or `PartnerAccepted` flag is actually true.
+- Do not let one player's selected-slot state color the other player's inventory cards. Partner selected cards should use the partner offer snapshot.
+- Child elements inside pet cards should not steal hover from the card. Use `pointer-events: none` on card child visuals/text when hover overlays or hover scaling are expected.
+- Top padding/margins are important in scrollable trade lists because hover scaling can clip cards at the top edge.
+- Selected offer rows and inventory grids should have a visible divider so users can tell selected trade pets apart from the remaining inventory.
+
+### Trade Inventory Capacity and Safety
+
+- Before accepting a trade, check that the player can receive the partner's offered pets after removing their own offered pets.
+- The current helper for this is `PlayerTradeController.CanReceivePartnerOffer()`.
+- Cancelling a trade should reset local trade state and notify the partner through the existing owner RPC.
+- If an inventory slot is invalid or missing during trade rendering, skip it instead of crashing the Razor render tree.
+- Keep trade UI render methods null-safe; Razor crashes in trade panels can break both players' ability to finish or cancel the trade cleanly.
+
