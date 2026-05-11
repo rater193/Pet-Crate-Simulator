@@ -129,6 +129,12 @@
 		box-shadow: 0px 7px 18px rgba(13, 116, 42, 0.34);
 	}
 
+	.pet-trade-card.hovered {
+		transform: scale(1.06);
+		border-color: #4beb68;
+		box-shadow: 0px 7px 18px rgba(13, 116, 42, 0.34);
+	}
+
 	.pet-trade-card.selected {
 		background-color: #54c943;
 		border-color: #ffe16a;
@@ -152,11 +158,13 @@
 		font-weight: 900;
 		margin: 10px auto 8px auto;
 		text-shadow: 1px 3px 0px rgba(0, 0, 0, 0.22);
+		pointer-events: none;
 	}
 
 	.pet-trade-thumb-image {
 		width: 72px;
 		height: 72px;
+		pointer-events: none;
 	}
 
 	.pet-trade-name {
@@ -166,6 +174,7 @@
 		font-weight: 900;
 		text-align: center;
 		text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.25);
+		pointer-events: none;
 	}
 
 	.pet-trade-stats {
@@ -175,6 +184,7 @@
 		font-size: 13px;
 		font-weight: 700;
 		text-align: center;
+		pointer-events: none;
 	}
 
 	.pet-trade-submit {
@@ -277,6 +287,7 @@
 	private IReadOnlyList<PlayerTradeController.TradePetView> OwnVisiblePets => Trade?.OwnSubmitted == true ? Trade.GetOwnSelectedPets() : Trade?.GetOwnPets() ?? Array.Empty<PlayerTradeController.TradePetView>();
 	private string AcceptButtonText => Trade?.OwnAccepted == true ? "Cancel" : "Accept";
 	private string AcceptButtonClass => Trade?.OwnAccepted == true ? "pet-trade-submit cancel" : "pet-trade-submit";
+	private string hoveredTradePetKey;
 
 	private string ReviewStatus
 	{
@@ -298,14 +309,14 @@
 		<div class="pet-trade-selected-row">
 			@foreach ( var pet in selectedPets )
 			{
-				@PetCard( pet, false, isOwnSide && allowSelection, true )
+				@PetCard( pet, false, isOwnSide && allowSelection, true, $"{title}:selected:{pet.SlotIndex}" )
 			}
 		</div>
 
 		<div class="pet-trade-list">
 			@foreach ( var pet in pets )
 			{
-				@PetCard( pet, allowSelection, allowSelection, IsPetSelectedInOffer( selectedPets, pet ) )
+				@PetCard( pet, allowSelection, allowSelection, IsPetSelectedInOffer( selectedPets, pet ), $"{title}:list:{pet.SlotIndex}" )
 			}
 		</div>
 
@@ -326,7 +337,7 @@
 		<div class="pet-trade-list">
 			@foreach ( var pet in offerPets )
 			{
-				@PetCard( pet, false, false, true, false )
+				@PetCard( pet, false, false, true, $"{title}:review:{pet.SlotIndex}", false )
 			}
 		</div>
 
@@ -336,7 +347,7 @@
 		}
 	</div>;
 
-	private RenderFragment PetCard( PlayerTradeController.TradePetView pet, bool allowSelection, bool clickable, bool isSelected, bool dimUnselectedSubmittedPets = true ) => @<div class="@GetPetCardClass( pet, allowSelection, isSelected, dimUnselectedSubmittedPets )" style="@GetPetCardStyle( pet )" onclick=@(() => HandlePetCardClicked( pet, clickable ))>
+	private RenderFragment PetCard( PlayerTradeController.TradePetView pet, bool allowSelection, bool clickable, bool isSelected, string hoverKey, bool dimUnselectedSubmittedPets = true ) => @<div class="@GetPetCardClass( pet, allowSelection, isSelected, hoverKey, dimUnselectedSubmittedPets )" style="@GetPetCardStyle( pet )" onmouseover=@(() => SetHoveredTradePet( hoverKey )) onmouseout=@(() => ClearHoveredTradePet( hoverKey )) onclick=@(() => HandlePetCardClicked( pet, clickable ))>
 		<div class="pet-trade-thumb">
 			@if ( pet.PreviewTexture != null )
 			{
@@ -355,12 +366,17 @@
 		</div>
 	</div>;
 
-	private string GetPetCardClass( PlayerTradeController.TradePetView pet, bool allowSelection, bool isSelected, bool dimUnselectedSubmittedPets )
+	private string GetPetCardClass( PlayerTradeController.TradePetView pet, bool allowSelection, bool isSelected, string hoverKey, bool dimUnselectedSubmittedPets )
 	{
 		var cardClass = isSelected ? "pet-trade-card selected" : "pet-trade-card";
 		if ( dimUnselectedSubmittedPets && !allowSelection && !isSelected && Trade?.OwnSubmitted == true )
 		{
 			cardClass += " disabled";
+		}
+
+		if ( !string.IsNullOrWhiteSpace( hoverKey ) && hoveredTradePetKey == hoverKey )
+		{
+			cardClass += " hovered";
 		}
 
 		return cardClass;
@@ -400,6 +416,24 @@
 		}
 	}
 
+	private void SetHoveredTradePet( string hoverKey )
+	{
+		if ( hoveredTradePetKey == hoverKey )
+			return;
+
+		hoveredTradePetKey = hoverKey;
+		StateHasChanged();
+	}
+
+	private void ClearHoveredTradePet( string hoverKey )
+	{
+		if ( hoveredTradePetKey != hoverKey )
+			return;
+
+		hoveredTradePetKey = null;
+		StateHasChanged();
+	}
+
 	private void ToggleSubmitted()
 	{
 		Trade?.ToggleSubmitted();
@@ -415,5 +449,5 @@
 		Trade?.CancelTrade();
 	}
 
-	protected override int BuildHash() => HashCode.Combine( PlayerTradeController.UiVersion, PetPreviewRenderer.PreviewVersion );
+	protected override int BuildHash() => HashCode.Combine( PlayerTradeController.UiVersion, PetPreviewRenderer.PreviewVersion, hoveredTradePetKey );
 }
