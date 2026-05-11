@@ -294,14 +294,14 @@
 		<div class="pet-trade-selected-row">
 			@foreach ( var pet in selectedPets )
 			{
-				@PetCard( pet, false, isOwnSide && allowSelection )
+				@PetCard( pet, false, isOwnSide && allowSelection, true )
 			}
 		</div>
 
 		<div class="pet-trade-list">
 			@foreach ( var pet in pets )
 			{
-				@PetCard( pet, allowSelection, allowSelection )
+				@PetCard( pet, allowSelection, allowSelection, IsPetSelectedInOffer( selectedPets, pet ) )
 			}
 		</div>
 
@@ -322,7 +322,7 @@
 		<div class="pet-trade-list">
 			@foreach ( var pet in offerPets )
 			{
-				@PetCard( pet, false, false, false )
+				@PetCard( pet, false, false, true, false )
 			}
 		</div>
 
@@ -332,7 +332,7 @@
 		}
 	</div>;
 
-	private RenderFragment PetCard( PlayerTradeController.TradePetView pet, bool allowSelection, bool clickable, bool dimUnselectedSubmittedPets = true ) => @<div class="@GetPetCardClass( pet, allowSelection, dimUnselectedSubmittedPets )" style="@GetPetCardStyle( pet )" onclick=@(() => HandlePetCardClicked( pet, clickable ))>
+	private RenderFragment PetCard( PlayerTradeController.TradePetView pet, bool allowSelection, bool clickable, bool isSelected, bool dimUnselectedSubmittedPets = true ) => @<div class="@GetPetCardClass( pet, allowSelection, isSelected, dimUnselectedSubmittedPets )" style="@GetPetCardStyle( pet )" onclick=@(() => HandlePetCardClicked( pet, clickable ))>
 		<div class="pet-trade-thumb">
 			@if ( pet.PreviewTexture != null )
 			{
@@ -351,9 +351,8 @@
 		</div>
 	</div>;
 
-	private string GetPetCardClass( PlayerTradeController.TradePetView pet, bool allowSelection, bool dimUnselectedSubmittedPets )
+	private string GetPetCardClass( PlayerTradeController.TradePetView pet, bool allowSelection, bool isSelected, bool dimUnselectedSubmittedPets )
 	{
-		var isSelected = Trade?.IsSlotSelected( pet.SlotIndex ) == true;
 		var cardClass = isSelected ? "pet-trade-card selected" : "pet-trade-card";
 		if ( dimUnselectedSubmittedPets && !allowSelection && !isSelected && Trade?.OwnSubmitted == true )
 		{
@@ -366,6 +365,14 @@
 	private static string GetPetCardStyle( PlayerTradeController.TradePetView pet )
 	{
 		return $"border-color: {pet.Rarity.GetCssColor()};";
+	}
+
+	private static bool IsPetSelectedInOffer( IReadOnlyList<PlayerTradeController.TradePetView> selectedPets, PlayerTradeController.TradePetView pet )
+	{
+		if ( selectedPets == null || pet == null )
+			return false;
+
+		return selectedPets.Any( selectedPet => selectedPet.SlotIndex == pet.SlotIndex );
 	}
 
 	private string GetSubmitClass()
