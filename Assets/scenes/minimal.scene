@@ -20946,7 +20946,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "RemoveAllPets",
-          "Position": "2029.63916,176.457794,33.5016785",
+          "Position": "9329.46387,176.460938,950.171265",
           "Rotation": "0,0,0.724420071,0.68935883",
           "Scale": "1,1,1",
           "Tags": "",
@@ -21170,7 +21170,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "UseThisToLetPlayerButARandomPet",
-          "Position": "2100.62524,-551.294067,34.2734909",
+          "Position": "9400.4502,-551.290894,950.943115",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "Tags": "",
@@ -21511,7 +21511,7 @@
                   "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
                 },
                 "Property": "Position",
-                "Value": "5624.25488,1191.01917,927.135071"
+                "Value": "9169.78418,290.677429,927.13562"
               },
               {
                 "Target": {
@@ -21812,7 +21812,7 @@
                   "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
                 },
                 "Property": "Position",
-                "Value": "5669.34766,1127.95911,927.102783"
+                "Value": "9214.87695,227.617371,927.103333"
               },
               {
                 "Target": {
@@ -22113,7 +22113,7 @@
                   "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
                 },
                 "Property": "Position",
-                "Value": "5445.99609,1063.36218,926.723755"
+                "Value": "8991.52539,163.020447,926.724304"
               },
               {
                 "Target": {
@@ -22414,7 +22414,7 @@
                   "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
                 },
                 "Property": "Position",
-                "Value": "5480.88086,1004.05194,926.683655"
+                "Value": "9026.41016,103.710205,926.684204"
               },
               {
                 "Target": {
@@ -22715,7 +22715,7 @@
                   "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
                 },
                 "Property": "Position",
-                "Value": "5473.13867,854.511597,926.459778"
+                "Value": "9018.66797,-45.8301392,926.460327"
               },
               {
                 "Target": {
@@ -23016,7 +23016,7 @@
                   "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
                 },
                 "Property": "Position",
-                "Value": "5652.28125,960.209839,926.840942"
+                "Value": "9197.81055,59.868103,926.841492"
               },
               {
                 "Target": {
@@ -23317,7 +23317,7 @@
                   "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
                 },
                 "Property": "Position",
-                "Value": "5715.21387,993.218506,926.968933"
+                "Value": "9260.74316,92.87677,926.969482"
               },
               {
                 "Target": {
@@ -23618,7 +23618,7 @@
                   "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
                 },
                 "Property": "Position",
-                "Value": "5549.30713,959.386902,926.707581"
+                "Value": "9094.83594,59.045166,926.70813"
               },
               {
                 "Target": {
@@ -23919,7 +23919,7 @@
                   "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
                 },
                 "Property": "Position",
-                "Value": "5721.01953,1080.24097,927.100891"
+                "Value": "9266.54883,179.899231,927.10144"
               },
               {
                 "Target": {
@@ -24220,7 +24220,7 @@
                   "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
                 },
                 "Property": "Position",
-                "Value": "5633.69434,1033.31055,926.921631"
+                "Value": "9179.22363,132.968811,926.92218"
               },
               {
                 "Target": {
@@ -24521,7 +24521,7 @@
                   "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
                 },
                 "Property": "Position",
-                "Value": "5527.69238,1040.37793,926.795715"
+                "Value": "9073.22168,140.036194,926.796265"
               },
               {
                 "Target": {
@@ -24822,7 +24822,7 @@
                   "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
                 },
                 "Property": "Position",
-                "Value": "5584.82617,1082.72888,926.929626"
+                "Value": "9130.35547,182.387146,926.930176"
               },
               {
                 "Target": {
@@ -25123,7 +25123,7 @@
                   "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
                 },
                 "Property": "Position",
-                "Value": "5537.91406,1148.55396,926.963562"
+                "Value": "9083.44336,248.212219,926.964111"
               },
               {
                 "Target": {
@@ -25424,7 +25424,7 @@
                   "IdValue": "3b7535ac-09f9-432a-8df2-caf4d6eaca04"
                 },
                 "Property": "Position",
-                "Value": "5542.95996,1239.67639,927.100403"
+                "Value": "9088.48926,339.334656,927.100952"
               },
               {
                 "Target": {
@@ -27067,6 +27067,803 @@
         }
       ],
       "Children": []
+    },
+    {
+      "__guid": "0f194d36-4436-4d1e-be5a-078eb6a6f3af",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "Polygon",
+      "Position": "1200,-8600,0.5",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "world",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.MeshComponent",
+          "__guid": "d523f400-2e97-4541-8f70-7590f3e300f9",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Collision": "Mesh",
+          "Color": "1,1,1,1",
+          "Elasticity": null,
+          "Friction": null,
+          "HideInGame": false,
+          "IsTrigger": false,
+          "Mesh": {
+            "Topology": "H4sIAAAAAAAACk2Si04CQRAEa0U4UQQFfAEKAj7//wNNxZ5kL9lwN9TM9XTfHPgFpvxfF8AlMAGugGtgBmyAZ+ARWANL4A6YAy3H3v7apeYZZS4du0/dM847ew3v+fUM0UN42VP6xtGvVsLLfoTz3GQPwst+Za7Xbad7EvYnc7xfZN8W1r2/0+/s+3jSwst+ZpbvWsW3Fl723Gl/iLctvOyx2+Up/rfwsod4oYaXZNTCy77FS/Vuu6yGsK9hh9w7ozI0O/v83x6zqtysOVtNvt+aWVWW6lObO6nfWmXls/u5m55UzazU4bP+6I2e6p81s3JuZaO3ZmKPNbOyz2d1m407V37lTX1rcs6zx+z/AGwhveYIAwAA",
+            "Positions": [
+              "-4800,3400,-0.5",
+              "-2000,3800,-0.5",
+              "3200,3600,-0.5",
+              "6400,1000,-0.5",
+              "6000,-3000,-0.5",
+              "-200,-3800,-0.5",
+              "-6400,-1200,-0.5",
+              "-4800,3400,0.5",
+              "-2000,3800,0.5",
+              "3200,3600,0.5",
+              "6400,1000,0.5",
+              "6000,-3000,0.5",
+              "-200,-3800,0.5",
+              "-6400,-1200,0.5"
+            ],
+            "Blends": [
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0"
+            ],
+            "Colors": [
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0"
+            ],
+            "TextureCoord": [
+              "-1.5625,9.375",
+              "7.03125,0",
+              "8.59375,9.765625",
+              "1.5625,0",
+              "14.84375,14.84375",
+              "-8.59375,0",
+              "14.0625,22.65625",
+              "-14.84375,0",
+              "1.953125,24.21875",
+              "14.0625,0",
+              "-10.15625,19.140625",
+              "1.953125,0",
+              "-7.03125,10.15625",
+              "19.140625,0",
+              "1.953125,24.21875",
+              "-10.15625,-0.001953125",
+              "14.0625,22.65625",
+              "1.953125,-0.001953125",
+              "14.84375,14.84375",
+              "-22.65625,-0.001953125",
+              "8.59375,9.765625",
+              "-14.84375,-0.001953125",
+              "-1.5625,9.375",
+              "-8.59375,-0.001953125",
+              "-7.03125,10.15625",
+              "1.5625,-0.001953125",
+              "-10.15625,19.140625",
+              "10.15625,-0.001953125",
+              "7.03125,-0.001953125",
+              "10.15625,0",
+              "1.5625,0",
+              "1.5625,-0.001953125",
+              "-8.59375,0",
+              "-8.59375,-0.001953125",
+              "-14.84375,0",
+              "-14.84375,-0.001953125",
+              "-22.65625,0",
+              "14.0625,-0.001953125",
+              "1.953125,0",
+              "1.953125,-0.001953125",
+              "-10.15625,0",
+              "19.140625,-0.001953125"
+            ],
+            "MaterialIndex": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "EdgeFlags": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Materials": [
+              "3rdparty/bk-prod.fr/pure meadows 2/materials/grass1/grass01.vmat"
+            ]
+          },
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RenderType": "On",
+          "RollingResistance": null,
+          "SmoothingAngle": 40,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "18774046-1bf6-4189-bd5d-c35e001fa65b",
+      "__version": 2,
+      "__Prefab": "prefabs/pets/pet-beaver.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "8a574a15-4f05-4d66-903d-e278db3cf11b"
+            },
+            "Property": "Position",
+            "Value": "270.863342,285.456543,11.3977509"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "8a574a15-4f05-4d66-903d-e278db3cf11b"
+            },
+            "Property": "Rotation",
+            "Value": "-0.000254444778,0.00128990412,0.193185121,0.981161475"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "8a574a15-4f05-4d66-903d-e278db3cf11b": "18774046-1bf6-4189-bd5d-c35e001fa65b",
+        "4df3e6e3-f8dc-4adb-b856-71cb8a2ad7cd": "51ccda72-5060-4315-90e0-f14b3548218f",
+        "fd860284-8c5e-4a91-83a5-2057cd994ede": "f2796f2f-3a6c-470e-b059-c87d881ce5e3",
+        "855137e7-f7fa-4ae8-849f-e28b3355014f": "1e940c32-0eb9-4a1d-ae75-d34a8422f97b"
+      }
+    },
+    {
+      "__guid": "579624d4-804f-411a-b730-c2df17977d59",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "pets_421",
+      "Position": "3881.69775,-5452.8291,1.35073054",
+      "Rotation": "0,0,0.0283951275,0.999596834",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "d3add4da-99f8-4552-b81c-6e553e9355c2",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/pets/pets_421/pets_421.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "0b59218c-dfb8-404a-afcc-2bd8cc034680",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "pets_42",
+      "Position": "3888.24219,-5390.66846,1.13385284",
+      "Rotation": "0,0,0.0337483883,0.999430418",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "8fcf47f3-c7dc-4700-a1f3-b5d47724c7bc",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/pets/gold_pets_42/pets_42.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "d98f3773-e5fc-4590-88e7-102072700e0d",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "pets_64",
+      "Position": "3853.90918,-5335.40674,1.00797009",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "fa9a7fdd-781c-4381-922c-b88b86d813fe",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/pets/gold_pets_64/pets_64.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "765d40d7-b77a-4517-9cb8-0c73b966b7a0",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "pets_43",
+      "Position": "3850.37329,-5279.92871,1.09631991",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "b144a58f-7f02-4e86-8118-be35af618065",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/pets/pets_43/pets_43.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "52fdbc2f-f0f7-4137-8e56-630dae0eb66b",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "pets_98",
+      "Position": "3859.48901,-5232.94336,1.00044501",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "a48075fc-6d7f-475e-92d1-814c82d453d1",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/pets/pets_98/pets_98.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "f5806fdf-3834-4971-bdcf-7e2eecc41476",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "pets_28",
+      "Position": "3864.8125,-5185.06836,1.00292587",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "e301d246-69e2-48b7-883f-4b0e79dfccbf",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/pets/pets_28/pets_28.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "d0102f8b-c6a5-4f6c-b463-0959f580acf5",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "pets_157",
+      "Position": "3866.13306,-5115.18408,1.1947608",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "eabd1a99-8b15-42ea-8ab3-8f4a3b766390",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/pets/pets_157/pets_157.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "da067ba8-f940-4f6b-96c1-d3c5a5d21442",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "pets_335",
+      "Position": "3876.63721,-5535.38721,1.35150886",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "cbd03511-4e94-4856-92fe-4f93dcdffea2",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/pets/pets_335/pets_335.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "9897fbf0-ca2f-4dd2-ae71-a882cafb2dc9",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "pets_416",
+      "Position": "3865.5647,-5033.16309,1.46118832",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "5c640e8a-1503-4c34-bbd6-1d9689b15e43",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/pets/pets_416/pets_416.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "68e8f421-6c5e-4df1-a29f-f49126134997",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "pets_6",
+      "Position": "3880.4834,-5607.95068,1.01692104",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "69508d13-9ede-4590-a6df-e6bb3db9412f",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/pets/pets_6/pets_6.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "217e62c2-3366-4afb-82d8-b0d9727e6bd6",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "pets_89",
+      "Position": "3742.20605,-5627.9082,1.13697159",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "2d0c65c5-860b-49b4-8038-cc11d3190192",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/pets/pets_89/pets_89.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
     }
   ],
   "SceneProperties": {
@@ -27091,9 +27888,6 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
-      "Sandbox.MovieMaker.MovieRecorderSystem": {
-        "DisableClientRecording": false
-      },
       "Sandbox.SelectionSetsSystem": {
         "Data": {
           "SelectionSets": []
@@ -27103,6 +27897,9 @@
         "Storage": {
           "$blob": "270678c0-b3fa-442a-8d97-a44eb9066ca6"
         }
+      },
+      "Sandbox.MovieMaker.MovieRecorderSystem": {
+        "DisableClientRecording": false
       }
     }
   },
