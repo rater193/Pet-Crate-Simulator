@@ -1691,7 +1691,9 @@
                   "OnComponentStart": null,
                   "OnComponentUpdate": null,
                   "OverrideMassCenter": false,
+                  "PreciseContacts": false,
                   "RigidbodyFlags": 0,
+                  "SleepThreshold": 2,
                   "StartAsleep": false
                 }
               ],
@@ -1817,7 +1819,9 @@
                   "OnComponentStart": null,
                   "OnComponentUpdate": null,
                   "OverrideMassCenter": false,
+                  "PreciseContacts": false,
                   "RigidbodyFlags": 0,
+                  "SleepThreshold": 2,
                   "StartAsleep": false
                 }
               ],
@@ -2724,7 +2728,9 @@
                   "OnComponentStart": null,
                   "OnComponentUpdate": null,
                   "OverrideMassCenter": false,
+                  "PreciseContacts": false,
                   "RigidbodyFlags": 0,
+                  "SleepThreshold": 2,
                   "StartAsleep": false
                 }
               ],
@@ -2921,7 +2927,9 @@
                   "OnComponentStart": null,
                   "OnComponentUpdate": null,
                   "OverrideMassCenter": false,
+                  "PreciseContacts": false,
                   "RigidbodyFlags": 0,
+                  "SleepThreshold": 2,
                   "StartAsleep": false
                 }
               ],
@@ -26967,7 +26975,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "Credits Board",
-      "Position": "1997.19849,636.631287,227.297333",
+      "Position": "1997.19849,636.631287,277.892365",
       "Rotation": "0,0,0.978244722,-0.207454145",
       "Scale": "3,3,3",
       "Tags": "",
@@ -26992,7 +27000,7 @@
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
-          "PanelSize": "3072,2900",
+          "PanelSize": "3072,3200",
           "RenderOptions": {
             "GameLayer": true,
             "OverlayLayer": false,
@@ -27053,6 +27061,13 @@
               "Contributions": [
                 "Ideas",
                 "Playtester"
+              ]
+            },
+            {
+              "SteamId": 76561199194882084,
+              "Contributions": [
+                "Playtester",
+                "First to hatch a RARE BEE"
               ]
             }
           ],
@@ -27888,6 +27903,9 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
+      "Sandbox.MovieMaker.MovieRecorderSystem": {
+        "DisableClientRecording": false
+      },
       "Sandbox.SelectionSetsSystem": {
         "Data": {
           "SelectionSets": []
@@ -27897,9 +27915,6 @@
         "Storage": {
           "$blob": "270678c0-b3fa-442a-8d97-a44eb9066ca6"
         }
-      },
-      "Sandbox.MovieMaker.MovieRecorderSystem": {
-        "DisableClientRecording": false
       }
     }
   },
