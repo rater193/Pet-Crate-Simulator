@@ -23,7 +23,7 @@
 				[
 					{
 						_class = "RenderMeshFile"
-						filename = "models/dog_model.fbx"
+						filename = "models/slime_model.fbx"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
 						import_scale = 1.0
@@ -36,46 +36,7 @@
 							exclude_by_default = true
 							exception_list = 
 							[
-								"B_Left_Foot",
-								"B_Left_Paw_Pad",
-								"B_Left_Toe_Bean_1",
-								"B_Left_Toe_Bean_2",
-								"B_Left_Toe_Bean_3",
-								"B_Left_Toe_Bean_4",
-								"B_Right_Foot",
-								"B_Right_Paw_Pad",
-								"B_Right_Toe_Bean_1",
-								"B_Right_Toe_Bean_2",
-								"B_Right_Toe_Bean_3",
-								"B_Right_Toe_Bean_4",
 								"Body",
-								"F_Left_Foot",
-								"F_Left_Paw_Pad",
-								"F_Left_Toe_Bean_1",
-								"F_Left_Toe_Bean_2",
-								"F_Left_Toe_Bean_3",
-								"F_Left_Toe_Bean_4",
-								"F_Right_Foot",
-								"F_Right_Paw_Pad",
-								"F_Right_Toe_Bean_1",
-								"F_Right_Toe_Bean_2",
-								"F_Right_Toe_Bean_3",
-								"F_Right_Toe_Bean_4",
-								"Head",
-								"Left_Ear",
-								"Left_Eye",
-								"Left_Pupil",
-								"Left_Eyebrow",
-								"Right_Ear",
-								"Right_Eye",
-								"Right_Pupil",
-								"Right_Eyebrow",
-								"Snout",
-								"Left_Cheek",
-								"Nose",
-								"Right_Cheek",
-								"Tongue",
-								"Tail",
 							]
 						}
 					},
