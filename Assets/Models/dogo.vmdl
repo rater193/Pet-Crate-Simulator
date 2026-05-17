@@ -1,0 +1,77 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc30:version{8c2d7a91-9c42-4bf0-883a-5a3b1762d4f1} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "cube0041mtl.vmat"
+								to = "models/testdogo/cube0041mtl_alb.vmat"
+							},
+							{
+								from = "cube0051mtl.vmat"
+								to = "models/testdogo/cube0051mtl_alb.vmat"
+							},
+							{
+								from = "cube1mtl.vmat"
+								to = "models/testdogo/cube1mtl_alb.vmat"
+							},
+							{
+								from = "cylinder0011mtl.vmat"
+								to = "models/testdogo/cylinder0011mtl_alb.vmat"
+							},
+							{
+								from = "cylinder0031mtl.vmat"
+								to = "models/testdogo/cylinder0031mtl_alb.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = "materials/default.vmat"
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models/dogo.obj"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 2.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = true
+							exception_list = 
+							[
+								"Dogo",
+								"Dogo1",
+								"Dogo2",
+								"Dogo3",
+								"Dogo4",
+							]
+						}
+					},
+				]
+			},
+		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = ""
+		base_model_name = ""
+	}
+}
