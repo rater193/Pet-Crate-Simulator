@@ -99630,7 +99630,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1,1.90736747"
+                    "Value": "1,1,1.78336287"
                   }
                 ],
                 "MovedObjects": []
@@ -99679,7 +99679,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1,1.96131885"
+                    "Value": "1,1,1.79807448"
                   }
                 ],
                 "MovedObjects": []
@@ -99728,7 +99728,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1,1.95011377"
+                    "Value": "1,1,1.78268111"
                   }
                 ],
                 "MovedObjects": []
@@ -99777,7 +99777,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1,1.94339669"
+                    "Value": "1,1,1.77116632"
                   }
                 ],
                 "MovedObjects": []
@@ -99826,7 +99826,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1.22599483,1.88031769"
+                    "Value": "1,1.22599483,1.77156472"
                   }
                 ],
                 "MovedObjects": []
@@ -99916,7 +99916,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1,1.57677233"
+                    "Value": "1,1,1.2338624"
                   }
                 ],
                 "MovedObjects": []
@@ -99974,6 +99974,55 @@
                 "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a": "44e91b2b-178d-4214-af16-faca48b01e7b",
                 "bb25a24e-c284-586e-9fb8-f5689a9a6838": "a00f909a-c742-46bb-86ac-a58845a07dee",
                 "c634b64f-c86d-4abe-be0a-c8a3f98975e1": "1e7d4f60-7094-4122-99d1-5559bd7609db"
+              }
+            },
+            {
+              "__guid": "cca38ea1-c688-45ed-b128-aaf31c78063b",
+              "__version": 2,
+              "__Prefab": "3rdparty/lowpolynature/prefabs/env/cliffs/cliffa.prefab",
+              "__PrefabInstancePatch": {
+                "AddedObjects": [],
+                "RemovedObjects": [],
+                "PropertyOverrides": [
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Name",
+                    "Value": "cliffa (26)"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Position",
+                    "Value": "2808.58154,1706.4895,0"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Rotation",
+                    "Value": "0,0,0.999995887,0.00276558101"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Scale",
+                    "Value": "1,1.08883214,1.77724993"
+                  }
+                ],
+                "MovedObjects": []
+              },
+              "__PrefabIdToInstanceId": {
+                "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a": "cca38ea1-c688-45ed-b128-aaf31c78063b",
+                "bb25a24e-c284-586e-9fb8-f5689a9a6838": "fc589e4e-99cd-4d26-ab74-f90337571d16",
+                "c634b64f-c86d-4abe-be0a-c8a3f98975e1": "077bf7c0-590e-4413-9bb8-f29d6e4edc72"
               }
             },
             {
@@ -100210,7 +100259,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1.75923896,1.20360386"
+                    "Value": "1,1.75923896,1.05309951"
                   }
                 ],
                 "MovedObjects": []
@@ -100259,7 +100308,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1.75923896,1.60660267"
+                    "Value": "1,1.75923896,1.06681716"
                   }
                 ],
                 "MovedObjects": []
@@ -100643,7 +100692,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1.75923896,1.41803646"
+                    "Value": "1,1.75923896,1.01882732"
                   }
                 ],
                 "MovedObjects": []
@@ -100774,7 +100823,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Position",
-                    "Value": "3604.74316,2077.86011,12.5313616"
+                    "Value": "3604.74292,2077.85986,3.9247973"
                   },
                   {
                     "Target": {
@@ -100790,7 +100839,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1.95069325,1.75804639"
+                    "Value": "1,1.95069325,1.7781266"
                   }
                 ],
                 "MovedObjects": []
@@ -100888,7 +100937,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,2.28622198,1.35540116"
+                    "Value": "1,2.28622198,1.0489701"
                   }
                 ],
                 "MovedObjects": []
@@ -100937,7 +100986,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,2.28622198,1.51715052"
+                    "Value": "1,2.28622198,1.09464931"
                   }
                 ],
                 "MovedObjects": []
@@ -101476,7 +101525,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1.0417552,1.75503659,1.22548556"
+                    "Value": "1.0417552,1.75503659,1.009184"
                   }
                 ],
                 "MovedObjects": []
@@ -101623,7 +101672,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1.62915075,1.26584804"
+                    "Value": "1,1.62915075,1.19503987"
                   }
                 ],
                 "MovedObjects": []
@@ -101656,7 +101705,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Position",
-                    "Value": "2898.40259,10145.7979,320.000305"
+                    "Value": "2874.8208,10145.8008,186.256821"
                   },
                   {
                     "Target": {
@@ -101664,7 +101713,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Rotation",
-                    "Value": "0,0,-0.707102597,0.707111239"
+                    "Value": "-0.0616288483,0.0616280958,-0.704411924,0.704420567"
                   },
                   {
                     "Target": {
@@ -101672,7 +101721,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,2.2248044,0.766608059"
+                    "Value": "1,2.2248044,0.806086481"
                   }
                 ],
                 "MovedObjects": []
@@ -101705,7 +101754,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Position",
-                    "Value": "1348.88794,10127.5654,320.000244"
+                    "Value": "1256.99316,10134.8262,212.173553"
                   },
                   {
                     "Target": {
@@ -101713,7 +101762,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Rotation",
-                    "Value": "0,0,-0.707102597,0.707111239"
+                    "Value": "-0.0616312698,0.0616305135,-0.704411805,0.704420507"
                   },
                   {
                     "Target": {
@@ -101721,7 +101770,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1.75923896,0.936078906"
+                    "Value": "1,1.95948827,1.03044558"
                   }
                 ],
                 "MovedObjects": []
@@ -101917,7 +101966,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1.75923896,1.38886392"
+                    "Value": "1,1.75923896,1.15117323"
                   }
                 ],
                 "MovedObjects": []
@@ -101966,7 +102015,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1.75923896,1.51477945"
+                    "Value": "1,1.75923896,0.973035693"
                   }
                 ],
                 "MovedObjects": []
@@ -102015,7 +102064,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1.75923896,1.51477945"
+                    "Value": "1,1.75923896,1.06924152"
                   }
                 ],
                 "MovedObjects": []
@@ -102260,7 +102309,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1.75923896,1.25895941"
+                    "Value": "1,1.75923896,1.14280415"
                   }
                 ],
                 "MovedObjects": []
@@ -102407,7 +102456,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1.77908385,1.52188623"
+                    "Value": "1,1.77908385,1.12539947"
                   }
                 ],
                 "MovedObjects": []
@@ -102456,7 +102505,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1.77908385,1.50278723"
+                    "Value": "1,1.77908385,1.01207113"
                   }
                 ],
                 "MovedObjects": []
@@ -102505,7 +102554,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1.77908385,1.58124638"
+                    "Value": "1,1.77908385,1.07603323"
                   }
                 ],
                 "MovedObjects": []
@@ -102554,7 +102603,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1.95069325,1.20241404"
+                    "Value": "1,1.95069325,1.02489221"
                   }
                 ],
                 "MovedObjects": []
@@ -102873,7 +102922,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Position",
-                    "Value": "-1323.43262,10138.0645,320.000519"
+                    "Value": "-1424.06787,10138.0645,274.384552"
                   },
                   {
                     "Target": {
@@ -102881,7 +102930,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Rotation",
-                    "Value": "0,0,0.707102418,-0.707112312"
+                    "Value": "0.0308423005,-0.0308418814,0.706429482,-0.706439435"
                   },
                   {
                     "Target": {
@@ -102922,7 +102971,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Position",
-                    "Value": "-1323.45361,11714.2646,1089.40979"
+                    "Value": "-1588.5083,11714.2578,1136.146"
                   },
                   {
                     "Target": {
@@ -102930,7 +102979,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Rotation",
-                    "Value": "0,0,0.707102418,-0.707112312"
+                    "Value": "0.0616286173,-0.0616277531,0.704411685,-0.70442158"
                   },
                   {
                     "Target": {
@@ -102971,7 +103020,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Position",
-                    "Value": "192.096191,11714.2822,946.42218"
+                    "Value": "-80.5073242,11714.2773,994.489807"
                   },
                   {
                     "Target": {
@@ -102979,7 +103028,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Rotation",
-                    "Value": "0,0,0.707102418,-0.707112312"
+                    "Value": "0.0616290048,-0.0616281442,0.704411685,-0.70442158"
                   },
                   {
                     "Target": {
@@ -103020,7 +103069,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Position",
-                    "Value": "1785.45068,11714.3057,732.483032"
+                    "Value": "1611.68555,11714.3047,763.122375"
                   },
                   {
                     "Target": {
@@ -103028,7 +103077,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Rotation",
-                    "Value": "0,0,0.707102418,-0.707112312"
+                    "Value": "0.0616288669,-0.0616280064,0.704411685,-0.70442158"
                   },
                   {
                     "Target": {
@@ -103069,7 +103118,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Position",
-                    "Value": "3263.55713,11714.3223,600.212891"
+                    "Value": "3275.66016,11714.3184,738.579773"
                   },
                   {
                     "Target": {
@@ -103077,7 +103126,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Rotation",
-                    "Value": "0,0,0.707102418,-0.707112312"
+                    "Value": "0.0308431722,-0.0308427438,0.706429422,-0.706439316"
                   },
                   {
                     "Target": {
@@ -103118,7 +103167,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Position",
-                    "Value": "-22.0073242,10138.0811,320.000519"
+                    "Value": "-69.355957,10138.0762,257.373993"
                   },
                   {
                     "Target": {
@@ -103126,7 +103175,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Rotation",
-                    "Value": "0,0,0.707102418,-0.707112312"
+                    "Value": "0.0308452286,-0.0308447964,0.706429422,-0.706439316"
                   },
                   {
                     "Target": {
@@ -103412,7 +103461,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1.08685315,2.04315639,1.25327587"
+                    "Value": "1.08685315,2.04315639,1.0374217"
                   }
                 ],
                 "MovedObjects": []
@@ -103461,7 +103510,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1.08685315,2.28701258,1.53982186"
+                    "Value": "1.08685315,2.28701258,1.04211092"
                   }
                 ],
                 "MovedObjects": []
@@ -103657,7 +103706,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "0.628404379,1.77256179,1.57974625"
+                    "Value": "0.628404379,1.77256179,1.11813211"
                   }
                 ],
                 "MovedObjects": []
@@ -103755,7 +103804,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "0.862227857,1.75849569,1.57974625"
+                    "Value": "0.862227857,1.75849569,1.11332035"
                   }
                 ],
                 "MovedObjects": []
@@ -103804,7 +103853,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "0.794281423,1.75503659,1.62319374"
+                    "Value": "0.794281423,1.75503659,1.13943112"
                   }
                 ],
                 "MovedObjects": []
@@ -103853,7 +103902,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "0.862227857,1.75849569,1.18718767"
+                    "Value": "0.862227857,1.75849569,1.02615833"
                   }
                 ],
                 "MovedObjects": []
@@ -103902,7 +103951,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "0.794281423,1.75503659,1.34300601"
+                    "Value": "0.794281423,1.75503659,1.00074911"
                   }
                 ],
                 "MovedObjects": []
@@ -103951,7 +104000,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "0.794281423,1.75503659,1.62319374"
+                    "Value": "0.794281423,1.75503659,1.09876657"
                   }
                 ],
                 "MovedObjects": []
@@ -105022,7 +105071,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1.79439306,1.91295695"
+                    "Value": "1,1.79439306,1.76772106"
                   }
                 ],
                 "MovedObjects": []
@@ -105120,7 +105169,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1.79439306,2.11588979"
+                    "Value": "1,1.79439306,1.8234998"
                   }
                 ],
                 "MovedObjects": []
@@ -105169,7 +105218,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,2.07792854,2.12195706"
+                    "Value": "1,2.07792854,1.77347565"
                   }
                 ],
                 "MovedObjects": []
@@ -109747,7 +109796,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACm2Q2Q7CQAwDBwq0nC03//+ji0Z4pTywUqRN4jh2JuAD7Pi9NbBJfgFOwAGYgFVCTH1LasaQeQr2nrqx/bPrWWbGwjsE+y5z++hprbUxul6ZF3OMZvvixT6KrnN82Rcv9hYt8s3htC9e7DXc5v7l6DfQu3P29avX7tua3GpyvzW99luoT216ktta92our97U1P2rS/5+S+/1BVPlhWvEAQAA",
+            "Topology": "H4sIAAAAAAAACoWS204CQRBEz7KsKwLiBQUFLyj4/3845CTVyb7ZyWRn+lpVvSvgD7gFDsAMeANugF9gBXwBr8AeeAc+gR+gy7Fmag/x27MHjvFX7nO+xobMGuKbAy9Aa60tgBH4SLxP7i7+9o9ZswwH33eA53syax2elW/uU7A6YxPuxu11D1wSs/4xPboJ90NiXbiWTkN6LzN/Fq6lt2cbvZ3Xh+uQ9xgsYhonu3KWOertjk7ppYmlTD3d3zk1vtVWn2a9u7JH7UUsYvKudu7er3jMd5Y4xVLammO+M9RWjbzL2/9GDUtPtdRXeMQmN49Y1M2e5hsTrzOtuwKDxzYevAIAAA==",
             "Positions": [
               "-4085.40796,12941.0391,0.0883178711",
               "4885.63867,13237.1621,0.0883169174",
@@ -109756,9 +109805,27 @@
               "-4085.40796,12973.5176,10.0883179",
               "4885.63818,13268.1836,10.0883169",
               "4883.53223,3752.31738,-2.56555223",
-              "-4339.375,3880.70386,19.7872314"
+              "-4339.375,3880.70386,19.7872314",
+              "4883.98438,5685.09473,-9.95323944",
+              "-4285.07178,5791.84033,7.71430159",
+              "4883.95996,5685.10547,0.00460205507",
+              "-4285.99561,5791.86182,17.748682"
             ],
             "Blends": [
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
               "0,0,0,0",
               "0,0,0,0",
               "0,0,0,0",
@@ -109808,35 +109875,65 @@
               "0,0,0,0",
               "0,0,0,0",
               "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
               "0,0,0,0"
             ],
             "TextureCoord": [
-              "11.073513,-10.8850822",
-              "7.91764498,-2.009938",
-              "11.0694418,7.70059681",
-              "11.5468082,1.85986435",
-              "-6.94404984,7.45268345",
-              "12.050683,2.72540379",
-              "-6.44806242,-10.3067169",
-              "8.29058266,-2.37693977",
+              "11.073514,-10.8850822",
+              "7.91764545,-2.009938",
+              "11.070282,3.86504889",
+              "11.5468092,0.859864354",
+              "-6.9440484,7.4526825",
+              "12.0506821,2.72540426",
+              "-6.83800793,3.65657282",
+              "8.29058266,0.623060226",
               "11.0693989,7.64000511",
-              "-5.70019293,2.95158696",
+              "-5.70019293,2.9515872",
               "11.0735121,-10.9456711",
-              "-6.6808672,1.9185096",
+              "-2.96653843,0.902635872",
               "-6.44806242,-10.3701515",
-              "-9.15669346,-2.0728488",
+              "-9.1566925,-2.0728488",
               "-6.9440918,7.38925028",
-              "-8.90752792,-3.6080873",
-              "7.9266305,-2.02946925",
-              "-8.84437752,-3.58855605",
-              "-9.16531754,-2.05411792",
-              "11.6062202,1.84034133",
-              "-6.74028015,1.93803442",
-              "12.042757,2.70667219",
-              "-5.69191456,2.9711175",
-              "8.22743797,-2.39648867"
+              "4.62595367,0.348853409",
+              "7.9266305,-2.02946901",
+              "-8.84438133,-0.588540792",
+              "-9.16531944,-2.05411792",
+              "11.6062212,0.84034133",
+              "-6.74028349,0.938034415",
+              "12.0427418,2.70667267",
+              "-5.69191408,2.97111773",
+              "8.22743797,0.603511274",
+              "11.0694418,7.70059633",
+              "-2.96635556,0.921902359",
+              "-6.44796133,-10.3066616",
+              "4.62793589,0.364077121",
+              "-6.83800793,3.65657282",
+              "11.070282,3.86504889",
+              "-6.68086863,0.918513596",
+              "11.0702343,3.86502886",
+              "-2.96635556,0.921902359",
+              "-2.96653843,0.902635872",
+              "-8.90752888,-0.608087301",
+              "-6.83983469,3.65652013",
+              "4.62595367,0.348853409",
+              "4.62793589,0.364077121"
             ],
             "MaterialIndex": [
+              0,
+              0,
               0,
               0,
               0,
@@ -109859,168 +109956,6 @@
               0,
               0,
               0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "Materials": [
-              "3rdparty/bk-prod.fr/pure meadows 2/materials/grass1/grass01.vmat"
-            ]
-          },
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OnObjectTriggerEnter": null,
-          "OnObjectTriggerExit": null,
-          "OnTriggerEnter": null,
-          "OnTriggerExit": null,
-          "RenderType": "On",
-          "RollingResistance": null,
-          "SmoothingAngle": 40,
-          "Static": true,
-          "Surface": null,
-          "SurfaceVelocity": "0,0,0"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "af577ec6-d423-4774-a200-3befa376b72b",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "Polygon (4)",
-      "Position": "1057.13184,846.250488,13.6108398",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "world",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.MeshComponent",
-          "__guid": "48822804-c3f0-465c-bb9d-cf91c92cd927",
-          "__enabled": true,
-          "Flags": 0,
-          "ColliderFlags": 0,
-          "Collision": "Mesh",
-          "Color": "1,1,1,1",
-          "Elasticity": null,
-          "Friction": null,
-          "HideInGame": false,
-          "IsTrigger": false,
-          "Mesh": {
-            "Topology": "H4sIAAAAAAAACsXPywrCUBRD0SXYWutr6v//aGXDFaQ41gxPdkLOgidmbDvdcMEZjy/+rzWPLSsOOGH52DaNvdfhx8eWyT+in+7Dj48tk19fXXXmx8eW+ffvb7Vnf3sBP4TwW8QBAAA=",
-            "Positions": [
-              "-4085.40796,12941.0391,0.0883178711",
-              "4885.63867,13237.1621,0.0883169174",
-              "4883.5542,3721.29443,-12.564393",
-              "-4339.35352,3848.22607,9.78753662",
-              "-4358.54004,4463.26758,1.47747803",
-              "4612.50635,4757.93359,1.47747707",
-              "4610.40039,-4757.93262,-11.1763916",
-              "-4612.50684,-4629.5459,11.1763916"
-            ],
-            "Blends": [
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0"
-            ],
-            "Colors": [
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0",
-              "0,0,0,0"
-            ],
-            "TextureCoord": [
-              "11.073513,-10.8850822",
-              "7.91764498,-2.009938",
-              "11.0694418,7.70059681",
-              "11.5468082,1.85986435",
-              "-6.94404984,7.45268345",
-              "12.050683,2.72540379",
-              "-6.44806242,-10.3067169",
-              "8.29058266,-2.37693977",
-              "11.0693989,7.64000511",
-              "-5.70019293,2.95158696",
-              "11.0735121,-10.9456711",
-              "-6.6808672,1.9185096",
-              "-6.44806242,-10.3701515",
-              "-9.15669346,-2.0728488",
-              "-6.9440918,7.38925028",
-              "-8.90752792,-3.6080873",
-              "7.9266305,-2.02946925",
-              "-8.84437752,-3.58855605",
-              "-9.16531754,-2.05411792",
-              "11.6062202,1.84034133",
-              "-6.74028015,1.93803442",
-              "12.042757,2.70667219",
-              "-5.69191456,2.9711175",
-              "8.22743797,-2.39648867"
-            ],
-            "MaterialIndex": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "EdgeFlags": [
               0,
               0,
               0,
@@ -116983,6 +116918,1098 @@
         }
       ],
       "Children": []
+    },
+    {
+      "__guid": "8a25e2fd-7839-4401-a4cc-72d779a7715b",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "rockbigc (3)",
+      "Position": "1057.17334,2216.97144,1182.62732",
+      "Rotation": "0.000646152941,2.03858945E-05,-0.0272307992,0.999628961",
+      "Scale": "33.7347641,18.306345,17.4978008",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "3390e8cb-2d61-42bf-ab36-77b90a8308bf",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/rocks/rockbigc.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "cbdd2c8b-a949-4d93-b1fe-a216c3c7b511",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "rockbigc (1)",
+      "Position": "1738.73657,2168.24976,915.499634",
+      "Rotation": "-0.155083388,0.150956586,-0.678834319,0.701672971",
+      "Scale": "14.8265295,9.99420261,9.99420261",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "1a69ae30-8cbc-464a-b7c3-b05d1fb99ec5",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/rocks/rockbigc.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "ff8bd2a6-6651-4565-9469-309833a3595d",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "rockbigc (2)",
+      "Position": "116.404922,2114.80542,1082.67676",
+      "Rotation": "-0.66372937,0.642653763,-0.265706569,0.27542603",
+      "Scale": "14.8265295,9.99420261,9.99420261",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "e38c75f2-f76d-4ad0-8b8c-3a4146ecafbe",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/rocks/rockbigc.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "53170a46-4a9c-4eb2-b14b-6f6a66b26450",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "rockbigc",
+      "Position": "-2129.10962,5091.62891,1558.30103",
+      "Rotation": "0,0,0.49999994,0.866025388",
+      "Scale": "8.45425224,8.45425224,8.45425224",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "db363153-d145-4d1c-9bf0-98007c1db1eb",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/rocks/rockbigc.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "92d0a959-ecfb-4d3a-92e3-19456d4dace6",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "rockbigc (5)",
+      "Position": "-2028.19702,6047.84229,1558.30103",
+      "Rotation": "0,0,0,1",
+      "Scale": "7.08788681,25.5531902,9.48622131",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "91476f63-7a61-4fab-9f51-1431826ae3be",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/rocks/rockbigc.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "8d345cca-0be6-44ed-9f3e-04dce8d8c01d",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "rockbigc (4)",
+      "Position": "-2019.90308,7143.59912,1558.30176",
+      "Rotation": "0,0,-0.79335326,0.60876137",
+      "Scale": "6.91756916,9.87358665,6.91756916",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "8c7b4842-3412-476b-acfd-fa2d5f0cadc7",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "3rdparty/lowpolynature/models/env/rocks/rockbigc.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "7dd58ba1-09dc-4d5e-a590-6e1235b8c890",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "Polygon (5)",
+      "Position": "1057.13184,846.250488,13.6108398",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "world",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.MeshComponent",
+          "__guid": "f587a77d-b581-4b5c-874e-601dad79205b",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Collision": "Mesh",
+          "Color": "1,1,1,1",
+          "Elasticity": null,
+          "Friction": null,
+          "HideInGame": false,
+          "IsTrigger": false,
+          "Mesh": {
+            "Topology": "H4sIAAAAAAAACs2RsQrAIAwFb3BoO7dg/f//tBxVkNChk3gQDOEFjngABUhADVxhdgP7R242OliZF903IPquSmquOovvCXjfP/vmzboj/Rb9b+zH/AN0gAf75AEAAA==",
+            "Positions": [
+              "-4358.54004,4463.26758,1.47747803",
+              "4612.50635,4757.93359,1.47747707",
+              "4610.40039,-4757.93262,-11.1763916",
+              "-4612.50684,-4629.5459,11.1763916",
+              "4611.08008,-1687.36035,-7.09325123",
+              "-4537.04785,-1927.87463,8.29463482",
+              "-4473.68115,340.86142,5.87467146",
+              "-3152.03198,-1891.46106,5.96492672",
+              "3917.87915,-1705.58533,-5.92723179",
+              "4611.33545,-532.790222,-5.55794382"
+            ],
+            "Blends": [
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0"
+            ],
+            "Colors": [
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0"
+            ],
+            "TextureCoord": [
+              "11.0693989,7.64000511",
+              "-5.70019293,2.95158696",
+              "11.0707264,1.64279354",
+              "-6.6808672,1.9185096",
+              "-6.44798183,-10.3700953",
+              "-9.15669346,-2.0728488",
+              "-6.67289972,-2.31854677",
+              "-8.90752792,-3.6080873",
+              "11.0712261,-0.612226427",
+              "-7.47976494,0.630581141",
+              "-6.9440918,7.38925028",
+              "-6.65316153,1.0025661",
+              "-4.09157562,2.04144168",
+              "-6.79671097,2.11254883",
+              "-6.79667997,2.11256456",
+              "-7.54601145,0.0818299353",
+              "9.71682167,1.67839015",
+              "-6.90012455,1.88818061",
+              "-4.0915761,2.04144144",
+              "-6.67289162,-2.3185463",
+              "11.0707264,1.64279318",
+              "-7.42800617,0.742877424",
+              "11.073513,-10.9456701",
+              "-7.78015947,0.146305397",
+              "9.71681976,1.67839015",
+              "11.0712252,-0.612226367"
+            ],
+            "MaterialIndex": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "EdgeFlags": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Materials": [
+              "3rdparty/bk-prod.fr/pure meadows 2/materials/grass1/grass01.vmat"
+            ]
+          },
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RenderType": "On",
+          "RollingResistance": null,
+          "SmoothingAngle": 0,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "0eb72c6f-11dd-463f-8559-863627565b37",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "Polygon (6)",
+      "Position": "1057.13184,846.250488,13.6108398",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "world",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.MeshComponent",
+          "__guid": "3ad692b2-b7c4-48bd-ad44-d2f9b657f134",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Collision": "Mesh",
+          "Color": "1,1,1,1",
+          "Elasticity": null,
+          "Friction": null,
+          "HideInGame": false,
+          "IsTrigger": false,
+          "Mesh": {
+            "Topology": "H4sIAAAAAAAACmNjYGDgY2BgYGJgYPg/wgEAiiQrmgwBAAA=",
+            "Positions": [
+              "-4358.54004,4463.26758,1.47747803",
+              "4612.50635,4757.93359,1.47747707",
+              "4611.08008,-1687.36035,-7.09325123",
+              "-4537.04785,-1927.87463,8.29463482",
+              "-4473.68115,340.86142,5.87467146",
+              "-3152.03198,-1891.46106,5.96492672"
+            ],
+            "Blends": [
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0"
+            ],
+            "Colors": [
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0"
+            ],
+            "TextureCoord": [
+              "-6.44796181,-10.3700953",
+              "-9.15669346,-2.0728488",
+              "-6.67289162,-2.3185463",
+              "-8.90752792,-3.6080873",
+              "11.073513,-10.9456701",
+              "-7.47976494,0.630581141",
+              "-4.0915761,2.04144144",
+              "-6.79671097,2.11254883",
+              "-6.79668045,2.11256456",
+              "-7.54601145,0.0818299353",
+              "11.0707264,1.6427933",
+              "-6.90012455,1.88818061",
+              "-6.67289972,-2.31854677",
+              "-4.09157562,2.04144168"
+            ],
+            "MaterialIndex": [
+              0,
+              0
+            ],
+            "EdgeFlags": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RenderType": "On",
+          "RollingResistance": null,
+          "SmoothingAngle": 0,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "193a8d5a-82c6-4fb6-843b-44f7683e50c4",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "Polygon (7)",
+      "Position": "1057.13184,846.250488,13.6108398",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "world",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.MeshComponent",
+          "__guid": "5b52de42-4abb-4b65-b740-2e652519b3b8",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Collision": "Mesh",
+          "Color": "1,1,1,1",
+          "Elasticity": null,
+          "Friction": null,
+          "HideInGame": false,
+          "IsTrigger": false,
+          "Mesh": {
+            "Topology": "H4sIAAAAAAAACmNjYGDgY2BgYGJgYPg/wgEAiiQrmgwBAAA=",
+            "Positions": [
+              "4610.40039,-4757.93262,-11.1763916",
+              "-4612.50684,-4629.5459,11.1763916",
+              "4611.08008,-1687.36035,-7.09325123",
+              "-4537.04785,-1927.87463,8.29463482",
+              "-1505.64233,-4672.79492,3.64654613",
+              "-3152.03198,-1891.46106,5.9649272"
+            ],
+            "Blends": [
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0"
+            ],
+            "Colors": [
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0"
+            ],
+            "TextureCoord": [
+              "-0.875994742,7.47371912",
+              "-5.70019293,2.95158696",
+              "11.0707264,1.6427933",
+              "-6.6808672,1.9185096",
+              "-6.94408846,7.38924837",
+              "-6.65316153,1.0025661",
+              "-4.09157562,2.04144168",
+              "11.0707264,1.64279354",
+              "11.0693989,7.64000463",
+              "-6.03054714,2.60358047",
+              "-6.79667807,2.11256337",
+              "-3.96978569,1.09949577",
+              "-4.09157372,2.04144073",
+              "-0.875996292,7.47372007"
+            ],
+            "MaterialIndex": [
+              0,
+              0
+            ],
+            "EdgeFlags": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RenderType": "On",
+          "RollingResistance": null,
+          "SmoothingAngle": 0,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "e496daf5-f299-4915-bf08-9e97f9e0dc13",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "Polygon (8)",
+      "Position": "1057.13184,846.250488,13.6108398",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "world",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.MeshComponent",
+          "__guid": "f280bb27-590c-4c31-a6a7-6c4a6eb5dbfe",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Collision": "Mesh",
+          "Color": "1,1,1,1",
+          "Elasticity": null,
+          "Friction": null,
+          "HideInGame": false,
+          "IsTrigger": false,
+          "Mesh": {
+            "Topology": "H4sIAAAAAAAAClWMQQ4AIAzCqlP//2NME3eQCwwGBRxgAAXsp+fjxQ9/kqR1ozv2zb3VekJ2S9/c3Qve8NvofAAAAA==",
+            "Positions": [
+              "-4537.04785,-1927.87463,8.29463482",
+              "-4473.68115,340.86142,5.87467146",
+              "-3152.03198,-1891.46106,5.96492672"
+            ],
+            "Blends": [
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0"
+            ],
+            "Colors": [
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0"
+            ],
+            "TextureCoord": [
+              "-4.0915761,2.04144144",
+              "-6.79671097,2.11254883",
+              "-6.79668045,2.11256456",
+              "-7.54601145,0.0818299353",
+              "-6.67289972,-2.31854677",
+              "-4.09157562,2.04144168"
+            ],
+            "MaterialIndex": [
+              0
+            ],
+            "EdgeFlags": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Materials": [
+              "3rdparty/bk-prod.fr/pure meadows 2/materials/grass1/grass01.vmat"
+            ]
+          },
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RenderType": "On",
+          "RollingResistance": null,
+          "SmoothingAngle": 0,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "fa8e97e5-c229-463a-9a3a-158862eb289f",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "Polygon",
+      "Position": "1095.63916,435.15741,5.00003052",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "world",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.MeshComponent",
+          "__guid": "3fec5883-f785-42cf-ad71-088f58531289",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Collision": "Mesh",
+          "Color": "1,1,1,1",
+          "Elasticity": null,
+          "Friction": null,
+          "HideInGame": false,
+          "IsTrigger": false,
+          "Mesh": {
+            "Topology": "H4sIAAAAAAAACk2SiU4CQRAFawRl8cT7RBBQvPX/v85UfJP0Jh12m+qe7vdmBvwC+/w/O8AY2AOG5A+BY+AReADugBvgCrgAzoAZ0BL2qM8yOWOU/hR2nbyxm7PrLM/5NSaZi/Cy29QZ07LLOOxbOOMg+xBe9iN9jaPsSnjZr3LmSdlrEvYn5/p+Gj1aWHX5Tr29z6NZCy/7mV6edRldW3jZ9zL7dbRv4WVfyy638aeFl32JFs54Hw9beNlNtHTGeXxu4WVX8cJ9FsXrIexT2CHv83IHlqmbpmZdfDdnb2fyfHN63e+C8zmbOzm/ue613+7nbmrSc3qtln6rj9qoqfqZ02vP9Vt91VZPrDGn1/bt3uqNnrqbOb22zm/30ls16f537fpdtsb/7Gmd9+cPfNpHyXQDAAA=",
+            "Positions": [
+              "-2700.91553,-3579.67676,-5.00003052",
+              "-2702.07666,2017.09766,-5.00003052",
+              "-4034.2583,2009.03418,-5.00003052",
+              "-4036.89307,4278.4873,-5.00003052",
+              "3915.9751,4354.6709,-5.00003052",
+              "4036.89307,1896.36621,-5.00003052",
+              "2731.25537,1887.93164,-4.99996948",
+              "3027.67236,-3765.40332,-5.00003052",
+              "-2700.91553,-3579.67676,4.99996948",
+              "-2702.07666,2017.09766,4.99996948",
+              "-4034.2583,2009.03418,4.99996948",
+              "-4036.89307,4278.4873,4.99996948",
+              "3915.9751,4354.6709,4.99996948",
+              "4036.89307,1896.36621,4.99996948",
+              "2731.25537,1887.93164,5.00003052",
+              "3027.67236,-3765.40332,4.99996948"
+            ],
+            "Blends": [
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0"
+            ],
+            "Colors": [
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0"
+            ],
+            "TextureCoord": [
+              "-3.13757324,-4.54035187",
+              "6.39074993,0",
+              "-5.73949051,-4.52460289",
+              "-2.13757324,0",
+              "-5.74463654,-8.95712852",
+              "-4.52460289,0",
+              "9.7883091,-9.10592461",
+              "5.74463654,0",
+              "10.024477,-4.30454826",
+              "9.10592556,0",
+              "7.47440338,-4.28807449",
+              "11.024477,0",
+              "8.05334282,6.75359535",
+              "4.28807497,-1.1920929E-07",
+              "-3.1353054,6.39084816",
+              "9.0160284,0",
+              "7.47440338,-4.28807449",
+              "-6.75751543,-0.01953125",
+              "10.024477,-4.30454826",
+              "8.47440338,-0.0195313692",
+              "9.7883091,-9.10592461",
+              "4.30454922,-0.01953125",
+              "-5.74463654,-8.95712852",
+              "-9.78831005,-0.01953125",
+              "-5.73949051,-4.52460289",
+              "-8.95712852,-0.01953125",
+              "-3.13757324,-4.54035187",
+              "-4.73949051,-0.01953125",
+              "-3.1353054,6.39084816",
+              "-4.54035091,-0.01953125",
+              "8.05334282,6.75359535",
+              "-2.17262101,-0.0195312519",
+              "6.39074993,-0.01953125",
+              "-2.17262101,0",
+              "-4.54035091,0",
+              "-2.13757324,-0.01953125",
+              "-4.73949051,0",
+              "-4.52460289,-0.01953125",
+              "-8.95712852,0",
+              "5.74463654,-0.01953125",
+              "-9.78831005,0",
+              "9.10592556,-0.01953125",
+              "4.30454922,0",
+              "11.024477,-0.01953125",
+              "8.47440338,-1.1920929E-07",
+              "4.28807497,-0.0195313692",
+              "-6.75751543,0",
+              "9.0160284,-0.0195312519"
+            ],
+            "MaterialIndex": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "EdgeFlags": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Materials": [
+              "3rdparty/bk-prod.fr/pure meadows 2/materials/grass1/grass01.vmat"
+            ]
+          },
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RenderType": "On",
+          "RollingResistance": null,
+          "SmoothingAngle": 40,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
     }
   ],
   "SceneProperties": {
@@ -117010,11 +118037,6 @@
       "Sandbox.SelectionSetsSystem": {
         "Data": {
           "SelectionSets": []
-        }
-      },
-      "Sandbox.Clutter.ClutterGridSystem": {
-        "Storage": {
-          "$blob": "150bb8ab-f26b-48ef-bd09-70aa07a132c1"
         }
       }
     }
