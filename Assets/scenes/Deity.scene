@@ -99385,7 +99385,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1,1.72963607"
+                    "Value": "1,1,1.51273978"
                   }
                 ],
                 "MovedObjects": []
@@ -99495,145 +99495,6 @@
               }
             },
             {
-              "__guid": "1ba40cba-2b05-482a-9bdb-62a33477afc0",
-              "__version": 2,
-              "__Prefab": "3rdparty/lowpolynature/prefabs/env/cliffs/cliffa.prefab",
-              "__PrefabInstancePatch": {
-                "AddedObjects": [],
-                "RemovedObjects": [],
-                "PropertyOverrides": [
-                  {
-                    "Target": {
-                      "Type": "GameObject",
-                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
-                    },
-                    "Property": "Name",
-                    "Value": "cliffa (11)"
-                  },
-                  {
-                    "Target": {
-                      "Type": "GameObject",
-                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
-                    },
-                    "Property": "Position",
-                    "Value": "688.873901,-3090.17603,0"
-                  },
-                  {
-                    "Target": {
-                      "Type": "GameObject",
-                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
-                    },
-                    "Property": "Rotation",
-                    "Value": "0,0,0.730441868,0.682974637"
-                  },
-                  {
-                    "Target": {
-                      "Type": "GameObject",
-                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
-                    },
-                    "Property": "Scale",
-                    "Value": "1,1,1.32654762"
-                  }
-                ],
-                "MovedObjects": []
-              },
-              "__PrefabIdToInstanceId": {
-                "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a": "1ba40cba-2b05-482a-9bdb-62a33477afc0",
-                "bb25a24e-c284-586e-9fb8-f5689a9a6838": "16fc2704-9ced-4108-b5fe-c68e876d4977",
-                "c634b64f-c86d-4abe-be0a-c8a3f98975e1": "ebf7a545-b6be-4396-964c-7706107f54ed"
-              }
-            },
-            {
-              "__guid": "a18e6fdf-05de-4766-be21-7dfbdc0ec993",
-              "__version": 2,
-              "__Prefab": "3rdparty/lowpolynature/prefabs/env/cliffs/cliffa.prefab",
-              "__PrefabInstancePatch": {
-                "AddedObjects": [],
-                "RemovedObjects": [],
-                "PropertyOverrides": [
-                  {
-                    "Target": {
-                      "Type": "GameObject",
-                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
-                    },
-                    "Property": "Name",
-                    "Value": "cliffa (12)"
-                  },
-                  {
-                    "Target": {
-                      "Type": "GameObject",
-                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
-                    },
-                    "Property": "Position",
-                    "Value": "1325.7041,-2984.88916,0"
-                  },
-                  {
-                    "Target": {
-                      "Type": "GameObject",
-                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
-                    },
-                    "Property": "Rotation",
-                    "Value": "0,0,0.730441868,0.682974637"
-                  },
-                  {
-                    "Target": {
-                      "Type": "GameObject",
-                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
-                    },
-                    "Property": "Scale",
-                    "Value": "1,1,1.35250449"
-                  }
-                ],
-                "MovedObjects": []
-              },
-              "__PrefabIdToInstanceId": {
-                "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a": "a18e6fdf-05de-4766-be21-7dfbdc0ec993",
-                "bb25a24e-c284-586e-9fb8-f5689a9a6838": "f1bb1ea6-c064-4616-b0c6-3879da875abf",
-                "c634b64f-c86d-4abe-be0a-c8a3f98975e1": "b9e119de-cb3a-4249-ac7c-db8de889ab12"
-              }
-            },
-            {
-              "__guid": "2895bda2-e4f8-43a4-ac6c-c0cb0e6182e7",
-              "__version": 2,
-              "__Prefab": "3rdparty/lowpolynature/prefabs/env/cliffs/cliffa.prefab",
-              "__PrefabInstancePatch": {
-                "AddedObjects": [],
-                "RemovedObjects": [],
-                "PropertyOverrides": [
-                  {
-                    "Target": {
-                      "Type": "GameObject",
-                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
-                    },
-                    "Property": "Name",
-                    "Value": "cliffa (13)"
-                  },
-                  {
-                    "Target": {
-                      "Type": "GameObject",
-                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
-                    },
-                    "Property": "Position",
-                    "Value": "1975.16235,-3241.38501,12.9192524"
-                  },
-                  {
-                    "Target": {
-                      "Type": "GameObject",
-                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
-                    },
-                    "Property": "Rotation",
-                    "Value": "0,0,0.730441868,0.682974637"
-                  }
-                ],
-                "MovedObjects": []
-              },
-              "__PrefabIdToInstanceId": {
-                "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a": "2895bda2-e4f8-43a4-ac6c-c0cb0e6182e7",
-                "bb25a24e-c284-586e-9fb8-f5689a9a6838": "b18c5789-8731-47e8-9b3b-0efe21829529",
-                "c634b64f-c86d-4abe-be0a-c8a3f98975e1": "cb93e6c3-2539-41ee-a964-d521a6e3d140"
-              }
-            },
-            {
               "__guid": "32c2b507-b966-430a-8552-fcb8fdb3d114",
               "__version": 2,
               "__Prefab": "3rdparty/lowpolynature/prefabs/env/cliffs/cliffa.prefab",
@@ -99671,7 +99532,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1,1.14317083"
+                    "Value": "1,1,1.5043335"
                   }
                 ],
                 "MovedObjects": []
@@ -99720,7 +99581,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1,1.14203942"
+                    "Value": "1,1,1.56706512"
                   }
                 ],
                 "MovedObjects": []
@@ -99729,96 +99590,6 @@
                 "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a": "20b3d4dc-bb7f-436a-96a5-8d724492f575",
                 "bb25a24e-c284-586e-9fb8-f5689a9a6838": "afe4a29a-0d7e-4ecb-8921-47f864f39410",
                 "c634b64f-c86d-4abe-be0a-c8a3f98975e1": "214b16d7-c2ed-4d88-a50f-bfe8c463b641"
-              }
-            },
-            {
-              "__guid": "15be48cd-d41b-4250-98e8-9b72b4a08c1b",
-              "__version": 2,
-              "__Prefab": "3rdparty/lowpolynature/prefabs/env/cliffs/cliffa.prefab",
-              "__PrefabInstancePatch": {
-                "AddedObjects": [],
-                "RemovedObjects": [],
-                "PropertyOverrides": [
-                  {
-                    "Target": {
-                      "Type": "GameObject",
-                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
-                    },
-                    "Property": "Name",
-                    "Value": "cliffa (16)"
-                  },
-                  {
-                    "Target": {
-                      "Type": "GameObject",
-                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
-                    },
-                    "Property": "Position",
-                    "Value": "3595.02246,-2550.69751,12.9206352"
-                  },
-                  {
-                    "Target": {
-                      "Type": "GameObject",
-                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
-                    },
-                    "Property": "Rotation",
-                    "Value": "0,0,0.877277493,0.479983121"
-                  }
-                ],
-                "MovedObjects": []
-              },
-              "__PrefabIdToInstanceId": {
-                "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a": "15be48cd-d41b-4250-98e8-9b72b4a08c1b",
-                "bb25a24e-c284-586e-9fb8-f5689a9a6838": "31a18ad5-2086-44a4-9505-0d9673200a29",
-                "c634b64f-c86d-4abe-be0a-c8a3f98975e1": "8bea99ad-c416-4ea1-a195-2266b07d62e3"
-              }
-            },
-            {
-              "__guid": "f4b34a9e-28d0-48d9-bf69-077b1777475a",
-              "__version": 2,
-              "__Prefab": "3rdparty/lowpolynature/prefabs/env/cliffs/cliffa.prefab",
-              "__PrefabInstancePatch": {
-                "AddedObjects": [],
-                "RemovedObjects": [],
-                "PropertyOverrides": [
-                  {
-                    "Target": {
-                      "Type": "GameObject",
-                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
-                    },
-                    "Property": "Name",
-                    "Value": "cliffa (17)"
-                  },
-                  {
-                    "Target": {
-                      "Type": "GameObject",
-                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
-                    },
-                    "Property": "Position",
-                    "Value": "3823.15015,-2134.34717,12.9185534"
-                  },
-                  {
-                    "Target": {
-                      "Type": "GameObject",
-                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
-                    },
-                    "Property": "Rotation",
-                    "Value": "0,0,0.877277493,0.479983121"
-                  },
-                  {
-                    "Target": {
-                      "Type": "GameObject",
-                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
-                    },
-                    "Property": "Scale",
-                    "Value": "1,1,1.51993442"
-                  }
-                ],
-                "MovedObjects": []
-              },
-              "__PrefabIdToInstanceId": {
-                "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a": "f4b34a9e-28d0-48d9-bf69-077b1777475a",
-                "bb25a24e-c284-586e-9fb8-f5689a9a6838": "afd26a10-4ec5-4043-9626-6757d992d4b8",
-                "c634b64f-c86d-4abe-be0a-c8a3f98975e1": "0feb5979-2aa2-4e4f-959f-6177243f4e53"
               }
             },
             {
@@ -99859,7 +99630,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1,1.69110787"
+                    "Value": "1,1,1.90736747"
                   }
                 ],
                 "MovedObjects": []
@@ -99908,7 +99679,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1,1.85667801"
+                    "Value": "1,1,1.96131885"
                   }
                 ],
                 "MovedObjects": []
@@ -103167,7 +102938,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1.75923896,1.23730445"
+                    "Value": "1,1.75923896,1.67517483"
                   }
                 ],
                 "MovedObjects": []
@@ -103216,7 +102987,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,2.19292283,1.23730445"
+                    "Value": "1,2.19292283,1.52096689"
                   }
                 ],
                 "MovedObjects": []
@@ -103265,7 +103036,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,2.19545889,1.23730445"
+                    "Value": "1,2.19545889,1.41380215"
                   }
                 ],
                 "MovedObjects": []
@@ -104920,90 +104691,6 @@
               }
             },
             {
-              "__guid": "109c9753-aa8f-499b-947b-c27ad94fb7b4",
-              "__version": 2,
-              "__Prefab": "3rdparty/lowpolynature/prefabs/env/cliffs/cliffc.prefab",
-              "__PrefabInstancePatch": {
-                "AddedObjects": [],
-                "RemovedObjects": [],
-                "PropertyOverrides": [
-                  {
-                    "Target": {
-                      "Type": "GameObject",
-                      "IdValue": "e2ae4429-4667-52be-ab34-3588f586ee50"
-                    },
-                    "Property": "Name",
-                    "Value": "cliffc (1)"
-                  },
-                  {
-                    "Target": {
-                      "Type": "GameObject",
-                      "IdValue": "e2ae4429-4667-52be-ab34-3588f586ee50"
-                    },
-                    "Property": "Position",
-                    "Value": "40.9611816,-2730.22485,0"
-                  },
-                  {
-                    "Target": {
-                      "Type": "GameObject",
-                      "IdValue": "e2ae4429-4667-52be-ab34-3588f586ee50"
-                    },
-                    "Property": "Rotation",
-                    "Value": "0,0,0.535769939,0.844363928"
-                  },
-                  {
-                    "Target": {
-                      "Type": "GameObject",
-                      "IdValue": "e2ae4429-4667-52be-ab34-3588f586ee50"
-                    },
-                    "Property": "Scale",
-                    "Value": "1,1,0.813892961"
-                  }
-                ],
-                "MovedObjects": []
-              },
-              "__PrefabIdToInstanceId": {
-                "e2ae4429-4667-52be-ab34-3588f586ee50": "109c9753-aa8f-499b-947b-c27ad94fb7b4",
-                "29066a2f-84aa-53b3-a8c0-21cd78f44139": "5b000ec6-0497-4d6b-8d99-0ebc9c07ca56",
-                "6240b25a-99a6-53cf-af22-76405cdb38b5": "dfca5eef-e95c-4379-bc6e-c5c35a233b04",
-                "5dd3adb3-a25a-57bd-b70f-7612ecf614ee": "cbf03049-ee1e-4a61-a6a6-211b02ad0e6d"
-              }
-            },
-            {
-              "__guid": "1328412b-3912-4947-832c-391809a01572",
-              "__version": 2,
-              "__Prefab": "3rdparty/lowpolynature/prefabs/env/cliffs/cliffd.prefab",
-              "__PrefabInstancePatch": {
-                "AddedObjects": [],
-                "RemovedObjects": [],
-                "PropertyOverrides": [
-                  {
-                    "Target": {
-                      "Type": "GameObject",
-                      "IdValue": "ab8550cf-c2f4-5734-af80-c62b2d807de4"
-                    },
-                    "Property": "Position",
-                    "Value": "1959.18994,-3127.53687,0"
-                  },
-                  {
-                    "Target": {
-                      "Type": "GameObject",
-                      "IdValue": "ab8550cf-c2f4-5734-af80-c62b2d807de4"
-                    },
-                    "Property": "Rotation",
-                    "Value": "0,0,0.776997447,0.629503489"
-                  }
-                ],
-                "MovedObjects": []
-              },
-              "__PrefabIdToInstanceId": {
-                "ab8550cf-c2f4-5734-af80-c62b2d807de4": "1328412b-3912-4947-832c-391809a01572",
-                "67be952d-96cb-5dd1-b50e-6b217c5e8c31": "c5942bd6-7b60-4d81-b840-429f993e09d4",
-                "ccf25a12-6b91-5386-b380-4cde224f688e": "13134b6b-eb76-4583-87ae-ce383bfa3557",
-                "059513bc-58f7-54d5-ae13-e6ad251efd56": "893d5dbf-99da-4ef5-bc47-d4afa9f505ad"
-              }
-            },
-            {
               "__guid": "5d4dc5a0-a40b-4be7-b5d7-d94a948a3734",
               "__version": 2,
               "__Prefab": "3rdparty/lowpolynature/prefabs/env/cliffs/cliffa.prefab",
@@ -105041,7 +104728,7 @@
                       "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
                     },
                     "Property": "Scale",
-                    "Value": "1,1.79439306,0.912953556"
+                    "Value": "1,1.79439306,1.83628941"
                   }
                 ],
                 "MovedObjects": []
@@ -105050,6 +104737,594 @@
                 "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a": "5d4dc5a0-a40b-4be7-b5d7-d94a948a3734",
                 "bb25a24e-c284-586e-9fb8-f5689a9a6838": "50fe4049-655e-4912-b61e-20720f967185",
                 "c634b64f-c86d-4abe-be0a-c8a3f98975e1": "6f24a450-0894-431c-8071-db52b1dcb3f6"
+              }
+            },
+            {
+              "__guid": "5d650f87-fd92-48e9-9dd8-10cd5978ea6d",
+              "__version": 2,
+              "__Prefab": "3rdparty/lowpolynature/prefabs/env/cliffs/cliffa.prefab",
+              "__PrefabInstancePatch": {
+                "AddedObjects": [],
+                "RemovedObjects": [],
+                "PropertyOverrides": [
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Name",
+                    "Value": "cliffa (29)"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Position",
+                    "Value": "2632.13232,-3560.69067,-1.51991844E-05"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Rotation",
+                    "Value": "0,0,-0.906307817,0.42261824"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Scale",
+                    "Value": "1,1.79439306,1.5903343"
+                  }
+                ],
+                "MovedObjects": []
+              },
+              "__PrefabIdToInstanceId": {
+                "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a": "5d650f87-fd92-48e9-9dd8-10cd5978ea6d",
+                "bb25a24e-c284-586e-9fb8-f5689a9a6838": "9029e97e-c9cb-4b48-8802-77f33d70e0fb",
+                "c634b64f-c86d-4abe-be0a-c8a3f98975e1": "237471dc-8d3a-4f5e-a5be-d23f5c93ecb1"
+              }
+            },
+            {
+              "__guid": "1eaac7e7-0509-4a0b-b875-c733ae724a9f",
+              "__version": 2,
+              "__Prefab": "3rdparty/lowpolynature/prefabs/env/cliffs/cliffa.prefab",
+              "__PrefabInstancePatch": {
+                "AddedObjects": [],
+                "RemovedObjects": [],
+                "PropertyOverrides": [
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Name",
+                    "Value": "cliffa (29)"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Position",
+                    "Value": "-1359.31238,-3427.45459,-1.52289867E-05"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Rotation",
+                    "Value": "0,0,-0.866025269,0.500000358"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Scale",
+                    "Value": "1,1.79439306,1.54287529"
+                  }
+                ],
+                "MovedObjects": []
+              },
+              "__PrefabIdToInstanceId": {
+                "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a": "1eaac7e7-0509-4a0b-b875-c733ae724a9f",
+                "bb25a24e-c284-586e-9fb8-f5689a9a6838": "6611373b-3ed9-411f-b6d7-c37880046d87",
+                "c634b64f-c86d-4abe-be0a-c8a3f98975e1": "580553f4-462d-441d-a15c-2c70305016ca"
+              }
+            },
+            {
+              "__guid": "8a6eb173-116b-4a97-a052-d89690cab4de",
+              "__version": 2,
+              "__Prefab": "3rdparty/lowpolynature/prefabs/env/cliffs/cliffa.prefab",
+              "__PrefabInstancePatch": {
+                "AddedObjects": [],
+                "RemovedObjects": [],
+                "PropertyOverrides": [
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Name",
+                    "Value": "cliffa (29)"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Position",
+                    "Value": "-2457.12988,-1546.09656,-0.00387102365"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Rotation",
+                    "Value": "0,0,-0.923879504,0.382683426"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Scale",
+                    "Value": "1,1.79439306,2.06608152"
+                  }
+                ],
+                "MovedObjects": []
+              },
+              "__PrefabIdToInstanceId": {
+                "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a": "8a6eb173-116b-4a97-a052-d89690cab4de",
+                "bb25a24e-c284-586e-9fb8-f5689a9a6838": "533ef386-6561-4c4e-87cb-b0bdb9c7b766",
+                "c634b64f-c86d-4abe-be0a-c8a3f98975e1": "2d093bf4-e4c6-454d-893c-b90fe745f4bb"
+              }
+            },
+            {
+              "__guid": "fb44bedd-61d1-491a-8023-71d69591dd9b",
+              "__version": 2,
+              "__Prefab": "3rdparty/lowpolynature/prefabs/env/cliffs/cliffa.prefab",
+              "__PrefabInstancePatch": {
+                "AddedObjects": [],
+                "RemovedObjects": [],
+                "PropertyOverrides": [
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Name",
+                    "Value": "cliffa (29)"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Position",
+                    "Value": "-242.970215,-3438.67285,-1.52289867E-05"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Rotation",
+                    "Value": "0,0,-0.5,0.866025805"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Scale",
+                    "Value": "1,1.79439306,1.53421628"
+                  }
+                ],
+                "MovedObjects": []
+              },
+              "__PrefabIdToInstanceId": {
+                "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a": "fb44bedd-61d1-491a-8023-71d69591dd9b",
+                "bb25a24e-c284-586e-9fb8-f5689a9a6838": "dc35f5b9-8737-4b74-a39f-2327b24ebf8c",
+                "c634b64f-c86d-4abe-be0a-c8a3f98975e1": "ce92821f-9aa8-4743-97c8-353880f40016"
+              }
+            },
+            {
+              "__guid": "6bb5a223-b815-416d-83db-6e25637e33ce",
+              "__version": 2,
+              "__Prefab": "3rdparty/lowpolynature/prefabs/env/cliffs/cliffa.prefab",
+              "__PrefabInstancePatch": {
+                "AddedObjects": [],
+                "RemovedObjects": [],
+                "PropertyOverrides": [
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Name",
+                    "Value": "cliffa (29)"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Position",
+                    "Value": "3691.45068,-3646.84473,-1.52289867E-05"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Rotation",
+                    "Value": "0,0,-0.5,0.866025805"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Scale",
+                    "Value": "1,1.79439306,1.52241433"
+                  }
+                ],
+                "MovedObjects": []
+              },
+              "__PrefabIdToInstanceId": {
+                "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a": "6bb5a223-b815-416d-83db-6e25637e33ce",
+                "bb25a24e-c284-586e-9fb8-f5689a9a6838": "c0276883-2e82-4c8d-aa4e-7dac422f9e1b",
+                "c634b64f-c86d-4abe-be0a-c8a3f98975e1": "a9f43cd6-283f-4351-a800-243701dc1914"
+              }
+            },
+            {
+              "__guid": "489ee654-9529-4501-bbf4-085c4471be81",
+              "__version": 2,
+              "__Prefab": "3rdparty/lowpolynature/prefabs/env/cliffs/cliffa.prefab",
+              "__PrefabInstancePatch": {
+                "AddedObjects": [],
+                "RemovedObjects": [],
+                "PropertyOverrides": [
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Name",
+                    "Value": "cliffa (29)"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Position",
+                    "Value": "4730.74951,-1458.98352,-1.52587891E-05"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Rotation",
+                    "Value": "0,0,-0.382683456,0.923879504"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Scale",
+                    "Value": "1,1.79439306,1.91295695"
+                  }
+                ],
+                "MovedObjects": []
+              },
+              "__PrefabIdToInstanceId": {
+                "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a": "489ee654-9529-4501-bbf4-085c4471be81",
+                "bb25a24e-c284-586e-9fb8-f5689a9a6838": "6ec7432b-795d-4060-85c9-8d7c67c2ca84",
+                "c634b64f-c86d-4abe-be0a-c8a3f98975e1": "73172e45-689f-43a5-8286-9df1fb9e6eaf"
+              }
+            },
+            {
+              "__guid": "00b2e3d6-131d-4e21-ac74-ffac5ee4b925",
+              "__version": 2,
+              "__Prefab": "3rdparty/lowpolynature/prefabs/env/cliffs/cliffa.prefab",
+              "__PrefabInstancePatch": {
+                "AddedObjects": [],
+                "RemovedObjects": [],
+                "PropertyOverrides": [
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Name",
+                    "Value": "cliffa (29)"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Position",
+                    "Value": "-5129.85645,-1471.87378,-0.00100201368"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Rotation",
+                    "Value": "0,0,-0.382683456,0.923879504"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Scale",
+                    "Value": "1,1.79439306,2.56702709"
+                  }
+                ],
+                "MovedObjects": []
+              },
+              "__PrefabIdToInstanceId": {
+                "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a": "00b2e3d6-131d-4e21-ac74-ffac5ee4b925",
+                "bb25a24e-c284-586e-9fb8-f5689a9a6838": "2fb27971-e595-41b5-a365-4d5036957ebc",
+                "c634b64f-c86d-4abe-be0a-c8a3f98975e1": "78224757-1bc6-44e7-bfaf-14d21abe3d30"
+              }
+            },
+            {
+              "__guid": "6f88f9c1-d4e6-42e7-9bb2-7ee3054afc88",
+              "__version": 2,
+              "__Prefab": "3rdparty/lowpolynature/prefabs/env/cliffs/cliffa.prefab",
+              "__PrefabInstancePatch": {
+                "AddedObjects": [],
+                "RemovedObjects": [],
+                "PropertyOverrides": [
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Name",
+                    "Value": "cliffa (29)"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Position",
+                    "Value": "7306.10352,-1465.22607,-1.52587891E-05"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Rotation",
+                    "Value": "0,0,-0.923880219,0.382681638"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Scale",
+                    "Value": "1,1.79439306,2.11588979"
+                  }
+                ],
+                "MovedObjects": []
+              },
+              "__PrefabIdToInstanceId": {
+                "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a": "6f88f9c1-d4e6-42e7-9bb2-7ee3054afc88",
+                "bb25a24e-c284-586e-9fb8-f5689a9a6838": "f379b8fd-cfb6-4c82-907b-e955392be2c6",
+                "c634b64f-c86d-4abe-be0a-c8a3f98975e1": "a5985084-1c11-440f-a5d8-6b79b9f83a41"
+              }
+            },
+            {
+              "__guid": "2832c542-b794-488b-82aa-52f15951bdc3",
+              "__version": 2,
+              "__Prefab": "3rdparty/lowpolynature/prefabs/env/cliffs/cliffa.prefab",
+              "__PrefabInstancePatch": {
+                "AddedObjects": [],
+                "RemovedObjects": [],
+                "PropertyOverrides": [
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Name",
+                    "Value": "cliffa (29)"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Position",
+                    "Value": "5980.12354,-902.192139,-1.52289867E-05"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Rotation",
+                    "Value": "0,0,-0.707107246,0.707106352"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Scale",
+                    "Value": "1,2.07792854,2.12195706"
+                  }
+                ],
+                "MovedObjects": []
+              },
+              "__PrefabIdToInstanceId": {
+                "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a": "2832c542-b794-488b-82aa-52f15951bdc3",
+                "bb25a24e-c284-586e-9fb8-f5689a9a6838": "36fd5ce7-3e73-4076-8e55-413b9e758335",
+                "c634b64f-c86d-4abe-be0a-c8a3f98975e1": "29d4d22e-7ee8-4d12-a824-4a7debab9321"
+              }
+            },
+            {
+              "__guid": "c5b697aa-34a1-4a41-81b2-8eeb49b3c06d",
+              "__version": 2,
+              "__Prefab": "3rdparty/lowpolynature/prefabs/env/cliffs/cliffa.prefab",
+              "__PrefabInstancePatch": {
+                "AddedObjects": [],
+                "RemovedObjects": [],
+                "PropertyOverrides": [
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Name",
+                    "Value": "cliffa (29)"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Position",
+                    "Value": "-3849.70752,-902.179688,-1.52289867E-05"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Rotation",
+                    "Value": "0,0,-0.707107246,0.707106352"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Scale",
+                    "Value": "1,2.07792854,2.62011456"
+                  }
+                ],
+                "MovedObjects": []
+              },
+              "__PrefabIdToInstanceId": {
+                "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a": "c5b697aa-34a1-4a41-81b2-8eeb49b3c06d",
+                "bb25a24e-c284-586e-9fb8-f5689a9a6838": "1d5bef60-13e9-405d-847f-938e1dd7367d",
+                "c634b64f-c86d-4abe-be0a-c8a3f98975e1": "dd3b6b56-2f5f-4281-a9d5-330239a2dd60"
+              }
+            },
+            {
+              "__guid": "c2e3cd77-e7d6-4bdf-9c79-d554f0935224",
+              "__version": 2,
+              "__Prefab": "3rdparty/lowpolynature/prefabs/env/cliffs/cliffa.prefab",
+              "__PrefabInstancePatch": {
+                "AddedObjects": [],
+                "RemovedObjects": [],
+                "PropertyOverrides": [
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Name",
+                    "Value": "cliffa (29)"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Position",
+                    "Value": "4261.89844,-2614.75024,-1.52289858E-05"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Rotation",
+                    "Value": "0,0,2.33948231E-06,1.00000036"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Scale",
+                    "Value": "1,1.79439306,1.54104245"
+                  }
+                ],
+                "MovedObjects": []
+              },
+              "__PrefabIdToInstanceId": {
+                "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a": "c2e3cd77-e7d6-4bdf-9c79-d554f0935224",
+                "bb25a24e-c284-586e-9fb8-f5689a9a6838": "0cda7dea-1e8b-4ce8-850e-5283ae5c1fd3",
+                "c634b64f-c86d-4abe-be0a-c8a3f98975e1": "d91d913c-ba54-4d38-ab24-8d132920b0db"
+              }
+            },
+            {
+              "__guid": "97f5a6d7-4b53-4c31-ab87-2c93d12623bb",
+              "__version": 2,
+              "__Prefab": "3rdparty/lowpolynature/prefabs/env/cliffs/cliffa.prefab",
+              "__PrefabInstancePatch": {
+                "AddedObjects": [],
+                "RemovedObjects": [],
+                "PropertyOverrides": [
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Name",
+                    "Value": "cliffa (29)"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Position",
+                    "Value": "-1907.5542,-2394.7854,-1.52289867E-05"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Rotation",
+                    "Value": "0,0,-1,2.90572643E-06"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a"
+                    },
+                    "Property": "Scale",
+                    "Value": "1,1.79439306,1.56604135"
+                  }
+                ],
+                "MovedObjects": []
+              },
+              "__PrefabIdToInstanceId": {
+                "bfd2b8c7-a870-5731-9766-9ac4d5b9b75a": "97f5a6d7-4b53-4c31-ab87-2c93d12623bb",
+                "bb25a24e-c284-586e-9fb8-f5689a9a6838": "1e0c2d99-6846-4c35-b8fe-bb26e65bbd1e",
+                "c634b64f-c86d-4abe-be0a-c8a3f98975e1": "4f19d711-3953-469d-884a-95d9301ed816"
               }
             }
           ]
@@ -105737,7 +106012,7 @@
                   "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
                 },
                 "Property": "Position",
-                "Value": "-2484.198,7729.37207,322.035492"
+                "Value": "-2664.99829,7632.81348,321.915558"
               },
               {
                 "Target": {
@@ -105821,7 +106096,7 @@
                   "IdValue": "89ee0e75-1747-55e2-8310-2400518a4ec3"
                 },
                 "Property": "Position",
-                "Value": "-2838.50098,8014.53223,322.434448"
+                "Value": "-2983.38281,7959.80664,322.368591"
               },
               {
                 "Target": {
@@ -106117,7 +106392,7 @@
                   "IdValue": "5ab1e78a-4b7b-5bfa-b12a-6c058d688c90"
                 },
                 "Property": "Position",
-                "Value": "-485.06543,-2203.99072,9.99796104"
+                "Value": "-740.982361,-2567.52148,9.99796104"
               }
             ],
             "MovedObjects": []
@@ -107153,7 +107428,7 @@
                   "IdValue": "25c93914-0bcc-5ad4-896e-a0c86ef04819"
                 },
                 "Property": "Position",
-                "Value": "-569.590393,-1978.59387,10.2285147"
+                "Value": "-685.845825,-2109.95508,10.2285147"
               }
             ],
             "MovedObjects": []
@@ -109472,7 +109747,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACm2QWQpDMQwD5/V1Sfd9uf9Jy1AZ/NGAIXYkRfIAPsCa31kAy/Qn4ADsgAFMKTH9XDKz5vBp2Hvm1urPX8/G2TTdOdh3423jZwp2AK/wxezj2XfxYh/N1zG5fBcv9hYv6p1bVvFir8Hae1ejdmB2eb7LMWvldqa2nvzfmVlrF/rTm5nUdlZZ7dU1m54qf3mvXbqvL2CVAknEAQAA",
+            "Topology": "H4sIAAAAAAAACm2Q2Q7CQAwDBwq0nC03//+ji0Z4pTywUqRN4jh2JuAD7Pi9NbBJfgFOwAGYgFVCTH1LasaQeQr2nrqx/bPrWWbGwjsE+y5z++hprbUxul6ZF3OMZvvixT6KrnN82Rcv9hYt8s3htC9e7DXc5v7l6DfQu3P29avX7tua3GpyvzW99luoT216ktta92our97U1P2rS/5+S+/1BVPlhWvEAQAA",
             "Positions": [
               "-4085.40796,12941.0391,0.0883178711",
               "4885.63867,13237.1621,0.0883169174",
@@ -109482,6 +109757,182 @@
               "4885.63818,13268.1836,10.0883169",
               "4883.53223,3752.31738,-2.56555223",
               "-4339.375,3880.70386,19.7872314"
+            ],
+            "Blends": [
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0"
+            ],
+            "Colors": [
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0"
+            ],
+            "TextureCoord": [
+              "11.073513,-10.8850822",
+              "7.91764498,-2.009938",
+              "11.0694418,7.70059681",
+              "11.5468082,1.85986435",
+              "-6.94404984,7.45268345",
+              "12.050683,2.72540379",
+              "-6.44806242,-10.3067169",
+              "8.29058266,-2.37693977",
+              "11.0693989,7.64000511",
+              "-5.70019293,2.95158696",
+              "11.0735121,-10.9456711",
+              "-6.6808672,1.9185096",
+              "-6.44806242,-10.3701515",
+              "-9.15669346,-2.0728488",
+              "-6.9440918,7.38925028",
+              "-8.90752792,-3.6080873",
+              "7.9266305,-2.02946925",
+              "-8.84437752,-3.58855605",
+              "-9.16531754,-2.05411792",
+              "11.6062202,1.84034133",
+              "-6.74028015,1.93803442",
+              "12.042757,2.70667219",
+              "-5.69191456,2.9711175",
+              "8.22743797,-2.39648867"
+            ],
+            "MaterialIndex": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "EdgeFlags": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Materials": [
+              "3rdparty/bk-prod.fr/pure meadows 2/materials/grass1/grass01.vmat"
+            ]
+          },
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RenderType": "On",
+          "RollingResistance": null,
+          "SmoothingAngle": 40,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "af577ec6-d423-4774-a200-3befa376b72b",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "Polygon (4)",
+      "Position": "1057.13184,846.250488,13.6108398",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "world",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.MeshComponent",
+          "__guid": "48822804-c3f0-465c-bb9d-cf91c92cd927",
+          "__enabled": true,
+          "Flags": 0,
+          "ColliderFlags": 0,
+          "Collision": "Mesh",
+          "Color": "1,1,1,1",
+          "Elasticity": null,
+          "Friction": null,
+          "HideInGame": false,
+          "IsTrigger": false,
+          "Mesh": {
+            "Topology": "H4sIAAAAAAAACsXPywrCUBRD0SXYWutr6v//aGXDFaQ41gxPdkLOgidmbDvdcMEZjy/+rzWPLSsOOGH52DaNvdfhx8eWyT+in+7Dj48tk19fXXXmx8eW+ffvb7Vnf3sBP4TwW8QBAAA=",
+            "Positions": [
+              "-4085.40796,12941.0391,0.0883178711",
+              "4885.63867,13237.1621,0.0883169174",
+              "4883.5542,3721.29443,-12.564393",
+              "-4339.35352,3848.22607,9.78753662",
+              "-4358.54004,4463.26758,1.47747803",
+              "4612.50635,4757.93359,1.47747707",
+              "4610.40039,-4757.93262,-11.1763916",
+              "-4612.50684,-4629.5459,11.1763916"
             ],
             "Blends": [
               "0,0,0,0",
@@ -110527,7 +110978,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACk2Uh24UQRAFax0P8NnkYILJ2RiDwWAcyfn/PweVqJN2pZZvWjUzPa9fex34C6zx/5sDFoAlYAKcBlaAVeAscB64CFwGrgKvgJfAC+A58BR4DDwE7gN3gdvALeAGsA4MhXeNv51yxnx1MGJ3yxuL1Tiu+X1/jeXqJ172Q/uMU72NeNmDOONM7yZe9qhzjWmaEC970jmT9FQv4mU/da9xLi2Jl/3SPcaFdCZe9lt1GZfqAfGyP6rDuFJ/iJf9Vd1+10a6r8T+qU5/X69fQ6x9+91+z75ZT4d42Z+d5V0b9X2Il/0+qv1O3hjiZb+O3nIv/wzxsp/TQm0e5LEhXvZjWqrVo3w4xMse1wu1f5JXh3jZw3ppL57l5yFedj8v2NvNPD/Ey+7lJTXcai6GeNl3eVENt5udIV72bV5W79ejWZnGvomd9nt7NEM77Vttz+5oblY7e6v755qV2SytVdtm9c+PZmWh9+2lySx3kJaL6bOfpkvljurVUvoe1pPlcid5Ybn+HNfTSTlnxXe6tr/2Vk94pjlnxbpd6w+9oaf0jzlnxbpc6y+9pSe905yz4r2u9afe1NP615yz4rmz2dDbzoQ1mXNW3Oda3Z0Nezabn1lvZ/+rfJN1ebZ7rN36rMF7PMuZ/AcmzvUJkAUAAA==",
+            "Topology": "H4sIAAAAAAAACk2UiVIUUQxFz7DMPtOjouKGu7ihoiiK7PsqogLq/3+IdcvTVa+rUtOTvslLbm7eDPAXuML/ZwyYAJpAG+gCfWAIjICrwBRwA5gG3gOXwBvgNfASeA6cA0+AR8AD4BS4C9wGvgHfgV/ABdDQcnb5LOiLjVsXBXZRf2zSmssevvgba9kP4oP9alysY6+ID3ZFXKwnD4gPds28sYEcIT7YDfPEKvlDfLBbntuR/3CL+GB3PCd2Td4RH+yedcWuOxPEB3tgHbGbzgvxwR5Zd55bBe99sSfWmfc7zq8SmzkeG5/3e8BPv0+LPTRXzrqvDhrWMgPsF7U/VCsN8cHuFr08Vk8N8cFuy0Vqewr88PuU2E25DFez6nIkl8+AdWcR7l+o3Vrjwa46y/heqe+R+GCX1UJ6nnMHRlqwS2op3LwF/vitEvtZLYbDeXepkvN3wCe1HL4/yHMlPtiPYge+zxc7tGDcUE4Wi70ZmvvS88fclXqXKmubs/7xYlcm7GFJTmrfilxOys+ynDb1rTmrpvyuOpOWvg210HI+694hbX1b9tl2vptqoqNvx7o76mNbTXX17VlXV33tqsmevgPP7anPfe+svr4j89a7cajuBvpOjBvI+7EzG+o/VfOZQX0HRheJza6cAb/tIXlzP0bT6S347FZiEp/v0XowwafucBVNZzbJl7s1OROfGjLraCr4nJt7N5rMbPM/2owv3xOfWpIj+dJvvVv1XZuZhNdwk54TF35TS3hKz+EheZL7H/DmdvloBgAA",
             "Positions": [
               "-4679.65088,947.247986,65.5541534",
               "-3526.83081,1848.87451,-8.00777912",
@@ -110554,9 +111005,25 @@
               "-4419.5957,-4198.96045,360.17276",
               "-3541.05176,-3349.31958,295.937714",
               "-3651.66846,-1822.58789,203.047012",
-              "-4665.21582,-1030.26575,183.679977"
+              "-4665.21582,-1030.26575,183.679977",
+              "-3616.66406,-2305.72119,232.44223",
+              "4407.17041,-2252.28809,59.2337646",
+              "4469.0376,2395.10132,-178.495697",
+              "-3523.27148,2338.50366,-22.7139759"
             ],
             "Blends": [
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
               "0,0,0,0",
               "0,0,0,0",
               "0,0,0,0",
@@ -110714,89 +111181,115 @@
               "0,0,0,0",
               "0,0,0,0",
               "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
               "0,0,0,0"
             ],
             "TextureCoord": [
-              "9.98671246,-14.5576115",
+              "9.98671627,-14.5574865",
               "-9.77065945,-0.240419388",
-              "10.0037098,-16.9557552",
-              "-14.5790434,-0.0967376828",
-              "7.66004753,-19.0989685",
-              "-2.5757792,0.0243034959",
-              "7.70502281,-22.1097603",
-              "-19.1229134,0.0789790154",
-              "9.99416447,-24.0359955",
-              "-16.5883312,0.21963802",
-              "25.7102547,-24.0042057",
-              "-9.00122643,0.297452241",
+              "10.0037146,-16.9556351",
+              "-14.5790462,-0.0967376232",
+              "7.66005373,-19.0988388",
+              "-2.57577801,0.0243035555",
+              "7.70502901,-22.1096439",
+              "-19.1229153,0.0789790154",
+              "9.99416733,-24.0359478",
+              "-14.5883255,0.219637841",
+              "25.7102566,-24.0042076",
+              "-9.00122738,0.29745236",
               "25.3711357,1.78772545",
-              "26.0029087,0.684856772",
-              "8.43930721,2.17796087",
-              "25.3613701,-0.634939313",
-              "8.24545574,-2.74595809",
-              "2.19772148,-0.100165606",
-              "9.96087551,-4.40461159",
-              "-5.28195095,-0.735455096",
-              "9.74346733,-7.38807917",
+              "26.0029087,0.684856534",
+              "8.43930912,2.17796087",
+              "25.361372,-0.634939313",
+              "8.24546051,-2.74587822",
+              "2.19772148,-0.100165725",
+              "9.96088123,-4.40453815",
+              "-5.28194952,-0.735455334",
+              "9.7434721,-7.38797474",
               "-3.43462276,0.372934222",
-              "7.76414728,-8.93553734",
-              "2.12113547,-0.488538861",
-              "7.73558807,-12.7974167",
-              "-8.9376564,-0.451601386",
-              "9.74348545,-7.38799858",
+              "7.76415253,-8.93542004",
+              "2.12113523,-0.488538623",
+              "7.7355938,-12.7972841",
+              "-8.93765736,-0.451601207",
+              "9.74348831,-7.38789368",
               "0.0703620911,-0.471150398",
-              "9.95902634,-4.40524673",
-              "-6.41173315,0.514433503",
-              "8.24354172,-2.74651098",
+              "9.8116951,-6.4440136",
+              "-6.41173267,0.514433444",
+              "8.24354362,-2.74643087",
               "-6.9682827,-0.630908072",
-              "8.43931675,2.17796612",
-              "-2.69229174,0.227311492",
+              "8.4393177,2.17796612",
+              "-2.69229198,0.227311492",
               "25.3711452,1.78772914",
-              "8.43014431,-1.15418005",
-              "25.7102547,-24.0042",
-              "0.22410661,-0.654474199",
-              "9.99416828,-24.0359993",
+              "8.43014431,-1.15418017",
+              "25.4807014,-6.54462719",
+              "0.224106729,-0.654474199",
+              "9.99416924,-24.0359516",
               "-24.7085609,0.665344834",
-              "7.70502758,-22.1097641",
-              "-18.7916164,0.277895212",
-              "7.66005659,-19.0989723",
-              "-22.0933495,0.200084567",
-              "10.0037193,-16.9557571",
-              "-4.83823204,0.059476018",
-              "9.98671722,-14.5576096",
-              "-16.9753685,0.004778862",
-              "7.73543549,-12.7974205",
+              "7.70503044,-22.109642",
+              "-16.7916145,0.277895242",
+              "7.66005945,-19.0988388",
+              "-22.0933514,0.200084537",
+              "10.0037231,-16.955637",
+              "-4.83823156,0.0594760776",
+              "9.9934988,-15.5134563",
+              "-16.9753704,0.004778862",
+              "7.73543882,-12.7972898",
               "-11.8424797,-0.116267264",
-              "7.7639966,-8.93554115",
-              "-12.7974482,-0.259948373",
+              "7.76399994,-8.93542385",
+              "-12.7974482,-0.259948313",
               "-9.77056789,-0.259949684",
-              "-12.7974453,-0.240418315",
+              "-12.7974453,-0.240418255",
               "-11.8424826,-0.0967362523",
-              "-14.5790434,-0.116269827",
-              "-16.9753666,0.0243108869",
-              "-2.57577682,0.0047724247",
-              "-4.83823347,0.0790070891",
-              "-19.1229153,0.0594475269",
+              "-14.5790462,-0.116269886",
+              "-16.9753685,0.0243107677",
+              "-2.57577658,0.0047724843",
+              "-4.83823299,0.0790070295",
+              "-19.1229172,0.0594474673",
               "-22.0933514,0.219616294",
-              "-16.5883293,0.200106591",
-              "-18.7916126,0.297426283",
-              "-9.00122452,0.277921349",
+              "-14.5883284,0.20010668",
+              "-16.7916126,0.297426373",
+              "-9.00122547,0.277921319",
               "-24.7085609,0.684876084",
-              "26.002903,0.665324926",
+              "26.002903,0.665324807",
               "0.224109709,-0.63494271",
               "25.3613625,-0.654470801",
-              "8.43015385,-1.13464844",
-              "2.19790554,-0.11951375",
-              "-2.69184041,0.24674058",
-              "-5.28129435,-0.754883111",
-              "-6.96886492,-0.611475766",
+              "8.43015575,-1.13464844",
+              "2.19790506,-0.119513869",
+              "-2.69184041,0.24674046",
+              "-5.28129387,-0.754883111",
+              "-6.96886444,-0.611475766",
               "-3.43532515,0.353509039",
-              "-6.41188335,0.533784449",
-              "2.12118745,-0.508069754",
-              "0.0704615936,-0.451619625",
-              "-8.93765926,-0.471131444"
+              "-6.41188335,0.533784389",
+              "2.12118721,-0.508069754",
+              "0.0704616904,-0.451619625",
+              "-8.93766022,-0.471131265",
+              "9.9590292,-4.4051733",
+              "-5.46985054,0.463508993",
+              "25.6000023,-15.6185913",
+              "8.55222034,-0.228099108",
+              "9.8116951,-6.4440136",
+              "25.4807014,-6.54462719",
+              "25.7102566,-24.0042",
+              "17.6215611,0.236224681",
+              "9.98671913,-14.5574865",
+              "-15.5342884,-0.0680165887",
+              "9.9934988,-15.5134563",
+              "25.6000023,-15.6185913"
             ],
             "MaterialIndex": [
+              0,
+              0,
               0,
               0,
               0,
@@ -110814,6 +111307,18 @@
               0
             ],
             "EdgeFlags": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
               0,
               0,
               0,
@@ -114911,7 +115416,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "darkdirtlowhilla (17)",
-      "Position": "-1449.69189,7806.39258,330.505615",
+      "Position": "-1630.49219,7709.83398,330.385681",
       "Rotation": "4.40521108E-05,0.000667211716,-0.994628906,0.103501037",
       "Scale": "0.188259631,0.212974772,0.142010704",
       "Tags": "",
@@ -115165,7 +115670,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "darkdirtlowhilla (19)",
-      "Position": "-1803.99487,8091.5542,330.904572",
+      "Position": "-1948.87683,8036.8291,330.838715",
       "Rotation": "4.40521108E-05,0.000667211716,-0.994628906,0.103501037",
       "Scale": "0.188259631,0.212974772,0.142010704",
       "Tags": "",
@@ -116505,6 +117010,11 @@
       "Sandbox.SelectionSetsSystem": {
         "Data": {
           "SelectionSets": []
+        }
+      },
+      "Sandbox.Clutter.ClutterGridSystem": {
+        "Storage": {
+          "$blob": "150bb8ab-f26b-48ef-bd09-70aa07a132c1"
         }
       }
     }
