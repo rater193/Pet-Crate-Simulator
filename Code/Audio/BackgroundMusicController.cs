@@ -272,6 +272,9 @@ public sealed class BackgroundMusicController : Component
 
 	private float GetTargetVolume()
 	{
+		if ( AudioSettings.MusicMuted )
+			return 0f;
+
 		return MathF.Max( 0f, targetVolume * MasterVolume );
 	}
 

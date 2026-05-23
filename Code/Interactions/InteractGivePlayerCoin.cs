@@ -165,7 +165,7 @@ public sealed class InteractGivePlayerCoin : Interactable
 	[Rpc.Broadcast( NetFlags.Unreliable | NetFlags.DiscardOnDelay )]
 	private void PlayDestructibleSound( string soundPath, Vector3 position, float pitch, float volume )
 	{
-		if ( string.IsNullOrWhiteSpace( soundPath ) )
+		if ( string.IsNullOrWhiteSpace( soundPath ) || AudioSettings.SoundMuted )
 			return;
 
 		var handle = Sound.Play( soundPath, position );
