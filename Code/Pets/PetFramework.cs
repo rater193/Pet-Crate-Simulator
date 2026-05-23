@@ -26,13 +26,17 @@ public sealed class PetFramework : Component
 	[Property] public float PetAttackStartDelayStep { get; set; } = 0.12f;
 	[Property, Group( "Auto Battle" )] public bool AutoBattleEnabled { get; set; } = true;
 	[Property, Group( "Auto Battle" )] public float AutoBattleRange { get; set; } = 260f;
+	[Property, Group( "Auto Battle" )] public float AutoBattleScanInterval { get; set; } = 0.25f;
 	[Property] public float GroundTraceHeight { get; set; } = 96f;
 	[Property] public Rotation EquippedPetLocalRotation { get; set; } = Rotation.Identity;
 	[Property] public bool NetworkSpawnEquippedPet { get; set; } = true;
+	[Property] public float PetRefreshInterval { get; set; } = 0.25f;
 
 	private readonly List<PetSlot> equippedPets = new();
 	private GameObject activeAttackTarget;
 	private PlayerController activeAttackOwner;
+	private float refreshTimer;
+	private float autoBattleScanTimer;
 
 	public IReadOnlyList<GameObject> EquippedPets => equippedPets.Select( slot => slot.Pet ).ToList();
 	public GameObject EquippedPet => equippedPets.FirstOrDefault()?.Pet;
@@ -42,8 +46,6 @@ public sealed class PetFramework : Component
 	{
 		get
 		{
-			RefreshEquippedPets();
-
 			var multiplier = 1f;
 			foreach ( var slot in equippedPets )
 			{
@@ -67,7 +69,7 @@ public sealed class PetFramework : Component
 
 	protected override void OnUpdate()
 	{
-		RefreshEquippedPets();
+		TickRefresh();
 
 		if ( IsProxy )
 		{
@@ -76,6 +78,30 @@ public sealed class PetFramework : Component
 		}
 
 		UpdateEquippedPets();
+	}
+
+	private void TickRefresh()
+	{
+		// Cheap every-frame prune keeps the update loops safe without walking the hierarchy.
+		PruneInvalidPets();
+
+		refreshTimer -= Time.Delta;
+		if ( refreshTimer > 0f )
+			return;
+
+		refreshTimer = MathF.Max( 0f, PetRefreshInterval );
+		RefreshEquippedPets();
+	}
+
+	private void PruneInvalidPets()
+	{
+		for ( var i = equippedPets.Count - 1; i >= 0; i-- )
+		{
+			if ( !equippedPets[i].Pet.IsValid() )
+			{
+				equippedPets.RemoveAt( i );
+			}
+		}
 	}
 
 	protected override void OnDestroy()
@@ -277,6 +303,9 @@ public sealed class PetFramework : Component
 		for ( var i = 0; i < count; i++ )
 		{
 			var slot = equippedPets[i];
+			if ( !slot.Pet.IsValid() )
+				continue;
+
 			slot.AttackCooldown = MathF.Max( 0f, slot.AttackCooldown - Time.Delta );
 
 			var orbitAngle = angleOffset + (angleStep * i);
@@ -318,6 +347,9 @@ public sealed class PetFramework : Component
 	{
 		foreach ( var slot in equippedPets )
 		{
+			if ( !slot.Pet.IsValid() )
+				continue;
+
 			var movedDistance = (slot.Pet.WorldPosition - slot.LastWorldPosition).Length;
 			var isMoving = movedDistance > 0.1f;
 			var attackProgress = GetAttackProgress( slot );
@@ -363,6 +395,12 @@ public sealed class PetFramework : Component
 	{
 		if ( !AutoBattleEnabled || activeAttackTarget.IsValid() )
 			return;
+
+		autoBattleScanTimer -= Time.Delta;
+		if ( autoBattleScanTimer > 0f )
+			return;
+
+		autoBattleScanTimer = MathF.Max( 0f, AutoBattleScanInterval );
 
 		var target = FindNearestAutoBattleTarget();
 		if ( target.IsValid() )

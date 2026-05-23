@@ -1222,3 +1222,30 @@ These notes reflect the current player trading implementation in `E:\Git\Pet-Cra
 - If an inventory slot is invalid or missing during trade rendering, skip it instead of crashing the Razor render tree.
 - Keep trade UI render methods null-safe; Razor crashes in trade panels can break both players' ability to finish or cancel the trade cleanly.
 
+## Current Project Addendum: PetFramework Performance and Per-Frame Cost
+
+These notes reflect the current performance optimization of `Code/Pets/PetFramework.cs` in `E:\Git\Pet-Crate-Simulator`. They were driven by a playtest where clients reported low FPS while the host ran fine.
+
+### Diagnosing Low FPS
+
+- s&box RPCs are fire-and-forget. Calling a `[Rpc.Broadcast]`/`[Rpc.Owner]`/`[Rpc.Host]` method sends the network message asynchronously and then runs the body locally; it does NOT block or "halt" the frame waiting for receipt. This is confirmed in engine source at `Sandbox.Engine\Scene\Networking\Rpc.InstanceRpc.cs` (`OnCallInstanceRpc`).
+- A per-frame RPC therefore does not stall a frame, but it does flood the network and incur per-call serialization cost.
+- Host-fine / clients-laggy is usually caused by per-frame work that scales with player count and runs on proxy objects, not by RPC blocking. Look there first.
+
+### PetFramework Per-Frame Rules
+
+- `PetFramework.OnUpdate` runs for every player on every client, including proxies. Keep its per-frame cost low.
+- Do not walk the GameObject hierarchy every frame. `RefreshEquippedPets()` / `DiscoverEquippedPets()` perform a full `Components.GetAll<PetComponent>(...)` walk and must stay throttled by `PetRefreshInterval` (default `0.25f`) through `TickRefresh()`.
+- `TickRefresh()` runs a cheap `PruneInvalidPets()` every frame (drops destroyed pets from the small equipped list, no hierarchy walk) and only runs the full `RefreshEquippedPets()` on the interval.
+- Do not scan the whole scene every frame. `FindNearestAutoBattleTarget()` calls `Scene.GetAllComponents<InteractGivePlayerCoin>()` and must stay throttled by `AutoBattleScanInterval` (default `0.25f`) inside `TryAcquireAutoBattleTarget()`.
+- Do not force a hierarchy refresh on hot paths. The `CoinMultiplier` getter must not call `RefreshEquippedPets()`, because `PlayerData.AddMoney(...)` reads it on every coin hit. The equipped-pet list is already maintained on equip/unequip plus the throttled refresh.
+- Because refresh no longer self-heals every frame, the per-frame update loops (`UpdateEquippedPets`, `UpdateEquippedPetVisuals`) must null-guard each slot's pet (`if ( !slot.Pet.IsValid() ) continue;`).
+
+### Tuning and Future Pet Performance Work
+
+- `PetRefreshInterval` and `AutoBattleScanInterval` are editor `[Property]` values. Raise them to reduce per-frame cost further; lower them toward `0` to restore near-instant responsiveness at higher cost.
+- When adding new per-frame pet behavior, prefer cached state updated on events (equip/unequip/spawn) or on a throttled interval over per-frame hierarchy walks, scene scans, or LINQ allocations.
+- The `EquippedPets` property allocates a new list via LINQ on each access; avoid calling it from per-frame code.
+- Remaining smaller per-frame paths to consider if FPS is still poor: the proxy pet movement/animation loop (`UpdateEquippedPetVisuals`, runs per pet on every client) and the per-frame `Scene.Trace` in `PlayerInteractionsController` (local player only).
+- After editing pet performance code, run `dotnet build E:\Git\Pet-Crate-Simulator\Code\hatch_simulator.csproj -v:minimal`.
+
