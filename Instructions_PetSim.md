@@ -28,7 +28,7 @@ Use these references when you are unsure about s\&box APIs:
 
 &#x20; \* Local s\&box engine/public source: `E:\\AI\\ReferencedFiles\\Repos\\sbox-public-master`
 
-&#x20; \* Facepunch sandbox project examples: `https://github.com/Facepunch/sandbox`
+&#x20; \* Facepunch sandbox project examples: `E:\\AI\\ReferencedFiles\\Repos\\sandbox-main`
 
 &#x20; \* Local API reference files when you need exact method names or component behavior.
 
