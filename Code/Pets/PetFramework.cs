@@ -20,6 +20,7 @@ public sealed class PetFramework : Component
 	[Property] public float PetAttackRange { get; set; } = 36f;
 	[Property] public float PetAttackLungeDistance { get; set; } = 22f;
 	[Property] public float PetDefaultAttackInterval { get; set; } = 1f;
+	[Property] public float PetMinimumAttackInterval { get; set; } = 0.25f;
 	[Property] public float PetSwarmRadius { get; set; } = 64f;
 	[Property] public float PetSwarmAngleOffset { get; set; } = 0f;
 	[Property] public float PetAttackStartDelayStep { get; set; } = 0.12f;
@@ -204,7 +205,7 @@ public sealed class PetFramework : Component
 		GetOrCreateSlot( pet );
 	}
 
-	[Rpc.Broadcast]
+	[Rpc.Broadcast( NetFlags.Unreliable )]
 	private void SetAttackTarget( GameObject target, PlayerController owner )
 	{
 		if ( !target.IsValid() )
@@ -425,10 +426,10 @@ public sealed class PetFramework : Component
 		GameStatsTracker.RecordPetAttack( slot.Component?.DisplayName ?? slot.Pet.Name, activeAttackTarget.Name, damage );
 
 		var attackInterval = component?.AttackInterval ?? PetDefaultAttackInterval;
-		slot.AttackCooldown = MathF.Max( 0.05f, attackInterval );
+		slot.AttackCooldown = MathF.Max( PetMinimumAttackInterval, attackInterval );
 	}
 
-	[Rpc.Broadcast]
+	[Rpc.Broadcast( NetFlags.Unreliable | NetFlags.DiscardOnDelay )]
 	private void PlayPetAttack( GameObject pet, Vector3 targetPosition )
 	{
 		var slot = GetOrCreateSlot( pet );

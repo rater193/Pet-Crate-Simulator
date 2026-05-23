@@ -94,30 +94,25 @@ public sealed class InteractGivePlayerCoin : Interactable
 	}
 
 
-	[Rpc.Broadcast]
+	[Rpc.Host]
 	public override void OnInteract( PlayerController interactingPlayer )
 	{
-		BeginHitFeedback();
-
-		if ( IsProxy )
+		if ( health <= 0 )
 			return;
 
+		PlayHitFeedback();
 		interactingPlayer?.GetComponent<PetFramework>()?.AttackTarget( GameObject );
 
 		ApplyDamage( 1, interactingPlayer, false );
 	}
 
-	[Rpc.Broadcast]
+	[Rpc.Host]
 	public void ApplyPetDamage( PlayerController interactingPlayer, int damage )
 	{
 		if ( damage <= 0 || health <= 0 )
 			return;
 
-		BeginHitFeedback();
-
-		if ( IsProxy )
-			return;
-
+		PlayHitFeedback();
 		ApplyDamage( damage, interactingPlayer, true );
 	}
 
@@ -161,7 +156,13 @@ public sealed class InteractGivePlayerCoin : Interactable
 		PlayDestructibleSound( sound.ResourcePath, WorldPosition, pitch, volume );
 	}
 
-	[Rpc.Broadcast]
+	[Rpc.Broadcast( NetFlags.Unreliable | NetFlags.DiscardOnDelay )]
+	private void PlayHitFeedback()
+	{
+		BeginHitFeedback();
+	}
+
+	[Rpc.Broadcast( NetFlags.Unreliable | NetFlags.DiscardOnDelay )]
 	private void PlayDestructibleSound( string soundPath, Vector3 position, float pitch, float volume )
 	{
 		if ( string.IsNullOrWhiteSpace( soundPath ) )
