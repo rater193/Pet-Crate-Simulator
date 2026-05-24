@@ -960,7 +960,15 @@
 		base.Tick();
 
 		if ( !IsOpen )
+		{
+			if ( hoveredPetSlotIndex >= 0 )
+			{
+				hoveredPetSlotIndex = -1;
+				PetTooltip.Hide();
+			}
+
 			return;
+		}
 
 		var shouldUpdate = false;
 		if ( IsDeletingPet )
@@ -1021,6 +1029,8 @@
 		isDeleteMode = false;
 		isDeleteModeSettling = false;
 		pendingDeleteSlotIndex = -1;
+		hoveredPetSlotIndex = -1;
+		PetTooltip.Hide();
 
 		if ( IsDeletingPet )
 			return;
@@ -1037,6 +1047,8 @@
 		isDeleteMode = false;
 		isDeleteModeSettling = false;
 		pendingDeleteSlotIndex = -1;
+		hoveredPetSlotIndex = -1;
+		PetTooltip.Hide();
 		StateHasChanged();
 	}
 
@@ -1177,6 +1189,7 @@
 			return;
 
 		hoveredPetSlotIndex = slotIndex;
+		PetTooltip.Show( PetTooltipInfo.FromSlot( Inventory?.GetPet( slotIndex ) ) );
 		StateHasChanged();
 	}
 
@@ -1186,6 +1199,7 @@
 			return;
 
 		hoveredPetSlotIndex = -1;
+		PetTooltip.Hide();
 		StateHasChanged();
 	}
 

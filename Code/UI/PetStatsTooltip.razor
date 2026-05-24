@@ -1,0 +1,106 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System;
+@inherits Panel
+@namespace Sandbox
+
+@if ( !PetTooltip.IsVisible || PetTooltip.Current == null )
+	return;
+
+<style>
+	.pet-tooltip {
+		position: absolute;
+		width: 320px;
+		background-color: rgba(10, 22, 40, 0.96);
+		border: 3px solid #7bd3ff;
+		border-radius: 16px;
+		padding: 16px 18px;
+		flex-direction: column;
+		pointer-events: none;
+		z-index: 20000;
+		font-family: Poppins;
+		box-shadow: 0px 10px 30px rgba(0, 20, 45, 0.6);
+	}
+
+	.pet-tooltip-title {
+		color: white;
+		font-size: 26px;
+		font-weight: 900;
+		text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.4);
+	}
+
+	.pet-tooltip-rarity {
+		font-size: 18px;
+		font-weight: 900;
+		margin-bottom: 10px;
+	}
+
+	.pet-tooltip-row {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		height: 27px;
+	}
+
+	.pet-tooltip-label {
+		color: #a9c6e2;
+		font-size: 17px;
+		font-weight: 700;
+	}
+
+	.pet-tooltip-value {
+		color: #ffffff;
+		font-size: 17px;
+		font-weight: 900;
+	}
+</style>
+
+<root>
+	<div class="pet-tooltip" style="@PositionStyle">
+		<div class="pet-tooltip-title">@Info.DisplayName</div>
+		<div class="pet-tooltip-rarity" style="color: @Info.RarityCssColor;">@Info.RarityText</div>
+		<div class="pet-tooltip-row"><div class="pet-tooltip-label">Coin Multiplier</div><div class="pet-tooltip-value">x@(Info.CoinText)</div></div>
+		<div class="pet-tooltip-row"><div class="pet-tooltip-label">Damage</div><div class="pet-tooltip-value">@Info.DamageText</div></div>
+		<div class="pet-tooltip-row"><div class="pet-tooltip-label">Attack Speed</div><div class="pet-tooltip-value">@(Info.AttacksPerSecondText)/s</div></div>
+		<div class="pet-tooltip-row"><div class="pet-tooltip-label">Attack Interval</div><div class="pet-tooltip-value">@(Info.AttackIntervalText)s</div></div>
+		<div class="pet-tooltip-row"><div class="pet-tooltip-label">Attack Range</div><div class="pet-tooltip-value">x@(Info.AttackRangeText)</div></div>
+		<div class="pet-tooltip-row"><div class="pet-tooltip-label">Move Speed</div><div class="pet-tooltip-value">x@(Info.MoveSpeedText)</div></div>
+		<div class="pet-tooltip-row"><div class="pet-tooltip-label">Bob Height</div><div class="pet-tooltip-value">x@(Info.BobHeightText)</div></div>
+		<div class="pet-tooltip-row"><div class="pet-tooltip-label">Attack Lunge</div><div class="pet-tooltip-value">x@(Info.LungeText)</div></div>
+	</div>
+</root>
+
+@code
+{
+	private PetTooltipInfo Info => PetTooltip.Current;
+
+	// Position the tooltip near the cursor (converting screen pixels to the panel's 1080-based scale),
+	// clamped so it stays on screen.
+	private string PositionStyle
+	{
+		get
+		{
+			var scale = Screen.Height / 1080f;
+			if ( scale <= 0.01f )
+				scale = 1f;
+
+			var logicalWidth = Screen.Width / scale;
+			var x = (Mouse.Position.x / scale) + 20f;
+			var y = (Mouse.Position.y / scale) + 20f;
+
+			x = MathX.Clamp( x, 8f, MathF.Max( 8f, logicalWidth - 340f ) );
+			y = MathX.Clamp( y, 8f, MathF.Max( 8f, 1080f - 360f ) );
+
+			return $"left: {x:0}px; top: {y:0}px;";
+		}
+	}
+
+	protected override int BuildHash()
+	{
+		var scale = Screen.Height / 1080f;
+		if ( scale <= 0.01f )
+			scale = 1f;
+
+		return System.HashCode.Combine( PetTooltip.Version, (int)(Mouse.Position.x / scale / 3f), (int)(Mouse.Position.y / scale / 3f) );
+	}
+}
