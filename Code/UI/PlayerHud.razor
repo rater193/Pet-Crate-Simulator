@@ -301,8 +301,11 @@
 
     private bool IsHoveringWorldUi => WorldInputComponent?.Hovered != null;
     private bool ShowHandCursor => IsHoveringWorldUi || PlayerInteractionsController.Local?.IsHoveringInteractable == true;
-    private bool ShowInteractPrompt => PlayerInteractionsController.Local?.IsHoveringInteractable == true;
-    private string InteractPromptText => PlayerInteractionsController.Local?.HoverPromptText ?? string.Empty;
+    private string InteractPromptText =>
+        PlayerInteractionsController.Local?.IsHoveringInteractable == true
+            ? (PlayerInteractionsController.Local?.HoverPromptText ?? string.Empty)
+            : CrateShopDisplay.HoverPromptText;
+    private bool ShowInteractPrompt => !string.IsNullOrWhiteSpace( InteractPromptText );
 
     protected override void OnStart()
     {

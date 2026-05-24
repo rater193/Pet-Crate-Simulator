@@ -303,7 +303,7 @@
 					@for ( var i = 0; i < PetIndexEntries.Count; i++ )
 					{
 						var pet = PetIndexEntries[i];
-						<div class="pet-index-card-wrapper" onmousedown=@(() => ToggleTrash( pet.PrefabPath ))>
+						<div class="pet-index-card-wrapper" onmousedown=@(() => ToggleTrash( pet.PrefabPath )) onmouseover=@(() => SetHoverPrompt( HoverActionLabel )) onmouseout=@(() => SetHoverPrompt( string.Empty ))>
 							<div class="@pet.CardClass" style="@pet.CardStyle">
 								<div class="pet-index-glow"></div>
 								<div class="pet-index-preview-frame" style="@pet.IconStyle">
@@ -341,6 +341,7 @@
 	[Property] public List<InteractBuyCrate.PetCrateReward> FeaturedPets { get; set; } = new();
 	[Property] public float PetSwapInterval { get; set; } = 6f;
 	[Property] public bool AutoUseCrateRewards { get; set; } = true;
+	[Property] public string HoverActionLabel { get; set; } = "Toggle";
 
 	private int animationFrame;
 	private float TimeValue => Time.Now;
@@ -377,6 +378,20 @@
 	{
 		SetPetTrashed( prefabPath, !IsPetTrashed( prefabPath ) );
 		StateHasChanged();
+	}
+
+	// Prompt text shown in the HUD (below the cursor) while a pet card is hovered.
+	public static string HoverPromptText { get; private set; } = string.Empty;
+	public static int HoverPromptVersion { get; private set; }
+
+	private static void SetHoverPrompt( string text )
+	{
+		text ??= string.Empty;
+		if ( HoverPromptText == text )
+			return;
+
+		HoverPromptText = text;
+		HoverPromptVersion++;
 	}
 
 	protected override void OnUpdate()
