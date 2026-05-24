@@ -65,10 +65,13 @@ public sealed class PlayerInteractionsController : Component
 			.IgnoreGameObject( GameObject ) // Ignore the player
 			.Run();
 
-		if ( !tr.Hit )
+		if ( !tr.Hit || !tr.GameObject.IsValid() )
 			return null;
 
-		var interactable = tr.Collider.Components.Get<Interactable>( FindMode.EverythingInSelfAndAncestors );
+		// Use the hit GameObject (not the collider) so this works for both collider hits (crates,
+		// doors) and hitbox hits (players, whose body colliders are flagged IgnoreTraces so the
+		// camera doesn't clip on them).
+		var interactable = tr.GameObject.Components.Get<Interactable>( FindMode.EverythingInSelfAndAncestors );
 		if ( !interactable.IsValid() || IsOwnInteractable( interactable ) )
 			return null;
 

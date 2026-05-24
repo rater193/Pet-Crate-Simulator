@@ -702,6 +702,7 @@
 		color: #253c5b;
 		font-size: 26px;
 		font-weight: 900;
+		flex-grow: 1;
 	}
 
 	.player-you {
@@ -709,6 +710,25 @@
 		font-size: 18px;
 		font-weight: 800;
 		margin-left: 12px;
+	}
+
+	.player-view-hint {
+		color: #2375df;
+		font-size: 20px;
+		font-weight: 900;
+		margin-left: 12px;
+	}
+
+	.player-row.clickable {
+		pointer-events: all;
+		cursor: pointer;
+		transition: transform 0.08s ease, background-color 0.1s ease, border-color 0.1s ease;
+	}
+
+	.player-row.clickable:hover {
+		transform: scale(1.01);
+		background-color: #ecf8ff;
+		border-color: #2375df;
 	}
 </style>
 
@@ -849,7 +869,7 @@
 					<div class="player-list">
 						@foreach ( var player in PlayerRows )
 						{
-							<div class="player-row">
+							<div class="@GetPlayerRowClass( player )" onclick=@(() => OpenPlayerInfo( player ))>
 								<div class="player-avatar">
 									@if ( player.Avatar != null )
 									{
@@ -864,6 +884,10 @@
 								@if ( player.IsLocal )
 								{
 									<div class="player-you">(You)</div>
+								}
+								else
+								{
+									<div class="player-view-hint">View</div>
 								}
 							</div>
 						}
@@ -902,7 +926,7 @@
 	private float sortAnimationStartTime;
 	private float sortAnimationTime = SortAnimationDuration;
 	private int hoveredPetSlotIndex = -1;
-	private InventoryTab selectedTab = InventoryTab.Pets;
+	private static InventoryTab selectedTab = InventoryTab.Pets;
 
 	// Add a tab: add an InventoryTab value, an entry here, and a content block in the markup.
 	private static readonly List<TabDef> Tabs = new()
@@ -1057,26 +1081,56 @@
 		return $"pet-tab {(selectedTab == tab ? "active" : "")}";
 	}
 
+	/// <summary>Selects the Players tab (used when returning from a player's details panel).</summary>
+	public static void ShowPlayersTab()
+	{
+		selectedTab = InventoryTab.Players;
+	}
+
 	private List<PlayerRowModel> BuildPlayerRows()
 	{
 		var rows = new List<PlayerRowModel>();
-		var localId = Connection.Local?.Id ?? Guid.Empty;
+		if ( Scene == null )
+			return rows;
 
-		foreach ( var connection in Connection.All )
+		foreach ( var playerData in Scene.GetAllComponents<PlayerData>() )
 		{
-			if ( connection == null )
+			if ( !playerData.IsValid() || !playerData.GameObject.IsValid() )
 				continue;
 
-			long steamId = connection.SteamId;
+			var owner = playerData.GameObject.Network.Owner;
+			long steamId = owner != null ? owner.SteamId : 0;
+			var name = owner?.DisplayName;
+
 			rows.Add( new PlayerRowModel
 			{
-				Name = string.IsNullOrWhiteSpace( connection.DisplayName ) ? "Player" : connection.DisplayName,
+				Player = playerData.GameObject,
+				Name = string.IsNullOrWhiteSpace( name ) ? "Player" : name,
 				SteamId = steamId,
-				IsLocal = connection.Id == localId
+				IsLocal = !playerData.IsProxy
 			} );
 		}
 
 		return rows;
+	}
+
+	private string GetPlayerRowClass( PlayerRowModel player )
+	{
+		return player.IsLocal ? "player-row" : "player-row clickable";
+	}
+
+	private void OpenPlayerInfo( PlayerRowModel player )
+	{
+		if ( player == null || player.IsLocal || !player.Player.IsValid() )
+			return;
+
+		var trade = PlayerTradeController.LOCAL;
+		if ( !trade.IsValid() )
+			return;
+
+		PetTooltip.Hide();
+		CloseRequested?.Invoke();
+		trade.OpenPlayerDetails( player.Player );
 	}
 
 	private void TogglePet( int slotIndex )
@@ -1529,6 +1583,7 @@
 
 	private sealed class PlayerRowModel
 	{
+		public GameObject Player { get; set; }
 		public string Name { get; set; }
 		public long SteamId { get; set; }
 		public bool IsLocal { get; set; }

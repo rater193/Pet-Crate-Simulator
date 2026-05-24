@@ -398,6 +398,8 @@
     private void ClosePlayerDetails()
     {
         PlayerTradeController.LOCAL?.ClosePlayerDetails();
+        PetInventoryPanel.ShowPlayersTab();
+        isPetInventoryOpen = true;
         StateHasChanged();
     }
 
