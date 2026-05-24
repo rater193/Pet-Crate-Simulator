@@ -1362,3 +1362,18 @@ These notes reflect the in-game feedback feature.
 - `Sandbox.Http` is whitelisted for gamemode code (https domains only, no raw IPs). If you add other HTTP features, keep that in mind.
 - Reminder: `Multiline=@(true)` on the `TextEntry`, NOT `Multiline="true"` — see the Razor bool-attribute gotcha above.
 
+## Current Project Addendum: Players Ignore Each Other (Collision + Camera)
+
+Players neither physically collide with each other NOR block each other's camera, while still colliding with the world and remaining interactable (trade). This took TWO independent changes because physics collision and traces are separate systems.
+
+### Physics collision (players pass through each other)
+- Collision is tag-based via `ProjectSettings/Collision.config` (`CollisionRules`): `Defaults` per tag + `Pairs` per tag pair. Unmatched pairs resolve to Collide.
+- The player's body collider is tagged `"player"` through `PlayerController.BodyCollisionTags` (set on `Assets/Prefabs/player.prefab`; the controller applies it via `ColliderObject.Tags.SetFrom( BodyCollisionTags )`). The player has ONLY the `player` tag — don't also tag it `solid`, or the existing `solid`/`solid` Collide pair can fight the ignore.
+- `Collision.config` has `"player": "Collide"` in Defaults (so players still collide with world/props) and a `player`/`player` = `Ignore` pair (so they pass through each other).
+
+### Camera / traces (camera doesn't clip on other players)
+- IMPORTANT: collision RULES only affect physics simulation. They do NOT affect traces. The third-person camera does a collider sweep (`PlayerController.Camera.cs` `UpdateCameraPosition`, no hitbox test, no tag filter), so it still "saw" players even after collision was disabled.
+- Fix: the player's body colliders (`CapsuleCollider` + `BoxCollider` on the "Colliders" child) have `ColliderFlags: 1` (`ColliderFlags.IgnoreTraces`) in `player.prefab`. That makes them invisible to ALL traces but leaves physics collision intact.
+- Why this doesn't break trade: the interaction trace (`PlayerInteractionsController`) uses `UseHitboxes(true)`, which hits the player's MODEL hitboxes (a separate system from colliders), so aiming at a player to trade still works. If a player model lacks hitboxes, trade-by-aim would break and you'd instead need a custom camera trace that excludes the `player` tag.
+- General rule: to keep something solid in physics but invisible to traces (camera, aim queries), use `ColliderFlags.IgnoreTraces` rather than touching collision rules. To exclude something from a specific trace only, filter that trace with `.WithoutTags(...)` instead.
+
