@@ -40,6 +40,7 @@
 		bottom: 34px;
 		border: 7px solid rgba(255, 255, 255, 0.22);
 		border-radius: 32px;
+		pointer-events: none;
 	}
 
 	.shop-shimmer {
@@ -50,6 +51,7 @@
 		height: 1500px;
 		background-color: rgba(255, 255, 255, 0.12);
 		transform: rotate(16deg) translateX(@ShimmerXpx);
+		pointer-events: none;
 	}
 
 	.shop-spark {
@@ -60,6 +62,7 @@
 		background-color: #ffffff;
 		opacity: @SparkOpacity;
 		transform: rotate(45deg) scale(@SparkScale);
+		pointer-events: none;
 	}
 
 	.shop-spark.one {
@@ -128,6 +131,13 @@
 		align-items: center;
 		justify-content: center;
 		transform: translateY(0px);
+		pointer-events: all;
+		cursor: pointer;
+		transition: border-color 0.15s ease;
+	}
+
+	.pet-index-card.trashed {
+		border-color: #d92d3d;
 	}
 
 	.pet-index-card.locked {
@@ -160,6 +170,7 @@
 		height: 250px;
 		background-color: rgba(255, 255, 255, 0.16);
 		transform: rotate(-11deg);
+		pointer-events: none;
 	}
 
 	.pet-index-preview-frame {
@@ -229,6 +240,33 @@
 		text-align: center;
 		text-shadow: 0px 4px 0px rgba(0, 0, 0, 0.35);
 	}
+
+	.pet-index-trash-overlay {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		background-color: rgba(217, 45, 61, 0.42);
+		pointer-events: none;
+		z-index: 6;
+	}
+
+	.pet-index-trash-icon {
+		width: 118px;
+		height: 118px;
+	}
+
+	.pet-index-trash-text {
+		margin-top: 10px;
+		color: #ffffff;
+		font-size: 42px;
+		font-weight: 900;
+		text-shadow: 0px 4px 0px rgba(0, 0, 0, 0.45);
+	}
 </style>
 
 <root>
@@ -251,7 +289,7 @@
 					@for ( var i = 0; i < PetIndexEntries.Count; i++ )
 					{
 						var pet = PetIndexEntries[i];
-						<div class="@pet.CardClass" style="@pet.CardStyle">
+						<div class="@pet.CardClass" style="@pet.CardStyle" onmousedown=@(() => ToggleTrash( pet.PrefabPath ))>
 							<div class="pet-index-glow"></div>
 							<div class="pet-index-preview-frame" style="@pet.IconStyle">
 								@if ( pet.PreviewTexture != null )
@@ -265,6 +303,13 @@
 							</div>
 							<div class="@pet.NameClass">@pet.DisplayName</div>
 							<div class="pet-index-chance">@pet.ChanceText</div>
+							@if ( pet.Trashed )
+							{
+								<div class="pet-index-trash-overlay">
+									<img class="pet-index-trash-icon" src="ui/icons/icon_trashcan.vtex" />
+									<div class="pet-index-trash-text">Auto-Trash</div>
+								</div>
+							}
 						</div>
 					}
 				}
@@ -291,6 +336,32 @@
 	private string SparkScaleTwo => $"{0.8f + (MathF.Sin( TimeValue * 2.7f + 1.2f ) * 0.25f):0.###}";
 	private string SparkScaleThree => $"{0.8f + (MathF.Sin( TimeValue * 3.5f + 2.4f ) * 0.25f):0.###}";
 	private List<PetIndexEntry> PetIndexEntries => BuildPetIndexEntries();
+
+	// Client-local, shared across all shop displays: pets the player has flagged to auto-trash
+	// instead of receiving them from crates. Keyed by pet prefab path.
+	private static readonly HashSet<string> trashedPetPaths = new( StringComparer.OrdinalIgnoreCase );
+	public static int TrashVersion { get; private set; }
+
+	public static bool IsPetTrashed( string prefabPath )
+	{
+		return !string.IsNullOrWhiteSpace( prefabPath ) && trashedPetPaths.Contains( prefabPath );
+	}
+
+	public static void SetPetTrashed( string prefabPath, bool trashed )
+	{
+		if ( string.IsNullOrWhiteSpace( prefabPath ) )
+			return;
+
+		var changed = trashed ? trashedPetPaths.Add( prefabPath ) : trashedPetPaths.Remove( prefabPath );
+		if ( changed )
+			TrashVersion++;
+	}
+
+	private void ToggleTrash( string prefabPath )
+	{
+		SetPetTrashed( prefabPath, !IsPetTrashed( prefabPath ) );
+		StateHasChanged();
+	}
 
 	protected override void OnUpdate()
 	{
@@ -340,6 +411,7 @@
 				PreviewTexture = PetPreviewRenderer.Instance?.GetPreviewTexture( prefabPath, prefab ),
 				Rarity = reward.Rarity,
 				Discovered = discovered,
+				Trashed = IsPetTrashed( prefabPath ),
 				Chance = chance,
 				CardStyle = $"transform: translateY({bob:0.##}px) rotate({tilt:0.##}deg);",
 				IconStyle = $"transform: scale({iconScale:0.###});"
@@ -448,7 +520,7 @@
 
 	protected override int BuildHash()
 	{
-		var hash = HashCode.Combine( TitleText, SubtitleText, FeaturedPets?.Count ?? 0, animationFrame, PetPreviewRenderer.PreviewVersion );
+		var hash = HashCode.Combine( TitleText, SubtitleText, FeaturedPets?.Count ?? 0, animationFrame, PetPreviewRenderer.PreviewVersion, TrashVersion );
 		foreach ( var reward in GetConfiguredRewards() )
 		{
 			hash = HashCode.Combine( hash, reward.Rarity, reward.SpawnWeight, GetPetPrefabPath( reward.PetPrefab ), HasDiscoveredPet( GetPetDisplayName( reward.PetPrefab ), GetPetPrefabPath( reward.PetPrefab ) ) );
@@ -464,13 +536,14 @@
 		public Texture PreviewTexture { get; set; }
 		public PetRarity Rarity { get; set; }
 		public bool Discovered { get; set; }
+		public bool Trashed { get; set; }
 		public float Chance { get; set; }
 		public string CardStyle { get; set; }
 		public string IconStyle { get; set; }
 		public string ChanceText => $"{Chance:0.00}%";
 		public string IconText => string.IsNullOrWhiteSpace( DisplayName ) ? "?" : DisplayName[..1].ToUpperInvariant();
 		public string RarityClass => Rarity.ToString().ToLowerInvariant();
-		public string CardClass => $"pet-index-card {RarityClass} {(Discovered ? "unlocked" : "locked")}";
+		public string CardClass => $"pet-index-card {RarityClass} {(Discovered ? "unlocked" : "locked")}{(Trashed ? " trashed" : "")}";
 		public string PreviewClass => $"pet-index-preview {(Discovered ? "unlocked" : "locked")}";
 		public string LetterClass => $"pet-index-letter {(Discovered ? "unlocked" : "locked")}";
 		public string NameClass => $"pet-index-name {(Discovered ? "unlocked" : "locked")}";

@@ -254,14 +254,22 @@ public sealed class InteractBuyCrate : Interactable
 	{
 		if ( pendingInventory.IsValid() && pendingReward?.PetPrefab.IsValid() == true )
 		{
-			if ( !pendingInventory.AddPetPrefab( pendingReward.PetPrefab, rarity: pendingReward.Rarity ) )
+			var displayName = GetPetDisplayName( pendingReward.PetPrefab );
+			var prefabPath = GetPetPrefabPath( pendingReward.PetPrefab );
+
+			if ( CrateShopDisplay.IsPetTrashed( prefabPath ) )
+			{
+				// Player flagged this pet for auto-trash on the shop display: discard it
+				// instead of adding it to the inventory. The purchase is not refunded.
+				GameStatsTracker.RecordCrateOpened( displayName, prefabPath, pendingReward.Rarity, Cost );
+				pendingPlayerData?.QueueSave();
+			}
+			else if ( !pendingInventory.AddPetPrefab( pendingReward.PetPrefab, rarity: pendingReward.Rarity ) )
 			{
 				RefundPendingPurchase();
 			}
 			else
 			{
-				var displayName = GetPetDisplayName( pendingReward.PetPrefab );
-				var prefabPath = GetPetPrefabPath( pendingReward.PetPrefab );
 				GameStatsTracker.RecordCrateOpened( displayName, prefabPath, pendingReward.Rarity, Cost );
 				pendingPlayerData?.QueueSave();
 			}
