@@ -12529,7 +12529,7 @@
                   "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
                 },
                 "Property": "Key",
-                "Value": "Area1Door3_1"
+                "Value": "1003"
               },
               {
                 "Target": {
@@ -12611,7 +12611,7 @@
                   "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
                 },
                 "Property": "Key",
-                "Value": "Area1Door4_1"
+                "Value": "1004"
               }
             ],
             "MovedObjects": []
@@ -12624,6 +12624,598 @@
             "508be9a2-6db0-4739-bfa0-e78db46e8de3": "a6309fb2-8448-47fe-a4fc-3013880bc119",
             "e5e7ef4e-37d9-4209-ad87-3b9e42cca247": "aedb945d-65e0-4fff-852f-1b553caff0f7",
             "72d88a1c-f2d2-448c-82e2-2b28635ca0bb": "1a89b281-f877-4c4b-a76c-78d9f30e85d5"
+          }
+        },
+        {
+          "__guid": "08a7e69f-589a-41d7-abec-0028781373e3",
+          "__version": 2,
+          "__Prefab": "prefabs/doors/interactabledoor.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+                },
+                "Property": "Name",
+                "Value": "interactabledoor (2)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+                },
+                "Property": "Position",
+                "Value": "2764.62988,5953.81543,574.424316"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+                },
+                "Property": "Rotation",
+                "Value": "3.98962413E-07,2.31217754E-07,1,-4.37114807E-08"
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
+                },
+                "Property": "unlockCost",
+                "Value": 15000
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Door",
+                "Value": {
+                  "_type": "component",
+                  "component_id": "8794d74c-0a9d-425d-aaa1-c7af2116072f",
+                  "go": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea",
+                  "component_type": "InteractLockedDoor"
+                }
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Key",
+                "Value": "1005"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea": "08a7e69f-589a-41d7-abec-0028781373e3",
+            "8794d74c-0a9d-425d-aaa1-c7af2116072f": "4862fbb6-042e-4ec6-9585-2f400ba70968",
+            "1caa46ee-a44d-49f0-a94a-17bba6813f84": "135c764d-fe6c-4b7b-a677-b7fa29f08e63",
+            "dd040270-426b-43e5-9634-873675a1c099": "e5fae9ed-a139-4373-a699-79e94905a42c",
+            "508be9a2-6db0-4739-bfa0-e78db46e8de3": "d656222b-2341-42f6-8e65-35fba3f4ed22",
+            "e5e7ef4e-37d9-4209-ad87-3b9e42cca247": "9c06b198-4cc4-4cec-906b-ea1a32bd9abd",
+            "72d88a1c-f2d2-448c-82e2-2b28635ca0bb": "0b0edd3d-23eb-47e1-8e2d-db0068e81ac8"
+          }
+        },
+        {
+          "__guid": "d00df1a3-1406-4b15-b903-38886f1a1f81",
+          "__version": 2,
+          "__Prefab": "prefabs/doors/interactabledoor.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+                },
+                "Property": "Name",
+                "Value": "interactabledoor (2)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+                },
+                "Property": "Position",
+                "Value": "7842.06592,6085.58887,1156.92114"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+                },
+                "Property": "Rotation",
+                "Value": "0,0,1,-4.37113883E-08"
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
+                },
+                "Property": "unlockCost",
+                "Value": 15000
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Door",
+                "Value": {
+                  "_type": "component",
+                  "component_id": "8794d74c-0a9d-425d-aaa1-c7af2116072f",
+                  "go": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea",
+                  "component_type": "InteractLockedDoor"
+                }
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Key",
+                "Value": "1007"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea": "d00df1a3-1406-4b15-b903-38886f1a1f81",
+            "8794d74c-0a9d-425d-aaa1-c7af2116072f": "3125cf71-4a62-4837-94fe-a590ae83d039",
+            "1caa46ee-a44d-49f0-a94a-17bba6813f84": "de9bb2c6-8758-4fad-8d03-9b448e431cbc",
+            "dd040270-426b-43e5-9634-873675a1c099": "07cfe629-c78f-424a-a4cc-3cd93b8713c5",
+            "508be9a2-6db0-4739-bfa0-e78db46e8de3": "cdfd793e-d46c-4cf1-9004-b6d4f1e5f251",
+            "e5e7ef4e-37d9-4209-ad87-3b9e42cca247": "f52495ea-8141-4f3e-af31-44dc354cf248",
+            "72d88a1c-f2d2-448c-82e2-2b28635ca0bb": "a244ca0a-fb51-4854-a6e3-62824456517d"
+          }
+        },
+        {
+          "__guid": "0a2f38be-8983-406f-b702-3dd434281be5",
+          "__version": 2,
+          "__Prefab": "prefabs/doors/interactabledoor.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+                },
+                "Property": "Name",
+                "Value": "interactabledoor (2)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+                },
+                "Property": "Position",
+                "Value": "5917.63232,3922.68408,1152.27966"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+                },
+                "Property": "Rotation",
+                "Value": "0,0,0.707106769,0.707106769"
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
+                },
+                "Property": "unlockCost",
+                "Value": 15000
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Door",
+                "Value": {
+                  "_type": "component",
+                  "component_id": "8794d74c-0a9d-425d-aaa1-c7af2116072f",
+                  "go": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea",
+                  "component_type": "InteractLockedDoor"
+                }
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Key",
+                "Value": "1006"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea": "0a2f38be-8983-406f-b702-3dd434281be5",
+            "8794d74c-0a9d-425d-aaa1-c7af2116072f": "93655d77-7361-4f68-a6cc-45530b0a6584",
+            "1caa46ee-a44d-49f0-a94a-17bba6813f84": "ced813bc-9abb-40a3-8dd1-05a90ddbcc82",
+            "dd040270-426b-43e5-9634-873675a1c099": "69d86aa5-f500-4902-af31-906ea771e252",
+            "508be9a2-6db0-4739-bfa0-e78db46e8de3": "95bb06b0-c24d-47a6-9b7d-268d67e33aab",
+            "e5e7ef4e-37d9-4209-ad87-3b9e42cca247": "0bc07030-09c9-4942-9564-1f1c7682bf05",
+            "72d88a1c-f2d2-448c-82e2-2b28635ca0bb": "a69ddbd3-5702-4960-97b4-148fee706001"
+          }
+        },
+        {
+          "__guid": "57c94cbf-27c2-42e7-9509-c5d6d5ab54d6",
+          "__version": 2,
+          "__Prefab": "prefabs/doors/interactabledoor.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+                },
+                "Property": "Name",
+                "Value": "interactabledoor (2)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+                },
+                "Property": "Position",
+                "Value": "5917.63232,8486.24023,1152.27966"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+                },
+                "Property": "Rotation",
+                "Value": "0,0,0.707106769,-0.707106769"
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
+                },
+                "Property": "unlockCost",
+                "Value": 15000
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Door",
+                "Value": {
+                  "_type": "component",
+                  "component_id": "8794d74c-0a9d-425d-aaa1-c7af2116072f",
+                  "go": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea",
+                  "component_type": "InteractLockedDoor"
+                }
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Key",
+                "Value": "1008"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea": "57c94cbf-27c2-42e7-9509-c5d6d5ab54d6",
+            "8794d74c-0a9d-425d-aaa1-c7af2116072f": "1822ebc7-3efa-42de-ab89-4b8a1cd85cb0",
+            "1caa46ee-a44d-49f0-a94a-17bba6813f84": "45a4dfc6-ff68-4999-84a8-b9e8a46ced61",
+            "dd040270-426b-43e5-9634-873675a1c099": "511990e0-fa7d-4833-a352-6dd81988297e",
+            "508be9a2-6db0-4739-bfa0-e78db46e8de3": "bca3a027-2e33-4159-a9da-f858a418e768",
+            "e5e7ef4e-37d9-4209-ad87-3b9e42cca247": "c6d4a2fe-40fd-4706-9740-f0758e1d3015",
+            "72d88a1c-f2d2-448c-82e2-2b28635ca0bb": "2868bc8b-ad60-4d47-a5d6-a382f36a0e42"
+          }
+        },
+        {
+          "__guid": "471fcfff-6f10-4273-93b3-395c031edba6",
+          "__version": 2,
+          "__Prefab": "prefabs/doors/interactabledoor.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+                },
+                "Property": "Name",
+                "Value": "interactabledoor (2)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+                },
+                "Property": "Position",
+                "Value": "3763.21313,10954.4258,1152.27942"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+                },
+                "Property": "Rotation",
+                "Value": "0,0,0,1"
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
+                },
+                "Property": "unlockCost",
+                "Value": 15000
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Door",
+                "Value": {
+                  "_type": "component",
+                  "component_id": "8794d74c-0a9d-425d-aaa1-c7af2116072f",
+                  "go": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea",
+                  "component_type": "InteractLockedDoor"
+                }
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Key",
+                "Value": "1009"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea": "471fcfff-6f10-4273-93b3-395c031edba6",
+            "8794d74c-0a9d-425d-aaa1-c7af2116072f": "fa70491c-ce34-429d-807d-63155e335a6d",
+            "1caa46ee-a44d-49f0-a94a-17bba6813f84": "6ecf68eb-6520-457a-ab3e-94725daeb9ca",
+            "dd040270-426b-43e5-9634-873675a1c099": "ad2e8410-9893-4908-9605-93fb88af108e",
+            "508be9a2-6db0-4739-bfa0-e78db46e8de3": "77c37153-68e7-4814-ab38-a9b38c152397",
+            "e5e7ef4e-37d9-4209-ad87-3b9e42cca247": "658acc8d-74c5-4537-bb5b-4f5325a46069",
+            "72d88a1c-f2d2-448c-82e2-2b28635ca0bb": "ddf56e05-307e-4916-afc0-b6bacc6105db"
+          }
+        },
+        {
+          "__guid": "e67d16fd-cf59-45d1-826b-6eb6cf0155f8",
+          "__version": 2,
+          "__Prefab": "prefabs/doors/interactabledoor.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+                },
+                "Property": "Name",
+                "Value": "interactabledoor (2)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+                },
+                "Property": "Position",
+                "Value": "-1911.91418,10993.292,2022.8844"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+                },
+                "Property": "Rotation",
+                "Value": "0,0,0,1"
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
+                },
+                "Property": "unlockCost",
+                "Value": 15000
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Door",
+                "Value": {
+                  "_type": "component",
+                  "component_id": "8794d74c-0a9d-425d-aaa1-c7af2116072f",
+                  "go": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea",
+                  "component_type": "InteractLockedDoor"
+                }
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Key",
+                "Value": "1010"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea": "e67d16fd-cf59-45d1-826b-6eb6cf0155f8",
+            "8794d74c-0a9d-425d-aaa1-c7af2116072f": "57e8a7a3-0f83-406b-81cd-2250b08942dd",
+            "1caa46ee-a44d-49f0-a94a-17bba6813f84": "0b0c7af7-d644-4081-9eac-20cac6cfc17e",
+            "dd040270-426b-43e5-9634-873675a1c099": "7cea2ef9-6b20-4995-9107-2396fd5d21d0",
+            "508be9a2-6db0-4739-bfa0-e78db46e8de3": "15d46328-d995-46ad-8f6e-7ef27bef45b7",
+            "e5e7ef4e-37d9-4209-ad87-3b9e42cca247": "f985679e-9d80-462a-bcae-26df75e6fe92",
+            "72d88a1c-f2d2-448c-82e2-2b28635ca0bb": "ca2ca664-b1fd-4e4f-8e7c-6e76d4a691e8"
+          }
+        },
+        {
+          "__guid": "365eda3b-aa97-4256-b8dd-b4963911bcec",
+          "__version": 2,
+          "__Prefab": "prefabs/doors/interactabledoor.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+                },
+                "Property": "Name",
+                "Value": "interactabledoor (2)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+                },
+                "Property": "Position",
+                "Value": "-3710.56299,8817.89355,2022.88525"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+                },
+                "Property": "Rotation",
+                "Value": "0,0,0.707106769,0.707106769"
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
+                },
+                "Property": "unlockCost",
+                "Value": 15000
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Door",
+                "Value": {
+                  "_type": "component",
+                  "component_id": "8794d74c-0a9d-425d-aaa1-c7af2116072f",
+                  "go": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea",
+                  "component_type": "InteractLockedDoor"
+                }
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Key",
+                "Value": "1011"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea": "365eda3b-aa97-4256-b8dd-b4963911bcec",
+            "8794d74c-0a9d-425d-aaa1-c7af2116072f": "e851b99d-4e8b-4b61-a08f-fb938efa2540",
+            "1caa46ee-a44d-49f0-a94a-17bba6813f84": "4de1b852-87b9-4325-bff6-c28674857921",
+            "dd040270-426b-43e5-9634-873675a1c099": "157975a4-f3d1-4a68-a588-6f9250e6a1fd",
+            "508be9a2-6db0-4739-bfa0-e78db46e8de3": "2cbf2c26-5ae6-4e9b-8bea-47ef69bad557",
+            "e5e7ef4e-37d9-4209-ad87-3b9e42cca247": "c768d1b5-4b13-443c-8499-df3aa9059fcc",
+            "72d88a1c-f2d2-448c-82e2-2b28635ca0bb": "e9dc3a2b-9d4c-4465-8488-3b5c3d841975"
+          }
+        },
+        {
+          "__guid": "174dd2b2-5280-41bf-85d3-a8481560d49c",
+          "__version": 2,
+          "__Prefab": "prefabs/doors/interactabledoor.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+                },
+                "Property": "Name",
+                "Value": "interactabledoor (2)"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+                },
+                "Property": "Position",
+                "Value": "-3486.11353,3945.41406,2022.88525"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea"
+                },
+                "Property": "Rotation",
+                "Value": "0,0,0.707106769,0.707106769"
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "8794d74c-0a9d-425d-aaa1-c7af2116072f"
+                },
+                "Property": "unlockCost",
+                "Value": 15000
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Door",
+                "Value": {
+                  "_type": "component",
+                  "component_id": "8794d74c-0a9d-425d-aaa1-c7af2116072f",
+                  "go": "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea",
+                  "component_type": "InteractLockedDoor"
+                }
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
+                },
+                "Property": "Key",
+                "Value": "1012"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "b5f3a2d4-4d7f-4625-9a3f-efee25ac59ea": "174dd2b2-5280-41bf-85d3-a8481560d49c",
+            "8794d74c-0a9d-425d-aaa1-c7af2116072f": "f07be929-3de9-44a6-9042-205ae1228955",
+            "1caa46ee-a44d-49f0-a94a-17bba6813f84": "4ac6a776-a3ee-47c9-8528-28900b71fbfa",
+            "dd040270-426b-43e5-9634-873675a1c099": "33d065e3-ff4c-4252-ae3e-7f98ca04c5b5",
+            "508be9a2-6db0-4739-bfa0-e78db46e8de3": "94d84252-9003-4de3-8827-1f8f6cdfda47",
+            "e5e7ef4e-37d9-4209-ad87-3b9e42cca247": "492109dd-bc09-4772-a6ba-2b366f3ed2ef",
+            "72d88a1c-f2d2-448c-82e2-2b28635ca0bb": "25d72e9b-dc69-41a5-aec2-4ad79c004e97"
           }
         },
         {
@@ -12685,7 +13277,7 @@
                   "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
                 },
                 "Property": "Key",
-                "Value": "Area1Door2_1"
+                "Value": "1002"
               }
             ],
             "MovedObjects": []
@@ -12751,7 +13343,7 @@
                   "IdValue": "72d88a1c-f2d2-448c-82e2-2b28635ca0bb"
                 },
                 "Property": "Key",
-                "Value": "Area1Door1_4"
+                "Value": "1001"
               }
             ],
             "MovedObjects": []
@@ -12788,7 +13380,7 @@
                   "IdValue": "f390930c-eac9-4577-919d-c99bf37f847f"
                 },
                 "Property": "Position",
-                "Value": "2720.51465,5952.78613,572.140747"
+                "Value": "-5924.57861,6320.69727,2006.03467"
               },
               {
                 "Target": {
@@ -12796,7 +13388,7 @@
                   "IdValue": "f390930c-eac9-4577-919d-c99bf37f847f"
                 },
                 "Property": "Rotation",
-                "Value": "-0.000734383357,-0.00109053834,0.999999106,-8.44585372E-07"
+                "Value": "0,0,0,1"
               },
               {
                 "Target": {

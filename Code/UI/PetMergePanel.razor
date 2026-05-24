@@ -253,11 +253,13 @@
 		font-weight: 900;
 		margin: 8px auto;
 		text-shadow: 1px 3px 0px rgba(0, 0, 0, 0.22);
+		pointer-events: none;
 	}
 
 	.pet-merge-preview {
 		width: 72px;
 		height: 72px;
+		pointer-events: none;
 	}
 
 	.pet-merge-name {
@@ -270,6 +272,7 @@
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		overflow: hidden;
+		pointer-events: none;
 	}
 
 	.pet-merge-rarity {
@@ -279,6 +282,7 @@
 		text-align: center;
 		text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.24);
 		margin-top: 4px;
+		pointer-events: none;
 	}
 
 	.pet-merge-selected-area {
@@ -339,12 +343,14 @@
 		background-color: black;
 		opacity: @MergeBlackoutOpacity;
 		z-index: 5;
+		pointer-events: none;
 	}
 
 	.pet-merge-slot-empty {
 		color: #64819e;
 		font-size: 44px;
 		font-weight: 900;
+		pointer-events: none;
 	}
 
 	.pet-merge-result {
@@ -479,7 +485,7 @@
 					@foreach ( var pet in AllPets )
 					{
 						<div class="pet-merge-card-shell" style="@GetPetCardStyle( pet )">
-							<div class="@GetPetCardClass( pet )" style="@pet.BorderStyle" onclick=@(() => ToggleSelectedPet( pet.SlotIndex ))>
+							<div class="@GetPetCardClass( pet )" style="@pet.BorderStyle" onclick=@(() => ToggleSelectedPet( pet.SlotIndex )) onmouseover=@(() => ShowPetTooltip( pet.SlotIndex )) onmouseout=@HidePetTooltip>
 								<div class="pet-merge-icon">
 									@if ( pet.PreviewTexture != null )
 									{
@@ -506,7 +512,7 @@
 					{
 						var pet = GetSlotPetView( i );
 						var selectedIndex = i;
-						<div class="@GetSlotClass( pet )" style="@GetSlotStyle( pet, selectedIndex )" onclick=@(() => RemoveSelectedPetAt( selectedIndex ))>
+						<div class="@GetSlotClass( pet )" style="@GetSlotStyle( pet, selectedIndex )" onclick=@(() => RemoveSelectedPetAt( selectedIndex )) onmouseover=@(() => ShowSlotTooltip( pet )) onmouseout=@HidePetTooltip>
 							@if ( pet != null )
 							{
 								<div class="pet-merge-icon">
@@ -576,6 +582,7 @@
 	private readonly List<MergePetViewModel> mergeAnimatedPets = new();
 	private bool isMerging;
 	private bool mergeConsumed;
+	private bool petTooltipActive;
 	private float mergeStartTime;
 	private float mergeAnimationTime;
 	private int lastAutoMergeCount;
@@ -613,7 +620,13 @@
 		base.Tick();
 
 		if ( !IsOpen )
+		{
+			// Panel stopped rendering while a card was hovered — onmouseout never fired, so clear the stuck tooltip.
+			if ( petTooltipActive )
+				HidePetTooltip();
+
 			return;
+		}
 
 		var shouldUpdate = false;
 		if ( isMerging )
@@ -649,8 +662,34 @@
 		if ( isMerging )
 			return;
 
+		HidePetTooltip();
 		selectedSlotIndexes.Clear();
 		CloseRequested?.Invoke();
+	}
+
+	private void ShowPetTooltip( int slotIndex )
+	{
+		var info = PetTooltipInfo.FromSlot( Inventory?.GetPet( slotIndex ) );
+		PetTooltip.Show( info );
+		petTooltipActive = info != null;
+	}
+
+	private void ShowSlotTooltip( MergePetViewModel pet )
+	{
+		// Merge slots animate during a merge and the result has no stable inventory slot — skip then.
+		if ( pet == null || isMerging )
+		{
+			HidePetTooltip();
+			return;
+		}
+
+		ShowPetTooltip( pet.SlotIndex );
+	}
+
+	private void HidePetTooltip()
+	{
+		PetTooltip.Hide();
+		petTooltipActive = false;
 	}
 
 	private void ToggleSelectedPet( int slotIndex )
