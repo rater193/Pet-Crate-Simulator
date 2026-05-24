@@ -1249,3 +1249,105 @@ These notes reflect the current performance optimization of `Code/Pets/PetFramew
 - Remaining smaller per-frame paths to consider if FPS is still poor: the proxy pet movement/animation loop (`UpdateEquippedPetVisuals`, runs per pet on every client) and the per-frame `Scene.Trace` in `PlayerInteractionsController` (local player only).
 - After editing pet performance code, run `dotnet build E:\Git\Pet-Crate-Simulator\Code\hatch_simulator.csproj -v:minimal`.
 
+## Current Project Addendum: s&box Gotchas Learned The Hard Way
+
+These cross-cutting lessons cost real debugging time. Read them before touching UI, audio, or networking.
+
+### The gamemode API sandbox (MOST IMPORTANT)
+
+- s&box runs gamemode code inside an API access whitelist that `dotnet build` does NOT enforce. A call to a non-whitelisted engine API can compile cleanly via the documented build command but make s&box reject the ENTIRE `hatch_simulator` assembly at load time.
+- When the whole assembly fails to load, every game component dies at once. The symptom looks unrelated: e.g. "TAB stopped opening the inventory", "the whole HUD is dead". A successful `dotnet build` is necessary but NOT sufficient proof the game will load.
+- Concrete example from this project: accessing `Sandbox.Audio.Mixer` (`Mixer.FindMixerByName`, `Mixer.Mute`, `SoundHandle.TargetMixer`) from game code broke everything. Removing it fixed it. Mute is now done via already-used APIs instead (see audio addendum).
+- Rule of thumb: prefer engine APIs already used elsewhere in this codebase. If you introduce a never-before-used engine type and the game suddenly goes dead, suspect a whitelist violation first, and check the s&box console for the real error.
+- A separate confusing symptom: s&box hot-reload can get stuck, making a clean change look broken. A full editor restart / rebuild clears it. Don't assume a logically-inert change is the cause.
+
+### Cursor visibility vs. mouse-look
+
+- This game uses crosshair aiming (`Sandbox.PlayerController.UseLookControls = true`, a `.Crosshair` reticle, camera-forward interaction).
+- `Mouse.Visibility` defaults to `Auto`: the cursor appears whenever any screen panel has an interactive (`pointer-events: all`) child. While the cursor is visible, `Input.AnalogLook` is forced to zero, so mouse-look is disabled (confirmed in engine `Input.cs`).
+- Therefore an always-interactive HUD element would pin the cursor on permanently and break the camera. Clickable HUD UI must be `pointer-events: all` ONLY while the cursor is already up (i.e. a menu is open). Gate interactivity (or simply only render the element) on the HUD's menu-open state, NOT on the live `Input.MouseCursorVisible` flag — gating on the live flag creates a feedback loop that keeps the cursor on forever.
+
+### World panel input (`WorldPanel` + `WorldInput`)
+
+- A `WorldPanel` only renders; click/hover routing needs a `Sandbox.WorldInput` component (this project keeps one on the main `Camera`, `LeftMouseAction = Attack1`). It uses the object's forward ray when the mouse is inactive, so players aim with the crosshair.
+- `WorldInput.Hovered` is the currently-hovered panel (null when not aiming at any interactive world UI). World panels DO fire `onmouseover`/`onmouseout` and toggle the `:hover` pseudo-class, so hover effects work in world space.
+- Do NOT put `pointer-events: all` on a world panel's ROOT — that makes the whole panel a hover/click target (e.g. the credits board showed the hand cursor over its entire surface). Put `pointer-events: all` only on the actual interactive elements, and `pointer-events: none` on decorative layers.
+
+### CSS quirks in s&box
+
+- `z-index` only orders siblings within the same stacking context. You CANNOT push a HUD element behind a separate menu panel with `z-index` alone. To keep an overlay off menus, gate its visibility on menu-open state instead.
+- Inline `style="transform: ..."` overrides a stylesheet `:hover { transform: ... }`. For a hover-scale/outline on an element that ALSO has a per-frame animated transform (e.g. a bobbing card), use a wrapper/inner split: hover transform on the wrapper, animated transform on the inner element. (Same trick the Pet Forge cards use.)
+- `outline` is supported and respects `border-radius`; it draws outside the border without affecting layout — good for hover highlights. To fade it in without width-jitter, keep `outline-width` constant and animate `outline-color` from transparent to the target color.
+- s&box supports `box-shadow` with spread (4th value) and the `cursor` property, but NOT the web `inset` keyword.
+- Render UI images from project assets with `<img src="ui/yourtexture.vtex">` (same as the money icon). Use `.vtex`, not `.png`, or it can fail for non-editor clients.
+- Boolean component attributes in Razor MUST use a `@` expression (`Multiline=@(true)`), never a quoted literal (`Multiline="true"`). `dotnet build` accepts the quoted form, but s&box's Razor codegen emits a string-to-bool assignment and fails with "Cannot implicitly convert type 'string' to 'bool'". This is a concrete case where `dotnet build` is green but s&box's compile fails — see below for how to read those errors.
+
+### Reading s&box compile errors (when `dotnet build` is green but the game is broken)
+
+- s&box's own compile output is in `C:\Program Files (x86)\Steam\steamapps\common\sbox\logs\sbox-dev.log`. Search it for `Compile of 'topgamestudio.hatch_simulator' Failed` and the `[Generic] Error |` lines just under it (they include the file:line, e.g. a generated `_gen_*.razor_*.cs`).
+- A failed main-assembly compile cascades: the `.editor` assembly then reports `Broken Reference ... (the compiler failed)`. Fix the real error in the main assembly and both clear.
+- The log also contains many unrelated pre-existing errors (texture/material compile `[FAIL]`, Unity-style `.meta` JSON parse exceptions). Don't chase those; look for the `[Generic] Error |` lines from the C# compile.
+
+### Local interaction pattern
+
+- `Interactable.OnInteract` is `[Rpc.Broadcast]` on the base, but an override that OMITS the attribute runs LOCALLY (s&box only wraps the declaration that carries the attribute). `InteractBuyCrate`, `InteractBuyAllCrates`, etc. rely on this for local-only purchase flows. Keep purchase/interaction logic local unless you intentionally want it networked.
+
+### Build command on Windows
+
+- Use the documented build with a quoted/forward-slash path so the shell doesn't eat backslashes: `dotnet build "E:/Git/Pet-Crate-Simulator/Code/hatch_simulator.csproj" -v:minimal`.
+- Pre-existing warnings appear in unrelated files (DunGen, AreaSpawner, randomrotator, Destructable, etc.). Treat only NEW errors/warnings in touched files as blockers.
+- These are CLIENT/visual features. A clean build does not prove they work — say so, and ask for an in-game check, especially for world-panel sizing, cursor behavior, and hover.
+
+## Current Project Addendum: Audio Mute Options
+
+These notes reflect the music/sound mute feature.
+
+- Client-local mute state + persistence live in `Code/Audio/AudioSettings.cs` (static class). It persists `MusicMuted` / `SoundMuted` to `settings/audio.json` via `FileSystem.Data` + `JSONObject`, and exposes a `Version` counter for UI build hashes.
+- Muting is applied where audio is produced (NOT via engine mixers — see the sandbox gotcha):
+  - Music: `BackgroundMusicController.GetTargetVolume()` returns `0` when `AudioSettings.MusicMuted`.
+  - Sound: `InteractGivePlayerCoin.PlayDestructibleSound()` early-returns when `AudioSettings.SoundMuted`. This is currently the only gameplay `Sound.Play`; if you add more SFX, gate them on `AudioSettings.SoundMuted` too.
+- The toggle buttons are Music/Sound chips in `Code/UI/PlayerHud.razor`, rendered only inside the `@if ( isPetInventoryOpen )` block (so they're only present/clickable while the inventory menu is open, which is also when the cursor is up).
+
+## Current Project Addendum: HUD World-Aim Feedback (Hand Cursor + Prompt)
+
+These notes reflect the cursor/prompt system in `Code/UI/PlayerHud.razor` and `Code/Interactions/PlayerInteractionsController.cs`.
+
+- `PlayerInteractionsController` (on the player) raycasts from the camera each frame and exposes: a static `Local`, `IsHoveringInteractable` (aiming at a valid `Interactable`), and `HoverPromptText` (that interactable's `text`). The raycast lives in `FindAimedInteractable()`.
+- It also re-enables the world-space prompt at the object: `InteractionFrameworkUI` (`Prefabs/UI/interactionsenginepanel.prefab`) now shows ONLY the interact key icon (text was removed). It's enabled/positioned at the hovered object and billboards to camera.
+- `PlayerHud` swaps the center `.Crosshair` for a hand image (`ui/hand.vtex`) when aiming at interactive UI/objects, and shows a centered text pill (`.InteractPrompt`) just below the cursor:
+  - Hand shows when `IsHoveringWorldUi` (`WorldInput.Hovered != null`) OR `PlayerInteractionsController.Local.IsHoveringInteractable`.
+  - Prompt text = the interactable's text, or `CrateShopDisplay.HoverPromptText` for shop cards.
+  - BOTH are suppressed by `IsAnyMenuOpen` (inventory/merge/trade/details/ban/notice) so they never paint over menus.
+- `PlayerHud` finds the `WorldInput` via `Scene.GetAllComponents<WorldInput>()` (cached). Net result: icon on the object (world space), text + hand at the cursor (screen space).
+
+## Current Project Addendum: Crate Shop Pet Toggle, Hover, and Buy-All
+
+These notes reflect interactivity added to the crate shop.
+
+### Auto-trash toggle on the shop display
+- `Code/UI/CrateShopDisplay.razor` pet cards are clickable. Left-click (`onmousedown`) toggles a per-player, client-local "auto-trash" flag for that pet, keyed by prefab path: static `trashedPetPaths` + `IsPetTrashed` / `SetPetTrashed` / `TrashVersion`. It's global across all shop displays and session-only (not persisted yet).
+- When a crate would grant a flagged pet, `InteractBuyCrate.FinishReveal()` discards it instead of adding to inventory (money still spent, no refund). Both files derive the prefab path identically so the keys match.
+- Trashed cards show a red border + a translucent red overlay with the trashcan icon (`ui/icons/icon_trashcan.vtex`) and "Auto-Trash" text.
+
+### Card hover feedback
+- Cards use a wrapper/inner split: `.pet-index-card-wrapper:hover` scales the card (`transform: scale`) and reveals a yellow outline (`outline-color: #ffd66f`, the shop border color) on the inner card. The inner card keeps its per-frame bob/tilt transform so the two don't fight.
+- Hovering a card sets a shared static `CrateShopDisplay.HoverPromptText` (to `HoverActionLabel`, default "Toggle") via `onmouseover`/`onmouseout`, which `PlayerHud` shows below the cursor.
+
+### Buy All Crates
+- `Code/Interactions/InteractBuyAllCrates.cs` is an `Interactable` for a "Buy All Crates button". On use it finds every `InteractBuyCrate` in the same shop and calls each one's `OnInteract` (local). It scopes to the button's parent subtree by default (walking up if empty), or an explicit `ShopRoot` property — important because the scene has multiple shops. The button needs a collider to be aimed at.
+
+## Current Project Addendum: Player Notices and Nameplates
+
+### Player notice system (configured like the ban system)
+- `Code/Networking/PlayerNoticeController.cs` shows a one-time, click-to-dismiss message to players whose SteamId is listed in `NoticePlayers` (`SteamId` + `Message`), mirroring `BanListController`'s configuration but with no kick.
+- Each client checks its own `Game.SteamId` locally (like `CheckLocalBan`) and shows `Code/UI/PlayerNoticePanel.razor` (a full-screen modal with an OK button). `PlayerHud` hosts the panel; `NoticeVersion` drives the rebuild. Add the `PlayerNoticeController` component to a scene object (e.g. the Ban Manager) to configure it.
+
+### Player nameplates (remote players only)
+- `Code/UI/PlayerNameplate.razor` is a world-space `PanelComponent` (use with a `WorldPanel`) placed as a child above the head in `Assets/Prefabs/player.prefab`.
+- It resolves the ancestor `PlayerData`, renders ONLY for proxies (`Player.IsProxy`, i.e. other players), shows the Steam name via `Player.GameObject.Network.Owner.DisplayName`, and billboards to camera (same pattern as `DestructableNameplate`).
+- `WorldPanel.RenderScale` needs visual tuning (default 512px panel is large).
+
+## Current Project Addendum: Credits Board Two-Column Layout
+
+- `Code/UI/CreditsBoardPanel.razor`'s contributor list (`.credits-list`) is a wrapping row (`flex-wrap: wrap`, fixed-width `.credits-user-shell`, `flex-shrink: 0`) to show contributors in two columns. The board has a fixed height with `overflow: hidden`, so a very long list will eventually clip — make the list scrollable (like the detail view's contribution list) if it outgrows two columns.
+

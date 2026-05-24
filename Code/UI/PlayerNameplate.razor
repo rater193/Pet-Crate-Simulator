@@ -1,0 +1,86 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Sandbox
+
+<style>
+    .nameplate {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 28px;
+        background-color: rgba(8, 20, 36, 0.78);
+        border: 4px solid #72cfff;
+        border-radius: 22px;
+        box-shadow: 0px 6px 0px rgba(0, 22, 44, 0.5);
+    }
+
+    .nameplate-text {
+        color: white;
+        font-size: 48px;
+        font-weight: 900;
+        text-align: center;
+        white-space: nowrap;
+        text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.45);
+    }
+</style>
+
+<root>
+    @if ( IsRemotePlayer )
+    {
+        <div class="nameplate">
+            <div class="nameplate-text">@PlayerName</div>
+        </div>
+    }
+</root>
+
+@code
+{
+    private PlayerData player;
+
+    // The player this nameplate belongs to (resolved from an ancestor of this object).
+    private PlayerData Player
+    {
+        get
+        {
+            if ( !player.IsValid() )
+                player = GameObject.Components.Get<PlayerData>( FindMode.EverythingInSelfAndAncestors );
+
+            return player;
+        }
+    }
+
+    // Only show nameplates above OTHER players (proxies), never your own.
+    private bool IsRemotePlayer => Player?.IsProxy == true;
+
+    private string PlayerName
+    {
+        get
+        {
+            var owner = Player?.GameObject.Network.Owner;
+            return string.IsNullOrWhiteSpace( owner?.DisplayName ) ? "Player" : owner.DisplayName;
+        }
+    }
+
+    protected override void OnUpdate()
+    {
+        FaceCamera();
+    }
+
+    private void FaceCamera()
+    {
+        if ( Scene?.Camera.IsValid() != true )
+            return;
+
+        WorldRotation = Scene.Camera.WorldRotation * Rotation.FromYaw( 180f );
+    }
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+    protected override int BuildHash() => System.HashCode.Combine( IsRemotePlayer, PlayerName );
+}

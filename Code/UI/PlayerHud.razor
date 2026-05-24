@@ -270,6 +270,7 @@
     <Sandbox.PetTradePanel />
     <Sandbox.BanNoticePanel />
     <Sandbox.PlayerNoticePanel />
+    <FeedbackPanel IsOpen=@isFeedbackOpen WebhookUrl=@feedbackWebhookUrl CloseRequested=@CloseFeedback />
 </root>
 
 
@@ -281,6 +282,8 @@
     public static PlayerHud SINGLETON;
     private static bool isPetInventoryOpen;
     private static bool isPetMergerOpen;
+    private static bool isFeedbackOpen;
+    private static string feedbackWebhookUrl;
     private Texture InventoryInputTexture;
     private Texture PTTInputTexture;
     private int lastTradeUiVersion;
@@ -304,6 +307,7 @@
     private bool IsAnyMenuOpen =>
         isPetInventoryOpen
         || isPetMergerOpen
+        || isFeedbackOpen
         || PlayerTradeController.LOCAL?.IsTradeOpen == true
         || PlayerTradeController.LOCAL?.IsDetailsOpen == true
         || BanListController.IsBanNoticeVisible
@@ -363,6 +367,21 @@
         SINGLETON?.StateHasChanged();
     }
 
+    public static void OpenFeedback( string webhookUrl )
+    {
+        isPetInventoryOpen = false;
+        isPetMergerOpen = false;
+        feedbackWebhookUrl = webhookUrl;
+        isFeedbackOpen = true;
+        SINGLETON?.StateHasChanged();
+    }
+
+    private void CloseFeedback()
+    {
+        isFeedbackOpen = false;
+        StateHasChanged();
+    }
+
     private void ClosePetInventory()
     {
         isPetInventoryOpen = false;
@@ -387,7 +406,7 @@
     protected override int BuildHash()
     {
         return System.HashCode.Combine(
-            System.HashCode.Combine(MyStringValue, width, RenderedMoneyValue, isPetInventoryOpen, isPetMergerOpen),
+            System.HashCode.Combine(MyStringValue, width, RenderedMoneyValue, isPetInventoryOpen, isPetMergerOpen, isFeedbackOpen),
             InventoryInputTexture,
             PTTInputTexture,
             PlayerTradeController.UiVersion,

@@ -1,0 +1,199 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System;
+@inherits Panel
+@namespace Sandbox
+
+@if ( !IsOpen )
+	return;
+
+<style>
+	.feedback-shell {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		align-items: center;
+		justify-content: center;
+		pointer-events: all;
+		background-color: rgba(8, 14, 30, 0.55);
+		font-family: Poppins;
+	}
+
+	.feedback-window {
+		width: 760px;
+		background-color: #eef7ff;
+		border: 4px solid #7bd3ff;
+		border-radius: 24px;
+		box-shadow: 0px 16px 40px rgba(0, 35, 70, 0.45);
+		flex-direction: column;
+		align-items: center;
+		padding: 40px 36px 28px 36px;
+		position: relative;
+	}
+
+	.feedback-title {
+		color: #2375df;
+		font-size: 46px;
+		font-weight: 900;
+		text-shadow: 0px 3px 0px rgba(255, 255, 255, 0.85);
+		margin-bottom: 6px;
+	}
+
+	.feedback-subtitle {
+		color: #4f6f8a;
+		font-size: 24px;
+		font-weight: 800;
+		text-align: center;
+		margin-bottom: 22px;
+	}
+
+	.feedback-input {
+		width: 100%;
+		height: 220px;
+		background-color: white;
+		border: 3px solid #9bd6f7;
+		border-radius: 16px;
+		padding: 16px 18px;
+		color: #15324c;
+		font-size: 26px;
+		font-weight: 600;
+	}
+
+	.feedback-status {
+		min-height: 32px;
+		color: #2f7d3f;
+		font-size: 24px;
+		font-weight: 800;
+		margin-top: 14px;
+		text-align: center;
+	}
+
+	.feedback-buttons {
+		flex-direction: row;
+		margin-top: 18px;
+	}
+
+	.feedback-button {
+		min-width: 200px;
+		height: 70px;
+		align-items: center;
+		justify-content: center;
+		border-radius: 18px;
+		font-size: 30px;
+		font-weight: 900;
+		color: white;
+		text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.3);
+		box-shadow: 0px 7px 0px rgba(9, 52, 116, 0.32);
+		margin: 0px 10px;
+		cursor: pointer;
+		transition: transform 0.1s ease, background-color 0.1s ease;
+	}
+
+	.feedback-button:hover {
+		transform: scale(1.05);
+	}
+
+	.feedback-submit {
+		background-color: #2f9e4d;
+	}
+
+	.feedback-submit:hover {
+		background-color: #37b658;
+	}
+
+	.feedback-cancel {
+		background-color: #d0556b;
+	}
+
+	.feedback-cancel:hover {
+		background-color: #e26079;
+	}
+</style>
+
+<root>
+	<div class="feedback-shell">
+		<div class="feedback-window">
+			<div class="feedback-title">Give Feedback</div>
+			<div class="feedback-subtitle">Bugs, ideas, anything &mdash; let us know what you think!</div>
+			<TextEntry @ref="InputBox" class="feedback-input" Multiline=@(true) placeholder="Type your feedback here..." />
+			<div class="feedback-status">@StatusText</div>
+			<div class="feedback-buttons">
+				<div class="feedback-button feedback-submit" onclick=@Submit>Submit</div>
+				<div class="feedback-button feedback-cancel" onclick=@Cancel>Close</div>
+			</div>
+		</div>
+	</div>
+</root>
+
+@code
+{
+	[Parameter] public bool IsOpen { get; set; }
+	[Parameter] public string WebhookUrl { get; set; }
+	[Parameter] public Action CloseRequested { get; set; }
+
+	private TextEntry InputBox;
+	private string StatusText = "";
+	private bool sending;
+
+	private async void Submit()
+	{
+		if ( sending )
+			return;
+
+		var message = InputBox?.Text;
+		if ( string.IsNullOrWhiteSpace( message ) )
+		{
+			StatusText = "Please type some feedback first.";
+			StateHasChanged();
+			return;
+		}
+
+		if ( string.IsNullOrWhiteSpace( WebhookUrl ) )
+		{
+			StatusText = "Feedback isn't configured yet.";
+			StateHasChanged();
+			return;
+		}
+
+		sending = true;
+		StatusText = "Sending...";
+		StateHasChanged();
+
+		try
+		{
+			var name = Connection.Local?.DisplayName;
+			if ( string.IsNullOrWhiteSpace( name ) )
+				name = "Unknown";
+
+			var trimmed = message.Trim();
+			if ( trimmed.Length > 1800 )
+				trimmed = trimmed.Substring( 0, 1800 );
+
+			var content = $"**Feedback from {name}** (SteamID: {Game.SteamId})\n{trimmed}";
+			await Http.RequestAsync( WebhookUrl, "POST", Http.CreateJsonContent( new { content } ) );
+
+			if ( InputBox != null )
+				InputBox.Text = "";
+
+			StatusText = "Thanks! Your feedback was sent.";
+		}
+		catch ( Exception exception )
+		{
+			Log.Warning( exception, "Failed to send feedback." );
+			StatusText = "Couldn't send right now. Please try again later.";
+		}
+
+		sending = false;
+		StateHasChanged();
+	}
+
+	private void Cancel()
+	{
+		StatusText = "";
+		CloseRequested?.Invoke();
+	}
+
+	protected override int BuildHash() => System.HashCode.Combine( IsOpen, StatusText, sending, WebhookUrl );
+}
