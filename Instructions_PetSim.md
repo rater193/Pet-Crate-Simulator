@@ -1281,6 +1281,7 @@ These cross-cutting lessons cost real debugging time. Read them before touching 
 - s&box supports `box-shadow` with spread (4th value) and the `cursor` property, but NOT the web `inset` keyword.
 - Render UI images from project assets with `<img src="ui/yourtexture.vtex">` (same as the money icon). Use `.vtex`, not `.png`, or it can fail for non-editor clients.
 - Boolean component attributes in Razor MUST use a `@` expression (`Multiline=@(true)`), never a quoted literal (`Multiline="true"`). `dotnet build` accepts the quoted form, but s&box's Razor codegen emits a string-to-bool assignment and fails with "Cannot implicitly convert type 'string' to 'bool'". This is a concrete case where `dotnet build` is green but s&box's compile fails — see below for how to read those errors.
+- Do NOT declare a `record` inside a Razor `@code` block — s&box's Razor codegen chokes on it and silently drops the surrounding nested-type declarations, producing cascading "type or namespace 'X' could not be found" errors for unrelated nested types in the same `@code`. `dotnet build` accepts records fine (another green-build/s&box-fail divergence). Use a plain `class`/`enum` for nested types in `@code` (records are fine in normal `.cs` files).
 
 ### Reading s&box compile errors (when `dotnet build` is green but the game is broken)
 
