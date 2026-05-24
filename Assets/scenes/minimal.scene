@@ -8644,7 +8644,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Credits Board",
-          "Position": "1997.19849,636.631287,277.892365",
+          "Position": "1997.19849,636.631287,177.47406",
           "Rotation": "0,0,0.978244722,-0.207454145",
           "Scale": "3,3,3",
           "Tags": "",
@@ -8669,7 +8669,7 @@
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null,
-              "PanelSize": "3072,3200",
+              "PanelSize": "3072,2200",
               "RenderOptions": {
                 "GameLayer": true,
                 "OverlayLayer": false,
@@ -8737,6 +8737,18 @@
                   "Contributions": [
                     "Playtester",
                     "First to hatch a RARE BEE"
+                  ]
+                },
+                {
+                  "SteamId": 76561198122232128,
+                  "Contributions": [
+                    "Idea: Button to activate all shop crates"
+                  ]
+                },
+                {
+                  "SteamId": 76561198006490116,
+                  "Contributions": [
+                    "Idea: Hand cursor when hovering over itneractabe items"
                   ]
                 }
               ],

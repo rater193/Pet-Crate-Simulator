@@ -1,5 +1,6 @@
 @using Sandbox;
 @using Sandbox.UI;
+@using System.Linq;
 @inherits PanelComponent
 @namespace Sandbox
 
@@ -59,6 +60,16 @@
         height: 8px;
         transform: translate(-50%, -50%);
         background-color: black;
+    }
+
+    .HandCursor {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 52px;
+        height: 52px;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
     }
 
     .InventoryPrompt {
@@ -185,7 +196,14 @@
 </style>
 
 <root>
-    <div class="Crosshair"></div>
+    @if ( ShowHandCursor )
+    {
+        <img class="HandCursor" src="ui/hand.vtex" />
+    }
+    else
+    {
+        <div class="Crosshair"></div>
+    }
     <div class="StatBox">
         <img class="Icon-Cash" src="ui/sandcoin_small.vtex" />
         <div class="StatBox-Money-Container"><div class="StatBox-Money-Bock">@RenderedMoneyValue</div></div>
@@ -235,6 +253,23 @@
     private Texture InventoryInputTexture;
     private Texture PTTInputTexture;
     private int lastTradeUiVersion;
+    private WorldInput worldInput;
+
+    // The crosshair becomes a hand whenever the aim ray is over a clickable world-panel
+    // element (shop pet cards, credits board buttons, etc.), detected via WorldInput.
+    private WorldInput WorldInputComponent
+    {
+        get
+        {
+            if ( !worldInput.IsValid() )
+                worldInput = Scene?.GetAllComponents<WorldInput>().FirstOrDefault();
+
+            return worldInput;
+        }
+    }
+
+    private bool IsHoveringWorldUi => WorldInputComponent?.Hovered != null;
+    private bool ShowHandCursor => IsHoveringWorldUi;
 
     protected override void OnStart()
     {
@@ -312,7 +347,8 @@
             PTTInputTexture,
             PlayerTradeController.UiVersion,
             System.HashCode.Combine(BanListController.NoticeVersion, PlayerNoticeController.NoticeVersion),
-            AudioSettings.Version
+            AudioSettings.Version,
+            ShowHandCursor
         );
     }
 }
