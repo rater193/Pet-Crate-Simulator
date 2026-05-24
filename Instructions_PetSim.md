@@ -1378,3 +1378,32 @@ Players neither physically collide with each other NOR block each other's camera
 - Why this doesn't break trade: the interaction trace (`PlayerInteractionsController.FindAimedInteractable`) uses `UseHitboxes(true)` AND reads the hit via `tr.GameObject` (NOT `tr.Collider`). `IgnoreTraces` hides the player's *collider* from traces, but model *hitboxes* are a separate system and are still hit; resolving the `Interactable` from `tr.GameObject` (EverythingInSelfAndAncestors) works for both hitbox hits (players) and collider hits (crates/doors). IMPORTANT: reading `tr.Collider` instead would return null on hitbox hits and break player interaction — this exact regression happened once. If a player model lacked hitboxes entirely, trade-by-aim would break and you'd need a custom camera trace that excludes the `player` tag instead of `IgnoreTraces`.
 - General rule: to keep something solid in physics but invisible to traces (camera, aim queries), use `ColliderFlags.IgnoreTraces` rather than touching collision rules. To exclude something from a specific trace only, filter that trace with `.WithoutTags(...)` instead.
 
+## Current Project Addendum: Pet Inventory Tabs, Left Dock, Tooltip, and Player List
+
+These notes reflect the tabbed pet inventory in `Code/UI/PetInventoryPanel.razor` and the reusable pet tooltip.
+
+### Tab system (extensible)
+- The inventory window has a segmented-control tab bar driven by a `Tabs` `List<TabDef>` and an `InventoryTab` enum. Current tabs: `Pets` and `Players`.
+- To add a tab: add an `InventoryTab` value, a `Tabs` list entry (`new TabDef( id, "Label", "Window Title" )`), and an `else if ( selectedTab == InventoryTab.X )` content block in the markup. The tab bar renders itself from the list.
+- `selectedTab` is `static` (one local inventory), so the inventory reopens on the last-used tab. `ShowPlayersTab()` selects the Players tab externally (used by the details-panel back flow).
+- The tab bar needs `flex-shrink: 0`, or fixed-height content (the equipped dock) squishes it and the active tab overflows.
+
+### Layout
+- The Pets tab is a `.pet-tab-content` row: a left-docked `.pet-inventory-equipped` panel (fixed width, vertical list of equipped pets + the Equip-best buttons stacked at the bottom) and the `.pet-inventory-body` grid filling the right.
+- The window is `height: 80%` (centered → ~10% top/bottom margins).
+
+### Players tab
+- Built from `Scene.GetAllComponents<PlayerData>()` (NOT `Connection.All`) so each row carries the player's `GameObject`. Owner name/SteamId come from `playerData.GameObject.Network.Owner`; `IsLocal = !playerData.IsProxy`.
+- Clicking another player's row calls `PlayerTradeController.LOCAL.OpenPlayerDetails( row.Player )` (closing the inventory first). This is the reliable way to open a player's details — the world aim-raycast is unreliable for players because their colliders are `IgnoreTraces` (see the collision/camera addendum).
+- Closing the player details panel returns to the Players tab: `PlayerHud.ClosePlayerDetails` calls `PetInventoryPanel.ShowPlayersTab()` and reopens the inventory.
+
+### Reusable pet tooltip
+- `Code/UI/PetTooltip.cs` is a static controller (`Show`/`Hide`/`Current`/`Version`) plus `PetTooltipInfo` with `FromSlot( InventoryPetSlot )` — the SINGLE place detailed pet stats are derived (rarity-scaled like `InventoryPetSlot.ApplyRarityToPetComponent`). Shows the otherwise-hidden stats (attack interval/speed, range, move speed, bob, lunge).
+- `Code/UI/PetStatsTooltip.razor` is one overlay hosted by `PlayerHud` (renders above all menus, follows the cursor via `Mouse.Position / (Screen.Height/1080)`, clamped on-screen).
+- Any pet UI shows it with two handlers: `onmouseover=@(() => PetTooltip.Show( PetTooltipInfo.FromSlot( slot ) ))` and `onmouseout=@(() => PetTooltip.Hide())`. The inventory drives it from `SetHoveredPet`/`ClearHoveredPet` and hides it on close/tab-switch. To add to other menus (Forge, trade), reuse the same calls; for non-slot data build a `PetTooltipInfo` directly.
+
+### Gotchas reinforced this session (all `dotnet build`-green / s&box-fail)
+- A `record` declared in a Razor `@code` block breaks s&box codegen and cascades "type not found" errors — use a `class` (this bit the `TabDef` once).
+- A literal char immediately before `@Member.Access` renders literally; wrap as `x@(Info.CoinText)`, not `x@Info.CoinText` (this bit the tooltip values once).
+- s&box recompiles on EVERY file save, so a multi-edit restructure (open a container in one edit, close it in the next) can leave a transient `} expected` failure captured in `sbox-dev.log`. After finishing edits, reload the editor so the FINAL state recompiles; don't trust a stale log line. A balanced div/brace count + clean `dotnet build` means the current file is fine even if the log shows an older failure.
+
