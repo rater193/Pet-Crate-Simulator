@@ -100,6 +100,11 @@
 	/// </summary>
 	[Property] public float FadeDuration { get; set; } = 2f;
 
+	/// <summary>
+	/// Screen layer for the chat. Kept below the HUD (ZIndex 100) so chat renders behind other screen UI.
+	/// </summary>
+	[Property] public int ScreenZIndex { get; set; } = 50;
+
 	bool IsOpen;
 	bool NeedsFocus;
 	bool WasInputFocused;
@@ -108,6 +113,11 @@
 	protected override void OnStart()
 	{
 		SimpleTextChatSystem.History.Clear();
+
+		// Render the chat behind other screen UI (the HUD ScreenPanel sits at ZIndex 100).
+		var screen = GameObject.Components.Get<ScreenPanel>();
+		if ( screen != null )
+			screen.ZIndex = ScreenZIndex;
 	}
 
 	protected override void OnUpdate()

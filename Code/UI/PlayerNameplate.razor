@@ -1,5 +1,7 @@
 @using Sandbox;
 @using Sandbox.UI;
+@using System.Collections.Generic;
+@using System.Linq;
 @inherits PanelComponent
 @namespace Sandbox
 
@@ -9,7 +11,7 @@
         left: 50%;
         top: 50%;
         transform: translateX(-50%) translateY(-50%);
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         padding: 8px 28px;
@@ -27,19 +29,35 @@
         white-space: nowrap;
         text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.45);
     }
+
+    .nameplate-subtag {
+        margin-top: 2px;
+        font-size: 30px;
+        font-weight: 900;
+        text-align: center;
+        white-space: nowrap;
+        text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.5);
+    }
 </style>
 
 <root>
     @if ( IsRemotePlayer )
     {
-        <div class="nameplate">
+        <div class="nameplate" style="@PlateStyle">
             <div class="nameplate-text">@PlayerName</div>
+            @if ( HasSubtag )
+            {
+                <div class="nameplate-subtag" style="@SubtagStyle">@SubtagText</div>
+            }
         </div>
     }
 </root>
 
 @code
 {
+    /// <summary>Per-SteamId custom subtags (e.g. Developer, VIP) shown below the player name.</summary>
+    [Property] public List<NameplateTag> Tags { get; set; } = new();
+
     private PlayerData player;
 
     // The player this nameplate belongs to (resolved from an ancestor of this object).
@@ -66,6 +84,25 @@
         }
     }
 
+    // The configured tag matching this player's SteamId, if any.
+    private NameplateTag CurrentTag
+    {
+        get
+        {
+            var owner = Player?.GameObject.Network.Owner;
+            if ( owner == null || Tags == null )
+                return null;
+
+            long steamId = owner.SteamId;
+            return Tags.FirstOrDefault( tag => tag != null && tag.SteamId == steamId && !string.IsNullOrWhiteSpace( tag.Subtag ) );
+        }
+    }
+
+    private bool HasSubtag => CurrentTag != null;
+    private string SubtagText => CurrentTag?.Subtag ?? string.Empty;
+    private string SubtagStyle => CurrentTag != null ? $"color: {ToCss( CurrentTag.Color )};" : "";
+    private string PlateStyle => CurrentTag != null ? $"border-color: {ToCss( CurrentTag.Color )};" : "";
+
     protected override void OnUpdate()
     {
         FaceCamera();
@@ -79,8 +116,20 @@
         WorldRotation = Scene.Camera.WorldRotation * Rotation.FromYaw( 180f );
     }
 
+    private static string ToCss( Color c )
+    {
+        return $"rgba({(int)(c.r * 255)},{(int)(c.g * 255)},{(int)(c.b * 255)},{c.a.ToString( "0.##" )})";
+    }
+
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-    protected override int BuildHash() => System.HashCode.Combine( IsRemotePlayer, PlayerName );
+    protected override int BuildHash() => System.HashCode.Combine( IsRemotePlayer, PlayerName, SubtagText, SubtagStyle );
+
+    public sealed class NameplateTag
+    {
+        [Property] public long SteamId { get; set; }
+        [Property] public string Subtag { get; set; } = "VIP";
+        [Property] public Color Color { get; set; } = new Color( 1f, 0.84f, 0.42f );
+    }
 }

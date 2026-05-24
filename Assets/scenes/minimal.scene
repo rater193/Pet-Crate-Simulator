@@ -9647,6 +9647,7 @@
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null,
+              "ScreenZIndex": 0,
               "TextColor": "1,1,1,1"
             }
           ],
