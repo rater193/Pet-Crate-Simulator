@@ -28,27 +28,12 @@
         font-size: 24px;
         color: white;
     }
-
-    .text {
-        position: absolute;
-        left: 0px;
-        top: 256px;
-        right: 0px;
-        height: 256px;
-        display: flex;
-        justify-content: center; /* Horizontal centering */
-        /*align-items: initial; /* Vertical centering */
-        font-size: 64px;
-        font-weight: bold;
-        color: black;
-    }
 </style>
 
 <root>
     <div class="background">
         <Image class="icon" Texture=@InputTexture />
     </div>
-    <div class="text">@MyStringValue</div>
 </root>
 
 @code
@@ -56,7 +41,6 @@
     public static InteractionFrameworkUI SINGLETON;
 
     private Texture InputTexture;
-    [Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
 
     protected override void OnStart()
     {
@@ -70,18 +54,8 @@
         WorldRotation = new Rotation(Scene.Camera.WorldRotation.x, Scene.Camera.WorldRotation.y, Scene.Camera.WorldRotation.z, Scene.Camera.WorldRotation.w).RotateAroundAxis(Vector3.Up, 180f);
     }
 
-    public void SetPromptText( string promptText )
-    {
-        promptText ??= string.Empty;
-        if ( MyStringValue == promptText )
-            return;
-
-        MyStringValue = promptText;
-        StateHasChanged();
-    }
-
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine( MyStringValue );
+	protected override int BuildHash() => System.HashCode.Combine( InputTexture );
 }

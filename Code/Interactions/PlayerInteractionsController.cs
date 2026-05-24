@@ -4,6 +4,8 @@ using static Sandbox.PhysicsContact;
 
 public sealed class PlayerInteractionsController : Component
 {
+	GameObject interactionObject;
+
 	public static PlayerInteractionsController Local { get; private set; }
 
 	/// <summary>True while the local player is aiming at a valid interactable object.</summary>
@@ -20,9 +22,39 @@ public sealed class PlayerInteractionsController : Component
 		IsHoveringInteractable = false;
 		HoverPromptText = string.Empty;
 
+		// World-space prompt that shows the interact key icon on the object itself.
+		interactionObject ??= GameObject.GetPrefab( "Prefabs/UI/interactionsenginepanel.prefab" ).Clone();
+
+		var interactable = FindAimedInteractable();
+		if ( !interactable.IsValid() )
+		{
+			if ( interactionObject.IsValid() )
+				interactionObject.Enabled = false;
+
+			return;
+		}
+
+		IsHoveringInteractable = true;
+		HoverPromptText = interactable.text;
+
+		if ( interactionObject.IsValid() )
+		{
+			interactionObject.Enabled = true;
+			interactionObject.WorldPosition = interactable.GameObject.WorldPosition + interactable.InteractableShortcutOffset;
+		}
+
+		if ( Input.Pressed( "Use" ) )
+		{
+			GameStatsTracker.RecordInteraction( interactable.GetType().Name, interactable.GameObject.Name );
+			interactable.OnInteract( GetComponent<PlayerController>() );
+		}
+	}
+
+	private Interactable FindAimedInteractable()
+	{
 		var camera = Scene.Camera;
 		if ( camera == null )
-			return;
+			return null;
 
 		var startPos = camera.WorldPosition;
 		var direction = camera.WorldRotation.Forward;
@@ -34,20 +66,13 @@ public sealed class PlayerInteractionsController : Component
 			.Run();
 
 		if ( !tr.Hit )
-			return;
+			return null;
 
 		var interactable = tr.Collider.Components.Get<Interactable>( FindMode.EverythingInSelfAndAncestors );
 		if ( !interactable.IsValid() || IsOwnInteractable( interactable ) )
-			return;
+			return null;
 
-		IsHoveringInteractable = true;
-		HoverPromptText = interactable.text;
-
-		if ( Input.Pressed( "Use" ) )
-		{
-			GameStatsTracker.RecordInteraction( interactable.GetType().Name, interactable.GameObject.Name );
-			interactable.OnInteract( GetComponent<PlayerController>() );
-		}
+		return interactable;
 	}
 
 	protected override void OnDestroy()
