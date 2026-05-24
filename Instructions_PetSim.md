@@ -1351,3 +1351,14 @@ These notes reflect interactivity added to the crate shop.
 
 - `Code/UI/CreditsBoardPanel.razor`'s contributor list (`.credits-list`) is a wrapping row (`flex-wrap: wrap`, fixed-width `.credits-user-shell`, `flex-shrink: 0`) to show contributors in two columns. The board has a fixed height with `overflow: hidden`, so a very long list will eventually clip — make the list scrollable (like the detail view's contribution list) if it outgrows two columns.
 
+## Current Project Addendum: Give Feedback (Discord Webhook)
+
+These notes reflect the in-game feedback feature.
+
+- `Code/Interactions/InteractGiveFeedback.cs` is a world-space `Interactable` (prompt defaults to "Give Feedback") with a `[Property] WebhookUrl`. On use it calls `PlayerHud.OpenFeedback( WebhookUrl )`. Like other interactable buttons, the object needs a collider to be aimed at.
+- `Code/UI/FeedbackPanel.razor` is the modal (a child `Panel` hosted by `PlayerHud`, opened/closed via `PlayerHud.OpenFeedback(url)` / `CloseFeedback`, tracked in `isFeedbackOpen` and included in `IsAnyMenuOpen`). It has a multiline `TextEntry`, Submit, and Close. The Auto cursor appears while it's open (its interactive content), so no manual `Mouse.Visibility` handling is needed.
+- On submit it POSTs to the Discord webhook via `Http.RequestAsync( WebhookUrl, "POST", Http.CreateJsonContent( new { content } ) )`, where `content` is `**Feedback from {name}** (SteamID: {Game.SteamId})\n{message}`. The player name comes from `Connection.Local?.DisplayName`. Message is trimmed and capped at ~1800 chars (Discord's 2000 limit). Failures are caught and shown as a status line; success clears the box.
+- The webhook URL is stored in scene/prefab data and ships to clients, so a determined player could extract and post to it directly. That's inherent to client-side webhooks; route through a backend you control if that matters.
+- `Sandbox.Http` is whitelisted for gamemode code (https domains only, no raw IPs). If you add other HTTP features, keep that in mind.
+- Reminder: `Multiline=@(true)` on the `TextEntry`, NOT `Multiline="true"` — see the Razor bool-attribute gotcha above.
+
