@@ -118,10 +118,19 @@
 		z-index: 30;
 	}
 
-	.pet-auto-equip-controls {
+	.pet-equipped-main {
 		flex-direction: row;
 		align-items: center;
+		gap: 16px;
+		flex-grow: 1;
+		min-height: 0px;
+	}
+
+	.pet-auto-equip-controls {
+		flex-direction: column;
+		align-items: stretch;
 		gap: 8px;
+		flex-shrink: 0;
 		position: relative;
 		z-index: 31;
 	}
@@ -233,6 +242,7 @@
 	.pet-equipped-list {
 		height: 132px;
 		min-height: 132px;
+		flex-grow: 1;
 		flex-direction: row;
 		gap: 14px;
 		justify-content: center;
@@ -607,6 +617,7 @@
 	.pet-tab-bar {
 		flex-direction: row;
 		align-self: center;
+		flex-shrink: 0;
 		gap: 6px;
 		margin-top: 4px;
 		margin-bottom: 24px;
@@ -727,12 +738,9 @@
 			<div class="pet-inventory-equipped">
 				<div class="pet-equipped-title-row">
 					<div class="pet-section-title">@EquippedCount / @MaxEquipped Equipped</div>
-					<div class="pet-auto-equip-controls">
-						<button class="pet-auto-equip-button" onclick=@(() => EquipBest( InventoryAutoEquipMode.Damage ))>Equip best damage</button>
-						<button class="pet-auto-equip-button" onclick=@(() => EquipBest( InventoryAutoEquipMode.CoinMultiplier ))>Equip best coins</button>
-					</div>
 				</div>
-				<div class="pet-equipped-list">
+				<div class="pet-equipped-main">
+					<div class="pet-equipped-list">
 					@if ( EquippedPets.Count == 0 )
 					{
 						<div class="pet-empty-state">No pets equipped</div>
@@ -766,6 +774,11 @@
 						}
 					}
 				</div>
+				<div class="pet-auto-equip-controls">
+					<button class="pet-auto-equip-button" onclick=@(() => EquipBest( InventoryAutoEquipMode.Damage ))>Equip best damage</button>
+					<button class="pet-auto-equip-button" onclick=@(() => EquipBest( InventoryAutoEquipMode.CoinMultiplier ))>Equip best coins</button>
+				</div>
+			</div>
 			</div>
 
 			<div class="pet-inventory-body">
