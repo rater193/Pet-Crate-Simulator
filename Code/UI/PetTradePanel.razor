@@ -363,7 +363,7 @@
 		}
 	</div>;
 
-	private RenderFragment PetCard( PlayerTradeController.TradePetView pet, bool allowSelection, bool clickable, bool isSelected, string hoverKey, bool dimUnselectedSubmittedPets = true ) => @<div class="@GetPetCardClass( pet, allowSelection, isSelected, hoverKey, dimUnselectedSubmittedPets )" style="@GetPetCardStyle( pet )" onmouseover=@(() => SetHoveredTradePet( hoverKey )) onmouseout=@(() => ClearHoveredTradePet( hoverKey )) onclick=@(() => HandlePetCardClicked( pet, clickable ))>
+	private RenderFragment PetCard( PlayerTradeController.TradePetView pet, bool allowSelection, bool clickable, bool isSelected, string hoverKey, bool dimUnselectedSubmittedPets = true ) => @<div class="@GetPetCardClass( pet, allowSelection, isSelected, hoverKey, dimUnselectedSubmittedPets )" style="@GetPetCardStyle( pet )" onmouseover=@(() => SetHoveredTradePet( hoverKey, pet )) onmouseout=@(() => ClearHoveredTradePet( hoverKey )) onclick=@(() => HandlePetCardClicked( pet, clickable ))>
 		<div class="pet-trade-thumb">
 			@if ( pet.PreviewTexture != null )
 			{
@@ -432,8 +432,22 @@
 		}
 	}
 
-	private void SetHoveredTradePet( string hoverKey )
+	public override void Tick()
 	{
+		base.Tick();
+
+		// If the panel closed while a card was hovered, onmouseout never fired — clear the stuck tooltip.
+		if ( Trade?.IsTradeOpen != true && !string.IsNullOrWhiteSpace( hoveredTradePetKey ) )
+		{
+			hoveredTradePetKey = null;
+			PetTooltip.Hide();
+		}
+	}
+
+	private void SetHoveredTradePet( string hoverKey, PlayerTradeController.TradePetView pet )
+	{
+		PetTooltip.Show( PetTooltipInfo.FromPrefab( pet?.PetPrefabPath, pet?.Rarity ?? PetRarity.Common, pet?.DisplayName ) );
+
 		if ( hoveredTradePetKey == hoverKey )
 			return;
 
@@ -443,6 +457,8 @@
 
 	private void ClearHoveredTradePet( string hoverKey )
 	{
+		PetTooltip.Hide();
+
 		if ( hoveredTradePetKey != hoverKey )
 			return;
 

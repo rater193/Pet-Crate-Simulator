@@ -73,15 +73,28 @@ public sealed class PetTooltipInfo
 		if ( !slot.IsValid() )
 			return null;
 
-		var prefab = slot.GetPetPrefab();
+		return FromPrefab( slot.PetPrefabPath, slot.Rarity, slot.DisplayName );
+	}
+
+	/// <summary>
+	/// Builds detailed stats from a pet prefab path + rarity. Used by UIs that don't hold an
+	/// <see cref="InventoryPetSlot"/> (e.g. trade snapshots, which carry only a path + rarity).
+	/// Applies the same rarity scaling as <see cref="FromSlot"/>.
+	/// </summary>
+	public static PetTooltipInfo FromPrefab( string petPrefabPath, PetRarity rarity, string fallbackName = null )
+	{
+		if ( string.IsNullOrWhiteSpace( petPrefabPath ) )
+			return null;
+
+		var prefab = GameObject.GetPrefab( petPrefabPath );
 		var component = prefab?.GetComponent<PetComponent>() ?? prefab?.GetComponentInChildren<PetComponent>();
-		var rarityMultiplier = slot.RarityValueMultiplier;
-		var displayName = !string.IsNullOrWhiteSpace( component?.DisplayName ) ? component.DisplayName : slot.DisplayName;
+		var rarityMultiplier = rarity.GetValueMultiplier();
+		var displayName = !string.IsNullOrWhiteSpace( component?.DisplayName ) ? component.DisplayName : fallbackName;
 
 		return new PetTooltipInfo
 		{
 			DisplayName = string.IsNullOrWhiteSpace( displayName ) ? "Pet" : displayName,
-			Rarity = slot.Rarity,
+			Rarity = rarity,
 			CoinMultiplier = System.MathF.Max( 0f, component?.CoinMultiplier ?? 1f ) * rarityMultiplier,
 			Damage = System.Math.Max( 0, (int)System.MathF.Round( (component?.Damage ?? 1) * rarityMultiplier ) ),
 			AttackInterval = System.MathF.Max( 0.05f, (component?.AttackInterval ?? 1f) / rarityMultiplier ),
