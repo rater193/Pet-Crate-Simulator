@@ -299,13 +299,22 @@
         }
     }
 
+    // World aim feedback (hand cursor + below-cursor prompt) is suppressed while a HUD menu
+    // is open, so it never paints over the inventory/forge/trade panels.
+    private bool IsAnyMenuOpen =>
+        isPetInventoryOpen
+        || isPetMergerOpen
+        || PlayerTradeController.LOCAL?.IsTradeOpen == true
+        || PlayerTradeController.LOCAL?.IsDetailsOpen == true
+        || BanListController.IsBanNoticeVisible
+        || PlayerNoticeController.IsNoticeVisible;
     private bool IsHoveringWorldUi => WorldInputComponent?.Hovered != null;
-    private bool ShowHandCursor => IsHoveringWorldUi || PlayerInteractionsController.Local?.IsHoveringInteractable == true;
+    private bool ShowHandCursor => !IsAnyMenuOpen && (IsHoveringWorldUi || PlayerInteractionsController.Local?.IsHoveringInteractable == true);
     private string InteractPromptText =>
         PlayerInteractionsController.Local?.IsHoveringInteractable == true
             ? (PlayerInteractionsController.Local?.HoverPromptText ?? string.Empty)
             : CrateShopDisplay.HoverPromptText;
-    private bool ShowInteractPrompt => !string.IsNullOrWhiteSpace( InteractPromptText );
+    private bool ShowInteractPrompt => !IsAnyMenuOpen && !string.IsNullOrWhiteSpace( InteractPromptText );
 
     protected override void OnStart()
     {
