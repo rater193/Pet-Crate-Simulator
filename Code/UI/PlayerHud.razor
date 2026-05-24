@@ -72,6 +72,31 @@
         pointer-events: none;
     }
 
+    .InteractPrompt {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(60px);
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 56px;
+        padding: 6px 28px;
+        background-color: #dff1ff;
+        border: 4px solid #72cfff;
+        border-radius: 24px;
+        box-shadow: 0px 6px 16px rgba(0, 34, 78, 0.28);
+        pointer-events: none;
+    }
+
+    .InteractPrompt-Text {
+        color: #397da6;
+        font-size: 28px;
+        font-weight: 900;
+        text-align: center;
+        text-shadow: 1px 2px 0px rgba(255, 255, 255, 0.8);
+    }
+
     .InventoryPrompt {
         position: absolute;
         left: -16px;
@@ -204,6 +229,12 @@
     {
         <div class="Crosshair"></div>
     }
+    @if ( ShowInteractPrompt )
+    {
+        <div class="InteractPrompt">
+            <div class="InteractPrompt-Text">@InteractPromptText</div>
+        </div>
+    }
     <div class="StatBox">
         <img class="Icon-Cash" src="ui/sandcoin_small.vtex" />
         <div class="StatBox-Money-Container"><div class="StatBox-Money-Bock">@RenderedMoneyValue</div></div>
@@ -270,6 +301,8 @@
 
     private bool IsHoveringWorldUi => WorldInputComponent?.Hovered != null;
     private bool ShowHandCursor => IsHoveringWorldUi || PlayerInteractionsController.Local?.IsHoveringInteractable == true;
+    private bool ShowInteractPrompt => PlayerInteractionsController.Local?.IsHoveringInteractable == true;
+    private string InteractPromptText => PlayerInteractionsController.Local?.HoverPromptText ?? string.Empty;
 
     protected override void OnStart()
     {
@@ -348,7 +381,8 @@
             PlayerTradeController.UiVersion,
             System.HashCode.Combine(BanListController.NoticeVersion, PlayerNoticeController.NoticeVersion),
             AudioSettings.Version,
-            ShowHandCursor
+            ShowHandCursor,
+            System.HashCode.Combine(ShowInteractPrompt, InteractPromptText)
         );
     }
 }

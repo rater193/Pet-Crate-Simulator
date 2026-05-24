@@ -4,13 +4,13 @@ using static Sandbox.PhysicsContact;
 
 public sealed class PlayerInteractionsController : Component
 {
-	GameObject interactionObject;
-	InteractionFrameworkUI interactionUi;
-
 	public static PlayerInteractionsController Local { get; private set; }
 
 	/// <summary>True while the local player is aiming at a valid interactable object.</summary>
 	public bool IsHoveringInteractable { get; private set; }
+
+	/// <summary>Prompt text of the interactable currently under the player's aim.</summary>
+	public string HoverPromptText { get; private set; } = string.Empty;
 
 	protected override void OnUpdate()
 	{
@@ -18,53 +18,35 @@ public sealed class PlayerInteractionsController : Component
 
 		Local = this;
 		IsHoveringInteractable = false;
+		HoverPromptText = string.Empty;
 
-		if( interactionObject == null)
+		var camera = Scene.Camera;
+		if ( camera == null )
+			return;
+
+		var startPos = camera.WorldPosition;
+		var direction = camera.WorldRotation.Forward;
+		var endPos = startPos + (direction * 400f);
+
+		var tr = Scene.Trace.Ray( startPos, endPos )
+			.UseHitboxes( true )
+			.IgnoreGameObject( GameObject ) // Ignore the player
+			.Run();
+
+		if ( !tr.Hit )
+			return;
+
+		var interactable = tr.Collider.Components.Get<Interactable>( FindMode.EverythingInSelfAndAncestors );
+		if ( !interactable.IsValid() || IsOwnInteractable( interactable ) )
+			return;
+
+		IsHoveringInteractable = true;
+		HoverPromptText = interactable.text;
+
+		if ( Input.Pressed( "Use" ) )
 		{
-			interactionObject = GameObject.GetPrefab( "Prefabs/UI/interactionsenginepanel.prefab" ).Clone();
-			interactionUi = interactionObject.GetComponent<InteractionFrameworkUI>();
-		}
-
-		var tar = interactionObject;
-		if (tar != null )
-		{
-			// Example in s&box
-			var camera = Scene.Camera;
-			var startPos = camera.WorldPosition;
-			var direction = camera.WorldRotation.Forward;
-			var endPos = startPos + (direction * 400f); // 1000f is distance
-
-			var tr = Scene.Trace.Ray( startPos, endPos )
-				.UseHitboxes( true )
-				.IgnoreGameObject( GameObject ) // Ignore the player
-				.Run();
-
-			if ( tr.Hit )
-			{
-				var interactable = tr.Collider.Components.Get<Interactable>( FindMode.EverythingInSelfAndAncestors );
-				if ( interactable.IsValid() && !IsOwnInteractable( interactable ) )
-				{
-					tar.Enabled = true;
-					IsHoveringInteractable = true;
-					tar.WorldPosition = interactable.GameObject.WorldPosition + interactable.InteractableShortcutOffset;
-					interactionUi ??= tar.GetComponent<InteractionFrameworkUI>();
-					interactionUi?.SetPromptText( interactable.text );
-
-					if(Input.Pressed("Use"))
-					{
-						GameStatsTracker.RecordInteraction( interactable.GetType().Name, interactable.GameObject.Name );
-						interactable.OnInteract( GetComponent<PlayerController>() );
-					}
-				}
-				else
-				{
-					tar.Enabled = false;
-				}
-			}
-			else
-			{
-				tar.Enabled = false;
-			}
+			GameStatsTracker.RecordInteraction( interactable.GetType().Name, interactable.GameObject.Name );
+			interactable.OnInteract( GetComponent<PlayerController>() );
 		}
 	}
 
