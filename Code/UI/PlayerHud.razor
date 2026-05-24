@@ -269,7 +269,7 @@
     }
 
     private bool IsHoveringWorldUi => WorldInputComponent?.Hovered != null;
-    private bool ShowHandCursor => IsHoveringWorldUi;
+    private bool ShowHandCursor => IsHoveringWorldUi || PlayerInteractionsController.Local?.IsHoveringInteractable == true;
 
     protected override void OnStart()
     {

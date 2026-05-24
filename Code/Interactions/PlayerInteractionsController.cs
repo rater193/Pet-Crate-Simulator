@@ -7,9 +7,17 @@ public sealed class PlayerInteractionsController : Component
 	GameObject interactionObject;
 	InteractionFrameworkUI interactionUi;
 
+	public static PlayerInteractionsController Local { get; private set; }
+
+	/// <summary>True while the local player is aiming at a valid interactable object.</summary>
+	public bool IsHoveringInteractable { get; private set; }
+
 	protected override void OnUpdate()
 	{
 		if ( IsProxy ) return;
+
+		Local = this;
+		IsHoveringInteractable = false;
 
 		if( interactionObject == null)
 		{
@@ -37,6 +45,7 @@ public sealed class PlayerInteractionsController : Component
 				if ( interactable.IsValid() && !IsOwnInteractable( interactable ) )
 				{
 					tar.Enabled = true;
+					IsHoveringInteractable = true;
 					tar.WorldPosition = interactable.GameObject.WorldPosition + interactable.InteractableShortcutOffset;
 					interactionUi ??= tar.GetComponent<InteractionFrameworkUI>();
 					interactionUi?.SetPromptText( interactable.text );
@@ -57,6 +66,12 @@ public sealed class PlayerInteractionsController : Component
 				tar.Enabled = false;
 			}
 		}
+	}
+
+	protected override void OnDestroy()
+	{
+		if ( Local == this )
+			Local = null;
 	}
 
 	private bool IsOwnInteractable( Interactable interactable )
