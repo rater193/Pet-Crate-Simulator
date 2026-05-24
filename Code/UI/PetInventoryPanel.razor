@@ -80,13 +80,12 @@
 	}
 
 	.pet-inventory-equipped {
-		height: 178px;
-		min-height: 178px;
+		width: 300px;
+		min-width: 300px;
+		flex-shrink: 0;
 		flex-direction: column;
-		border-bottom: 2px solid rgba(68, 94, 130, 0.18);
-		padding-bottom: 20px;
-		margin-bottom: 18px;
-        transform: translateY(0px);
+		border-right: 2px solid rgba(68, 94, 130, 0.18);
+		padding-right: 18px;
 	}
 
 	.pet-section-title {
@@ -118,11 +117,10 @@
 		z-index: 30;
 	}
 
-	.pet-equipped-main {
+	.pet-tab-content {
 		flex-direction: row;
-		align-items: center;
-		gap: 16px;
 		flex-grow: 1;
+		gap: 20px;
 		min-height: 0px;
 	}
 
@@ -136,7 +134,7 @@
 	}
 
 	.pet-auto-equip-button {
-        width: 256px;
+		width: 100%;
 		height: 38px;
 		padding: 0px 12px;
 		border-radius: 12px;
@@ -240,27 +238,23 @@
 	}
 
 	.pet-equipped-list {
-		height: 132px;
-		min-height: 132px;
 		flex-grow: 1;
-		flex-direction: row;
-		gap: 14px;
-		justify-content: center;
-		align-items: center;
-		flex-wrap: nowrap;
-		overflow-x: scroll;
-		overflow-y: hidden;
+		flex-direction: column;
+		gap: 12px;
+		align-items: stretch;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		min-height: 0px;
+		margin-bottom: 14px;
 		position: relative;
 		z-index: 1;
 	}
 
 	.pet-equipped-card {
-		width: 196px;
-		min-width: 196px;
-		max-width: 196px;
-		height: 112px;
-		min-height: 112px;
-		max-height: 112px;
+		width: 100%;
+		height: 92px;
+		min-height: 92px;
+		max-height: 92px;
 		flex-shrink: 0;
 		background-color: #d9edff;
 		border: 3px solid #60c7ff;
@@ -345,7 +339,7 @@
 	.pet-inventory-body {
 		flex-grow: 1;
 		flex-direction: column;
-        transform: translateY(8px);
+		min-height: 0px;
 	}
 
 	.pet-library-scroll-area {
@@ -735,12 +729,12 @@
 
 			@if ( selectedTab == InventoryTab.Pets )
 			{
+			<div class="pet-tab-content">
 			<div class="pet-inventory-equipped">
 				<div class="pet-equipped-title-row">
 					<div class="pet-section-title">@EquippedCount / @MaxEquipped Equipped</div>
 				</div>
-				<div class="pet-equipped-main">
-					<div class="pet-equipped-list">
+				<div class="pet-equipped-list">
 					@if ( EquippedPets.Count == 0 )
 					{
 						<div class="pet-empty-state">No pets equipped</div>
@@ -778,7 +772,6 @@
 					<button class="pet-auto-equip-button" onclick=@(() => EquipBest( InventoryAutoEquipMode.Damage ))>Equip best damage</button>
 					<button class="pet-auto-equip-button" onclick=@(() => EquipBest( InventoryAutoEquipMode.CoinMultiplier ))>Equip best coins</button>
 				</div>
-			</div>
 			</div>
 
 			<div class="pet-inventory-body">
@@ -843,6 +836,7 @@
 						}
 					</div>
 				}
+			</div>
 			</div>
 			}
 			else if ( selectedTab == InventoryTab.Players )
