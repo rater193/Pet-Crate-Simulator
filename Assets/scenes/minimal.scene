@@ -11025,13 +11025,27 @@
                   "__enabled": true,
                   "Flags": 0,
                   "BanListEnabled": true,
-                  "BannedPlayers": [
+                  "BannedPlayers": [],
+                  "KickDelay": 60,
+                  "OnComponentDestroy": null,
+                  "OnComponentDisabled": null,
+                  "OnComponentEnabled": null,
+                  "OnComponentFixedUpdate": null,
+                  "OnComponentStart": null,
+                  "OnComponentUpdate": null
+                },
+                {
+                  "__type": "PlayerNoticeController",
+                  "__guid": "4a3a54a3-eb98-47fc-b32a-04d2cd50178b",
+                  "__enabled": true,
+                  "Flags": 0,
+                  "NoticePlayers": [
                     {
                       "SteamId": 76561198136953193,
-                      "Reason": "Please submit a ban appeal for review."
+                      "Message": "Please reach out to the host on Discord regarding a comment you made.\n\nDiscord: rater193"
                     }
                   ],
-                  "KickDelay": 60,
+                  "NoticesEnabled": true,
                   "OnComponentDestroy": null,
                   "OnComponentDisabled": null,
                   "OnComponentEnabled": null,

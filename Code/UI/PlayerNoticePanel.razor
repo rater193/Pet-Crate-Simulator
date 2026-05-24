@@ -1,0 +1,104 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits Panel
+@namespace Sandbox
+
+<style>
+	.player-notice-root {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		align-items: center;
+		justify-content: center;
+		background-color: rgba(6, 16, 28, 0.72);
+		font-family: Poppins;
+		pointer-events: all;
+		z-index: 10000;
+	}
+
+	.player-notice-card {
+		width: 820px;
+		min-height: 320px;
+		background-color: #ecf7ff;
+		border: 7px solid #63c7ff;
+		border-radius: 28px;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 42px 54px;
+		box-shadow: 0px 18px 0px rgba(0, 37, 74, 0.32), 0px 0px 42px rgba(99, 199, 255, 0.28);
+	}
+
+	.player-notice-title {
+		color: #2375df;
+		font-size: 54px;
+		font-weight: 900;
+		text-align: center;
+		text-shadow: 0px 4px 0px rgba(255, 255, 255, 0.9);
+		margin-bottom: 24px;
+	}
+
+	.player-notice-message {
+		width: 100%;
+		min-height: 94px;
+		background-color: rgba(255, 255, 255, 0.74);
+		border: 4px solid rgba(99, 199, 255, 0.58);
+		border-radius: 18px;
+		color: #143557;
+		font-size: 28px;
+		font-weight: 800;
+		text-align: center;
+		line-height: 38px;
+		padding: 20px 24px;
+		white-space: normal;
+		margin-bottom: 30px;
+	}
+
+	.player-notice-ok {
+		min-width: 180px;
+		height: 64px;
+		align-items: center;
+		justify-content: center;
+		background-color: #2375df;
+		border: 4px solid #83d6ff;
+		border-radius: 18px;
+		color: white;
+		font-size: 30px;
+		font-weight: 900;
+		text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.25);
+		box-shadow: 0px 8px 20px rgba(9, 52, 116, 0.35);
+		pointer-events: all;
+		cursor: pointer;
+		transition: transform 0.15s ease, background-color 0.15s ease;
+	}
+
+	.player-notice-ok:hover {
+		transform: scale(1.05);
+		background-color: #2f86f5;
+	}
+</style>
+
+<root>
+	@if ( PlayerNoticeController.IsNoticeVisible )
+	{
+		<div class="player-notice-root">
+			<div class="player-notice-card">
+				<div class="player-notice-title">Notice</div>
+				<div class="player-notice-message">@PlayerNoticeController.NoticeMessage</div>
+				<div class="player-notice-ok" onclick=@Dismiss>OK</div>
+			</div>
+		</div>
+	}
+</root>
+
+@code
+{
+	private void Dismiss()
+	{
+		PlayerNoticeController.Dismiss();
+	}
+
+	protected override int BuildHash() => PlayerNoticeController.NoticeVersion;
+}

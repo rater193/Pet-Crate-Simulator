@@ -220,6 +220,7 @@
     <Sandbox.TradeInviteToast />
     <Sandbox.PetTradePanel />
     <Sandbox.BanNoticePanel />
+    <Sandbox.PlayerNoticePanel />
 </root>
 
 
@@ -310,7 +311,7 @@
             InventoryInputTexture,
             PTTInputTexture,
             PlayerTradeController.UiVersion,
-            BanListController.NoticeVersion,
+            System.HashCode.Combine(BanListController.NoticeVersion, PlayerNoticeController.NoticeVersion),
             AudioSettings.Version
         );
     }
