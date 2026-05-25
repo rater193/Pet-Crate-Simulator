@@ -1,0 +1,95 @@
+{
+  "RootObject": {
+    "__guid": "e7e276b9-4ffe-43fa-86b1-8788193714c6",
+    "__version": 2,
+    "Flags": 0,
+    "Name": "Bramble",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkFlags": 0,
+    "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
+    "OwnerTransfer": 1,
+    "Components": [
+      {
+        "__type": "PetComponent",
+        "__guid": "b2611627-1754-4f65-af3c-dcc078dc7e27",
+        "__enabled": true,
+        "Flags": 0,
+        "AttackInterval": 1,
+        "AttackLungeMultiplier": 1,
+        "AttackRangeMultiplier": 1,
+        "BobHeightMultiplier": 1,
+        "CoinMultiplier": 12.8,
+        "Damage": 1,
+        "DisplayName": "Bramble",
+        "MoveSpeedMultiplier": 1,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "f64b56d8-85b9-40bb-9fc3-aa67eee02197",
+        "__version": 2,
+        "Flags": 0,
+        "Name": "AnimalModel",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkFlags": 0,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "d25e1b58-49b6-47ff-a906-bd71390c0d7f",
+            "__enabled": true,
+            "Flags": 0,
+            "BodyGroups": 18446744073709551615,
+            "CreateAttachments": false,
+            "LodOverride": null,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Materials": null,
+            "Model": "models/pets/pets_93/pets_93.vmdl",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ],
+        "Children": []
+      }
+    ]
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [],
+  "__version": 2
+}

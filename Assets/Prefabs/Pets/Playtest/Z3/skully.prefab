@@ -1,0 +1,95 @@
+{
+  "RootObject": {
+    "__guid": "e5775dc1-6510-4691-9fbf-a8df2abffb21",
+    "__version": 2,
+    "Flags": 0,
+    "Name": "Skully",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkFlags": 0,
+    "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
+    "OwnerTransfer": 1,
+    "Components": [
+      {
+        "__type": "PetComponent",
+        "__guid": "d47fafbb-3904-4f79-ad4a-4d059e50a8b2",
+        "__enabled": true,
+        "Flags": 0,
+        "AttackInterval": 1,
+        "AttackLungeMultiplier": 1,
+        "AttackRangeMultiplier": 1,
+        "BobHeightMultiplier": 1,
+        "CoinMultiplier": 1.4,
+        "Damage": 1,
+        "DisplayName": "Skully",
+        "MoveSpeedMultiplier": 1,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "789860b3-8e32-412e-987a-e24b0288db13",
+        "__version": 2,
+        "Flags": 0,
+        "Name": "AnimalModel",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkFlags": 0,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "2ca2daf3-4d43-4e91-937b-d814f158ba89",
+            "__enabled": true,
+            "Flags": 0,
+            "BodyGroups": 18446744073709551615,
+            "CreateAttachments": false,
+            "LodOverride": null,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Materials": null,
+            "Model": "models/pets/pets_87/pets_87.vmdl",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ],
+        "Children": []
+      }
+    ]
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [],
+  "__version": 2
+}

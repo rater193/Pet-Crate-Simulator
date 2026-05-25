@@ -1,0 +1,95 @@
+{
+  "RootObject": {
+    "__guid": "ff0990e1-c50a-4ae2-bdd8-03e9adc3299b",
+    "__version": 2,
+    "Flags": 0,
+    "Name": "Prism",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkFlags": 0,
+    "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
+    "OwnerTransfer": 1,
+    "Components": [
+      {
+        "__type": "PetComponent",
+        "__guid": "2d0ea410-a4dc-42ac-a6d7-8babb73de84d",
+        "__enabled": true,
+        "Flags": 0,
+        "AttackInterval": 1,
+        "AttackLungeMultiplier": 1,
+        "AttackRangeMultiplier": 1,
+        "BobHeightMultiplier": 1,
+        "CoinMultiplier": 18.8,
+        "Damage": 1,
+        "DisplayName": "Prism",
+        "MoveSpeedMultiplier": 1,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "31ab660b-ef4c-4ec6-8a7e-96325dcf23ee",
+        "__version": 2,
+        "Flags": 0,
+        "Name": "AnimalModel",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkFlags": 0,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "b5b9995c-0d8f-42df-b81b-fab09fada903",
+            "__enabled": true,
+            "Flags": 0,
+            "BodyGroups": 18446744073709551615,
+            "CreateAttachments": false,
+            "LodOverride": null,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Materials": null,
+            "Model": "models/pets/pets_27/pets_27.vmdl",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ],
+        "Children": []
+      }
+    ]
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [],
+  "__version": 2
+}

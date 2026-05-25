@@ -36168,262 +36168,82 @@
       "Components": [],
       "Children": [
         {
-          "__guid": "b791202e-3fa2-4267-a2e9-80ec0bcb009e",
-          "__version": 2,
-          "Flags": 0,
-          "Name": "Duke",
-          "Position": "2214.12085,-9818.83789,-0.000484749675",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "8645bae7-9e78-4244-9250-bb6326b024d1",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1.4,
-              "Damage": 1,
-              "DisplayName": "Duke",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "fc4e8829-6ff7-4527-bdd4-806f9e9ae6e5",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "f608bf22-402b-4d8a-b682-14d5ff4bd096",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_10/pets_10.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
-        },
-        {
           "__guid": "6dba4a01-69e9-4089-8e9e-ec7b6f6b7ebd",
           "__version": 2,
-          "Flags": 0,
-          "Name": "Monarch",
-          "Position": "2213.57324,-9937.93848,-0.000166820362",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "4efb87c8-e61c-47d5-8b8f-9d93d7656df6",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1.1,
-              "Damage": 1,
-              "DisplayName": "Monarch",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "53d1d389-88ed-4c7e-920c-4e87f6db0936",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "82627a2f-a790-4b20-80b6-ae33255124ab",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_11/pets_11.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z1/monarch.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "cfe9bafc-25d2-4e1e-be4b-9c2d9f4e4f55"
+                },
+                "Property": "Position",
+                "Value": "2213.57324,-9937.93848,-0.000166820362"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "cfe9bafc-25d2-4e1e-be4b-9c2d9f4e4f55": "6dba4a01-69e9-4089-8e9e-ec7b6f6b7ebd",
+            "c9523cb1-8d29-418f-b7e7-c404fc700ccf": "4efb87c8-e61c-47d5-8b8f-9d93d7656df6",
+            "afd66fca-ab38-4895-8150-0fe368750637": "53d1d389-88ed-4c7e-920c-4e87f6db0936",
+            "53fe4023-68b8-425a-985b-5d742cb75399": "82627a2f-a790-4b20-80b6-ae33255124ab"
+          }
         },
         {
           "__guid": "e7a7af15-cd0a-483d-8237-5863b64910fc",
           "__version": 2,
-          "Flags": 0,
-          "Name": "Buddy",
-          "Position": "2232.34668,-9876.86719,-1.69788742",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "2b7537ac-5c03-4751-b94f-43017137397c",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1.2,
-              "Damage": 1,
-              "DisplayName": "Buddy",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "2d7532b4-99e0-4362-a9f2-1bc3e5998fb4",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,14.1998072",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "5c7b12ff-5c44-495e-97ee-6d6be231e29f",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/dogo.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z1/buddy.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b3a419bd-7e29-48bf-8114-70281d3d7e29"
+                },
+                "Property": "Position",
+                "Value": "2232.34668,-9876.86719,-1.69788742"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "b3a419bd-7e29-48bf-8114-70281d3d7e29": "e7a7af15-cd0a-483d-8237-5863b64910fc",
+            "91c09189-2111-4a5b-bb39-6bd04e90cd81": "2b7537ac-5c03-4751-b94f-43017137397c",
+            "645ef141-df4c-4bb2-8876-17a5ea36a3ec": "2d7532b4-99e0-4362-a9f2-1bc3e5998fb4",
+            "515ba553-7113-4699-9a49-507c6098613e": "5c7b12ff-5c44-495e-97ee-6d6be231e29f"
+          }
+        },
+        {
+          "__guid": "b791202e-3fa2-4267-a2e9-80ec0bcb009e",
+          "__version": 2,
+          "__Prefab": "prefabs/pets/playtest/z1/duke.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "258f69d7-9ac5-4e9a-a671-567083f41701"
+                },
+                "Property": "Position",
+                "Value": "2214.12085,-9818.83789,-0.000484749675"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "258f69d7-9ac5-4e9a-a671-567083f41701": "b791202e-3fa2-4267-a2e9-80ec0bcb009e",
+            "37d6d7a9-9ccb-46b2-b1b5-cf569843bc0a": "8645bae7-9e78-4244-9250-bb6326b024d1",
+            "680eb024-3ab0-40e1-aaa5-1badd3d6b87d": "fc4e8829-6ff7-4527-bdd4-806f9e9ae6e5",
+            "a3de9542-b18f-4be2-b527-cdbf96f84246": "f608bf22-402b-4d8a-b682-14d5ff4bd096"
+          }
         }
       ]
     },
@@ -36447,260 +36267,88 @@
         {
           "__guid": "aa598625-9dd4-4043-bff8-62ea3646d523",
           "__version": 2,
-          "Flags": 0,
-          "Name": "Cocoa",
-          "Position": "2346.63306,-9936.64258,0.000334609998",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "63826001-ba99-45d6-9bac-02c9dcfed134",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1.2,
-              "Damage": 1,
-              "DisplayName": "Cocoa",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "48800a12-ab5e-4290-ab04-2c9f3d679a3f",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "ea973041-5ad3-43fb-80a9-6c3ccecde702",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_65/pets_65.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z2/cocoa.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "a631a0bb-42f3-4248-a618-9f7a9b07b4dc"
+                },
+                "Property": "Position",
+                "Value": "2346.63306,-9936.64258,0.000334609998"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "a631a0bb-42f3-4248-a618-9f7a9b07b4dc": "aa598625-9dd4-4043-bff8-62ea3646d523",
+            "e1eeb45b-11c3-4455-a93f-d2f48f9344a4": "63826001-ba99-45d6-9bac-02c9dcfed134",
+            "2927653a-407d-42b7-90c2-646c04b414c8": "48800a12-ab5e-4290-ab04-2c9f3d679a3f",
+            "cbd14004-af69-490b-a84f-ad789b8d3244": "ea973041-5ad3-43fb-80a9-6c3ccecde702"
+          }
         },
         {
           "__guid": "46563e3d-0364-452c-9c01-4efc549921b3",
           "__version": 2,
-          "Flags": 0,
-          "Name": "Pyro",
-          "Position": "2338.62598,-9879.96191,0.000896092854",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "a282e0e6-f5c9-49e1-8c73-6d6825495bb0",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1.4,
-              "Damage": 1,
-              "DisplayName": "Pyro",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "1a3cde62-5d87-4eaf-8d44-5708e9660df5",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "49181941-9213-4896-a64c-4bf56a04a3e4",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_67/pets_67.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z2/pyro.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "29bec332-e002-43cd-85dd-e7edfdb6a4e1"
+                },
+                "Property": "Position",
+                "Value": "2338.62598,-9879.96191,0.000896092854"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "29bec332-e002-43cd-85dd-e7edfdb6a4e1": "46563e3d-0364-452c-9c01-4efc549921b3",
+            "d45e94a1-e6c7-4025-8826-9010df32da8a": "a282e0e6-f5c9-49e1-8c73-6d6825495bb0",
+            "3d15844b-563d-414d-8a90-797335699d9f": "1a3cde62-5d87-4eaf-8d44-5708e9660df5",
+            "6c96aa4c-4859-40ea-8467-9b349dcfb4c3": "49181941-9213-4896-a64c-4bf56a04a3e4"
+          }
         },
         {
           "__guid": "23c9ccc5-4982-4756-9798-7341c971d505",
           "__version": 2,
-          "Flags": 0,
-          "Name": "Lucky",
-          "Position": "2344.19263,-9811.76855,0.00103801559",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "2e8c209a-6572-4826-9085-038c4792d9b2",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1.8,
-              "Damage": 1,
-              "DisplayName": "Lucky",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "27e233fc-e6cb-4101-b234-863c09e6e607",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "3d15b084-1485-4264-9bec-654479363721",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_3/pets_3.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z2/lucky.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b07a0b30-0083-40fb-8a0d-40773b158665"
+                },
+                "Property": "Name",
+                "Value": "Lucky"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b07a0b30-0083-40fb-8a0d-40773b158665"
+                },
+                "Property": "Position",
+                "Value": "2344.19263,-9811.76855,0.00103801559"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "b07a0b30-0083-40fb-8a0d-40773b158665": "23c9ccc5-4982-4756-9798-7341c971d505",
+            "e8742855-c852-49f8-a38a-6edd1fe77e45": "2e8c209a-6572-4826-9085-038c4792d9b2",
+            "54b0ebc5-e8af-45d3-9ea6-89fe91fcf1a3": "27e233fc-e6cb-4101-b234-863c09e6e607",
+            "8e3fb411-6f9a-4d39-aace-4ff562e0445c": "3d15b084-1485-4264-9bec-654479363721"
+          }
         }
       ]
     },
@@ -36724,260 +36372,88 @@
         {
           "__guid": "1e42b9ef-651f-462c-b215-988b7104fc3d",
           "__version": 2,
-          "Flags": 0,
-          "Name": "Skully",
-          "Position": "2515.04761,-9933.66504,-0.000119024888",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "517169ac-612c-4aaf-83bc-a6cb05542a85",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Skully",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "b89632c4-11d2-4d17-9410-f3ee725d7e91",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "b63f5c47-5a18-466e-a1be-96c262bc632c",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_87/pets_87.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z3/skully.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "e5775dc1-6510-4691-9fbf-a8df2abffb21"
+                },
+                "Property": "Position",
+                "Value": "2515.04761,-9933.66504,-0.000119024888"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "e5775dc1-6510-4691-9fbf-a8df2abffb21": "1e42b9ef-651f-462c-b215-988b7104fc3d",
+            "d47fafbb-3904-4f79-ad4a-4d059e50a8b2": "517169ac-612c-4aaf-83bc-a6cb05542a85",
+            "789860b3-8e32-412e-987a-e24b0288db13": "b89632c4-11d2-4d17-9410-f3ee725d7e91",
+            "2ca2daf3-4d43-4e91-937b-d814f158ba89": "b63f5c47-5a18-466e-a1be-96c262bc632c"
+          }
         },
         {
           "__guid": "05c8ac34-a83a-497d-9e6b-0f7da6d4aa64",
           "__version": 2,
-          "Flags": 0,
-          "Name": "Batpuss",
-          "Position": "2519.21533,-9853.19238,0.000494470703",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "109bd81d-ca31-4937-aef3-c7ab5e6ad072",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Batpuss",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "3ab1aaf5-f982-467c-8818-78fb5b48d55a",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "7846cbc1-256b-4aba-b6ed-766673a2d328",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_2/pets_2.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z3/batpuss.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "36f84a75-390d-46fb-977a-9e7fdcb997fa"
+                },
+                "Property": "Position",
+                "Value": "2519.21533,-9853.19238,0.000494470703"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "36f84a75-390d-46fb-977a-9e7fdcb997fa": "05c8ac34-a83a-497d-9e6b-0f7da6d4aa64",
+            "5eeae8a4-63b4-4ff2-99c3-f31d144e6443": "109bd81d-ca31-4937-aef3-c7ab5e6ad072",
+            "c4c63009-61ad-41e9-8814-d9d26f087a54": "3ab1aaf5-f982-467c-8818-78fb5b48d55a",
+            "4350980e-92db-4cb7-9bf0-cb7207ecde15": "7846cbc1-256b-4aba-b6ed-766673a2d328"
+          }
         },
         {
           "__guid": "22b129a9-2202-40bb-9c29-94fbd121f91f",
           "__version": 2,
-          "Flags": 0,
-          "Name": "Webster",
-          "Position": "2509.74902,-9778.18848,0.000341540202",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "59ff015a-608f-4990-be98-786ea3e1a3de",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Webster",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "6117ef17-ff7e-42d4-8490-2a41586fd3dc",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "b0abc921-d058-4435-9dc6-0951dee26195",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_161/pets_161.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z3/webster.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "9164fde5-dc2a-423b-b9e1-d3355a558f48"
+                },
+                "Property": "Name",
+                "Value": "Webster"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "9164fde5-dc2a-423b-b9e1-d3355a558f48"
+                },
+                "Property": "Position",
+                "Value": "2509.74902,-9778.18848,0.000341540202"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "9164fde5-dc2a-423b-b9e1-d3355a558f48": "22b129a9-2202-40bb-9c29-94fbd121f91f",
+            "4928bcea-6c58-48b2-bc74-d1efecfa9ec4": "59ff015a-608f-4990-be98-786ea3e1a3de",
+            "513e8e48-0613-43c2-954d-203cbce14ec1": "6117ef17-ff7e-42d4-8490-2a41586fd3dc",
+            "c929c527-6de1-45da-9ee8-927efec21e91": "b0abc921-d058-4435-9dc6-0951dee26195"
+          }
         }
       ]
     },
@@ -36999,262 +36475,98 @@
       "Components": [],
       "Children": [
         {
-          "__guid": "9d086a75-611f-46d3-b8d0-9f228972b888",
+          "__guid": "0b01efe4-b12b-43ec-8dc2-d6014b99a019",
           "__version": 2,
-          "Flags": 0,
-          "Name": "Ramses",
-          "Position": "2695.07104,-9806.17578,-0.00112665258",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "efa95b33-4df1-46eb-81ac-a49f6e109067",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Ramses",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "6df6438b-6df5-4354-a146-0a8855145c01",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "ff097a54-386a-491a-a0fe-9fdf11f40f43",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_124/pets_124.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z4/foxy.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "f23aa93d-a3de-4027-9acf-05881cdad5b9"
+                },
+                "Property": "Name",
+                "Value": "Foxy"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "f23aa93d-a3de-4027-9acf-05881cdad5b9"
+                },
+                "Property": "Position",
+                "Value": "2701.74292,-9925.66992,-0.00142292492"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "f23aa93d-a3de-4027-9acf-05881cdad5b9": "0b01efe4-b12b-43ec-8dc2-d6014b99a019",
+            "8990250b-fcb3-492b-8070-fddcb1e2acbe": "95b0638f-6403-4990-ad59-612ba5987a10",
+            "08914455-2d3c-4e02-b1e4-03286e232475": "e8a00556-f348-43a9-8c8f-1154f65e58a3",
+            "4de5f180-18c1-4bf6-afe1-df8372972803": "a7f0748c-4c9f-4362-b6b1-e5e4653061b7"
+          }
         },
         {
           "__guid": "bb56d272-64e2-4621-920e-e89557f17d71",
           "__version": 2,
-          "Flags": 0,
-          "Name": "Halo",
-          "Position": "2697.03809,-9863.25977,-0.00149429031",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "597e3de1-3b24-4c9c-9f67-eaf30f0e39e8",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Halo",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "8e0922f9-6300-4d19-8d52-99bf327fbebe",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "f4b391a9-8ca2-4df8-8e1b-1633bcf4570a",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_9/pets_9.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z4/halo.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "4ba20583-df12-47c9-9ea3-10cd0f4cc643"
+                },
+                "Property": "Name",
+                "Value": "Halo"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "4ba20583-df12-47c9-9ea3-10cd0f4cc643"
+                },
+                "Property": "Position",
+                "Value": "2697.03809,-9863.25977,-0.00149429031"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "4ba20583-df12-47c9-9ea3-10cd0f4cc643": "bb56d272-64e2-4621-920e-e89557f17d71",
+            "0de3c74f-6e86-4e7d-acef-6027bf6e39c6": "597e3de1-3b24-4c9c-9f67-eaf30f0e39e8",
+            "434a1138-775c-477c-a332-76bd97b59f62": "8e0922f9-6300-4d19-8d52-99bf327fbebe",
+            "530adfe0-146a-470b-8192-46fbcfd22cfd": "f4b391a9-8ca2-4df8-8e1b-1633bcf4570a"
+          }
         },
         {
-          "__guid": "0b01efe4-b12b-43ec-8dc2-d6014b99a019",
+          "__guid": "9d086a75-611f-46d3-b8d0-9f228972b888",
           "__version": 2,
-          "Flags": 0,
-          "Name": "Foxy",
-          "Position": "2701.74292,-9925.66992,-0.00142292492",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "95b0638f-6403-4990-ad59-612ba5987a10",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Foxy",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "e8a00556-f348-43a9-8c8f-1154f65e58a3",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "a7f0748c-4c9f-4362-b6b1-e5e4653061b7",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_45/pets_45.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z4/ramses.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "6b36a63b-1f8f-493d-b1f2-5fe1eb60a604"
+                },
+                "Property": "Position",
+                "Value": "2695.07104,-9806.17578,-0.00112665258"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "6b36a63b-1f8f-493d-b1f2-5fe1eb60a604": "9d086a75-611f-46d3-b8d0-9f228972b888",
+            "58f3df28-815f-41b6-81fe-4fc6cd179531": "efa95b33-4df1-46eb-81ac-a49f6e109067",
+            "b393a1f2-b285-4f59-8a2f-9873734fdbe2": "6df6438b-6df5-4354-a146-0a8855145c01",
+            "0fed407f-b9ea-4d50-8e88-6cc5b9280081": "ff097a54-386a-491a-a0fe-9fdf11f40f43"
+          }
         }
       ]
     },
@@ -37278,260 +36590,96 @@
         {
           "__guid": "f41ba096-596f-47c8-8a90-2608c6aefad2",
           "__version": 2,
-          "Flags": 0,
-          "Name": "Cake",
-          "Position": "2908.10669,-9921.20801,-2.22525559E-05",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "9a82ca03-b830-407f-bfac-63e6a060b07d",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Cake",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "215bb21c-872d-45f2-a905-d64b25fadb24",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "0ee6a059-8090-4e21-bb14-3231faa20ac1",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_202/pets_202.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z5/cake.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "3f63e140-a1ad-40fa-85f3-3f274e7e5414"
+                },
+                "Property": "Position",
+                "Value": "2908.10669,-9921.20801,-2.22525559E-05"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "3f63e140-a1ad-40fa-85f3-3f274e7e5414": "f41ba096-596f-47c8-8a90-2608c6aefad2",
+            "41f4b46e-1512-44db-a65a-a40144bbb601": "9a82ca03-b830-407f-bfac-63e6a060b07d",
+            "40e4d6c0-d7e6-43cf-8373-98b264bae3ab": "215bb21c-872d-45f2-a905-d64b25fadb24",
+            "95fa00b6-156d-4ea6-9b1e-dc356c7ac515": "0ee6a059-8090-4e21-bb14-3231faa20ac1"
+          }
         },
         {
           "__guid": "be525577-6297-4806-abd8-812707449022",
           "__version": 2,
-          "Flags": 0,
-          "Name": "Opal",
-          "Position": "2912.34937,-9865.54688,0.000262681628",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "b5ad8ec6-4450-44da-b807-80d5809b5ac0",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Opal",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "a2ded87d-5e2d-4761-941f-e4a3184d84d6",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "5d5c767b-bff4-4c8e-9dd4-325dabde81c6",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_41/pets_41.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z5/opal.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "8ddbcb05-a9a2-4a6c-bc1e-0e9f00707981"
+                },
+                "Property": "Name",
+                "Value": "Opal"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "8ddbcb05-a9a2-4a6c-bc1e-0e9f00707981"
+                },
+                "Property": "Position",
+                "Value": "2912.34937,-9865.54688,0.000262681628"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "8ddbcb05-a9a2-4a6c-bc1e-0e9f00707981": "be525577-6297-4806-abd8-812707449022",
+            "e65cf74e-4fb6-48c8-b785-b0ed0e06adbd": "b5ad8ec6-4450-44da-b807-80d5809b5ac0",
+            "5a30b3ae-ad4d-4af5-9a5d-12dd81d0304d": "a2ded87d-5e2d-4761-941f-e4a3184d84d6",
+            "e8767712-bb1c-459e-98e0-06ae691bdf84": "5d5c767b-bff4-4c8e-9dd4-325dabde81c6"
+          }
         },
         {
           "__guid": "09e471d4-e250-4b61-899f-07f321e18ab2",
           "__version": 2,
-          "Flags": 0,
-          "Name": "Glacius",
-          "Position": "2910.56616,-9799.17383,7.80625269E-05",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "0a51a307-4deb-41f5-a6c8-155f17e326f2",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Glacius",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "7b91075c-062d-464d-9ea0-c21f02415094",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "3384cdf0-218b-4f6b-9186-f4444864519b",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_421/pets_421.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z5/glacius.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "39abc2e6-a038-4176-9c56-44d2a67d0922"
+                },
+                "Property": "Name",
+                "Value": "Glacius"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "39abc2e6-a038-4176-9c56-44d2a67d0922"
+                },
+                "Property": "Position",
+                "Value": "2910.56616,-9799.17383,7.80625269E-05"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "39abc2e6-a038-4176-9c56-44d2a67d0922": "09e471d4-e250-4b61-899f-07f321e18ab2",
+            "fbb77830-f633-4293-8fb9-297a82622296": "0a51a307-4deb-41f5-a6c8-155f17e326f2",
+            "7df921db-795f-4e5c-930d-031f75284616": "7b91075c-062d-464d-9ea0-c21f02415094",
+            "fa695fa0-3e57-4771-a4e2-fb889eb44caa": "3384cdf0-218b-4f6b-9186-f4444864519b"
+          }
         }
       ]
     },
@@ -37553,262 +36701,90 @@
       "Components": [],
       "Children": [
         {
+          "__guid": "0b6a8ef8-e0eb-46ab-a9b0-6916a32d43f1",
+          "__version": 2,
+          "__Prefab": "prefabs/pets/playtest/z6/spots.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "e91fe8a9-ca4e-4bd1-9ea3-498e8d15901b"
+                },
+                "Property": "Name",
+                "Value": "Spots"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "e91fe8a9-ca4e-4bd1-9ea3-498e8d15901b"
+                },
+                "Property": "Position",
+                "Value": "3054.45654,-9902.91895,-0.00131993461"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "e91fe8a9-ca4e-4bd1-9ea3-498e8d15901b": "0b6a8ef8-e0eb-46ab-a9b0-6916a32d43f1",
+            "57207498-b243-4c3b-9366-41e12db3c2f1": "7bbfc42c-474d-4cad-8fc7-2efbb6d27b59",
+            "6ed353e3-da6a-4fd3-81aa-39a0fee44d5e": "dee2e36e-d854-4b02-b376-84f108706baa",
+            "070ca9aa-fb69-4616-9f8a-8a8a53dbb567": "0f543220-8aac-4d69-941a-6eb588f158c0"
+          }
+        },
+        {
           "__guid": "9db60bed-eae6-47ce-96bb-20caa13fa28c",
           "__version": 2,
-          "Flags": 0,
-          "Name": "Juicy",
-          "Position": "3053.45093,-9856.98242,-0.000450122287",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "f1d28360-ba4f-4f20-8f4f-7b0898d55224",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Juicy",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "1b948bc8-9d29-4077-ab71-11ba70584693",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "851141b5-25b1-4246-b97f-d7ea2d0e3fc0",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_68/pets_68.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z6/juicy.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "64ed6d44-a541-4c2d-9b31-6ccd92c77b8a"
+                },
+                "Property": "Position",
+                "Value": "3053.45093,-9856.98242,-0.000450122287"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "64ed6d44-a541-4c2d-9b31-6ccd92c77b8a": "9db60bed-eae6-47ce-96bb-20caa13fa28c",
+            "139ce3ff-687e-487b-9621-51821295d4c8": "f1d28360-ba4f-4f20-8f4f-7b0898d55224",
+            "43a19da1-0072-4fd5-a6b1-2deed8a77f84": "1b948bc8-9d29-4077-ab71-11ba70584693",
+            "03128007-7d96-4f65-8fb5-bf02bc06e250": "851141b5-25b1-4246-b97f-d7ea2d0e3fc0"
+          }
         },
         {
           "__guid": "c107dfbd-e2f4-45ca-b2c4-998a21bdb010",
           "__version": 2,
-          "Flags": 0,
-          "Name": "Prism",
-          "Position": "3057.40674,-9809.60352,-0.00126417843",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "86dc7045-37f5-48d5-8168-53d524da71f2",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Prism",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "f4658517-7be6-4d70-97fd-0c4301e98314",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "cad8c83e-e676-4a45-b303-daf9912a912b",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_27/pets_27.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
-        },
-        {
-          "__guid": "0b6a8ef8-e0eb-46ab-a9b0-6916a32d43f1",
-          "__version": 2,
-          "Flags": 0,
-          "Name": "Spots",
-          "Position": "3054.45654,-9902.91895,-0.00131993461",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "7bbfc42c-474d-4cad-8fc7-2efbb6d27b59",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Spots",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "dee2e36e-d854-4b02-b376-84f108706baa",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "0f543220-8aac-4d69-941a-6eb588f158c0",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_121/pets_121.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z6/prism.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "ff0990e1-c50a-4ae2-bdd8-03e9adc3299b"
+                },
+                "Property": "Position",
+                "Value": "3057.40674,-9809.60352,-0.00126417843"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "ff0990e1-c50a-4ae2-bdd8-03e9adc3299b": "c107dfbd-e2f4-45ca-b2c4-998a21bdb010",
+            "2d0ea410-a4dc-42ac-a6d7-8babb73de84d": "86dc7045-37f5-48d5-8168-53d524da71f2",
+            "31ab660b-ef4c-4ec6-8a7e-96325dcf23ee": "f4658517-7be6-4d70-97fd-0c4301e98314",
+            "b5b9995c-0d8f-42df-b81b-fab09fada903": "cad8c83e-e676-4a45-b303-daf9912a912b"
+          }
         }
       ]
     },
@@ -37830,262 +36806,90 @@
       "Components": [],
       "Children": [
         {
-          "__guid": "916ccb7b-86a6-4e64-ba7e-c53b891a590e",
+          "__guid": "23e4015e-1f51-4367-87d8-a5221189308e",
           "__version": 2,
-          "Flags": 0,
-          "Name": "Hexapod",
-          "Position": "3209.53882,-9797.89844,0.00110664964",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "49024fe2-9713-49bb-990e-ca731ca0565e",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Hexapod",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "066cf83a-5fbe-46ee-80f0-1a348d742ccb",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "83977ee5-3b9b-4e25-80aa-d025cda4a290",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_279/pets_279.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z7/junkbot.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "0fc26c74-6434-4b7b-aa39-cb28190ec2cc"
+                },
+                "Property": "Name",
+                "Value": "Junkbot"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "0fc26c74-6434-4b7b-aa39-cb28190ec2cc"
+                },
+                "Property": "Position",
+                "Value": "3206.37964,-9925.41211,0.00122499652"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "0fc26c74-6434-4b7b-aa39-cb28190ec2cc": "23e4015e-1f51-4367-87d8-a5221189308e",
+            "d071a6d5-1eb3-4285-a050-7a4eda23eea8": "681f9210-4283-477a-96ba-2963bb3ae0fd",
+            "f53c8bd3-1f60-4356-8dff-2604cafc5d89": "353247d8-7732-40ba-9365-5dd73b9eeb17",
+            "8da8b2e1-b242-414b-9fb7-cb194a912f3a": "c648ce87-9da5-4ee7-a789-a458bfd88650"
+          }
         },
         {
           "__guid": "d7eeca29-97a2-48ad-8203-478d0b2d48df",
           "__version": 2,
-          "Flags": 0,
-          "Name": "Sentinel",
-          "Position": "3208.00708,-9867.05762,0.00107877795",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "c8cf2044-ba04-43a7-9204-a7caf16243fd",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Sentinel",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "2b12d6e4-dead-40a1-ba8c-18fc43af187e",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "1866c7db-68ff-4a3d-80a9-54db49d69386",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_28/pets_28.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z7/sentinel.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "d20ecd9a-f059-401d-994a-ff7606f00a1f"
+                },
+                "Property": "Position",
+                "Value": "3208.00708,-9867.05762,0.00107877795"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "d20ecd9a-f059-401d-994a-ff7606f00a1f": "d7eeca29-97a2-48ad-8203-478d0b2d48df",
+            "2fe83a15-a88d-470d-adab-21b3da093fb2": "c8cf2044-ba04-43a7-9204-a7caf16243fd",
+            "0d9cafd8-e01b-4d1e-ab73-e0b24acd2ba4": "2b12d6e4-dead-40a1-ba8c-18fc43af187e",
+            "776a4efe-b690-43be-9190-10160f05f25c": "1866c7db-68ff-4a3d-80a9-54db49d69386"
+          }
         },
         {
-          "__guid": "23e4015e-1f51-4367-87d8-a5221189308e",
+          "__guid": "916ccb7b-86a6-4e64-ba7e-c53b891a590e",
           "__version": 2,
-          "Flags": 0,
-          "Name": "Junkbot",
-          "Position": "3206.37964,-9925.41211,0.00122499652",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "681f9210-4283-477a-96ba-2963bb3ae0fd",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Junkbot",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "353247d8-7732-40ba-9365-5dd73b9eeb17",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "c648ce87-9da5-4ee7-a789-a458bfd88650",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_69/pets_69.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z7/hexapod.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "62b1cac5-e916-42d4-ac55-91aa6aadf293"
+                },
+                "Property": "Position",
+                "Value": "3209.53882,-9797.89844,0.00110664964"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "62b1cac5-e916-42d4-ac55-91aa6aadf293": "916ccb7b-86a6-4e64-ba7e-c53b891a590e",
+            "ca208f87-218f-49ab-af7c-87d6cefff742": "49024fe2-9713-49bb-990e-ca731ca0565e",
+            "319dcb60-bdb9-48fe-9522-c8bca0906669": "066cf83a-5fbe-46ee-80f0-1a348d742ccb",
+            "daeac50d-bc2e-4b00-bdb3-e52e55ac92e0": "83977ee5-3b9b-4e25-80aa-d025cda4a290"
+          }
         }
       ]
     },
@@ -38107,262 +36911,90 @@
       "Components": [],
       "Children": [
         {
+          "__guid": "ef51ae42-2c1b-4ca2-b3ce-62f2892b78f9",
+          "__version": 2,
+          "__Prefab": "prefabs/pets/playtest/z8/bramble.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "e7e276b9-4ffe-43fa-86b1-8788193714c6"
+                },
+                "Property": "Position",
+                "Value": "3369.69702,-9926.44336,0.00108626159"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "e7e276b9-4ffe-43fa-86b1-8788193714c6": "ef51ae42-2c1b-4ca2-b3ce-62f2892b78f9",
+            "b2611627-1754-4f65-af3c-dcc078dc7e27": "c2702baf-f567-4d28-894b-29f35ecb318c",
+            "f64b56d8-85b9-40bb-9fc3-aa67eee02197": "7546f452-de5d-4acb-84d6-73cfcc734664",
+            "d25e1b58-49b6-47ff-a906-bd71390c0d7f": "2a863561-bd82-4c10-bb4a-f7934e7f3ab6"
+          }
+        },
+        {
           "__guid": "6cff140b-233e-4fae-acc9-ab8256d2dc0f",
           "__version": 2,
-          "Flags": 0,
-          "Name": "Dusk",
-          "Position": "3380.47583,-9862.46582,0.00122606521",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "f12fe25e-ed2a-464b-a348-aa9bf447d8d0",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Dusk",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "32ac740c-7bb5-4a4b-b58d-b9a505cc2350",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "b97a356b-6d73-4826-a549-e036250781f5",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_182/pets_182.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z8/dusk.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "aa8c73b2-1d3e-437a-9cb4-c7f4b3207ac4"
+                },
+                "Property": "Position",
+                "Value": "3380.47583,-9862.46582,0.00122606521"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "aa8c73b2-1d3e-437a-9cb4-c7f4b3207ac4": "6cff140b-233e-4fae-acc9-ab8256d2dc0f",
+            "d3cf6363-d48d-4a06-80a4-5d4f57c8b65f": "f12fe25e-ed2a-464b-a348-aa9bf447d8d0",
+            "ef514e5d-50e0-4bcd-827b-59e36352a353": "32ac740c-7bb5-4a4b-b58d-b9a505cc2350",
+            "0044439b-0da2-42e7-986e-2cb214d93cf4": "b97a356b-6d73-4826-a549-e036250781f5"
+          }
         },
         {
           "__guid": "7de148cc-db5d-40b8-959c-976c916c43ac",
           "__version": 2,
-          "Flags": 0,
-          "Name": "Shadow",
-          "Position": "3376.22607,-9802.57812,0.001681261",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "c43adde2-efcd-48fb-ab89-1b7818cdd7be",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Shadow",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "1d3121f0-b647-4d42-9257-1308af6c8eba",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "5749f3bf-c8d8-41a0-a379-73e37dba21cc",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_43/pets_43.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
-        },
-        {
-          "__guid": "ef51ae42-2c1b-4ca2-b3ce-62f2892b78f9",
-          "__version": 2,
-          "Flags": 0,
-          "Name": "Bramble",
-          "Position": "3369.69702,-9926.44336,0.00108626159",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "c2702baf-f567-4d28-894b-29f35ecb318c",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Bramble",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "7546f452-de5d-4acb-84d6-73cfcc734664",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "2a863561-bd82-4c10-bb4a-f7934e7f3ab6",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_93/pets_93.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z8/shadow.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "9f5a24ea-8db3-414e-a05c-5029703f6fa5"
+                },
+                "Property": "Name",
+                "Value": "Shadow"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "9f5a24ea-8db3-414e-a05c-5029703f6fa5"
+                },
+                "Property": "Position",
+                "Value": "3376.22607,-9802.57812,0.001681261"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "9f5a24ea-8db3-414e-a05c-5029703f6fa5": "7de148cc-db5d-40b8-959c-976c916c43ac",
+            "7b567a9c-2e0c-4d73-9535-e1d5aa280ad9": "c43adde2-efcd-48fb-ab89-1b7818cdd7be",
+            "17a56dd1-d55f-4900-b414-df4dc6818a51": "1d3121f0-b647-4d42-9257-1308af6c8eba",
+            "591793bb-2834-4d04-985c-653c49b3f55b": "5749f3bf-c8d8-41a0-a379-73e37dba21cc"
+          }
         }
       ]
     },
@@ -38386,260 +37018,88 @@
         {
           "__guid": "234d01ed-5bbc-4877-a88e-625d9470b8f7",
           "__version": 2,
-          "Flags": 0,
-          "Name": "Gadget",
-          "Position": "3560.22461,-9949.2959,-0.000866452232",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "ea86db76-d30f-4ece-b702-e7019e229a2b",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Gadget",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "69001b8c-1546-4694-95af-da34a5dd2318",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "0deaeca2-0aaf-4af0-a107-d950f4190d92",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_95/pets_95.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
-        },
-        {
-          "__guid": "c721e2f8-7e95-4e9d-a939-66d723cad0bd",
-          "__version": 2,
-          "Flags": 0,
-          "Name": "Valor",
-          "Position": "3561.54175,-9805.8291,-0.000824071001",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "32dbe551-7a98-431f-8bb4-ff6baef3ccfd",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Valor",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "8094d304-b204-4648-b61b-5ab9f145e7d2",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "e24d6203-f03f-4114-9687-cf9595cb35d1",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_335/pets_335.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z9/gadget.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "57ad3c49-8ea8-4c79-b2d4-1013dedf39a0"
+                },
+                "Property": "Position",
+                "Value": "3560.22461,-9949.2959,-0.000866452232"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "57ad3c49-8ea8-4c79-b2d4-1013dedf39a0": "234d01ed-5bbc-4877-a88e-625d9470b8f7",
+            "07f68a67-f6b2-4851-8f25-3feddf8ed02f": "ea86db76-d30f-4ece-b702-e7019e229a2b",
+            "faf5472a-ab85-4c0f-819a-b899e90fdd18": "69001b8c-1546-4694-95af-da34a5dd2318",
+            "c7726606-03eb-4d12-a509-b0b126e6534a": "0deaeca2-0aaf-4af0-a107-d950f4190d92"
+          }
         },
         {
           "__guid": "0231a442-881b-403e-ab88-8a0562e66a40",
           "__version": 2,
-          "Flags": 0,
-          "Name": "Vesper",
-          "Position": "3554.0293,-9879.6084,-0.000463210046",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "e45ff2a6-dd07-4dd2-8313-f7954444553b",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Vesper",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "682f1560-17bf-464d-81f3-4f82fb724457",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "722a4792-6a59-4c07-a72c-c6c886205fee",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_347/pets_347.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z9/vesper.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "1530890c-c9ad-4e58-8cbd-54722d7f1091"
+                },
+                "Property": "Position",
+                "Value": "3554.0293,-9879.6084,-0.000463210046"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "1530890c-c9ad-4e58-8cbd-54722d7f1091": "0231a442-881b-403e-ab88-8a0562e66a40",
+            "5bb43c70-3eee-4398-93e4-1ff73140edba": "e45ff2a6-dd07-4dd2-8313-f7954444553b",
+            "1852351c-19d8-4539-a6b0-70ce1c8ab4d9": "682f1560-17bf-464d-81f3-4f82fb724457",
+            "40c481f2-f27b-46a9-ba06-f6e3f7e8a326": "722a4792-6a59-4c07-a72c-c6c886205fee"
+          }
+        },
+        {
+          "__guid": "c721e2f8-7e95-4e9d-a939-66d723cad0bd",
+          "__version": 2,
+          "__Prefab": "prefabs/pets/playtest/z9/valor.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "6f93980f-7290-4b30-8cb4-d5a6d7d8ab66"
+                },
+                "Property": "Name",
+                "Value": "Valor"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "6f93980f-7290-4b30-8cb4-d5a6d7d8ab66"
+                },
+                "Property": "Position",
+                "Value": "3561.54175,-9805.8291,-0.000824071001"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "6f93980f-7290-4b30-8cb4-d5a6d7d8ab66": "c721e2f8-7e95-4e9d-a939-66d723cad0bd",
+            "e40d53e4-1c58-4cc6-bdd2-17cb7715a575": "32dbe551-7a98-431f-8bb4-ff6baef3ccfd",
+            "f035af43-16d6-4d59-b0b8-bf8a2b4de24a": "8094d304-b204-4648-b61b-5ab9f145e7d2",
+            "29e63c40-3560-4aac-8234-d1d78fdc6c67": "e24d6203-f03f-4114-9687-cf9595cb35d1"
+          }
         }
       ]
     },
@@ -38661,262 +37121,82 @@
       "Components": [],
       "Children": [
         {
-          "__guid": "4f668f6e-0536-4549-8160-383850f7f50a",
-          "__version": 2,
-          "Flags": 0,
-          "Name": "GoldenNugget",
-          "Position": "3752.1189,-9796.33398,-0.00098363508",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "589793c7-1ed6-4021-a0e1-788b270a9184",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Golden Nugget",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "d390f17f-f1a0-401e-9d14-ccfc8f84c6dc",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "b836931a-4657-4a8b-b78f-b599c45d5b1e",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/gold_pets_86/pets_86.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
-        },
-        {
           "__guid": "4bc4dbee-f530-4dfe-b9b3-d7fea033d99d",
           "__version": 2,
-          "Flags": 0,
-          "Name": "Ember",
-          "Position": "3756.39917,-9923.57031,-0.000563144276",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "43ab631b-4ff1-4863-8c4e-8e78c8bf52fd",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Ember",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "764bac42-c61d-4ebb-97c6-9e5e909c9723",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "5ae714f6-b4d1-489d-97c5-6fffbe12cebf",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_85/pets_85.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z10/ember.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "d764076c-71f9-4cbd-bb1e-64d74d44b4b8"
+                },
+                "Property": "Position",
+                "Value": "3756.39917,-9923.57031,-0.000563144276"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "d764076c-71f9-4cbd-bb1e-64d74d44b4b8": "4bc4dbee-f530-4dfe-b9b3-d7fea033d99d",
+            "f790a6cf-79da-4d30-945f-c6757eb94c04": "43ab631b-4ff1-4863-8c4e-8e78c8bf52fd",
+            "ec0b5606-1290-4496-baed-481e24d59e41": "764bac42-c61d-4ebb-97c6-9e5e909c9723",
+            "dc6bbbc7-d2f4-461f-a172-866bb7f700fe": "5ae714f6-b4d1-489d-97c5-6fffbe12cebf"
+          }
         },
         {
           "__guid": "333f6bb0-da8b-421f-a4ab-9d61424c98b4",
           "__version": 2,
-          "Flags": 0,
-          "Name": "Frostine",
-          "Position": "3755.56689,-9862.97852,-0.00104896177",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "994a605e-2447-4f5b-8559-32a6091fe6eb",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Frostine",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "77854481-6bd4-49aa-8caa-a5699ee76602",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "7d9c6636-33be-4fa9-ad37-902bbc70a86f",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_274/pets_274.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z10/frostine.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "42eed96d-90a3-4530-b703-f6700aeb982e"
+                },
+                "Property": "Position",
+                "Value": "3755.56689,-9862.97852,-0.00104896177"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "42eed96d-90a3-4530-b703-f6700aeb982e": "333f6bb0-da8b-421f-a4ab-9d61424c98b4",
+            "3a572aa4-95e2-4dd5-a0f8-1fda124fa6d8": "994a605e-2447-4f5b-8559-32a6091fe6eb",
+            "2c611525-bf0f-4b8a-a1ef-4ab4eca3ab06": "77854481-6bd4-49aa-8caa-a5699ee76602",
+            "94d5f0b0-446b-440d-8377-f950562951ea": "7d9c6636-33be-4fa9-ad37-902bbc70a86f"
+          }
+        },
+        {
+          "__guid": "4f668f6e-0536-4549-8160-383850f7f50a",
+          "__version": 2,
+          "__Prefab": "prefabs/pets/playtest/z10/goldennugget.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "fed018eb-df84-4a11-a5ff-0d7e3d094833"
+                },
+                "Property": "Position",
+                "Value": "3752.1189,-9796.33398,-0.00098363508"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "fed018eb-df84-4a11-a5ff-0d7e3d094833": "4f668f6e-0536-4549-8160-383850f7f50a",
+            "4345cd52-25dd-48e6-a630-2334b459861a": "589793c7-1ed6-4021-a0e1-788b270a9184",
+            "e81e0168-e973-48b3-9775-1ec951292bbc": "d390f17f-f1a0-401e-9d14-ccfc8f84c6dc",
+            "6ea13025-42e4-43e5-8974-b97149f798e1": "b836931a-4657-4a8b-b78f-b599c45d5b1e"
+          }
         }
       ]
     },
@@ -38938,262 +37218,82 @@
       "Components": [],
       "Children": [
         {
-          "__guid": "55e67822-a82b-4d1b-a777-b805c21ed776",
-          "__version": 2,
-          "Flags": 0,
-          "Name": "GoldenRegent",
-          "Position": "3961.49194,-9789.29883,-0.00172563549",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "8dc1ed04-388e-4040-8e7a-203a62c42c8d",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Golden Regent",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "793831bc-7777-4298-95c9-d405169d0e85",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "611d8d9d-4d2d-4770-b470-dcc9969a6f4c",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/gold_pets_29/pets_29.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
-        },
-        {
           "__guid": "0419eb45-87c2-4274-bed8-49fe7aadae4e",
           "__version": 2,
-          "Flags": 0,
-          "Name": "Mecha",
-          "Position": "3937.61353,-9899.36035,-0.00103990035",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "7f8dea6a-6407-43e8-901e-e3f6f13fdbce",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Mecha",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "a622ca76-3905-4f4b-9986-4e930e6c4c84",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "acc1a20e-1bcf-4467-930c-400f0752dc91",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/pets_284/pets_284.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z11/mecha.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "22a485be-b8f0-48ea-9e8f-e0024071a70a"
+                },
+                "Property": "Position",
+                "Value": "3937.61353,-9899.36035,-0.00103990035"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "22a485be-b8f0-48ea-9e8f-e0024071a70a": "0419eb45-87c2-4274-bed8-49fe7aadae4e",
+            "da6329e1-f81e-45a9-b89c-182eb532f729": "7f8dea6a-6407-43e8-901e-e3f6f13fdbce",
+            "0d9ee57f-a72a-4620-b243-5b8015bf8520": "a622ca76-3905-4f4b-9986-4e930e6c4c84",
+            "0054ba76-02d1-4866-a4ae-d6c0e4e05a26": "acc1a20e-1bcf-4467-930c-400f0752dc91"
+          }
         },
         {
           "__guid": "ce12e6ad-ca22-4303-8c96-ea94c9a34263",
           "__version": 2,
-          "Flags": 0,
-          "Name": "GoldenHops",
-          "Position": "3957.70874,-9839.85059,-0.00152092334",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "6f44db4d-a623-4ec2-ab69-fc0bfdac43ca",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Golden Hops",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "00c61c3a-0fea-45ba-9718-0b2e26c166d4",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "56af3bbd-04ae-4ef4-a1fd-46092f34aeaa",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/gold_pets_60/pets_60.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z11/goldenhops.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "9166badd-11b1-43e0-b882-8e50efbe2720"
+                },
+                "Property": "Position",
+                "Value": "3957.70874,-9839.85059,-0.00152092334"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "9166badd-11b1-43e0-b882-8e50efbe2720": "ce12e6ad-ca22-4303-8c96-ea94c9a34263",
+            "f6db3a05-f18d-4ca8-94a1-b062a5a8d2bb": "6f44db4d-a623-4ec2-ab69-fc0bfdac43ca",
+            "89f5a820-f688-419b-ba1f-18c965c2aeb9": "00c61c3a-0fea-45ba-9718-0b2e26c166d4",
+            "f291b484-a5c5-4ee9-ba8f-2aae4c5e86f0": "56af3bbd-04ae-4ef4-a1fd-46092f34aeaa"
+          }
+        },
+        {
+          "__guid": "55e67822-a82b-4d1b-a777-b805c21ed776",
+          "__version": 2,
+          "__Prefab": "prefabs/pets/playtest/z11/goldenregent.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "6967d797-741e-4d24-b844-08d52c6c9540"
+                },
+                "Property": "Position",
+                "Value": "3961.49194,-9789.29883,-0.00172563549"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "6967d797-741e-4d24-b844-08d52c6c9540": "55e67822-a82b-4d1b-a777-b805c21ed776",
+            "714b9d42-6733-4aed-a39c-bd0f370ce0ea": "8dc1ed04-388e-4040-8e7a-203a62c42c8d",
+            "9bfc0871-2c76-4720-9e0f-4485a2e5140b": "793831bc-7777-4298-95c9-d405169d0e85",
+            "7ee5a6d9-c46b-4fb5-81ec-57c44ea21d0a": "611d8d9d-4d2d-4770-b470-dcc9969a6f4c"
+          }
         }
       ]
     },
@@ -39217,260 +37317,88 @@
         {
           "__guid": "f358e424-affc-4924-ae72-aab54213be86",
           "__version": 2,
-          "Flags": 0,
-          "Name": "GoldenZappy",
-          "Position": "4094.16943,-9917.18457,0.00377329276",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "c4035129-c398-4ec1-b46f-548ef00e20cc",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Golden Zappy",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "aec4f38d-e07b-4652-bdc0-2503a20d4f80",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "d14e8aaf-3e90-4393-97ea-fef1e1ab9e8f",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/gold_pets_38/pets_38.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z12/goldenzappy.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "278ede25-0c14-4c9f-9369-eef8c6ee6994"
+                },
+                "Property": "Position",
+                "Value": "4094.16943,-9917.18457,0.00377329276"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "278ede25-0c14-4c9f-9369-eef8c6ee6994": "f358e424-affc-4924-ae72-aab54213be86",
+            "abf7520a-928d-4f3a-a170-8efe284f5fb3": "c4035129-c398-4ec1-b46f-548ef00e20cc",
+            "6f4ec6e7-a9f0-42b8-a92a-618ca39b64de": "aec4f38d-e07b-4652-bdc0-2503a20d4f80",
+            "d2ee31b0-8710-432d-850e-570bbc47f4f1": "d14e8aaf-3e90-4393-97ea-fef1e1ab9e8f"
+          }
         },
         {
           "__guid": "90c01a28-ef66-4892-bc0d-b50e827cbf33",
           "__version": 2,
-          "Flags": 0,
-          "Name": "Goldwing",
-          "Position": "4106.20703,-9846.66113,0.00404929556",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "2fe56ee6-6e43-4d17-af20-3e52a3f89f3a",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Goldwing",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "8bb5bfd8-804a-4ba1-a49c-ddbc7a8c54f5",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "b28c492f-e2a0-4717-9d2d-0ad05edea5a1",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/gold_pets_75/pets_75.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z12/goldwing.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "7b2a55c8-0474-4969-a3f0-136dc54b2421"
+                },
+                "Property": "Name",
+                "Value": "Goldwing"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "7b2a55c8-0474-4969-a3f0-136dc54b2421"
+                },
+                "Property": "Position",
+                "Value": "4106.20703,-9846.66113,0.00404929556"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "7b2a55c8-0474-4969-a3f0-136dc54b2421": "90c01a28-ef66-4892-bc0d-b50e827cbf33",
+            "9b09527c-4e43-456e-be68-02422c4f95b3": "2fe56ee6-6e43-4d17-af20-3e52a3f89f3a",
+            "354cda29-12cd-4752-b3ba-acfa6b6f8d67": "8bb5bfd8-804a-4ba1-a49c-ddbc7a8c54f5",
+            "dc815cef-f600-482b-9fea-9d1e7770183a": "b28c492f-e2a0-4717-9d2d-0ad05edea5a1"
+          }
         },
         {
           "__guid": "5d57c330-0829-48f1-b89d-0e36761d6164",
           "__version": 2,
-          "Flags": 0,
-          "Name": "GoldenReaper",
-          "Position": "4103.53613,-9786.86035,0.00409372151",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "PetComponent",
-              "__guid": "b21b7465-7a97-479c-b235-b2173e2a3aaa",
-              "__enabled": true,
-              "Flags": 0,
-              "AttackInterval": 1,
-              "AttackLungeMultiplier": 1,
-              "AttackRangeMultiplier": 1,
-              "BobHeightMultiplier": 1,
-              "CoinMultiplier": 1,
-              "Damage": 1,
-              "DisplayName": "Golden Reaper",
-              "MoveSpeedMultiplier": 1,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "4d5a1399-df2f-4176-93b2-39d73d4f351f",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "AnimalModel",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "eecdc454-b5b9-4015-843a-2a241e7c531e",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "BodyGroups": 18446744073709551615,
-                  "CreateAttachments": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/pets/gold_pets_82/pets_82.vmdl",
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": []
-            }
-          ]
+          "__Prefab": "prefabs/pets/playtest/z12/goldenreaper.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "5dd9085d-baa7-4ce8-98b7-5e80f757f3db"
+                },
+                "Property": "Position",
+                "Value": "4103.53613,-9786.86035,0.00409372151"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "5dd9085d-baa7-4ce8-98b7-5e80f757f3db": "5d57c330-0829-48f1-b89d-0e36761d6164",
+            "3bdb52cd-14aa-497e-b4b6-61da5953bc51": "b21b7465-7a97-479c-b235-b2173e2a3aaa",
+            "1f932861-df3d-4bce-bbe2-e76e5ff0a9ec": "4d5a1399-df2f-4176-93b2-39d73d4f351f",
+            "2d9dce65-c0e0-4414-95c9-34b6042e678b": "eecdc454-b5b9-4015-843a-2a241e7c531e"
+          }
         }
       ]
     }
