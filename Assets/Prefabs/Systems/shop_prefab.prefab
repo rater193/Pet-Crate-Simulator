@@ -1,0 +1,857 @@
+{
+  "RootObject": {
+    "__guid": "045dd3ce-f7ff-48a8-af8b-c1c28fafd3c3",
+    "__version": 2,
+    "Flags": 0,
+    "Name": "shop_prefab",
+    "Position": "0,0,-11.4790344",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkFlags": 0,
+    "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
+    "OwnerTransfer": 1,
+    "Components": [],
+    "Children": [
+      {
+        "__guid": "619a2032-43b1-41a4-9090-80f37b645def",
+        "__version": 2,
+        "Flags": 0,
+        "Name": "ShopDisplayWorldPanel",
+        "Position": "-32.8096161,31.9527588,318.953339",
+        "Rotation": "0,0,-0.40500772,0.914313257",
+        "Scale": "4,4,4",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkFlags": 0,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.WorldPanel",
+            "__guid": "5cce774f-0879-48ae-9bb8-9123d3439776",
+            "__enabled": true,
+            "Flags": 0,
+            "HorizontalAlign": "Center",
+            "InteractionRange": 1000,
+            "LookAtCamera": false,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "PanelSize": "3072,3072",
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderScale": 1,
+            "VerticalAlign": "Center"
+          },
+          {
+            "__type": "Sandbox.CrateShopDisplay",
+            "__guid": "de21d493-b4b3-4eff-8944-003d0e424148",
+            "__enabled": true,
+            "Flags": 0,
+            "AutoUseCrateRewards": true,
+            "FeaturedPets": [
+              {
+                "Rarity": "Common",
+                "SpawnWeight": 500,
+                "PetPrefab": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/zone1.1/pet-cat.prefab"
+                }
+              },
+              {
+                "Rarity": "Common",
+                "SpawnWeight": 400,
+                "PetPrefab": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/zone1.1/pet-chick.prefab"
+                }
+              },
+              {
+                "Rarity": "Common",
+                "SpawnWeight": 300,
+                "PetPrefab": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/zone1.1/pet-dog.prefab"
+                }
+              }
+            ],
+            "HoverActionLabel": "Toggle",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "PetSwapInterval": 6,
+            "SubtitleText": "Pet Index",
+            "TitleText": "Crate Shop"
+          }
+        ],
+        "Children": []
+      },
+      {
+        "__guid": "ba0f606b-db22-406a-831a-0f7fe50e61a6",
+        "__version": 2,
+        "Flags": 0,
+        "Name": "PetShopCrate1.1",
+        "Position": "2.06991577,-19.2169189,36.8114357",
+        "Rotation": "0,0,-0.412252903,0.911069393",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkFlags": 0,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "46e9db94-8f3f-4038-a877-095966fddfe1",
+            "__enabled": true,
+            "Flags": 0,
+            "Center": "0,0,0",
+            "ColliderFlags": 0,
+            "Elasticity": null,
+            "Friction": null,
+            "IsTrigger": false,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "OnObjectTriggerEnter": null,
+            "OnObjectTriggerExit": null,
+            "OnTriggerEnter": null,
+            "OnTriggerExit": null,
+            "RollingResistance": null,
+            "Scale": "50,50,50",
+            "Static": false,
+            "Surface": null,
+            "SurfaceVelocity": "0,0,0"
+          },
+          {
+            "__type": "InteractBuyCrate",
+            "__guid": "9e46249f-6588-409a-9b3f-84307bb48953",
+            "__enabled": true,
+            "Flags": 0,
+            "CelebrationDuration": 1.15,
+            "CelebrationHopCount": 3,
+            "CelebrationHopHeight": 34,
+            "CelebrationSpinDegrees": 360,
+            "CelebrationSquashStretch": 0.18,
+            "CelebrationWiggleDegrees": 8,
+            "CollectDuration": 0.45,
+            "CollectHopHeight": 24,
+            "Cost": 25,
+            "CrateModelName": "Model",
+            "CrateOpenDuration": 0.45,
+            "CrateOpenLift": 10,
+            "CrateOpenShakeDistance": 3,
+            "CrateOpenSquashStretch": 0.08,
+            "CrateOpenWobbleDegrees": 5,
+            "InteractableShortcutOffset": "0,0,0",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "Pets": [
+              {
+                "Rarity": "Common",
+                "SpawnWeight": 100,
+                "PetPrefab": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bee.prefab"
+                }
+              },
+              {
+                "Rarity": "Common",
+                "SpawnWeight": 100,
+                "PetPrefab": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cat.prefab"
+                }
+              },
+              {
+                "Rarity": "Common",
+                "SpawnWeight": 25,
+                "PetPrefab": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-penguin.prefab"
+                }
+              }
+            ],
+            "RarityParticles": [],
+            "RevealDuration": 1.25,
+            "RevealedPetRotation": "0,0,0,1",
+            "RevealHeight": 30,
+            "RevealStartLocalOffset": "0,0,0",
+            "RewardSource": {
+              "_type": "component",
+              "component_id": "de21d493-b4b3-4eff-8944-003d0e424148",
+              "go": "619a2032-43b1-41a4-9090-80f37b645def",
+              "component_type": "CrateShopDisplay"
+            },
+            "text": "Buy Pet: $25",
+            "UseShopDisplayRewards": true
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "304f2960-f124-4291-81c7-a0fd0c2afafa",
+            "__version": 2,
+            "Flags": 0,
+            "Name": "Model",
+            "Position": "0,0,-24.9079952",
+            "Rotation": "0,0,0,1",
+            "Scale": "1.5,1.5,1.5",
+            "Tags": "",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkFlags": 0,
+            "NetworkOrphaned": 0,
+            "NetworkTransmit": true,
+            "OwnerTransfer": 1,
+            "Components": [
+              {
+                "__type": "Sandbox.ModelRenderer",
+                "__guid": "7ebc7aed-b265-4870-a7fc-65f7258cc1fb",
+                "__enabled": true,
+                "Flags": 0,
+                "BodyGroups": 18446744073709551615,
+                "CreateAttachments": false,
+                "LodOverride": null,
+                "MaterialGroup": null,
+                "MaterialOverride": null,
+                "Materials": null,
+                "Model": "models/citizen_props/crate01.vmdl",
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null,
+                "RenderOptions": {
+                  "GameLayer": true,
+                  "OverlayLayer": false,
+                  "BloomLayer": false,
+                  "AfterUILayer": false
+                },
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ],
+            "Children": []
+          }
+        ]
+      },
+      {
+        "__guid": "9076772a-af91-459a-baf8-f94f59415c51",
+        "__version": 2,
+        "Flags": 0,
+        "Name": "PetShopCrate1.1",
+        "Position": "-29.4454346,-156.277588,36.8112373",
+        "Rotation": "0,0,-0.121135861,0.992635906",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkFlags": 0,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "b09fcc66-0402-40e6-8014-1a7bed5822a1",
+            "__enabled": true,
+            "Flags": 0,
+            "Center": "0,0,0",
+            "ColliderFlags": 0,
+            "Elasticity": null,
+            "Friction": null,
+            "IsTrigger": false,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "OnObjectTriggerEnter": null,
+            "OnObjectTriggerExit": null,
+            "OnTriggerEnter": null,
+            "OnTriggerExit": null,
+            "RollingResistance": null,
+            "Scale": "50,50,50",
+            "Static": false,
+            "Surface": null,
+            "SurfaceVelocity": "0,0,0"
+          },
+          {
+            "__type": "InteractBuyCrate",
+            "__guid": "86634b7e-2598-4514-8566-c1356f4d4cdf",
+            "__enabled": true,
+            "Flags": 0,
+            "CelebrationDuration": 1.15,
+            "CelebrationHopCount": 3,
+            "CelebrationHopHeight": 34,
+            "CelebrationSpinDegrees": 360,
+            "CelebrationSquashStretch": 0.18,
+            "CelebrationWiggleDegrees": 8,
+            "CollectDuration": 0.45,
+            "CollectHopHeight": 24,
+            "Cost": 25,
+            "CrateModelName": "Model",
+            "CrateOpenDuration": 0.45,
+            "CrateOpenLift": 10,
+            "CrateOpenShakeDistance": 3,
+            "CrateOpenSquashStretch": 0.08,
+            "CrateOpenWobbleDegrees": 5,
+            "InteractableShortcutOffset": "0,0,0",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "Pets": [
+              {
+                "Rarity": "Common",
+                "SpawnWeight": 100,
+                "PetPrefab": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bee.prefab"
+                }
+              },
+              {
+                "Rarity": "Common",
+                "SpawnWeight": 100,
+                "PetPrefab": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cat.prefab"
+                }
+              },
+              {
+                "Rarity": "Common",
+                "SpawnWeight": 25,
+                "PetPrefab": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-penguin.prefab"
+                }
+              }
+            ],
+            "RarityParticles": [],
+            "RevealDuration": 1.25,
+            "RevealedPetRotation": "0,0,0,1",
+            "RevealHeight": 30,
+            "RevealStartLocalOffset": "0,0,0",
+            "RewardSource": {
+              "_type": "component",
+              "component_id": "de21d493-b4b3-4eff-8944-003d0e424148",
+              "go": "619a2032-43b1-41a4-9090-80f37b645def",
+              "component_type": "CrateShopDisplay"
+            },
+            "text": "Buy Pet: $25",
+            "UseShopDisplayRewards": true
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "4e11c066-3a34-428f-8e23-e9afb2741cb7",
+            "__version": 2,
+            "Flags": 0,
+            "Name": "Model",
+            "Position": "0,0,-24.907999",
+            "Rotation": "0,0,0,1",
+            "Scale": "1.5,1.5,1.5",
+            "Tags": "",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkFlags": 0,
+            "NetworkOrphaned": 0,
+            "NetworkTransmit": true,
+            "OwnerTransfer": 1,
+            "Components": [
+              {
+                "__type": "Sandbox.ModelRenderer",
+                "__guid": "e33a7831-4228-4c18-9018-4a3de0de3794",
+                "__enabled": true,
+                "Flags": 0,
+                "BodyGroups": 18446744073709551615,
+                "CreateAttachments": false,
+                "LodOverride": null,
+                "MaterialGroup": null,
+                "MaterialOverride": null,
+                "Materials": null,
+                "Model": "models/citizen_props/crate01.vmdl",
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null,
+                "RenderOptions": {
+                  "GameLayer": true,
+                  "OverlayLayer": false,
+                  "BloomLayer": false,
+                  "AfterUILayer": false
+                },
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ],
+            "Children": []
+          }
+        ]
+      },
+      {
+        "__guid": "4db96302-5b35-4b1b-9bca-6876068cdcde",
+        "__version": 2,
+        "Flags": 0,
+        "Name": "PetShopCrate1.1",
+        "Position": "135.940979,1.20812988,36.972393",
+        "Rotation": "0,0,-0.611415803,0.791309476",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkFlags": 0,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "da300340-039e-4b47-9900-0ccae5f9faa2",
+            "__enabled": true,
+            "Flags": 0,
+            "Center": "0,0,0",
+            "ColliderFlags": 0,
+            "Elasticity": null,
+            "Friction": null,
+            "IsTrigger": false,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "OnObjectTriggerEnter": null,
+            "OnObjectTriggerExit": null,
+            "OnTriggerEnter": null,
+            "OnTriggerExit": null,
+            "RollingResistance": null,
+            "Scale": "50,50,50",
+            "Static": false,
+            "Surface": null,
+            "SurfaceVelocity": "0,0,0"
+          },
+          {
+            "__type": "InteractBuyCrate",
+            "__guid": "63cbf3c5-3cf5-40f2-9716-e7df04a690c1",
+            "__enabled": true,
+            "Flags": 0,
+            "CelebrationDuration": 1.15,
+            "CelebrationHopCount": 3,
+            "CelebrationHopHeight": 34,
+            "CelebrationSpinDegrees": 360,
+            "CelebrationSquashStretch": 0.18,
+            "CelebrationWiggleDegrees": 8,
+            "CollectDuration": 0.45,
+            "CollectHopHeight": 24,
+            "Cost": 25,
+            "CrateModelName": "Model",
+            "CrateOpenDuration": 0.45,
+            "CrateOpenLift": 10,
+            "CrateOpenShakeDistance": 3,
+            "CrateOpenSquashStretch": 0.08,
+            "CrateOpenWobbleDegrees": 5,
+            "InteractableShortcutOffset": "0,0,0",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "Pets": [
+              {
+                "Rarity": "Common",
+                "SpawnWeight": 100,
+                "PetPrefab": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-bee.prefab"
+                }
+              },
+              {
+                "Rarity": "Common",
+                "SpawnWeight": 100,
+                "PetPrefab": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-cat.prefab"
+                }
+              },
+              {
+                "Rarity": "Common",
+                "SpawnWeight": 25,
+                "PetPrefab": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/pets/pet-penguin.prefab"
+                }
+              }
+            ],
+            "RarityParticles": [],
+            "RevealDuration": 1.25,
+            "RevealedPetRotation": "0,0,0,1",
+            "RevealHeight": 30,
+            "RevealStartLocalOffset": "0,0,0",
+            "RewardSource": {
+              "_type": "component",
+              "component_id": "de21d493-b4b3-4eff-8944-003d0e424148",
+              "go": "619a2032-43b1-41a4-9090-80f37b645def",
+              "component_type": "CrateShopDisplay"
+            },
+            "text": "Buy Pet: $25",
+            "UseShopDisplayRewards": true
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "665ba956-702d-4ad7-82fc-96ce2d9ff171",
+            "__version": 2,
+            "Flags": 0,
+            "Name": "Model",
+            "Position": "0,0,-24.907999",
+            "Rotation": "0,0,0,1",
+            "Scale": "1.5,1.5,1.5",
+            "Tags": "",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkFlags": 0,
+            "NetworkOrphaned": 0,
+            "NetworkTransmit": true,
+            "OwnerTransfer": 1,
+            "Components": [
+              {
+                "__type": "Sandbox.ModelRenderer",
+                "__guid": "f064a8a6-ead7-41c8-9f3b-4ff869c2186c",
+                "__enabled": true,
+                "Flags": 0,
+                "BodyGroups": 18446744073709551615,
+                "CreateAttachments": false,
+                "LodOverride": null,
+                "MaterialGroup": null,
+                "MaterialOverride": null,
+                "Materials": null,
+                "Model": "models/citizen_props/crate01.vmdl",
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null,
+                "RenderOptions": {
+                  "GameLayer": true,
+                  "OverlayLayer": false,
+                  "BloomLayer": false,
+                  "AfterUILayer": false
+                },
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ],
+            "Children": []
+          }
+        ]
+      },
+      {
+        "__guid": "548f388e-29b4-478c-94c6-392753c276fc",
+        "__version": 2,
+        "Flags": 0,
+        "Name": "Buy All Crates button",
+        "Position": "-64.2695618,-241.060852,10.7598648",
+        "Rotation": "-2.17755677E-13,-1.14475259E-12,0.982384622,0.186869919",
+        "Scale": "0.333437204,0.333437204,0.333437204",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkFlags": 0,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "37c97862-b112-485b-be85-f5553dbebb1e",
+            "__enabled": true,
+            "Flags": 0,
+            "Center": "0,0,120",
+            "ColliderFlags": 0,
+            "Elasticity": null,
+            "Friction": null,
+            "IsTrigger": false,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "OnObjectTriggerEnter": null,
+            "OnObjectTriggerExit": null,
+            "OnTriggerEnter": null,
+            "OnTriggerExit": null,
+            "RollingResistance": null,
+            "Scale": "100,100,240",
+            "Static": false,
+            "Surface": null,
+            "SurfaceVelocity": "0,0,0"
+          },
+          {
+            "__type": "InteractBuyAllCrates",
+            "__guid": "dddaaa38-a91a-41fd-920b-780a9847c8ed",
+            "__enabled": true,
+            "Flags": 0,
+            "InteractableShortcutOffset": "0,0,50",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "ShopRoot": {
+              "_type": "gameobject",
+              "go": "045dd3ce-f7ff-48a8-af8b-c1c28fafd3c3"
+            },
+            "text": "Buy All Crates"
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "b4d81826-8d42-487d-8239-57f6f457e24f",
+            "__version": 2,
+            "Flags": 0,
+            "Name": "pedestal2",
+            "Position": "0,0,0",
+            "Rotation": "-1.08420217E-19,0,2.16840434E-19,1",
+            "Scale": "1,1,1",
+            "Tags": "",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkFlags": 0,
+            "NetworkOrphaned": 0,
+            "NetworkTransmit": true,
+            "OwnerTransfer": 1,
+            "Components": [
+              {
+                "__type": "Sandbox.Prop",
+                "__guid": "acfb9e67-056a-4cd6-b270-beb26a8a0c1c",
+                "__enabled": false,
+                "Flags": 0,
+                "BodyGroups": 18446744073709551615,
+                "Health": 0,
+                "IsStatic": false,
+                "MaterialGroup": null,
+                "Model": "deggassets/models/fantasy/map/pedestal2.vmdl",
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null,
+                "OnPropBreak": null,
+                "OnPropTakeDamage": null,
+                "StartAsleep": false,
+                "Tint": "1,1,1,1"
+              },
+              {
+                "__type": "Sandbox.ModelRenderer",
+                "__guid": "7cc3159e-f425-4e79-96c1-9338bac9db9f",
+                "__enabled": true,
+                "Flags": 0,
+                "BodyGroups": 18446744073709551615,
+                "CreateAttachments": false,
+                "LodOverride": null,
+                "MaterialGroup": null,
+                "MaterialOverride": null,
+                "Materials": null,
+                "Model": "deggassets/models/fantasy/map/pedestal2.vmdl",
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null,
+                "RenderOptions": {
+                  "GameLayer": true,
+                  "OverlayLayer": false,
+                  "BloomLayer": false,
+                  "AfterUILayer": false
+                },
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ],
+            "Children": []
+          },
+          {
+            "__guid": "5acd05de-6826-4c60-ae83-6d291e822b00",
+            "__version": 2,
+            "Flags": 0,
+            "Name": "big_button_2",
+            "Position": "0,-2.6415406E-10,113.343658",
+            "Rotation": "-1.08420217E-19,0,2.16840434E-19,1",
+            "Scale": "12.6761808,12.6761808,12.6761808",
+            "Tags": "",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkFlags": 0,
+            "NetworkOrphaned": 0,
+            "NetworkTransmit": true,
+            "OwnerTransfer": 1,
+            "Components": [
+              {
+                "__type": "Sandbox.Prop",
+                "__guid": "d44e19cb-1a2c-479e-8080-ee6f74628f7b",
+                "__enabled": false,
+                "Flags": 0,
+                "BodyGroups": 18446744073709551615,
+                "Health": 0,
+                "IsStatic": false,
+                "MaterialGroup": null,
+                "Model": "models/props/big_button/big_button_2.vmdl",
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null,
+                "OnPropBreak": null,
+                "OnPropTakeDamage": null,
+                "StartAsleep": false,
+                "Tint": "1,1,1,1"
+              },
+              {
+                "__type": "Sandbox.ModelRenderer",
+                "__guid": "7bff0aa1-4d94-4e9f-b79c-57c953171e28",
+                "__enabled": true,
+                "Flags": 0,
+                "BodyGroups": 18446744073709551615,
+                "CreateAttachments": false,
+                "LodOverride": null,
+                "MaterialGroup": null,
+                "MaterialOverride": null,
+                "Materials": null,
+                "Model": "models/props/big_button/big_button_2.vmdl",
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null,
+                "RenderOptions": {
+                  "GameLayer": true,
+                  "OverlayLayer": false,
+                  "BloomLayer": false,
+                  "AfterUILayer": false
+                },
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ],
+            "Children": []
+          }
+        ]
+      },
+      {
+        "__guid": "761cdfe3-57ed-455e-bf51-9efe0d48d65b",
+        "__version": 2,
+        "__Prefab": "prefabs/props/petforge.prefab",
+        "__PrefabInstancePatch": {
+          "AddedObjects": [],
+          "RemovedObjects": [],
+          "PropertyOverrides": [
+            {
+              "Target": {
+                "Type": "GameObject",
+                "IdValue": "dc0a764b-428d-4772-8571-ab57b9010a4e"
+              },
+              "Property": "Position",
+              "Value": "-156.08078,-311.367188,38.8647118"
+            },
+            {
+              "Target": {
+                "Type": "GameObject",
+                "IdValue": "dc0a764b-428d-4772-8571-ab57b9010a4e"
+              },
+              "Property": "Rotation",
+              "Value": "-0.000664673338,0.00113437418,-0.140384763,0.990096152"
+            },
+            {
+              "Target": {
+                "Type": "GameObject",
+                "IdValue": "195e5262-117e-47bb-9569-645b3e3bcf22"
+              },
+              "Property": "Rotation",
+              "Value": "0,0,0,1"
+            }
+          ],
+          "MovedObjects": []
+        },
+        "__PrefabIdToInstanceId": {
+          "dc0a764b-428d-4772-8571-ab57b9010a4e": "761cdfe3-57ed-455e-bf51-9efe0d48d65b",
+          "29d52304-97e0-4ea9-a586-e73688ac7639": "64b11f7b-4f37-48f2-8dc2-08d52167604d",
+          "a8b6c508-b34f-4d99-bdd0-03d2a36dd980": "03e6f7c9-f8b8-47a8-b4e0-aa09a9b92ca8",
+          "65a4dd2b-aa20-4f34-b794-8142b34719a4": "73c757e6-32e1-4182-a80b-94d37455d8a8",
+          "195e5262-117e-47bb-9569-645b3e3bcf22": "6ae97c15-42da-4ac6-bd2f-b373a5dded22",
+          "a465fb5a-7128-4fa6-8552-feab177c63cf": "42ea89e1-a141-48ea-a2f9-abe4888aa3c4"
+        }
+      }
+    ],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": false,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": "",
+        "DeferGeneration": false,
+        "CustomBounds": false
+      }
+    },
+    "__variables": []
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [
+    "degg.f_pedestal2#8216",
+    "facepunch.big_button_2#141959"
+  ],
+  "__version": 2
+}

@@ -242,7 +242,7 @@
         "OnComponentStart": null,
         "OnComponentUpdate": null,
         "PlayerMoney": 0,
-        "SaveFilePath": "playerdata/save.json"
+        "SaveFilePath": "playerdata/save_alpha2.json"
       },
       {
         "__type": "PetFramework",
@@ -436,7 +436,7 @@
         ],
         "Children": [
           {
-            "__guid": "7c7a945d-3b3c-4e5c-8ebf-601c79acff9c",
+            "__guid": "63eaecfd-bc74-4754-b4a4-9bb61af8666c",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - flannel_shirt",
@@ -453,7 +453,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "781b4fff-7d9f-49f3-8694-9a53d0d83f5d",
+                "__guid": "0f1dfecb-28d0-4c24-9cb0-1b6f2deb4b54",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -505,7 +505,7 @@
             "Children": []
           },
           {
-            "__guid": "5ebc12f7-e42e-4b2d-a0e0-303dd06b11ba",
+            "__guid": "a45c0db1-188b-4bf5-acc4-32cba47a2441",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - jeans",
@@ -522,7 +522,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "77459d2c-ae3c-4828-9c0d-6cf69ede8a7a",
+                "__guid": "604808aa-568d-436b-b59b-d1713b72366c",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -574,7 +574,7 @@
             "Children": []
           },
           {
-            "__guid": "8cba85cd-0220-4236-bf16-417aebe8b35e",
+            "__guid": "210fedcf-b938-44e3-996b-03916c06db45",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - blue_sneakers",
@@ -591,7 +591,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "aff23ec0-6c3d-434f-ac02-e1f60d31ed7b",
+                "__guid": "c583b7bb-e8c1-4268-82b5-7eee749902b7",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -643,7 +643,7 @@
             "Children": []
           },
           {
-            "__guid": "f7b85fef-d30e-480e-913c-e51d92a00486",
+            "__guid": "9156b4a8-a2fe-41fd-bf8e-9fc141f3e973",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - hair_shortscruffy_brown",
@@ -660,7 +660,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "57b9b9d2-64eb-440b-88d4-99073e77bf00",
+                "__guid": "44256a31-1acb-4aa6-9c09-1b164400d9ec",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -712,7 +712,7 @@
             "Children": []
           },
           {
-            "__guid": "b8d4ac94-8251-4a61-a2d7-ae201c508d14",
+            "__guid": "4f870b0a-637f-47ca-ba63-1cd05cc20fe0",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - eyebrows_styled",
@@ -729,7 +729,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "ab55cefc-8ff3-4d40-a783-d7a2116951cd",
+                "__guid": "a333ba6c-a575-4260-b7d0-288b880b2be7",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -790,7 +790,7 @@
         "Position": "0,0,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
-        "Tags": "",
+        "Tags": "player",
         "Enabled": true,
         "NetworkMode": 2,
         "NetworkFlags": 0,
@@ -803,7 +803,7 @@
             "__guid": "d69a44d6-4063-425a-bc46-c98420c6aeec",
             "__enabled": true,
             "Flags": 1,
-            "ColliderFlags": 1,
+            "ColliderFlags": "IgnoreTraces",
             "Elasticity": null,
             "End": "0,0,36",
             "Friction": 0,
@@ -831,7 +831,7 @@
             "__enabled": true,
             "Flags": 1,
             "Center": "0,0,18",
-            "ColliderFlags": 1,
+            "ColliderFlags": "IgnoreTraces",
             "Elasticity": null,
             "Friction": 0,
             "IsTrigger": false,
