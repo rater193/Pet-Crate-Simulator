@@ -3,7 +3,7 @@
     "__guid": "aa8c73b2-1d3e-437a-9cb4-c7f4b3207ac4",
     "__version": 2,
     "Flags": 0,
-    "Name": "Dusk",
+    "Name": "dusk",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -25,7 +25,7 @@
         "AttackRangeMultiplier": 1,
         "BobHeightMultiplier": 1,
         "CoinMultiplier": 50.6,
-        "Damage": 1,
+        "Damage": 22,
         "DisplayName": "Dusk",
         "MoveSpeedMultiplier": 1,
         "OnComponentDestroy": null,
@@ -83,7 +83,28 @@
         ],
         "Children": []
       }
-    ]
+    ],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": false,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": "",
+        "DeferGeneration": false,
+        "CustomBounds": false
+      }
+    },
+    "__variables": []
   },
   "ResourceVersion": 2,
   "ShowInMenu": false,

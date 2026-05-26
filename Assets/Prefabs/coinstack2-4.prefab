@@ -1,9 +1,9 @@
 {
   "RootObject": {
-    "__guid": "d8b651f1-f8c7-49aa-9a1c-1e94f9e47552",
+    "__guid": "2064fabd-5c89-4010-a433-2aa5857df738",
     "__version": 2,
     "Flags": 0,
-    "Name": "coinstack4",
+    "Name": "coinstack2-4",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -17,7 +17,7 @@
     "Components": [
       {
         "__type": "Sandbox.ModelRenderer",
-        "__guid": "a00f949b-a0bb-470b-82dc-0d37769d346e",
+        "__guid": "f49d8c08-d7e3-423d-8c9d-6b2b77d6cbf2",
         "__enabled": false,
         "Flags": 0,
         "BodyGroups": 18446744073709551615,
@@ -44,7 +44,7 @@
       },
       {
         "__type": "Sandbox.BoxCollider",
-        "__guid": "3b718242-e6eb-40de-a0ea-0326d6757800",
+        "__guid": "8c71d671-35b0-46b9-8558-84e789b7b5a2",
         "__enabled": true,
         "Flags": 0,
         "Center": "0,0,0",
@@ -70,7 +70,7 @@
       },
       {
         "__type": "InteractGivePlayerCoin",
-        "__guid": "855ee6f4-2dd5-4347-9500-993cc87e6624",
+        "__guid": "f67b782e-756f-40eb-9c4b-29eb965f0be4",
         "__enabled": true,
         "Flags": 0,
         "BreakSounds": [
@@ -79,7 +79,7 @@
           "sounds/coinstack/coinstack_break_3.sound",
           "sounds/coinstack/coinstack_break_4.sound"
         ],
-        "health": 20,
+        "health": 1000,
         "HitFeedbackDuration": 0.22,
         "HitFlashColor": "1,0.08,0.05,1",
         "HitMoveDistance": 10,
@@ -90,7 +90,7 @@
           "sounds/coinstack/coinstack_hit_4.sound"
         ],
         "InteractableShortcutOffset": "0,0,0",
-        "maxHealth": 20,
+        "maxHealth": 1000,
         "moneyPerHit": 1,
         "moneyWhenDestroyed": 10,
         "OnComponentDestroy": null,
@@ -106,7 +106,7 @@
     ],
     "Children": [
       {
-        "__guid": "9e04302d-f5c5-4bc1-97d9-b6a7d7838627",
+        "__guid": "33eb87ad-3f4a-429c-8c65-6f573cebdc56",
         "__version": 2,
         "Flags": 0,
         "Name": "HealthBar",
@@ -123,7 +123,7 @@
         "Components": [
           {
             "__type": "Sandbox.WorldPanel",
-            "__guid": "64d6ff5e-8cd4-42e8-ab17-1b164c4ec8f0",
+            "__guid": "e9b02a09-77d8-4844-bde4-72807ad85173",
             "__enabled": true,
             "Flags": 0,
             "HorizontalAlign": "Center",
@@ -147,7 +147,7 @@
           },
           {
             "__type": "Sandbox.WorldSpaceHealthbar",
-            "__guid": "76aa7ed4-fa0a-4a61-8cbf-0f64fd3e8548",
+            "__guid": "93ea0268-a51b-4449-9aca-ea555da15570",
             "__enabled": true,
             "Flags": 0,
             "health": 100,
@@ -164,7 +164,7 @@
         "Children": []
       },
       {
-        "__guid": "8f09f93a-6fa3-43c3-bb81-8fa6249ec9c7",
+        "__guid": "429698fe-d275-491a-a358-87b1ae577dfb",
         "__version": 2,
         "Flags": 0,
         "Name": "smodel_coin",
@@ -181,7 +181,7 @@
         "Components": [
           {
             "__type": "Sandbox.ModelRenderer",
-            "__guid": "9c0285fa-976a-4782-8074-0243d26e5efb",
+            "__guid": "d84aa38b-28b9-4b4e-95bc-b45a1af408b8",
             "__enabled": true,
             "Flags": 0,
             "BodyGroups": 18446744073709551615,
@@ -204,13 +204,13 @@
               "AfterUILayer": false
             },
             "RenderType": "On",
-            "Tint": "1,1,1,1"
+            "Tint": "0.21569,1,0,1"
           }
         ],
         "Children": []
       },
       {
-        "__guid": "4c080f6c-1fab-4467-a201-7e93100a6a59",
+        "__guid": "7b1a92ae-e0f4-4fd6-8944-1244079ef89b",
         "__version": 2,
         "Flags": 0,
         "Name": "smodel_coin (1)",
@@ -227,7 +227,7 @@
         "Components": [
           {
             "__type": "Sandbox.ModelRenderer",
-            "__guid": "168b92bf-3761-4619-ba07-8d9d14593fb7",
+            "__guid": "0b9fe8de-15e6-467d-9adf-e04d27139e7d",
             "__enabled": true,
             "Flags": 0,
             "BodyGroups": 18446744073709551615,
@@ -250,13 +250,13 @@
               "AfterUILayer": false
             },
             "RenderType": "On",
-            "Tint": "1,1,1,1"
+            "Tint": "0.21569,1,0,1"
           }
         ],
         "Children": []
       },
       {
-        "__guid": "ed68d1dd-4174-4f01-9a53-bd1df3e099ed",
+        "__guid": "5b4d9a3c-66c6-4055-a6cb-9e0cec77acb0",
         "__version": 2,
         "Flags": 0,
         "Name": "smodel_coin (2)",
@@ -273,7 +273,7 @@
         "Components": [
           {
             "__type": "Sandbox.ModelRenderer",
-            "__guid": "562ef0e2-1c0e-42e0-b1fa-bf769b116f02",
+            "__guid": "c85a5532-ae08-45c5-94c3-d79c0f25e46f",
             "__enabled": true,
             "Flags": 0,
             "BodyGroups": 18446744073709551615,
@@ -296,13 +296,13 @@
               "AfterUILayer": false
             },
             "RenderType": "On",
-            "Tint": "1,1,1,1"
+            "Tint": "0.21569,1,0,1"
           }
         ],
         "Children": []
       },
       {
-        "__guid": "ed4a755c-fff0-45c6-b3e3-833668c90dfa",
+        "__guid": "5002c698-f778-4d43-8c31-a277fc78c742",
         "__version": 2,
         "Flags": 0,
         "Name": "smodel_coin (5)",
@@ -319,7 +319,7 @@
         "Components": [
           {
             "__type": "Sandbox.ModelRenderer",
-            "__guid": "3aa22312-5b1b-46da-871b-0d8db19ffa1c",
+            "__guid": "746ddd3e-9564-4442-87a9-e4c2fa3ec40a",
             "__enabled": true,
             "Flags": 0,
             "BodyGroups": 18446744073709551615,
@@ -342,13 +342,13 @@
               "AfterUILayer": false
             },
             "RenderType": "On",
-            "Tint": "1,1,1,1"
+            "Tint": "0.21569,1,0,1"
           }
         ],
         "Children": []
       },
       {
-        "__guid": "891f3d7b-03c7-4b19-aa8e-4a21358562d8",
+        "__guid": "421f2a87-faa7-4841-8faf-812e54e5611e",
         "__version": 2,
         "Flags": 0,
         "Name": "smodel_coin (6)",
@@ -365,7 +365,7 @@
         "Components": [
           {
             "__type": "Sandbox.ModelRenderer",
-            "__guid": "8f5d41bd-7f56-46c2-9202-6e15b2ada37b",
+            "__guid": "6d9db6df-bc74-450b-9ee8-4adf06e4229b",
             "__enabled": true,
             "Flags": 0,
             "BodyGroups": 18446744073709551615,
@@ -388,13 +388,13 @@
               "AfterUILayer": false
             },
             "RenderType": "On",
-            "Tint": "1,1,1,1"
+            "Tint": "0.21569,1,0,1"
           }
         ],
         "Children": []
       },
       {
-        "__guid": "fd592be9-d0d8-46c3-b3b8-1aa0725880fe",
+        "__guid": "987c64d6-29bc-4755-9bbe-0106e959b5b0",
         "__version": 2,
         "Flags": 0,
         "Name": "smodel_coin (4)",
@@ -411,7 +411,7 @@
         "Components": [
           {
             "__type": "Sandbox.ModelRenderer",
-            "__guid": "6e77a3e8-2e23-4108-b6de-ed10a37279c1",
+            "__guid": "3ccd0c89-1c40-4843-85a6-0e38819f6f7a",
             "__enabled": true,
             "Flags": 0,
             "BodyGroups": 18446744073709551615,
@@ -434,13 +434,13 @@
               "AfterUILayer": false
             },
             "RenderType": "On",
-            "Tint": "1,1,1,1"
+            "Tint": "0.21569,1,0,1"
           }
         ],
         "Children": []
       },
       {
-        "__guid": "d53146c7-c92f-4cc6-b18d-ff411a72ee4f",
+        "__guid": "045e0a69-c449-4222-aff8-8bfe2e2bdbea",
         "__version": 2,
         "Flags": 0,
         "Name": "smodel_coin (3)",
@@ -457,7 +457,7 @@
         "Components": [
           {
             "__type": "Sandbox.ModelRenderer",
-            "__guid": "8bbdc08a-942c-400d-9cb8-8f83c02fdd75",
+            "__guid": "0add2c13-5191-469e-9dc2-f88adb3c51a6",
             "__enabled": true,
             "Flags": 0,
             "BodyGroups": 18446744073709551615,
@@ -480,7 +480,7 @@
               "AfterUILayer": false
             },
             "RenderType": "On",
-            "Tint": "1,1,1,1"
+            "Tint": "0.21569,1,0,1"
           }
         ],
         "Children": []

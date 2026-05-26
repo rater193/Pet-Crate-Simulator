@@ -3,7 +3,7 @@
     "__guid": "9f5a24ea-8db3-414e-a05c-5029703f6fa5",
     "__version": 2,
     "Flags": 0,
-    "Name": "Shadow",
+    "Name": "shadow",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -25,7 +25,7 @@
         "AttackRangeMultiplier": 1,
         "BobHeightMultiplier": 1,
         "CoinMultiplier": 127.9,
-        "Damage": 1,
+        "Damage": 22,
         "DisplayName": "Shadow",
         "MoveSpeedMultiplier": 1,
         "OnComponentDestroy": null,
@@ -83,7 +83,28 @@
         ],
         "Children": []
       }
-    ]
+    ],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": false,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": "",
+        "DeferGeneration": false,
+        "CustomBounds": false
+      }
+    },
+    "__variables": []
   },
   "ResourceVersion": 2,
   "ShowInMenu": false,

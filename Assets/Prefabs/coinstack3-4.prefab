@@ -1,9 +1,9 @@
 {
   "RootObject": {
-    "__guid": "d8b651f1-f8c7-49aa-9a1c-1e94f9e47552",
+    "__guid": "d6a52985-b113-44a9-b0c5-538d3745b9a3",
     "__version": 2,
     "Flags": 0,
-    "Name": "coinstack4",
+    "Name": "coinstack3-4",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -17,7 +17,7 @@
     "Components": [
       {
         "__type": "Sandbox.ModelRenderer",
-        "__guid": "a00f949b-a0bb-470b-82dc-0d37769d346e",
+        "__guid": "1000b09e-8146-4874-88c0-56eafb480661",
         "__enabled": false,
         "Flags": 0,
         "BodyGroups": 18446744073709551615,
@@ -44,7 +44,7 @@
       },
       {
         "__type": "Sandbox.BoxCollider",
-        "__guid": "3b718242-e6eb-40de-a0ea-0326d6757800",
+        "__guid": "fcbcf217-b8b4-4bb5-86a8-dd2d83c59fb1",
         "__enabled": true,
         "Flags": 0,
         "Center": "0,0,0",
@@ -70,7 +70,7 @@
       },
       {
         "__type": "InteractGivePlayerCoin",
-        "__guid": "855ee6f4-2dd5-4347-9500-993cc87e6624",
+        "__guid": "7570ffe1-65c7-41e9-be7e-fa3e3b32ea67",
         "__enabled": true,
         "Flags": 0,
         "BreakSounds": [
@@ -79,7 +79,7 @@
           "sounds/coinstack/coinstack_break_3.sound",
           "sounds/coinstack/coinstack_break_4.sound"
         ],
-        "health": 20,
+        "health": 100000,
         "HitFeedbackDuration": 0.22,
         "HitFlashColor": "1,0.08,0.05,1",
         "HitMoveDistance": 10,
@@ -90,7 +90,7 @@
           "sounds/coinstack/coinstack_hit_4.sound"
         ],
         "InteractableShortcutOffset": "0,0,0",
-        "maxHealth": 20,
+        "maxHealth": 100000,
         "moneyPerHit": 1,
         "moneyWhenDestroyed": 10,
         "OnComponentDestroy": null,
@@ -106,7 +106,7 @@
     ],
     "Children": [
       {
-        "__guid": "9e04302d-f5c5-4bc1-97d9-b6a7d7838627",
+        "__guid": "3dc6d4c0-275e-423f-bcae-a8a5d5b3c9ea",
         "__version": 2,
         "Flags": 0,
         "Name": "HealthBar",
@@ -123,7 +123,7 @@
         "Components": [
           {
             "__type": "Sandbox.WorldPanel",
-            "__guid": "64d6ff5e-8cd4-42e8-ab17-1b164c4ec8f0",
+            "__guid": "7e1e44bd-1389-455c-923e-da595528b564",
             "__enabled": true,
             "Flags": 0,
             "HorizontalAlign": "Center",
@@ -147,7 +147,7 @@
           },
           {
             "__type": "Sandbox.WorldSpaceHealthbar",
-            "__guid": "76aa7ed4-fa0a-4a61-8cbf-0f64fd3e8548",
+            "__guid": "84a8718c-17b3-4552-a7c0-ed8e5d489edc",
             "__enabled": true,
             "Flags": 0,
             "health": 100,
@@ -164,7 +164,7 @@
         "Children": []
       },
       {
-        "__guid": "8f09f93a-6fa3-43c3-bb81-8fa6249ec9c7",
+        "__guid": "760d8cbf-f102-4200-a66e-0a55cc195daa",
         "__version": 2,
         "Flags": 0,
         "Name": "smodel_coin",
@@ -181,7 +181,7 @@
         "Components": [
           {
             "__type": "Sandbox.ModelRenderer",
-            "__guid": "9c0285fa-976a-4782-8074-0243d26e5efb",
+            "__guid": "8ecb2e12-3c84-470d-b544-ea5e8671d79c",
             "__enabled": true,
             "Flags": 0,
             "BodyGroups": 18446744073709551615,
@@ -204,13 +204,13 @@
               "AfterUILayer": false
             },
             "RenderType": "On",
-            "Tint": "1,1,1,1"
+            "Tint": "1,0,0,1"
           }
         ],
         "Children": []
       },
       {
-        "__guid": "4c080f6c-1fab-4467-a201-7e93100a6a59",
+        "__guid": "aa9f1fdc-6e9b-4ca8-a754-288124d2a79f",
         "__version": 2,
         "Flags": 0,
         "Name": "smodel_coin (1)",
@@ -227,7 +227,7 @@
         "Components": [
           {
             "__type": "Sandbox.ModelRenderer",
-            "__guid": "168b92bf-3761-4619-ba07-8d9d14593fb7",
+            "__guid": "be0c818b-3bc3-4fc2-88ab-55447afc2bed",
             "__enabled": true,
             "Flags": 0,
             "BodyGroups": 18446744073709551615,
@@ -250,13 +250,13 @@
               "AfterUILayer": false
             },
             "RenderType": "On",
-            "Tint": "1,1,1,1"
+            "Tint": "1,0,0,1"
           }
         ],
         "Children": []
       },
       {
-        "__guid": "ed68d1dd-4174-4f01-9a53-bd1df3e099ed",
+        "__guid": "ea15e75e-e7fb-4bd9-a0bb-ded8cf02e486",
         "__version": 2,
         "Flags": 0,
         "Name": "smodel_coin (2)",
@@ -273,7 +273,7 @@
         "Components": [
           {
             "__type": "Sandbox.ModelRenderer",
-            "__guid": "562ef0e2-1c0e-42e0-b1fa-bf769b116f02",
+            "__guid": "cd461cd1-5e82-4e5e-b651-70e40b3f2fb1",
             "__enabled": true,
             "Flags": 0,
             "BodyGroups": 18446744073709551615,
@@ -296,13 +296,13 @@
               "AfterUILayer": false
             },
             "RenderType": "On",
-            "Tint": "1,1,1,1"
+            "Tint": "1,0,0,1"
           }
         ],
         "Children": []
       },
       {
-        "__guid": "ed4a755c-fff0-45c6-b3e3-833668c90dfa",
+        "__guid": "7e1d1e0d-47e1-48e5-a014-2cfeb91a31c7",
         "__version": 2,
         "Flags": 0,
         "Name": "smodel_coin (5)",
@@ -319,7 +319,7 @@
         "Components": [
           {
             "__type": "Sandbox.ModelRenderer",
-            "__guid": "3aa22312-5b1b-46da-871b-0d8db19ffa1c",
+            "__guid": "db2568c9-1906-4a63-bed4-7505179e8fda",
             "__enabled": true,
             "Flags": 0,
             "BodyGroups": 18446744073709551615,
@@ -342,13 +342,13 @@
               "AfterUILayer": false
             },
             "RenderType": "On",
-            "Tint": "1,1,1,1"
+            "Tint": "1,0,0,1"
           }
         ],
         "Children": []
       },
       {
-        "__guid": "891f3d7b-03c7-4b19-aa8e-4a21358562d8",
+        "__guid": "4737a8ed-d7f1-4b97-8127-0d25318d4c2f",
         "__version": 2,
         "Flags": 0,
         "Name": "smodel_coin (6)",
@@ -365,7 +365,7 @@
         "Components": [
           {
             "__type": "Sandbox.ModelRenderer",
-            "__guid": "8f5d41bd-7f56-46c2-9202-6e15b2ada37b",
+            "__guid": "c4865597-f15d-4ab9-b457-ce5ef183b9cc",
             "__enabled": true,
             "Flags": 0,
             "BodyGroups": 18446744073709551615,
@@ -388,13 +388,13 @@
               "AfterUILayer": false
             },
             "RenderType": "On",
-            "Tint": "1,1,1,1"
+            "Tint": "1,0,0,1"
           }
         ],
         "Children": []
       },
       {
-        "__guid": "fd592be9-d0d8-46c3-b3b8-1aa0725880fe",
+        "__guid": "38921a3a-4f2c-4311-b23c-4137dc3973d1",
         "__version": 2,
         "Flags": 0,
         "Name": "smodel_coin (4)",
@@ -411,7 +411,7 @@
         "Components": [
           {
             "__type": "Sandbox.ModelRenderer",
-            "__guid": "6e77a3e8-2e23-4108-b6de-ed10a37279c1",
+            "__guid": "9d314e8e-9fc7-4478-8d97-752a90fc372b",
             "__enabled": true,
             "Flags": 0,
             "BodyGroups": 18446744073709551615,
@@ -434,13 +434,13 @@
               "AfterUILayer": false
             },
             "RenderType": "On",
-            "Tint": "1,1,1,1"
+            "Tint": "1,0,0,1"
           }
         ],
         "Children": []
       },
       {
-        "__guid": "d53146c7-c92f-4cc6-b18d-ff411a72ee4f",
+        "__guid": "f68b2e9f-727e-4657-8007-960ca521e06b",
         "__version": 2,
         "Flags": 0,
         "Name": "smodel_coin (3)",
@@ -457,7 +457,7 @@
         "Components": [
           {
             "__type": "Sandbox.ModelRenderer",
-            "__guid": "8bbdc08a-942c-400d-9cb8-8f83c02fdd75",
+            "__guid": "7b0f4e4a-b2ca-4b85-8ae1-117c8097df49",
             "__enabled": true,
             "Flags": 0,
             "BodyGroups": 18446744073709551615,
@@ -480,33 +480,12 @@
               "AfterUILayer": false
             },
             "RenderType": "On",
-            "Tint": "1,1,1,1"
+            "Tint": "1,0,0,1"
           }
         ],
         "Children": []
       }
-    ],
-    "__properties": {
-      "NetworkInterpolation": true,
-      "TimeScale": 1,
-      "WantsSystemScene": true,
-      "Metadata": {},
-      "NavMesh": {
-        "Enabled": false,
-        "IncludeStaticBodies": true,
-        "IncludeKeyframedBodies": true,
-        "EditorAutoUpdate": false,
-        "AgentHeight": 64,
-        "AgentRadius": 16,
-        "AgentStepSize": 18,
-        "AgentMaxSlope": 40,
-        "ExcludedBodies": "",
-        "IncludedBodies": "",
-        "DeferGeneration": false,
-        "CustomBounds": false
-      }
-    },
-    "__variables": []
+    ]
   },
   "ResourceVersion": 2,
   "ShowInMenu": false,
