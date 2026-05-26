@@ -73,7 +73,10 @@ public sealed class PetFramework : Component
 
 		if ( IsProxy )
 		{
-			UpdateEquippedPetVisuals();
+			// Admin bisect: this proxy-only loop is the per-other-player cost that scales when
+			// players join. Toggle it off in-game with the `perf_pets` console command to confirm.
+			if ( !AdminPerfController.DisableProxyPetAnimation )
+				UpdateEquippedPetVisuals();
 			return;
 		}
 
@@ -306,6 +309,7 @@ public sealed class PetFramework : Component
 			if ( !slot.Pet.IsValid() )
 				continue;
 
+			AdminPerfController.PetAnimAccumulator++;
 			slot.AttackCooldown = MathF.Max( 0f, slot.AttackCooldown - Time.Delta );
 
 			var orbitAngle = angleOffset + (angleStep * i);
@@ -350,6 +354,7 @@ public sealed class PetFramework : Component
 			if ( !slot.Pet.IsValid() )
 				continue;
 
+			AdminPerfController.PetAnimAccumulator++;
 			var movedDistance = (slot.Pet.WorldPosition - slot.LastWorldPosition).Length;
 			var isMoving = movedDistance > 0.1f;
 			var attackProgress = GetAttackProgress( slot );
@@ -562,6 +567,7 @@ public sealed class PetFramework : Component
 		if ( Scene == null || GroundTraceHeight <= 0f )
 			return position;
 
+		AdminPerfController.GroundTraceAccumulator++;
 		var start = position + (Vector3.Up * GroundTraceHeight);
 		var end = position + (Vector3.Down * GroundTraceHeight);
 		var trace = Scene.Trace.Ray( start, end )

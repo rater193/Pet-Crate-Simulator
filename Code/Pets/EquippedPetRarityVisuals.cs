@@ -23,6 +23,11 @@ public sealed class EquippedPetRarityVisuals : Component
 		if ( Rarity < PetRarity.Uncommon )
 			return;
 
+		// Admin bisect: skip the per-frame outline/aura colour update (and the Ancestral rainbow
+		// cycle) so an admin can test whether rarity FX is the FPS cost. Toggle via `perf_rarityfx`.
+		if ( AdminPerfController.DisableRarityVisualFx )
+			return;
+
 		EnsureCameraHighlight();
 		UpdateColor();
 	}

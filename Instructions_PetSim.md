@@ -1410,3 +1410,30 @@ These notes reflect the tabbed pet inventory in `Code/UI/PetInventoryPanel.razor
 - A literal char immediately before `@Member.Access` renders literally; wrap as `x@(Info.CoinText)`, not `x@Info.CoinText` (this bit the tooltip values once).
 - s&box recompiles on EVERY file save, so a multi-edit restructure (open a container in one edit, close it in the next) can leave a transient `} expected` failure captured in `sbox-dev.log`. After finishing edits, reload the editor so the FINAL state recompiles; don't trust a stale log line. A balanced div/brace count + clean `dotnet build` means the current file is fine even if the log shows an older failure.
 
+
+## Current Project Addendum: Admin Performance Overlay (Perf Inspector)
+
+Added to diagnose a host-fine / clients-laggy playtest report (see the PetFramework performance addendum and the project-playtest-perf memory).
+
+### Files
+- `Code/Debug/AdminPerfController.cs` — SteamId-gated client-local component, configured like `PlayerNoticeController`/`BanListController`. Samples FPS + scene counts, owns the bisect toggles, and exposes the console commands.
+- `Code/UI/AdminPerfPanel.razor` — read-only overlay (child `Panel`, `pointer-events: none`) hosted by `PlayerHud.razor`. Renders only when `AdminPerfController.IsOverlayOpen && IsLocalAdmin`. BuildHash = `(IsOverlayOpen, IsLocalAdmin, Version)`.
+
+### Setup
+- Add `AdminPerfController` to a scene object (e.g. the Ban Manager / `Systems` object). It does nothing until it exists in the scene (sampling runs in its `OnUpdate`).
+- Configure `AdminSteamIds` with admin SteamIds, or tick `AllowEveryone` for quick local testing.
+
+### Usage
+- Toggle overlay: the `Menu` input action (default `Q`), admin-gated — normal players never trigger it. Or type `perf_overlay` in console (console use force-shows it for the local client).
+- Live bisect (watch FPS recover when a system is off):
+  - `perf_pets` — toggles `AdminPerfController.DisableProxyPetAnimation`, which gates `PetFramework`'s proxy-only `UpdateEquippedPetVisuals()` (the per-other-player cost that scales when players join).
+  - `perf_rarityfx` — toggles `AdminPerfController.DisableRarityVisualFx`, which gates `EquippedPetRarityVisuals.OnUpdate`'s per-frame outline/aura colour update (incl. the Ancestral rainbow cycle).
+
+### Instrumentation hooks (cheap, always compiled in)
+- `PetFramework` increments `AdminPerfController.PetAnimAccumulator` once per pet iteration in both the local (`UpdateEquippedPets`) and proxy (`UpdateEquippedPetVisuals`) loops, and `GroundTraceAccumulator` in `SnapToGround`. The controller drains+averages these per frame into `PetAnimTicksPerFrame` / `GroundTracesPerFrame`. These are plain static `int` increments (negligible) and self-reset only when the controller is present; harmless if it isn't.
+
+### Cursor-constraint note
+- The overlay is deliberately read-only (`pointer-events: none`) so it never pins the cursor / breaks mouse-look (see the HUD cursor-constraint addendum). That's why the bisect controls are console commands rather than clickable buttons — clickable HUD buttons would force the cursor up unless gated on a menu-open state.
+
+### Validation status
+- `dotnet build` is clean (0 new warnings/errors). NOT yet verified in the s&box client — APIs used are already present elsewhere in the codebase (`[ConCmd]`, `Scene.GetAllComponents<T>()`, `Scene.GetAllObjects(true)`, `Input.Pressed`, `MathX.Lerp`), so whitelist risk is low, but a clean build is not proof the game loads. Needs an in-game check.

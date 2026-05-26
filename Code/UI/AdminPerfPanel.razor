@@ -1,0 +1,141 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System;
+@inherits Panel
+@namespace Sandbox
+
+@if ( !AdminPerfController.IsOverlayOpen || !AdminPerfController.IsLocalAdmin )
+{
+	return;
+}
+
+<style>
+	.admin-perf {
+		position: absolute;
+		left: 16px;
+		top: 16px;
+		width: 320px;
+		background-color: rgba(8, 14, 26, 0.92);
+		border: 3px solid #4cd2a5;
+		border-radius: 14px;
+		padding: 14px 16px;
+		flex-direction: column;
+		pointer-events: none;
+		z-index: 30000;
+		font-family: Consolas;
+		box-shadow: 0px 8px 24px rgba(0, 18, 40, 0.55);
+	}
+
+	.admin-perf-title {
+		color: #4cd2a5;
+		font-size: 22px;
+		font-weight: 900;
+		margin-bottom: 8px;
+		text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.4);
+	}
+
+	.admin-perf-fps {
+		font-size: 30px;
+		font-weight: 900;
+		margin-bottom: 6px;
+	}
+
+	.admin-perf-row {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		height: 24px;
+	}
+
+	.admin-perf-label {
+		color: #9fb6cf;
+		font-size: 16px;
+		font-weight: 700;
+	}
+
+	.admin-perf-value {
+		color: #ffffff;
+		font-size: 16px;
+		font-weight: 900;
+	}
+
+	.admin-perf-sep {
+		height: 2px;
+		background-color: rgba(255, 255, 255, 0.12);
+		margin-top: 8px;
+		margin-bottom: 8px;
+	}
+
+	.admin-perf-toggle-on { color: #ffce54; font-size: 16px; font-weight: 900; }
+	.admin-perf-toggle-off { color: #ff6b6b; font-size: 16px; font-weight: 900; }
+
+	.admin-perf-footer {
+		color: #6f86a0;
+		font-size: 13px;
+		font-weight: 700;
+		margin-top: 10px;
+	}
+</style>
+
+<root>
+	<div class="admin-perf">
+		<div class="admin-perf-title">ADMIN PERF</div>
+
+		<div class="admin-perf-fps" style="color: @FpsColor;">@FpsText FPS  (@MsText ms)</div>
+		<div class="admin-perf-row"><div class="admin-perf-label">1% low (worst frame)</div><div class="admin-perf-value">@LowFpsText FPS</div></div>
+
+		<div class="admin-perf-sep"></div>
+
+		<div class="admin-perf-row"><div class="admin-perf-label">Players (proxies)</div><div class="admin-perf-value">@AdminPerfController.PlayerCount (@AdminPerfController.ProxyPlayerCount)</div></div>
+		<div class="admin-perf-row"><div class="admin-perf-label">Pet frameworks (proxy)</div><div class="admin-perf-value">@AdminPerfController.PetFrameworkCount (@AdminPerfController.ProxyPetFrameworkCount)</div></div>
+		<div class="admin-perf-row"><div class="admin-perf-label">Pet components in scene</div><div class="admin-perf-value">@AdminPerfController.PetComponentCount</div></div>
+		<div class="admin-perf-row"><div class="admin-perf-label">Rarity FX (Legendary+)</div><div class="admin-perf-value">@AdminPerfController.RarityVisualCount</div></div>
+		<div class="admin-perf-row"><div class="admin-perf-label">Destructibles</div><div class="admin-perf-value">@AdminPerfController.DestructibleCount</div></div>
+		<div class="admin-perf-row"><div class="admin-perf-label">World panels</div><div class="admin-perf-value">@AdminPerfController.WorldPanelCount</div></div>
+		<div class="admin-perf-row"><div class="admin-perf-label">Total objects</div><div class="admin-perf-value">@AdminPerfController.TotalObjectCount</div></div>
+
+		<div class="admin-perf-sep"></div>
+
+		<div class="admin-perf-row"><div class="admin-perf-label">Pet anim ticks / frame</div><div class="admin-perf-value">@AdminPerfController.PetAnimTicksPerFrame</div></div>
+		<div class="admin-perf-row"><div class="admin-perf-label">Ground traces / frame</div><div class="admin-perf-value">@AdminPerfController.GroundTracesPerFrame</div></div>
+
+		<div class="admin-perf-sep"></div>
+
+		<div class="admin-perf-row">
+			<div class="admin-perf-label">Proxy pet anim (perf_pets)</div>
+			<div class="@(AdminPerfController.DisableProxyPetAnimation ? "admin-perf-toggle-off" : "admin-perf-toggle-on")">@(AdminPerfController.DisableProxyPetAnimation ? "OFF" : "ON")</div>
+		</div>
+		<div class="admin-perf-row">
+			<div class="admin-perf-label">Rarity FX (perf_rarityfx)</div>
+			<div class="@(AdminPerfController.DisableRarityVisualFx ? "admin-perf-toggle-off" : "admin-perf-toggle-on")">@(AdminPerfController.DisableRarityVisualFx ? "OFF" : "ON")</div>
+		</div>
+
+		<div class="admin-perf-footer">Q to close • console: perf_pets / perf_rarityfx</div>
+	</div>
+</root>
+
+@code
+{
+	private string FpsText => AdminPerfController.Fps.ToString( "0" );
+	private string MsText => AdminPerfController.FrameMs.ToString( "0.0" );
+	private string LowFpsText => AdminPerfController.LowFps.ToString( "0" );
+
+	private string FpsColor
+	{
+		get
+		{
+			var fps = AdminPerfController.Fps;
+			if ( fps >= 55f ) return "#4cd2a5"; // good
+			if ( fps >= 30f ) return "#ffce54"; // warning
+			return "#ff6b6b";                   // bad
+		}
+	}
+
+	protected override int BuildHash()
+	{
+		return System.HashCode.Combine(
+			AdminPerfController.IsOverlayOpen,
+			AdminPerfController.IsLocalAdmin,
+			AdminPerfController.Version );
+	}
+}

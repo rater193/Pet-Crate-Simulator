@@ -1031,6 +1031,41 @@
             }
           ],
           "Children": []
+        },
+        {
+          "__guid": "b0ecc08f-e6cf-40ec-9d07-c398ce19014e",
+          "__version": 2,
+          "Flags": 0,
+          "Name": "AdminPerfController ",
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "AdminPerfController",
+              "__guid": "86bf3681-87fb-49c3-97e7-8bf46a893e8b",
+              "__enabled": true,
+              "Flags": 0,
+              "AdminSteamIds": [],
+              "AllowEveryone": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "SampleInterval": 0.25,
+              "TrackingEnabled": true
+            }
+          ],
+          "Children": []
         }
       ]
     },
@@ -32861,14 +32896,14 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
-      "Sandbox.SelectionSetsSystem": {
-        "Data": {
-          "SelectionSets": []
-        }
-      },
       "Sandbox.Clutter.ClutterGridSystem": {
         "Storage": {
           "$blob": "8d7d4aca-dc8f-4777-9349-def05dd7fd75"
+        }
+      },
+      "Sandbox.SelectionSetsSystem": {
+        "Data": {
+          "SelectionSets": []
         }
       }
     }
