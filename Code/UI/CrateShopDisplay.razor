@@ -50,8 +50,8 @@
 		width: 420px;
 		height: 1500px;
 		background-color: rgba(255, 255, 255, 0.12);
-		transform: rotate(16deg) translateX(@ShimmerXpx);
 		pointer-events: none;
+		animation: shop-shimmer-sweep 7s linear infinite;
 	}
 
 	.shop-spark {
@@ -60,9 +60,9 @@
 		height: 28px;
 		border-radius: 6px;
 		background-color: #ffffff;
-		opacity: @SparkOpacity;
-		transform: rotate(45deg) scale(@SparkScale);
+		opacity: 0.5;
 		pointer-events: none;
+		animation: shop-spark-pulse 1.3s ease-in-out infinite alternate;
 	}
 
 	.shop-spark.one {
@@ -75,14 +75,17 @@
 		right: 170px;
 		top: 135px;
 		background-color: #ff86b0;
-		transform: rotate(45deg) scale(@SparkScaleTwo);
+		animation-duration: 1.6s;
+		animation-delay: 0.4s;
 	}
 
 	.shop-spark.three {
 		left: 50%;
 		bottom: 95px;
 		background-color: #ffe98c;
-		transform: translateX(-50%) rotate(45deg) scale(@SparkScaleThree);
+		animation-name: shop-spark-pulse-center;
+		animation-duration: 1.1s;
+		animation-delay: 0.8s;
 	}
 
 	.shop-title {
@@ -92,9 +95,9 @@
 		font-weight: 900;
 		text-align: center;
 		text-shadow: 0px 8px 0px rgba(75, 33, 10, 0.85), 0px 0px 18px rgba(255, 221, 105, 0.32);
-		transform: translateY(@TitleBobpx) scale(@TitleScale);
 		letter-spacing: 0px;
 		z-index: 3;
+		animation: shop-title-bob 1.45s ease-in-out infinite alternate;
 	}
 
 	.shop-subtitle {
@@ -146,8 +149,8 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		transform: translateY(0px);
 		transition: border-color 0.15s ease, outline-color 0.12s ease-out;
+		animation: pet-card-bob 1.6s ease-in-out infinite alternate;
 	}
 
 	.pet-index-card.trashed {
@@ -196,6 +199,7 @@
 		justify-content: center;
 		position: relative;
 		overflow: hidden;
+		animation: pet-icon-pulse 1.2s ease-in-out infinite alternate;
 	}
 
 	.pet-index-preview {
@@ -281,6 +285,39 @@
 		font-weight: 900;
 		text-shadow: 0px 4px 0px rgba(0, 0, 0, 0.45);
 	}
+
+	/* All looping motion is pure CSS now, so the panel never rebuilds for animation
+	   (no per-frame StateHasChanged or hash churn). Keyframes are escaped for Razor. */
+	@@keyframes shop-title-bob {
+		0% { transform: translateY(-8px) scale(0.984); }
+		100% { transform: translateY(8px) scale(1.018); }
+	}
+
+	@@keyframes shop-shimmer-sweep {
+		0% { transform: rotate(16deg) translateX(0px); }
+		50% { transform: rotate(16deg) translateX(2400px); }
+		100% { transform: rotate(16deg) translateX(0px); }
+	}
+
+	@@keyframes shop-spark-pulse {
+		0% { opacity: 0.30; transform: rotate(45deg) scale(0.62); }
+		100% { opacity: 0.72; transform: rotate(45deg) scale(1.05); }
+	}
+
+	@@keyframes shop-spark-pulse-center {
+		0% { opacity: 0.30; transform: translateX(-50%) rotate(45deg) scale(0.62); }
+		100% { opacity: 0.72; transform: translateX(-50%) rotate(45deg) scale(1.05); }
+	}
+
+	@@keyframes pet-card-bob {
+		0% { transform: translateY(-10px) rotate(-2.2deg); }
+		100% { transform: translateY(10px) rotate(2.2deg); }
+	}
+
+	@@keyframes pet-icon-pulse {
+		0% { transform: scale(0.985); }
+		100% { transform: scale(1.03); }
+	}
 </style>
 
 <root>
@@ -294,15 +331,18 @@
 			<div class="shop-title">@TitleText</div>
 			<div class="shop-subtitle">@SubtitleText</div>
 			<div class="pet-index-grid">
-				@if ( PetIndexEntries.Count == 0 )
+				@{
+					var entries = PetIndexEntries;
+				}
+				@if ( entries.Count == 0 )
 				{
 					<div class="pet-index-empty">Configure crate pets here</div>
 				}
 				else
 				{
-					@for ( var i = 0; i < PetIndexEntries.Count; i++ )
+					@for ( var i = 0; i < entries.Count; i++ )
 					{
-						var pet = PetIndexEntries[i];
+						var pet = entries[i];
 						<div class="pet-index-card-wrapper" onmousedown=@(() => ToggleTrash( pet.PrefabPath )) onmouseover=@(() => SetHoverPrompt( HoverActionLabel )) onmouseout=@(() => SetHoverPrompt( string.Empty ))>
 							<div class="@pet.CardClass" style="@pet.CardStyle">
 								<div class="pet-index-glow"></div>
@@ -343,16 +383,18 @@
 	[Property] public bool AutoUseCrateRewards { get; set; } = true;
 	[Property] public string HoverActionLabel { get; set; } = "Toggle";
 
-	private int animationFrame;
-	private float TimeValue => Time.Now;
-	private string TitleBobpx => $"{MathF.Sin( TimeValue * 2.2f ) * 8f}px";
-	private string TitleScale => $"{1f + (MathF.Sin( TimeValue * 2.2f + 0.8f ) * 0.018f):0.###}";
-	private string ShimmerXpx => $"{(MathF.Sin( TimeValue * 0.85f ) * 0.5f + 0.5f) * 2400f}px";
-	private string SparkOpacity => $"{0.45f + (MathF.Sin( TimeValue * 3.1f ) * 0.22f):0.###}";
-	private string SparkScale => $"{0.8f + (MathF.Sin( TimeValue * 3.1f ) * 0.25f):0.###}";
-	private string SparkScaleTwo => $"{0.8f + (MathF.Sin( TimeValue * 2.7f + 1.2f ) * 0.25f):0.###}";
-	private string SparkScaleThree => $"{0.8f + (MathF.Sin( TimeValue * 3.5f + 2.4f ) * 0.25f):0.###}";
-	private List<PetIndexEntry> PetIndexEntries => BuildPetIndexEntries();
+	// How often discovery/preview state is re-evaluated. Animation is pure CSS, so this is the
+	// ONLY thing that triggers a (cheap, throttled) rebuild now.
+	private const float DiscoveryRefreshInterval = 1f;
+
+	// Cached entry list — built only when something actually changes, not every frame.
+	private List<PetIndexEntry> cachedEntries = new();
+	private int contentVersion;
+	private int lastTrashVersion = -1;
+	private int lastPreviewVersion = -1;
+	private float discoveryTimer;
+
+	private List<PetIndexEntry> PetIndexEntries => cachedEntries;
 
 	// Client-local, shared across all shop displays: pets the player has flagged to auto-trash
 	// instead of receiving them from crates. Keyed by pet prefab path.
@@ -377,7 +419,7 @@
 	private void ToggleTrash( string prefabPath )
 	{
 		SetPetTrashed( prefabPath, !IsPetTrashed( prefabPath ) );
-		StateHasChanged();
+		RebuildEntries();
 	}
 
 	// Prompt text shown in the HUD (below the cursor) while a pet card is hovered.
@@ -394,13 +436,47 @@
 		HoverPromptVersion++;
 	}
 
+	protected override void OnStart()
+	{
+		lastTrashVersion = TrashVersion;
+		lastPreviewVersion = PetPreviewRenderer.PreviewVersion;
+		discoveryTimer = DiscoveryRefreshInterval;
+		RebuildEntries();
+	}
+
 	protected override void OnUpdate()
 	{
-		var currentFrame = (int)(Time.Now * 30f);
-		if ( currentFrame == animationFrame )
-			return;
+		// Cheap per-frame checks only; the heavy rebuild runs at most ~once a second or when
+		// the player flags a pet for auto-trash / a preview texture finishes rendering.
+		var rebuild = false;
 
-		animationFrame = currentFrame;
+		if ( lastTrashVersion != TrashVersion )
+		{
+			lastTrashVersion = TrashVersion;
+			rebuild = true;
+		}
+
+		if ( lastPreviewVersion != PetPreviewRenderer.PreviewVersion )
+		{
+			lastPreviewVersion = PetPreviewRenderer.PreviewVersion;
+			rebuild = true;
+		}
+
+		discoveryTimer -= Time.Delta;
+		if ( discoveryTimer <= 0f )
+		{
+			discoveryTimer = DiscoveryRefreshInterval;
+			rebuild = true;
+		}
+
+		if ( rebuild )
+			RebuildEntries();
+	}
+
+	private void RebuildEntries()
+	{
+		cachedEntries = BuildPetIndexEntries();
+		contentVersion++;
 		StateHasChanged();
 	}
 
@@ -431,9 +507,6 @@
 			var prefabPath = GetPetPrefabPath( prefab );
 			var discovered = HasDiscoveredPet( displayName, prefabPath );
 			var chance = Math.Clamp( MathF.Max( 0f, reward.SpawnWeight ) / totalWeight * 100f, 0f, 100f );
-			var bob = MathF.Sin( TimeValue * 2.7f + (i * 1.37f) ) * 10f;
-			var tilt = MathF.Sin( TimeValue * 1.9f + (i * 0.91f) ) * 2.4f;
-			var iconScale = 1f + (MathF.Sin( TimeValue * 3.6f + (i * 1.7f) ) * 0.025f);
 
 			entries.Add( new PetIndexEntry
 			{
@@ -444,8 +517,10 @@
 				Discovered = discovered,
 				Trashed = IsPetTrashed( prefabPath ),
 				Chance = chance,
-				CardStyle = $"transform: translateY({bob:0.##}px) rotate({tilt:0.##}deg);",
-				IconStyle = $"transform: scale({iconScale:0.###});"
+				// Static per-card animation offsets so the CSS bob/pulse aren't all in sync.
+				// These only change when the list rebuilds (~1s), not per frame.
+				CardStyle = $"animation-delay: {i * 0.13f:0.##}s;",
+				IconStyle = $"animation-delay: {i * 0.17f:0.##}s;"
 			} );
 		}
 
@@ -549,15 +624,10 @@
 		return petPrefab.IsValid() && !string.IsNullOrWhiteSpace( petPrefab.Name ) ? petPrefab.Name : "Pet";
 	}
 
+	// Cheap and stable: only changes when the cached entry list is rebuilt (trash/preview/discovery).
 	protected override int BuildHash()
 	{
-		var hash = HashCode.Combine( TitleText, SubtitleText, FeaturedPets?.Count ?? 0, animationFrame, PetPreviewRenderer.PreviewVersion, TrashVersion );
-		foreach ( var reward in GetConfiguredRewards() )
-		{
-			hash = HashCode.Combine( hash, reward.Rarity, reward.SpawnWeight, GetPetPrefabPath( reward.PetPrefab ), HasDiscoveredPet( GetPetDisplayName( reward.PetPrefab ), GetPetPrefabPath( reward.PetPrefab ) ) );
-		}
-
-		return hash;
+		return HashCode.Combine( TitleText, SubtitleText, contentVersion );
 	}
 
 	private sealed class PetIndexEntry

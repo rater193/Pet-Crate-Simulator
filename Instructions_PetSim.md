@@ -783,7 +783,7 @@ These notes reflect the current crate shop, reveal animation, and shop display i
 - The shop display doubles as a pet-index style panel. It checks player stats for whether a pet has ever been received, then shows the full-color pet icon when discovered and a black silhouette when undiscovered.
 - Pet thumbnails should be requested through `PetPreviewRenderer.Instance.GetPreviewTexture(prefabPath, prefab)` and include `PetPreviewRenderer.PreviewVersion` in `BuildHash`.
 - While preview textures are pending, show the pet's first display-name letter.
-- The world panel UI animation currently uses `Time.Now`, an `animationFrame` bucket, and `StateHasChanged()` to refresh at roughly 30 fps.
+- PERF (changed): `CrateShopDisplay` animation is now PURE CSS `@@keyframes` (title bob, shimmer sweep, sparks, card bob, icon pulse), NOT per-frame `StateHasChanged`. A playtest pinned the `ShopDisplayWorldPanel` objects as a major FPS sink. See the "CrateShopDisplay Performance" addendum below for why and what changed. Do not reintroduce `Time.Now`-driven inline-style animation here; it forces the whole world panel (and the Razor-generated `<style>`) to rebuild every frame.
 - When adding or editing world panel UI, keep text large and readable from a distance and validate `minimal.scene` JSON after scene edits.
 
 ### Scene Editing Notes
@@ -1448,3 +1448,25 @@ Added to diagnose a host-fine / clients-laggy playtest report (see the PetFramew
 
 ### Validation status
 - `dotnet build` clean (0 new warnings/errors). NOT yet verified in the s&box client — uses APIs already present elsewhere (`[ConCmd]`, `Scene.GetAllComponents<T>()`/`GetAllObjects`/`Children`/`Camera`, `GameObject.Enabled`, `ModelRenderer.Enabled`, `Input.Pressed`, `MathX.Lerp`, `Panel.Tick`, `TextEntry` via `@ref`), so whitelist risk is low — but a clean build is not proof the game loads, and these are visual/UI features. Needs an in-game check (chart, cursor behaviour while the explorer is open, and that culling doesn't pop nearby objects).
+
+## Current Project Addendum: CrateShopDisplay Performance (CSS animation, no per-frame rehash)
+
+A playtest pinned the `ShopDisplayWorldPanel` objects (`Code/UI/CrateShopDisplay.razor`) as a major client FPS sink. Root causes and the fix:
+
+### Why it was slow
+- It called `StateHasChanged()` ~30 fps from `OnUpdate` (an `animationFrame` bucket), rebuilding the ENTIRE world panel 30x/sec, x3 shop instances. World panels are render-target backed, so rebuilds are pricier than screen UI.
+- The `<style>` block contained Razor expressions (`@ShimmerXpx`, `@SparkOpacity`, `transform: ... @TitleBobpx`, etc.), so the STYLESHEET ITSELF was regenerated every render.
+- `PetIndexEntries` was a property that recomputed `BuildPetIndexEntries()` on EVERY access, and the markup accessed it O(N) times (`@for ( i < PetIndexEntries.Count )` + `PetIndexEntries[i]`) → roughly O(N^2) heavy rebuilds per render. Each rebuild did LINQ merges, a `parent.GetAllObjects(true)` subtree walk, and per-pet `Stats.LocalPlayer.Get(...).Sum` service lookups.
+- `BuildHash()` ran every frame and itself called `GetConfiguredRewards()` + per-reward `HasDiscoveredPet()` (more Stats-service lookups), so even the "should I rebuild?" check was heavy.
+
+### What changed
+- All looping motion is now pure CSS `@@keyframes` (escaped as `@@keyframes` because the `<style>` is Razor-processed and a bare `@` starts a code expression). Keyframes: `shop-title-bob`, `shop-shimmer-sweep`, `shop-spark-pulse`(+`-center` for the centered spark that needs `translateX(-50%)`), `pet-card-bob`, `pet-icon-pulse`. Per-card variety is a STATIC inline `animation-delay` set when the list rebuilds, not per frame. The `<style>` no longer has any Razor expressions.
+- Removed the 30 fps `StateHasChanged`/`animationFrame`.
+- `cachedEntries` is built only on: trash-version change, `PetPreviewRenderer.PreviewVersion` change, or a 1 s discovery refresh (`DiscoveryRefreshInterval`). `OnUpdate` does only cheap int/float checks every frame and rebuilds at most ~1x/sec. `ToggleTrash` rebuilds immediately.
+- `BuildHash()` is now O(1): `HashCode.Combine(TitleText, SubtitleText, contentVersion)`. `contentVersion` is bumped in `RebuildEntries()`.
+- `PetIndexEntries` just returns the cached field; the markup grabs it once via `@{ var entries = PetIndexEntries; }`.
+
+### Verified support / caveats
+- s&box DOES support `@keyframes` + the `animation` shorthand and `animation-iteration-count: infinite` / `animation-direction: alternate` / timing functions (confirmed in `Docs/dev/doc/ui/styling-panels/style-properties.md` and `sandbox-main` `.scss` examples).
+- `@@keyframes` with nested braces (`0% { ... }`) passes `dotnet build`. NOT yet confirmed that the s&box RUNTIME CSS parser handles keyframes inside an inline razor `<style>` (the engine examples use separate `.scss` files). If the animations don't play in-client, the fallback is to keep the static layout (perf win stays) and either move keyframes to a `.scss` or accept no motion. Verify in-client and check `sbox-dev.log` for CSS parse errors.
+- Use the perf overlay (Q) to confirm FPS recovery near the shops; `perf_explorer` Project Explorer can toggle the `ShopDisplayWorldPanel` objects off to A/B the cost.
