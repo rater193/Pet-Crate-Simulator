@@ -5,34 +5,38 @@
 @inherits Panel
 @namespace Sandbox
 
-@* Full interactive performance explorer. Opening it puts the cursor up (it's a menu), which is
-   fine for a diagnostic tool. Read-only glance lives in AdminPerfPanel (the mini pill). *@
+@* Full interactive performance menu. Opening it puts the cursor up (it's a menu), which is fine
+   for a diagnostic tool. Read-only glance lives in AdminPerfPanel (the mini pill).
+   Two tabs: Performance (chart/counts/bisect/culling) and Project Explorer (scene hierarchy). *@
 @if ( !AdminPerfController.IsExplorerOpen || !AdminPerfController.IsLocalAdmin )
 {
 	return;
 }
 
 <style>
+	/* Window uses top/bottom for a DEFINITE height (percentage-height + transform-centering
+	   doesn't give Yoga a definite height to distribute, which collapsed the scroll list). */
 	.perf-explorer {
 		position: absolute;
 		left: 50%;
-		top: 50%;
-		transform: translateX(-50%) translateY(-50%);
+		transform: translateX(-50%);
+		top: 7%;
+		bottom: 7%;
 		width: 760px;
-		height: 82%;
 		background-color: rgba(8, 14, 26, 0.96);
 		border: 3px solid #4cd2a5;
 		border-radius: 16px;
-		padding: 16px 18px;
-		flex-direction: column;
+		padding: 0px;
 		pointer-events: all;
 		z-index: 31000;
 		font-family: Consolas;
 		box-shadow: 0px 12px 36px rgba(0, 18, 40, 0.6);
 	}
 
-	.perf-ex-header { flex-direction: row; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-	.perf-ex-title { color: #4cd2a5; font-size: 26px; font-weight: 900; }
+	/* Header, tabs and body are absolutely anchored inside the window so the body has a
+	   definite height (top..bottom) and its flex-grow scroll child fills it reliably. */
+	.perf-ex-header { position: absolute; top: 16px; left: 18px; right: 18px; height: 40px; flex-direction: row; justify-content: space-between; align-items: center; }
+	.perf-ex-title { color: #4cd2a5; font-size: 24px; font-weight: 900; }
 	.perf-ex-close {
 		width: 40px; height: 40px; border-radius: 10px; background-color: #1c2b44;
 		border: 2px solid #ff6b6b; color: #ff6b6b; font-size: 24px; font-weight: 900;
@@ -40,9 +44,23 @@
 	}
 	.perf-ex-close:hover { transform: scale(1.1); }
 
-	.perf-ex-scroll { flex-grow: 1; overflow-y: scroll; flex-direction: column; }
+	/* Tab bar (segmented control) */
+	.perf-tabs { position: absolute; top: 66px; left: 18px; right: 18px; height: 48px; flex-direction: row; background-color: #0c1626; border-radius: 10px; padding: 4px; }
 
-	.perf-section { flex-direction: column; margin-bottom: 10px; }
+	/* Fills from below the tabs to the window bottom — definite height for the scroll to grow into. */
+	.perf-body { position: absolute; top: 124px; left: 18px; right: 18px; bottom: 16px; flex-direction: column; }
+	.perf-tab {
+		flex-grow: 1; height: 38px; align-items: center; justify-content: center; border-radius: 8px;
+		color: #9fb6cf; font-size: 17px; font-weight: 900; cursor: pointer; transition: background-color 0.12s ease, color 0.12s ease;
+	}
+	.perf-tab:hover { color: #cfe3f5; }
+	.perf-tab.active { background-color: #4cd2a5; color: #07131f; }
+
+	/* flex-basis:0 so the panel height = available space (not content height); tall content then
+	   overflows INTO the scroll instead of stretching the panel past .perf-body and clipping. */
+	.perf-ex-scroll { flex-grow: 1; flex-shrink: 1; flex-basis: 0%; min-height: 0; overflow-y: scroll; flex-direction: column; }
+
+	.perf-section { flex-direction: column; flex-shrink: 0; margin-bottom: 10px; }
 	.perf-section-header {
 		flex-direction: row; align-items: center; height: 30px; cursor: pointer;
 		background-color: rgba(76, 210, 165, 0.12); border-radius: 8px; padding: 0px 10px;
@@ -75,19 +93,33 @@
 	}
 	.perf-mini-btn:hover { transform: scale(1.08); }
 
+	/* Project Explorer tab */
+	.explorer-tab { flex-direction: column; flex-grow: 1; }
+	.explorer-toolbar { flex-direction: row; align-items: center; flex-shrink: 0; margin-bottom: 8px; }
 	.perf-search {
-		height: 32px; background-color: #0c1626; border: 2px solid #2c4a6a; border-radius: 8px;
-		color: white; font-size: 15px; padding: 0px 10px; margin-bottom: 8px;
+		flex-grow: 1; height: 32px; background-color: #0c1626; border: 2px solid #2c4a6a; border-radius: 8px;
+		color: white; font-size: 15px; padding: 0px 10px; margin-right: 8px;
 	}
+	.explorer-btn {
+		height: 32px; padding: 0px 12px; align-items: center; justify-content: center; border-radius: 8px;
+		border: 2px solid #7bd3ff; background-color: #14233a; color: #7bd3ff; font-size: 14px; font-weight: 900;
+		cursor: pointer; margin-left: 6px;
+	}
+	.explorer-btn:hover { transform: scale(1.04); }
+	.explorer-scroll { flex-grow: 1; flex-shrink: 1; flex-basis: 0%; min-height: 0; overflow-y: scroll; flex-direction: column;
+		margin-top: 0px; margin-bottom: 0px;
+		background-color: rgba(0,0,0,0.25); border-radius: 8px; padding: 6px 4px; }
 
-	.browser-row { flex-direction: row; align-items: center; height: 26px; }
-	.browser-caret { width: 18px; color: #7bd3ff; font-size: 15px; font-weight: 900; cursor: pointer; }
-	.browser-name { color: #e4eef8; font-size: 15px; font-weight: 700; }
+	.browser-row { flex-direction: row; align-items: center; height: 26px; flex-shrink: 0; border-radius: 4px; }
+	.browser-row:hover { background-color: rgba(123, 211, 255, 0.10); }
+	.browser-indent { width: 14px; height: 100%; border-left: 1px solid rgba(123, 211, 255, 0.14); }
+	.browser-caret { width: 18px; color: #7bd3ff; font-size: 15px; font-weight: 900; cursor: pointer; align-items: center; justify-content: center; }
+	.browser-name { color: #e4eef8; font-size: 15px; font-weight: 700; cursor: pointer; flex-shrink: 1; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 	.browser-name.disabled { color: #5e7390; }
 	.browser-count { color: #6f86a0; font-size: 13px; font-weight: 700; margin-left: 6px; }
 	.browser-toggle {
 		min-width: 44px; height: 20px; align-items: center; justify-content: center; border-radius: 6px;
-		font-size: 13px; font-weight: 900; cursor: pointer; margin-left: auto;
+		font-size: 13px; font-weight: 900; cursor: pointer; margin-left: auto; margin-right: 6px;
 	}
 	.browser-toggle.on { background-color: #1f3a2b; border: 1px solid #4cd2a5; color: #4cd2a5; }
 	.browser-toggle.off { background-color: #3a1f24; border: 1px solid #ff6b6b; color: #ff9a9a; }
@@ -97,158 +129,170 @@
 <root>
 	<div class="perf-explorer">
 		<div class="perf-ex-header">
-			<div class="perf-ex-title">PERFORMANCE EXPLORER</div>
+			<div class="perf-ex-title">PERFORMANCE</div>
 			<div class="perf-ex-close" onclick=@Close>X</div>
 		</div>
 
-		<div class="perf-ex-scroll">
+		<div class="perf-tabs">
+			<div class="perf-tab @(selectedTab == PerfTab.Performance ? "active" : "")" onclick=@(() => SelectTab( PerfTab.Performance ))>Performance</div>
+			<div class="perf-tab @(selectedTab == PerfTab.Explorer ? "active" : "")" onclick=@(() => SelectTab( PerfTab.Explorer ))>Project Explorer</div>
+		</div>
 
-			@* ---- FPS chart ---- *@
-			<div class="perf-section">
-				<div class="perf-section-header" onclick=@(() => AdminPerfController.ToggleSection( "chart" ))>
-					<div class="perf-section-caret">@(AdminPerfController.ShowChart ? "-" : "+")</div>
-					<div class="perf-section-name">FPS Chart</div>
+		<div class="perf-body">
+
+		@if ( selectedTab == PerfTab.Performance )
+		{
+			<div class="perf-ex-scroll">
+
+				@* ---- FPS chart ---- *@
+				<div class="perf-section">
+					<div class="perf-section-header" onclick=@(() => AdminPerfController.ToggleSection( "chart" ))>
+						<div class="perf-section-caret">@(AdminPerfController.ShowChart ? "-" : "+")</div>
+						<div class="perf-section-name">FPS Chart</div>
+					</div>
+					@if ( AdminPerfController.ShowChart )
+					{
+						<div class="perf-section-body">
+							@{
+								var hist = AdminPerfController.CopyFpsHistory();
+								var maxF = MathF.Max( 60f, AdminPerfController.HistoryMaxFps );
+							}
+							<div class="perf-chart">
+								@for ( var i = 0; i < hist.Length; i++ )
+								{
+									var h = hist[i];
+									<div class="perf-bar" style="@BarStyle( h, maxF )"></div>
+								}
+							</div>
+							<div class="perf-chart-caption">last @(hist.Length) samples • scale 0–@(maxF.ToString( "0" )) FPS • now @FpsText FPS (@MsText ms), low @LowFpsText</div>
+						</div>
+					}
 				</div>
-				@if ( AdminPerfController.ShowChart )
-				{
-					<div class="perf-section-body">
-						@{
-							var hist = AdminPerfController.CopyFpsHistory();
-							var maxF = MathF.Max( 60f, AdminPerfController.HistoryMaxFps );
-						}
-						<div class="perf-chart">
-							@for ( var i = 0; i < hist.Length; i++ )
+
+				@* ---- Frame timing ---- *@
+				<div class="perf-section">
+					<div class="perf-section-header" onclick=@(() => AdminPerfController.ToggleSection( "frame" ))>
+						<div class="perf-section-caret">@(AdminPerfController.ShowFrame ? "-" : "+")</div>
+						<div class="perf-section-name">Frame Timing</div>
+					</div>
+					@if ( AdminPerfController.ShowFrame )
+					{
+						<div class="perf-section-body">
+							<div class="perf-row"><div class="perf-label">FPS (smoothed)</div><div class="perf-value" style="color:@FpsColor;">@FpsText</div></div>
+							<div class="perf-row"><div class="perf-label">Frame time</div><div class="perf-value">@MsText ms</div></div>
+							<div class="perf-row"><div class="perf-label">1% low (worst frame)</div><div class="perf-value">@LowFpsText FPS</div></div>
+						</div>
+					}
+				</div>
+
+				@* ---- Scene counts ---- *@
+				<div class="perf-section">
+					<div class="perf-section-header" onclick=@(() => AdminPerfController.ToggleSection( "scene" ))>
+						<div class="perf-section-caret">@(AdminPerfController.ShowScene ? "-" : "+")</div>
+						<div class="perf-section-name">Scene Counts</div>
+					</div>
+					@if ( AdminPerfController.ShowScene )
+					{
+						<div class="perf-section-body">
+							<div class="perf-row"><div class="perf-label">Players (proxies)</div><div class="perf-value">@AdminPerfController.PlayerCount (@AdminPerfController.ProxyPlayerCount)</div></div>
+							<div class="perf-row"><div class="perf-label">Pet frameworks (proxy)</div><div class="perf-value">@AdminPerfController.PetFrameworkCount (@AdminPerfController.ProxyPetFrameworkCount)</div></div>
+							<div class="perf-row"><div class="perf-label">Pet components</div><div class="perf-value">@AdminPerfController.PetComponentCount</div></div>
+							<div class="perf-row"><div class="perf-label">Rarity FX (Legendary+)</div><div class="perf-value">@AdminPerfController.RarityVisualCount</div></div>
+							<div class="perf-row"><div class="perf-label">Destructibles</div><div class="perf-value">@AdminPerfController.DestructibleCount</div></div>
+							<div class="perf-row"><div class="perf-label">World panels</div><div class="perf-value">@AdminPerfController.WorldPanelCount</div></div>
+							<div class="perf-row"><div class="perf-label">Total objects (enabled)</div><div class="perf-value">@AdminPerfController.TotalObjectCount</div></div>
+						</div>
+					}
+				</div>
+
+				@* ---- Pet work + bisect toggles ---- *@
+				<div class="perf-section">
+					<div class="perf-section-header" onclick=@(() => AdminPerfController.ToggleSection( "petwork" ))>
+						<div class="perf-section-caret">@(AdminPerfController.ShowPetWork ? "-" : "+")</div>
+						<div class="perf-section-name">Per-Frame Work + Bisect</div>
+					</div>
+					@if ( AdminPerfController.ShowPetWork )
+					{
+						<div class="perf-section-body">
+							<div class="perf-row"><div class="perf-label">Pet anim ticks / frame</div><div class="perf-value">@AdminPerfController.PetAnimTicksPerFrame</div></div>
+							<div class="perf-row"><div class="perf-label">Ground traces / frame</div><div class="perf-value">@AdminPerfController.GroundTracesPerFrame</div></div>
+							<div class="perf-toggles">
+								<div class="perf-toggle-btn @(AdminPerfController.DisableProxyPetAnimation ? "off" : "")" onclick=@TogglePetAnim>Proxy Pet Anim: @(AdminPerfController.DisableProxyPetAnimation ? "OFF" : "ON")</div>
+								<div class="perf-toggle-btn @(AdminPerfController.DisableRarityVisualFx ? "off" : "")" onclick=@ToggleRarityFx>Rarity FX: @(AdminPerfController.DisableRarityVisualFx ? "OFF" : "ON")</div>
+							</div>
+						</div>
+					}
+				</div>
+
+				@* ---- Render culling ---- *@
+				<div class="perf-section">
+					<div class="perf-section-header" onclick=@(() => AdminPerfController.ToggleSection( "culling" ))>
+						<div class="perf-section-caret">@(AdminPerfController.ShowCulling ? "-" : "+")</div>
+						<div class="perf-section-name">Distance Render Culling</div>
+					</div>
+					@if ( AdminPerfController.ShowCulling )
+					{
+						<div class="perf-section-body">
+							<div class="perf-row"><div class="perf-label">Tracked renderers</div><div class="perf-value">@RenderCullingController.TrackedRenderers</div></div>
+							<div class="perf-row"><div class="perf-label">Currently culled</div><div class="perf-value">@RenderCullingController.CulledRenderers</div></div>
+							<div class="perf-row"><div class="perf-label">Cull distance</div><div class="perf-value">@CullDistText</div></div>
+							<div class="perf-toggles">
+								<div class="perf-toggle-btn @(RenderCullingController.IsActive ? "" : "off")" onclick=@ToggleCulling>Culling: @(RenderCullingController.IsActive ? "ON" : "OFF")</div>
+								<div class="perf-mini-btn" onclick=@(() => AdjustCull( -500f ))>-</div>
+								<div class="perf-mini-btn" onclick=@(() => AdjustCull( 500f ))>+</div>
+							</div>
+							@if ( !RenderCullingController.Instance.IsValid() )
 							{
-								var h = hist[i];
-								<div class="perf-bar" style="@BarStyle( h, maxF )"></div>
+								<div class="browser-truncated">No RenderCullingController in scene — add one to enable culling.</div>
 							}
 						</div>
-						<div class="perf-chart-caption">last @(hist.Length) samples • scale 0–@(maxF.ToString( "0" )) FPS • now @FpsText FPS (@MsText ms), low @LowFpsText</div>
-					</div>
-				}
-			</div>
-
-			@* ---- Frame timing ---- *@
-			<div class="perf-section">
-				<div class="perf-section-header" onclick=@(() => AdminPerfController.ToggleSection( "frame" ))>
-					<div class="perf-section-caret">@(AdminPerfController.ShowFrame ? "-" : "+")</div>
-					<div class="perf-section-name">Frame Timing</div>
+					}
 				</div>
-				@if ( AdminPerfController.ShowFrame )
-				{
-					<div class="perf-section-body">
-						<div class="perf-row"><div class="perf-label">FPS (smoothed)</div><div class="perf-value" style="color:@FpsColor;">@FpsText</div></div>
-						<div class="perf-row"><div class="perf-label">Frame time</div><div class="perf-value">@MsText ms</div></div>
-						<div class="perf-row"><div class="perf-label">1% low (worst frame)</div><div class="perf-value">@LowFpsText FPS</div></div>
-					</div>
-				}
-			</div>
 
-			@* ---- Scene counts ---- *@
-			<div class="perf-section">
-				<div class="perf-section-header" onclick=@(() => AdminPerfController.ToggleSection( "scene" ))>
-					<div class="perf-section-caret">@(AdminPerfController.ShowScene ? "-" : "+")</div>
-					<div class="perf-section-name">Scene Counts</div>
-				</div>
-				@if ( AdminPerfController.ShowScene )
-				{
-					<div class="perf-section-body">
-						<div class="perf-row"><div class="perf-label">Players (proxies)</div><div class="perf-value">@AdminPerfController.PlayerCount (@AdminPerfController.ProxyPlayerCount)</div></div>
-						<div class="perf-row"><div class="perf-label">Pet frameworks (proxy)</div><div class="perf-value">@AdminPerfController.PetFrameworkCount (@AdminPerfController.ProxyPetFrameworkCount)</div></div>
-						<div class="perf-row"><div class="perf-label">Pet components</div><div class="perf-value">@AdminPerfController.PetComponentCount</div></div>
-						<div class="perf-row"><div class="perf-label">Rarity FX (Legendary+)</div><div class="perf-value">@AdminPerfController.RarityVisualCount</div></div>
-						<div class="perf-row"><div class="perf-label">Destructibles</div><div class="perf-value">@AdminPerfController.DestructibleCount</div></div>
-						<div class="perf-row"><div class="perf-label">World panels</div><div class="perf-value">@AdminPerfController.WorldPanelCount</div></div>
-						<div class="perf-row"><div class="perf-label">Total objects (enabled)</div><div class="perf-value">@AdminPerfController.TotalObjectCount</div></div>
-					</div>
-				}
 			</div>
-
-			@* ---- Pet work + bisect toggles ---- *@
-			<div class="perf-section">
-				<div class="perf-section-header" onclick=@(() => AdminPerfController.ToggleSection( "petwork" ))>
-					<div class="perf-section-caret">@(AdminPerfController.ShowPetWork ? "-" : "+")</div>
-					<div class="perf-section-name">Per-Frame Work + Bisect</div>
+		}
+		else if ( selectedTab == PerfTab.Explorer )
+		{
+			<div class="explorer-toolbar">
+					<TextEntry @ref="SearchBox" class="perf-search" placeholder="Filter by name..." />
+					<div class="explorer-btn" onclick=@ExpandAll>Expand All</div>
+					<div class="explorer-btn" onclick=@CollapseAll>Collapse All</div>
 				</div>
-				@if ( AdminPerfController.ShowPetWork )
-				{
-					<div class="perf-section-body">
-						<div class="perf-row"><div class="perf-label">Pet anim ticks / frame</div><div class="perf-value">@AdminPerfController.PetAnimTicksPerFrame</div></div>
-						<div class="perf-row"><div class="perf-label">Ground traces / frame</div><div class="perf-value">@AdminPerfController.GroundTracesPerFrame</div></div>
-						<div class="perf-toggles">
-							<div class="perf-toggle-btn @(AdminPerfController.DisableProxyPetAnimation ? "off" : "")" onclick=@TogglePetAnim>Proxy Pet Anim: @(AdminPerfController.DisableProxyPetAnimation ? "OFF" : "ON")</div>
-							<div class="perf-toggle-btn @(AdminPerfController.DisableRarityVisualFx ? "off" : "")" onclick=@ToggleRarityFx>Rarity FX: @(AdminPerfController.DisableRarityVisualFx ? "OFF" : "ON")</div>
+				<div class="explorer-scroll">
+					@{
+						var rows = BuildRows();
+					}
+					@foreach ( var row in rows )
+					{
+						var go = row.Go;
+						var id = go.Id;
+						<div class="browser-row">
+							@for ( var d = 0; d < row.Depth; d++ )
+							{
+								<div class="browser-indent"></div>
+							}
+							@if ( row.HasChildren && !IsFiltering )
+							{
+								<div class="browser-caret" onclick=@(() => ToggleExpand( id ))>@(expanded.Contains( id ) ? "-" : "+")</div>
+							}
+							else
+							{
+								<div class="browser-caret"></div>
+							}
+							<div class="browser-name @(go.Enabled ? "" : "disabled")" onclick=@(() => ToggleObjectEnabled( go ))>@go.Name</div>
+							@if ( go.Children.Count > 0 )
+							{
+								<div class="browser-count">(@go.Children.Count)</div>
+							}
+							<div class="browser-toggle @(go.Enabled ? "on" : "off")" onclick=@(() => ToggleObjectEnabled( go ))>@(go.Enabled ? "ON" : "OFF")</div>
 						</div>
-					</div>
-				}
-			</div>
-
-			@* ---- Render culling ---- *@
-			<div class="perf-section">
-				<div class="perf-section-header" onclick=@(() => AdminPerfController.ToggleSection( "culling" ))>
-					<div class="perf-section-caret">@(AdminPerfController.ShowCulling ? "-" : "+")</div>
-					<div class="perf-section-name">Distance Render Culling</div>
+					}
+					@if ( truncated )
+					{
+						<div class="browser-truncated">List truncated at @MaxRows rows — use the filter or collapse branches to narrow down.</div>
+					}
 				</div>
-				@if ( AdminPerfController.ShowCulling )
-				{
-					<div class="perf-section-body">
-						<div class="perf-row"><div class="perf-label">Tracked renderers</div><div class="perf-value">@RenderCullingController.TrackedRenderers</div></div>
-						<div class="perf-row"><div class="perf-label">Currently culled</div><div class="perf-value">@RenderCullingController.CulledRenderers</div></div>
-						<div class="perf-row"><div class="perf-label">Cull distance</div><div class="perf-value">@CullDistText</div></div>
-						<div class="perf-toggles">
-							<div class="perf-toggle-btn @(RenderCullingController.IsActive ? "" : "off")" onclick=@ToggleCulling>Culling: @(RenderCullingController.IsActive ? "ON" : "OFF")</div>
-							<div class="perf-mini-btn" onclick=@(() => AdjustCull( -500f ))>-</div>
-							<div class="perf-mini-btn" onclick=@(() => AdjustCull( 500f ))>+</div>
-						</div>
-						@if ( !RenderCullingController.Instance.IsValid() )
-						{
-							<div class="browser-truncated">No RenderCullingController in scene — add one to enable culling.</div>
-						}
-					</div>
-				}
-			</div>
-
-			@* ---- Object browser ---- *@
-			<div class="perf-section">
-				<div class="perf-section-header" onclick=@(() => AdminPerfController.ToggleSection( "browser" ))>
-					<div class="perf-section-caret">@(AdminPerfController.ShowBrowser ? "-" : "+")</div>
-					<div class="perf-section-name">Object Browser (toggle on/off)</div>
-				</div>
-				@if ( AdminPerfController.ShowBrowser )
-				{
-					<div class="perf-section-body">
-						<TextEntry @ref="SearchBox" class="perf-search" placeholder="Filter by name..." />
-						@{
-							var rows = BuildRows();
-						}
-						@foreach ( var row in rows )
-						{
-							var go = row.Go;
-							var id = go.Id;
-							<div class="browser-row" style="margin-left: @(row.Depth * 16)px;">
-								@if ( row.HasChildren && !IsFiltering )
-								{
-									<div class="browser-caret" onclick=@(() => ToggleExpand( id ))>@(expanded.Contains( id ) ? "-" : "+")</div>
-								}
-								else
-								{
-									<div class="browser-caret"></div>
-								}
-								<div class="browser-name @(go.Enabled ? "" : "disabled")">@go.Name</div>
-								@if ( go.Children.Count > 0 )
-								{
-									<div class="browser-count">(@go.Children.Count)</div>
-								}
-								<div class="browser-toggle @(go.Enabled ? "on" : "off")" onclick=@(() => ToggleObjectEnabled( go ))>@(go.Enabled ? "ON" : "OFF")</div>
-							</div>
-						}
-						@if ( truncated )
-						{
-							<div class="browser-truncated">List truncated at @MaxRows rows — use the filter to narrow down.</div>
-						}
-					</div>
-				}
-			</div>
+		}
 
 		</div>
 	</div>
@@ -256,8 +300,9 @@
 
 @code
 {
-	private const int MaxRows = 250;
+	private const int MaxRows = 600;
 
+	private static PerfTab selectedTab = PerfTab.Performance;
 	private static string searchText = string.Empty;
 	private static readonly HashSet<Guid> expanded = new();
 
@@ -295,7 +340,7 @@
 
 	public override void Tick()
 	{
-		if ( !AdminPerfController.IsExplorerOpen )
+		if ( !AdminPerfController.IsExplorerOpen || selectedTab != PerfTab.Explorer )
 			return;
 
 		// Live filter: poll the search box text (FeedbackPanel-style imperative read).
@@ -305,6 +350,15 @@
 			searchText = current;
 			StateHasChanged();
 		}
+	}
+
+	private void SelectTab( PerfTab tab )
+	{
+		if ( selectedTab == tab )
+			return;
+
+		selectedTab = tab;
+		StateHasChanged();
 	}
 
 	private void Close()
@@ -351,6 +405,33 @@
 			return;
 
 		go.Enabled = !go.Enabled;
+		StateHasChanged();
+	}
+
+	private void ExpandAll()
+	{
+		if ( Scene == null )
+			return;
+
+		foreach ( var root in Scene.Children )
+			ExpandRecursive( root );
+
+		StateHasChanged();
+	}
+
+	private void ExpandRecursive( GameObject go )
+	{
+		if ( !go.IsValid() || go.Children.Count == 0 )
+			return;
+
+		expanded.Add( go.Id );
+		foreach ( var child in go.Children )
+			ExpandRecursive( child );
+	}
+
+	private void CollapseAll()
+	{
+		expanded.Clear();
 		StateHasChanged();
 	}
 
@@ -426,11 +507,12 @@
 		return System.HashCode.Combine(
 			AdminPerfController.IsExplorerOpen,
 			AdminPerfController.Version,
+			(int)selectedTab,
 			searchText,
 			expanded.Count,
 			System.HashCode.Combine(
 				AdminPerfController.ShowChart, AdminPerfController.ShowFrame, AdminPerfController.ShowScene,
-				AdminPerfController.ShowPetWork, AdminPerfController.ShowCulling, AdminPerfController.ShowBrowser ),
+				AdminPerfController.ShowPetWork, AdminPerfController.ShowCulling ),
 			RenderCullingController.CulledRenderers );
 	}
 
@@ -439,5 +521,11 @@
 		public GameObject Go { get; set; }
 		public int Depth { get; set; }
 		public bool HasChildren { get; set; }
+	}
+
+	private enum PerfTab
+	{
+		Performance,
+		Explorer,
 	}
 }
