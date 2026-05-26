@@ -15,10 +15,31 @@ public sealed class InventoryPetSlot : Component
 		if ( PetPrefab.IsValid() )
 			return PetPrefab;
 
-		if ( string.IsNullOrWhiteSpace( PetPrefabPath ) )
-			return null;
+		// 1. Direct path resolve.
+		if ( !string.IsNullOrWhiteSpace( PetPrefabPath ) )
+		{
+			var direct = GameObject.GetPrefab( PetPrefabPath );
+			if ( direct.IsValid() )
+			{
+				PetPrefab = direct;
+				return direct;
+			}
+		}
 
-		return GameObject.GetPrefab( PetPrefabPath );
+		// 2. Fallback: resolve via the scene's known pet prefabs by filename / display name. This
+		//    recovers pets saved with a stale/wrong path (e.g. a missing subfolder), and self-heals
+		//    the stored path to a resolvable one so future loads are direct.
+		var resolved = PetPrefabResolver.Resolve( Scene, PetPrefabPath, DisplayName );
+		if ( resolved.IsValid() )
+		{
+			PetPrefab = resolved;
+			if ( !string.IsNullOrWhiteSpace( resolved.PrefabInstanceSource ) )
+				PetPrefabPath = resolved.PrefabInstanceSource;
+
+			return resolved;
+		}
+
+		return null;
 	}
 
 	public JSONObject ToJsonObject()

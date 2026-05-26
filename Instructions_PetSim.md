@@ -1470,3 +1470,70 @@ A playtest pinned the `ShopDisplayWorldPanel` objects (`Code/UI/CrateShopDisplay
 - s&box DOES support `@keyframes` + the `animation` shorthand and `animation-iteration-count: infinite` / `animation-direction: alternate` / timing functions (confirmed in `Docs/dev/doc/ui/styling-panels/style-properties.md` and `sandbox-main` `.scss` examples).
 - `@@keyframes` with nested braces (`0% { ... }`) passes `dotnet build`. NOT yet confirmed that the s&box RUNTIME CSS parser handles keyframes inside an inline razor `<style>` (the engine examples use separate `.scss` files). If the animations don't play in-client, the fallback is to keep the static layout (perf win stays) and either move keyframes to a `.scss` or accept no motion. Verify in-client and check `sbox-dev.log` for CSS parse errors.
 - Use the perf overlay (Q) to confirm FPS recovery near the shops; `perf_explorer` Project Explorer can toggle the `ShopDisplayWorldPanel` objects off to A/B the cost.
+
+## Current Project Addendum: Admin Tools (Perf Menu "Admin" tab)
+
+Admin/moderation tools added to the performance menu (`Q` → "Admin" tab in `PerfExplorerPanel`), gated by `AdminPerfController.IsLocalAdmin`. Implemented WITHOUT editing `player.prefab` — the per-player logic lives on `PlayerData` via a partial class.
+
+### Files
+- `Code/PlayerData/PlayerData.Admin.cs` (NEW partial of `PlayerData`, which is now `partial`): fly, invisibility, and the admin RPCs.
+- `Code/UI/PerfExplorerPanel.razor`: the "Admin" tab UI (`PerfTab.Admin`).
+- `Code/Debug/AdminPerfController.cs`: added `static bool IsAdmin(long steamId)` for host-side authorization.
+- `Code/Networking/BanListController.cs`: added `static Instance` + `static AddRuntimeBan(steamId, reason)` (session ban; the existing host enforcement loop kicks them).
+
+### Features & how they work
+- **Fly** (self, local): `PlayerData.ToggleFly()` sets `PlayerController.UseInputControls = false` + `Body.Gravity = false`, then `UpdateFly()` moves `WorldPosition` from `EyeAngles` + `Input.AnalogMove` (Jump/Duck = up/down). `WorldPosition` is networked so others see it. There is NO built-in noclip in s&box; this is hand-rolled.
+- **Invisible** (self): `[Sync] bool IsInvisible` on `PlayerData`. `UpdateInvisibility()` runs on ALL clients and disables the player's `SkinnedModelRenderer`s only when `IsInvisible && IsProxy` — so OTHER players can't see you but you still see yourself. Renderer list is cached + re-applied only on change.
+- **Give money** (any target): `[Rpc.Owner] AdminGiveMoney(int)` — runs on the target's owner, adds to `PlayerMoney` (NO pet multiplier, unlike `AddMoney`) + `QueueSave()`.
+- **Give pet** (any target, choose rarity): `[Rpc.Owner] AdminGivePet(prefabPath, rarity)` — resolves `GameObject.GetPrefab(path)` on the target's owner and calls `Inventory.AddPetPrefab`. Pet list is gathered from all `InteractBuyCrate.Pets` + `CrateShopDisplay.GetConfiguredRewards()` (deduped by `PrefabInstanceSource`).
+- **Kick / Ban** (host-only): `[Rpc.Host] AdminRequestKick(steamId)` / `AdminRequestBan(steamId, reason)`. Both call `CallerIsAdmin()` which checks `Rpc.Caller.SteamId` against `AdminPerfController.IsAdmin(...)`, so a non-admin client calling the RPC is rejected on the host. Kick uses `Connection.Kick` (host-only API); ban adds to `BanListController` so the player is also blocked from rejoining for the session.
+
+### Security / authority notes
+- Self actions (fly/invisible) and give-to-self are local. Give-to-others routes through the target's owner via `[Rpc.Owner]`. Moderation routes through the host via `[Rpc.Host]` with an admin check on `Rpc.Caller`.
+- The admin allowlist is `AdminPerfController.AdminSteamIds` (or `AllowEveryone`). The HOST's copy of that component is the source of truth for kick/ban authorization.
+- Ban is SESSION-only (runtime list). For a permanent ban, also add the SteamId to the `BanListController.BannedPlayers` config in the scene.
+
+### Validation status
+- `dotnet build` clean (0 new warnings/errors). All engine APIs used (`PlayerController.UseInputControls/EyeAngles/Body`, `Rigidbody.Gravity`, `Connection.Kick/All/SteamId`, `[Sync]`, `[Rpc.Owner]`/`[Rpc.Host]`, `Rpc.Caller`, `GameObject.GetPrefab`) are already exercised by shipped code → low whitelist risk. NOT verified in-client. Needs testing of: fly feel, invisibility actually hiding on a second client, and kick/ban over the network.
+
+### Admin Tools — whitelist incident (2026-05-26)
+- The FIRST version of the admin tools took the WHOLE gamemode assembly down in s&box (every type vanished: "TypeLibrary could not find PetPreviewRenderer/BanListController/AdminPerfController/...", prefabs "missing"). `dotnet build` was green. Per the gotchas addendum, that signature = an API whitelist violation, which `dotnet build` does NOT enforce. The compile/whitelist error shows in the s&box EDITOR CONSOLE, not in `sbox-dev.log`/`sbox.log` (those only showed the downstream "could not find" + "Default Surface not found" + missing-prefab noise).
+- The culprit was the newly-introduced engine surface in the fly/invisibility code: `PlayerController.UseInputControls`/`EyeAngles`/`Body`, `Rigidbody.Gravity`, and `SkinnedModelRenderer`.
+- FIX: `PlayerData.Admin.cs` now uses ONLY APIs already exercised by shipped project code — fly drives `WorldPosition` from `Scene.Camera.WorldRotation` + `Input.AnalogMove`/`Input.Down` (tracking its own `flyPosition`, no controller internals, no Rigidbody); invisibility toggles `Components.GetAll<ModelRenderer>( FindMode.EverythingInSelfAndDescendants )` `.Enabled` (ModelRenderer is used by PetFramework/PetPreviewRenderer).
+- LESSON reinforced: when adding admin/engine features, prefer engine members already used elsewhere in this repo. If the game goes dead after a green build, it's a whitelist violation first — read the editor Console for the real `CS####`/whitelist line.
+
+## Current Project Addendum: Save Data-Loss Safeguards (2026-05-26)
+
+A playtester lost all pets: the save file (`playerdata/save_alpha2.json`, under `<sbox>/data/topgamestudio/hatch_simulator[#local]/`) was found with `"Slots": []` — i.e. an EMPTY inventory had been written over the good data. Money/load mechanics worked (money round-tripped), so this was a DESTRUCTIVE OVERWRITE, not a serialization bug. Likely triggers: (a) the unconditional `OnDestroy` save (added earlier) firing while in-memory inventory was empty, and/or (b) a load that dropped pets it couldn't resolve, then re-saved empty. The lost pets were unrecoverable (no backup; both the normal and `#local` copies were empty).
+
+Fixes (in `PlayerData.cs` + `Inventory.cs`):
+- `PlayerData.loadFailed`: set in `Load()`'s catch; `Save()` now early-returns (with a warning) if the last load FAILED, so an unreadable/errored load can never overwrite the file on disk. (A MISSING file is a new player and still allows saving.)
+- `Inventory.unresolvedSlots`: on `LoadJson`, a slot whose prefab can't resolve is no longer dropped — its raw JSON is stashed and re-emitted by `ToJsonObject`, so a transient/renamed prefab-path failure can't permanently delete a pet. It can resolve again in a later session.
+- Diagnostics: `Save()`/`Load()` log `[PlayerData] Saved/Loaded '...' (money=, pets=)`. To verify persistence: give pets (Admin tab), confirm `Saved (... pets=N)`, leave, rejoin, confirm `Loaded (... pets=N)`. If Loaded < Saved with "Preserving unresolved pet inventory slot" warnings, the saved `PetPrefabPath` isn't resolving via `GameObject.GetPrefab(...)` and the path format (`Inventory.GetPetPrefabPath`) needs fixing.
+- The save folder for inspection: `C:\Program Files (x86)\Steam\steamapps\common\sbox\data\topgamestudio\hatch_simulator#local\playerdata\` (the `#local` copy is what the editor uses).
+
+## Current Project Addendum: Pet Save Path Root Cause + Resolver (2026-05-26)
+
+ROOT CAUSE of pets not persisting (confirmed via logs: `Saved (... pets=6)` then next load `Preserving unresolved pet inventory slot 'Monarch' ('Prefabs/Pets/monarch.prefab')` -> `Loaded (... pets=0)`):
+- Pet prefabs live in SUBFOLDERS (e.g. `Assets/Prefabs/Pets/Playtest/Z1/monarch.prefab`), but `Inventory.GetPetPrefabPath`'s fallback built `Prefabs/Pets/{Name}.prefab` (no subfolder), which `GameObject.GetPrefab(...)` could never resolve -> every such pet was dropped on load.
+- It hit the fallback because a prefab obtained via `GameObject.GetPrefab(path)` (e.g. the Admin "give pet" flow) has an EMPTY `PrefabInstanceSource`, so `GetPetPrefabPath` couldn't use the real path. (Crate gives pass the original reward reference, whose `PrefabInstanceSource` is valid.)
+
+Fix:
+- `Code/PlayerData/PetPrefabResolver.cs` (NEW): builds a lookup of all pet prefabs referenced by scene `InteractBuyCrate.Pets` + `CrateShopDisplay` rewards, keyed by full path, FILENAME (last segment, no ext), root name, and display name. `Resolve(scene, path, displayName)`.
+- `InventoryPetSlot.GetPetPrefab()`: tries `GameObject.GetPrefab(PetPrefabPath)`, then falls back to `PetPrefabResolver`. On a fallback hit it caches into `PetPrefab` and SELF-HEALS `PetPrefabPath` to the resolved `PrefabInstanceSource`, so the save file gets corrected on the next write. This RECOVERS already-saved pets whose path was wrong (combined with the unresolved-slot preservation, they were never deleted).
+- `Inventory.GetPetPrefabPath` fallback changed from the broken `Prefabs/Pets/{Name}.prefab` to just `petPrefab.Name` (resolver matches by filename/name).
+
+Net: a saved pet now resolves by path OR filename OR display name, so subfolders / case / stale paths no longer lose pets. When adding new pet prefabs, no special path handling is needed — the resolver indexes anything referenced by a crate/shop.
+
+## Current Project Addendum: Per-Player Save Files (multiplayer clobber fix) (2026-05-26)
+
+REAL root cause of repeated data loss (logs showed multiple players + interleaved `Saved (money=399925, pets=3)` immediately followed by `Saved (money=0, pets=0)` to the SAME `playerdata/save.json`): EVERY player saved to the SAME file. On a shared `FileSystem.Data` (the host machine during a hosted playtest, or the editor with >1 connection), a second player's PlayerData — or a transient/never-loaded spawn — with default money=0/pets=0 overwrote the real save. The earlier unconditional `OnDestroy` save made it fire on every teardown.
+
+Fix in `PlayerData.cs`:
+- `ResolveSavePath()`: derives a per-player path from `SaveFilePath` by inserting the OWNING player's SteamId, e.g. `playerdata/save.json` -> `playerdata/save_<ownerSteamId>.json`. Keyed by `GameObject.Network.Owner.SteamId` (NOT `Game.SteamId`), so a remote player's object on the host writes its OWN file and can never touch the host's. `Save()` and `Load()` BOTH use this (must match).
+- `initialized` flag: set at the end of `OnStart` (after load). `Save()` early-returns if `!initialized`, so a freshly-spawned/transient PlayerData that never loaded can't write its empty defaults over a real save.
+- (Still in place: `loadFailed` guard, unresolved-slot preservation, and the `PetPrefabResolver` filename fallback.)
+
+Consequence: old `playerdata/save.json` / `save_alpha2.json` are abandoned (everyone starts on a fresh `save_<steamid>.json`). Acceptable since prior data was already lost to the clobber. In real distributed multiplayer each client already has a separate FileSystem.Data, but per-SteamId keying makes it correct on shared data folders / dedicated-server hosting too.
+
+If data loss somehow persists, next escalation options: (a) keep N timestamped backups per save before each write; (b) refuse to overwrite a non-empty save with an empty inventory unless an explicit clear happened.

@@ -60,7 +60,12 @@
               "__enabled": true,
               "Flags": 0,
               "BanListEnabled": true,
-              "BannedPlayers": [],
+              "BannedPlayers": [
+                {
+                  "SteamId": 76561198060017577,
+                  "Reason": "Banned from this playtest. You were caught cheating by a developer.\nSteam name: Surican"
+                }
+              ],
               "KickDelay": 60,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
@@ -1055,7 +1060,8 @@
               "Flags": 0,
               "AdminSteamIds": [
                 76561198079815508,
-                76561198052494963
+                76561198052494963,
+                76561197991348132
               ],
               "AllowEveryone": false,
               "OnComponentDestroy": null,
@@ -10512,7 +10518,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "RemoveAllPets",
-          "Position": "2139.15088,176.455246,38.2627449",
+          "Position": "2128.26416,-2439.33276,38.2617188",
           "Rotation": "0,0,0.724420071,0.68935883",
           "Scale": "1,1,1",
           "Tags": "",
@@ -32938,14 +32944,14 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
-      "Sandbox.SelectionSetsSystem": {
-        "Data": {
-          "SelectionSets": []
-        }
-      },
       "Sandbox.Clutter.ClutterGridSystem": {
         "Storage": {
           "$blob": "8d7d4aca-dc8f-4777-9349-def05dd7fd75"
+        }
+      },
+      "Sandbox.SelectionSetsSystem": {
+        "Data": {
+          "SelectionSets": []
         }
       }
     }

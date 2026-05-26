@@ -11,6 +11,10 @@ public sealed class Inventory : Component
 	private bool isLoadingJson;
 	private bool isRestoringEquippedPets;
 
+	// Raw JSON for slots whose pet prefab couldn't be resolved on load. Re-emitted on save so a
+	// transient resolve failure (missing/renamed prefab path) never permanently deletes a pet.
+	private readonly List<JSONObject> unresolvedSlots = new();
+
 	public int Count => Slots.Count( slot => slot.IsValid() && slot.HasPet );
 
 	public bool EquipPet( int slotNumber )
@@ -162,7 +166,7 @@ public sealed class Inventory : Component
 
 		Slots.Add( slot );
 		GameStatsTracker.RecordPetAdded( slot.DisplayName, slot.PetPrefabPath, slot.GetPetPrefab() );
-		QueueOwnerSave();
+		SaveOwnerNow();
 		return true;
 	}
 
@@ -214,7 +218,7 @@ public sealed class Inventory : Component
 
 		Slots.Add( slot );
 		GameStatsTracker.RecordPetAdded( slot.DisplayName, slot.PetPrefabPath, petPrefab );
-		QueueOwnerSave();
+		SaveOwnerNow();
 		return true;
 	}
 
@@ -424,6 +428,13 @@ public sealed class Inventory : Component
 			}
 		}
 
+		// Re-emit any slots whose prefab couldn't be resolved this session so they aren't lost.
+		foreach ( var raw in unresolvedSlots )
+		{
+			if ( raw != null )
+				slotData.Add( raw );
+		}
+
 		data.Set( "InventorySize", InventorySize );
 		data.Set( "Count", Count );
 		data.Set( "Slots", slotData );
@@ -449,6 +460,7 @@ public sealed class Inventory : Component
 			ClearRuntimeSlots();
 			Slots.Clear();
 			EquippedSlotIndexes.Clear();
+			unresolvedSlots.Clear();
 
 			InventorySize = data.Get( "InventorySize", InventorySize );
 
@@ -468,10 +480,14 @@ public sealed class Inventory : Component
 				{
 					Slots.Add( slot );
 				}
-				else if ( slot.GameObject.IsValid() )
+				else
 				{
-					Log.Warning( $"Skipped pet inventory slot '{slot.DisplayName}' because '{slot.PetPrefabPath}' could not be loaded." );
-					slot.GameObject.Destroy();
+					// Don't drop it — preserve the raw data so it survives to the next save and can
+					// resolve in a later session (prevents permanent pet loss from a bad prefab path).
+					Log.Warning( $"Preserving unresolved pet inventory slot '{slot.DisplayName}' ('{slot.PetPrefabPath}') so it is not lost on save." );
+					unresolvedSlots.Add( slotJson );
+					if ( slot.GameObject.IsValid() )
+						slot.GameObject.Destroy();
 				}
 			}
 
@@ -562,15 +578,25 @@ public sealed class Inventory : Component
 		GetComponent<PlayerData>()?.QueueSave();
 	}
 
+	// Immediate write, used when the player RECEIVES a pet so a new pet can never be lost
+	// (e.g. a crash or quick disconnect right after opening a crate).
+	private void SaveOwnerNow()
+	{
+		if ( isLoadingJson || isRestoringEquippedPets )
+			return;
+
+		GetComponent<PlayerData>()?.SaveNow();
+	}
+
 	private static string GetPetPrefabPath( GameObject petPrefab )
 	{
+		// Prefer the real asset path. The old fallback assumed every pet lived directly in
+		// "Prefabs/Pets/", but they're in subfolders (e.g. Prefabs/Pets/Playtest/Z1), so that path
+		// never resolved on load. Storing the bare name lets PetPrefabResolver match by filename.
 		if ( !string.IsNullOrWhiteSpace( petPrefab.PrefabInstanceSource ) )
 			return petPrefab.PrefabInstanceSource;
 
-		if ( string.IsNullOrWhiteSpace( petPrefab.Name ) )
-			return string.Empty;
-
-		return $"Prefabs/Pets/{petPrefab.Name}.prefab";
+		return petPrefab.IsValid() && !string.IsNullOrWhiteSpace( petPrefab.Name ) ? petPrefab.Name : string.Empty;
 	}
 
 	private static List<int> ReadIntList( JSONObject data, string key )

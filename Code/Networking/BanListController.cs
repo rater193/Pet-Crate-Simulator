@@ -12,6 +12,7 @@ public sealed class BanListController : Component
 	public static bool IsBanNoticeVisible { get; private set; }
 	public static string BanNoticeReason { get; private set; } = DefaultBanReason;
 	public static int NoticeVersion { get; private set; }
+	public static BanListController Instance { get; private set; }
 
 	private readonly Dictionary<Guid, PendingKick> pendingKicks = new();
 	private float nextConnectionCheckTime;
@@ -20,9 +21,40 @@ public sealed class BanListController : Component
 
 	protected override void OnStart()
 	{
+		Instance = this;
 		ResetSessionBanState();
 		CheckLocalBan();
 		CheckRemoteConnections();
+	}
+
+	protected override void OnDestroy()
+	{
+		if ( Instance == this )
+			Instance = null;
+	}
+
+	/// <summary>
+	/// Host-side runtime ban: adds the SteamId to the ban list so the normal enforcement loop
+	/// kicks them (and blocks rejoin for the session). Call from an admin-verified host RPC.
+	/// Note: this is session-only unless the SteamId is also added to the scene config.
+	/// </summary>
+	public static void AddRuntimeBan( long steamId, string reason )
+	{
+		var instance = Instance;
+		if ( instance == null || !Networking.IsHost || steamId <= 0 )
+			return;
+
+		instance.BannedPlayers ??= new();
+		if ( !instance.BannedPlayers.Any( entry => entry != null && entry.SteamId == steamId ) )
+		{
+			instance.BannedPlayers.Add( new BanListEntry
+			{
+				SteamId = steamId,
+				Reason = string.IsNullOrWhiteSpace( reason ) ? "Banned by an admin." : reason.Trim()
+			} );
+		}
+
+		instance.nextConnectionCheckTime = 0f; // enforce on the next update tick
 	}
 
 	protected override void OnUpdate()

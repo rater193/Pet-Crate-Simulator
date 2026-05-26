@@ -1,7 +1,7 @@
 using Sandbox;
 using System;
 
-public sealed class PlayerData : Component
+public sealed partial class PlayerData : Component
 {
 	private const int SaveVersion = 1;
 	private const string SaveDirectory = "playerdata";
@@ -17,6 +17,25 @@ public sealed class PlayerData : Component
 	private bool saveQueued;
 	private float saveDelayRemaining;
 	private bool isLoadingJson;
+	private bool loadFailed;
+	private bool initialized;
+
+	/// <summary>
+	/// Per-player save path keyed by the OWNING player's SteamId. Without this, every player saved to
+	/// the same file, so a second player (or a transient spawn) with default data clobbered everyone
+	/// else's save on a shared FileSystem.Data (host machine / editor). Keyed by Owner (not Game.SteamId)
+	/// so a remote player's object on the host writes its OWN file, never the host's.
+	/// </summary>
+	private string ResolveSavePath()
+	{
+		var basePath = string.IsNullOrWhiteSpace( SaveFilePath ) ? "playerdata/save.json" : SaveFilePath;
+		var ownerSteamId = (long)(GameObject?.Network?.Owner?.SteamId ?? Game.SteamId);
+
+		var dot = basePath.LastIndexOf( '.' );
+		var stem = dot < 0 ? basePath : basePath.Substring( 0, dot );
+		var ext = dot < 0 ? string.Empty : basePath.Substring( dot );
+		return $"{stem}_{ownerSteamId}{ext}";
+	}
 
 	[Rpc.Owner]
 	public void AddMoney( int amount )
@@ -42,12 +61,18 @@ public sealed class PlayerData : Component
 
 		if ( !IsProxy )
 		{
+			// Only allow saving AFTER we've gone through OnStart/load. A freshly-spawned or transient
+			// PlayerData that never loaded must not write its default (empty) state over a real save.
+			initialized = true;
 			GameStatsTracker.RecordSessionStarted( this );
 		}
 	}
 
 	protected override void OnUpdate()
 	{
+		// Admin fly + invisibility (invisibility must run on proxies too, so it's outside the guard).
+		AdminUpdate();
+
 		if ( !IsProxy )
 		{
 			inventory ??= GetComponent<Inventory>() ?? GameObject.GetOrAddComponent<Inventory>();
@@ -67,10 +92,10 @@ public sealed class PlayerData : Component
 		if ( !IsProxy )
 		{
 			GameStatsTracker.RecordSessionEnded( this );
-		}
 
-		if ( !IsProxy && saveQueued )
-		{
+			// Always flush on leave, not only when a save happens to be queued. The autosave is a
+			// 2s-delayed queue, so gating on saveQueued meant any change in the last ~2s before
+			// disconnect (or any session with AutoSaveEnabled off) wrote nothing on exit.
 			Save();
 		}
 	}
@@ -144,17 +169,33 @@ public sealed class PlayerData : Component
 		if ( IsProxy )
 			return;
 
+		// Don't let a PlayerData that never completed OnStart/load write its default (empty) state.
+		if ( !initialized )
+			return;
+
+		// Never overwrite the save file if the last load FAILED — writing the current (empty/default)
+		// in-memory state would permanently wipe the player's real save. This is the guard that stops
+		// the "load errored -> autosave/exit-save clobbers good data" data-loss bug.
+		if ( loadFailed )
+		{
+			Log.Warning( $"[PlayerData] Skipping save because the last load FAILED (refusing to overwrite existing data)." );
+			return;
+		}
+
+		var path = ResolveSavePath();
+
 		try
 		{
 			FileSystem.Data.CreateDirectory( SaveDirectory );
-			FileSystem.Data.WriteAllText( SaveFilePath, ToJson() );
+			FileSystem.Data.WriteAllText( path, ToJson() );
 			saveQueued = false;
 			saveDelayRemaining = 0f;
 			GameStatsTracker.RecordSaveWritten();
+			Log.Info( $"[PlayerData] Saved '{path}' (money={PlayerMoney}, pets={inventory?.Count ?? 0})." );
 		}
 		catch ( System.Exception exception )
 		{
-			Log.Warning( exception, $"Failed to save player data to '{SaveFilePath}'." );
+			Log.Warning( exception, $"Failed to save player data to '{path}'." );
 		}
 	}
 
@@ -163,15 +204,18 @@ public sealed class PlayerData : Component
 		if ( IsProxy )
 			return false;
 
+		loadFailed = false;
+		var path = ResolveSavePath();
+
 		try
 		{
-			if ( !FileSystem.Data.FileExists( SaveFilePath ) )
+			if ( !FileSystem.Data.FileExists( path ) )
 			{
 				GameStatsTracker.RecordSaveMissing();
 				return false;
 			}
 
-			var json = FileSystem.Data.ReadAllText( SaveFilePath );
+			var json = FileSystem.Data.ReadAllText( path );
 			if ( string.IsNullOrWhiteSpace( json ) )
 			{
 				GameStatsTracker.RecordSaveMissing();
@@ -180,11 +224,14 @@ public sealed class PlayerData : Component
 
 			LoadJson( json );
 			GameStatsTracker.RecordSaveLoaded();
+			Log.Info( $"[PlayerData] Loaded '{path}' (money={PlayerMoney}, pets={inventory?.Count ?? 0})." );
 			return true;
 		}
 		catch ( System.Exception exception )
 		{
-			Log.Warning( exception, $"Failed to load player data from '{SaveFilePath}'. Starting with current defaults." );
+			// Mark the load as failed so Save() refuses to overwrite the (possibly good) file on disk.
+			loadFailed = true;
+			Log.Warning( exception, $"Failed to load player data from '{path}'. Refusing to overwrite it this session." );
 			GameStatsTracker.RecordSaveFailed();
 			return false;
 		}
@@ -197,6 +244,19 @@ public sealed class PlayerData : Component
 
 		saveQueued = true;
 		saveDelayRemaining = MathF.Max( 0f, AutoSaveDelay );
+	}
+
+	/// <summary>
+	/// Writes the save file right now, skipping the 2s autosave delay. Used for important,
+	/// must-not-lose events like receiving a pet. Safe to call from gameplay; ignored on proxies
+	/// and while a save is being loaded.
+	/// </summary>
+	public void SaveNow()
+	{
+		if ( IsProxy || isLoadingJson )
+			return;
+
+		Save();
 	}
 
 	private void UpdateQueuedSave()

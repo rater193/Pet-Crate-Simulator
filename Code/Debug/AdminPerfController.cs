@@ -112,6 +112,16 @@ public sealed class AdminPerfController : Component
 		IsLocalAdmin = AllowEveryone || (AdminSteamIds?.Any( id => id == Game.SteamId ) ?? false);
 	}
 
+	/// <summary>Host-side admin check by SteamId (used to authorize kick/ban RPCs).</summary>
+	public static bool IsAdmin( long steamId )
+	{
+		var instance = Instance;
+		if ( instance == null )
+			return false;
+
+		return instance.AllowEveryone || (instance.AdminSteamIds?.Any( id => id == steamId ) ?? false);
+	}
+
 	protected override void OnUpdate()
 	{
 		if ( !TrackingEnabled )

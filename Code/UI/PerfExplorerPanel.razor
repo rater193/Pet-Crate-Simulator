@@ -124,6 +124,12 @@
 	.browser-toggle.on { background-color: #1f3a2b; border: 1px solid #4cd2a5; color: #4cd2a5; }
 	.browser-toggle.off { background-color: #3a1f24; border: 1px solid #ff6b6b; color: #ff9a9a; }
 	.browser-truncated { color: #ffce54; font-size: 13px; font-weight: 700; margin-top: 6px; }
+
+	/* Admin tab */
+	.admin-hint { color: #7f93ad; font-size: 13px; font-weight: 700; margin-top: 6px; }
+	.admin-row-selected { background-color: rgba(76, 210, 165, 0.22); }
+	.admin-pet-list { flex-direction: column; max-height: 320px; overflow-y: scroll; margin-top: 6px;
+		background-color: rgba(0,0,0,0.25); border-radius: 8px; padding: 4px; }
 </style>
 
 <root>
@@ -136,6 +142,7 @@
 		<div class="perf-tabs">
 			<div class="perf-tab @(selectedTab == PerfTab.Performance ? "active" : "")" onclick=@(() => SelectTab( PerfTab.Performance ))>Performance</div>
 			<div class="perf-tab @(selectedTab == PerfTab.Explorer ? "active" : "")" onclick=@(() => SelectTab( PerfTab.Explorer ))>Project Explorer</div>
+			<div class="perf-tab @(selectedTab == PerfTab.Admin ? "active" : "")" onclick=@(() => SelectTab( PerfTab.Admin ))>Admin</div>
 		</div>
 
 		<div class="perf-body">
@@ -292,6 +299,114 @@
 						<div class="browser-truncated">List truncated at @MaxRows rows — use the filter or collapse branches to narrow down.</div>
 					}
 				</div>
+		}
+		else if ( selectedTab == PerfTab.Admin )
+		{
+			<div class="perf-ex-scroll">
+				@{
+					var targetPlayer = ResolveTarget();
+					var targetName = TargetName();
+					var localData = PlayerData.LOCALDATA;
+				}
+
+				@* ---- Self toggles ---- *@
+				<div class="perf-section">
+					<div class="perf-section-header"><div class="perf-section-caret"></div><div class="perf-section-name">Self</div></div>
+					<div class="perf-section-body">
+						<div class="perf-toggles">
+							<div class="perf-toggle-btn @(localData?.FlyEnabled == true ? "" : "off")" onclick=@ToggleFly>Fly: @(localData?.FlyEnabled == true ? "ON" : "OFF")</div>
+							<div class="perf-toggle-btn @(localData?.InvisibleEnabled == true ? "" : "off")" onclick=@ToggleInvisible>Invisible: @(localData?.InvisibleEnabled == true ? "ON" : "OFF")</div>
+						</div>
+						<div class="admin-hint">Fly: WASD + Jump/Duck. Invisible hides you from other players (you still see yourself).</div>
+					</div>
+				</div>
+
+				@* ---- Target ---- *@
+				<div class="perf-section">
+					<div class="perf-section-header"><div class="perf-section-caret"></div><div class="perf-section-name">Target: @targetName</div></div>
+					<div class="perf-section-body">
+						<div class="browser-row @(selectedTargetSteamId == 0 ? "admin-row-selected" : "")" onclick=@(() => SelectTarget( 0 ))>
+							<div class="browser-name">Self</div>
+						</div>
+						@foreach ( var player in GetAdminPlayers() )
+						{
+							var sid = player.SteamId;
+							<div class="browser-row @(selectedTargetSteamId == sid ? "admin-row-selected" : "")" onclick=@(() => SelectTarget( sid ))>
+								<div class="browser-name">@(player.Name)@(player.IsLocal ? " (you)" : "")</div>
+							</div>
+						}
+					</div>
+				</div>
+
+				@* ---- Give money ---- *@
+				<div class="perf-section">
+					<div class="perf-section-header"><div class="perf-section-caret"></div><div class="perf-section-name">Give Money</div></div>
+					<div class="perf-section-body">
+						<div class="perf-toggles">
+							<div class="perf-toggle-btn" onclick=@(() => GiveMoney( 1000 ))>+1K</div>
+							<div class="perf-toggle-btn" onclick=@(() => GiveMoney( 10000 ))>+10K</div>
+							<div class="perf-toggle-btn" onclick=@(() => GiveMoney( 100000 ))>+100K</div>
+							<div class="perf-toggle-btn" onclick=@(() => GiveMoney( 1000000 ))>+1M</div>
+						</div>
+					</div>
+				</div>
+
+				@* ---- Give pet ---- *@
+				<div class="perf-section">
+					<div class="perf-section-header"><div class="perf-section-caret"></div><div class="perf-section-name">Give Pet (rarity: @GiveRarityName)</div></div>
+					<div class="perf-section-body">
+						<div class="perf-toggles">
+							@foreach ( var r in RarityValues )
+							{
+								var rv = r;
+								<div class="perf-toggle-btn @(giveRarity == (int)rv ? "" : "off")" onclick=@(() => SetGiveRarity( (int)rv ))>@rv</div>
+							}
+						</div>
+						<div class="admin-pet-list">
+							@{
+								var pets = GetAdminPets();
+							}
+							@if ( pets.Count == 0 )
+							{
+								<div class="admin-hint">No pets found in any crate / shop display.</div>
+							}
+							else
+							{
+								@foreach ( var pet in pets )
+								{
+									var path = pet.Path;
+									<div class="browser-row" onclick=@(() => GivePet( path ))>
+										<div class="browser-name">@pet.Name</div>
+										<div class="browser-toggle on">GIVE</div>
+									</div>
+								}
+							}
+						</div>
+					</div>
+				</div>
+
+				@* ---- Moderation ---- *@
+				<div class="perf-section">
+					<div class="perf-section-header"><div class="perf-section-caret"></div><div class="perf-section-name">Moderation</div></div>
+					<div class="perf-section-body">
+						@if ( selectedTargetSteamId == 0 )
+						{
+							<div class="admin-hint">Select another player above to kick or ban.</div>
+						}
+						else if ( !Networking.IsHost )
+						{
+							<div class="admin-hint">Kick / ban require the host. Ask the host, or host the session.</div>
+						}
+						else
+						{
+							<div class="perf-toggles">
+								<div class="perf-toggle-btn off" onclick=@KickTarget>Kick @targetName</div>
+								<div class="perf-toggle-btn off" onclick=@BanTarget>Ban @targetName</div>
+							</div>
+						}
+					</div>
+				</div>
+			</div>
 		}
 
 		</div>
@@ -513,7 +628,7 @@
 			System.HashCode.Combine(
 				AdminPerfController.ShowChart, AdminPerfController.ShowFrame, AdminPerfController.ShowScene,
 				AdminPerfController.ShowPetWork, AdminPerfController.ShowCulling ),
-			RenderCullingController.CulledRenderers );
+			System.HashCode.Combine( RenderCullingController.CulledRenderers, selectedTargetSteamId, giveRarity ) );
 	}
 
 	private class BrowserRow
@@ -527,5 +642,173 @@
 	{
 		Performance,
 		Explorer,
+		Admin,
+	}
+
+	// ---- Admin tab ----
+
+	private static long selectedTargetSteamId; // 0 = self
+	private static int giveRarity;              // PetRarity index
+
+	private static readonly PetRarity[] RarityValues = (PetRarity[])System.Enum.GetValues( typeof( PetRarity ) );
+	private string GiveRarityName => ((PetRarity)giveRarity).ToString();
+
+	private void ToggleFly()
+	{
+		PlayerData.LOCALDATA?.ToggleFly();
+		StateHasChanged();
+	}
+
+	private void ToggleInvisible()
+	{
+		PlayerData.LOCALDATA?.ToggleInvisible();
+		StateHasChanged();
+	}
+
+	private void SelectTarget( long steamId )
+	{
+		selectedTargetSteamId = steamId;
+		StateHasChanged();
+	}
+
+	private void SetGiveRarity( int rarity )
+	{
+		giveRarity = rarity;
+		StateHasChanged();
+	}
+
+	private void GiveMoney( int amount )
+	{
+		ResolveTarget()?.AdminGiveMoney( amount );
+		StateHasChanged();
+	}
+
+	private void GivePet( string prefabPath )
+	{
+		ResolveTarget()?.AdminGivePet( prefabPath, giveRarity );
+		StateHasChanged();
+	}
+
+	private void KickTarget()
+	{
+		if ( selectedTargetSteamId == 0 )
+			return;
+
+		PlayerData.LOCALDATA?.AdminRequestKick( selectedTargetSteamId );
+	}
+
+	private void BanTarget()
+	{
+		if ( selectedTargetSteamId == 0 )
+			return;
+
+		PlayerData.LOCALDATA?.AdminRequestBan( selectedTargetSteamId, "Banned by an admin." );
+	}
+
+	private PlayerData ResolveTarget()
+	{
+		if ( selectedTargetSteamId == 0 || Scene == null )
+			return PlayerData.LOCALDATA;
+
+		foreach ( var playerData in Scene.GetAllComponents<PlayerData>() )
+		{
+			var owner = playerData.GameObject?.Network?.Owner;
+			if ( owner != null && (long)owner.SteamId == selectedTargetSteamId )
+				return playerData;
+		}
+
+		return PlayerData.LOCALDATA;
+	}
+
+	private string TargetName()
+	{
+		if ( selectedTargetSteamId == 0 )
+			return "Self";
+
+		foreach ( var player in GetAdminPlayers() )
+		{
+			if ( player.SteamId == selectedTargetSteamId )
+				return player.Name;
+		}
+
+		return "Player";
+	}
+
+	private List<AdminPlayerRow> GetAdminPlayers()
+	{
+		var rows = new List<AdminPlayerRow>();
+		if ( Scene == null )
+			return rows;
+
+		foreach ( var playerData in Scene.GetAllComponents<PlayerData>() )
+		{
+			var owner = playerData.GameObject?.Network?.Owner;
+			if ( owner == null )
+				continue;
+
+			rows.Add( new AdminPlayerRow
+			{
+				SteamId = (long)owner.SteamId,
+				Name = string.IsNullOrWhiteSpace( owner.DisplayName ) ? "Player" : owner.DisplayName,
+				IsLocal = !playerData.IsProxy
+			} );
+		}
+
+		return rows;
+	}
+
+	private List<AdminPetOption> GetAdminPets()
+	{
+		var options = new List<AdminPetOption>();
+		var seen = new HashSet<string>( StringComparer.OrdinalIgnoreCase );
+		if ( Scene == null )
+			return options;
+
+		foreach ( var crate in Scene.GetAllComponents<InteractBuyCrate>() )
+		{
+			if ( crate.Pets == null )
+				continue;
+
+			foreach ( var reward in crate.Pets )
+				TryAddPet( reward?.PetPrefab, options, seen );
+		}
+
+		foreach ( var shop in Scene.GetAllComponents<CrateShopDisplay>() )
+		{
+			foreach ( var reward in shop.GetConfiguredRewards() )
+				TryAddPet( reward?.PetPrefab, options, seen );
+		}
+
+		return options;
+	}
+
+	private static void TryAddPet( GameObject prefab, List<AdminPetOption> options, HashSet<string> seen )
+	{
+		if ( !prefab.IsValid() )
+			return;
+
+		var path = !string.IsNullOrWhiteSpace( prefab.PrefabInstanceSource ) ? prefab.PrefabInstanceSource : prefab.Name;
+		if ( string.IsNullOrWhiteSpace( path ) || !seen.Add( path ) )
+			return;
+
+		var component = prefab.GetComponent<PetComponent>() ?? prefab.GetComponentInChildren<PetComponent>();
+		options.Add( new AdminPetOption
+		{
+			Path = path,
+			Name = !string.IsNullOrWhiteSpace( component?.DisplayName ) ? component.DisplayName : prefab.Name
+		} );
+	}
+
+	private class AdminPlayerRow
+	{
+		public long SteamId { get; set; }
+		public string Name { get; set; }
+		public bool IsLocal { get; set; }
+	}
+
+	private class AdminPetOption
+	{
+		public string Path { get; set; }
+		public string Name { get; set; }
 	}
 }
