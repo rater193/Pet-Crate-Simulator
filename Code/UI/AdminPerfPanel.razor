@@ -4,113 +4,53 @@
 @inherits Panel
 @namespace Sandbox
 
-@if ( !AdminPerfController.IsOverlayOpen || !AdminPerfController.IsLocalAdmin )
+@* Tiny read-only FPS pill for admins. pointer-events: none so it never grabs the cursor /
+   breaks mouse-look. Hidden while the full explorer menu is open (Q). *@
+@if ( !AdminPerfController.IsLocalAdmin || !AdminPerfController.MiniVisible || AdminPerfController.IsExplorerOpen )
 {
 	return;
 }
 
 <style>
-	.admin-perf {
+	.perf-mini {
 		position: absolute;
 		left: 16px;
 		top: 16px;
-		width: 320px;
-		background-color: rgba(8, 14, 26, 0.92);
-		border: 3px solid #4cd2a5;
-		border-radius: 14px;
-		padding: 14px 16px;
+		min-width: 188px;
+		background-color: rgba(8, 14, 26, 0.9);
+		border: 2px solid #4cd2a5;
+		border-radius: 10px;
+		padding: 8px 12px;
 		flex-direction: column;
 		pointer-events: none;
 		z-index: 30000;
 		font-family: Consolas;
-		box-shadow: 0px 8px 24px rgba(0, 18, 40, 0.55);
 	}
 
-	.admin-perf-title {
-		color: #4cd2a5;
-		font-size: 22px;
+	.perf-mini-fps {
+		font-size: 26px;
 		font-weight: 900;
-		margin-bottom: 8px;
-		text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.4);
 	}
 
-	.admin-perf-fps {
-		font-size: 30px;
-		font-weight: 900;
-		margin-bottom: 6px;
-	}
-
-	.admin-perf-row {
+	.perf-mini-row {
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
-		height: 24px;
+		height: 20px;
 	}
 
-	.admin-perf-label {
-		color: #9fb6cf;
-		font-size: 16px;
-		font-weight: 700;
-	}
-
-	.admin-perf-value {
-		color: #ffffff;
-		font-size: 16px;
-		font-weight: 900;
-	}
-
-	.admin-perf-sep {
-		height: 2px;
-		background-color: rgba(255, 255, 255, 0.12);
-		margin-top: 8px;
-		margin-bottom: 8px;
-	}
-
-	.admin-perf-toggle-on { color: #ffce54; font-size: 16px; font-weight: 900; }
-	.admin-perf-toggle-off { color: #ff6b6b; font-size: 16px; font-weight: 900; }
-
-	.admin-perf-footer {
-		color: #6f86a0;
-		font-size: 13px;
-		font-weight: 700;
-		margin-top: 10px;
-	}
+	.perf-mini-label { color: #9fb6cf; font-size: 14px; font-weight: 700; }
+	.perf-mini-value { color: #ffffff; font-size: 14px; font-weight: 900; }
+	.perf-mini-hint  { color: #6f86a0; font-size: 12px; font-weight: 700; margin-top: 4px; }
 </style>
 
 <root>
-	<div class="admin-perf">
-		<div class="admin-perf-title">ADMIN PERF</div>
-
-		<div class="admin-perf-fps" style="color: @FpsColor;">@FpsText FPS  (@MsText ms)</div>
-		<div class="admin-perf-row"><div class="admin-perf-label">1% low (worst frame)</div><div class="admin-perf-value">@LowFpsText FPS</div></div>
-
-		<div class="admin-perf-sep"></div>
-
-		<div class="admin-perf-row"><div class="admin-perf-label">Players (proxies)</div><div class="admin-perf-value">@AdminPerfController.PlayerCount (@AdminPerfController.ProxyPlayerCount)</div></div>
-		<div class="admin-perf-row"><div class="admin-perf-label">Pet frameworks (proxy)</div><div class="admin-perf-value">@AdminPerfController.PetFrameworkCount (@AdminPerfController.ProxyPetFrameworkCount)</div></div>
-		<div class="admin-perf-row"><div class="admin-perf-label">Pet components in scene</div><div class="admin-perf-value">@AdminPerfController.PetComponentCount</div></div>
-		<div class="admin-perf-row"><div class="admin-perf-label">Rarity FX (Legendary+)</div><div class="admin-perf-value">@AdminPerfController.RarityVisualCount</div></div>
-		<div class="admin-perf-row"><div class="admin-perf-label">Destructibles</div><div class="admin-perf-value">@AdminPerfController.DestructibleCount</div></div>
-		<div class="admin-perf-row"><div class="admin-perf-label">World panels</div><div class="admin-perf-value">@AdminPerfController.WorldPanelCount</div></div>
-		<div class="admin-perf-row"><div class="admin-perf-label">Total objects</div><div class="admin-perf-value">@AdminPerfController.TotalObjectCount</div></div>
-
-		<div class="admin-perf-sep"></div>
-
-		<div class="admin-perf-row"><div class="admin-perf-label">Pet anim ticks / frame</div><div class="admin-perf-value">@AdminPerfController.PetAnimTicksPerFrame</div></div>
-		<div class="admin-perf-row"><div class="admin-perf-label">Ground traces / frame</div><div class="admin-perf-value">@AdminPerfController.GroundTracesPerFrame</div></div>
-
-		<div class="admin-perf-sep"></div>
-
-		<div class="admin-perf-row">
-			<div class="admin-perf-label">Proxy pet anim (perf_pets)</div>
-			<div class="@(AdminPerfController.DisableProxyPetAnimation ? "admin-perf-toggle-off" : "admin-perf-toggle-on")">@(AdminPerfController.DisableProxyPetAnimation ? "OFF" : "ON")</div>
-		</div>
-		<div class="admin-perf-row">
-			<div class="admin-perf-label">Rarity FX (perf_rarityfx)</div>
-			<div class="@(AdminPerfController.DisableRarityVisualFx ? "admin-perf-toggle-off" : "admin-perf-toggle-on")">@(AdminPerfController.DisableRarityVisualFx ? "OFF" : "ON")</div>
-		</div>
-
-		<div class="admin-perf-footer">Q to close • console: perf_pets / perf_rarityfx</div>
+	<div class="perf-mini">
+		<div class="perf-mini-fps" style="color: @FpsColor;">@FpsText FPS</div>
+		<div class="perf-mini-row"><div class="perf-mini-label">frame</div><div class="perf-mini-value">@MsText ms</div></div>
+		<div class="perf-mini-row"><div class="perf-mini-label">players</div><div class="perf-mini-value">@AdminPerfController.PlayerCount</div></div>
+		<div class="perf-mini-row"><div class="perf-mini-label">pets</div><div class="perf-mini-value">@AdminPerfController.PetComponentCount</div></div>
+		<div class="perf-mini-hint">Q = performance explorer</div>
 	</div>
 </root>
 
@@ -118,24 +58,24 @@
 {
 	private string FpsText => AdminPerfController.Fps.ToString( "0" );
 	private string MsText => AdminPerfController.FrameMs.ToString( "0.0" );
-	private string LowFpsText => AdminPerfController.LowFps.ToString( "0" );
 
 	private string FpsColor
 	{
 		get
 		{
 			var fps = AdminPerfController.Fps;
-			if ( fps >= 55f ) return "#4cd2a5"; // good
-			if ( fps >= 30f ) return "#ffce54"; // warning
-			return "#ff6b6b";                   // bad
+			if ( fps >= 55f ) return "#4cd2a5";
+			if ( fps >= 30f ) return "#ffce54";
+			return "#ff6b6b";
 		}
 	}
 
 	protected override int BuildHash()
 	{
 		return System.HashCode.Combine(
-			AdminPerfController.IsOverlayOpen,
 			AdminPerfController.IsLocalAdmin,
+			AdminPerfController.MiniVisible,
+			AdminPerfController.IsExplorerOpen,
 			AdminPerfController.Version );
 	}
 }

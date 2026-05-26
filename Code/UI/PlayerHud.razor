@@ -273,6 +273,7 @@
     <FeedbackPanel IsOpen=@isFeedbackOpen WebhookUrl=@feedbackWebhookUrl CloseRequested=@CloseFeedback />
     <Sandbox.PetStatsTooltip />
     <AdminPerfPanel />
+    <PerfExplorerPanel />
 </root>
 
 
@@ -313,7 +314,8 @@
         || PlayerTradeController.LOCAL?.IsTradeOpen == true
         || PlayerTradeController.LOCAL?.IsDetailsOpen == true
         || BanListController.IsBanNoticeVisible
-        || PlayerNoticeController.IsNoticeVisible;
+        || PlayerNoticeController.IsNoticeVisible
+        || AdminPerfController.IsExplorerOpen;
     private bool IsHoveringWorldUi => WorldInputComponent?.Hovered != null;
     private bool ShowHandCursor => !IsAnyMenuOpen && (IsHoveringWorldUi || PlayerInteractionsController.Local?.IsHoveringInteractable == true);
     private string InteractPromptText =>
@@ -417,7 +419,7 @@
             System.HashCode.Combine(BanListController.NoticeVersion, PlayerNoticeController.NoticeVersion),
             AudioSettings.Version,
             ShowHandCursor,
-            System.HashCode.Combine(ShowInteractPrompt, InteractPromptText)
+            System.HashCode.Combine(ShowInteractPrompt, InteractPromptText, AdminPerfController.IsExplorerOpen)
         );
     }
 }

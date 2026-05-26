@@ -1053,8 +1053,11 @@
               "__guid": "86bf3681-87fb-49c3-97e7-8bf46a893e8b",
               "__enabled": true,
               "Flags": 0,
-              "AdminSteamIds": [],
-              "AllowEveryone": true,
+              "AdminSteamIds": [
+                76561198079815508,
+                76561198052494963
+              ],
+              "AllowEveryone": false,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -1063,6 +1066,45 @@
               "OnComponentUpdate": null,
               "SampleInterval": 0.25,
               "TrackingEnabled": true
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "8b2d3a5a-ef77-4fe3-b50a-71e0d3a9d504",
+          "__version": 2,
+          "Flags": 0,
+          "Name": "RenderCullingController ",
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "RenderCullingController",
+              "__guid": "82c860dc-e415-4b20-a840-6e85828f9747",
+              "__enabled": false,
+              "Flags": 0,
+              "CullDistance": 4000,
+              "CullingEnabled": true,
+              "HysteresisFraction": 0.92,
+              "NeverCullTags": [
+                "player"
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RegistryRefreshInterval": 2,
+              "ScanInterval": 0.2
             }
           ],
           "Children": []
@@ -32896,14 +32938,14 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
-      "Sandbox.Clutter.ClutterGridSystem": {
-        "Storage": {
-          "$blob": "8d7d4aca-dc8f-4777-9349-def05dd7fd75"
-        }
-      },
       "Sandbox.SelectionSetsSystem": {
         "Data": {
           "SelectionSets": []
+        }
+      },
+      "Sandbox.Clutter.ClutterGridSystem": {
+        "Storage": {
+          "$blob": "8d7d4aca-dc8f-4777-9349-def05dd7fd75"
         }
       }
     }

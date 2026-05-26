@@ -1411,29 +1411,40 @@ These notes reflect the tabbed pet inventory in `Code/UI/PetInventoryPanel.razor
 - s&box recompiles on EVERY file save, so a multi-edit restructure (open a container in one edit, close it in the next) can leave a transient `} expected` failure captured in `sbox-dev.log`. After finishing edits, reload the editor so the FINAL state recompiles; don't trust a stale log line. A balanced div/brace count + clean `dotnet build` means the current file is fine even if the log shows an older failure.
 
 
-## Current Project Addendum: Admin Performance Overlay (Perf Inspector)
+## Current Project Addendum: Admin Performance Tools (Inspector + Explorer + Render Culling)
 
-Added to diagnose a host-fine / clients-laggy playtest report (see the PetFramework performance addendum and the project-playtest-perf memory).
+Added to diagnose a host-fine / clients-laggy playtest report (see the PetFramework performance addendum and the project-playtest-perf memory). Three pieces: a SteamId-gated data/sampler controller, two UIs, and a distance render-culling component.
 
 ### Files
-- `Code/Debug/AdminPerfController.cs` — SteamId-gated client-local component, configured like `PlayerNoticeController`/`BanListController`. Samples FPS + scene counts, owns the bisect toggles, and exposes the console commands.
-- `Code/UI/AdminPerfPanel.razor` — read-only overlay (child `Panel`, `pointer-events: none`) hosted by `PlayerHud.razor`. Renders only when `AdminPerfController.IsOverlayOpen && IsLocalAdmin`. BuildHash = `(IsOverlayOpen, IsLocalAdmin, Version)`.
+- `Code/Debug/AdminPerfController.cs` — SteamId-gated client-local sampler, configured like `PlayerNoticeController`/`BanListController`. Samples FPS + a 96-sample FPS history + scene counts, owns the bisect toggles and detail-section toggles, exposes the console commands. `RequestRefresh()` is the shared "bump Version + StateHasChanged" helper.
+- `Code/UI/AdminPerfPanel.razor` — tiny **read-only FPS pill** (child `Panel`, `pointer-events: none`). Shows for admins whenever the explorer is closed (`IsLocalAdmin && MiniVisible && !IsExplorerOpen`), so mouse-look is never broken.
+- `Code/UI/PerfExplorerPanel.razor` — full **interactive explorer menu** (child `Panel`, `pointer-events: all`). FPS bar chart, collapsible detail sections, clickable bisect/culling toggles, and a GameObject browser (tree + name filter) that toggles `GameObject.Enabled`. Opening it puts the cursor up (it's a menu) — gated on `IsExplorerOpen`, which is in `PlayerHud.IsAnyMenuOpen` + BuildHash.
+- `Code/Debug/RenderCullingController.cs` — distance-based `ModelRenderer` culling.
 
 ### Setup
-- Add `AdminPerfController` to a scene object (e.g. the Ban Manager / `Systems` object). It does nothing until it exists in the scene (sampling runs in its `OnUpdate`).
-- Configure `AdminSteamIds` with admin SteamIds, or tick `AllowEveryone` for quick local testing.
+- Add `AdminPerfController` to a scene object (e.g. the Ban Manager / `Systems` object). Add `RenderCullingController` too if you want culling. Neither does anything until present in the scene.
+- Configure `AdminSteamIds`, or tick `AllowEveryone` for quick local testing.
 
 ### Usage
-- Toggle overlay: the `Menu` input action (default `Q`), admin-gated — normal players never trigger it. Or type `perf_overlay` in console (console use force-shows it for the local client).
-- Live bisect (watch FPS recover when a system is off):
-  - `perf_pets` — toggles `AdminPerfController.DisableProxyPetAnimation`, which gates `PetFramework`'s proxy-only `UpdateEquippedPetVisuals()` (the per-other-player cost that scales when players join).
-  - `perf_rarityfx` — toggles `AdminPerfController.DisableRarityVisualFx`, which gates `EquippedPetRarityVisuals.OnUpdate`'s per-frame outline/aura colour update (incl. the Ancestral rainbow cycle).
+- `Menu` action (default `Q`, admin-gated) toggles the **explorer**. The mini pill shows automatically when the explorer is closed.
+- Console: `perf_explorer`, `perf_mini`, `perf_pets`, `perf_rarityfx`, `perf_cull`, `perf_culldist <n>`.
+- Bisect (watch FPS recover when a system is off):
+  - `perf_pets` → `DisableProxyPetAnimation` gates `PetFramework`'s proxy-only `UpdateEquippedPetVisuals()` (the per-other-player cost).
+  - `perf_rarityfx` → `DisableRarityVisualFx` gates `EquippedPetRarityVisuals.OnUpdate`'s per-frame outline/aura colour update (incl. Ancestral rainbow).
+  - `perf_cull` / `perf_culldist` → render culling on/off and distance.
+
+### RenderCullingController design notes (important)
+- `Scene.GetAllComponents<T>()` returns ONLY enabled components, so a renderer we disable would vanish from the scan. The controller keeps a **persistent `tracked` registry** (merge-on-refresh, prune-by-`IsValid`) and a separate `culledByUs` set. It only ever re-enables renderers IT culled, so it never fights other systems that disable a renderer.
+- Cheap by construction: slow registry refresh (`RegistryRefreshInterval`, 2s) + a faster distance pass over the cached set (`ScanInterval`, 0.2s). Hysteresis (`HysteresisFraction`) prevents boundary flicker. `NeverCullTags` (default `player`) protects objects. `OnDestroy`/disable restores everything it hid.
+
+### Object browser notes
+- Walks `GameObject.Children` (includes disabled objects), NOT `GetAllObjects` (enabled-only). Tree expand state is a static `HashSet<Guid>`; the filter does a flat recursive name match. Rows capped at `MaxRows` (250) — use the filter to narrow. Toggling a row sets `GameObject.Enabled`. (`BrowserRow` is a `class`, not a `record` — Razor codegen gotcha.)
 
 ### Instrumentation hooks (cheap, always compiled in)
-- `PetFramework` increments `AdminPerfController.PetAnimAccumulator` once per pet iteration in both the local (`UpdateEquippedPets`) and proxy (`UpdateEquippedPetVisuals`) loops, and `GroundTraceAccumulator` in `SnapToGround`. The controller drains+averages these per frame into `PetAnimTicksPerFrame` / `GroundTracesPerFrame`. These are plain static `int` increments (negligible) and self-reset only when the controller is present; harmless if it isn't.
+- `PetFramework` increments `AdminPerfController.PetAnimAccumulator` per pet iteration in both the local (`UpdateEquippedPets`) and proxy (`UpdateEquippedPetVisuals`) loops, and `GroundTraceAccumulator` in `SnapToGround`. The controller drains+averages these per frame into `PetAnimTicksPerFrame` / `GroundTracesPerFrame`. Plain static `int` increments (negligible); only reset when the controller is present.
 
 ### Cursor-constraint note
-- The overlay is deliberately read-only (`pointer-events: none`) so it never pins the cursor / breaks mouse-look (see the HUD cursor-constraint addendum). That's why the bisect controls are console commands rather than clickable buttons — clickable HUD buttons would force the cursor up unless gated on a menu-open state.
+- Pill is read-only (`pointer-events: none`) so it never pins the cursor. The explorer is intentionally a menu (cursor up while open), with interactivity gated on `IsExplorerOpen` (state we own), NOT the live cursor flag — per the HUD cursor-constraint addendum.
 
 ### Validation status
-- `dotnet build` is clean (0 new warnings/errors). NOT yet verified in the s&box client — APIs used are already present elsewhere in the codebase (`[ConCmd]`, `Scene.GetAllComponents<T>()`, `Scene.GetAllObjects(true)`, `Input.Pressed`, `MathX.Lerp`), so whitelist risk is low, but a clean build is not proof the game loads. Needs an in-game check.
+- `dotnet build` clean (0 new warnings/errors). NOT yet verified in the s&box client — uses APIs already present elsewhere (`[ConCmd]`, `Scene.GetAllComponents<T>()`/`GetAllObjects`/`Children`/`Camera`, `GameObject.Enabled`, `ModelRenderer.Enabled`, `Input.Pressed`, `MathX.Lerp`, `Panel.Tick`, `TextEntry` via `@ref`), so whitelist risk is low — but a clean build is not proof the game loads, and these are visual/UI features. Needs an in-game check (chart, cursor behaviour while the explorer is open, and that culling doesn't pop nearby objects).

@@ -4,41 +4,63 @@ using System.Linq;
 
 /// <summary>
 /// Client-local admin performance inspector. Gated by SteamId like <see cref="PlayerNoticeController"/>
-/// and <see cref="BanListController"/>. When a listed admin presses the toggle (the "Menu" input,
-/// default Q) the read-only <c>AdminPerfPanel</c> overlay appears with live FPS plus the scene
-/// counts that scale with player count (the usual cause of host-fine / clients-laggy).
+/// and <see cref="BanListController"/>.
 ///
-/// The overlay itself is read-only (pointer-events: none) so it never grabs the cursor / breaks
-/// mouse-look. Live "bisect" toggles are exposed as console commands so an admin can switch
-/// suspected per-frame systems off in-game and watch the FPS recover:
-///   perf_overlay   - toggle the overlay
-///   perf_pets      - toggle proxy pet animation (the per-other-player cost)
-///   perf_rarityfx  - toggle the Legendary+ rarity aura/outline per-frame update
+/// Two UIs read this controller:
+///   - <c>AdminPerfPanel</c>  : a tiny read-only FPS pill (pointer-events: none) shown to admins
+///                              whenever the explorer is closed, so mouse-look is never broken.
+///   - <c>PerfExplorerPanel</c>: the full interactive menu (FPS chart, collapsible detail sections,
+///                              bisect toggles, and a GameObject browser). Opening it puts the cursor
+///                              up (it's a menu), which is fine for a diagnostic tool.
+///
+/// Toggle the explorer with the unused "Menu" input (default Q) or the <c>perf_explorer</c> console
+/// command. Bisect toggles are also console commands: perf_pets, perf_rarityfx, perf_cull, perf_culldist.
 /// </summary>
 public sealed class AdminPerfController : Component
 {
+	public const int HistorySize = 96;
+
 	[Property] public bool TrackingEnabled { get; set; } = true;
 
-	/// <summary>Debug escape hatch: when true, every client may open the overlay (ignore the SteamId list).</summary>
+	/// <summary>Debug escape hatch: when true, every client may open the tools (ignore the SteamId list).</summary>
 	[Property] public bool AllowEveryone { get; set; } = false;
 
-	/// <summary>SteamIds allowed to open the overlay. Mirrors the PlayerNoticeController/BanList config style.</summary>
+	/// <summary>SteamIds allowed to open the tools. Mirrors the PlayerNoticeController/BanList config style.</summary>
 	[Property] public List<long> AdminSteamIds { get; set; } = new();
 
-	/// <summary>How often the scene counts + displayed readout refresh (seconds).</summary>
+	/// <summary>How often the scene counts + displayed readout + chart refresh (seconds).</summary>
 	[Property] public float SampleInterval { get; set; } = 0.25f;
 
 	public static AdminPerfController Instance { get; private set; }
 
-	// --- Overlay / admin state (read by AdminPerfPanel) ---
+	// --- Admin / UI visibility state ---
 	public static bool IsLocalAdmin { get; private set; }
-	public static bool IsOverlayOpen { get; private set; }
+	public static bool IsExplorerOpen { get; private set; }
+	public static bool MiniVisible { get; private set; } = true;
 	public static int Version { get; private set; }
+
+	// --- Collapsible detail sections in the explorer ---
+	public static bool ShowChart { get; private set; } = true;
+	public static bool ShowFrame { get; private set; } = true;
+	public static bool ShowScene { get; private set; } = true;
+	public static bool ShowPetWork { get; private set; } = true;
+	public static bool ShowCulling { get; private set; } = true;
+	public static bool ShowBrowser { get; private set; } = true;
 
 	// --- Live frame timing ---
 	public static float Fps { get; private set; }
 	public static float FrameMs { get; private set; }
-	public static float LowFps { get; private set; } // worst (lowest) fps seen this window
+	public static float LowFps { get; private set; }
+
+	// --- FPS history (oldest..newest) for the chart ---
+	private static readonly float[] fpsHistory = new float[HistorySize];
+	public static float HistoryMaxFps { get; private set; } = 60f;
+	public static float[] CopyFpsHistory()
+	{
+		var copy = new float[HistorySize];
+		Array.Copy( fpsHistory, copy, HistorySize );
+		return copy;
+	}
 
 	// --- Scene snapshot (refreshed every SampleInterval) ---
 	public static int PlayerCount { get; private set; }
@@ -73,7 +95,9 @@ public sealed class AdminPerfController : Component
 	protected override void OnStart()
 	{
 		Instance = this;
-		ResetSessionState();
+		IsExplorerOpen = false;
+		smoothedDelta = MathF.Max( 0.0001f, Time.Delta );
+		Version++;
 		RecomputeLocalAdmin();
 	}
 
@@ -81,18 +105,6 @@ public sealed class AdminPerfController : Component
 	{
 		if ( Instance == this )
 			Instance = null;
-	}
-
-	private void ResetSessionState()
-	{
-		IsOverlayOpen = false;
-		smoothedDelta = MathF.Max( 0.0001f, Time.Delta );
-		worstDeltaThisWindow = 0f;
-		petAnimWindowAccum = 0;
-		groundTraceWindowAccum = 0;
-		framesThisWindow = 0;
-		sampleTimer = 0f;
-		Version++;
 	}
 
 	private void RecomputeLocalAdmin()
@@ -105,12 +117,10 @@ public sealed class AdminPerfController : Component
 		if ( !TrackingEnabled )
 			return;
 
-		// Cheap admin re-check is fine; SteamId doesn't change but AllowEveryone might be toggled in editor.
 		RecomputeLocalAdmin();
 
-		// Toggle with the unused "Menu" action (default Q). Admin-gated so normal players never trigger it.
 		if ( IsLocalAdmin && Input.Pressed( "Menu" ) )
-			ToggleOverlay();
+			ToggleExplorer();
 
 		SampleFrame();
 	}
@@ -123,7 +133,6 @@ public sealed class AdminPerfController : Component
 		if ( dt > worstDeltaThisWindow )
 			worstDeltaThisWindow = dt;
 
-		// Drain the per-frame work counters published by the hot paths.
 		petAnimWindowAccum += PetAnimAccumulator;
 		groundTraceWindowAccum += GroundTraceAccumulator;
 		PetAnimAccumulator = 0;
@@ -145,6 +154,8 @@ public sealed class AdminPerfController : Component
 		LowFps = worstDeltaThisWindow > 0f ? 1f / worstDeltaThisWindow : Fps;
 		worstDeltaThisWindow = 0f;
 
+		PushHistory( Fps );
+
 		var frames = Math.Max( 1, framesThisWindow );
 		PetAnimTicksPerFrame = petAnimWindowAccum / frames;
 		GroundTracesPerFrame = groundTraceWindowAccum / frames;
@@ -156,6 +167,19 @@ public sealed class AdminPerfController : Component
 
 		Version++;
 		PlayerHud.SINGLETON?.StateHasChanged();
+	}
+
+	private static void PushHistory( float fps )
+	{
+		// Shift left, append newest at the end. (Small fixed buffer; cheap.)
+		Array.Copy( fpsHistory, 1, fpsHistory, 0, HistorySize - 1 );
+		fpsHistory[HistorySize - 1] = fps;
+
+		var max = 60f;
+		for ( var i = 0; i < HistorySize; i++ )
+			max = MathF.Max( max, fpsHistory[i] );
+
+		HistoryMaxFps = max;
 	}
 
 	private void RefreshSceneCounts()
@@ -178,21 +202,55 @@ public sealed class AdminPerfController : Component
 		TotalObjectCount = Scene.GetAllObjects( true ).Count();
 	}
 
-	private static void ToggleOverlay()
+	/// <summary>Bump the UI version and ask the HUD to rebuild. Safe to call from anywhere.</summary>
+	public static void RequestRefresh()
 	{
-		IsOverlayOpen = !IsOverlayOpen;
 		Version++;
 		PlayerHud.SINGLETON?.StateHasChanged();
 	}
 
-	// --- Console commands (work like the chat "say" command) ---
-
-	[ConCmd( "perf_overlay" )]
-	public static void Cmd_ToggleOverlay()
+	private static void ToggleExplorer()
 	{
-		// Console use is a deliberate admin action; allow it to show even if SteamId isn't listed.
-		IsLocalAdmin = true;
-		ToggleOverlay();
+		IsExplorerOpen = !IsExplorerOpen;
+		RequestRefresh();
+	}
+
+	public static void CloseExplorer()
+	{
+		IsExplorerOpen = false;
+		RequestRefresh();
+	}
+
+	// --- Detail section toggles (explorer headers) ---
+	public static void ToggleSection( string id )
+	{
+		switch ( id )
+		{
+			case "chart": ShowChart = !ShowChart; break;
+			case "frame": ShowFrame = !ShowFrame; break;
+			case "scene": ShowScene = !ShowScene; break;
+			case "petwork": ShowPetWork = !ShowPetWork; break;
+			case "culling": ShowCulling = !ShowCulling; break;
+			case "browser": ShowBrowser = !ShowBrowser; break;
+		}
+
+		RequestRefresh();
+	}
+
+	// --- Console commands ---
+
+	[ConCmd( "perf_explorer" )]
+	public static void Cmd_ToggleExplorer()
+	{
+		IsLocalAdmin = true; // deliberate console action
+		ToggleExplorer();
+	}
+
+	[ConCmd( "perf_mini" )]
+	public static void Cmd_ToggleMini()
+	{
+		MiniVisible = !MiniVisible;
+		RequestRefresh();
 	}
 
 	[ConCmd( "perf_pets" )]
@@ -200,8 +258,7 @@ public sealed class AdminPerfController : Component
 	{
 		DisableProxyPetAnimation = !DisableProxyPetAnimation;
 		Log.Info( $"[perf] Proxy pet animation {(DisableProxyPetAnimation ? "DISABLED" : "enabled")}" );
-		Version++;
-		PlayerHud.SINGLETON?.StateHasChanged();
+		RequestRefresh();
 	}
 
 	[ConCmd( "perf_rarityfx" )]
@@ -209,7 +266,10 @@ public sealed class AdminPerfController : Component
 	{
 		DisableRarityVisualFx = !DisableRarityVisualFx;
 		Log.Info( $"[perf] Rarity visual FX {(DisableRarityVisualFx ? "DISABLED" : "enabled")}" );
-		Version++;
-		PlayerHud.SINGLETON?.StateHasChanged();
+		RequestRefresh();
 	}
+
+	// Methods used by the explorer's clickable bisect buttons.
+	public static void TogglePetAnim() => Cmd_TogglePetAnim();
+	public static void ToggleRarityFx() => Cmd_ToggleRarityFx();
 }
