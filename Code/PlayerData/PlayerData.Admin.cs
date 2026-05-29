@@ -118,7 +118,13 @@ public sealed partial class PlayerData
 		if ( IsProxy || string.IsNullOrWhiteSpace( prefabPath ) )
 			return;
 
+		// Try the engine loader first for fully-qualified asset paths, then fall back to PetPrefabResolver
+		// (which handles short keys like the prefab root name — what PerfExplorerPanel currently sends when
+		// PrefabInstanceSource isn't available on the in-scene crate reward references).
 		var prefab = GameObject.GetPrefab( prefabPath );
+		if ( !prefab.IsValid() )
+			prefab = PetPrefabResolver.Resolve( Scene, prefabPath, null );
+
 		if ( !prefab.IsValid() )
 		{
 			Log.Warning( $"[Admin] Could not resolve pet prefab '{prefabPath}' to give." );
